@@ -223,7 +223,7 @@ export default class Home extends Component {
                 <Box basis='xsmall'>
                   <Image
                     fit='contain'
-                    src='/assets/Wilderpeople_Ricky.jpg'
+                    src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg'
                   />
                 </Box>
               </Box>
@@ -234,7 +234,7 @@ export default class Home extends Component {
                 <Text margin='none'>Video</Text>
                 <Box basis='xsmall'>
                   <Video fit='contain'>
-                    <source src='/assets/small.mp4' type='video/mp4' />
+                    <source src='//v2.grommet.io/assets/small.mp4' type='video/mp4' />
                   </Video>
                 </Box>
               </Box>

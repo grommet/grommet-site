@@ -7,7 +7,7 @@ import Doc from '../components/Doc';
 
 const desc = doc(Image).toJSON();
 
-const SRC = '/assets/Wilderpeople_Ricky.jpg';
+const SRC = '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg';
 
 export default () => (
   <Doc name='Image' desc={desc}>

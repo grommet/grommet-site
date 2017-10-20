@@ -9,13 +9,13 @@ import Doc from '../components/Doc';
 const desc = doc(Video).toJSON();
 
 const CONTENT = [
-  <source key='video' src='/assets/small.mp4' type='video/mp4' />,
+  <source key='video' src='//v2.grommet.io/assets/small.mp4' type='video/mp4' />,
   <track
     key='cc'
     label='English'
     kind='subtitles'
     srcLang='en'
-    src='/assets/small-en.vtt'
+    src='//v2.grommet.io/assets/small-en.vtt'
     default={true}
   />,
 ];
@@ -26,7 +26,7 @@ const CONTENT2 = [...CONTENT,
     label='French'
     kind='subtitles'
     srcLang='fr'
-    src='/assets/small-fr.vtt'
+    src='//v2.grommet.io/assets/small-fr.vtt'
   />,
 ];
 
