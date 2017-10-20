@@ -13,5 +13,5 @@ after_success:
     git config --global user.name "Grommet Community Bot"
     git config --global user.email "grommet@hpe.com"
     npm run dist
-    npm run release-gh-pages
+    npm run release-heroku
   fi
