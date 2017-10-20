@@ -4691,10 +4691,6 @@ react-desc@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-2.2.0.tgz#83852e0cca6948c00468c4800fae5fbf272d195b"
 
-react-desc@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-3.0.0.tgz#322210cd2bd5171142377492a1c4a5277e38c9aa"
-
 react-dev-utils@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-0.4.2.tgz#ba6fae581fe945a2fc402e9b27c71fda4f62f6a1"

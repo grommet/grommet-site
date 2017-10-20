@@ -11,14 +11,14 @@ if (process.env.CI) {
   del(localFolder).then(() => {
     git().silent(true)
       .clone(repoURL, localFolder)
-      .then(() => git(localFolder).checkout('gh-pages'))
+      .then(() => git(localFolder).checkout('heroku'))
       .then(() => del([`${localFolder}/**/*`]))
       .then(() => fs.copy(localDist, localFolder))
       .then(() => git(localFolder).add(['--all', '.']))
-      .then(() => git(localFolder).commit('gh-pages updated'))
-      .then(() => git(localFolder).push('origin', 'gh-pages'))
+      .then(() => git(localFolder).commit('heroku updated'))
+      .then(() => git(localFolder).push('origin', 'heroku'))
       .catch(err => console.error('failed: ', err));
   });
 } else {
-  console.warn('Skipping release. Release:gh-pages task should be executed by CI only.');
+  console.warn('Skipping release. Release:heroku task should be executed by CI only.');
 }
