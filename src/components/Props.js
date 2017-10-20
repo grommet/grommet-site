@@ -73,7 +73,7 @@ export default class Props extends Component {
           </Box>
           {examplesControl}
         </Box>
-        <Box margin='medium' flex='grow'>
+        <Box align='start' margin='medium' flex='grow'>
           <Markdown content={text || ''} />
           <Paragraph>
             {description}
