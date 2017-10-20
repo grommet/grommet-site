@@ -17,9 +17,10 @@ app.use(compression());
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.sendFile(path.resolve(path.join(__dirname, './index.html'))));
-
 app.use('/', express.static(path.resolve(__dirname)));
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(path.join(__dirname, 'index.html')));
+});
 
 const server = http.createServer(app);
 server.listen(PORT);
