@@ -23,7 +23,7 @@ export default class Props extends Component {
 
   render() {
     const {
-      desc: { description, name, properties }, onExamples, responsiveState, text,
+      desc: { description, properties }, name, onExamples, responsiveState, text,
     } = this.props;
     const { currentTheme, onThemeChange } = this.context;
 
