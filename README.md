@@ -1,4 +1,4 @@
-# test-codesandbox
+# grommet-site
 
 This is a sample Grommet application for reference.
 
