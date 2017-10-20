@@ -23,7 +23,7 @@ export default class Props extends Component {
 
   render() {
     const {
-      desc: { description, properties }, name, onExamples, responsiveState, text,
+      desc: { description, name, properties }, onExamples, responsiveState, text,
     } = this.props;
     const { currentTheme, onThemeChange } = this.context;
 
@@ -76,6 +76,15 @@ export default class Props extends Component {
           <Paragraph>
             {description}
           </Paragraph>
+          <Button
+            href={`https://codesandbox.io/s/github/grommet/grommet-site?initialpath=${name.toLowerCase()}&module=%2Fscreens%2F${name}.js`}
+            target='_blank'
+          >
+            <img
+              alt='Edit grommet-site'
+              src='https://codesandbox.io/static/img/play-codesandbox.svg'
+            />
+          </Button>
           {props}
         </Box>
         <Box margin='medium'>
