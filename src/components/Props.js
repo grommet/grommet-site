@@ -29,6 +29,8 @@ export default class Props extends Component {
 
     const iconSize = (responsiveState === 'narrow' ? undefined : 'large');
 
+    const initialPath = `${name.toLowerCase()}${currentTheme ? `%3Ftheme%3D${currentTheme}` : ''}`;
+
     const props = (properties || []).map(property => (
       <Box key={property.name}>
         <Heading level={3} size='small'>
@@ -77,7 +79,7 @@ export default class Props extends Component {
             {description}
           </Paragraph>
           <Button
-            href={`https://codesandbox.io/s/github/grommet/grommet-site?initialpath=${name.toLowerCase()}&module=%2Fscreens%2F${name}.js`}
+            href={`https://codesandbox.io/s/github/grommet/grommet-site?initialpath=${initialPath}&module=%2Fscreens%2F${name}.js`}
             target='_blank'
           >
             <img
