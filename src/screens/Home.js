@@ -172,19 +172,19 @@ export default class Home extends Component {
             <Item path='/select'>
               <Select options={[]} placeholder='Select' tabIndex='-1' />
             </Item>
-            <Item path='/drop-button'>
+            <Item path='/dropbutton'>
               <Box direction='row' align='center'>
                 <Box margin={{ right: 'small' }}>Drop Button</Box>
                 <Actions color='brand' />
               </Box>
             </Item>
-            <Item path='/text-input'>
+            <Item path='/textinput'>
               <TextInput placeholder='TextInput' disabled={true} />
             </Item>
-            <Item path='/check-box'>
+            <Item path='/checkbox'>
               <CheckBox label='CheckBox' disabled={true} />
             </Item>
-            <Item path='/radio-button'>
+            <Item path='/radiobutton'>
               <RadioButton label='RadioButton' disabled={true} />
             </Item>
             <Box margin={{ vertical: 'small' }}>
