@@ -101,8 +101,8 @@ export default class App extends Component {
             <Route exact={true} path='/box' component={Box} />
             <Route exact={true} path='/button' component={Button} />
             <Route exact={true} path='/chart' component={Chart} />
-            <Route exact={true} path='/check-box' component={CheckBox} />
-            <Route exact={true} path='/drop-button' component={DropButton} />
+            <Route exact={true} path='/checkbox' component={CheckBox} />
+            <Route exact={true} path='/dropbutton' component={DropButton} />
             <Route exact={true} path='/form' component={Form} />
             <Route exact={true} path='/grid' component={Grid} />
             <Route exact={true} path='/heading' component={Heading} />
@@ -111,12 +111,12 @@ export default class App extends Component {
             <Route exact={true} path='/markdown' component={Markdown} />
             <Route exact={true} path='/menu' component={Menu} />
             <Route exact={true} path='/meter' component={Meter} />
-            <Route exact={true} path='/radio-button' component={RadioButton} />
+            <Route exact={true} path='/radiobutton' component={RadioButton} />
             <Route exact={true} path='/paragraph' component={Paragraph} />
             <Route exact={true} path='/select' component={Select} />
             <Route exact={true} path='/stack' component={Stack} />
             <Route exact={true} path='/text' component={Text} />
-            <Route exact={true} path='/text-input' component={TextInput} />
+            <Route exact={true} path='/textinput' component={TextInput} />
             <Route exact={true} path='/video' component={Video} />
           </Switch>
         </Grommet>
