@@ -1,6 +1,6 @@
 # grommet-site
 
-This is a sample Grommet application for reference.
+Initial work on grommet v2 site.
 
 To run this application, execute the following commands:
 
