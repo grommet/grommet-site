@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   Anchor, Box, Button, Chart, CheckBox, Grid, Heading, Image, Markdown,
-  Menu, Meter, Paragraph, RadioButton,
+  Menu, Meter, Paragraph, RadioButton, RangeInput,
   RoutedAnchor, RoutedButton, Select, Stack, Text, TextInput, Video,
 } from 'grommet';
 
@@ -180,6 +180,9 @@ export default class Home extends Component {
             </Item>
             <Item path='/textinput'>
               <TextInput placeholder='TextInput' disabled={true} />
+            </Item>
+            <Item path='/rangeinput'>
+              <RangeInput />
             </Item>
             <Item path='/checkbox'>
               <CheckBox label='CheckBox' disabled={true} />
