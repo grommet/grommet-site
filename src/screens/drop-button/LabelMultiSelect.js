@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Anchor, Box, Button, DropButton, Heading, Text } from 'grommet';
 import { FormAdd, FormClose } from 'grommet-icons';
 
-import MultiSelect from './MultiSelect';
+import MultiSelect from '../../components/MultiSelect';
 
 const labels = [
   { color: 'neutral-1', value: 'work in progress' },
