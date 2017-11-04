@@ -4723,6 +4723,10 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-formify@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-formify/-/react-formify-0.1.0.tgz#b67a34872824b1b9a5443a3812ce7d7be1b86cca"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
