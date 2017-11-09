@@ -64,7 +64,7 @@ const allImages = [
 
 function renderImage(img, index) {
   return (
-    <Box key={index >= 0 ? `image_${index}` : undefined} margin='xsmall'>
+    <Box key={index >= 0 ? `image_${index}` : undefined} pad='xsmall'>
       <Image
         src={img}
         style={{ width: '192px', height: '192px' }}
