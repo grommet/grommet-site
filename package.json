@@ -21,12 +21,13 @@
     "test-watch": "grommet check -t -- --watchAll"
   },
   "dependencies": {
-    "grommet": "^2.0.0-alpha.3",
+    "grommet": "^2.0.0-alpha.4",
     "grommet-icons": "^0.10.1",
     "history": "^4.7.2",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-formify": "^0.1.0",
     "react-router-dom": "^4.1.2",
     "styled-components": "^2.2.0",
     "url-search-params": "^0.10.0"
