@@ -21,7 +21,7 @@
     "test-watch": "grommet check -t -- --watchAll"
   },
   "dependencies": {
-    "grommet": "^2.0.0-alpha.3",
+    "grommet": "^2.0.0-alpha.4",
     "grommet-icons": "^0.10.1",
     "history": "^4.7.2",
     "prop-types": "^15.5.10",
