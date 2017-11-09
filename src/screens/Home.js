@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Anchor, Box, Button, Chart, CheckBox, Grid, Heading, Image, Markdown,
   Menu, Meter, Paragraph, RadioButton,
-  RoutedAnchor, RoutedButton, Select, SkipLinks, Stack, Text, TextInput, Video,
+  RoutedAnchor, RoutedButton, Select, Stack, Text, TextInput, Video,
 } from 'grommet';
 
 import { Actions } from 'grommet-icons';
