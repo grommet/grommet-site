@@ -190,6 +190,9 @@ export default class Home extends Component {
             <Box margin={{ vertical: 'small' }}>
               <RoutedAnchor path='/form' label='Form' />
             </Box>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/selection' label='Selection' />
+            </Box>
           </Section>
 
           <Section label='Accessibility' index={3}>
