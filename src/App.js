@@ -28,6 +28,7 @@ import RadioButton from './screens/RadioButton';
 import Select from './screens/Select';
 import Selection from './screens/Selection';
 import Stack from './screens/Stack';
+import Tabs from './screens/Tabs';
 import Text from './screens/Text';
 import TextInput from './screens/TextInput';
 import Video from './screens/Video';
@@ -117,6 +118,7 @@ export default class App extends Component {
             <Route exact={true} path='/select' component={Select} />
             <Route exact={true} path='/selection' component={Selection} />
             <Route exact={true} path='/stack' component={Stack} />
+            <Route exact={true} path='/tabs' component={Tabs} />
             <Route exact={true} path='/text' component={Text} />
             <Route exact={true} path='/textinput' component={TextInput} />
             <Route exact={true} path='/video' component={Video} />
