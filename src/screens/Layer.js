@@ -11,13 +11,13 @@ const desc = doc(Layer).toJSON();
 
 export default class LayerDoc extends Component {
   state = {
-    align: undefined,
+    position: undefined,
     showConfirmLayer: false,
     showFormLayer: false,
   }
   render() {
     const {
-      align,
+      position,
       showConfirmLayer,
       showFormLayer,
     } = this.state;
@@ -25,7 +25,7 @@ export default class LayerDoc extends Component {
     if (showConfirmLayer) {
       const close = () => this.setState({ showConfirmLayer: false });
       layerNode = (
-        <Layer align={align} onEsc={close}>
+        <Layer position={position} onEsc={close}>
           <Box pad={{ horizontal: 'medium' }}>
             <Heading level={2} margin='medium'>Confirm</Heading>
             <Text>
@@ -38,9 +38,9 @@ export default class LayerDoc extends Component {
         </Layer>
       );
     } else if (showFormLayer) {
-      const close = () => this.setState({ showFormLayer: false, align: undefined });
+      const close = () => this.setState({ showFormLayer: false, position: undefined });
       layerNode = (
-        <Layer align={align} onEsc={close} size='medium'>
+        <Layer position={position} onEsc={close} size='medium'>
           <Box align='end'>
             <Button icon={<Close />} onClick={close} />
           </Box>
@@ -61,27 +61,27 @@ export default class LayerDoc extends Component {
           <Box margin='small'>
             <Button
               label='Confirm center'
-              onClick={() => this.setState({ showConfirmLayer: true, align: undefined })}
+              onClick={() => this.setState({ showConfirmLayer: true, position: undefined })}
               primary={true}
             />
           </Box>
           <Box margin='small'>
             <Button
               label='Confirm top'
-              onClick={() => this.setState({ showConfirmLayer: true, align: 'top' })}
+              onClick={() => this.setState({ showConfirmLayer: true, position: 'top' })}
               primary={true}
             />
           </Box>
           <Box margin='small'>
             <Button
               label='Form left'
-              onClick={() => this.setState({ showFormLayer: true, align: 'left' })}
+              onClick={() => this.setState({ showFormLayer: true, position: 'left' })}
             />
           </Box>
           <Box margin='small'>
             <Button
               label='Form right'
-              onClick={() => this.setState({ showFormLayer: true, align: 'right' })}
+              onClick={() => this.setState({ showFormLayer: true, position: 'right' })}
             />
           </Box>
         </Box>
