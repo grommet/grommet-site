@@ -30,8 +30,10 @@ import Selection from './screens/Selection';
 import SkipLinks from './screens/SkipLinks';
 import Stack from './screens/Stack';
 import Text from './screens/Text';
+import TextArea from './screens/TextArea';
 import TextInput from './screens/TextInput';
 import Video from './screens/Video';
+import Theme from './screens/Theme';
 
 const history = createBrowserHistory();
 
@@ -120,8 +122,10 @@ export default class App extends Component {
             <Route exact={true} path='/skiplinks' component={SkipLinks} />
             <Route exact={true} path='/stack' component={Stack} />
             <Route exact={true} path='/text' component={Text} />
+            <Route exact={true} path='/textarea' component={TextArea} />
             <Route exact={true} path='/textinput' component={TextInput} />
             <Route exact={true} path='/video' component={Video} />
+            <Route exact={true} path='/theme' component={Theme} />
           </Switch>
         </Grommet>
       </Router>
