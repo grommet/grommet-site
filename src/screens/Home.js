@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Anchor, Box, Button, Chart, CheckBox, Grid, Heading, Image, Markdown,
   Menu, Meter, Paragraph, RadioButton,
-  RoutedAnchor, RoutedButton, Select, Stack, Text, TextInput, Video,
+  RoutedAnchor, RoutedButton, Select, Stack, Text, TextArea, TextInput, Video,
 } from 'grommet';
 
 import { Actions } from 'grommet-icons';
@@ -181,6 +181,9 @@ export default class Home extends Component {
             <Item path='/textinput'>
               <TextInput placeholder='TextInput' disabled={true} />
             </Item>
+            <Item path='/textarea'>
+              <TextArea placeholder='TextArea' disabled={true} />
+            </Item>
             <Item path='/checkbox'>
               <CheckBox label='CheckBox' disabled={true} />
             </Item>
@@ -274,6 +277,10 @@ export default class Home extends Component {
               ))}
             </Box>
           </Section>
+
+          <Box margin='medium'>
+            <RoutedAnchor primary={true} path='/theme' label='Theme' />
+          </Box>
         </Box>
       </Grid>
     );
