@@ -190,12 +190,6 @@ export default class Home extends Component {
             <Item path='/radiobutton'>
               <RadioButton label='RadioButton' disabled={true} />
             </Item>
-            <Box margin={{ vertical: 'small' }}>
-              <RoutedAnchor path='/form' label='Form' />
-            </Box>
-            <Box margin={{ vertical: 'small' }}>
-              <RoutedAnchor path='/selection' label='Selection' />
-            </Box>
           </Section>
 
           <Section label='Accessibility' index={3}>
@@ -251,6 +245,15 @@ export default class Home extends Component {
                 </Box>
               </Box>
             </Item>
+          </Section>
+
+          <Section label='Inspiration' index={6}>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/form' label='Form' />
+            </Box>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/selection' label='Selection' />
+            </Box>
           </Section>
 
           <Section basis='full' align='stretch' label='Color' index={6}>
