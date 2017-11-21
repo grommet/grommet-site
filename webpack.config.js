@@ -57,6 +57,7 @@ if (env === 'production') {
     clientLogLevel: 'none',
     contentBase: path.resolve('./dist'),
     publicPath: '/',
+    port: 8567,
     quiet: true,
     hot: true,
     watchOptions: {
