@@ -2709,9 +2709,15 @@ grommet-cli@^5.1.2:
     webpack-dev-server "^2.6.1"
     yargs "^8.0.2"
 
-grommet-icons@^0.10.0, grommet-icons@^0.10.1:
+grommet-icons@^0.10.0:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.1.tgz#495ac86b8b1d96792d21189b572c4168ddbd049a"
+  dependencies:
+    deep-assign "^2.0.0"
+
+grommet-icons@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.14.0.tgz#d426da188f48a11ea7486e024f5d584dbfb0471b"
   dependencies:
     deep-assign "^2.0.0"
 
