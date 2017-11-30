@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Anchor, Box, Button, Chart, CheckBox, Grid, Heading, Image, Markdown,
+  Anchor, Box, Button, Chart, CheckBox, Clock, Grid, Heading, Image, Markdown,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
   RoutedAnchor, RoutedButton, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video,
 } from 'grommet';
@@ -228,6 +228,13 @@ export default class Home extends Component {
                 />
                 <Text>Chart</Text>
               </Stack>
+            </Item>
+
+            <Item path='/clock'>
+              <Box align='center'>
+                <Clock />
+                <Heading level={4}>Clock</Heading>
+              </Box>
             </Item>
           </Section>
 
