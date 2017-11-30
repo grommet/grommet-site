@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import {
   Anchor, Box, Button, Chart, CheckBox, Clock, Grid, Heading, Image, Markdown,
-  Menu, Meter, Paragraph, RadioButton,
-  RoutedAnchor, RoutedButton, Select, Stack, Text, TextInput, Video,
+  Menu, Meter, Paragraph, RadioButton, RangeInput,
+  RoutedAnchor, RoutedButton, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video,
 } from 'grommet';
 
 import { Actions } from 'grommet-icons';
@@ -142,6 +142,12 @@ export default class Home extends Component {
                 </Box>
               </Box>
             </Item>
+
+            <Item path='/tabs'>
+              <Tabs>
+                <Tab title='One'>Tab</Tab>
+              </Tabs>
+            </Item>
           </Section>
 
           <Section label='Text' index={1}>
@@ -181,18 +187,27 @@ export default class Home extends Component {
             <Item path='/textinput'>
               <TextInput placeholder='TextInput' disabled={true} />
             </Item>
+            <Item path='/textarea'>
+              <TextArea placeholder='TextArea' disabled={true} />
+            </Item>
+            <Item path='/rangeinput'>
+              <RangeInput />
+            </Item>
             <Item path='/checkbox'>
               <CheckBox label='CheckBox' disabled={true} />
             </Item>
             <Item path='/radiobutton'>
               <RadioButton label='RadioButton' disabled={true} />
             </Item>
+          </Section>
+
+          <Section label='Accessibility' index={3}>
             <Box margin={{ vertical: 'small' }}>
-              <RoutedAnchor path='/form' label='Form' />
+              <RoutedAnchor path='/skiplinks' label='SkipLinks' />
             </Box>
           </Section>
 
-          <Section align='stretch' label='Visualizations' index={3}>
+          <Section align='stretch' label='Visualizations' index={4}>
             <Item path='/meter'>
               <Stack anchor='top-right'>
                 <Meter
@@ -223,7 +238,7 @@ export default class Home extends Component {
             </Item>
           </Section>
 
-          <Section align='stretch' label='Media' index={4}>
+          <Section align='stretch' label='Media' index={5}>
             <Item path='/image'>
               <Box>
                 <Text margin='none'>Image</Text>
@@ -248,7 +263,16 @@ export default class Home extends Component {
             </Item>
           </Section>
 
-          <Section basis='full' align='stretch' label='Color' index={5}>
+          <Section label='Inspiration' index={6}>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/form' label='Form' />
+            </Box>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/selection' label='Selection' />
+            </Box>
+          </Section>
+
+          <Section basis='full' align='stretch' label='Color' index={6}>
             <Box
               direction='row'
               align='start'
@@ -272,6 +296,10 @@ export default class Home extends Component {
               ))}
             </Box>
           </Section>
+
+          <Box margin='medium'>
+            <RoutedAnchor primary={true} path='/theme' label='Theme' />
+          </Box>
         </Box>
       </Grid>
     );
