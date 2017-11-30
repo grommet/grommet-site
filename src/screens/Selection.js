@@ -4,7 +4,7 @@ import {
   Anchor, Box, Button, Heading, Image, Layer, Text,
 } from 'grommet';
 
-import { Close, Trash } from 'grommet-icons';
+import { Blank, Close, Trash } from 'grommet-icons';
 
 import Doc from '../components/Doc';
 import Selection from '../components/Selection';
@@ -168,7 +168,7 @@ export default class SelectionDoc extends Component {
             justify='between'
             pad='small'
           >
-            <span style={{ width: '48px', height: '48px' }} />
+            <Blank size='large' />
             <Text>
               <strong>
                 {selectedImages.length ? selectedImages.length : images.length}
@@ -177,7 +177,7 @@ export default class SelectionDoc extends Component {
             {selectedImages.length ? (
               <Button onClick={this.removeImages} icon={<Trash color='brand' />} />
             ) : (
-              <span style={{ width: '48px', height: '48px' }} />
+              <Blank size='large' />
             )}
           </Box>
         </Box>

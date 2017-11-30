@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Anchor, Box, Button, Chart, CheckBox, Grid, Heading, Image, Markdown,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
-  RoutedAnchor, RoutedButton, Select, Stack, Text, TextInput, Video,
+  RoutedAnchor, RoutedButton, Select, Stack, Text, TextArea, TextInput, Video,
 } from 'grommet';
 
 import { Actions } from 'grommet-icons';
@@ -181,6 +181,9 @@ export default class Home extends Component {
             <Item path='/textinput'>
               <TextInput placeholder='TextInput' disabled={true} />
             </Item>
+            <Item path='/textarea'>
+              <TextArea placeholder='TextArea' disabled={true} />
+            </Item>
             <Item path='/rangeinput'>
               <RangeInput />
             </Item>
@@ -190,12 +193,6 @@ export default class Home extends Component {
             <Item path='/radiobutton'>
               <RadioButton label='RadioButton' disabled={true} />
             </Item>
-            <Box margin={{ vertical: 'small' }}>
-              <RoutedAnchor path='/form' label='Form' />
-            </Box>
-            <Box margin={{ vertical: 'small' }}>
-              <RoutedAnchor path='/selection' label='Selection' />
-            </Box>
           </Section>
 
           <Section label='Accessibility' index={3}>
@@ -253,6 +250,15 @@ export default class Home extends Component {
             </Item>
           </Section>
 
+          <Section label='Inspiration' index={6}>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/form' label='Form' />
+            </Box>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/selection' label='Selection' />
+            </Box>
+          </Section>
+
           <Section basis='full' align='stretch' label='Color' index={6}>
             <Box
               direction='row'
@@ -277,6 +283,10 @@ export default class Home extends Component {
               ))}
             </Box>
           </Section>
+
+          <Box margin='medium'>
+            <RoutedAnchor primary={true} path='/theme' label='Theme' />
+          </Box>
         </Box>
       </Grid>
     );
