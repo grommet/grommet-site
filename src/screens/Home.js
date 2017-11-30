@@ -193,9 +193,18 @@ export default class Home extends Component {
             <Box margin={{ vertical: 'small' }}>
               <RoutedAnchor path='/form' label='Form' />
             </Box>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/selection' label='Selection' />
+            </Box>
           </Section>
 
-          <Section align='stretch' label='Visualizations' index={3}>
+          <Section label='Accessibility' index={3}>
+            <Box margin={{ vertical: 'small' }}>
+              <RoutedAnchor path='/skiplinks' label='SkipLinks' />
+            </Box>
+          </Section>
+
+          <Section align='stretch' label='Visualizations' index={4}>
             <Item path='/meter'>
               <Stack anchor='top-right'>
                 <Meter
@@ -219,7 +228,7 @@ export default class Home extends Component {
             </Item>
           </Section>
 
-          <Section align='stretch' label='Media' index={4}>
+          <Section align='stretch' label='Media' index={5}>
             <Item path='/image'>
               <Box>
                 <Text margin='none'>Image</Text>
@@ -244,7 +253,7 @@ export default class Home extends Component {
             </Item>
           </Section>
 
-          <Section basis='full' align='stretch' label='Color' index={5}>
+          <Section basis='full' align='stretch' label='Color' index={6}>
             <Box
               direction='row'
               align='start'
