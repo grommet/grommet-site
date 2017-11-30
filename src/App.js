@@ -25,13 +25,17 @@ import Menu from './screens/Menu';
 import Meter from './screens/Meter';
 import Paragraph from './screens/Paragraph';
 import RadioButton from './screens/RadioButton';
+import RangeInput from './screens/RangeInput';
 import Select from './screens/Select';
 import Selection from './screens/Selection';
+import SkipLinks from './screens/SkipLinks';
 import Stack from './screens/Stack';
 import Tabs from './screens/Tabs';
 import Text from './screens/Text';
+import TextArea from './screens/TextArea';
 import TextInput from './screens/TextInput';
 import Video from './screens/Video';
+import Theme from './screens/Theme';
 
 const history = createBrowserHistory();
 
@@ -114,14 +118,18 @@ export default class App extends Component {
             <Route exact={true} path='/menu' component={Menu} />
             <Route exact={true} path='/meter' component={Meter} />
             <Route exact={true} path='/radiobutton' component={RadioButton} />
+            <Route exact={true} path='/rangeinput' component={RangeInput} />
             <Route exact={true} path='/paragraph' component={Paragraph} />
             <Route exact={true} path='/select' component={Select} />
             <Route exact={true} path='/selection' component={Selection} />
+            <Route exact={true} path='/skiplinks' component={SkipLinks} />
             <Route exact={true} path='/stack' component={Stack} />
             <Route exact={true} path='/tabs' component={Tabs} />
             <Route exact={true} path='/text' component={Text} />
+            <Route exact={true} path='/textarea' component={TextArea} />
             <Route exact={true} path='/textinput' component={TextInput} />
             <Route exact={true} path='/video' component={Video} />
+            <Route exact={true} path='/theme' component={Theme} />
           </Switch>
         </Grommet>
       </Router>
