@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Anchor, Box, Button, Chart, CheckBox, Grid, Heading, Image, Markdown,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
-  RoutedAnchor, RoutedButton, Select, Stack, Text, TextArea, TextInput, Video,
+  RoutedAnchor, RoutedButton, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video,
 } from 'grommet';
 
 import { Actions } from 'grommet-icons';
@@ -141,6 +141,12 @@ export default class Home extends Component {
                   Layer
                 </Box>
               </Box>
+            </Item>
+
+            <Item path='/tabs'>
+              <Tabs>
+                <Tab title='One'>Tab</Tab>
+              </Tabs>
             </Item>
           </Section>
 
