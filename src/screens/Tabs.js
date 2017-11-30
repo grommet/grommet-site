@@ -17,6 +17,13 @@ export default () => (
       </Tabs>
     </Box>
 
+    <Box pad='large' background='dark-3'>
+      <Tabs>
+        <Tab title='Tab 1'>Contents inside tab 1</Tab>
+        <Tab title='Tab 2'>Contents inside tab 2</Tab>
+      </Tabs>
+    </Box>
+
     <Box pad='large'>
       <Tabs justify='start'>
         <Tab
