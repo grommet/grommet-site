@@ -10,7 +10,7 @@ export default class Doc extends Component {
   }
 
   render() {
-    const { desc, name } = this.props;
+    const { desc, name, examples } = this.props;
     return (
       <Box>
         <Box pad={{ horizontal: 'large', top: 'large' }}>
@@ -35,6 +35,7 @@ export default class Doc extends Component {
                 direction='row'
                 responsive={true}
                 justify='between'
+                align='start'
                 border='bottom'
               >
                 <Box basis='1/2' margin={{ right: 'large' }}>
@@ -46,6 +47,11 @@ export default class Doc extends Component {
                 <Box flex={true} align='start'>
                   <Text><pre>{property.format}</pre></Text>
                 </Box>
+                {examples[property.name] ? (
+                  <Box flex={true} align='end' margin={{ vertical: 'medium' }}>
+                    {examples[property.name] || null}
+                  </Box>
+                ) : null}
               </Box>
             ))}
           </Box>
@@ -57,7 +63,12 @@ export default class Doc extends Component {
 
 Doc.propTypes = {
   desc: PropTypes.object.isRequired,
+  examples: PropTypes.object,
   name: PropTypes.string.isRequired,
+};
+
+Doc.defaultProps = {
+  examples: {},
 };
 
 Doc.contextTypes = {
