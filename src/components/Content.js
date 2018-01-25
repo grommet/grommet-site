@@ -22,10 +22,10 @@ import Markdown from '../screens/Markdown';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
 import Paragraph from '../screens/Paragraph';
+import PhotoBrowser from '../screens/PhotoBrowser';
 import RadioButton from '../screens/RadioButton';
 import RangeInput from '../screens/RangeInput';
 import Select from '../screens/Select';
-import Selection from '../screens/Selection';
 import SkipLinks from '../screens/SkipLinks';
 import Stack from '../screens/Stack';
 import Start from '../screens/Start';
@@ -63,7 +63,7 @@ export default () => (
     <Route exact={true} path='/rangeinput' component={RangeInput} />
     <Route exact={true} path='/paragraph' component={Paragraph} />
     <Route exact={true} path='/select' component={Select} />
-    <Route exact={true} path='/selection' component={Selection} />
+    <Route exact={true} path='/photo-browser' component={PhotoBrowser} />
     <Route exact={true} path='/skiplinks' component={SkipLinks} />
     <Route exact={true} path='/stack' component={Stack} />
     <Route exact={true} path='/tabs' component={Tabs} />

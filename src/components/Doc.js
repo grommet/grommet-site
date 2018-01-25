@@ -14,7 +14,7 @@ export default class Doc extends Component {
   }
 
   render() {
-    const { children, desc, name, example, examples } = this.props;
+    const { children, desc, name, example, examples, text } = this.props;
     return (
       <Box>
         <Box pad={{ horizontal: 'large', top: 'large' }}>
@@ -27,6 +27,11 @@ export default class Doc extends Component {
               {desc ? (
                 <Paragraph size='large'>
                   {desc.description}
+                </Paragraph>
+              ) : null}
+              {text ? (
+                <Paragraph size='large'>
+                  {text}
                 </Paragraph>
               ) : null}
               {example}
@@ -77,12 +82,14 @@ Doc.propTypes = {
   example: PropTypes.node,
   examples: PropTypes.object,
   name: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };
 
 Doc.defaultProps = {
   desc: undefined,
   example: null,
   examples: {},
+  text: undefined,
 };
 
 Doc.contextTypes = {

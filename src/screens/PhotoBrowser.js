@@ -10,56 +10,56 @@ import Doc from '../components/Doc';
 import Selection from '../components/Selection';
 
 const allImages = [
-  '/img/image1.jpg',
-  '/img/image2.jpg',
-  '/img/image3.jpg',
-  '/img/image4.jpg',
-  '/img/image5.jpg',
-  '/img/image6.jpg',
-  '/img/image7.jpg',
-  '/img/image8.jpg',
-  '/img/image9.jpg',
-  '/img/image10.jpg',
-  '/img/image11.jpg',
-  '/img/image12.jpg',
-  '/img/image13.jpg',
-  '/img/image14.jpg',
-  '/img/image15.jpg',
-  '/img/image16.jpg',
-  '/img/image17.jpg',
-  '/img/image18.jpg',
-  '/img/image19.jpg',
-  '/img/image20.jpg',
-  '/img/image21.jpg',
-  '/img/image22.jpg',
-  '/img/image23.jpg',
-  '/img/image24.jpg',
-  '/img/image25.jpg',
-  '/img/image26.jpg',
-  '/img/image27.jpg',
-  '/img/image28.jpg',
-  '/img/image29.jpg',
-  '/img/image30.jpg',
-  '/img/image31.jpg',
-  '/img/image32.jpg',
-  '/img/image33.jpg',
-  '/img/image34.jpg',
-  '/img/image35.jpg',
-  '/img/image36.jpg',
-  '/img/image37.jpg',
-  '/img/image38.jpg',
-  '/img/image39.jpg',
-  '/img/image40.jpg',
-  '/img/image41.jpg',
-  '/img/image42.jpg',
-  '/img/image43.jpg',
-  '/img/image44.jpg',
-  '/img/image45.jpg',
-  '/img/image46.jpg',
-  '/img/image47.jpg',
-  '/img/image48.jpg',
-  '/img/image49.jpg',
-  '/img/image50.jpg',
+  '/img/photos/image1.jpg',
+  '/img/photos/image2.jpg',
+  '/img/photos/image3.jpg',
+  '/img/photos/image4.jpg',
+  '/img/photos/image5.jpg',
+  '/img/photos/image6.jpg',
+  '/img/photos/image7.jpg',
+  '/img/photos/image8.jpg',
+  '/img/photos/image9.jpg',
+  '/img/photos/image10.jpg',
+  '/img/photos/image11.jpg',
+  '/img/photos/image12.jpg',
+  '/img/photos/image13.jpg',
+  '/img/photos/image14.jpg',
+  '/img/photos/image15.jpg',
+  '/img/photos/image16.jpg',
+  '/img/photos/image17.jpg',
+  '/img/photos/image18.jpg',
+  '/img/photos/image19.jpg',
+  '/img/photos/image20.jpg',
+  '/img/photos/image21.jpg',
+  '/img/photos/image22.jpg',
+  '/img/photos/image23.jpg',
+  '/img/photos/image24.jpg',
+  '/img/photos/image25.jpg',
+  '/img/photos/image26.jpg',
+  '/img/photos/image27.jpg',
+  '/img/photos/image28.jpg',
+  '/img/photos/image29.jpg',
+  '/img/photos/image30.jpg',
+  '/img/photos/image31.jpg',
+  '/img/photos/image32.jpg',
+  '/img/photos/image33.jpg',
+  '/img/photos/image34.jpg',
+  '/img/photos/image35.jpg',
+  '/img/photos/image36.jpg',
+  '/img/photos/image37.jpg',
+  '/img/photos/image38.jpg',
+  '/img/photos/image39.jpg',
+  '/img/photos/image40.jpg',
+  '/img/photos/image41.jpg',
+  '/img/photos/image42.jpg',
+  '/img/photos/image43.jpg',
+  '/img/photos/image44.jpg',
+  '/img/photos/image45.jpg',
+  '/img/photos/image46.jpg',
+  '/img/photos/image47.jpg',
+  '/img/photos/image48.jpg',
+  '/img/photos/image49.jpg',
+  '/img/photos/image50.jpg',
 ];
 
 function renderImage(img, index) {
@@ -80,11 +80,13 @@ export default class SelectionDoc extends Component {
     image: undefined,
     selectMode: false,
   }
+
   removeImages = () => {
     const { selectedImages, images } = this.state;
     const newImages = [...images].filter(image => selectedImages.indexOf(image) === -1);
     this.setState({ images: newImages, selectedImages: [], selectMode: false });
   }
+
   renderImages() {
     const { images } = this.state;
     return (
@@ -97,6 +99,7 @@ export default class SelectionDoc extends Component {
       )
     );
   }
+
   renderSelection() {
     const { images } = this.state;
     return (
@@ -110,6 +113,7 @@ export default class SelectionDoc extends Component {
       </Selection>
     );
   }
+
   render() {
     const { images, image, selectMode, selectedImages } = this.state;
     let imageLayer;
@@ -128,12 +132,13 @@ export default class SelectionDoc extends Component {
         </Layer>
       );
     }
+
     return (
       <Doc
-        name='Selection'
+        name='Photo Browser'
         text='A component that allows selection of its children.'
       >
-        <Box full='vertical'>
+        <Box>
           <Box
             align='center'
             direction='row'

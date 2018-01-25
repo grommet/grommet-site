@@ -103,12 +103,12 @@ export default class FormDoc extends Component {
     return (
       <Doc
         name='Form'
-        text={`Currently, Grommet 2.0 does not provide Form or FormField components.
+        text={`Grommet 2.0 does not provide Form or FormField components.
           Instead, we have a reference on how to build a form
           using the basic Box, Text, and control components.`}
       >
         <Box direction='row' justify='center'>
-          <Box basis='medium' margin='large'>
+          <Box basis='medium' margin={{ bottom: 'large' }}>
             <Form
               rules={userRules}
               defaultErrors={{ email: 'This is an existing email' }}

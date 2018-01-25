@@ -260,16 +260,6 @@ export default class Components extends Component {
                 <Button primary={true} label='Submit' onClick={() => {}} />
               </Box>
             </Item>
-            <Item name='Selection' path='/selection'>
-              <Box flex={true} direction='row' wrap={true}>
-                <Box basis='xsmall' border={{ color: 'light-1', size: 'large' }} background='brand' />
-                <Box basis='xsmall' border='light-1' background='brand' />
-                <Box basis='xsmall' border='light-1' background='brand' />
-                <Box basis='xsmall' border='light-1' background='brand' />
-                <Box basis='xsmall' border='light-1' background='brand' />
-                <Box basis='xsmall' border='light-1' background='brand' />
-              </Box>
-            </Item>
           </Section>
 
         </Box>
