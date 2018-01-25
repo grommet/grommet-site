@@ -142,16 +142,20 @@ export default class Components extends Component {
 
           <Section basis='full' align='stretch' name='Color' index={2}>
             <Box flex={true}>
-              <Box flex={true} basis='small' direction='row' wrap={true}>
-                <Box basis='small' background='brand' />
-                {['accent-1', 'accent-2',
-                  'neutral-1', 'neutral-2', 'neutral-3',
-                  'status-ok', 'status-warning', 'status-critical',
-                  'status-disabled',
-                ].map(color => (
-                  <Box key={color} flex={true} background={color} />
-                ))}
-              </Box>
+              <RoutedButton path='/color'>
+                <Box>
+                  <Box flex={true} basis='small' direction='row' wrap={true}>
+                    <Box basis='small' background='brand' />
+                    {['accent-1', 'accent-2',
+                      'neutral-1', 'neutral-2', 'neutral-3',
+                      'status-ok', 'status-warning', 'status-critical',
+                      'status-disabled',
+                    ].map(color => (
+                      <Box key={color} flex={true} background={color} />
+                    ))}
+                  </Box>
+                </Box>
+              </RoutedButton>
             </Box>
           </Section>
 

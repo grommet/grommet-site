@@ -89,8 +89,9 @@ export default class SelectDoc extends Component {
     airlines: allAirlines,
     creditCard: undefined,
     openAirlineDrop: false,
-    size: '',
+    size: stringOptions[0],
   }
+
   filterAirlines = query => (
     this.setState({
       airlines: allAirlines.filter(
@@ -99,65 +100,83 @@ export default class SelectDoc extends Component {
       openAirlineDrop: true,
     })
   )
+
   render() {
     const { airline, airlines, creditCard, openAirlineDrop, size } = this.state;
     return (
-      <Doc name='Select' desc={desc}>
-        <Box pad='large'>
-          <Box direction='row'>
-            <Box basis='small'>
-              <Select
-                a11yTitle='Open Size Select'
-                placeholder='Select Size'
-                options={stringOptions}
-                value={size}
-                onChange={({ option }) => this.setState({ size: option })}
-              />
+      <Doc
+        name='Select'
+        desc={desc}
+        example={(
+          <Box>
+            <Box direction='row'>
+              <Box direction='row' basis='medium' margin={{ top: 'small' }}>
+                <Select
+                  a11yTitle='Open Credit Card Select'
+                  activeOptionIndex={
+                    creditCard ? creditCardOptions.indexOf(creditCard) + 1 : undefined
+                  }
+                  background='white'
+                  placeholder='Select Credit Card'
+                  options={[undefined].concat(creditCardOptions)}
+                  value={creditCard ? renderCreditCardValue(creditCard) : undefined}
+                  onChange={({ option }) => this.setState({ creditCard: option })}
+                >
+                  {option => renderCreditCardOption(option)}
+                </Select>
+              </Box>
+            </Box>
+            <Box direction='row'>
+              <Box direction='row' basis='medium' margin={{ top: 'small' }}>
+                <Select
+                  a11yTitle='Open Airline Select'
+                  dropSize='medium'
+                  placeholder='Select Airline'
+                  searchPlaceholder='Filter Airline'
+                  options={airlines}
+                  value={airline}
+                  onChange={
+                    ({ option }) => this.setState({
+                      airlines: allAirlines, airline: option, openAirlineDrop: false,
+                    })
+                  }
+                  onClose={
+                    () => this.setState({
+                      airlines: allAirlines, openAirlineDrop: false,
+                    })
+                  }
+                  onSearch={this.filterAirlines}
+                  open={openAirlineDrop}
+                />
+              </Box>
             </Box>
           </Box>
-          <Box direction='row'>
-            <Box direction='row' basis='medium' margin={{ top: 'small' }}>
-              <Select
-                a11yTitle='Open Credit Card Select'
-                activeOptionIndex={
-                  creditCard ? creditCardOptions.indexOf(creditCard) + 1 : undefined
-                }
-                background='white'
-                placeholder='Select Credit Card'
-                options={[undefined].concat(creditCardOptions)}
-                value={creditCard ? renderCreditCardValue(creditCard) : undefined}
-                onChange={({ option }) => this.setState({ creditCard: option })}
-              >
-                {option => renderCreditCardOption(option)}
-              </Select>
-            </Box>
-          </Box>
-          <Box direction='row'>
-            <Box direction='row' basis='medium' margin={{ top: 'small' }}>
-              <Select
-                a11yTitle='Open Airline Select'
-                dropSize='medium'
-                placeholder='Select Airline'
-                searchPlaceholder='Filter Airline'
-                options={airlines}
-                value={airline}
-                onChange={
-                  ({ option }) => this.setState({
-                    airlines: allAirlines, airline: option, openAirlineDrop: false,
-                  })
-                }
-                onClose={
-                  () => this.setState({
-                    airlines: allAirlines, openAirlineDrop: false,
-                  })
-                }
-                onSearch={this.filterAirlines}
-                open={openAirlineDrop}
-              />
-            </Box>
-          </Box>
-        </Box>
-      </Doc>
+        )}
+        examples={{
+          placeholder: (
+            <Select
+              placeholder='Choose one'
+              options={stringOptions}
+              onChange={({ option }) => this.setState({ size: option })}
+            />
+          ),
+          plain: (
+            <Select
+              plain={true}
+              options={stringOptions}
+              value={size}
+              onChange={({ option }) => this.setState({ size: option })}
+            />
+          ),
+          value: (
+            <Select
+              options={stringOptions}
+              value={size}
+              onChange={({ option }) => this.setState({ size: option })}
+            />
+          ),
+        }}
+      />
     );
   }
 }

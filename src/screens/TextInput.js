@@ -17,17 +17,30 @@ class TextInputDoc extends Component {
   render() {
     const { suggestions, value } = this.state;
     return (
-      <Doc name='TextInput' desc={desc}>
-        <Box pad='large'>
-          <Box margin='small'>
-            <TextInput />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='placeholder' />
-          </Box>
-          <Box margin='small'>
+      <Doc
+        name='TextInput'
+        desc={desc}
+        examples={{
+          placeholder: <TextInput placeholder='abc' />,
+          plain: <TextInput value='A' plain={true} />,
+          size: (
+            <Box>
+              <Box margin={{ bottom: 'xsmall' }} align='end'>
+                <TextInput size='small' value='A' />
+              </Box>
+              <Box margin={{ bottom: 'xsmall' }} align='end'>
+                <TextInput size='medium' value='B' />
+              </Box>
+              <Box margin={{ bottom: 'xsmall' }} align='end'>
+                <TextInput size='large' value='C' />
+              </Box>
+              <Box margin={{ bottom: 'xsmall' }} align='end'>
+                <TextInput size='xlarge' value='D' />
+              </Box>
+            </Box>
+          ),
+          suggestions: (
             <TextInput
-              placeholder='suggestions'
               suggestions={suggestions}
               onSelect={
                 ({ suggestion }) => this.setState({ value: suggestion })
@@ -40,7 +53,11 @@ class TextInputDoc extends Component {
               })}
               value={value}
             />
-          </Box>
+          ),
+          value: <TextInput value='A' />,
+        }}
+      >
+        <Box pad='large'>
           <Box margin='small'>
             <TextInput placeholder='search' type='search' />
           </Box>
@@ -57,28 +74,13 @@ class TextInputDoc extends Component {
             <TextInput placeholder='url' type='url' />
           </Box>
           <Box margin='small'>
+            <TextInput placeholder='number' type='number' />
+          </Box>
+          <Box margin='small'>
             <TextInput placeholder='date' type='date' />
           </Box>
           <Box margin='small'>
             <TextInput placeholder='time' type='time' />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='number' type='number' />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='small' size='small' />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='large' size='large' />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='xlarge' size='xlarge' />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='plain' plain={true} />
-          </Box>
-          <Box margin='small'>
-            <TextInput placeholder='plain with focus' plain={true} focusIndicator={true} />
           </Box>
         </Box>
       </Doc>
