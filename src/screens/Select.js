@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Box, Select, Text } from 'grommet';
+import { Box, Heading, Select, Text } from 'grommet';
 import { Amex, Mastercard, Visa } from 'grommet-icons';
 import doc from 'grommet/components/Select/doc';
 
@@ -107,51 +107,6 @@ export default class SelectDoc extends Component {
       <Doc
         name='Select'
         desc={desc}
-        example={(
-          <Box>
-            <Box direction='row'>
-              <Box direction='row' basis='medium' margin={{ top: 'small' }}>
-                <Select
-                  a11yTitle='Open Credit Card Select'
-                  activeOptionIndex={
-                    creditCard ? creditCardOptions.indexOf(creditCard) + 1 : undefined
-                  }
-                  background='white'
-                  placeholder='Select Credit Card'
-                  options={[undefined].concat(creditCardOptions)}
-                  value={creditCard ? renderCreditCardValue(creditCard) : undefined}
-                  onChange={({ option }) => this.setState({ creditCard: option })}
-                >
-                  {option => renderCreditCardOption(option)}
-                </Select>
-              </Box>
-            </Box>
-            <Box direction='row'>
-              <Box direction='row' basis='medium' margin={{ top: 'small' }}>
-                <Select
-                  a11yTitle='Open Airline Select'
-                  dropSize='medium'
-                  placeholder='Select Airline'
-                  searchPlaceholder='Filter Airline'
-                  options={airlines}
-                  value={airline}
-                  onChange={
-                    ({ option }) => this.setState({
-                      airlines: allAirlines, airline: option, openAirlineDrop: false,
-                    })
-                  }
-                  onClose={
-                    () => this.setState({
-                      airlines: allAirlines, openAirlineDrop: false,
-                    })
-                  }
-                  onSearch={this.filterAirlines}
-                  open={openAirlineDrop}
-                />
-              </Box>
-            </Box>
-          </Box>
-        )}
         examples={{
           placeholder: (
             <Select
@@ -176,7 +131,52 @@ export default class SelectDoc extends Component {
             />
           ),
         }}
-      />
+      >
+        <Box pad={{ horizontal: 'large', bottom: 'xlarge' }}>
+          <Heading level={2} margin={{ top: 'none' }}><strong>Examples</strong></Heading>
+          <Box direction='row'>
+            <Box direction='row' basis='medium' margin={{ top: 'small' }}>
+              <Select
+                a11yTitle='Open Credit Card Select'
+                activeOptionIndex={
+                  creditCard ? creditCardOptions.indexOf(creditCard) + 1 : undefined
+                }
+                background='white'
+                placeholder='Select Credit Card'
+                options={[undefined].concat(creditCardOptions)}
+                value={creditCard ? renderCreditCardValue(creditCard) : undefined}
+                onChange={({ option }) => this.setState({ creditCard: option })}
+              >
+                {option => renderCreditCardOption(option)}
+              </Select>
+            </Box>
+          </Box>
+          <Box direction='row'>
+            <Box direction='row' basis='medium' margin={{ top: 'small' }}>
+              <Select
+                a11yTitle='Open Airline Select'
+                dropSize='medium'
+                placeholder='Select Airline'
+                searchPlaceholder='Filter Airline'
+                options={airlines}
+                value={airline}
+                onChange={
+                  ({ option }) => this.setState({
+                    airlines: allAirlines, airline: option, openAirlineDrop: false,
+                  })
+                }
+                onClose={
+                  () => this.setState({
+                    airlines: allAirlines, openAirlineDrop: false,
+                  })
+                }
+                onSearch={this.filterAirlines}
+                open={openAirlineDrop}
+              />
+            </Box>
+          </Box>
+        </Box>
+      </Doc>
     );
   }
 }

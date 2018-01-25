@@ -253,15 +253,6 @@ export default class Components extends Component {
             </Item>
           </Section>
 
-          <Section name='Inspiration' index={6}>
-            <Item name='Form' path='/form' center={true}>
-              <Box flex={true} basis='full' alignSelf='stretch' justify='between' align='start'>
-                <TextInput />
-                <Button primary={true} label='Submit' onClick={() => {}} />
-              </Box>
-            </Item>
-          </Section>
-
         </Box>
       </Box>
     );

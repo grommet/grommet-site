@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Box, DropButton } from 'grommet';
+import { Box, DropButton, Heading } from 'grommet';
 import doc from 'grommet/components/DropButton/doc';
 
 import Doc from '../components/Doc';
@@ -12,20 +12,17 @@ const desc = doc(DropButton).toJSON();
 export default class DropButtonDoc extends Component {
   render() {
     return (
-      <Doc
-        name='DropButton'
-        desc={desc}
-        example={(
-          <Box>
-            <Box direction='row'>
-              <AirlineMultiSelect />
-            </Box>
-            <Box direction='row' margin={{ vertical: 'small' }}>
-              <LabelMultiSelect />
-            </Box>
+      <Doc name='DropButton' desc={desc}>
+        <Box basis='large' pad={{ horizontal: 'large', bottom: 'xlarge' }}>
+          <Heading level={2} margin={{ top: 'none' }}><strong>Examples</strong></Heading>
+          <Box direction='row'>
+            <AirlineMultiSelect />
           </Box>
-        )}
-      />
+          <Box direction='row' margin={{ vertical: 'small' }}>
+            <LabelMultiSelect />
+          </Box>
+        </Box>
+      </Doc>
     );
   }
 }

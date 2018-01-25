@@ -19,7 +19,7 @@ export default class Doc extends Component {
       <Box>
         <Box pad={{ horizontal: 'large', top: 'large' }}>
           <Nav top={false} />
-          <Box direction='row'>
+          <Box direction='row' responsive={true}>
             <Box margin={{ vertical: 'large' }} basis='large'>
               <Heading level={1}>
                 <strong>{name}</strong>
@@ -34,6 +34,8 @@ export default class Doc extends Component {
                   {text}
                 </Paragraph>
               ) : null}
+            </Box>
+            <Box flex={true} pad={{ vertical: 'large' }}>
               {example}
             </Box>
           </Box>

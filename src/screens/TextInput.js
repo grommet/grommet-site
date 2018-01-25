@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Box, TextInput } from 'grommet';
+import { Box, Heading, TextInput } from 'grommet';
 import doc from 'grommet/components/TextInput/doc';
 
 import Doc from '../components/Doc';
@@ -57,7 +57,8 @@ class TextInputDoc extends Component {
           value: <TextInput value='A' />,
         }}
       >
-        <Box pad='large'>
+        <Box basis='large' pad={{ horizontal: 'large', bottom: 'xlarge' }}>
+          <Heading level={2} margin={{ top: 'none' }}><strong>Examples</strong></Heading>
           <Box margin='small'>
             <TextInput placeholder='search' type='search' />
           </Box>
