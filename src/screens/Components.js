@@ -230,6 +230,9 @@ export default class Components extends Component {
                 values={[{ value: 60, label: 'sixty' }]}
               />
             </Item>
+            <Item name='Diagram' path='/diagram' center={true}>
+              TBD
+            </Item>
           </Section>
 
           <Section name='Media' index={4}>
