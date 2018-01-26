@@ -34,8 +34,9 @@ import Tabs from '../screens/Tabs';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
-import Video from '../screens/Video';
 import Theme from '../screens/Theme';
+import Video from '../screens/Video';
+import WorldMap from '../screens/WorldMap';
 
 export default () => (
   <Switch>
@@ -72,7 +73,8 @@ export default () => (
     <Route exact={true} path='/text' component={Text} />
     <Route exact={true} path='/textarea' component={TextArea} />
     <Route exact={true} path='/textinput' component={TextInput} />
-    <Route exact={true} path='/video' component={Video} />
     <Route exact={true} path='/theme' component={Theme} />
+    <Route exact={true} path='/video' component={Video} />
+    <Route exact={true} path='/worldmap' component={WorldMap} />
   </Switch>
 );

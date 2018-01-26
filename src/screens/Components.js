@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Anchor, Box, Button, Chart, CheckBox, Clock, DropButton, Heading, Image,
+  Anchor, Box, Button, Chart, CheckBox, Clock, Diagram, DropButton,
+  Heading, Image,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
-  RoutedButton, Select, Text, TextArea, TextInput, Video,
+  RoutedButton, Select, Stack, Text, TextArea, TextInput, Video, WorldMap,
 } from 'grommet';
 import { Actions } from 'grommet-icons';
 import Nav from '../components/Nav';
@@ -231,7 +232,57 @@ export default class Components extends Component {
               />
             </Item>
             <Item name='Diagram' path='/diagram' center={true}>
-              TBD
+              <Stack>
+                <Box>
+                  <Box direction='row'>
+                    {[1, 2].map(id => (
+                      <Box
+                        key={id}
+                        id={id}
+                        basis='xxsmall'
+                        margin='small'
+                        pad='medium'
+                        round='small'
+                        background='light-2'
+                      />
+                    ))}
+                  </Box>
+                  <Box direction='row'>
+                    {[3, 4].map(id => (
+                      <Box
+                        key={id}
+                        id={id}
+                        basis='xxsmall'
+                        margin='small'
+                        pad='medium'
+                        round='small'
+                        background='light-2'
+                      />
+                    ))}
+                  </Box>
+                </Box>
+                <Diagram
+                  connections={[
+                    {
+                      fromId: '1',
+                      toId: '2',
+                      color: 'accent-1',
+                      thickness: 'xsmall',
+                      round: true,
+                    },
+                    {
+                      fromId: '1',
+                      toId: '4',
+                      color: 'accent-1',
+                      thickness: 'xsmall',
+                      round: true,
+                    },
+                  ]}
+                />
+              </Stack>
+            </Item>
+            <Item name='WorldMap' path='/worldmap' center={true}>
+              <WorldMap color='brand' />
             </Item>
           </Section>
 

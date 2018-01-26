@@ -3046,7 +3046,7 @@ grommet-icons@^0.14.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-alpha.6"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#bb0f4f6d0fc9c610bb4e43b9cf9680b4809a7d8e"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#f2bb1232c26354b90da3711f5488f44dd08a08f3"
   dependencies:
     date-time-format-timezone "^1.0.21-alpha.2"
     grommet-icons "^0.10.0"
@@ -6278,8 +6278,8 @@ supports-color@^5.1.0:
     has-flag "^2.0.0"
 
 symbol-observable@^1.0.4:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.1.0.tgz#5c68fd8d54115d9dfb72a84720549222e8db9b32"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
 symbol-tree@^3.2.1:
   version "3.2.2"

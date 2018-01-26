@@ -20,6 +20,11 @@ export default () => (
           </Box>
         </Box>
       ),
+      animation: (
+        <Box align='end'>
+          <Box animation='pulse' pad='medium' background='light-3' />
+        </Box>
+      ),
       background: (
         <Box background='brand' pad='medium' />
       ),
