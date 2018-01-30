@@ -22,6 +22,9 @@ export default class Start extends Component {
               <Paragraph size='large'>
                 Grommet is delivered as an npm package.
               </Paragraph>
+              <Paragraph size='large'>
+                <strong>TBD</strong>
+              </Paragraph>
             </Box>
           </Box>
         </Box>
