@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Anchor, Box, Button, Chart, CheckBox, Clock, Diagram, DropButton,
+  Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, Diagram, DropButton,
   Heading, Image,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
   RoutedButton, Select, Stack, Text, TextArea, TextInput, Video, WorldMap,
@@ -52,6 +52,7 @@ const Item = ({ name, path, children, center }) => (
           justify={center ? 'center' : undefined}
           align={center ? 'center' : undefined}
           pad={center ? 'medium' : undefined}
+          style={{ overflow: 'hidden' }}
         >
           {children}
         </Box>
@@ -283,6 +284,11 @@ export default class Components extends Component {
             </Item>
             <Item name='WorldMap' path='/worldmap' center={true}>
               <WorldMap color='brand' />
+            </Item>
+            <Item name='Calendar' path='/calendar'>
+              <Box align='center' margin={{ top: 'xsmall' }}>
+                <Calendar size='small' />
+              </Box>
             </Item>
           </Section>
 

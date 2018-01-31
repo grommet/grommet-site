@@ -3032,25 +3032,26 @@ grommet-cli@^5.1.2:
     webpack-dev-server "^2.6.1"
     yargs "^8.0.2"
 
-grommet-icons@^0.10.0:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.1.tgz#495ac86b8b1d96792d21189b572c4168ddbd049a"
-  dependencies:
-    deep-assign "^2.0.0"
-
 grommet-icons@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.14.0.tgz#d426da188f48a11ea7486e024f5d584dbfb0471b"
   dependencies:
     deep-assign "^2.0.0"
 
+grommet-icons@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.15.0.tgz#bbcb7500437a419ad725d23a2c9609208914943d"
+  dependencies:
+    deep-assign "^2.0.0"
+
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
-  version "2.0.0-alpha.6"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#e0d0035edb4001b77f1ea8ccbb8a8a469245231b"
+  version "2.0.0-alpha.7"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#6b1578c2fb36b657855fc5c9281e5d1804ebc8bb"
   dependencies:
     date-time-format-timezone "^1.0.21-alpha.2"
-    grommet-icons "^0.10.0"
+    grommet-icons "^0.15.0"
     markdown-to-jsx "^5.4.2"
+    moment "^2.20.1"
     node-emoji "^1.8.1"
     polished "^1.3.0"
     prop-types "^15.5.10"
@@ -4532,6 +4533,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
+moment@^2.20.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -5278,8 +5283,8 @@ raw-body@2.3.2:
     unpipe "1.0.0"
 
 rc@^1.1.7:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.4.tgz#a0f606caae2a3b862bbd0ef85482c0125b315fa3"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.5.tgz#275cd687f6e3b36cc756baa26dfee80a790301fd"
   dependencies:
     deep-extend "~0.4.0"
     ini "~1.3.0"

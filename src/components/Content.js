@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Anchor from '../screens/Anchor';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
+import Calendar from '../screens/Calendar';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
 import Clock from '../screens/Clock';
@@ -48,6 +49,7 @@ export default () => (
     <Route exact={true} path='/anchor' component={Anchor} />
     <Route exact={true} path='/box' component={Box} />
     <Route exact={true} path='/button' component={Button} />
+    <Route exact={true} path='/calendar' component={Calendar} />
     <Route exact={true} path='/chart' component={Chart} />
     <Route exact={true} path='/checkbox' component={CheckBox} />
     <Route exact={true} path='/clock' component={Clock} />
