@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Box, Select, Text } from 'grommet';
+import { Box, Heading, Select, Text } from 'grommet';
 import { Amex, Mastercard, Visa } from 'grommet-icons';
 import doc from 'grommet/components/Select/doc';
 
@@ -89,8 +89,9 @@ export default class SelectDoc extends Component {
     airlines: allAirlines,
     creditCard: undefined,
     openAirlineDrop: false,
-    size: '',
+    size: stringOptions[0],
   }
+
   filterAirlines = query => (
     this.setState({
       airlines: allAirlines.filter(
@@ -99,22 +100,40 @@ export default class SelectDoc extends Component {
       openAirlineDrop: true,
     })
   )
+
   render() {
     const { airline, airlines, creditCard, openAirlineDrop, size } = this.state;
     return (
-      <Doc name='Select' desc={desc}>
-        <Box pad='large'>
-          <Box direction='row'>
-            <Box basis='small'>
-              <Select
-                a11yTitle='Open Size Select'
-                placeholder='Select Size'
-                options={stringOptions}
-                value={size}
-                onChange={({ option }) => this.setState({ size: option })}
-              />
-            </Box>
-          </Box>
+      <Doc
+        name='Select'
+        desc={desc}
+        examples={{
+          placeholder: (
+            <Select
+              placeholder='Choose one'
+              options={stringOptions}
+              onChange={({ option }) => this.setState({ size: option })}
+            />
+          ),
+          plain: (
+            <Select
+              plain={true}
+              options={stringOptions}
+              value={size}
+              onChange={({ option }) => this.setState({ size: option })}
+            />
+          ),
+          value: (
+            <Select
+              options={stringOptions}
+              value={size}
+              onChange={({ option }) => this.setState({ size: option })}
+            />
+          ),
+        }}
+      >
+        <Box pad={{ horizontal: 'large', bottom: 'xlarge' }}>
+          <Heading level={2} margin={{ top: 'none' }}><strong>Examples</strong></Heading>
           <Box direction='row'>
             <Box direction='row' basis='medium' margin={{ top: 'small' }}>
               <Select

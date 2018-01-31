@@ -51,42 +51,36 @@ export default class LayerDoc extends Component {
             <Box pad={{ vertical: 'medium' }}>
               <TextInput />
             </Box>
+            <Button type='submit' label='Submit' primary={true} />
           </Box>
         </Layer>
       );
     }
     return (
-      <Doc name='Layer' desc={desc}>
-        <Box pad='large' align='start'>
-          <Box margin='small'>
-            <Button
-              label='Confirm center'
-              onClick={() => this.setState({ showConfirmLayer: true, position: undefined })}
-              primary={true}
-            />
-          </Box>
-          <Box margin='small'>
-            <Button
-              label='Confirm top'
-              onClick={() => this.setState({ showConfirmLayer: true, position: 'top' })}
-              primary={true}
-            />
-          </Box>
-          <Box margin='small'>
-            <Button
-              label='Form left'
-              onClick={() => this.setState({ showFormLayer: true, position: 'left' })}
-            />
-          </Box>
-          <Box margin='small'>
-            <Button
-              label='Form right'
-              onClick={() => this.setState({ showFormLayer: true, position: 'right' })}
-            />
-          </Box>
-        </Box>
-        {layerNode}
-      </Doc>
+      <Doc
+        name='Layer'
+        desc={desc}
+        examples={{
+          position: (
+            <Box>
+              <Box margin='small'>
+                <Button
+                  label='Confirm top'
+                  onClick={() => this.setState({ showConfirmLayer: true, position: 'top' })}
+                  primary={true}
+                />
+              </Box>
+              <Box margin='small'>
+                <Button
+                  label='Form right'
+                  onClick={() => this.setState({ showFormLayer: true, position: 'right' })}
+                />
+              </Box>
+              {layerNode}
+            </Box>
+          ),
+        }}
+      />
     );
   }
 }

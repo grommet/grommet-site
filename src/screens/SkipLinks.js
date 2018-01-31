@@ -9,7 +9,8 @@ const desc = doc(SkipLinks).toJSON();
 
 export default () => (
   <Doc name='SkipLinks' desc={desc}>
-    <Box pad='large'>
+    <Box basis='large' pad={{ horizontal: 'large', bottom: 'xlarge' }} align='start'>
+      <Heading level={2} margin={{ top: 'none' }}><strong>Examples</strong></Heading>
       <SkipLinks>
         <SkipLink id='main' label='Main Content' />
         <SkipLink id='footer' label='Footer' />
@@ -17,12 +18,12 @@ export default () => (
       <Button onClick={() => {}} label='Test1' />
       <Box>
         <SkipLinkTarget id='main' />
-        <Heading>Main Content</Heading>
+        <Heading level={3}>Main Content</Heading>
         <Button onClick={() => {}} label='Test2' />
       </Box>
       <Box tag='footer'>
         <SkipLinkTarget id='footer' />
-        <Heading>Footer</Heading>
+        <Heading level={3}>Footer</Heading>
         <Button onClick={() => {}} label='Test3' />
       </Box>
     </Box>

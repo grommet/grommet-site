@@ -1,67 +1,99 @@
 import React, { Component } from 'react';
-import { Box, Button, Responsive } from 'grommet';
-import { LinkPrevious } from 'grommet-icons';
-
-import Props from './Props';
+import PropTypes from 'prop-types';
+import { Box, Heading, Paragraph, Text } from 'grommet';
+import Nav from '../components/Nav';
 
 export default class Doc extends Component {
-  state = {
-    responsiveState: 'wide',
-    showExamples: false,
+  componentWillMount() {
+    const { onColorChange } = this.context;
+    onColorChange(['#FFF5CC', '#FFEDED']);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  onResponsiveChange = (responsiveState) => {
-    this.setState({ responsiveState });
-  }
-
   render() {
-    const { children, ...rest } = this.props;
-    const { responsiveState, showExamples } = this.state;
-
-    let props;
-    if (responsiveState !== 'narrow' || !showExamples) {
-      props = (
-        <Props
-          {...rest}
-          responsiveState={responsiveState}
-          onExamples={responsiveState === 'narrow' ?
-            () => this.setState({ showExamples: true }) : undefined}
-        />
-      );
-    }
-
-    let examples;
-    if (responsiveState !== 'narrow' || showExamples) {
-      let closeControl;
-      if (responsiveState === 'narrow') {
-        closeControl = (
-          <Box direction='row' justify='start' pad={{ horizontal: 'small' }}>
-            <Button
-              icon={<LinkPrevious />}
-              onClick={() => this.setState({ showExamples: false })}
-            />
-          </Box>
-        );
-      }
-      examples = (
-        <Box flex='grow' direction='column' animation='fadeIn'>
-          {closeControl}
-          {children}
-        </Box>
-      );
-    }
-
+    const { children, desc, name, example, examples, text } = this.props;
     return (
-      <Responsive onChange={this.onResponsiveChange}>
-        <Box direction='row' full='grow'>
-          {props}
-          {examples}
+      <Box>
+        <Box pad={{ horizontal: 'large', top: 'large' }}>
+          <Nav top={false} />
+          <Box direction='row' responsive={true}>
+            <Box margin={{ vertical: 'large' }} basis='large'>
+              <Heading level={1}>
+                <strong>{name}</strong>
+              </Heading>
+              {desc ? (
+                <Paragraph size='large'>
+                  {desc.description}
+                </Paragraph>
+              ) : null}
+              {text ? (
+                <Paragraph size='large'>
+                  {text}
+                </Paragraph>
+              ) : null}
+            </Box>
+            <Box flex={true} pad={{ vertical: 'large' }}>
+              {example}
+            </Box>
+          </Box>
         </Box>
-      </Responsive>
+
+        {desc ? (
+          <Box pad={{ horizontal: 'large', bottom: 'large' }}>
+            <Box pad='large' round='large' background='light-1'>
+              {(desc.properties || []).map(property => (
+                <Box
+                  key={property.name}
+                  direction='row'
+                  responsive={true}
+                  justify='between'
+                  align='start'
+                  border='bottom'
+                >
+                  <Box basis='1/2' margin={{ right: 'large' }}>
+                    <Heading level={3} size='small'>
+                      <strong>{property.name}</strong>
+                    </Heading>
+                    <Paragraph>{property.description}</Paragraph>
+                  </Box>
+                  <Box flex={true} align='start'>
+                    <Text><pre>{property.format}</pre></Text>
+                  </Box>
+                  {examples[property.name] ? (
+                    <Box flex={true} align='end' margin={{ vertical: 'medium' }}>
+                      {examples[property.name] || null}
+                    </Box>
+                  ) : null}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        ) : null}
+
+        {children}
+      </Box>
     );
   }
 }
+
+Doc.propTypes = {
+  desc: PropTypes.object,
+  example: PropTypes.node,
+  examples: PropTypes.object,
+  name: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
+
+Doc.defaultProps = {
+  desc: undefined,
+  example: null,
+  examples: {},
+  text: undefined,
+};
+
+Doc.contextTypes = {
+  onColorChange: PropTypes.func,
+};

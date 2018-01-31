@@ -10,17 +10,20 @@ const desc = doc(Image).toJSON();
 const SRC = '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg';
 
 export default () => (
-  <Doc name='Image' desc={desc}>
-    <Box pad='large'>
-      <Box border='all' align='center'>
-        <Image src={SRC} />
-      </Box>
-      <Box basis='small' border='all'>
-        <Image fit='contain' src={SRC} />
-      </Box>
-      <Box basis='medium' border='all'>
-        <Image fit='cover' src={SRC} />
-      </Box>
-    </Box>
-  </Doc>
+  <Doc
+    name='Image'
+    desc={desc}
+    examples={{
+      fit: (
+        <Box>
+          <Box basis='small' border='all' margin={{ bottom: 'xsmall' }}>
+            <Image fit='contain' src={SRC} />
+          </Box>
+          <Box basis='small' border='all' margin={{ bottom: 'xsmall' }}>
+            <Image fit='cover' src={SRC} />
+          </Box>
+        </Box>
+      ),
+    }}
+  />
 );

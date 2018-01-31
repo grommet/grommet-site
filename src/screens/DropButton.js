@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Box, DropButton } from 'grommet';
+import { Box, DropButton, Heading } from 'grommet';
 import doc from 'grommet/components/DropButton/doc';
 
 import Doc from '../components/Doc';
@@ -13,7 +13,8 @@ export default class DropButtonDoc extends Component {
   render() {
     return (
       <Doc name='DropButton' desc={desc}>
-        <Box pad='large'>
+        <Box basis='large' pad={{ horizontal: 'large', bottom: 'xlarge' }}>
+          <Heading level={2} margin={{ top: 'none' }}><strong>Examples</strong></Heading>
           <Box direction='row'>
             <AirlineMultiSelect />
           </Box>

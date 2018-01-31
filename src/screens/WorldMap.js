@@ -1,0 +1,46 @@
+import React, { Component } from 'react';
+
+import { Box, WorldMap } from 'grommet';
+import doc from 'grommet/components/WorldMap/doc';
+
+import Doc from '../components/Doc';
+
+const desc = doc(WorldMap).toJSON();
+
+class WorldMapDoc extends Component {
+  render() {
+    return (
+      <Doc
+        name='WorldMap'
+        desc={desc}
+        examples={{
+        }}
+      >
+        <Box pad='large'>
+          <WorldMap
+            color='neutral-1'
+            continents={[
+              {
+                name: 'Africa',
+                color: 'accent-1',
+                onClick: name => alert(name),
+              },
+            ]}
+            onSelectPlaceX={(lat, lon) => alert(lat, lon)}
+            places={[
+              {
+                name: 'Sydney',
+                location: [-33.8830555556, 151.216666667],
+                color: 'accent-2',
+                onClick: name => alert(name),
+              },
+            ]}
+            selectColor='accent-2'
+          />
+        </Box>
+      </Doc>
+    );
+  }
+}
+
+export default WorldMapDoc;

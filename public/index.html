@@ -12,9 +12,6 @@
   <link rel="apple-touch-icon" sizes="196x196" type="image/png" href="/img/mobile-app-icon.png">
   <style>
     body { margin: 0 }
-    body.loading {margin: 0px; width: 100vw; height: 100vh;
-      background-image: radial-gradient(circle at 50% 15%, #fff, #fff 30%, #ccc);
-    }
     body.loading #content {
       position: relative;
       width: 100%;
@@ -53,14 +50,14 @@
   </style>
 </head>
 <body class="loading">
-  <div id="root" tabindex="-1" style="outline: none;">
+  <div id="content" tabindex="-1" style="outline: none;">
     <svg id="logo" viewBox="0 0 182 182" version="1.1" role="img">
       <path role="presentation"
         d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
         stroke-width="18" stroke="#865CD6" fill="none"></path>
     </svg>
     <script>
-    var c = document.getElementById("root");
+    var c = document.getElementById("content");
     for (var i = 0; i < 100; i += 1) {
       c.insertAdjacentHTML('beforeend', '<div class="t off"></div>');
     }

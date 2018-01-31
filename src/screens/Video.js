@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Box, Button, Heading, Stack, Video } from 'grommet';
-import { PlayFill as Play, Revert, Share } from 'grommet-icons';
+import { Box, Video } from 'grommet';
 import doc from 'grommet/components/Video/doc';
 
 import Doc from '../components/Doc';
@@ -30,101 +29,33 @@ const CONTENT2 = [...CONTENT,
   />,
 ];
 
-class Stacked extends Component {
-  constructor() {
-    super();
-    this.state = { state: 'before' };
-  }
-  render() {
-    const { state } = this.state;
-    let over;
-    if (state === 'before') {
-      over = (
-        <Box justify='center' align='center'>
-          <Button onClick={() => this.setState({ state: 'during' })}>
-            <Box
-              pad='large'
-              round='medium'
-              background={{ color: 'light-4', opacity: 'weak' }}
-            >
-              <Play size='large' color='brand' />
-            </Box>
-          </Button>
-        </Box>
-      );
-    } else if (state === 'after') {
-      over = (
-        <Box direction='row' justify='center' align='center'>
-          <Button onClick={() => this.setState({ state: 'during' })}>
-            <Box
-              margin='small'
-              pad='medium'
-              round='medium'
-              background={{ color: 'light-4', opacity: 'weak' }}
-            >
-              <Revert size='large' />
-            </Box>
-          </Button>
-          <Button onClick={() => {}}>
-            <Box
-              margin='small'
-              pad='medium'
-              round='medium'
-              background={{ color: 'light-4', opacity: 'weak' }}
-            >
-              <Share size='large' color='brand' />
-            </Box>
-          </Button>
-        </Box>
-      );
-    }
-
-    return (
-      <Stack>
-        <Video
-          controls={state === 'during' ? 'over' : false}
-          autoPlay={state === 'during'}
-          onEnded={() => this.setState({ state: 'after' })}
-        >
-          {CONTENT}
-        </Video>
-        {over}
-      </Stack>
-    );
-  }
-}
-
 export default () => (
-  <Doc name='Video' desc={desc}>
-    <Box pad='large'>
-      <Heading level={2} textAlign='center'>Controls below</Heading>
-      <Box align='center' margin={{ vertical: 'medium' }}>
-        <Video controls='below'>
-          {CONTENT}
-        </Video>
-      </Box>
-      <Heading level={2} textAlign='center'>Controls over</Heading>
-      <Box align='center' margin={{ vertical: 'medium' }}>
-        <Video controls='over'>
-          {CONTENT2}
-        </Video>
-      </Box>
-      <Heading level={2} textAlign='center'>Fit contain</Heading>
-      <Box align='center' margin={{ vertical: 'medium' }} basis='medium'>
-        <Video controls='over' fit='contain'>
-          {CONTENT}
-        </Video>
-      </Box>
-      <Heading level={2} textAlign='center'>Fit cover, autoplay, loop, mute, no controls</Heading>
-      <Box margin={{ vertical: 'medium' }} basis='medium'>
-        <Video fit='cover' controls={false} autoPlay={true} loop={true} mute={true}>
-          {CONTENT}
-        </Video>
-      </Box>
-      <Heading level={2} textAlign='center'>Before and after content with Stack</Heading>
-      <Box align='center' margin={{ vertical: 'medium' }}>
-        <Stacked />
-      </Box>
-    </Box>
-  </Doc>
+  <Doc
+    name='Video'
+    desc={desc}
+    examples={{
+      controls: (
+        <Box>
+          {[false, 'over', 'below'].map(controls => (
+            <Box key={controls} basis='small' margin={{ bottom: 'xsmall' }}>
+              <Video controls={controls} fit='cover'>
+                {CONTENT2}
+              </Video>
+            </Box>
+          ))}
+        </Box>
+      ),
+      fit: (
+        <Box>
+          {['contain', 'cover'].map(fit => (
+            <Box key={fit} basis='small' border='all' margin={{ bottom: 'xsmall' }}>
+              <Video controls='over' fit={fit}>
+                {CONTENT}
+              </Video>
+            </Box>
+          ))}
+        </Box>
+      ),
+    }}
+  />
 );
