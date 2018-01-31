@@ -53,20 +53,28 @@ export default class Home extends Component {
               <Box
                 style={{
                   position: 'relative',
-                  bottom: '-24px',
-                  animationTimingFunction: 'ease-out',
+                  bottom: '-12px',
                 }}
                 animation={[
                   { type: 'fadeIn', delay: 200 },
-                  { type: 'slideUp', delay: 300, size: 'xlarge' },
-                  { type: 'jiggle', size: 'small', duration: 2000 },
+                  { type: 'slideUp', size: 'xlarge', delay: 300 },
                 ]}
               >
-                <Image
-                  style={{ objectPosition: '50% 100%' }}
-                  src='img/Stak.svg'
-                  fit='contain'
-                />
+                <Box
+                  style={{
+                    animationTimingFunction: 'ease-out',
+                    transformOrigin: '70% 100%',
+                  }}
+                  animation={
+                    { type: 'jiggle', size: 'small', delay: 1000, duration: 2000 }
+                  }
+                >
+                  <Image
+                    style={{ objectPosition: '50% 100%' }}
+                    src='img/Stak.svg'
+                    fit='contain'
+                  />
+                </Box>
               </Box>
             </Box>
           </Box>
