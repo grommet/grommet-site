@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import { Calendar } from 'grommet';
+import { Box, Calendar } from 'grommet';
 import doc from 'grommet/components/Calendar/doc';
 
 import Doc from '../components/Doc';
@@ -18,14 +18,16 @@ export default class extends Component {
         name='Calendar'
         desc={desc}
         example={
-          <Calendar
-            bounds={[
-              moment().subtract(2, 'months').startOf('month').toISOString(),
-              moment().add(2, 'months').endOf('month').toISOString(),
-            ]}
-            date={date}
-            onSelect={nextDate => this.setState({ date: nextDate })}
-          />
+          <Box align='center'>
+            <Calendar
+              bounds={[
+                moment().subtract(2, 'months').startOf('month').toISOString(),
+                moment().add(2, 'months').endOf('month').toISOString(),
+              ]}
+              date={date}
+              onSelect={nextDate => this.setState({ date: nextDate })}
+            />
+          </Box>
         }
       />
     );
