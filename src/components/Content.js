@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import About from '../screens/About';
 import Anchor from '../screens/Anchor';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
@@ -10,6 +11,7 @@ import CheckBox from '../screens/CheckBox';
 import Clock from '../screens/Clock';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import Contribute from '../screens/Contribute';
 import Diagram from '../screens/Diagram';
 import DropButton from '../screens/DropButton';
 import Examples from '../screens/Examples';
@@ -20,6 +22,7 @@ import Heading from '../screens/Heading';
 import Home from '../screens/Home';
 import Image from '../screens/Image';
 import Layer from '../screens/Layer';
+import License from '../screens/License';
 import Markdown from '../screens/Markdown';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
@@ -42,10 +45,16 @@ import WorldMap from '../screens/WorldMap';
 export default () => (
   <Switch>
     <Route exact={true} path='/' component={Home} />
+
     <Route exact={true} path='/examples' component={Examples} />
     <Route exact={true} path='/start' component={Start} />
     <Route exact={true} path='/components' component={Components} />
     <Route exact={true} path='/feed' component={Feed} />
+
+    <Route exact={true} path='/about' component={About} />
+    <Route exact={true} path='/contribute' component={Contribute} />
+    <Route exact={true} path='/license' component={License} />
+
     <Route exact={true} path='/anchor' component={Anchor} />
     <Route exact={true} path='/box' component={Box} />
     <Route exact={true} path='/button' component={Button} />
