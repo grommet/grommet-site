@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading, Paragraph, Text } from 'grommet';
+import { Box, Button, Heading, Paragraph, Text } from 'grommet';
 import Nav from '../components/Nav';
 
 export default class Doc extends Component {
@@ -20,7 +20,7 @@ export default class Doc extends Component {
         <Box pad={{ horizontal: 'large', top: 'large' }}>
           <Nav top={false} />
           <Box direction='row' responsive={true}>
-            <Box margin={{ vertical: 'large' }} basis='large'>
+            <Box margin={{ vertical: 'large' }} basis='large' align='start'>
               <Heading level={1}>
                 <strong>{name}</strong>
               </Heading>
@@ -33,6 +33,11 @@ export default class Doc extends Component {
                 <Paragraph size='large'>
                   {text}
                 </Paragraph>
+              ) : null}
+              {(desc && desc.availableAt) ? (
+                <Button href={desc.availableAt.url} target='_blank' >
+                  <img alt='Example badge' src={desc.availableAt.badge} />
+                </Button>
               ) : null}
             </Box>
             <Box flex={true} pad={{ vertical: 'large' }}>
