@@ -90,13 +90,11 @@ export default class SelectionDoc extends Component {
   renderImages() {
     const { images } = this.state;
     return (
-      images.map(
-        (img, index) => (
-          <Button key={`image_${index}`} onClick={() => this.setState({ image: img })}>
-            {renderImage(img)}
-          </Button>
-        )
-      )
+      images.map((img, index) => (
+        <Button key={`image_${index}`} onClick={() => this.setState({ image: img })}>
+          {renderImage(img)}
+        </Button>
+      ))
     );
   }
 
@@ -115,7 +113,9 @@ export default class SelectionDoc extends Component {
   }
 
   render() {
-    const { images, image, selectMode, selectedImages } = this.state;
+    const {
+      images, image, selectMode, selectedImages,
+    } = this.state;
     let imageLayer;
     if (image) {
       const closeLayer = () => this.setState({ image: undefined });

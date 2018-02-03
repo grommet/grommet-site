@@ -14,7 +14,9 @@ export default class Doc extends Component {
   }
 
   render() {
-    const { children, desc, name, example, examples, text } = this.props;
+    const {
+      children, desc, name, example, examples, text,
+    } = this.props;
     return (
       <Box>
         <Box pad={{ horizontal: 'large', top: 'large' }}>

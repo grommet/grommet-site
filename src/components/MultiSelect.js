@@ -16,7 +16,6 @@ function debounce(cb, timer) {
 
 export default class MultiSelect extends Component {
   static defaultProps = {
-    basis: undefined,
     children: undefined,
     search: '',
     onClose: undefined,
@@ -60,9 +59,10 @@ export default class MultiSelect extends Component {
   }
 
   onInput = (event) => {
-    this.setState(
-      { search: event.target.value, activeItemIndex: -1 }, () => this.onSearch(this.state.search)
-    );
+    this.setState({
+      search: event.target.value,
+      activeItemIndex: -1,
+    }, () => this.onSearch(this.state.search));
   }
 
   onSearch = debounce(search => this.props.onSearch(search), 150)

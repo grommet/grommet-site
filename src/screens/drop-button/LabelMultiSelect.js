@@ -22,84 +22,76 @@ export default class LabelMultiSelect extends Component {
     available: labels,
   }
 
-  close = () => this.setState(
-    {
-      open: false,
-      available: labels.filter(value => this.state.selected.indexOf(value) === -1),
-    }
-  );
+  close = () => this.setState({
+    open: false,
+    available: labels.filter(value => this.state.selected.indexOf(value) === -1),
+  });
 
   select = (label) => {
     const newSelected = [...this.state.selected];
     newSelected.push(label);
-    this.setState(
-      {
-        animation: {
-          ...this.state.animation,
-          [newSelected.length - 1]: {
-            type: 'fadeIn',
-            duration: 400,
-          },
+    this.setState({
+      animation: {
+        ...this.state.animation,
+        [newSelected.length - 1]: {
+          type: 'fadeIn',
+          duration: 400,
         },
-        open: false,
-        selected: newSelected,
-        available: labels.filter(value => newSelected.indexOf(value) === -1),
-      }
-    );
+      },
+      open: false,
+      selected: newSelected,
+      available: labels.filter(value => newSelected.indexOf(value) === -1),
+    });
   }
 
   remove = (index) => {
-    this.setState(
-      {
-        animation: {
-          ...this.state.animation,
-          [index]: {
-            type: 'fadeOut',
-            duration: 200,
-          },
+    this.setState({
+      animation: {
+        ...this.state.animation,
+        [index]: {
+          type: 'fadeOut',
+          duration: 200,
         },
-        open: false,
-      }, () => {
-        const newSelected = [...this.state.selected];
-        newSelected.splice(index, 1);
-        setTimeout(() => {
-          this.setState({
-            animation: {
-              ...this.state.animation,
-              [index]: undefined,
-            },
-            available: labels.filter(value => newSelected.indexOf(value) === -1),
-            selected: newSelected,
-          });
-        }, 200);
-      }
-    );
+      },
+      open: false,
+    }, () => {
+      const newSelected = [...this.state.selected];
+      newSelected.splice(index, 1);
+      setTimeout(() => {
+        this.setState({
+          animation: {
+            ...this.state.animation,
+            [index]: undefined,
+          },
+          available: labels.filter(value => newSelected.indexOf(value) === -1),
+          selected: newSelected,
+        });
+      }, 200);
+    });
   }
 
   reset = (event) => {
     event.preventDefault();
-    this.setState(
-      {
-        animation: {
-          ...this.state.animation,
-          all: {
-            type: 'fadeOut',
-            duration: 200,
-          },
+    this.setState({
+      animation: {
+        ...this.state.animation,
+        all: {
+          type: 'fadeOut',
+          duration: 200,
         },
-        available: labels,
-      }, () => {
-        setTimeout(() => {
-          this.setState({
-            animation: {
-              ...this.state.animation,
-              all: undefined,
-            },
-            selected: [],
-          });
-        }, 200);
-      }
-    );
+      },
+      available: labels,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          animation: {
+            ...this.state.animation,
+            all: undefined,
+          },
+          selected: [],
+        });
+      }, 200);
+    });
   }
 
   render() {

@@ -37,7 +37,9 @@ const Section = ({ children, index, name }) => (
   </Box>
 );
 
-const Item = ({ name, path, children, center }) => (
+const Item = ({
+  name, path, children, center,
+}) => (
   <Box basis='medium' margin={{ right: 'medium', bottom: 'medium' }}>
     <RoutedButton path={path}>
       <Box>
@@ -133,9 +135,11 @@ export default class Components extends Component {
               </code>
             </Item>
             <Item name='Paragraph' path='/paragraph' center={true}>
-              <Paragraph>OASIS was much more than a game or an entertainment
+              <Paragraph>
+                OASIS was much more than a game or an entertainment
                 platform. {"It's"} a new way of life. People stay connected to it
-                for the majority of a day...</Paragraph>
+                for the majority of a day...
+              </Paragraph>
             </Item>
             <Item name='Text' path='/text' center={true}>
               <Text>Hello there!</Text>

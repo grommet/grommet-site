@@ -8,7 +8,9 @@ import Form from 'react-formify';
 
 import Doc from '../components/Doc';
 
-const Field = ({ children, error, label, help, ...rest }) => {
+const Field = ({
+  children, error, label, help, ...rest
+}) => {
   let header;
   if (label || help || error) {
     header = (
@@ -100,12 +102,13 @@ const userRules = (user) => {
 
 export default class FormDoc extends Component {
   render() {
+    const text = `Grommet 2.0 does not provide Form or FormField components.
+      Instead, we have a reference on how to build a form
+      using the basic Box, Text, and control components.`;
     return (
       <Doc
         name='Form'
-        text={`Grommet 2.0 does not provide Form or FormField components.
-          Instead, we have a reference on how to build a form
-          using the basic Box, Text, and control components.`}
+        text={text}
       >
         <Box direction='row' justify='center'>
           <Box basis='medium' margin={{ bottom: 'large' }}>

@@ -20,7 +20,7 @@ let alias;
 const devConfig = {};
 if (env === 'production') {
   loaderOptionsConfig.minimize = true;
-  plugins.push(
+  plugins.push((
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -42,7 +42,7 @@ if (env === 'production') {
         screw_ie8: true,
       },
     })
-  );
+  ));
 } else {
   plugins = plugins.concat([
     new webpack.HotModuleReplacementPlugin(),

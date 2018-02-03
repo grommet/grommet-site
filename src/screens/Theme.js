@@ -83,7 +83,9 @@ const colorsForMood = (color, mood) => {
   return result;
 };
 
-const Field = ({ children, error, focused, label, help }) => {
+const Field = ({
+  children, error, focused, label, help,
+}) => {
   let header;
   if (label || help || error) {
     header = (
@@ -152,7 +154,9 @@ export default class Theme extends Component {
   }
 
   onChangeColor = (event) => {
-    const { errors, key, mood, theme } = this.state;
+    const {
+      errors, key, mood, theme,
+    } = this.state;
     const color = event.target.value;
     const colors = colorsForMood(color, mood);
     if (colors) {
@@ -175,11 +179,15 @@ export default class Theme extends Component {
     this.setState({
       key: key + 1,
       loading: { ...loading, font: undefined },
-      theme: mergeDeep(theme, { global: { font: {
-        name,
-        family: `'${name}', Arial, sans-serif`,
-        face: undefined,
-      } } }),
+      theme: mergeDeep(theme, {
+        global: {
+          font: {
+            name,
+            family: `'${name}', Arial, sans-serif`,
+            face: undefined,
+          },
+        },
+      }),
     });
   };
 
@@ -228,8 +236,10 @@ export default class Theme extends Component {
     this.setState({
       key: key + 1,
       mood,
-      theme: mergeDeep(theme,
-        colorsForMood(theme.global.colors.brand, mood) || {}),
+      theme: mergeDeep(
+        theme,
+        colorsForMood(theme.global.colors.brand, mood) || {}
+      ),
     });
   }
 

@@ -11,9 +11,15 @@ const desc = doc(Select).toJSON();
 
 const stringOptions = ['small', 'medium', 'large', 'xlarge', 'huge'];
 const creditCardOptions = [
-  { type: 'visa', number: '4455', expires: '10/19', name: 'Paul Spencer' },
-  { type: 'mastercard', number: '0143', expires: '08/20', name: 'Paul T Spencer David Aguela' },
-  { type: 'amex', number: '8563', expires: '01/17', name: 'Paul S' },
+  {
+    type: 'visa', number: '4455', expires: '10/19', name: 'Paul Spencer',
+  },
+  {
+    type: 'mastercard', number: '0143', expires: '08/20', name: 'Paul T Spencer David Aguela',
+  },
+  {
+    type: 'amex', number: '8563', expires: '01/17', name: 'Paul S',
+  },
 ];
 
 const overflowStyle = {
@@ -94,15 +100,16 @@ export default class SelectDoc extends Component {
 
   filterAirlines = query => (
     this.setState({
-      airlines: allAirlines.filter(
-        airline => airline.toLowerCase().match(query.toLowerCase())
-      ),
+      airlines: allAirlines.filter(airline =>
+        airline.toLowerCase().match(query.toLowerCase())),
       openAirlineDrop: true,
     })
   )
 
   render() {
-    const { airline, airlines, creditCard, openAirlineDrop, size } = this.state;
+    const {
+      airline, airlines, creditCard, openAirlineDrop, size,
+    } = this.state;
     return (
       <Doc
         name='Select'

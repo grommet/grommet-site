@@ -66,9 +66,9 @@ export default class Home extends Component {
                       animationTimingFunction: 'ease-out',
                       transformOrigin: '70% 100%',
                     }}
-                    animation={
-                      { type: 'jiggle', size: 'small', delay: 1000, duration: 2000 }
-                    }
+                    animation={{
+                      type: 'jiggle', size: 'small', delay: 1000, duration: 2000,
+                    }}
                   >
                     <Image
                       style={{ objectPosition: '50% 100%' }}

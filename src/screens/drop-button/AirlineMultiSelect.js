@@ -20,16 +20,12 @@ export default class AirlineMultiSelect extends Component {
     })
   );
 
-  close = () => this.setState(
-    { open: false, available: this.get() }
-  );
+  close = () => this.setState({ open: false, available: this.get() });
 
   get = (selected = this.state.selected, query) => {
     let all = [...airlines];
     if (query) {
-      all = all.filter(
-        airline => airline.toLowerCase().match(query.toLowerCase())
-      );
+      all = all.filter(airline => airline.toLowerCase().match(query.toLowerCase()));
     }
     if (selected.length) {
       all = all.filter(value => selected.indexOf(value) === -1);
@@ -40,35 +36,29 @@ export default class AirlineMultiSelect extends Component {
   select = (airline) => {
     const newSelected = [...this.state.selected];
     newSelected.push(airline);
-    this.setState(
-      {
-        open: false,
-        selected: newSelected,
-        available: this.get(newSelected),
-      }
-    );
+    this.setState({
+      open: false,
+      selected: newSelected,
+      available: this.get(newSelected),
+    });
   }
 
   remove = (index) => {
     const newSelected = [...this.state.selected];
     newSelected.splice(index, 1);
-    this.setState(
-      {
-        open: false,
-        selected: newSelected,
-        available: this.get(newSelected),
-      }
-    );
+    this.setState({
+      open: false,
+      selected: newSelected,
+      available: this.get(newSelected),
+    });
   }
 
   reset = (event) => {
     event.preventDefault();
-    this.setState(
-      {
-        selected: [],
-        available: this.get([]),
-      }
-    );
+    this.setState({
+      selected: [],
+      available: this.get([]),
+    });
   }
 
   render() {
