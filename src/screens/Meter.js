@@ -43,7 +43,7 @@ export default class MeterDoc extends Component {
         examples={{
           background: (
             <Meter
-              background='light-4'
+              background={{ color: 'light-4', opacity: 'medium' }}
               size='small'
               values={SINGLE_VALUE}
               aria-label='rounded meter'
