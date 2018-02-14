@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Anchor } from 'grommet';
+import { Anchor, Box } from 'grommet';
 import doc from 'grommet/components/Anchor/doc';
 
 import { Edit } from 'grommet-icons';
@@ -13,6 +13,11 @@ export default () => (
   <Doc
     name='Anchor'
     desc={desc}
+    example={(
+      <Box flex={true} justify='center' align='center'>
+        <Anchor href='#' primary={true} label='For Example' />
+      </Box>
+    )}
     examples={{
       icon: <Anchor href='#' icon={<Edit />} />,
       label: <Anchor href='#' label='Edit' />,

@@ -33,6 +33,13 @@ export default () => (
   <Doc
     name='Video'
     desc={desc}
+    example={(
+      <Box pad='large'>
+        <Video controls='over' fit='cover'>
+          {CONTENT2}
+        </Video>
+      </Box>
+    )}
     examples={{
       controls: (
         <Box>

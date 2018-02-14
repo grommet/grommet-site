@@ -9,6 +9,13 @@ export default () => (
   <Doc
     name='Box'
     desc={desc}
+    example={(
+      <Box
+        flex={true}
+        border={{ color: 'brand', size: 'large' }}
+        pad='medium'
+      />
+    )}
     examples={{
       align: (
         <Box direction='row' align='end' border={true}>

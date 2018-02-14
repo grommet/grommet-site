@@ -214,6 +214,11 @@ export default class Components extends Component {
           </Section>
 
           <Section name='Visualizations' index={3}>
+            <Item name='Calendar' path='/calendar'>
+              <Box align='center' margin={{ top: 'xsmall' }}>
+                <Calendar size='small' />
+              </Box>
+            </Item>
             <Item name='Chart' path='/chart'>
               <Chart
                 aria-label='Chart example'
@@ -288,11 +293,6 @@ export default class Components extends Component {
             </Item>
             <Item name='WorldMap' path='/worldmap' center={true}>
               <WorldMap color='brand' />
-            </Item>
-            <Item name='Calendar' path='/calendar'>
-              <Box align='center' margin={{ top: 'xsmall' }}>
-                <Calendar size='small' />
-              </Box>
             </Item>
           </Section>
 
