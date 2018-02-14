@@ -13,6 +13,7 @@ import Color from '../screens/Color';
 import Components from '../screens/Components';
 import Contribute from '../screens/Contribute';
 import Diagram from '../screens/Diagram';
+import Drop from '../screens/Drop';
 import DropButton from '../screens/DropButton';
 import Examples from '../screens/Examples';
 import Feed from '../screens/Feed';
@@ -64,6 +65,7 @@ export default () => (
     <Route exact={true} path='/clock' component={Clock} />
     <Route exact={true} path='/color' component={Color} />
     <Route exact={true} path='/diagram' component={Diagram} />
+    <Route exact={true} path='/drop' component={Drop} />
     <Route exact={true} path='/dropbutton' component={DropButton} />
     <Route exact={true} path='/form' component={Form} />
     <Route exact={true} path='/grid' component={Grid} />

@@ -172,6 +172,15 @@ export default class Components extends Component {
             <Item name='Button' path='/button' center={true}>
               <Button label='Panic' primary={true} onClick={() => {}} />
             </Item>
+            <Item name='Drop' path='/drop' center={true}>
+              <Box pad='xsmall' border={true}>
+                <Box
+                  background='brand'
+                  margin='xsmall'
+                  pad={{ horizontal: 'medium', vertical: 'small' }}
+                />
+              </Box>
+            </Item>
             <Item name='DropButton' path='/dropbutton' center={true}>
               <Box>
                 <DropButton
@@ -182,8 +191,12 @@ export default class Components extends Component {
                     </Box>
                   )}
                 />
-                <Box pad='xsmall' border={true}>
-                  <Text>My custom content</Text>
+                <Box margin={{ top: 'xsmall' }} pad='xsmall' border={true}>
+                  <Box
+                    background='brand'
+                    margin='xsmall'
+                    pad={{ horizontal: 'medium', vertical: 'small' }}
+                  />
                 </Box>
               </Box>
             </Item>
