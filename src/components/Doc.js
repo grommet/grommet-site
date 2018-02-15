@@ -15,12 +15,12 @@ export default class Doc extends Component {
 
   render() {
     const {
-      children, desc, name, example, examples, text,
+      children, desc, name, nav, example, examples, text,
     } = this.props;
     return (
       <Box>
         <Box pad={{ horizontal: 'large', top: 'large' }}>
-          <Nav top={false} />
+          {nav ? <Nav top={false} /> : null}
           <Box direction='row' responsive={true}>
             <Box margin={{ vertical: 'large' }} basis='large' align='start'>
               <Heading level={1}>
@@ -91,6 +91,7 @@ Doc.propTypes = {
   example: PropTypes.node,
   examples: PropTypes.object,
   name: PropTypes.string.isRequired,
+  nav: PropTypes.bool,
   text: PropTypes.string,
 };
 
@@ -98,6 +99,7 @@ Doc.defaultProps = {
   desc: undefined,
   example: null,
   examples: {},
+  nav: true,
   text: undefined,
 };
 

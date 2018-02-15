@@ -227,8 +227,8 @@ are-we-there-yet@~1.1.2:
     readable-stream "^2.0.6"
 
 argparse@^1.0.7:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.9.tgz#73d83bc263f86e97f8cc4f6bae1b0e90a7d22c86"
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
   dependencies:
     sprintf-js "~1.0.2"
 
@@ -630,7 +630,7 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-grommet@^0.5.0:
+babel-plugin-grommet@^0.5.0, babel-plugin-grommet@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-grommet/-/babel-plugin-grommet-0.5.1.tgz#0cd704a1cb94782512e21f40da25d04b7b2569ab"
   dependencies:
@@ -2192,8 +2192,8 @@ enhanced-resolve@^3.4.0:
     tapable "^0.2.7"
 
 errno@^0.1.3, errno@^0.1.4:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.6.tgz#c386ce8a6283f14fc09563b71560908c9bf53026"
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/errno/-/errno-0.1.7.tgz#4684d71779ad39af177e3f007996f7c67c852618"
   dependencies:
     prr "~1.0.1"
 
@@ -3172,9 +3172,10 @@ grommet-icons@^0.15.0:
     deep-assign "^2.0.0"
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
-  version "2.0.0-alpha.7"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#42954ef9e400a647f21e71bfdf42ba05f5671398"
+  version "2.0.0-alpha.8"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#d166e96ce23331f94bfe57bf62a384a2e8516df2"
   dependencies:
+    babel-plugin-grommet "^0.5.1"
     date-time-format-timezone "^1.0.21-alpha.2"
     grommet-icons "^0.15.0"
     markdown-to-jsx "^5.4.2"
@@ -3346,8 +3347,8 @@ hoek@2.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
 hoek@4.x.x:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
 hoist-non-react-statics@^1.2.0:
   version "1.2.0"
@@ -6446,8 +6447,8 @@ stylis-rule-sheet@^0.0.7:
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.7.tgz#5c51dc879141a61821c2094ba91d2cbcf2469c6c"
 
 stylis@^3.0.0, stylis@^3.4.0:
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.4.8.tgz#94380babbcd4c75726215794ca985b38ec96d1a3"
+  version "3.4.9"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.4.9.tgz#2e1403c06264bde8dbf1eb8fd82b2cfd1c4b31cc"
 
 supports-color@^2.0.0:
   version "2.0.0"

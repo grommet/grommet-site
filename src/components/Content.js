@@ -36,6 +36,7 @@ import SkipLinks from '../screens/SkipLinks';
 import Stack from '../screens/Stack';
 import Start from '../screens/Start';
 import Tabs from '../screens/Tabs';
+import Table from '../screens/Table';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
@@ -82,6 +83,7 @@ export default () => (
     <Route exact={true} path='/photo-browser' component={PhotoBrowser} />
     <Route exact={true} path='/skiplinks' component={SkipLinks} />
     <Route exact={true} path='/stack' component={Stack} />
+    <Route exact={true} path='/table' component={Table} />
     <Route exact={true} path='/tabs' component={Tabs} />
     <Route exact={true} path='/text' component={Text} />
     <Route exact={true} path='/textarea' component={TextArea} />

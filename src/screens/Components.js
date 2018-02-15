@@ -4,7 +4,9 @@ import {
   Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, Diagram, DropButton,
   Heading, Image,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
-  RoutedButton, Select, Stack, Text, TextArea, TextInput, Video, WorldMap,
+  RoutedButton, Select, Stack,
+  Table, TableBody, TableCell, TableHeader, TableRow,
+  Text, TextArea, TextInput, Video, WorldMap,
 } from 'grommet';
 import { Actions } from 'grommet-icons';
 import Nav from '../components/Nav';
@@ -303,6 +305,26 @@ export default class Components extends Component {
                   ]}
                 />
               </Stack>
+            </Item>
+            <Item name='Table' path='/table' center={true}>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableCell scope='col' border='bottom'>Name</TableCell>
+                    <TableCell scope='col' border='bottom'>Flavor</TableCell>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell scope='row'><strong>Eric</strong></TableCell>
+                    <TableCell>Coconut</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell scope='row'><strong>Chris</strong></TableCell>
+                    <TableCell>Watermelon</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
             </Item>
             <Item name='WorldMap' path='/worldmap' center={true}>
               <WorldMap color='brand' />
