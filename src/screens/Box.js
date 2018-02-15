@@ -43,6 +43,16 @@ export default () => (
           <Box border={{ side: 'all', size: 'large' }} pad='medium' margin='xsmall' />
         </Box>
       ),
+      gap: (
+        <Box align='end'>
+          {['xsmall', 'small', 'medium', 'large'].map(gap => (
+            <Box key={gap} gap={gap} direction='row'>
+              <Box background='light-3'><Text>A</Text></Box>
+              <Box background='light-3'><Text>B</Text></Box>
+            </Box>
+          ))}
+        </Box>
+      ),
       justify: (
         <Box direction='row' justify='end' border={true}>
           <Box basis='xsmall' pad='xsmall' margin={{ left: 'small' }} background='light-2'>
