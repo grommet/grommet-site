@@ -1,9 +1,7 @@
 import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Box, Button, Stack,
-} from 'grommet';
+import { Box, Button, Stack } from 'grommet';
 
 import { FormCheckmark } from 'grommet-icons';
 

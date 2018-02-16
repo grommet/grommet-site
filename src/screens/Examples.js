@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Box, Button, Heading, Paragraph, RoutedButton, Text, TextInput,
-} from 'grommet';
+import { Box, Button, Heading, Paragraph, RoutedButton, Text, TextInput } from 'grommet';
 import Nav from '../components/Nav';
 
 export default class Examples extends Component {

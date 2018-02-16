@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import {
-  Anchor, Box, Button, Heading, Image, Layer, Text,
-} from 'grommet';
+import { Anchor, Box, Button, Heading, Image, Layer, Text } from 'grommet';
 
 import { Blank, Close, Trash } from 'grommet-icons';
 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Box, Heading, Image, Paragraph, RoutedAnchor, RoutedButton, Stack, Text,
-} from 'grommet';
+import { Box, Heading, Image, Paragraph, RoutedAnchor, RoutedButton, Stack, Text } from 'grommet';
 import { Favorite } from 'grommet-icons';
 import Nav from '../components/Nav';
 

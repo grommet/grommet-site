@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import {
-  Box, Button, CheckBox, Heading, Select, Text, TextInput,
-} from 'grommet';
+import { Box, Button, CheckBox, Heading, Select, Text, TextInput } from 'grommet';
 
 import Form from 'react-formify';
 

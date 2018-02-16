@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, Diagram, DropButton,
+  Anchor, Box, Button, Calendar, Chart, CheckBox, Clock,
+  Diagram, Distribution, DropButton,
   Heading, Image,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
   RoutedButton, Select, Stack,
@@ -305,6 +306,22 @@ export default class Components extends Component {
                   ]}
                 />
               </Stack>
+            </Item>
+            <Item name='Distribution' path='/distribution'>
+              <Distribution
+                values={[
+                  { value: 70, color: 'light-3' },
+                  { value: 50, color: 'light-3' },
+                  { value: 30, color: 'brand' },
+                  { value: 10, color: 'light-3' },
+                ]}
+              >
+                {value => (
+                  <Box pad='xsmall' background={value.color} fill={true}>
+                    <Text>{value.value}</Text>
+                  </Box>
+                )}
+              </Distribution>
             </Item>
             <Item name='Table' path='/table' center={true}>
               <Table>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from 'grommet';
+import { Box } from 'grommet';
 import doc from 'grommet/components/Box/doc';
 import Doc from '../components/Doc';
 
@@ -18,13 +18,19 @@ export default () => (
     )}
     examples={{
       align: (
-        <Box direction='row' align='end' border={true}>
-          <Box basis='xsmall' pad='xsmall' background='light-2'>
-            <Text>A B C</Text>
-          </Box>
-          <Box basis='xsmall' pad='xsmall' background='light-3'>
-            <Text>D</Text>
-          </Box>
+        <Box align='end'>
+          {['start', 'center', 'end'].map(align => (
+            <Box
+              key={align}
+              direction='row'
+              align={align}
+              border={{ color: 'brand' }}
+              margin='xsmall'
+            >
+              <Box pad='medium' background='light-2' />
+              <Box pad='small' background='light-3' />
+            </Box>
+          ))}
         </Box>
       ),
       animation: (
@@ -37,54 +43,118 @@ export default () => (
       ),
       border: (
         <Box align='end'>
-          <Box border={true} pad='medium' margin='xsmall' />
-          <Box border={{ side: 'all', size: 'small' }} pad='medium' margin='xsmall' />
-          <Box border={{ side: 'all', size: 'medium' }} pad='medium' margin='xsmall' />
-          <Box border={{ side: 'all', size: 'large' }} pad='medium' margin='xsmall' />
+          {['xsmall', 'small', 'medium', 'large'].map(size => (
+            <Box
+              key={size}
+              border={{ side: 'all', size, color: 'brand' }}
+              pad='medium'
+              margin='xsmall'
+            />
+          ))}
+        </Box>
+      ),
+      elevation: (
+        <Box align='end'>
+          {['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'].map(elevation => (
+            <Box
+              key={elevation}
+              elevation={elevation}
+              border={true}
+              pad='medium'
+              margin='xsmall'
+            />
+          ))}
         </Box>
       ),
       gap: (
         <Box align='end'>
           {['xsmall', 'small', 'medium', 'large'].map(gap => (
-            <Box key={gap} gap={gap} direction='row'>
-              <Box background='light-3'><Text>A</Text></Box>
-              <Box background='light-3'><Text>B</Text></Box>
+            <Box
+              key={gap}
+              gap={gap}
+              direction='row'
+              border={{ color: 'brand' }}
+              margin='xsmall'
+            >
+              <Box background='light-3' pad='small' />
+              <Box background='light-3' pad='small' />
             </Box>
           ))}
         </Box>
       ),
       justify: (
-        <Box direction='row' justify='end' border={true}>
-          <Box basis='xsmall' pad='xsmall' margin={{ left: 'small' }} background='light-2'>
-            <Text>A B C</Text>
-          </Box>
-          <Box basis='xsmall' pad='xsmall' background='light-3'>
-            <Text>D</Text>
-          </Box>
+        <Box fill={true}>
+          {['start', 'center', 'between', 'end'].map(justify => (
+            <Box
+              key={justify}
+              direction='row'
+              justify={justify}
+              border={{ color: 'brand' }}
+              margin='xsmall'
+            >
+              <Box pad='small' background='light-2' />
+              <Box pad='small' background='light-3' />
+            </Box>
+          ))}
         </Box>
       ),
       margin: (
-        <Box align='start' border={true} background='light-2'>
-          <Box margin='xsmall' background='light-3'><Text>A</Text></Box>
-          <Box margin='small' background='light-3'><Text>B</Text></Box>
-          <Box margin='medium' background='light-3'><Text>C</Text></Box>
-          <Box margin='large' background='light-3'><Text>D</Text></Box>
+        <Box align='start'>
+          {['none', 'xsmall', 'small', 'medium', 'large'].map(margin => (
+            <Box key={margin} border='bottom'>
+              <Box
+                margin={margin}
+                pad='small'
+                background='light-3'
+                border={{ color: 'brand' }}
+              />
+            </Box>
+          ))}
         </Box>
       ),
       pad: (
-        <Box align='start' border={true}>
-          <Box pad='xsmall' background='light-2'><Text>A</Text></Box>
-          <Box pad='small' background='light-3'><Text>B</Text></Box>
-          <Box pad='medium' background='light-2'><Text>C</Text></Box>
-          <Box pad='large' background='light-3'><Text>D</Text></Box>
+        <Box align='start'>
+          {['none', 'xsmall', 'small', 'medium', 'large'].map(pad => (
+            <Box
+              key={pad}
+              pad={pad}
+              background='light-2'
+              border={{ color: 'brand' }}
+              margin='xsmall'
+            >
+              <Box pad='small' background='light-3' />
+            </Box>
+          ))}
         </Box>
       ),
       round: (
         <Box align='start'>
-          <Box round='xsmall' pad='small' background='light-2'><Text>A</Text></Box>
-          <Box round='small' pad='small' background='light-3'><Text>B</Text></Box>
-          <Box round='medium' pad='small' background='light-2'><Text>C</Text></Box>
-          <Box round='large' pad='small' background='light-3'><Text>D</Text></Box>
+          {['xsmall', 'small', 'medium', 'large'].map(round => (
+            <Box
+              key={round}
+              round={round}
+              pad='medium'
+              border={{ color: 'brand' }}
+              margin='xsmall'
+            />
+          ))}
+        </Box>
+      ),
+      wrap: (
+        <Box fill={true} direction='row' justify='end'>
+          <Box
+            basis='xsmall'
+            align='end'
+            direction='row'
+            wrap={true}
+            border={{ color: 'brand' }}
+          >
+            <Box pad='small' margin='xsmall' background='light-2' />
+            <Box pad='small' margin='xsmall' background='light-2' />
+            <Box pad='small' margin='xsmall' background='light-2' />
+            <Box pad='small' margin='xsmall' background='light-2' />
+            <Box pad='small' margin='xsmall' background='light-2' />
+          </Box>
         </Box>
       ),
     }}

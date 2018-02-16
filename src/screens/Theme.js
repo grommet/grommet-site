@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WebFont from 'webfontloader';
-import {
-  Anchor, Box, Button, Grommet, Heading, Image, Paragraph, Select, Text, TextInput,
-} from 'grommet';
+import { Anchor, Box, Button, Grommet, Heading, Image, Paragraph, Select, Text, TextInput } from 'grommet';
 import { Menu as MenuIcon } from 'grommet-icons';
 import Nav from '../components/Nav';
 import { hslToRgb, parseRGBString, rgbToHsl, toRGBString } from '../utils/color';
