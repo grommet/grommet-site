@@ -116,14 +116,6 @@ export default class Components extends Component {
                 <Box flex={true} background='brand' margin='large' />
               </Box>
             </Item>
-
-            <Item name='Tabs' path='/tabs'>
-              <Box flex={true} direction='row'>
-                <Box flex={true} background='brand' margin={{ top: 'large' }} />
-                <Box flex={true} background='brand' margin={{ top: 'medium' }} />
-                <Box flex={true} background='brand' margin={{ top: 'large' }} />
-              </Box>
-            </Item>
           </Section>
 
           <Section name='Type' index={1}>
@@ -323,26 +315,6 @@ export default class Components extends Component {
                 )}
               </Distribution>
             </Item>
-            <Item name='Table' path='/table' center={true}>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableCell scope='col' border='bottom'>Name</TableCell>
-                    <TableCell scope='col' border='bottom'>Flavor</TableCell>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell scope='row'><strong>Eric</strong></TableCell>
-                    <TableCell>Coconut</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell scope='row'><strong>Chris</strong></TableCell>
-                    <TableCell>Watermelon</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </Item>
             <Item name='WorldMap' path='/worldmap' center={true}>
               <WorldMap color='brand' />
             </Item>
@@ -366,6 +338,37 @@ export default class Components extends Component {
           <Section name='Accessibility' index={5}>
             <Item name='SkipLinks' path='/skiplinks' center={true}>
               <Anchor path='' label='SkipLinks' />
+            </Item>
+          </Section>
+
+          <Section name='Old School' index={6}>
+            <Item name='Table' path='/table' center={true}>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableCell scope='col' border='bottom'>Name</TableCell>
+                    <TableCell scope='col' border='bottom'>Flavor</TableCell>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell scope='row'><strong>Eric</strong></TableCell>
+                    <TableCell>Coconut</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell scope='row'><strong>Chris</strong></TableCell>
+                    <TableCell>Watermelon</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Item>
+
+            <Item name='Tabs' path='/tabs'>
+              <Box flex={true} direction='row'>
+                <Box flex={true} background='brand' margin={{ top: 'large' }} />
+                <Box flex={true} background='brand' margin={{ top: 'medium' }} />
+                <Box flex={true} background='brand' margin={{ top: 'large' }} />
+              </Box>
             </Item>
           </Section>
 
