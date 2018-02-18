@@ -9,7 +9,7 @@ import {
   Table, TableBody, TableCell, TableHeader, TableRow,
   Text, TextArea, TextInput, Video, WorldMap,
 } from 'grommet';
-import { Actions } from 'grommet-icons';
+import { Actions, TopCorner, BottomCorner } from 'grommet-icons';
 import Nav from '../components/Nav';
 
 const CHART_VALUES = [
@@ -338,6 +338,18 @@ export default class Components extends Component {
           <Section name='Accessibility' index={5}>
             <Item name='SkipLinks' path='/skiplinks' center={true}>
               <Anchor path='' label='SkipLinks' />
+            </Item>
+          </Section>
+
+          <Section name='Utilities' index={4}>
+            <Item name='Keyboard' path='/keyboard' center={true}>
+              <Text>ESC</Text>
+            </Item>
+            <Item name='Responsive' path='/responsive' center={true}>
+              <Box direction='row'>
+                <TopCorner />
+                <BottomCorner />
+              </Box>
             </Item>
           </Section>
 

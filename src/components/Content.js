@@ -23,6 +23,7 @@ import Grid from '../screens/Grid';
 import Heading from '../screens/Heading';
 import Home from '../screens/Home';
 import Image from '../screens/Image';
+import Keyboard from '../screens/Keyboard';
 import Layer from '../screens/Layer';
 import License from '../screens/License';
 import Markdown from '../screens/Markdown';
@@ -32,6 +33,7 @@ import Paragraph from '../screens/Paragraph';
 import PhotoBrowser from '../screens/PhotoBrowser';
 import RadioButton from '../screens/RadioButton';
 import RangeInput from '../screens/RangeInput';
+import Responsive from '../screens/Responsive';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
 import Stack from '../screens/Stack';
@@ -74,12 +76,14 @@ export default () => (
     <Route exact={true} path='/grid' component={Grid} />
     <Route exact={true} path='/heading' component={Heading} />
     <Route exact={true} path='/image' component={Image} />
+    <Route exact={true} path='/keyboard' component={Keyboard} />
     <Route exact={true} path='/layer' component={Layer} />
     <Route exact={true} path='/markdown' component={Markdown} />
     <Route exact={true} path='/menu' component={Menu} />
     <Route exact={true} path='/meter' component={Meter} />
     <Route exact={true} path='/radiobutton' component={RadioButton} />
     <Route exact={true} path='/rangeinput' component={RangeInput} />
+    <Route exact={true} path='/responsive' component={Responsive} />
     <Route exact={true} path='/paragraph' component={Paragraph} />
     <Route exact={true} path='/select' component={Select} />
     <Route exact={true} path='/photo-browser' component={PhotoBrowser} />
