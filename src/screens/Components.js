@@ -9,7 +9,7 @@ import {
   Table, TableBody, TableCell, TableHeader, TableRow,
   Text, TextArea, TextInput, Video, WorldMap,
 } from 'grommet';
-import { Actions, TopCorner, BottomCorner } from 'grommet-icons';
+import { Actions, Grommet as GrommetIcon, TopCorner, BottomCorner } from 'grommet-icons';
 import Nav from '../components/Nav';
 
 const CHART_VALUES = [
@@ -342,6 +342,9 @@ export default class Components extends Component {
           </Section>
 
           <Section name='Utilities' index={4}>
+            <Item name='Grommet' path='/grommet' center={true}>
+              <GrommetIcon color='brand' />
+            </Item>
             <Item name='Keyboard' path='/keyboard' center={true}>
               <Text>ESC</Text>
             </Item>

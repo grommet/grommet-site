@@ -20,6 +20,7 @@ import Examples from '../screens/Examples';
 import Feed from '../screens/Feed';
 import Form from '../screens/Form';
 import Grid from '../screens/Grid';
+import Grommet from '../screens/Grommet';
 import Heading from '../screens/Heading';
 import Home from '../screens/Home';
 import Image from '../screens/Image';
@@ -74,6 +75,7 @@ export default () => (
     <Route exact={true} path='/dropbutton' component={DropButton} />
     <Route exact={true} path='/form' component={Form} />
     <Route exact={true} path='/grid' component={Grid} />
+    <Route exact={true} path='/grommet' component={Grommet} />
     <Route exact={true} path='/heading' component={Heading} />
     <Route exact={true} path='/image' component={Image} />
     <Route exact={true} path='/keyboard' component={Keyboard} />
