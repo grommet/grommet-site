@@ -124,7 +124,8 @@ export default class Components extends Component {
             </Item>
             <Item name='Markdown' path='/markdown' center={true}>
               <code>
-  #Grommet :heart:’s markdown.
+  # Grommet **heart**s markdown.
+
   Favorite thing,
   [link](https://www.instagram.com/p/I6h5u/)
               </code>
