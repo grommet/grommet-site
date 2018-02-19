@@ -12,6 +12,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "build": "cross-env NODE_ENV=production grommet pack",
+    "build-alias": "cross-env NODE_ENV=production USE_ALIAS=true grommet pack",
     "check": "cross-env NODE_ENV=test grommet check",
     "release-heroku": "babel-node ./tools/release-heroku.js",
     "start": "cross-env NODE_ENV=development grommet pack",
