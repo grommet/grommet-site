@@ -279,7 +279,7 @@ export default class Theme extends Component {
           </Box>
         </Box>
 
-        <Box direction='row'>
+        <Box direction='row' wrap={true}>
           <Box basis='medium' margin={{ bottom: 'large' }}>
             <Box pad='medium'>
               <Field label='Name' focused={focused === 'name'}>

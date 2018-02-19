@@ -4,9 +4,9 @@ import { Anchor, Box, Heading, Markdown, Paragraph, Text } from 'grommet';
 import Nav from '../components/Nav';
 
 const Item = ({ label, snippet, description }) => (
-  <Box border='bottom' margin={{ bottom: 'medium' }}>
-    <Box direction='row' justify='between' align='center'>
-      <Text size='large'><strong>{label}</strong></Text>
+  <Box border='bottom' margin={{ bottom: 'medium' }} pad={{ bottom: 'small' }}>
+    <Box direction='row' responsive={true} justify='between'>
+      <Text size='large' margin={{ bottom: 'small' }}><strong>{label}</strong></Text>
       <Text>{snippet}</Text>
     </Box>
     <Markdown>{description}</Markdown>

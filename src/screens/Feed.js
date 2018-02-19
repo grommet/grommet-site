@@ -34,23 +34,27 @@ export default class Feed extends Component {
           pad={{ horizontal: 'large', bottom: 'large' }}
           gap='large'
         >
-          <Button href='https://vimeo.com/grommetux'>
-            <Box pad='medium' round='medium' background='neutral-1'>
-              <Vimeo size='large' />
-              <Paragraph>
-                Learn more about grommet from our screencasts.
-              </Paragraph>
-            </Box>
-          </Button>
+          <Box margin={{ bottom: 'large' }}>
+            <Button href='https://vimeo.com/grommetux'>
+              <Box pad='medium' round='medium' background='neutral-1'>
+                <Vimeo size='large' />
+                <Paragraph>
+                  Learn more about grommet from our screencasts.
+                </Paragraph>
+              </Box>
+            </Button>
+          </Box>
 
-          <Button href='https://twitter.com/grommetux'>
-            <Box pad='medium' round='medium' background='neutral-2'>
-              <Twitter size='large' />
-              <Paragraph>
-                Keep up with the latest grommet news.
-              </Paragraph>
-            </Box>
-          </Button>
+          <Box margin={{ bottom: 'large' }}>
+            <Button href='https://twitter.com/grommetux'>
+              <Box pad='medium' round='medium' background='neutral-2'>
+                <Twitter size='large' />
+                <Paragraph>
+                  Keep up with the latest grommet news.
+                </Paragraph>
+              </Box>
+            </Button>
+          </Box>
         </Box>
       </Box>
     );

@@ -90,21 +90,22 @@ export default class Home extends Component {
         >
           <Box
             basis='large'
-            pad='large'
+            pad={{ horizontal: 'large', vertical: 'medium' }}
             border='top'
             direction='row'
+            wrap={true}
             justify='center'
           >
-            <Box margin={{ horizontal: 'small' }}>
+            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
               <RoutedAnchor path='/about' label='about' />
             </Box>
-            <Box margin={{ horizontal: 'small' }}>
+            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
               <RoutedAnchor path='/contribute' label='contribute' />
             </Box>
-            <Box margin={{ horizontal: 'small' }}>
+            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
               <RoutedAnchor path='license' label='license' />
             </Box>
-            <Box margin={{ horizontal: 'small' }} direction='row'>
+            <Box margin={{ horizontal: 'small', vertical: 'small' }} direction='row'>
               <Text>Made with </Text>
               <Box margin={{ horizontal: 'xsmall' }} animation='pulse'>
                 <Favorite color='brand' size='small' />

@@ -78,7 +78,7 @@ export default class Components extends Component {
         <Box pad='large'>
           <Nav />
           <Box direction='row'>
-            <Box margin={{ top: 'large' }} basis='medium'>
+            <Box margin={{ top: 'large' }} basis='medium' overflow='hidden'>
               <Heading level={1}>
                 <strong>Read our documentation</strong>
               </Heading>
