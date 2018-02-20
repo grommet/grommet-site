@@ -45,6 +45,40 @@ export default () => (
           aria-label='colored chart'
         />
       ),
+      onClick: (
+        <Box>
+          {['line', 'area'].map(type => (
+            <Box key={type} margin={{ bottom: 'xsmall' }}>
+              <Chart
+                type={type}
+                round={true}
+                bounds={BOUNDS}
+                onClick={() => alert(`Clicked ${type}`)}
+                values={VALUES}
+                size={{ width: 'small', height: 'xsmall' }}
+                aria-label={`${type} rounded chart`}
+              />
+            </Box>
+          ))}
+        </Box>
+      ),
+      onHover: (
+        <Box>
+          {['line', 'area'].map(type => (
+            <Box key={type} margin={{ bottom: 'xsmall' }}>
+              <Chart
+                type={type}
+                round={true}
+                bounds={BOUNDS}
+                onHover={over => console.log(`over ${type} ${over}`)}
+                values={VALUES}
+                size={{ width: 'small', height: 'xsmall' }}
+                aria-label={`${type} rounded chart`}
+              />
+            </Box>
+          ))}
+        </Box>
+      ),
       round: (
         <Box>
           {['bar', 'line', 'area'].map(type => (
