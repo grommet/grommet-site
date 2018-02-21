@@ -11,13 +11,14 @@ export default class LayerDoc extends Component {
   state = {
     full: undefined,
     margin: undefined,
+    modal: undefined,
     plain: undefined,
     position: undefined,
     show: false,
   }
   render() {
     const {
-      full, margin, plain, position, show,
+      full, margin, modal, plain, position, show,
     } = this.state;
     let layerNode;
     if (show) {
@@ -27,6 +28,7 @@ export default class LayerDoc extends Component {
           position={position}
           full={full}
           margin={margin}
+          modal={modal}
           plain={plain}
           onEsc={close}
         >
@@ -69,6 +71,19 @@ export default class LayerDoc extends Component {
                     active={marginValue === margin}
                     label={marginValue}
                     onClick={() => this.setState({ show: true, margin: marginValue })}
+                  />
+                </Box>
+              ))}
+            </Box>
+          ),
+          modal: (
+            <Box>
+              {[true, false].map(modalValue => (
+                <Box key={modalValue} margin='small'>
+                  <Button
+                    active={modalValue === modal}
+                    label={`${modalValue}`}
+                    onClick={() => this.setState({ show: true, modal: modalValue })}
                   />
                 </Box>
               ))}

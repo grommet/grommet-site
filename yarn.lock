@@ -3190,7 +3190,7 @@ grommet-icons@^0.15.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-alpha.9"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#0cfab8c74eddcd8ec5587d8daf6a9dd3ec8afddd"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#ece75e71b411f8edf4beffbe52c690f2db1da77c"
   dependencies:
     babel-plugin-grommet "^0.5.1"
     date-time-format-timezone "^1.0.21-alpha.2"
@@ -6134,8 +6134,8 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
 simple-git@^1.80.1:
-  version "1.89.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.89.0.tgz#ef52fe734d5060566ce187b2bbace36c2323e34c"
+  version "1.91.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.91.0.tgz#842db6c2ba08328e93c17391a895b850518cd13a"
   dependencies:
     debug "^3.1.0"
 
