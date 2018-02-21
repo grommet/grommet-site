@@ -3190,7 +3190,7 @@ grommet-icons@^0.15.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-alpha.9"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#ece75e71b411f8edf4beffbe52c690f2db1da77c"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#66ef184b993a9e426dcd24281725f7a546b0baa2"
   dependencies:
     babel-plugin-grommet "^0.5.1"
     date-time-format-timezone "^1.0.21-alpha.2"
