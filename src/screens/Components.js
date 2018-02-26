@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Anchor, Box, Button, Calendar, Chart, CheckBox, Clock,
+  Box, Button, Calendar, Chart, CheckBox, Clock,
   Diagram, Distribution, DropButton,
   Heading, Image,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
@@ -9,7 +9,7 @@ import {
   Table, TableBody, TableCell, TableHeader, TableRow,
   Text, TextArea, TextInput, Video, WorldMap,
 } from 'grommet';
-import { Actions, Grommet as GrommetIcon, TopCorner, BottomCorner } from 'grommet-icons';
+import { Add, Grommet as GrommetIcon, LinkNext, TopCorner, BottomCorner } from 'grommet-icons';
 import Nav from '../components/Nav';
 
 const CHART_VALUES = [
@@ -162,7 +162,10 @@ export default class Components extends Component {
 
           <Section name='Controls' index={3}>
             <Item name='Anchor' path='/anchor' center={true}>
-              <Anchor label={"Don't press me"} primary={true} />
+              <Box direction='row' align='center' gap='small'>
+                <Text color='brand'>Don&quot;t press me</Text>
+                <LinkNext />
+              </Box>
             </Item>
             <Item name='Button' path='/button' center={true}>
               <Button label='Panic' primary={true} onClick={() => {}} />
@@ -177,23 +180,20 @@ export default class Components extends Component {
               </Box>
             </Item>
             <Item name='DropButton' path='/dropbutton' center={true}>
-              <Box>
-                <DropButton
-                  control={(
-                    <Box direction='row'>
-                      <Box margin={{ right: 'small' }}>Actions</Box>
-                      <Actions color='brand' />
-                    </Box>
-                  )}
-                />
-                <Box margin={{ top: 'xsmall' }} pad='xsmall' border={true}>
+              <DropButton
+                label='Add'
+                icon={<Add />}
+                reverse={true}
+                open={true}
+                dropAlign={{ top: 'bottom', left: 'left' }}
+                dropContent={
                   <Box
                     background='brand'
-                    margin='xsmall'
+                    margin='small'
                     pad={{ horizontal: 'medium', vertical: 'small' }}
                   />
-                </Box>
-              </Box>
+                }
+              />
             </Item>
             <Item name='Menu' path='/menu' center={true}>
               <Menu tabIndex='-1' label='Actions' items={[]} />
@@ -337,7 +337,7 @@ export default class Components extends Component {
 
           <Section name='Accessibility' index={5}>
             <Item name='SkipLinks' path='/skiplinks' center={true}>
-              <Anchor path='' label='SkipLinks' />
+              <Text color='brand'>SkipLinks</Text>
             </Item>
           </Section>
 

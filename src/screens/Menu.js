@@ -18,6 +18,15 @@ export default () => (
   <Doc
     name='Menu'
     desc={desc}
+    example={
+      <Menu
+        label='Menu'
+        items={[
+          { label: 'First Action', onClick },
+          { label: 'Second Action', onClick },
+        ]}
+      />
+    }
     examples={{
       icon: (
         <Menu
