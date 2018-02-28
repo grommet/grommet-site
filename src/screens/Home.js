@@ -14,6 +14,9 @@ export default class Home extends Component {
     return (
       <Box style={{ minHeight: '100vh' }}>
         <Box flex='grow'>
+          <Box pad='large'>
+            <Nav />
+          </Box>
           <Stack guidingChild={3}>
             <Box>
               <Image src='img/circles.svg' fit='cover' />
@@ -25,9 +28,9 @@ export default class Home extends Component {
               <Image src='img/geometric.svg' fit='cover' />
             </Box>
             <Box direction='row' responsive={true}>
-              <Box pad='large' margin={{ top: 'large' }}>
+              <Box pad='large'>
                 <Box direction='row'>
-                  <Box basis='large' align='start' margin={{ vertical: 'large' }}>
+                  <Box basis='large' align='start'>
                     <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
                       <strong>Styled components for Reactjs</strong>
                     </Heading>
@@ -45,7 +48,6 @@ export default class Home extends Component {
               </Box>
               <Box
                 alignSelf='end'
-                margin={{ top: 'xlarge' }}
                 pad={{ horizontal: 'large' }}
                 style={{ overflow: 'hidden' }}
               >
@@ -76,9 +78,6 @@ export default class Home extends Component {
                   </Box>
                 </Box>
               </Box>
-            </Box>
-            <Box pad='large'>
-              <Nav />
             </Box>
           </Stack>
         </Box>
