@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading, Image, Paragraph, RoutedAnchor, RoutedButton, Stack, Text } from 'grommet';
+import { Box, Heading, Image, Paragraph, RoutedAnchor, Button, Stack, Text } from 'grommet';
 import { Favorite } from 'grommet-icons';
 import Nav from '../components/Nav';
 
@@ -38,8 +38,8 @@ export default class Home extends Component {
                       Build apps quickly and easily with one of the most
                       approachable frameworks out there.
                     </Paragraph>
-                    <RoutedButton
-                      to='https://github.com/grommet/grommet'
+                    <Button
+                      href='https://github.com/grommet/grommet'
                       primary={true}
                       label='GitHub'
                     />
