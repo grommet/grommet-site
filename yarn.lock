@@ -3199,7 +3199,7 @@ grommet-icons@^0.16.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-alpha.11"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#81d4b05511a253523ad74e1764643d53a7ed854b"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#8072c05ff350278f7176826bf0578d75dbbc886b"
   dependencies:
     babel-plugin-grommet "^0.5.1"
     grommet-icons "^0.16.0"
