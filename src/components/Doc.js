@@ -51,31 +51,34 @@ export default class Doc extends Component {
         {desc ? (
           <Box pad={{ horizontal: 'large', bottom: 'large' }}>
             <Box pad='large' round='large' background='light-1'>
-              {(desc.properties || []).map(property => (
-                <Box
-                  key={property.name}
-                  direction='row'
-                  responsive={true}
-                  justify='between'
-                  align='start'
-                  border='bottom'
-                >
-                  <Box basis='1/2' margin={{ right: 'large' }}>
-                    <Heading level={3} size='small'>
-                      <strong>{property.name}</strong>
-                    </Heading>
-                    <Paragraph>{property.description}</Paragraph>
-                  </Box>
-                  <Box flex={true} align='start'>
-                    <Text><pre>{property.format}</pre></Text>
-                  </Box>
-                  {examples[property.name] ? (
-                    <Box flex={true} align='end' margin={{ vertical: 'medium' }}>
-                      {examples[property.name] || null}
+              {desc.properties ?
+                desc.properties.map(property => (
+                  <Box
+                    key={property.name}
+                    direction='row'
+                    responsive={true}
+                    justify='between'
+                    align='start'
+                    border='bottom'
+                  >
+                    <Box basis='1/2' margin={{ right: 'large' }}>
+                      <Heading level={3} size='small'>
+                        <strong>{property.name}</strong>
+                      </Heading>
+                      <Paragraph>{property.description}</Paragraph>
                     </Box>
-                  ) : null}
-                </Box>
-              ))}
+                    <Box flex={true} align='start'>
+                      <Text><pre>{property.format}</pre></Text>
+                    </Box>
+                    {examples[property.name] ? (
+                      <Box flex={true} align='end' margin={{ vertical: 'medium' }}>
+                        {examples[property.name] || null}
+                      </Box>
+                    ) : null}
+                  </Box>
+                )) :
+                <Text color='light-5'>No properties</Text>
+              }
             </Box>
           </Box>
         ) : null}
