@@ -9,7 +9,7 @@ import {
   Table, TableBody, TableCell, TableHeader, TableRow,
   Text, TextArea, TextInput, Video, WorldMap,
 } from 'grommet';
-import { Add, Grommet as GrommetIcon, LinkNext, TopCorner, BottomCorner } from 'grommet-icons';
+import { Add, Grommet as GrommetIcon, TopCorner, BottomCorner } from 'grommet-icons';
 import Nav from '../components/Nav';
 
 const CHART_VALUES = [
@@ -162,10 +162,7 @@ export default class Components extends Component {
 
           <Section name='Controls' index={3}>
             <Item name='Anchor' path='/anchor' center={true}>
-              <Box direction='row' align='center' gap='small'>
-                <Text color='brand'>Don&quot;t press me</Text>
-                <LinkNext />
-              </Box>
+              <Text color='brand'>Don&#39;t press me</Text>
             </Item>
             <Item name='Button' path='/button' center={true}>
               <Button label='Panic' primary={true} onClick={() => {}} />
