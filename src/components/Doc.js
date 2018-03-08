@@ -21,7 +21,7 @@ export default class Doc extends Component {
       <Box>
         <Box pad={{ horizontal: 'large', top: 'large' }}>
           {nav ? <Nav top={false} /> : null}
-          <Box direction='row-responsiv'>
+          <Box direction='row-responsive'>
             <Box margin={{ vertical: 'large' }} basis='2/3' align='start'>
               <Heading level={1}>
                 <strong>{name}</strong>
