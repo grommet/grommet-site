@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box, Button, Calendar, Chart, CheckBox, Clock,
+  Box, Button, Calendar, Carousel, Chart, CheckBox, Clock,
   Diagram, Distribution, DropButton,
-  Heading, Image,
+  FormField, Heading, Image,
   Menu, Meter, Paragraph, RadioButton, RangeInput,
   RoutedButton, Select, Stack,
   Table, TableBody, TableCell, TableHeader, TableRow,
@@ -357,6 +357,20 @@ export default class Components extends Component {
           </Section>
 
           <Section name='Old School' index={6}>
+            <Item name='Carousel' path='/carousel'>
+              <Carousel fill={true}>
+                <Image fit='contain' src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
+                <Image fit='contain' src='//v2.grommet.io/assets/IMG_4245.jpg' />
+                <Image fit='contain' src='//v2.grommet.io/assets/IMG_4210.jpg' />
+              </Carousel>
+            </Item>
+
+            <Item name='FormField' path='/formfield' center={true}>
+              <FormField label='Name'>
+                <TextInput />
+              </FormField>
+            </Item>
+
             <Item name='Table' path='/table' center={true}>
               <Table>
                 <TableHeader>

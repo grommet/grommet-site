@@ -119,8 +119,8 @@ acorn@^4.0.3, acorn@^4.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
 acorn@^5.0.0, acorn@^5.5.0:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.1.tgz#84e05a9ea0acbe131227da50301e62464dc9c1d8"
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
@@ -3199,7 +3199,7 @@ grommet-icons@^0.16.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-alpha.12"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#b1ca61de4b4bfaf6581e3c76e14fa9a04e7c831d"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#705b13bcc2f14c0dd2d2af5f357ab8c3a27b0da6"
   dependencies:
     babel-plugin-grommet "^0.5.1"
     grommet-icons "^0.16.0"
@@ -4486,8 +4486,8 @@ loud-rejection@^1.0.0:
     signal-exit "^3.0.0"
 
 lru-cache@^4.0.1, lru-cache@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.1.tgz#622e32e82488b49279114a4f9ecf45e7cd6bba55"
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.2.tgz#45234b2e6e2f2b33da125624c4664929a0224c3f"
   dependencies:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
@@ -6518,8 +6518,8 @@ stylis-rule-sheet@^0.0.8:
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.8.tgz#b0d0a126c945b1f3047447a3aae0647013e8d166"
 
 stylis@^3.0.0, stylis@^3.4.10:
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.4.10.tgz#a135cab4b9ff208e327fbb5a6fde3fa991c638ee"
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.0.tgz#016fa239663d77f868fef5b67cf201c4b7c701e1"
 
 supports-color@^2.0.0:
   version "2.0.0"

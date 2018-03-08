@@ -6,6 +6,7 @@ import Anchor from '../screens/Anchor';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
+import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
 import Clock from '../screens/Clock';
@@ -19,6 +20,7 @@ import DropButton from '../screens/DropButton';
 import Examples from '../screens/Examples';
 import Feed from '../screens/Feed';
 import Form from '../screens/Form';
+import FormField from '../screens/FormField';
 import Grid from '../screens/Grid';
 import Grommet from '../screens/Grommet';
 import Heading from '../screens/Heading';
@@ -65,6 +67,7 @@ export default () => (
     <Route exact={true} path='/box' component={Box} />
     <Route exact={true} path='/button' component={Button} />
     <Route exact={true} path='/calendar' component={Calendar} />
+    <Route exact={true} path='/carousel' component={Carousel} />
     <Route exact={true} path='/chart' component={Chart} />
     <Route exact={true} path='/checkbox' component={CheckBox} />
     <Route exact={true} path='/clock' component={Clock} />
@@ -74,6 +77,7 @@ export default () => (
     <Route exact={true} path='/drop' component={Drop} />
     <Route exact={true} path='/dropbutton' component={DropButton} />
     <Route exact={true} path='/form' component={Form} />
+    <Route exact={true} path='/formfield' component={FormField} />
     <Route exact={true} path='/grid' component={Grid} />
     <Route exact={true} path='/grommet' component={Grommet} />
     <Route exact={true} path='/heading' component={Heading} />
