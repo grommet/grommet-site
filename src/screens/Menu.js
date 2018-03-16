@@ -5,6 +5,7 @@ import doc from 'grommet/components/Menu/doc';
 
 import { More } from 'grommet-icons';
 
+import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Menu).toJSON();
@@ -15,31 +16,11 @@ function onClick(event) {
 }
 
 export default () => (
-  <Doc
-    name='Menu'
-    desc={desc}
-    example={
-      <Menu
-        label='Menu'
-        items={[
-          { label: 'First Action', onClick },
-          { label: 'Second Action', onClick },
-        ]}
-      />
-    }
-    examples={{
-      icon: (
-        <Menu
-          dropAlign={{ top: 'top', right: 'right' }}
-          background='neutral-4'
-          icon={<More color='brand' />}
-          items={[
-            { label: 'First Action', onClick },
-            { label: 'Second Action', onClick },
-          ]}
-        />
-      ),
-      label: (
+  <Page>
+    <Doc
+      name='Menu'
+      desc={desc}
+      example={
         <Menu
           label='Menu'
           items={[
@@ -47,7 +28,29 @@ export default () => (
             { label: 'Second Action', onClick },
           ]}
         />
-      ),
-    }}
-  />
+      }
+      examples={{
+        icon: (
+          <Menu
+            dropAlign={{ top: 'top', right: 'right' }}
+            background='neutral-4'
+            icon={<More color='brand' />}
+            items={[
+              { label: 'First Action', onClick },
+              { label: 'Second Action', onClick },
+            ]}
+          />
+        ),
+        label: (
+          <Menu
+            label='Menu'
+            items={[
+              { label: 'First Action', onClick },
+              { label: 'Second Action', onClick },
+            ]}
+          />
+        ),
+      }}
+    />
+  </Page>
 );

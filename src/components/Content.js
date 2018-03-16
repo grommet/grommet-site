@@ -36,17 +36,18 @@ import Paragraph from '../screens/Paragraph';
 import PhotoBrowser from '../screens/PhotoBrowser';
 import RadioButton from '../screens/RadioButton';
 import RangeInput from '../screens/RangeInput';
+import RangeSelector from '../screens/RangeSelector';
 import Responsive from '../screens/Responsive';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
 import Stack from '../screens/Stack';
-import Start from '../screens/Start';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
-import Theme from '../screens/Theme';
+import Try from '../screens/Try';
+import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
 
@@ -55,7 +56,8 @@ export default () => (
     <Route exact={true} path='/' component={Home} />
 
     <Route exact={true} path='/examples' component={Examples} />
-    <Route exact={true} path='/start' component={Start} />
+    <Route exact={true} path='/try' component={Try} />
+    <Route exact={true} path='/use' component={Use} />
     <Route exact={true} path='/components' component={Components} />
     <Route exact={true} path='/feed' component={Feed} />
 
@@ -89,6 +91,7 @@ export default () => (
     <Route exact={true} path='/meter' component={Meter} />
     <Route exact={true} path='/radiobutton' component={RadioButton} />
     <Route exact={true} path='/rangeinput' component={RangeInput} />
+    <Route exact={true} path='/rangeselector' component={RangeSelector} />
     <Route exact={true} path='/responsive' component={Responsive} />
     <Route exact={true} path='/paragraph' component={Paragraph} />
     <Route exact={true} path='/select' component={Select} />
@@ -100,7 +103,6 @@ export default () => (
     <Route exact={true} path='/text' component={Text} />
     <Route exact={true} path='/textarea' component={TextArea} />
     <Route exact={true} path='/textinput' component={TextInput} />
-    <Route exact={true} path='/theme' component={Theme} />
     <Route exact={true} path='/video' component={Video} />
     <Route exact={true} path='/worldmap' component={WorldMap} />
   </Switch>

@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import URLSearchParams from 'url-search-params';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import { Grommet, Box, Stack } from 'grommet';
+import { Grommet, Box } from 'grommet';
 import { hpe } from 'grommet/themes';
 import Content from './components/Content';
-import Gradient from './components/Gradient';
 
 const history = createBrowserHistory();
 
@@ -23,7 +22,7 @@ export default class App extends Component {
   };
 
   state = {
-    colors: ['#FFF9ED', '#FCC'],
+    color: '#FFD6D6',
     theme: undefined,
   };
 
@@ -70,21 +69,21 @@ export default class App extends Component {
     }
   }
 
-  onColorChange(colors) {
-    this.setState({ colors });
+  onColorChange(color) {
+    this.setState({ color });
   }
 
   render() {
-    const { colors, theme } = this.state;
+    const { color, theme } = this.state;
     return (
       <Router history={history}>
         <Grommet theme={theme ? THEMES[theme] : undefined}>
-          <Stack guidingChild='last' style={{ minHeight: '100vh' }}>
-            <Gradient colors={colors} />
-            <Box>
-              <Content />
-            </Box>
-          </Stack>
+          <Box
+            background={color}
+            style={{ minHeight: '100vh', transition: 'background 2s' }}
+          >
+            <Content />
+          </Box>
         </Grommet>
       </Router>
     );

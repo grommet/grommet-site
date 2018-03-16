@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WebFont from 'webfontloader';
-import { Anchor, Box, Button, Grommet, Heading, Image, Paragraph, Select, Text, TextInput } from 'grommet';
-import { Menu as MenuIcon } from 'grommet-icons';
-import Nav from '../components/Nav';
+import {
+  Anchor, Box, Button, FormField, Grommet, Heading, Image,
+  Paragraph, Select, Text, TextInput,
+} from 'grommet';
+import { Previous as PreviousIcon } from 'grommet-icons';
+import Page from '../components/Page';
 import { hslToRgb, parseRGBString, rgbToHsl, toRGBString } from '../utils/color';
 import { mergeDeep } from '../utils/object';
 
@@ -81,42 +84,6 @@ const colorsForMood = (color, mood) => {
   return result;
 };
 
-const Field = ({
-  children, error, focused, label, help,
-}) => {
-  let header;
-  if (label || help || error) {
-    header = (
-      <Box
-        direction='row'
-        justify='between'
-        pad={{ horizontal: 'small', top: 'xsmall' }}
-      >
-        <Text>{label}</Text>
-        <Text color={error ? 'status-critical' : 'dark-5'}>{error || help}</Text>
-      </Box>
-    );
-  }
-  let borderColor;
-  if (error) {
-    borderColor = 'status-critical';
-  } else if (focused) {
-    borderColor = 'brand';
-  } else {
-    borderColor = 'light-3';
-  }
-  return (
-    <Box
-      direction='column'
-      border={{ color: borderColor, side: 'bottom', size: 'small' }}
-      margin={{ vertical: 'xsmall' }}
-    >
-      {header}
-      {children}
-    </Box>
-  );
-};
-
 export default class Theme extends Component {
   constructor() {
     super();
@@ -143,7 +110,7 @@ export default class Theme extends Component {
   componentWillMount() {
     // This is for the page background, not for the theme itself.
     const { onColorChange } = this.context;
-    onColorChange(['#DDE6FF', '#D8FDE6']);
+    onColorChange('#DDE6FF');
   }
 
   componentDidMount() {
@@ -241,8 +208,9 @@ export default class Theme extends Component {
     });
   }
 
-  onDownload = () => {
+  onDownload = (event) => {
     const { name, theme } = this.state;
+    event.preventDefault();
     // extract font-face from link in header
     const fontLink = document.querySelector('link[href*="fonts.googleapis.com"]');
     fetch(fontLink.getAttribute('href'))
@@ -261,116 +229,128 @@ export default class Theme extends Component {
 
   render() {
     const {
-      color, errors, focused, font, key, loading, mood, name, sharpness, theme,
+      color, errors, font, key, loading, mood, name, sharpness, theme,
     } = this.state;
     return (
-      <Box>
-        <Box pad='large'>
-          <Nav />
-          <Box direction='row'>
-            <Box margin={{ vertical: 'large' }} basis='medium'>
-              <Heading level={1}>
-                <strong>Try us without writing a single line of code</strong>
-              </Heading>
-              <Paragraph size='large'>
-                Learn more about how you can theme using the grommet library.
-              </Paragraph>
-            </Box>
-          </Box>
-        </Box>
-
-        <Box direction='row' wrap={true}>
+      <Page background={{ image: 'url("img/circles.svg")' }}>
+        <Box direction='row' gap='large' wrap={true} align='start'>
           <Box basis='medium' margin={{ bottom: 'large' }}>
-            <Box pad='medium'>
-              <Field label='Name' focused={focused === 'name'}>
-                <TextInput
-                  plain={true}
-                  value={name}
-                  onChange={event => this.setState({ name: event.target.value })}
-                  onFocus={() => this.setState({ focused: 'name' })}
-                  onBlur={() => this.setState({ focused: undefined })}
-                />
-              </Field>
-              <Field
-                label='Brand Color'
-                help='hex RGB'
-                error={errors.color}
-                focused={focused === 'color'}
-              >
-                <Box direction='row' align='center' justify='between'>
+            <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
+              <strong>Try us without writing a single line of code</strong>
+            </Heading>
+            <Paragraph size='large'>
+              Learn more about how you can theme using the grommet library.
+            </Paragraph>
+
+            <form onSubmit={this.onDownload}>
+              <Box pad={{ vertical: 'medium' }}>
+                <FormField label='Name'>
                   <TextInput
                     plain={true}
-                    value={color}
-                    onChange={this.onChangeColor}
-                    onFocus={() => this.setState({ focused: 'color' })}
-                    onBlur={() => this.setState({ focused: undefined })}
+                    value={name}
+                    onInput={event => this.setState({ name: event.target.value })}
                   />
-                  <Box background={theme.global.colors.brand} pad='small' round='small' />
-                </Box>
-              </Field>
-              <Field
-                label='Font Name'
-                help={loading.font ? 'loading ...' : (
-                  <Anchor
-                    href='https://fonts.google.com/'
-                    label='google fonts'
+                </FormField>
+                <FormField
+                  label='Brand Color'
+                  help='hex RGB'
+                  error={errors.color}
+                >
+                  <Box direction='row' align='center' justify='between'>
+                    <TextInput
+                      plain={true}
+                      value={color}
+                      onChange={this.onChangeColor}
+                    />
+                    <Box
+                      background={theme.global.colors.brand}
+                      pad='small'
+                      round='small'
+                    />
+                  </Box>
+                </FormField>
+                <FormField
+                  label='Font Name'
+                  help={loading.font ? 'loading ...' : (
+                    <Anchor
+                      href='https://fonts.google.com/'
+                      label='google fonts'
+                    />
+                  )}
+                  error={errors.font}
+                >
+                  <TextInput
+                    plain={true}
+                    value={font}
+                    onChange={this.onChangeFont}
                   />
-                )}
-                error={errors.font}
-                focused={focused === 'font'}
-              >
-                <TextInput
-                  plain={true}
-                  value={font}
-                  onChange={this.onChangeFont}
-                  onFocus={() => this.setState({ focused: 'font' })}
-                  onBlur={() => this.setState({ focused: undefined })}
+                </FormField>
+                <FormField label='Sharpness'>
+                  <Select
+                    plain={true}
+                    value={sharpness}
+                    options={SHARPNESSES}
+                    onChange={this.onChangeSharpness}
+                  />
+                </FormField>
+                <FormField label='Mood'>
+                  <Select
+                    plain={true}
+                    value={mood}
+                    options={MOODS}
+                    onChange={this.onChangeMood}
+                  />
+                </FormField>
+              </Box>
+              <Box pad={{ vertical: 'medium' }}>
+                <Button
+                  type='submit'
+                  label='Download'
+                  primary={true}
+                  onClick={this.onDownload}
                 />
-              </Field>
-              <Field label='Sharpness' focused={focused === 'sharpness'}>
-                <Select
-                  plain={true}
-                  value={sharpness}
-                  options={SHARPNESSES}
-                  onChange={this.onChangeSharpness}
-                  onFocus={() => this.setState({ focused: 'sharpness' })}
-                  onBlur={() => this.setState({ focused: undefined })}
-                />
-              </Field>
-              <Field label='Mood' focused={focused === 'mood'}>
-                <Select
-                  plain={true}
-                  value={mood}
-                  options={MOODS}
-                  onChange={this.onChangeMood}
-                  onFocus={() => this.setState({ focused: 'mood' })}
-                  onBlur={() => this.setState({ focused: undefined })}
-                />
-              </Field>
-            </Box>
-            <Box pad={{ horizontal: 'medium' }}>
-              <Button label='Download' primary={true} onClick={this.onDownload} />
-            </Box>
+              </Box>
+            </form>
           </Box>
 
-          <Box flex='grow' margin={{ bottom: 'large' }} align='center'>
-            <Grommet key={key} theme={theme}>
+          <Box direction='row'>
+            <Box
+              justify='center'
+              gap='medium'
+              style={{ position: 'relative', right: -12 }}
+            >
+              <Box pad='large' round='full' background='brand' />
+              <Box pad='large' round='full' background='brand' />
+              <Box pad='large' round='full' background='brand' />
+            </Box>
+            <Grommet
+              key={key}
+              theme={theme}
+              style={{ position: 'relative', zIndex: 10 }}
+            >
               <Box
                 direction='column'
-                round={SHARPNESS_ROUND_SIZE[sharpness]}
+                round='medium'
                 animation='fadeIn'
-                background='white'
-                style={{
-                  overflow: 'hidden',
-                  boxShadow: '0px 5px 20px 10px rgba(0, 0, 0, 0.1)',
-                }}
+                background='black'
+                border={{ size: 'xlarge', color: 'black' }}
+                overflow='hidden'
+                elevation='xlarge'
               >
-                <Box pad='medium' background='accent-1' direction='row' justify='between' align='center'>
-                  <Button icon={<MenuIcon />} label='menu' onClick={() => {}} />
-                  <Button primary={true} label='Subscribe' onClick={() => {}} />
-                </Box>
-                <Box direction='row' justify='center'>
-                  <Box basis='large' pad='large' align='start'>
+                <Box round='medium' overflow='hidden' background='white'>
+                  <Box
+                    pad='medium'
+                    background='accent-1'
+                    direction='row'
+                    justify='between'
+                    align='center'
+                    round={SHARPNESS_ROUND_SIZE[sharpness]}
+                    overflow='hidden'
+                  >
+                    <Button icon={<PreviousIcon />} onClick={() => {}} />
+                    <Button primary={true} label='Subscribe' onClick={() => {}} />
+                  </Box>
+                  <Box pad='large' align='start'>
                     <Heading level={1} margin={{ top: 'none' }}>Bring it on!</Heading>
                     <Text>January</Text>
                     <Paragraph>
@@ -384,9 +364,16 @@ export default class Theme extends Component {
                 </Box>
               </Box>
             </Grommet>
+            <Box
+              justify='center'
+              gap='medium'
+              style={{ position: 'relative', left: -12 }}
+            >
+              <Box pad='large' round='full' background='brand' />
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </Page>
     );
   }
 }

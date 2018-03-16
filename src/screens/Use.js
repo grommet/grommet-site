@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Anchor, Box, Heading, Markdown, Paragraph, Text } from 'grommet';
-import Nav from '../components/Nav';
+import Page from '../components/Page';
 
 const Item = ({ label, snippet, description }) => (
   <Box border='bottom' margin={{ bottom: 'medium' }} pad={{ bottom: 'small' }}>
@@ -16,28 +16,25 @@ const Item = ({ label, snippet, description }) => (
 export default class Start extends Component {
   componentWillMount() {
     const { onColorChange } = this.context;
-    onColorChange(['#E1FBE4', '#FFD2D2']);
+    onColorChange('#D8FDE6');
   }
 
   render() {
     return (
-      <Box>
-        <Box pad='large'>
-          <Nav />
-          <Box direction='row'>
-            <Box margin={{ vertical: 'large' }} basis='medium'>
-              <Heading level={1}>
-                <strong>Use the grommet React.js library</strong>
-              </Heading>
-              <Paragraph size='large'>
-                Grommet is delivered as an npm package.
-              </Paragraph>
-            </Box>
+      <Page background={{ image: 'url("img/shapes.svg")' }}>
+        <Box direction='row-responsive' margin={{ bottom: 'large' }}>
+          <Box basis='1/2'>
+            <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
+              <strong>Use the grommet React.js library</strong>
+            </Heading>
+            <Paragraph size='large'>
+              Grommet is delivered as an npm package.
+            </Paragraph>
           </Box>
         </Box>
 
-        <Box pad={{ horizontal: 'large', bottom: 'large' }}>
-          <Box pad='large' round='large' background='light-1'>
+        <Box pad={{ bottom: 'large' }}>
+          <Box pad='large' round='large' background='white'>
 
             <Heading level={2}>New Application</Heading>
             <Item
@@ -79,7 +76,7 @@ export default class Start extends Component {
 
           </Box>
         </Box>
-      </Box>
+      </Page>
     );
   }
 }

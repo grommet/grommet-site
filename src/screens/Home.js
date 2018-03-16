@@ -1,118 +1,174 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading, Image, Paragraph, RoutedAnchor, Button, Stack, Text } from 'grommet';
-import { Favorite } from 'grommet-icons';
+import {
+  Box, Heading, Image, Paragraph, RoutedButton, Button,
+  Stack, Text,
+} from 'grommet';
+import { Favorite, Medium, Slack, Twitter } from 'grommet-icons';
 import Nav from '../components/Nav';
+
+const Section = ({ children, ...rest }) => (
+  <Box
+    direction='row'
+    justify='center'
+    pad={{ horizontal: 'xlarge', vertical: 'large' }}
+    {...rest}
+  >
+    <Box basis='xlarge'>
+      {children}
+    </Box>
+  </Box>
+);
 
 export default class Home extends Component {
   componentWillMount() {
     const { onColorChange } = this.context;
-    onColorChange(['#FCC', '#FFFFFF']);
+    onColorChange('#FFD6D6');
   }
 
   render() {
     return (
-      <Box style={{ minHeight: '100vh' }}>
-        <Box flex='grow'>
-          <Box pad='large'>
-            <Nav />
+      <Box>
+        <Stack fill={true} guidingChild='last'>
+          <Box justify='end' align='end' background='#FFD6D6'>
+            <Image src='img/circles.svg' />
           </Box>
-          <Stack guidingChild={3}>
-            <Box>
-              <Image src='img/circles.svg' fit='cover' />
+          <Section pad={{ horizontal: 'xlarge', top: 'large' }}>
+            <Box margin={{ bottom: 'xlarge' }}>
+              <Nav />
             </Box>
-            <Box>
-              <Image src='img/graffiti.svg' fit='cover' />
-            </Box>
-            <Box>
-              <Image src='img/geometric.svg' fit='cover' />
-            </Box>
-            <Box direction='row' responsive={true}>
-              <Box pad='large'>
-                <Box direction='row'>
-                  <Box basis='large' align='start'>
-                    <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
-                      <strong>Styled components for Reactjs</strong>
-                    </Heading>
-                    <Paragraph margin={{ bottom: 'medium' }}>
-                      Build apps quickly and easily with one of the most
-                      approachable frameworks out there.
-                    </Paragraph>
-                    <Button
-                      href='https://github.com/grommet/grommet'
-                      primary={true}
-                      label='GitHub'
-                    />
-                  </Box>
-                </Box>
-              </Box>
-              <Box
-                alignSelf='end'
-                pad={{ horizontal: 'large' }}
-                style={{ overflow: 'hidden' }}
-              >
-                <Box
-                  style={{
-                    position: 'relative',
-                    bottom: '-12px',
-                  }}
-                  animation={[
-                    { type: 'fadeIn', delay: 200 },
-                    { type: 'slideUp', size: 'xlarge', delay: 300 },
-                  ]}
-                >
-                  <Box
-                    style={{
-                      animationTimingFunction: 'ease-out',
-                      transformOrigin: '70% 100%',
-                    }}
-                    animation={{
-                      type: 'jiggle', size: 'small', delay: 1000, duration: 2000,
-                    }}
-                  >
-                    <Image
-                      style={{ objectPosition: '50% 100%' }}
-                      src='img/Stak.svg'
-                      fit='contain'
-                    />
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Stack>
-        </Box>
 
-        <Box
-          direction='row'
-          justify='center'
-          pad={{ top: 'xlarge' }}
-        >
-          <Box
-            basis='large'
-            pad={{ horizontal: 'large', vertical: 'medium' }}
-            border='top'
-            direction='row'
-            wrap={true}
-            justify='center'
-          >
-            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
-              <RoutedAnchor path='/about' label='about' />
-            </Box>
-            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
-              <RoutedAnchor path='/contribute' label='contribute' />
-            </Box>
-            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
-              <RoutedAnchor path='license' label='license' />
-            </Box>
-            <Box margin={{ horizontal: 'small', vertical: 'small' }} direction='row'>
-              <Text>Made with </Text>
-              <Box margin={{ horizontal: 'xsmall' }} animation='pulse'>
-                <Favorite color='brand' size='small' />
+            <Box direction='row-responsive' align='start'>
+              <Box basis='1/2' margin={{ bottom: 'xlarge' }}>
+                <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
+                  Styled components for Reactjs
+                </Heading>
+                <Paragraph size='large'>
+                  Build apps quickly and easily with one of the most
+                  approachable frameworks out there.
+                </Paragraph>
+                <Box direction='row-responsive' align='center' gap='medium' margin={{ vertical: 'medium' }}>
+                  <RoutedButton path='theme' primary={true} label='try it now' />
+                  <Button
+                    href='https://github.com/grommet/grommet'
+                    label='GitHub'
+                  />
+                </Box>
+                <Box direction='row' align='center' gap='small' margin={{ vertical: 'large' }}>
+                  <RoutedButton
+                    href=''
+                    icon={<Slack color='brand' size='large' />}
+                  />
+                  <RoutedButton
+                    href=''
+                    icon={<Twitter color='brand' size='large' />}
+                  />
+                  <RoutedButton
+                    href=''
+                    icon={<Medium color='brand' size='large' />}
+                  />
+                </Box>
               </Box>
-              <Text> by the gremlins</Text>
+              <Box basis='1/2' alignSelf='end'>
+                <Image width='100%' src='img/Stak.svg' fit='contain' />
+              </Box>
             </Box>
+          </Section>
+        </Stack>
+
+        <Section background='#FFF5CC' pad={{ top: 'xlarge', horizontal: 'xlarge' }}>
+          <Box align='center'>
+            <Heading level={2} size='large' margin='none'>
+              Do all the things!
+            </Heading>
+            <Paragraph size='large' textAlign='center'>
+              Grommet was created to make your design and development
+              process easier. Built for the responsive web, inclusiveness
+              through accessiblity, a flexible toolset, and an active
+              community; We’re ticking all the boxes for you and your team
+              to conquer any project.
+            </Paragraph>
+            <RoutedButton
+              path='components'
+              primary={true}
+              label='start reading'
+            />
+            <Image src='img/do-all-things.svg' />
           </Box>
-        </Box>
+        </Section>
+
+        <Stack guidingChild='last'>
+          <Box background='#DDE6FF'>
+            <Image src='img/shapes.svg' />
+          </Box>
+          <Section pad='xlarge'>
+            <Box align='center'>
+              <Heading level={2} size='large' margin='none'>
+                Used by folks at these fine companies
+              </Heading>
+              <Paragraph size='large' textAlign='center'>
+                See more folks using grommet.
+              </Paragraph>
+              <Box direction='row' wrap={true} align='center' justify='center'>
+                {['HPE', 'Netflix', 'GE', 'IBM', 'MicroFocus', 'GitHub',
+                  'Samsung', 'Uber', 'Shopify', 'Twilio', 'Sony', 'HP',
+                  'Boeing'].map(name => (
+                    <Box
+                      key={name}
+                      margin={{ horizontal: 'small', vertical: 'medium' }}
+                      basis='small'
+                    >
+                      <Image size='small' src={`img/logos/${name}-logo.svg`} />
+                    </Box>
+                ))}
+              </Box>
+            </Box>
+          </Section>
+        </Stack>
+
+        <Stack guidingChild='last'>
+          <Box align='center' background='#D8FDE6'>
+            <Image src='img/double-grommet.svg' />
+          </Box>
+          <Section pad='xlarge'>
+            <Box align='center'>
+              <Heading level={2} size='large' margin='none'>
+                {'Let\'s hang out'}
+              </Heading>
+              <Paragraph size='large' textAlign='center'>
+                We’re cool, your cool—It just makes sense. Come check out
+                our code and all the folks that make grommet great. We want
+                to make grommet the best UI framework on React, so come
+                say hi!
+              </Paragraph>
+              <RoutedButton
+                path='start'
+                primary={true}
+                label='use it now'
+              />
+
+              <Box
+                direction='row'
+                align='center'
+                justify='center'
+                wrap={true}
+                margin={{ vertical: 'xlarge' }}
+              >
+                <Image src='img/community-left.svg' />
+                <Image src='img/stak-full.svg' />
+                <Image src='img/community-right.svg' />
+              </Box>
+
+              <Box direction='row' gap='xsmall'>
+                <Text>Made with </Text>
+                <Box animation='pulse'>
+                  <Favorite color='brand' size='small' />
+                </Box>
+                <Text> by the gremlins</Text>
+              </Box>
+            </Box>
+          </Section>
+        </Stack>
       </Box>
     );
   }

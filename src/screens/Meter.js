@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Box, Meter } from 'grommet';
 import doc from 'grommet/components/Meter/doc';
 
+import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Meter).toJSON();
@@ -37,84 +38,92 @@ export default class MeterDoc extends Component {
       onHover: this.onHover(index),
     }));
     return (
-      <Doc
-        name='Meter'
-        desc={desc}
-        examples={{
-          background: (
-            <Meter
-              background={{ color: 'light-4', opacity: 'medium' }}
-              size='small'
-              values={SINGLE_VALUE}
-              aria-label='rounded meter'
-            />
-          ),
-          round: (
-            <Meter
-              round={true}
-              size='small'
-              values={SINGLE_VALUE}
-              aria-label='rounded meter'
-            />
-          ),
-          thickness: (
-            <Box>
-              {['xsmall', 'small', 'medium', 'large', 'xlarge'].map(thickness => (
-                <Box key={thickness} margin={{ bottom: 'xsmall' }} align='end'>
+      <Page>
+        <Doc
+          name='Meter'
+          desc={desc}
+          examples={{
+            background: (
+              <Meter
+                background={{ color: 'light-4', opacity: 'medium' }}
+                size='xsmall'
+                values={SINGLE_VALUE}
+                aria-label='rounded meter'
+              />
+            ),
+            round: (
+              <Meter
+                round={true}
+                size='xsmall'
+                values={SINGLE_VALUE}
+                aria-label='rounded meter'
+                background={{ color: 'light-4', opacity: 'medium' }}
+              />
+            ),
+            thickness: (
+              <Box direction='row' justify='end' wrap={true}>
+                {['xsmall', 'small', 'medium', 'large', 'xlarge'].map(thickness => (
+                  <Box key={thickness} margin='xsmall'>
+                    <Meter
+                      thickness={thickness}
+                      size='xsmall'
+                      values={SINGLE_VALUE}
+                      aria-label={`${thickness} thickness meter`}
+                      background={{ color: 'light-4', opacity: 'medium' }}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+            type: (
+              <Box direction='row' justify='end' wrap={true}>
+                {['bar', 'circle'].map(type => (
+                  <Box key={type} margin='xsmall'>
+                    <Meter
+                      type={type}
+                      size='xsmall'
+                      values={SINGLE_VALUE}
+                      aria-label={`${type} meter`}
+                      background={{ color: 'light-4', opacity: 'medium' }}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+            values: (
+              <Box direction='row' justify='end' wrap={true}>
+                <Box margin='xsmall'>
                   <Meter
-                    thickness={thickness}
-                    size='small'
-                    values={SINGLE_VALUE}
-                    aria-label={`${thickness} thickness meter`}
+                    size='xsmall'
+                    values={multipleValues}
+                    aria-label='multiple value meter'
+                    background={{ color: 'light-4', opacity: 'medium' }}
                   />
                 </Box>
-              ))}
-            </Box>
-          ),
-          type: (
-            <Box>
-              {['bar', 'circle'].map(type => (
-                <Box key={type} margin={{ bottom: 'xsmall' }} align='end'>
+                <Box margin='xsmall'>
                   <Meter
-                    type={type}
-                    size='small'
-                    values={SINGLE_VALUE}
-                    aria-label={`${type} meter`}
+                    round={true}
+                    size='xsmall'
+                    values={multipleValues}
+                    aria-label='multiple value meter'
+                    background={{ color: 'light-4', opacity: 'medium' }}
                   />
                 </Box>
-              ))}
-            </Box>
-          ),
-          values: (
-            <Box>
-              <Box margin={{ bottom: 'xsmall' }} align='end'>
-                <Meter
-                  size='small'
-                  values={multipleValues}
-                  aria-label='multiple value meter'
-                />
+                <Box margin='xsmall'>
+                  <Meter
+                    round={true}
+                    type='circle'
+                    size='xsmall'
+                    values={multipleValues}
+                    aria-label='multiple value meter'
+                    background={{ color: 'light-4', opacity: 'medium' }}
+                  />
+                </Box>
               </Box>
-              <Box margin={{ bottom: 'xsmall' }} align='end'>
-                <Meter
-                  round={true}
-                  size='small'
-                  values={multipleValues}
-                  aria-label='multiple value meter'
-                />
-              </Box>
-              <Box margin={{ bottom: 'xsmall' }} align='end'>
-                <Meter
-                  round={true}
-                  type='circle'
-                  size='small'
-                  values={multipleValues}
-                  aria-label='multiple value meter'
-                />
-              </Box>
-            </Box>
-          ),
-        }}
-      />
+            ),
+          }}
+        />
+      </Page>
     );
   }
 }

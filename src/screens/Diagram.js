@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Box, Diagram, Stack } from 'grommet';
 import doc from 'grommet/components/Diagram/doc';
 
+import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Diagram).toJSON();
@@ -14,7 +15,7 @@ const Node = ({ id, ...rest }) => (
     margin='small'
     pad='medium'
     round='small'
-    background='neutral-1'
+    background={{ color: 'neutral-3' }}
     {...rest}
   />
 );
@@ -46,12 +47,12 @@ const Example = () => (
       </Box>
       <Box direction='row'>
         {[4, 5].map(id => (
-          <Node key={id} id={id} background='neutral-2' />
+          <Node key={id} id={id} />
         ))}
       </Box>
       <Box direction='row'>
         {[6, 7, 8].map(id => (
-          <Node key={id} id={id} background='neutral-3' />
+          <Node key={id} id={id} />
         ))}
       </Box>
     </Box>
@@ -68,13 +69,13 @@ const Example = () => (
 class DiagramDoc extends Component {
   render() {
     return (
-      <Doc
-        name='Diagram'
-        desc={desc}
-        examples={{
-          connections: <Example />,
-        }}
-      />
+      <Page>
+        <Doc
+          name='Diagram'
+          desc={desc}
+          example={<Example />}
+        />
+      </Page>
     );
   }
 }

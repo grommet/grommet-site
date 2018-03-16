@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Select } from 'grommet';
 import doc from 'grommet/components/Select/doc';
 
+import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Select).toJSON();
@@ -15,70 +16,72 @@ export default class SelectDoc extends Component {
   render() {
     const { size } = this.state;
     return (
-      <Doc
-        name='Select'
-        desc={desc}
-        example={
-          <Select
-            options={stringOptions}
-            value={size}
-            onChange={({ option }) => this.setState({ size: option })}
-          />
-        }
-        examples={{
-          dropAlign: (
-            <Select
-              dropAlign={{ bottom: 'top', right: 'right' }}
-              options={stringOptions}
-              onChange={({ option }) => this.setState({ size: option })}
-            />
-          ),
-          dropBackground: (
-            <Select
-              dropBackground='dark-3'
-              options={stringOptions}
-              onChange={({ option }) => this.setState({ size: option })}
-            />
-          ),
-          onSearch: (
-            <Select
-              options={stringOptions}
-              onSearch={() => {}}
-              onChange={({ option }) => this.setState({ size: option })}
-            />
-          ),
-          placeholder: (
-            <Select
-              placeholder='Choose one'
-              options={stringOptions}
-              onChange={({ option }) => this.setState({ size: option })}
-            />
-          ),
-          plain: (
-            <Select
-              plain={true}
-              options={stringOptions}
-              value={size}
-              onChange={({ option }) => this.setState({ size: option })}
-            />
-          ),
-          searchPlaceholder: (
-            <Select
-              options={stringOptions}
-              searchPlaceholder='Type something here'
-              onSearch={() => {}}
-              onChange={({ option }) => this.setState({ size: option })}
-            />
-          ),
-          value: (
+      <Page>
+        <Doc
+          name='Select'
+          desc={desc}
+          example={
             <Select
               options={stringOptions}
               value={size}
               onChange={({ option }) => this.setState({ size: option })}
             />
-          ),
-        }}
-      />
+          }
+          examples={{
+            dropAlign: (
+              <Select
+                dropAlign={{ bottom: 'top', right: 'right' }}
+                options={stringOptions}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+            dropBackground: (
+              <Select
+                dropBackground='dark-3'
+                options={stringOptions}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+            onSearch: (
+              <Select
+                options={stringOptions}
+                onSearch={() => {}}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+            placeholder: (
+              <Select
+                placeholder='Choose one'
+                options={stringOptions}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+            plain: (
+              <Select
+                plain={true}
+                options={stringOptions}
+                value={size}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+            searchPlaceholder: (
+              <Select
+                options={stringOptions}
+                searchPlaceholder='Type something here'
+                onSearch={() => {}}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+            value: (
+              <Select
+                options={stringOptions}
+                value={size}
+                onChange={({ option }) => this.setState({ size: option })}
+              />
+            ),
+          }}
+        />
+      </Page>
     );
   }
 }

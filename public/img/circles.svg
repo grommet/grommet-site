@@ -1,14 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1440" viewBox="0 0 1800 1440">
-  <g fill="none" fill-rule="evenodd">
-    <circle cx="1192.5" cy="1182.5" r="50.5" fill="#EB6060" style="mix-blend-mode:color"/>
-    <circle cx="1448.5" cy="1136.5" r="190.5" stroke="#EBDA60" stroke-width="144" opacity=".8" style="mix-blend-mode:color"/>
-    <circle cx="835.5" cy="1043.5" r="78.5" fill="#FF00E4" opacity=".5"/>
-    <circle cx="1039" cy="1491" r="379" stroke="#60EB9F" stroke-width="266" style="mix-blend-mode:color"/>
-    <circle cx="230" cy="1177" r="89" stroke="#FF00E4" stroke-width="48" opacity=".5"/>
-    <circle cx="605.5" cy="1316.5" r="273.5" stroke="#9060EB" stroke-width="190" opacity=".5" style="mix-blend-mode:color"/>
-    <circle cx="452.5" cy="1437.5" r="53.5" fill="#FF00E4" opacity=".5"/>
-    <circle cx="1462.5" cy="647.5" r="53.5" fill="#FFF9ED" opacity=".5"/>
-    <circle cx="443.5" cy="948.5" r="134.5" fill="#FF7300" opacity=".5"/>
-    <circle cx="1145.5" cy="708.5" r="169.5" fill="#FFD2D0" opacity=".5"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="975px" viewBox="0 0 1440 975" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>grommet-home-header-layer-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="grommet-home-header-layer-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill-opacity="0.200000018" fill="#C2AAEF" cx="747.5" cy="579.5" r="96.5"></circle>
+        <circle id="Oval" fill-opacity="0.800000012" fill="#60EB9F" cx="1404.5" cy="415.5" r="169.5"></circle>
+        <ellipse id="Oval" stroke="#FD6FFF" stroke-width="288" cx="1158" cy="1003.5" rx="282" ry="282.5"></ellipse>
+        <circle id="Oval" fill="#60EBE1" opacity="0.550622736" cx="616" cy="1166" r="273"></circle>
+        <circle id="Oval" stroke="#FFDB47" stroke-width="144" opacity="0.550622736" cx="1573.5" cy="1087.5" r="283.5"></circle>
+        <circle id="Oval" fill="#FFCA58" opacity="0.5" cx="666.5" cy="777.5" r="53.5"></circle>
+        <circle id="Oval" fill="#FFFFFF" opacity="0.400000006" cx="1344.5" cy="651.5" r="53.5"></circle>
+    </g>
 </svg>

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Box, Button, Heading, Layer, Text } from 'grommet';
 import doc from 'grommet/components/Layer/doc';
 
+import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Layer).toJSON();
@@ -46,79 +47,81 @@ export default class LayerDoc extends Component {
     }
 
     return (
-      <Doc
-        name='Layer'
-        desc={desc}
-        examples={{
-          full: (
-            <Box>
-              {[true, false, 'horizontal', 'vertical'].map(fullValue => (
-                <Box key={fullValue} margin='small'>
-                  <Button
-                    active={fullValue === full}
-                    label={`${fullValue}`}
-                    onClick={() => this.setState({ show: true, full: fullValue })}
-                  />
-                </Box>
-              ))}
-            </Box>
-          ),
-          margin: (
-            <Box>
-              {['none', 'xsmall', 'small', 'medium', 'large'].map(marginValue => (
-                <Box key={marginValue} margin='small'>
-                  <Button
-                    active={marginValue === margin}
-                    label={marginValue}
-                    onClick={() => this.setState({ show: true, margin: marginValue })}
-                  />
-                </Box>
-              ))}
-            </Box>
-          ),
-          modal: (
-            <Box>
-              {[true, false].map(modalValue => (
-                <Box key={modalValue} margin='small'>
-                  <Button
-                    active={modalValue === modal}
-                    label={`${modalValue}`}
-                    onClick={() => this.setState({ show: true, modal: modalValue })}
-                  />
-                </Box>
-              ))}
-            </Box>
-          ),
-          plain: (
-            <Box>
-              {[true, false].map(plainValue => (
-                <Box key={plainValue} margin='small'>
-                  <Button
-                    active={plainValue === plain}
-                    label={`${plainValue}`}
-                    onClick={() => this.setState({ show: true, plain: plainValue })}
-                  />
-                </Box>
-              ))}
-            </Box>
-          ),
-          position: (
-            <Box>
-              {['bottom', 'center', 'hidden', 'left', 'right', 'top'].map(positionValue => (
-                <Box key={positionValue} margin='small'>
-                  <Button
-                    active={positionValue === position}
-                    label={positionValue}
-                    onClick={() => this.setState({ show: true, position: positionValue })}
-                  />
-                </Box>
-              ))}
-            </Box>
-          ),
-        }}
-      >
-        {layerNode}
-      </Doc>
+      <Page>
+        <Doc
+          name='Layer'
+          desc={desc}
+          examples={{
+            full: (
+              <Box>
+                {[true, false, 'horizontal', 'vertical'].map(fullValue => (
+                  <Box key={fullValue} margin='small'>
+                    <Button
+                      active={fullValue === full}
+                      label={`${fullValue}`}
+                      onClick={() => this.setState({ show: true, full: fullValue })}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+            margin: (
+              <Box>
+                {['none', 'xsmall', 'small', 'medium', 'large'].map(marginValue => (
+                  <Box key={marginValue} margin='small'>
+                    <Button
+                      active={marginValue === margin}
+                      label={marginValue}
+                      onClick={() => this.setState({ show: true, margin: marginValue })}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+            modal: (
+              <Box>
+                {[true, false].map(modalValue => (
+                  <Box key={modalValue} margin='small'>
+                    <Button
+                      active={modalValue === modal}
+                      label={`${modalValue}`}
+                      onClick={() => this.setState({ show: true, modal: modalValue })}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+            plain: (
+              <Box>
+                {[true, false].map(plainValue => (
+                  <Box key={plainValue} margin='small'>
+                    <Button
+                      active={plainValue === plain}
+                      label={`${plainValue}`}
+                      onClick={() => this.setState({ show: true, plain: plainValue })}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+            position: (
+              <Box>
+                {['bottom', 'center', 'hidden', 'left', 'right', 'top'].map(positionValue => (
+                  <Box key={positionValue} margin='small'>
+                    <Button
+                      active={positionValue === position}
+                      label={positionValue}
+                      onClick={() => this.setState({ show: true, position: positionValue })}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ),
+          }}
+        >
+          {layerNode}
+        </Doc>
+      </Page>
     );
   }
 }
