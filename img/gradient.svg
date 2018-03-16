@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1440" viewBox="0 0 1800 1440">
-  <defs>
-    <radialGradient id="artboard-1-a" cx="49.164%" cy="100%" r="100%" fx="49.164%" fy="100%" gradientTransform="matrix(0 -1 .9939 0 -.502 1.492)">
-      <stop offset="0%" stop-color="#FFF9ED"/>
-      <stop offset="100%" stop-color="#FCC"/>
-    </radialGradient>
-  </defs>
-  <rect width="1800" height="1440" fill="url(#artboard-1-a)" fill-rule="evenodd"/>
-</svg>
