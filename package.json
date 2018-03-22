@@ -51,6 +51,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.1.0",
+    "fs-extra": "^5.0.0",
     "pre-commit": "^1.2.2",
     "react-dev-utils": "^5.0.0",
     "react-test-renderer": "^16.0.0",
