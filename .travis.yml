@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- '6.11.2'
+- '6.11.5'
 sudo: false
 cache:
   directories:
   - node_modules
 script:
-- npm run check
+- npm run lint
 after_success:
 - |
   if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
