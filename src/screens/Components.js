@@ -9,7 +9,7 @@ import {
   Text, TextArea, TextInput, WorldMap,
 } from 'grommet';
 import {
-  Actions, Add, Grommet as GrommetIcon, Group, CirclePlay,
+  Actions, Add, Descend, Grommet as GrommetIcon, Group, CirclePlay,
   Next, Previous, TreeOption,
 } from 'grommet-icons';
 import Page from '../components/Page';
@@ -390,6 +390,10 @@ export default class Components extends Component {
           <Section name='Utilities' index={4}>
             <Item name='Grommet' path='/grommet' center={true}>
               <GrommetIcon color='brand' size='xlarge' />
+            </Item>
+
+            <Item name='InfiniteScroll' path='/infinitescroll' center={true}>
+              <Descend color='brand' size='xlarge' />
             </Item>
 
             <Item name='Keyboard' path='/keyboard' center={true}>

@@ -26,6 +26,7 @@ import Grommet from '../screens/Grommet';
 import Heading from '../screens/Heading';
 import Home from '../screens/Home';
 import Image from '../screens/Image';
+import InfiniteScroll from '../screens/InfiniteScroll';
 import Keyboard from '../screens/Keyboard';
 import Layer from '../screens/Layer';
 import License from '../screens/License';
@@ -84,6 +85,7 @@ export default () => (
     <Route exact={true} path='/grommet' component={Grommet} />
     <Route exact={true} path='/heading' component={Heading} />
     <Route exact={true} path='/image' component={Image} />
+    <Route exact={true} path='/infinitescroll' component={InfiniteScroll} />
     <Route exact={true} path='/keyboard' component={Keyboard} />
     <Route exact={true} path='/layer' component={Layer} />
     <Route exact={true} path='/markdown' component={Markdown} />
