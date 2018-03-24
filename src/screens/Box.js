@@ -55,7 +55,7 @@ export default () => (
           <Box direction='row' justify='end' wrap={true}>
             {[undefined, 'strong', 'medium', 'weak'].map(opacity => (
               <Box
-                key={opacity}
+                key={opacity || 'opacity'}
                 background={{ color: 'accent-2', opacity }}
                 pad='medium'
                 margin='xsmall'
