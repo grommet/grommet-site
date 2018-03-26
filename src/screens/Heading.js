@@ -38,7 +38,7 @@ export default () => (
         size: (
           <Box direction='row' justify='end' wrap={true}>
             {[1, 2, 3, 4].map(level => (
-              <Box direction='row' justify='end'>
+              <Box key={level} direction='row' justify='end'>
                 {['small', 'medium', 'large'].map(size => (
                   <Box key={size} margin='xsmall'>
                     <Heading level={level} margin='none' size={size}>A</Heading>

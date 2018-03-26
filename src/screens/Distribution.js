@@ -15,6 +15,7 @@ export default () => (
       desc={desc}
       example={(
         <Distribution
+          basis='medium'
           values={[
             { value: 50, color: 'light-3' },
             { value: 30, color: 'brand' },

@@ -4,7 +4,7 @@ import URLSearchParams from 'url-search-params';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Grommet, Box } from 'grommet';
-import { hpe } from 'grommet/themes';
+import { hpe, dark } from 'grommet/themes';
 import Content from './components/Content';
 
 const history = createBrowserHistory();
@@ -12,6 +12,7 @@ const history = createBrowserHistory();
 const THEMES = {
   grommet: undefined,
   hpe,
+  dark,
 };
 
 export default class App extends Component {
