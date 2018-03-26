@@ -77,8 +77,8 @@ export default class Home extends Component {
           </Section>
         </Stack>
 
-        <Section background='#FFF5CC' pad={{ top: 'xlarge', horizontal: 'xlarge' }}>
-          <Box align='center'>
+        <Section background='#FFF5CC' pad={{ top: 'xlarge' }}>
+          <Box align='center' overflow='hidden' pad={{ horizontal: 'xlarge' }}>
             <Heading level={2} size='large' margin='none'>
               Do all the things!
             </Heading>
@@ -94,7 +94,7 @@ export default class Home extends Component {
               primary={true}
               label='start reading'
             />
-            <Image src='img/do-all-things.svg' />
+            <Image src='img/do-all-things.svg' fit='contain' width='100%' />
           </Box>
         </Section>
 
