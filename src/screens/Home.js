@@ -6,6 +6,7 @@ import {
 } from 'grommet';
 import { Favorite, Medium, Slack, Twitter } from 'grommet-icons';
 import Nav from '../components/Nav';
+import Stak from '../components/Stak';
 
 const Section = ({ children, ...rest }) => (
   <Box
@@ -39,7 +40,7 @@ export default class Home extends Component {
             </Box>
 
             <Box direction='row-responsive' align='start'>
-              <Box basis='1/2' margin={{ bottom: 'xlarge' }}>
+              <Box basis='1/2'>
                 <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
                   Styled components for Reactjs
                 </Heading>
@@ -69,8 +70,8 @@ export default class Home extends Component {
                   />
                 </Box>
               </Box>
-              <Box basis='1/2' alignSelf='end'>
-                <Image width='100%' src='img/Stak.svg' fit='contain' />
+              <Box basis='1/2' alignSelf='end' overflow='hidden' pad={{ top: 'large' }}>
+                <Stak />
               </Box>
             </Box>
           </Section>
