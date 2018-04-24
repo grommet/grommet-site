@@ -1,5 +1,5 @@
 
-const COLOR_REGEXP = new RegExp(/[A-Za-z0-9]{2}/, 'g');
+const COLOR_REGEXP = new RegExp('[A-Za-z0-9]{2}', 'g');
 
 export const parseRGBString = (str) => {
   const match = str.match(COLOR_REGEXP);
