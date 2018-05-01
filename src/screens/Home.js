@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box, Heading, Image, Paragraph, RoutedButton, Button,
+  Box, Grid, Heading, Image, Paragraph, RoutedButton, Button,
   Stack, Text,
 } from 'grommet';
 import { Favorite, Medium, Slack, Twitter } from 'grommet-icons';
@@ -21,6 +21,10 @@ const Section = ({ children, ...rest }) => (
   </Box>
 );
 
+const COMPANIES = ['HPE', 'Netflix', 'GE', 'IBM', 'MicroFocus', 'GitHub',
+  'Samsung', 'Uber', 'Shopify', 'Twilio', 'Sony', 'HP',
+  'Boeing'];
+
 export default class Home extends Component {
   componentWillMount() {
     const { onColorChange } = this.context;
@@ -30,14 +34,12 @@ export default class Home extends Component {
   render() {
     return (
       <Box>
-        <Stack fill={true} guidingChild='last'>
+        <Stack guidingChild='last'>
           <Box justify='end' align='end' background='#FFD6D6'>
             <Image src='img/circles.svg' />
           </Box>
           <Section pad={{ horizontal: 'xlarge', top: 'large' }}>
-            <Box margin={{ bottom: 'xlarge' }}>
-              <Nav />
-            </Box>
+            <Nav />
 
             <Box direction='row-responsive' align='start'>
               <Box basis='1/2'>
@@ -110,18 +112,27 @@ export default class Home extends Component {
               <Paragraph size='large' textAlign='center'>
                 See more folks using grommet.
               </Paragraph>
-              <Box direction='row' wrap={true} align='center' justify='center'>
-                {['HPE', 'Netflix', 'GE', 'IBM', 'MicroFocus', 'GitHub',
-                  'Samsung', 'Uber', 'Shopify', 'Twilio', 'Sony', 'HP',
-                  'Boeing'].map(name => (
-                    <Box
-                      key={name}
-                      margin={{ horizontal: 'small', vertical: 'medium' }}
-                      basis='small'
-                    >
-                      <Image size='small' src={`img/logos/${name}-logo.svg`} />
-                    </Box>
-                ))}
+              <Box alignSelf='stretch'>
+                {Grid.available ? (
+                  <Grid columns='small' gap='large' align='center' justify='center'>
+                    {COMPANIES.map(name => (
+                      <Image key={name} size='small' src={`img/logos/${name}-logo.svg`} />
+                    ))}
+                  </Grid>
+                ) : (
+                  <Box direction='row' wrap={true} gap='large' align='center'>
+                    {COMPANIES.map(name => (
+                      <Box
+                        basis='small'
+                        direction='row'
+                        justify='center'
+                        margin={{ bottom: 'large' }}
+                      >
+                        <Image key={name} size='small' src={`img/logos/${name}-logo.svg`} />
+                      </Box>
+                    ))}
+                  </Box>
+                )}
               </Box>
             </Box>
           </Section>

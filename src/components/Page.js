@@ -4,16 +4,14 @@ import Nav from '../components/Nav';
 
 export default ({ children, ...rest }) => (
   <Box
+    pad={{ horizontal: 'xlarge', vertical: 'large' }}
     direction='row'
     justify='center'
-    pad={{ horizontal: 'xlarge', vertical: 'large' }}
     {...rest}
   >
     <Box basis='xlarge'>
-      <Box margin={{ bottom: 'xlarge' }}>
-        <Nav />
-      </Box>
-      {children}
+      <Nav gridArea='header' />
+      <Box gridArea='content'>{children}</Box>
     </Box>
   </Box>
 );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Button, Heading, Paragraph, Text } from 'grommet';
+import Play from './Play';
 
 // parseFormat() parses the react-desc property format string into
 // an object that makes it easier for us to style the content.
@@ -88,6 +89,8 @@ const Value = ({ value: { name, type, values } }) => {
 };
 
 export default class Doc extends Component {
+  state = {}
+
   componentWillMount() {
     const { onColorChange } = this.context;
     onColorChange('#FFF5CC');
@@ -99,8 +102,9 @@ export default class Doc extends Component {
 
   render() {
     const {
-      children, desc, name, example, examples, text,
+      children, code, desc, name, example, examples, text,
     } = this.props;
+    const { play } = this.state;
     return (
       <Box>
         <Box direction='row-responsive' margin={{ bottom: 'large' }}>
@@ -124,6 +128,9 @@ export default class Doc extends Component {
                 target='_blank'
                 label='Edit on CodeSandbox'
               />
+            ) : null}
+            {code ? (
+              <Button label='Play' onClick={() => this.setState({ play: true })} />
             ) : null}
           </Box>
           <Box flex={true} pad={{ top: 'large', horizontal: 'medium' }}>
@@ -177,12 +184,14 @@ export default class Doc extends Component {
         ) : null}
 
         {children}
+        {play ? <Play code={code} onClose={() => this.setState({ play: false })} /> : null}
       </Box>
     );
   }
 }
 
 Doc.propTypes = {
+  code: PropTypes.string,
   desc: PropTypes.object,
   example: PropTypes.node,
   examples: PropTypes.object,
@@ -191,6 +200,7 @@ Doc.propTypes = {
 };
 
 Doc.defaultProps = {
+  code: undefined,
   desc: undefined,
   example: null,
   examples: {},

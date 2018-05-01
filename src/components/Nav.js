@@ -4,11 +4,9 @@ import { Box, Responsive, RoutedAnchor, Text } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 
 const NavAnchor = ({ path, label }) => (
-  <Box pad={{ horizontal: 'small' }}>
-    <RoutedAnchor path={path}>
-      <Text size='large'><strong>{label}</strong></Text>
-    </RoutedAnchor>
-  </Box>
+  <RoutedAnchor path={path}>
+    <Text size='large'><strong>{label}</strong></Text>
+  </RoutedAnchor>
 );
 
 export default class extends Component {
@@ -20,7 +18,13 @@ export default class extends Component {
       <Responsive
         onChange={nextResponsive => this.setState({ responsive: nextResponsive })}
       >
-        <Box direction='row' justify='between' align='center'>
+        <Box
+          direction='row'
+          justify='between'
+          align='center'
+          margin={{ bottom: 'xlarge' }}
+          {...this.props}
+        >
           <RoutedAnchor path='/'>
             <Box direction='row' align='center' margin={{ right: 'small' }}>
               <GrommetIcon size='large' color='brand' />
@@ -31,7 +35,7 @@ export default class extends Component {
                 : null}
             </Box>
           </RoutedAnchor>
-          <Box direction='row' align='center'>
+          <Box direction='row' align='center' gap='medium'>
             <NavAnchor path='/try' label='try' />
             <NavAnchor path='/use' label='use' />
             <NavAnchor path='/components' label='read' />

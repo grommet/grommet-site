@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Box, Button, Chart, CheckBox, Clock,
   Diagram, Distribution,
-  FormField, Heading,
+  FormField, Grid, Heading,
   Menu, Meter, Paragraph, RadioButton, RangeInput, RangeSelector,
   RoutedButton, Select, Stack,
   Text, TextArea, TextInput, WorldMap,
@@ -32,6 +32,7 @@ const connection = (a, b) => ({
 
 const Section = ({ children, index, name }) => (
   <Box
+    flex={false}
     pad={{ vertical: 'medium' }}
     animation={[
       { type: 'zoomIn', duration: 500, delay: 100 + (100 * index) },
@@ -41,36 +42,44 @@ const Section = ({ children, index, name }) => (
     <Heading level={2} margin={{ top: 'none' }}>
       {name}
     </Heading>
-    <Box direction='row' wrap={true} align='center'>
-      {children}
-    </Box>
+    {Grid.available ? (
+      <Grid columns='small' rows='small' gap='medium'>
+        {children}
+      </Grid>
+    ) : (
+      <Box direction='row' wrap={true} gap='medium'>
+        {React.Children.map(children, child => (
+          <Box basis='small' margin={{ bottom: 'medium' }}>
+            <Box basis='small'>
+              {child}
+            </Box>
+          </Box>
+        ))}
+      </Box>
+    )}
   </Box>
 );
 
 const Item = ({
   name, path, children, center,
 }) => (
-  <Box basis='medium' pad={{ right: 'medium', bottom: 'medium' }}>
-    <RoutedButton path={path}>
-      <Box>
-        <Heading level={3} size='small' margin={{ top: 'none', bottom: 'xsmall' }}>
-          <strong>{name}</strong>
-        </Heading>
+  <RoutedButton path={path} fill={true}>
+    <Box fill={true}>
+      <Heading level={3} size='small' margin={{ top: 'none', bottom: 'xsmall' }}>
+        <strong>{name}</strong>
+      </Heading>
+      <Box
+        flex={true}
+        border={center ? { color: 'brand', size: 'small' } : undefined}
+        justify={center ? 'center' : undefined}
+        align={center ? 'center' : undefined}
+        pad={center ? 'small' : undefined}
+        overflow='hidden'
+      >
+        {children}
       </Box>
-      <Box>
-        <Box
-          basis='small'
-          border={center ? { color: 'brand', size: 'small' } : undefined}
-          justify={center ? 'center' : undefined}
-          align={center ? 'center' : undefined}
-          pad={center ? 'medium' : undefined}
-          style={{ overflow: 'hidden' }}
-        >
-          {children}
-        </Box>
-      </Box>
-    </RoutedButton>
-  </Box>
+    </Box>
+  </RoutedButton>
 );
 
 const Key = ({ label }) => (
@@ -139,17 +148,16 @@ export default class Components extends Component {
             </Item>
             <Item name='Markdown' path='/markdown' center={true}>
               <code>
-  # Grommet **heart**s markdown.
+  # Grommet **heart**
 
   Favorite thing,
-  [link](https://www.instagram.com/p/I6h5u/)
+  [link](https://v2.grommet.io/)
               </code>
             </Item>
             <Item name='Paragraph' path='/paragraph' center={true}>
               <Paragraph>
                 OASIS was much more than a game or an entertainment
-                platform. {"It's"} a new way of life. People stay connected to it
-                for the majority of a day...
+                platform. {"It's"} a new way of life.
               </Paragraph>
             </Item>
             <Item name='Text' path='/text' center={true}>
@@ -159,7 +167,7 @@ export default class Components extends Component {
 
           <Section name='Color' index={2}>
             <Item name='Brand' path='/color'>
-              <Box flex={true} background='brand' />
+              <Box flex={true} direction='row' background='brand' />
             </Item>
             <Item name='Accents' path='/color'>
               <Box flex={true} direction='row'>
@@ -368,7 +376,7 @@ export default class Components extends Component {
             </Item>
 
             <Item name='WorldMap' path='/worldmap' center={true}>
-              <WorldMap color='brand' />
+              <WorldMap color='brand' style={{ width: '100%', height: '100%' }} />
             </Item>
           </Section>
 

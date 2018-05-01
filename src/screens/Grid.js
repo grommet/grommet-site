@@ -15,6 +15,7 @@ export default () => (
       desc={desc}
       example={(
         <Grid
+          fill={true}
           rows={['xxsmall', 'flex']}
           columns={['xsmall', 'flex', 'small']}
           gap='small'
