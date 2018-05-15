@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga';
 
 const config = {
-  trackerId: 'UA-99690204-2',
+  trackerId: 'UA-99690204-1',
   debug: false,
 };
 
@@ -12,9 +12,7 @@ export default (history) => {
   });
 
   history.listen((location) => {
-    if (typeof window !== 'undefined') {
-      ReactGA.set({ page: location.pathname });
-      ReactGA.pageview(location.pathname);
-    }
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
   });
 };
