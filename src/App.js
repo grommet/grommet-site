@@ -6,8 +6,11 @@ import { createBrowserHistory } from 'history';
 import { Grommet, Box } from 'grommet';
 import { hpe, dark } from 'grommet/themes';
 import Content from './components/Content';
+import analytics from './utils/analytics';
 
 const history = createBrowserHistory();
+
+analytics(history);
 
 const THEMES = {
   grommet: undefined,

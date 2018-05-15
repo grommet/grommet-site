@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box, Grid, Heading, Image, Paragraph, RoutedButton, Button,
+  Anchor, Box, Grid, Heading, Image, Paragraph, RoutedButton, Button,
   Stack, Text,
 } from 'grommet';
 import { Favorite, Medium, Slack, Twitter } from 'grommet-icons';
@@ -178,6 +178,12 @@ export default class Home extends Component {
                 </Box>
                 <Text> by the gremlins</Text>
               </Box>
+
+              <Paragraph margin={{ top: 'large' }} textAlign='center'>
+                If you&#39;ve been using grommet for a while but aren&#39;t
+                ready for version 2, you might be looking
+                for <Anchor href='https://grommet.io'>Grommet version 1</Anchor>.
+              </Paragraph>
             </Box>
           </Section>
         </Stack>
