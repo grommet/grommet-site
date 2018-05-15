@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga';
 
 const config = {
-  trackerId: 'UA-99690204-1',
+  trackerId: 'UA-99690204-2',
   debug: false,
 };
 
