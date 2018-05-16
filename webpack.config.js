@@ -13,7 +13,7 @@ const plugins = [
   new webpack.NamedModulesPlugin(),
   new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({ template: 'public/index.html' }),
-  new OfflinePlugin(),
+  new OfflinePlugin({ externals: ['https://www.google-analytics.com/analytics.js'] }),
 ];
 
 let alias;
