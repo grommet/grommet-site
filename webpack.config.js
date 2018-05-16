@@ -1,13 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const useAlias = process.env.USE_ALIAS;
 
 const plugins = [
+  new CleanWebpackPlugin(['dist']),
   new CopyWebpackPlugin([{ from: './public' }]),
   new webpack.NamedModulesPlugin(),
   new webpack.HotModuleReplacementPlugin(),
+  new HtmlWebpackPlugin({ template: 'public/index.html' }),
 ];
 
 let alias;
@@ -27,9 +31,30 @@ module.exports = {
     port: 8567,
   },
   entry: './src/index.js',
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        grommet: {
+          test: /[\\/]node_modules[\\/]grommet/,
+          name: 'grommet',
+          priority: -10,
+        },
+        vendors: {
+          test: context =>
+            (context.resource &&
+              context.resource.search(/[\\/]node_modules[\\/]/) !== -1 &&
+              context.resource.search(/[\\/]node_modules[\\/]grommet/) === -1),
+          name: 'vendors',
+          priority: -10,
+        },
+      },
+    },
+  },
   output: {
     path: path.resolve('./dist'),
-    filename: 'index.js',
+    filename: '[name]-[hash].js',
+    chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/',
   },
   resolve: {
@@ -47,7 +72,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+        },
       },
     ],
   },

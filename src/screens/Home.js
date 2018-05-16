@@ -166,9 +166,9 @@ export default class Home extends Component {
                 wrap={true}
                 margin={{ vertical: 'xlarge' }}
               >
-                <Image src='img/community-left.svg' />
+                <Image src='img/community-left.png' />
                 <Image src='img/stak-full.svg' />
-                <Image src='img/community-right.svg' />
+                <Image src='img/community-right.png' />
               </Box>
 
               <Box direction='row' gap='xsmall'>

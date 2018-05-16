@@ -1,7 +1,7 @@
 {
   "presets": [ "env", "stage-1", "react"],
   "plugins": [
-    "styled-components"
+    "styled-components",
   ],
   "env": {
     "development": {

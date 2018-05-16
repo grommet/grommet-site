@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+// import { Box, Text } from 'grommet';
 
 import About from '../screens/About';
 import Anchor from '../screens/Anchor';
@@ -12,13 +13,10 @@ import CheckBox from '../screens/CheckBox';
 import Clock from '../screens/Clock';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
-import Contribute from '../screens/Contribute';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
 import Drop from '../screens/Drop';
 import DropButton from '../screens/DropButton';
-import Examples from '../screens/Examples';
-import Feed from '../screens/Feed';
 import Form from '../screens/Form';
 import FormField from '../screens/FormField';
 import Grid from '../screens/Grid';
@@ -29,12 +27,10 @@ import Image from '../screens/Image';
 import InfiniteScroll from '../screens/InfiniteScroll';
 import Keyboard from '../screens/Keyboard';
 import Layer from '../screens/Layer';
-import License from '../screens/License';
 import Markdown from '../screens/Markdown';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
 import Paragraph from '../screens/Paragraph';
-import PhotoBrowser from '../screens/PhotoBrowser';
 import RadioButton from '../screens/RadioButton';
 import RangeInput from '../screens/RangeInput';
 import RangeSelector from '../screens/RangeSelector';
@@ -52,19 +48,57 @@ import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
 
+// class DynamicImport extends Component {
+//   state = {
+//     component: null,
+//   }
+//
+//   componentDidMount() {
+//     this.props.load()
+//       .then((component) => {
+//         this.setState(() => ({
+//           component: component.default ? component.default : component,
+//         }));
+//       });
+//   }
+//
+//   render() {
+//     return this.props.children(this.state.component);
+//   }
+// }
+//
+// const Screens = {};
+//
+// ['About', 'Anchor', 'Box', 'Button', 'Calendar', 'Carousel', 'Chart',
+//   'CheckBox', 'Clock', 'Color', 'Components', 'Diagram', 'Distribution',
+//   'Drop', 'DropButton', 'Form', 'FormField', 'Grid', 'Grommet',
+//   'Heading', 'Home', 'Image', 'InfiniteScroll', 'Keyboard', 'Layer',
+//   'Markdown', 'Menu', 'Meter', 'Paragraph', 'RadioButton',
+//   'RangeInput', 'RangeSelector', 'Responsive', 'Select', 'SkipLinks', 'Stack',
+//   'Tabs', 'Table', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
+//   'Video', 'WorldMap'].forEach((name) => {
+//   Screens[name] = props => (
+//     <DynamicImport load={() => import(`../screens/${name}`)}>
+//       {C => ((C === null)
+//         ? (
+//           <Box pad='xlarge' justify='center' align='center'>
+//             <Text color='light-5'>...</Text>
+//           </Box>
+//           )
+//         : <C {...props} />)}
+//     </DynamicImport>
+//   );
+// });
+
 export default () => (
   <Switch>
     <Route exact={true} path='/' component={Home} />
 
-    <Route exact={true} path='/examples' component={Examples} />
     <Route exact={true} path='/try' component={Try} />
     <Route exact={true} path='/use' component={Use} />
     <Route exact={true} path='/components' component={Components} />
-    <Route exact={true} path='/feed' component={Feed} />
 
     <Route exact={true} path='/about' component={About} />
-    <Route exact={true} path='/contribute' component={Contribute} />
-    <Route exact={true} path='/license' component={License} />
 
     <Route exact={true} path='/anchor' component={Anchor} />
     <Route exact={true} path='/box' component={Box} />
@@ -97,7 +131,6 @@ export default () => (
     <Route exact={true} path='/responsive' component={Responsive} />
     <Route exact={true} path='/paragraph' component={Paragraph} />
     <Route exact={true} path='/select' component={Select} />
-    <Route exact={true} path='/photo-browser' component={PhotoBrowser} />
     <Route exact={true} path='/skiplinks' component={SkipLinks} />
     <Route exact={true} path='/stack' component={Stack} />
     <Route exact={true} path='/table' component={Table} />
