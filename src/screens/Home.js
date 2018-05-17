@@ -53,28 +53,28 @@ export default class Home extends Component {
                 <Box direction='row-responsive' align='center' gap='medium' margin={{ vertical: 'medium' }}>
                   <RoutedButton
                     a11yTitle='Try it now'
-                    path='theme'
+                    path='/try'
                     primary={true}
                     label='try it now'
                   />
                   <Button
                     a11yTitle='Go to Github'
-                    href='https://github.com/grommet/grommet'
+                    href='https://github.com/grommet/grommet/tree/NEXT'
                     label='GitHub'
                   />
                 </Box>
                 <Box direction='row' align='center' gap='small' margin={{ vertical: 'large' }}>
-                  <RoutedButton
+                  <Button
                     a11yTitle='Join the conversations on Slack'
                     href='https://slackin.grommet.io/'
                     icon={<Slack color='brand' size='large' />}
                   />
-                  <RoutedButton
+                  <Button
                     a11yTitle='Follow updates on Twitter'
                     href='https://twitter.com/grommetux'
                     icon={<Twitter color='brand' size='large' />}
                   />
-                  <RoutedButton
+                  <Button
                     a11yTitle='Keep up with stories on Medium'
                     href=''
                     icon={<Medium color='brand' size='large' />}
@@ -180,7 +180,7 @@ export default class Home extends Component {
               </Paragraph>
               <RoutedButton
                 a11yTitle='Use it now'
-                path='start'
+                path='/use'
                 primary={true}
                 label='use it now'
               />
