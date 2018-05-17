@@ -52,30 +52,30 @@ export default class Home extends Component {
                 </Paragraph>
                 <Box direction='row-responsive' align='center' gap='medium' margin={{ vertical: 'medium' }}>
                   <RoutedButton
-                    aria-label='Try it now'
+                    a11yTitle='Try it now'
                     path='theme'
                     primary={true}
                     label='try it now'
                   />
                   <Button
-                    aria-label='Go to Github'
+                    a11yTitle='Go to Github'
                     href='https://github.com/grommet/grommet'
                     label='GitHub'
                   />
                 </Box>
                 <Box direction='row' align='center' gap='small' margin={{ vertical: 'large' }}>
                   <RoutedButton
-                    aria-label='Join the conversations on Slack'
+                    a11yTitle='Join the conversations on Slack'
                     href='https://slackin.grommet.io/'
                     icon={<Slack color='brand' size='large' />}
                   />
                   <RoutedButton
-                    aria-label='Follow updates on Twitter'
+                    a11yTitle='Follow updates on Twitter'
                     href='https://twitter.com/grommetux'
                     icon={<Twitter color='brand' size='large' />}
                   />
                   <RoutedButton
-                    aria-label='Keep up with stories on Medium'
+                    a11yTitle='Keep up with stories on Medium'
                     href=''
                     icon={<Medium color='brand' size='large' />}
                   />
@@ -101,7 +101,7 @@ export default class Home extends Component {
               to conquer any project.
             </Paragraph>
             <RoutedButton
-              aria-label='Start reading about components'
+              a11yTitle='Start reading about components'
               path='components'
               primary={true}
               label='start reading'
@@ -179,7 +179,7 @@ export default class Home extends Component {
                 say hi!
               </Paragraph>
               <RoutedButton
-                aria-label='Use it now'
+                a11yTitle='Use it now'
                 path='start'
                 primary={true}
                 label='use it now'
@@ -208,7 +208,7 @@ export default class Home extends Component {
               <Paragraph margin={{ top: 'large' }} textAlign='center'>
                 If you&#39;ve been using grommet for a while but aren&#39;t
                 ready for version 2, you might be looking
-                for <Anchor href='https://grommet.io'>Grommet version 1</Anchor>.
+                for <Anchor href='https://grommet.io'><strong>Grommet version 1</strong></Anchor>.
               </Paragraph>
             </Box>
           </Section>
