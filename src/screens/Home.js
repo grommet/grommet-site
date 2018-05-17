@@ -36,7 +36,7 @@ export default class Home extends Component {
       <Box>
         <Stack guidingChild='last'>
           <Box justify='end' align='end' background='#FFD6D6'>
-            <Image src='img/circles.svg' />
+            <Image alt='' src='img/circles.svg' />
           </Box>
           <Section pad={{ horizontal: 'xlarge', top: 'large' }}>
             <Nav />
@@ -51,22 +51,31 @@ export default class Home extends Component {
                   approachable frameworks out there.
                 </Paragraph>
                 <Box direction='row-responsive' align='center' gap='medium' margin={{ vertical: 'medium' }}>
-                  <RoutedButton path='theme' primary={true} label='try it now' />
+                  <RoutedButton
+                    aria-label='Try it now'
+                    path='theme'
+                    primary={true}
+                    label='try it now'
+                  />
                   <Button
+                    aria-label='Go to Github'
                     href='https://github.com/grommet/grommet'
                     label='GitHub'
                   />
                 </Box>
                 <Box direction='row' align='center' gap='small' margin={{ vertical: 'large' }}>
                   <RoutedButton
-                    href=''
+                    aria-label='Join the conversations on Slack'
+                    href='https://slackin.grommet.io/'
                     icon={<Slack color='brand' size='large' />}
                   />
                   <RoutedButton
-                    href=''
+                    aria-label='Follow updates on Twitter'
+                    href='https://twitter.com/grommetux'
                     icon={<Twitter color='brand' size='large' />}
                   />
                   <RoutedButton
+                    aria-label='Keep up with stories on Medium'
                     href=''
                     icon={<Medium color='brand' size='large' />}
                   />
@@ -92,17 +101,23 @@ export default class Home extends Component {
               to conquer any project.
             </Paragraph>
             <RoutedButton
+              aria-label='Start reading about components'
               path='components'
               primary={true}
               label='start reading'
             />
-            <Image src='img/do-all-things.svg' fit='contain' width='100%' />
+            <Image
+              alt='Do all things graphic'
+              src='img/do-all-things.svg'
+              fit='contain'
+              width='100%'
+            />
           </Box>
         </Section>
 
         <Stack guidingChild='last'>
           <Box background='#DDE6FF'>
-            <Image src='img/shapes.svg' />
+            <Image alt='' src='img/shapes.svg' />
           </Box>
           <Section pad='xlarge'>
             <Box align='center'>
@@ -116,7 +131,12 @@ export default class Home extends Component {
                 {Grid.available ? (
                   <Grid columns='small' gap='large' align='center' justify='center'>
                     {COMPANIES.map(name => (
-                      <Image key={name} size='small' src={`img/logos/${name}-logo.svg`} />
+                      <Image
+                        key={name}
+                        alt={`${name} logo`}
+                        size='small'
+                        src={`img/logos/${name}-logo.svg`}
+                      />
                     ))}
                   </Grid>
                 ) : (
@@ -128,7 +148,12 @@ export default class Home extends Component {
                         justify='center'
                         margin={{ bottom: 'large' }}
                       >
-                        <Image key={name} size='small' src={`img/logos/${name}-logo.svg`} />
+                        <Image
+                          key={name}
+                          alt={`${name} logo`}
+                          size='small'
+                          src={`img/logos/${name}-logo.svg`}
+                        />
                       </Box>
                     ))}
                   </Box>
@@ -140,7 +165,7 @@ export default class Home extends Component {
 
         <Stack guidingChild='last'>
           <Box align='center' background='#D8FDE6'>
-            <Image src='img/double-grommet.svg' />
+            <Image alt='' src='img/double-grommet.svg' />
           </Box>
           <Section pad='xlarge'>
             <Box align='center'>
@@ -154,6 +179,7 @@ export default class Home extends Component {
                 say hi!
               </Paragraph>
               <RoutedButton
+                aria-label='Use it now'
                 path='start'
                 primary={true}
                 label='use it now'
@@ -166,9 +192,9 @@ export default class Home extends Component {
                 wrap={true}
                 margin={{ vertical: 'xlarge' }}
               >
-                <Image src='img/community-left.png' />
-                <Image src='img/stak-full.svg' />
-                <Image src='img/community-right.png' />
+                <Image alt='Community member avatars' src='img/community-left.png' />
+                <Image alt='Stak being friendly' src='img/stak-full.svg' />
+                <Image alt='Community member avatars' src='img/community-right.png' />
               </Box>
 
               <Box direction='row' gap='xsmall'>
