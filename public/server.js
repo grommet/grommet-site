@@ -11,8 +11,16 @@ const path = require('path');
 
 const PORT = process.env.PORT || 8050;
 
+const forceSsl = function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  return next();
+};
+
 const app = express();
 
+app.use(forceSsl);
 app.use(compression());
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
