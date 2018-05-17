@@ -3,7 +3,7 @@
   "short_name": "Grommet",
   "theme_color": "#865CD6",
   "background_color": "#FFD6D6",
-  "display": "browser",
+  "display": "fullscreen",
   "Scope": "/",
   "start_url": "/",
   "icons": [
