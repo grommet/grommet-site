@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Box, Button, Heading, Markdown, Paragraph, Text } from 'grommet';
 import { Twitter, Vimeo } from 'grommet-icons';
+import { withContext } from '../Context';
 import Nav from '../components/Nav';
 
 const ITEMS = [
@@ -53,10 +53,10 @@ const Item = ({
   </Box>
 );
 
-export default class Feed extends Component {
-  componentWillMount() {
-    const { onColorChange } = this.context;
-    onColorChange(['#FFFFFF', '#FFFFFF']);
+class Feed extends Component {
+  constructor(props) {
+    super(props);
+    props.context.setColor('#FFFFFF');
   }
 
   render() {
@@ -90,6 +90,4 @@ export default class Feed extends Component {
   }
 }
 
-Feed.contextTypes = {
-  onColorChange: PropTypes.func,
-};
+export default withContext(Feed);

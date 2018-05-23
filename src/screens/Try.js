@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import WebFont from 'webfontloader';
 import {
   Anchor, Box, Button, FormField, Grommet, Heading, Image,
   Paragraph, Select, Text, TextInput,
 } from 'grommet';
 import { Previous as PreviousIcon } from 'grommet-icons';
+import { withContext } from '../Context';
 import Page from '../components/Page';
 import { hslToRgb, parseRGBString, rgbToHsl, toRGBString } from '../utils/color';
 import { mergeDeep } from '../utils/object';
@@ -84,9 +84,12 @@ const colorsForMood = (color, mood) => {
   return result;
 };
 
-export default class Theme extends Component {
-  constructor() {
-    super();
+class Try extends Component {
+  constructor(props) {
+    super(props);
+    // This is for the page background, not for the theme itself.
+    props.context.setColor('#DDE6FF');
+
     const font = 'Fira Sans';
     const color = '#99cc33';
     const mood = 'even';
@@ -107,15 +110,10 @@ export default class Theme extends Component {
     };
   }
 
-  componentWillMount() {
-    // This is for the page background, not for the theme itself.
-    const { onColorChange } = this.context;
-    onColorChange('#DDE6FF');
-  }
-
   componentDidMount() {
     const { font } = this.state;
     this.onChangeFont({ target: { value: font } });
+    document.title = 'Try - Grommet';
   }
 
   onChangeColor = (event) => {
@@ -163,6 +161,8 @@ export default class Theme extends Component {
       loading: { ...loading, font: undefined },
     });
   }
+
+  onChangeName = event => this.setState({ name: event.target.value })
 
   onChangeFont = (event) => {
     const { errors, loading } = this.state;
@@ -248,7 +248,7 @@ export default class Theme extends Component {
                   <TextInput
                     plain={true}
                     value={name}
-                    onInput={event => this.setState({ name: event.target.value })}
+                    onChange={this.onChangeName}
                   />
                 </FormField>
                 <FormField
@@ -378,6 +378,4 @@ export default class Theme extends Component {
   }
 }
 
-Theme.contextTypes = {
-  onColorChange: PropTypes.func,
-};
+export default withContext(Try);

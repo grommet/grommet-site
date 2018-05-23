@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   Box, Button, Chart, CheckBox, Clock,
   Diagram, Distribution,
   FormField, Grid, Heading,
   Menu, Meter, Paragraph, RadioButton, RangeInput, RangeSelector,
-  RoutedButton, Select, Stack,
+  Select, Stack,
   Text, TextArea, TextInput, WorldMap,
+  ThemeContext,
 } from 'grommet';
 import {
   Actions, Add, Descend, Grommet as GrommetIcon, Group, CirclePlay,
   Next, Previous, TreeOption,
 } from 'grommet-icons';
+import { withContext } from '../Context';
 import Page from '../components/Page';
+import RoutedButton from '../components/RoutedButton';
 
 const CHART_VALUES = [
   { value: [4, 5], label: '4' },
@@ -29,6 +31,10 @@ const connection = (a, b) => ({
   thickness: 'xsmall',
   round: true,
 });
+
+const ACCENT_REGEXP = /^accent-/i;
+const NEUTRAL_REGEXP = /^neutral-/i;
+const STATUS_REGEXP = /^status-/i;
 
 const Section = ({ children, index, name }) => (
   <Box
@@ -92,14 +98,17 @@ const Key = ({ label }) => (
   </Box>
 );
 
-export default class Components extends Component {
-  componentWillMount() {
-    const { onColorChange } = this.context;
-    onColorChange('#FFF5CC');
+class Components extends Component {
+  constructor(props) {
+    super(props);
+    props.context.setColor('#FFF5CC');
+  }
+
+  componentDidMount() {
+    document.title = 'Read - Grommet';
   }
 
   render() {
-    const { theme } = this.context;
     return (
       <Page>
         <Box direction='row'>
@@ -165,32 +174,42 @@ export default class Components extends Component {
             </Item>
           </Section>
 
-          <Section name='Color' index={2}>
-            <Item name='Brand' path='/color'>
-              <Box flex={true} direction='row' background='brand' />
-            </Item>
-            <Item name='Accents' path='/color'>
-              <Box flex={true} direction='row'>
-                {theme.global.colors.accent.map((color, index) => (
-                  <Box key={color} flex={true} background={`accent-${index + 1}`} />
-                ))}
-              </Box>
-            </Item>
-            <Item name='Neutrals' path='/color'>
-              <Box flex={true} direction='row'>
-                {theme.global.colors.neutral.map((color, index) => (
-                  <Box key={color} flex={true} background={`neutral-${index + 1}`} />
-                ))}
-              </Box>
-            </Item>
-            <Item name='Status' path='/color'>
-              <Box flex={true} direction='row'>
-                {Object.keys(theme.global.colors.status).map(name => (
-                  <Box key={name} flex={true} background={`status-${name}`} />
-                ))}
-              </Box>
-            </Item>
-          </Section>
+          <ThemeContext.Consumer>
+            {theme => (
+              <Section name='Color' index={2}>
+                <Item name='Brand' path='/color'>
+                  <Box flex={true} direction='row' background='brand' />
+                </Item>
+                <Item name='Accents' path='/color'>
+                  <Box flex={true} direction='row'>
+                    {Object.keys(theme.global.colors)
+                      .filter(name => ACCENT_REGEXP.test(name))
+                      .map(name => (
+                        <Box key={name} flex={true} background={name} />
+                    ))}
+                  </Box>
+                </Item>
+                <Item name='Neutrals' path='/color'>
+                  <Box flex={true} direction='row'>
+                    {Object.keys(theme.global.colors)
+                      .filter(name => NEUTRAL_REGEXP.test(name))
+                      .map(name => (
+                        <Box key={name} flex={true} background={name} />
+                    ))}
+                  </Box>
+                </Item>
+                <Item name='Status' path='/color'>
+                  <Box flex={true} direction='row'>
+                    {Object.keys(theme.global.colors)
+                      .filter(name => STATUS_REGEXP.test(name))
+                      .map(name => (
+                        <Box key={name} flex={true} background={name} />
+                    ))}
+                  </Box>
+                </Item>
+              </Section>
+            )}
+          </ThemeContext.Consumer>
 
           <Section name='Controls' index={3}>
             <Item name='Anchor' path='/anchor' center={true}>
@@ -476,7 +495,4 @@ export default class Components extends Component {
   }
 }
 
-Components.contextTypes = {
-  onColorChange: PropTypes.func,
-  theme: PropTypes.object,
-};
+export default withContext(Components);
