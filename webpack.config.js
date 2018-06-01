@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const OfflinePlugin = require('offline-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const useAlias = process.env.USE_ALIAS;
 
@@ -13,7 +13,7 @@ const plugins = [
   new webpack.NamedModulesPlugin(),
   new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({ template: 'public/index.html' }),
-  // new OfflinePlugin(), // can't seem to load google analytics this way :(
+  new OfflinePlugin(), // can't seem to load google analytics this way :(
 ];
 
 let alias;
