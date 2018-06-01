@@ -1,6 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
 // import { Box, Text } from 'grommet';
+import { Route } from '../Router';
 
 import About from '../screens/About';
 import Anchor from '../screens/Anchor';
@@ -48,6 +49,7 @@ import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
 
+// NOTE: This commented out code illustrates how to code-split per-screen
 // class DynamicImport extends Component {
 //   state = {
 //     component: null,
@@ -91,7 +93,7 @@ import WorldMap from '../screens/WorldMap';
 // });
 
 export default () => (
-  <Switch>
+  <React.Fragment>
     <Route exact={true} path='/' component={Home} />
 
     <Route exact={true} path='/try' component={Try} />
@@ -140,5 +142,5 @@ export default () => (
     <Route exact={true} path='/textinput' component={TextInput} />
     <Route exact={true} path='/video' component={Video} />
     <Route exact={true} path='/worldmap' component={WorldMap} />
-  </Switch>
+  </React.Fragment>
 );

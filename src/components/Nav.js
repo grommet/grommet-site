@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
-import { Box, Responsive, RoutedAnchor, Text } from 'grommet';
+import { Box, Responsive, Text } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
+import RoutedAnchor from '../components/RoutedAnchor';
 
 const NavAnchor = ({ path, label }) => (
   <RoutedAnchor path={path}>

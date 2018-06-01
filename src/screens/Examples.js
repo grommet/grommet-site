@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Box, Button, Heading, Paragraph, RoutedButton, Text, TextInput } from 'grommet';
+import { withContext } from '../Context';
 import Nav from '../components/Nav';
 
-export default class Examples extends Component {
-  componentWillMount() {
-    const { onColorChange } = this.context;
-    onColorChange(['#FFCCCC', '#FFF9ED']);
+class Examples extends Component {
+  constructor(props) {
+    super(props);
+    props.context.setColor(['#FFCCCC', '#FFF9ED']);
   }
 
   render() {
@@ -118,6 +118,4 @@ export default class Examples extends Component {
   }
 }
 
-Examples.contextTypes = {
-  onColorChange: PropTypes.func,
-};
+export default withContext(Examples);

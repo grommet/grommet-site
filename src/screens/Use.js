@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Anchor, Box, Heading, Markdown, Paragraph, Text } from 'grommet';
+import { withContext } from '../Context';
 import Page from '../components/Page';
 
 const Item = ({ label, snippet, description }) => (
@@ -13,10 +13,14 @@ const Item = ({ label, snippet, description }) => (
   </Box>
 );
 
-export default class Start extends Component {
-  componentWillMount() {
-    const { onColorChange } = this.context;
-    onColorChange('#D8FDE6');
+class Use extends Component {
+  constructor(props) {
+    super(props);
+    props.context.setColor('#D8FDE6');
+  }
+
+  componentDidMount() {
+    document.title = 'Use - Grommet';
   }
 
   render() {
@@ -81,6 +85,4 @@ export default class Start extends Component {
   }
 }
 
-Start.contextTypes = {
-  onColorChange: PropTypes.func,
-};
+export default withContext(Use);

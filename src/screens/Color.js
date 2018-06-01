@@ -1,10 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { Box, Text } from 'grommet';
+import { Box, Text, ThemeContext } from 'grommet';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+
+const BRAND_REGEXP = /^brand/i;
+const ACCENT_REGEXP = /^accent-/i;
+const NEUTRAL_REGEXP = /^neutral-/i;
+const STATUS_REGEXP = /^status-/i;
+const LIGHT_REGEXP = /^light-/i;
+const DARK_REGEXP = /^dark-/i;
 
 const Cell = ({ name, value }) => (
   <Box basis='small' margin={{ bottom: 'medium' }}>
@@ -14,39 +20,33 @@ const Cell = ({ name, value }) => (
   </Box>
 );
 
-const Color = (props, { theme }) => (
+const Set = ({ regexp, colors }) => (
+  <Box direction='row' wrap={true} gap='medium'>
+    {Object.keys(colors)
+      .filter(name => regexp.test(name))
+      .map(name => (
+        <Cell key={name} name={name} value={colors[name]} />
+    ))}
+  </Box>
+);
+
+const Color = () => (
   <Page>
     <Doc name='Color'>
-      <Box gap='large'>
-        <Box direction='row' wrap={true} gap='medium'>
-          <Cell name='brand' value={theme.global.colors.brand} />
-        </Box>
-        <Box direction='row' wrap={true} gap='medium'>
-          {theme.global.colors.accent.map((color, index) => (
-            <Cell key={color} name={`accent-${index + 1}`} value={color} />
-          ))}
-        </Box>
-        <Box direction='row' wrap={true} gap='medium'>
-          {theme.global.colors.neutral.map((color, index) => (
-            <Cell key={color} name={`neutral-${index + 1}`} value={color} />
-          ))}
-        </Box>
-        <Box direction='row' wrap={true} gap='medium'>
-          {Object.keys(theme.global.colors.status).map(name => (
-            <Cell
-              key={name}
-              name={`status-${name}`}
-              value={theme.global.colors.status[name]}
-            />
-          ))}
-        </Box>
-      </Box>
+      <ThemeContext.Consumer>
+        {theme => (
+          <Box gap='large'>
+            <Set regexp={BRAND_REGEXP} colors={theme.global.colors} />
+            <Set regexp={ACCENT_REGEXP} colors={theme.global.colors} />
+            <Set regexp={NEUTRAL_REGEXP} colors={theme.global.colors} />
+            <Set regexp={STATUS_REGEXP} colors={theme.global.colors} />
+            <Set regexp={LIGHT_REGEXP} colors={theme.global.colors} />
+            <Set regexp={DARK_REGEXP} colors={theme.global.colors} />
+          </Box>
+        )}
+      </ThemeContext.Consumer>
     </Doc>
   </Page>
 );
-
-Color.contextTypes = {
-  theme: PropTypes.object,
-};
 
 export default Color;

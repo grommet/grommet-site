@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Button, Heading, Paragraph, Text } from 'grommet';
+import { withContext } from '../Context';
 import Play from './Play';
 
 // parseFormat() parses the react-desc property format string into
@@ -88,15 +89,17 @@ const Value = ({ value: { name, type, values } }) => {
   return content;
 };
 
-export default class Doc extends Component {
-  state = {}
-
-  componentWillMount() {
-    const { onColorChange } = this.context;
-    onColorChange('#FFF5CC');
+class Doc extends Component {
+  constructor(props) {
+    super(props);
+    props.context.setColor('#FFF5CC');
   }
 
+  state = {}
+
   componentDidMount() {
+    const { name } = this.props;
+    document.title = `${name} - Grommet`;
     window.scrollTo(0, 0);
   }
 
@@ -192,6 +195,9 @@ export default class Doc extends Component {
 
 Doc.propTypes = {
   code: PropTypes.string,
+  context: PropTypes.shape({
+    setColor: PropTypes.func.isRequired,
+  }).isRequired,
   desc: PropTypes.object,
   example: PropTypes.node,
   examples: PropTypes.object,
@@ -207,6 +213,4 @@ Doc.defaultProps = {
   text: undefined,
 };
 
-Doc.contextTypes = {
-  onColorChange: PropTypes.func,
-};
+export default withContext(Doc);

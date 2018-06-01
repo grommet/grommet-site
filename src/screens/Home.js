@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
-  Anchor, Box, Grid, Heading, Image, Paragraph, RoutedButton, Button,
+  Anchor, Box, Grid, Heading, Image, Paragraph, Button,
   Stack, Text,
 } from 'grommet';
 import { Favorite, Medium, Slack, Twitter } from 'grommet-icons';
+import { withContext } from '../Context';
 import Nav from '../components/Nav';
 import Stak from '../components/Stak';
+import RoutedButton from '../components/RoutedButton';
 
 const Section = ({ children, ...rest }) => (
   <Box
@@ -25,10 +26,10 @@ const COMPANIES = ['HPE', 'Netflix', 'GE', 'IBM', 'MicroFocus', 'GitHub',
   'Samsung', 'Uber', 'Shopify', 'Twilio', 'Sony', 'HP',
   'Boeing'];
 
-export default class Home extends Component {
-  componentWillMount() {
-    const { onColorChange } = this.context;
-    onColorChange('#FFD6D6');
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    props.context.setColor('#FFD6D6');
   }
 
   render() {
@@ -218,6 +219,4 @@ export default class Home extends Component {
   }
 }
 
-Home.contextTypes = {
-  onColorChange: PropTypes.func,
-};
+export default withContext(Home);
