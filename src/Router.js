@@ -33,7 +33,7 @@ export class Router extends Component {
   onPush = (nextPath) => {
     const { path, search } = this.state;
     if (nextPath !== path) {
-      window.history.pushState(undefined, undefined, `${nextPath}${search}`);
+      window.history.pushState(undefined, undefined, `${nextPath}${search || ''}`);
       this.setState({ path: nextPath });
     }
   }
