@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "grommet": "https://github.com/grommet/grommet/tarball/NEXT-stable",
-    "grommet-icons": "^1.0.0",
+    "grommet-icons": "https://github.com/grommet/grommet-icons/tarball/stable",
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
