@@ -43,7 +43,7 @@ class Use extends Component {
             <Heading level={2}>New Application</Heading>
             <Item
               label='grommet cli'
-              snippet={(<code>npm install -g grommet-cli</code>)}
+              snippet={(<code>npm install -g grommet-cli@next</code>)}
               description='Get grommet command line tools on your local environment.'
             />
             <Item
