@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { Box, Chart } from 'grommet';
-import doc from 'grommet/components/Chart/doc';
+import doc, { docCalcs } from 'grommet/components/Chart/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Chart).toJSON();
+const Dummy = () => (<div />);
+const descCalcs = docCalcs(Dummy).toJSON();
 
 const BOUNDS = [[0, 7], [0, 100]];
 
@@ -144,5 +146,7 @@ export default () => (
         ),
       }}
     />
+
+    <Doc name='calcs' nav={false} desc={descCalcs} />
   </Page>
 );

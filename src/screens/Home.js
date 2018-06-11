@@ -36,7 +36,7 @@ class Home extends Component {
     return (
       <Box>
         <Stack guidingChild='last'>
-          <Box justify='end' align='end' background='#FFD6D6'>
+          <Box fill={true} justify='end' align='end' background='#FFD6D6'>
             <Image alt='' src='img/circles.svg' />
           </Box>
           <Section pad={{ horizontal: 'xlarge', top: 'large' }}>
@@ -117,7 +117,7 @@ class Home extends Component {
         </Section>
 
         <Stack guidingChild='last'>
-          <Box background='#DDE6FF'>
+          <Box fill={true} background='#DDE6FF'>
             <Image alt='' src='img/shapes.svg' />
           </Box>
           <Section pad='xlarge'>
@@ -165,7 +165,7 @@ class Home extends Component {
         </Stack>
 
         <Stack guidingChild='last'>
-          <Box align='center' background='#D8FDE6'>
+          <Box fill={true} overflow='hidden' align='center' background='#D8FDE6'>
             <Image alt='' src='img/double-grommet.svg' />
           </Box>
           <Section pad='xlarge'>
