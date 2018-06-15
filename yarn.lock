@@ -715,7 +715,7 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-grommet@^0.5.1, babel-plugin-grommet@^0.5.3:
+babel-plugin-grommet@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-grommet/-/babel-plugin-grommet-0.5.3.tgz#81e5331292e648a5514de4e054edd75bbdefb5fd"
   dependencies:
@@ -3032,9 +3032,9 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-beta.3"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#3f792bc2ac50e79d28e276591109340748e45a6a"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#8667a942c7a47004a3f9239ee341d217b2b3624e"
   dependencies:
-    babel-plugin-grommet "^0.5.1"
+    babel-plugin-grommet "^0.5.3"
     markdown-to-jsx "^6.6.6"
     node-emoji "^1.8.1"
     polished "^1.3.0"
