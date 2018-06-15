@@ -36,7 +36,7 @@
     "babel-core": "^6.5.2",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.1",
-    "babel-plugin-grommet": "^0.5.0",
+    "babel-plugin-grommet": "^0.5.3",
     "babel-plugin-styled-components": "^1.1.7",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.16.0",
@@ -59,7 +59,7 @@
     "react-test-renderer": "^16.4.0",
     "simple-git": "^1.95.0",
     "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.3",
+    "webpack-cli": "^3.0.7",
     "webpack-dev-server": "^3.1.4"
   },
   "pre-commit": [
