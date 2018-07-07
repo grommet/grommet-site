@@ -26,7 +26,7 @@ const Set = ({ regexp, colors }) => (
       .filter(name => regexp.test(name))
       .map(name => (
         <Cell key={name} name={name} value={colors[name]} />
-    ))}
+      ))}
   </Box>
 );
 

@@ -7,7 +7,9 @@ import {
 import { Previous as PreviousIcon } from 'grommet-icons';
 import { withContext } from '../Context';
 import Page from '../components/Page';
-import { hslToRgb, parseRGBString, rgbToHsl, toRGBString } from '../utils/color';
+import {
+  hslToRgb, parseRGBString, rgbToHsl, toRGBString,
+} from '../utils/color';
 import { mergeDeep } from '../utils/object';
 
 const SHARPNESSES = [
@@ -65,8 +67,7 @@ const deriveHues = (h, count) => {
   return result;
 };
 
-const between = (value, min, max) =>
-  Math.min(max, Math.max(min, value));
+const between = (value, min, max) => Math.min(max, Math.max(min, value));
 
 const colorsForMood = (color, mood) => {
   let result;
@@ -78,8 +79,9 @@ const colorsForMood = (color, mood) => {
     const accentHues = deriveHues(h, 2);
     const accentSat = between(s + MOOD[mood].saturationBoost, 0.2, 0.8);
     const accentLum = between(1.0 - (l - MOOD[mood].luminenceBoost), 0.2, 0.8);
-    result.global.colors.accent = accentHues.map(ah =>
-      `#${toRGBString(hslToRgb(ah, accentSat, accentLum))}`);
+    result.global.colors.accent = accentHues.map(ah => (
+      `#${toRGBString(hslToRgb(ah, accentSat, accentLum))}`
+    ));
   }
   return result;
 };

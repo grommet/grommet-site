@@ -13,7 +13,7 @@ export default () => (
     <Doc
       name='Carousel'
       desc={desc}
-      example={
+      example={(
         <Box>
           <Box basis='small'>
             <Carousel fill={true}>
@@ -23,7 +23,7 @@ export default () => (
             </Carousel>
           </Box>
         </Box>
-      }
+      )}
     />
   </Page>
 );

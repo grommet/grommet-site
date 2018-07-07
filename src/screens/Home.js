@@ -3,7 +3,9 @@ import {
   Anchor, Box, Grid, Heading, Image, Paragraph, Button,
   Stack, Text,
 } from 'grommet';
-import { Favorite, Medium, Slack, Twitter } from 'grommet-icons';
+import {
+  Favorite, Medium, Slack, Twitter,
+} from 'grommet-icons';
 import { withContext } from '../Context';
 import Nav from '../components/Nav';
 import Stak from '../components/Stak';

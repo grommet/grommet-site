@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Box, Button, SkipLinkTarget, SkipLink, SkipLinks, Heading } from 'grommet';
+import {
+  Box, Button, SkipLinkTarget, SkipLink, SkipLinks, Heading,
+} from 'grommet';
 import doc from 'grommet/components/SkipLinks/doc';
 
 import Page from '../components/Page';

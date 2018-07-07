@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { Box, RangeSelector, Stack, Text } from 'grommet';
+import {
+  Box, RangeSelector, Stack, Text,
+} from 'grommet';
 import doc from 'grommet/components/RangeSelector/doc';
 
 import Page from '../components/Page';
@@ -12,6 +14,7 @@ class RangeSelectorDoc extends Component {
   state = {
     values: [3, 7],
   }
+
   render() {
     const { values } = this.state;
     return (

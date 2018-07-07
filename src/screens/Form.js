@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { Box, Button, CheckBox, Heading, Select, Text, TextInput } from 'grommet';
+import {
+  Box, Button, CheckBox, Heading, Select, Text, TextInput,
+} from 'grommet';
 
 import Form from 'react-formify';
 
@@ -69,7 +71,8 @@ const userRules = (user) => {
     email: (value) => {
       if (!value || value === '') {
         return 'Email is required';
-      } else if (!emailExpression.test(value)) {
+      }
+      if (!emailExpression.test(value)) {
         return 'Email is not valid';
       }
       return undefined;
@@ -84,10 +87,10 @@ const userRules = (user) => {
     },
   };
   if (
-    user.address &&
-    user.address.home &&
-    user.address.home.street &&
-    user.address.home.street !== ''
+    user.address
+    && user.address.home
+    && user.address.home.street
+    && user.address.home.street !== ''
   ) {
     return deepMerge(defaultValidation, {
       address: {

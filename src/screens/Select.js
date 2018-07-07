@@ -20,13 +20,13 @@ export default class SelectDoc extends Component {
         <Doc
           name='Select'
           desc={desc}
-          example={
+          example={(
             <Select
               options={stringOptions}
               value={size}
               onChange={({ option }) => this.setState({ size: option })}
             />
-          }
+          )}
           examples={{
             dropAlign: (
               <Select

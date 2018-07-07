@@ -8,8 +8,9 @@ export default class Gradient extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.colors[0] !== this.props.colors[0] ||
-      nextProps.colors[1] !== this.props.colors[1]) {
+    const { colors } = this.props;
+    if (nextProps.colors[0] !== colors[0]
+      || nextProps.colors[1] !== colors[1]) {
       this.setState({ nextColors: nextProps.colors });
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {

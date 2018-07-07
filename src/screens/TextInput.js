@@ -15,6 +15,7 @@ class TextInputDoc extends Component {
     value: '',
     suggestions: allSuggestions,
   }
+
   render() {
     const { suggestions, value } = this.state;
     return (
@@ -49,8 +50,8 @@ class TextInputDoc extends Component {
                 }
                 onInput={event => this.setState({
                   value: event.target.value,
-                  suggestions: allSuggestions.filter(suggestion =>
-                    suggestion.indexOf(event.target.value) > -1),
+                  suggestions: allSuggestions.filter(suggestion => (
+                    suggestion.indexOf(event.target.value) > -1)),
                 })}
                 value={value}
               />

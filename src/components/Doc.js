@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button, Heading, Paragraph, Text } from 'grommet';
+import {
+  Box, Button, Heading, Paragraph, Text,
+} from 'grommet';
 import { withContext } from '../Context';
 import Play from './Play';
 
@@ -144,8 +146,8 @@ class Doc extends Component {
         {desc ? (
           <Box pad={{ bottom: 'large' }}>
             <Box pad='large' round='large' background='light-1'>
-              {desc.properties ?
-                desc.properties.map((property, index) => (
+              {desc.properties
+                ? desc.properties.map((property, index) => (
                   <Box
                     key={property.name}
                     border='bottom'
@@ -179,8 +181,8 @@ class Doc extends Component {
                       ) : null}
                     </Box>
                   </Box>
-                )) :
-                <Text color='light-5'>No properties</Text>
+                ))
+                : <Text color='light-5'>No properties</Text>
               }
             </Box>
           </Box>

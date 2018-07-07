@@ -9,20 +9,25 @@ export default class Selection extends Component {
   static defaultProps = {
     selected: undefined,
   }
+
   static propTypes = {
     selected: PropTypes.array,
   }
+
   constructor(props, context) {
     super(props, context);
     this.state = {
       selected: props.selected || [],
     };
   }
+
   componentWillReceiveProps(nextProps) {
-    if (nextProps.selected && nextProps.selected !== this.state.selected) {
+    const { selected } = this.state;
+    if (nextProps.selected && nextProps.selected !== selected) {
       this.setState({ selected: nextProps.selected });
     }
   }
+
   notifyChange = () => {
     const { selected } = this.state;
     const { onChange } = this.props;
@@ -30,6 +35,7 @@ export default class Selection extends Component {
       onChange(selected);
     }
   }
+
   onIndexChange = (index) => {
     const { selected } = this.state;
     let newSelection = [...selected];
@@ -41,6 +47,7 @@ export default class Selection extends Component {
     newSelection = newSelection.sort();
     this.setState({ selected: newSelection }, this.notifyChange);
   }
+
   render() {
     const { children, margin, overlay } = this.props;
     const { selected } = this.state;

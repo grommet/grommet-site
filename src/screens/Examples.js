@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Box, Button, Heading, Paragraph, RoutedButton, Text, TextInput } from 'grommet';
+import {
+  Box, Button, Heading, Paragraph, RoutedButton, Text, TextInput,
+} from 'grommet';
 import { withContext } from '../Context';
 import Nav from '../components/Nav';
 

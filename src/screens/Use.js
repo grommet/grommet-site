@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Anchor, Box, Heading, Markdown, Paragraph, Text } from 'grommet';
+import {
+  Anchor, Box, Heading, Markdown, Paragraph, Text,
+} from 'grommet';
 import { withContext } from '../Context';
 import Page from '../components/Page';
 
 const Item = ({ label, snippet, description }) => (
   <Box border='bottom' margin={{ bottom: 'medium' }} pad={{ bottom: 'small' }}>
     <Box direction='row' responsive={true} justify='between'>
-      <Text size='large' margin={{ bottom: 'small' }}><strong>{label}</strong></Text>
+      <Text size='large' margin={{ bottom: 'small' }}>
+        <strong>{label}</strong>
+      </Text>
       <Text>{snippet}</Text>
     </Box>
     <Markdown>{description}</Markdown>

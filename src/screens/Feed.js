@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Box, Button, Heading, Markdown, Paragraph, Text } from 'grommet';
+import {
+  Box, Button, Heading, Markdown, Paragraph, Text,
+} from 'grommet';
 import { Twitter, Vimeo } from 'grommet-icons';
 import { withContext } from '../Context';
 import Nav from '../components/Nav';

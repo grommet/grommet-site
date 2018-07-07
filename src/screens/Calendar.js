@@ -18,7 +18,7 @@ export default class extends Component {
         <Doc
           name='Calendar'
           desc={desc}
-          example={
+          example={(
             <Box align='center'>
               <Calendar
                 size='small'
@@ -26,7 +26,7 @@ export default class extends Component {
                 onSelect={nextDate => this.setState({ date: nextDate })}
               />
             </Box>
-          }
+          )}
         />
       </Page>
     );

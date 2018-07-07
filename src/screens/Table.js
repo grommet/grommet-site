@@ -5,7 +5,9 @@ import {
   TableRow,
 } from 'grommet';
 import doc,
-{ docTableCell, docTableRow, docTableHeader, docTableFooter, docTableBody }
+{
+  docTableCell, docTableRow, docTableHeader, docTableFooter, docTableBody,
+}
   from 'grommet/components/Table/doc';
 
 import Page from '../components/Page';

@@ -12,6 +12,7 @@ class RangeInputDoc extends Component {
   state = {
     value: 0,
   }
+
   render() {
     const { value } = this.state;
     return (

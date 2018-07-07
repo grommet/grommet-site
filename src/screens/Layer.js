@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { Box, Button, Heading, Layer, Text } from 'grommet';
+import {
+  Box, Button, Heading, Layer, Text,
+} from 'grommet';
 import doc from 'grommet/components/Layer/doc';
 
 import Page from '../components/Page';
@@ -17,6 +19,7 @@ export default class LayerDoc extends Component {
     position: undefined,
     show: false,
   }
+
   render() {
     const {
       full, margin, modal, plain, position, show,

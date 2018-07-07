@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { Box, Button, DropButton, Text, TextInput } from 'grommet';
+import {
+  Box, Button, DropButton, Text, TextInput,
+} from 'grommet';
 import doc from 'grommet/components/DropButton/doc';
 
 import Page from '../components/Page';
@@ -23,7 +25,7 @@ export default class DropButtonDoc extends Component {
               label='Fancy Selector'
               open={open}
               dropAlign={{ top: 'bottom', right: 'right' }}
-              dropContent={
+              dropContent={(
                 <Box>
                   <TextInput placeholder='Search' />
                   {['one', 'two', 'three', 'four', 'five'].map((label, index) => (
@@ -44,7 +46,7 @@ export default class DropButtonDoc extends Component {
                     </Button>
                   ))}
                 </Box>
-              }
+              )}
             />
           )}
         />

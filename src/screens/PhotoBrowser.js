@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import { Anchor, Box, Button, Heading, Image, Layer, Text } from 'grommet';
+import {
+  Anchor, Box, Button, Heading, Image, Layer, Text,
+} from 'grommet';
 
 import { Blank, Close, Trash } from 'grommet-icons';
 
@@ -149,7 +151,7 @@ export default class SelectionDoc extends Component {
                 href='#'
                 onClick={(event) => {
                   event.preventDefault();
-                  this.setState({ selectMode: !this.state.selectMode, selectedImages: [] });
+                  this.setState({ selectMode: !selectMode, selectedImages: [] });
                 }}
               >
                 {selectMode ? 'Cancel' : 'Select'}

@@ -28,6 +28,7 @@
     "react/jsx-filename-extension": 0,
     "react/jsx-first-prop-new-line": [1, "multiline"],
     "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
+    "react/jsx-one-expression-per-line": 0,
     "react/no-multi-comp": 0,  // Soft requirement now, try hard requ in future
     "react/prefer-stateless-function": 0,  // Soft requirement now, try hard requ in future
     "react/no-find-dom-node": 0,

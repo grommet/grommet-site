@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'grommet';
-import Nav from '../components/Nav';
+import Nav from './Nav';
 
 export default ({ children, ...rest }) => (
   <Box

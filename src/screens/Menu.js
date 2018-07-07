@@ -20,7 +20,7 @@ export default () => (
     <Doc
       name='Menu'
       desc={desc}
-      example={
+      example={(
         <Menu
           label='Menu'
           items={[
@@ -28,7 +28,7 @@ export default () => (
             { label: 'Second Action', onClick },
           ]}
         />
-      }
+      )}
       examples={{
         icon: (
           <Menu

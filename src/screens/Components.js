@@ -186,7 +186,7 @@ class Components extends Component {
                       .filter(name => ACCENT_REGEXP.test(name))
                       .map(name => (
                         <Box key={name} flex={true} background={name} />
-                    ))}
+                      ))}
                   </Box>
                 </Item>
                 <Item name='Neutrals' path='/color'>
@@ -195,7 +195,7 @@ class Components extends Component {
                       .filter(name => NEUTRAL_REGEXP.test(name))
                       .map(name => (
                         <Box key={name} flex={true} background={name} />
-                    ))}
+                      ))}
                   </Box>
                 </Item>
                 <Item name='Status' path='/color'>
@@ -204,7 +204,7 @@ class Components extends Component {
                       .filter(name => STATUS_REGEXP.test(name))
                       .map(name => (
                         <Box key={name} flex={true} background={name} />
-                    ))}
+                      ))}
                   </Box>
                 </Item>
               </Section>
@@ -295,10 +295,10 @@ class Components extends Component {
                         background={{
                           color: 'brand',
                           opacity:
-                            (week === 0 && day < 3 && 'weak') ||
-                            (week === 1 && day === 5 && 'strong') ||
-                            (week === 4 && day > 4 && 'weak') ||
-                            'medium',
+                            (week === 0 && day < 3 && 'weak')
+                            || (week === 1 && day === 5 && 'strong')
+                            || (week === 4 && day > 4 && 'weak')
+                            || 'medium',
                         }}
                       />
                     ))}
