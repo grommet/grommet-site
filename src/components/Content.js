@@ -14,6 +14,7 @@ import CheckBox from '../screens/CheckBox';
 import Clock from '../screens/Clock';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import DataTable from '../screens/DataTable';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
 import Drop from '../screens/Drop';
@@ -111,6 +112,7 @@ export default () => (
     <Route exact={true} path='/checkbox' component={CheckBox} />
     <Route exact={true} path='/clock' component={Clock} />
     <Route exact={true} path='/color' component={Color} />
+    <Route exact={true} path='/datatable' component={DataTable} />
     <Route exact={true} path='/diagram' component={Diagram} />
     <Route exact={true} path='/distribution' component={Distribution} />
     <Route exact={true} path='/drop' component={Drop} />

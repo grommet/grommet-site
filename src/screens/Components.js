@@ -333,15 +333,17 @@ class Components extends Component {
               <Clock size='large' type='digital' />
             </Item>
 
-            <Item name='Meter' path='/meter' center={true}>
-              <Meter
-                aria-label='Meter example'
-                type='circle'
-                size='full'
-                thickness='large'
-                round={true}
-                values={[{ value: 60, label: 'sixty', color: 'brand' }]}
-              />
+            <Item name='DataTable' path='/datatable'>
+              <Box flex={true} border={{ color: 'brand', size: 'large' }}>
+                <Box flex={true} background='brand' />
+                {[0, 1, 2].map(row => (
+                  <Box key={row} flex={true} direction='row'>
+                    {[0, 1, 2, 3].map(col => (
+                      <Box key={col} flex={true} border={{ color: 'brand' }} />
+                    ))}
+                  </Box>
+                ))}
+              </Box>
             </Item>
 
             <Item name='Diagram' path='/diagram' center={true}>
@@ -403,6 +405,17 @@ class Components extends Component {
                   />
                 )}
               </Distribution>
+            </Item>
+
+            <Item name='Meter' path='/meter' center={true}>
+              <Meter
+                aria-label='Meter example'
+                type='circle'
+                size='full'
+                thickness='large'
+                round={true}
+                values={[{ value: 60, label: 'sixty', color: 'brand' }]}
+              />
             </Item>
 
             <Item name='Table' path='/table'>
