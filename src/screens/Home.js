@@ -34,6 +34,10 @@ class Home extends Component {
     props.context.setColor('#FFD6D6');
   }
 
+  componentDidMount() {
+    document.title = 'Grommet';
+  }
+
   render() {
     return (
       <Box>

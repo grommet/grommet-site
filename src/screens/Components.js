@@ -237,6 +237,17 @@ class Components extends Component {
             <Item name='Menu' path='/menu' center={true}>
               <Menu tabIndex='-1' size='large' label='Actions' items={[]} />
             </Item>
+            <Item name='Tabs' path='/tabs'>
+              <Box
+                flex={true}
+                direction='row'
+                background={{ color: 'brand', opacity: 'weak' }}
+              >
+                <Box flex={true} background='brand' margin={{ top: 'xlarge' }} />
+                <Box flex={true} background='brand' margin={{ top: 'large' }} />
+                <Box flex={true} background='brand' margin={{ top: 'xlarge' }} />
+              </Box>
+            </Item>
           </Section>
 
           <Section name='Input' index={4}>
@@ -394,12 +405,32 @@ class Components extends Component {
               </Distribution>
             </Item>
 
+            <Item name='Table' path='/table'>
+              <Box flex={true} border={{ color: 'brand', size: 'large' }}>
+                <Box flex={true} background='brand' />
+                {[0, 1, 2].map(row => (
+                  <Box key={row} flex={true} direction='row'>
+                    {[0, 1, 2, 3].map(col => (
+                      <Box key={col} flex={true} border={{ color: 'brand' }} />
+                    ))}
+                  </Box>
+                ))}
+              </Box>
+            </Item>
+
             <Item name='WorldMap' path='/worldmap' center={true}>
               <WorldMap color='brand' style={{ width: '100%', height: '100%' }} />
             </Item>
           </Section>
 
           <Section name='Media' index={4}>
+            <Item name='Carousel' path='/carousel' center={true}>
+              <Box fill={true} direction='row' justify='between' align='center'>
+                <Previous size='medium' color='brand' />
+                <Group size='xlarge' color='brand' />
+                <Next size='medium' color='brand' />
+              </Box>
+            </Item>
             <Item name='Image' path='/image' center={true}>
               <Box direction='row' justify='center' align='end' fill={true}>
                 <Box alignSelf='start'>
@@ -451,41 +482,6 @@ class Components extends Component {
 
             <Item name='SkipLinks' path='/skiplinks' center={true}>
               <Key label='Tab' />
-            </Item>
-          </Section>
-
-          <Section name='Old School' index={6}>
-            <Item name='Carousel' path='/carousel' center={true}>
-              <Box fill={true} direction='row' justify='between' align='center'>
-                <Previous size='medium' color='brand' />
-                <Group size='xlarge' color='brand' />
-                <Next size='medium' color='brand' />
-              </Box>
-            </Item>
-
-            <Item name='Table' path='/table'>
-              <Box flex={true} border={{ color: 'brand', size: 'large' }}>
-                <Box flex={true} background='brand' />
-                {[0, 1, 2].map(row => (
-                  <Box key={row} flex={true} direction='row'>
-                    {[0, 1, 2, 3].map(col => (
-                      <Box key={col} flex={true} border={{ color: 'brand' }} />
-                    ))}
-                  </Box>
-                ))}
-              </Box>
-            </Item>
-
-            <Item name='Tabs' path='/tabs'>
-              <Box
-                flex={true}
-                direction='row'
-                background={{ color: 'brand', opacity: 'weak' }}
-              >
-                <Box flex={true} background='brand' margin={{ top: 'xlarge' }} />
-                <Box flex={true} background='brand' margin={{ top: 'large' }} />
-                <Box flex={true} background='brand' margin={{ top: 'xlarge' }} />
-              </Box>
             </Item>
           </Section>
 
