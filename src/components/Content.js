@@ -3,6 +3,7 @@ import React from 'react';
 // import { Box, Text } from 'grommet';
 import { Route } from '../Router';
 
+import Accordion from '../screens/Accordion';
 import About from '../screens/About';
 import Anchor from '../screens/Anchor';
 import Box from '../screens/Box';
@@ -103,6 +104,7 @@ export default () => (
 
     <Route exact={true} path='/about' component={About} />
 
+    <Route exact={true} path='/accordion' component={Accordion} />
     <Route exact={true} path='/anchor' component={Anchor} />
     <Route exact={true} path='/box' component={Box} />
     <Route exact={true} path='/button' component={Button} />

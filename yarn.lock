@@ -3107,7 +3107,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-beta.4"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#2adb7e1ec46d96a81fb7a60b674913d879157d76"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#77e75139299e17a57d1dd665fe7332d3524a13dc"
   dependencies:
     babel-plugin-grommet "^0.5.3"
     markdown-to-jsx "^6.6.6"

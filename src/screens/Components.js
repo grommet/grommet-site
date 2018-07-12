@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
 import {
-  Box, Button, Chart, CheckBox, Clock,
-  Diagram, Distribution,
-  FormField, Grid, Heading,
-  Menu, Meter, Paragraph, RadioButton, RangeInput, RangeSelector,
-  Select, Stack,
-  Text, TextArea, TextInput, WorldMap,
+  Accordion,
+  AccordionPanel,
+  Box,
+  Button,
+  Chart,
+  CheckBox,
+  Clock,
+  Diagram,
+  Distribution,
+  FormField,
+  Grid,
+  Heading,
+  Menu,
+  Meter,
+  Paragraph,
+  RadioButton,
+  RangeInput,
+  RangeSelector,
+  Select,
+  Stack,
+  Text,
+  TextArea,
+  TextInput,
+  WorldMap,
   ThemeContext,
 } from 'grommet';
 import {
@@ -212,6 +230,35 @@ class Components extends Component {
           </ThemeContext.Consumer>
 
           <Section name='Controls' index={3}>
+            <Item name='Accordion' path='/accordion'>
+              <Box border={{ color: 'brand', size: 'small' }}>
+                <Accordion activeIndex={0}>
+                  <AccordionPanel
+                    label={(
+                      <Box pad='small'>
+                        <Text><strong>Panel 1</strong></Text>
+                      </Box>
+                    )}
+                  >
+                    <Box
+                      pad='medium'
+                      align='center'
+                      justify='center'
+                      background={{ color: 'brand', opacity: 'weak' }}
+                    >
+                      <Text color='text'>Panel 1 contents</Text>
+                    </Box>
+                  </AccordionPanel>
+                  <AccordionPanel
+                    label={(
+                      <Box pad='small'>
+                        <Text><strong>Panel 2</strong></Text>
+                      </Box>
+                    )}
+                  />
+                </Accordion>
+              </Box>
+            </Item>
             <Item name='Anchor' path='/anchor' center={true}>
               <Text color='brand' size='large'>Don&#39;t press me</Text>
             </Item>
