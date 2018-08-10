@@ -98,7 +98,9 @@ export default () => (
   <React.Fragment>
     <Route exact={true} path='/' component={Home} />
 
+    <Route exact={true} path='/theme' component={Try} />
     <Route exact={true} path='/try' component={Try} />
+    <Route exact={true} path='/start' component={Use} />
     <Route exact={true} path='/use' component={Use} />
     <Route exact={true} path='/components' component={Components} />
 

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import URLSearchParams from 'url-search-params';
 import { Grommet, Box } from 'grommet';
-import { hpe, dark } from 'grommet/themes';
+import { grommet, hpe, dark } from 'grommet/themes';
 import { Router } from './Router';
 import Context from './Context';
 import Analytics from './components/Analytics';
 import Content from './components/Content';
 
 const THEMES = {
-  grommet: undefined,
+  grommet,
   hpe,
   dark,
 };
@@ -16,7 +16,7 @@ const THEMES = {
 export default class App extends Component {
   state = {
     color: '#FFD6D6',
-    themeName: undefined,
+    themeName: 'grommet',
   };
 
   componentDidMount() {
@@ -43,7 +43,7 @@ export default class App extends Component {
     return (
       <Router search={search}>
         <Analytics>
-          <Grommet theme={themeName ? THEMES[themeName] : undefined}>
+          <Grommet theme={themeName ? THEMES[themeName] : 'grommet'}>
             <Box
               background={color}
               style={{ minHeight: '100vh', transition: 'background 2s' }}
