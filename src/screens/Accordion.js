@@ -6,12 +6,13 @@ import {
   Box,
   Text,
 } from 'grommet';
-import doc from 'grommet/components/Accordion/doc';
+import doc, { accordionPanel } from 'grommet/components/Accordion/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 
 const desc = doc(Accordion).toJSON();
+const descAccordionPanel = accordionPanel(AccordionPanel).toJSON();
 
 export default () => (
   <Page>
@@ -43,5 +44,7 @@ export default () => (
         </Accordion>
       )}
     />
+
+    <Doc name='AccordionPanel' nav={false} desc={descAccordionPanel} />
   </Page>
 );
