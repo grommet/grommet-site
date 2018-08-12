@@ -3132,8 +3132,8 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
     codeclimate-test-reporter "^0.5.0"
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
-  version "2.0.0-beta.4"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#418c101c2fb950c0d2e40e6681719da2671879e7"
+  version "2.0.0-beta.5"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#2a0fc06bd00d17c3c7c1abfe3f7c7ed361cf1ccb"
   dependencies:
     babel-plugin-grommet "^0.5.3"
     markdown-to-jsx "^6.6.6"
