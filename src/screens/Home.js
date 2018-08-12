@@ -58,16 +58,16 @@ class Home extends Component {
                   approachable frameworks out there.
                 </Paragraph>
                 <Box direction='row-responsive' align='center' gap='medium' margin={{ vertical: 'medium' }}>
-                  <RoutedButton
-                    a11yTitle='Try it now'
-                    path='/try'
-                    primary={true}
-                    label='try it now'
-                  />
                   <Button
                     a11yTitle='Go to Github'
                     href='https://github.com/grommet/grommet/tree/NEXT'
                     label='GitHub'
+                    primary={true}
+                  />
+                  <Button
+                    a11yTitle='Grommet storybook'
+                    href='https://storybook.grommet.io/?selectedKind=Components&selectedStory=All&full=0&addons=0&stories=1&panelRight=0'
+                    label='storybook'
                   />
                 </Box>
                 <Box direction='row' align='center' gap='small' margin={{ vertical: 'large' }}>
