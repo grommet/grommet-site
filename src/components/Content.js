@@ -6,6 +6,7 @@ import { Route } from '../Router';
 import Accordion from '../screens/Accordion';
 import About from '../screens/About';
 import Anchor from '../screens/Anchor';
+import AnnounceContext from '../screens/AnnounceContext';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
@@ -37,7 +38,7 @@ import Paragraph from '../screens/Paragraph';
 import RadioButton from '../screens/RadioButton';
 import RangeInput from '../screens/RangeInput';
 import RangeSelector from '../screens/RangeSelector';
-import Responsive from '../screens/Responsive';
+import ResponsiveContext from '../screens/ResponsiveContext';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
 import Stack from '../screens/Stack';
@@ -46,6 +47,7 @@ import Table from '../screens/Table';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
+import ThemeContext from '../screens/ThemeContext';
 import Try from '../screens/Try';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
@@ -108,6 +110,7 @@ export default () => (
 
     <Route exact={true} path='/accordion' component={Accordion} />
     <Route exact={true} path='/anchor' component={Anchor} />
+    <Route exact={true} path='/announcecontext' component={AnnounceContext} />
     <Route exact={true} path='/box' component={Box} />
     <Route exact={true} path='/button' component={Button} />
     <Route exact={true} path='/calendar' component={Calendar} />
@@ -136,7 +139,7 @@ export default () => (
     <Route exact={true} path='/radiobutton' component={RadioButton} />
     <Route exact={true} path='/rangeinput' component={RangeInput} />
     <Route exact={true} path='/rangeselector' component={RangeSelector} />
-    <Route exact={true} path='/responsive' component={Responsive} />
+    <Route exact={true} path='/responsivecontext' component={ResponsiveContext} />
     <Route exact={true} path='/paragraph' component={Paragraph} />
     <Route exact={true} path='/select' component={Select} />
     <Route exact={true} path='/skiplinks' component={SkipLinks} />
@@ -146,6 +149,7 @@ export default () => (
     <Route exact={true} path='/text' component={Text} />
     <Route exact={true} path='/textarea' component={TextArea} />
     <Route exact={true} path='/textinput' component={TextInput} />
+    <Route exact={true} path='/themecontext' component={ThemeContext} />
     <Route exact={true} path='/video' component={Video} />
     <Route exact={true} path='/worldmap' component={WorldMap} />
   </React.Fragment>

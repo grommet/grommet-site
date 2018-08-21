@@ -27,8 +27,8 @@ import {
   ThemeContext,
 } from 'grommet';
 import {
-  Actions, Add, Descend, Grommet as GrommetIcon, Group, CirclePlay,
-  Next, Previous, TreeOption,
+  Actions, Add, Announce, Descend, Grommet as GrommetIcon, Group, CirclePlay,
+  Next, Paint, Previous, TreeOption,
 } from 'grommet-icons';
 import { withContext } from '../Context';
 import Page from '../components/Page';
@@ -340,7 +340,7 @@ class Components extends Component {
             </Item>
           </Section>
 
-          <Section name='Visualizations' index={3}>
+          <Section name='Visualizations' index={5}>
             <Item name='Calendar' path='/calendar'>
               <Box flex={true} gap='xsmall'>
                 {[0, 1, 2, 3, 4].map(week => (
@@ -483,7 +483,7 @@ class Components extends Component {
             </Item>
           </Section>
 
-          <Section name='Media' index={4}>
+          <Section name='Media' index={6}>
             <Item name='Carousel' path='/carousel' center={true}>
               <Box fill={true} direction='row' justify='between' align='center'>
                 <Previous size='medium' color='brand' />
@@ -505,7 +505,11 @@ class Components extends Component {
             </Item>
           </Section>
 
-          <Section name='Utilities' index={4}>
+          <Section name='Utilities' index={7}>
+            <Item name='AnnounceContext' path='/announcecontext' center={true}>
+              <Announce color='brand' size='xlarge' />
+            </Item>
+
             <Item name='Grommet' path='/grommet' center={true}>
               <GrommetIcon color='brand' size='xlarge' />
             </Item>
@@ -522,7 +526,7 @@ class Components extends Component {
               </Box>
             </Item>
 
-            <Item name='Responsive' path='/responsive' center={true}>
+            <Item name='ResponsiveContext' path='/responsivecontext' center={true}>
               <Box direction='row' align='end' gap='xsmall'>
                 <Box align='center'>
                   <Box
@@ -542,6 +546,10 @@ class Components extends Component {
 
             <Item name='SkipLinks' path='/skiplinks' center={true}>
               <Key label='Tab' />
+            </Item>
+
+            <Item name='ThemeContext' path='/themecontext' center={true}>
+              <Paint color='brand' size='xlarge' />
             </Item>
           </Section>
 
