@@ -117,33 +117,42 @@ class Doc extends Component {
             <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
               <strong>{name}</strong>
             </Heading>
-            {desc ? (
+            {desc && (
               <Paragraph size='large'>
                 {desc.description}
               </Paragraph>
-            ) : null}
-            {text ? (
+            )}
+            {text && (
               <Paragraph size='large'>
                 {text}
               </Paragraph>
-            ) : null}
-            {(desc && desc.availableAt) ? (
-              <Button
-                href={desc.availableAt.url}
-                target='_blank'
-                label='Edit on CodeSandbox'
-              />
-            ) : null}
-            {code ? (
+            )}
+            {desc && desc.availableAt
+              && (Array.isArray(desc.availableAt)
+                ? (
+                  <Box direction='row' gap='small'>
+                    {desc.availableAt.map(at => (
+                      <Button key={at.url} href={at.url} label={at.label} />
+                    ))}
+                  </Box>
+                ) : (
+                  <Button
+                    href={desc.availableAt.url}
+                    label={desc.availableAt.label}
+                  />
+                )
+              )
+            }
+            {code && (
               <Button label='Play' onClick={() => this.setState({ play: true })} />
-            ) : null}
+            )}
           </Box>
           <Box flex={true} pad={{ top: 'large', horizontal: 'medium' }}>
             {example}
           </Box>
         </Box>
 
-        {desc ? (
+        {desc && (
           <Box pad={{ bottom: 'large' }}>
             <Box pad='large' round='large' background='light-1'>
               {desc.properties
@@ -174,11 +183,11 @@ class Doc extends Component {
                           </code>
                         </Text>
                       </Box>
-                      {examples[property.name] ? (
+                      {examples[property.name] && (
                         <Box flex={true} align='end'>
                           {examples[property.name] || null}
                         </Box>
-                      ) : null}
+                      )}
                     </Box>
                   </Box>
                 ))
@@ -186,10 +195,10 @@ class Doc extends Component {
               }
             </Box>
           </Box>
-        ) : null}
+        )}
 
         {children}
-        {play ? <Play code={code} onClose={() => this.setState({ play: false })} /> : null}
+        {play && <Play code={code} onClose={() => this.setState({ play: false })} />}
       </Box>
     );
   }
