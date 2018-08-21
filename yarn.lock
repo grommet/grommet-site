@@ -3124,7 +3124,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-beta.5"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#d409cd04d2cc01bb6a16d96998c51ec00e0461b0"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#74138fb2b77d1cef2b03f13de5ecf5e370fa57c6"
   dependencies:
     babel-plugin-grommet "^0.5.3"
     markdown-to-jsx "^6.6.6"
@@ -5923,8 +5923,8 @@ strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
 styled-components@^3.3.0:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.2.tgz#8f518419932327e47fe9144824e3184b3e2da95d"
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.3.tgz#d7f91db0f124bbc337afb3b98ab37dee0455a301"
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"
