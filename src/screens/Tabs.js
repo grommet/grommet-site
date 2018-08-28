@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { Tabs, Tab } from 'grommet';
-import doc, { docTab } from 'grommet/components/Tabs/doc';
+import { doc as docTabs } from 'grommet/components/Tabs/doc';
+import { doc as docTab } from 'grommet/components/Tab/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 
-const desc = doc(Tabs).toJSON();
+const desc = docTabs(Tabs).toJSON();
 const descTab = docTab(Tab).toJSON();
 
 export default () => (

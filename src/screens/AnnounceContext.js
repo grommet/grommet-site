@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { AnnounceContext } from 'grommet';
-import doc from 'grommet/contexts/AnnounceContext/doc';
+import { AnnounceContext } from 'grommet/contexts';
+import { doc } from 'grommet/contexts/AnnounceContext/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

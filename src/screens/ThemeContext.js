@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ThemeContext } from 'grommet';
-import doc from 'grommet/contexts/ThemeContext/doc';
+import { ThemeContext } from 'grommet/contexts';
+import { doc } from 'grommet/contexts/ThemeContext/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { RangeInput } from 'grommet';
-import doc from 'grommet/components/RangeInput/doc';
+import { doc } from 'grommet/components/RangeInput/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

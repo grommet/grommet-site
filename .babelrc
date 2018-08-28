@@ -2,13 +2,31 @@
   "presets": [ "env", "stage-1", "react"],
   "plugins": [
     "styled-components",
+    ["transform-imports", {
+      "grommet": {
+        "transform": "grommet/es6/components/${member}",
+        "preventFullImport": true,
+        "skipDefaultConversion": true
+      },
+      "grommet\/contexts": {
+        "transform": "grommet/es6/contexts/${member}",
+        "preventFullImport": true,
+        "skipDefaultConversion": true
+      },
+      "grommet\/themes": {
+        "transform": "grommet/es6/themes/${member}",
+        "preventFullImport": true,
+        "skipDefaultConversion": true
+      },
+      "grommet-icons": {
+        "transform": "grommet-icons/es6/icons/${member}",
+        "preventFullImport": true
+      }
+    }]
   ],
   "env": {
     "development": {
       "presets": ["react-hmre"]
-    },
-    "production": {
-      "plugins": ["grommet"]
     }
   }
 }

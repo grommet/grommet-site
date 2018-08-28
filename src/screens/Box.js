@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'grommet';
-import doc from 'grommet/components/Box/doc';
+import { doc } from 'grommet/components/Box/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 

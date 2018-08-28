@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Select } from 'grommet';
-import doc from 'grommet/components/Select/doc';
+import { doc } from 'grommet/components/Select/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

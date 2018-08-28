@@ -43,7 +43,7 @@ export default class App extends Component {
     return (
       <Router search={search}>
         <Analytics>
-          <Grommet theme={themeName ? THEMES[themeName] : 'grommet'}>
+          <Grommet theme={THEMES[themeName || 'grommet']}>
             <Box
               background={color}
               style={{ minHeight: '100vh', transition: 'background 2s' }}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Box, Calendar } from 'grommet';
-import doc from 'grommet/components/Calendar/doc';
+import { doc } from 'grommet/components/Calendar/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RadioButton } from 'grommet';
-import doc from 'grommet/components/RadioButton/doc';
+import { doc } from 'grommet/components/RadioButton/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

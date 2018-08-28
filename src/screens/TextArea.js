@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { TextArea } from 'grommet';
-import doc from 'grommet/components/TextArea/doc';
+import { doc } from 'grommet/components/TextArea/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

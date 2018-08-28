@@ -24,8 +24,8 @@ import {
   TextArea,
   TextInput,
   WorldMap,
-  ThemeContext,
 } from 'grommet';
+import { ThemeContext } from 'grommet/contexts';
 import {
   Actions, Add, Announce, Descend, Grommet as GrommetIcon, Group, CirclePlay,
   Next, Paint, Previous, TreeOption,
@@ -302,7 +302,7 @@ class Components extends Component {
               <CheckBox checked={true} onChange={() => {}} />
             </Item>
             <Item name='RadioButton' path='/radiobutton' center={true}>
-              <RadioButton checked={true} onChange={() => {}} />
+              <RadioButton name='radio' checked={true} onChange={() => {}} />
             </Item>
             <Item name='RangeInput' path='/rangeinput' center={true}>
               <RangeInput />

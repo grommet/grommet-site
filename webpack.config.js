@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const useAlias = process.env.USE_ALIAS;
 
@@ -34,6 +35,18 @@ module.exports = {
   },
   entry: './src/index.js',
   optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: false,
+        },
+        sourceMap: true,
+      }),
+    ],
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
@@ -43,10 +56,11 @@ module.exports = {
           priority: -10,
         },
         vendors: {
-          test: context =>
-            (context.resource &&
-              context.resource.search(/[\\/]node_modules[\\/]/) !== -1 &&
-              context.resource.search(/[\\/]node_modules[\\/]grommet/) === -1),
+          test: context => (
+            context.resource
+            && context.resource.search(/[\\/]node_modules[\\/]/) !== -1
+            && context.resource.search(/[\\/]node_modules[\\/]grommet/) === -1
+          ),
           name: 'vendors',
           priority: -10,
         },

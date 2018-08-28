@@ -6,13 +6,14 @@ import {
   Box,
   Text,
 } from 'grommet';
-import doc, { accordionPanel } from 'grommet/components/Accordion/doc';
+import { doc as docAccordion } from 'grommet/components/Accordion/doc';
+import { doc as docAccordionPanel } from 'grommet/components/AccordionPanel/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 
-const desc = doc(Accordion).toJSON();
-const descAccordionPanel = accordionPanel(AccordionPanel).toJSON();
+const desc = docAccordion(Accordion).toJSON();
+const descAccordionPanel = docAccordionPanel(AccordionPanel).toJSON();
 
 export default () => (
   <Page>

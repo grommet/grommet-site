@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ResponsiveContext } from 'grommet';
-import doc from 'grommet/contexts/ResponsiveContext/doc';
+import { ResponsiveContext } from 'grommet/contexts';
+import { doc } from 'grommet/contexts/ResponsiveContext/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';

@@ -4,16 +4,17 @@ import {
   Table, TableBody, TableCell, TableFooter, TableHeader,
   TableRow,
 } from 'grommet';
-import doc,
-{
-  docTableCell, docTableRow, docTableHeader, docTableFooter, docTableBody,
-}
-  from 'grommet/components/Table/doc';
+import { doc as docTable } from 'grommet/components/Table/doc';
+import { doc as docTableBody } from 'grommet/components/TableBody/doc';
+import { doc as docTableCell } from 'grommet/components/TableCell/doc';
+import { doc as docTableFooter } from 'grommet/components/TableFooter/doc';
+import { doc as docTableHeader } from 'grommet/components/TableHeader/doc';
+import { doc as docTableRow } from 'grommet/components/TableRow/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 
-const desc = doc(Table).toJSON();
+const desc = docTable(Table).toJSON();
 const descTableCell = docTableCell(TableCell).toJSON();
 const descTableRow = docTableRow(TableRow).toJSON();
 const descTableHeader = docTableHeader(TableHeader).toJSON();

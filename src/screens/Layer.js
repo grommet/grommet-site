@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {
   Box, Button, Heading, Layer, Text,
 } from 'grommet';
-import doc from 'grommet/components/Layer/doc';
+import { doc } from 'grommet/components/Layer/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
