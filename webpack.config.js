@@ -4,27 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-const useAlias = process.env.USE_ALIAS;
-
-const plugins = [
-  new CleanWebpackPlugin(['dist']),
-  new CopyWebpackPlugin([{ from: './public' }]),
-  new webpack.NamedModulesPlugin(),
-  new webpack.HotModuleReplacementPlugin(),
-  new HtmlWebpackPlugin({ template: 'public/index.html' }),
-  new OfflinePlugin(), // can't seem to load google analytics this way :(
-];
-
-let alias;
-if (useAlias) {
-  console.log('Using alias to local grommet.');
-  alias = {
-    'grommet': path.resolve(__dirname, '../grommet/src/js'),
-    'grommet-icons': path.resolve(__dirname, '../grommet-icons/src/js'),
-  };
-}
 
 module.exports = {
   devServer: {
@@ -35,18 +14,6 @@ module.exports = {
   },
   entry: './src/index.js',
   optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        uglifyOptions: {
-          compress: false,
-          ecma: 6,
-          mangle: false,
-        },
-        sourceMap: true,
-      }),
-    ],
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
@@ -74,23 +41,21 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    alias,
     extensions: ['.js', '.json'],
   },
-  plugins,
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new CopyWebpackPlugin([{ from: './public' }]),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+    new OfflinePlugin(), // can't seem to load google analytics this way :(
+  ],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        loader: 'babel-loader',
       },
     ],
   },
