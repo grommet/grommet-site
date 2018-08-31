@@ -4,7 +4,6 @@ import {
   Box, Button, Heading, Paragraph, Text,
 } from 'grommet';
 import { withContext } from '../Context';
-import Play from './Play';
 
 // parseFormat() parses the react-desc property format string into
 // an object that makes it easier for us to style the content.
@@ -109,7 +108,6 @@ class Doc extends Component {
     const {
       children, code, desc, name, example, examples, text,
     } = this.props;
-    const { play } = this.state;
     return (
       <Box>
         <Box direction='row-responsive' margin={{ bottom: 'large' }}>
@@ -143,9 +141,6 @@ class Doc extends Component {
                 )
               )
             }
-            {code && (
-              <Button label='Play' onClick={() => this.setState({ play: true })} />
-            )}
           </Box>
           <Box flex={true} pad={{ top: 'large', horizontal: 'medium' }}>
             {example}
@@ -198,7 +193,6 @@ class Doc extends Component {
         )}
 
         {children}
-        {play && <Play code={code} onClose={() => this.setState({ play: false })} />}
       </Box>
     );
   }

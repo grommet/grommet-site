@@ -1,15 +1,16 @@
 const path = require('path');
-const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+
+const env = process.env.NODE_ENV || 'production';
 
 module.exports = {
   devServer: {
     contentBase: path.resolve('./dist'),
     historyApiFallback: true,
-    hot: true,
     port: 8567,
   },
   entry: './src/index.js',
@@ -48,7 +49,8 @@ module.exports = {
     new CopyWebpackPlugin([{ from: './public' }]),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
-    new OfflinePlugin(), // can't seem to load google analytics this way :(
+    new MonacoWebpackPlugin(),
+    env === 'production' ? new OfflinePlugin() : undefined, // can't seem to load google analytics this way :(
   ],
   module: {
     rules: [
@@ -57,6 +59,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      }
     ],
   },
 };
