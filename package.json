@@ -14,7 +14,7 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "build-alias": "cross-env USE_ALIAS=true NODE_ENV=production webpack --mode production",
     "release-heroku": "babel-node ./tools/release-heroku.js",
-    "start": "webpack-dev-server --mode development --open",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "start-alias": "cross-env USE_ALIAS=true webpack-dev-server --mode development --open",
     "lint": "eslint src",
     "test": "eslint src"
