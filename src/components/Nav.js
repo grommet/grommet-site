@@ -36,7 +36,7 @@ export default class extends Component {
               </Box>
             </RoutedAnchor>
             <Box direction='row' align='center' gap='medium'>
-              <NavAnchor path='/theme' label='theme' />
+              <NavAnchor path='/play' label='play' />
               <NavAnchor path='/start' label='start' />
               <NavAnchor path='/components' label='components' />
             </Box>
