@@ -9,6 +9,11 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const env = process.env.NODE_ENV || 'production';
 
 const baseConfig = {
+  devServer: {
+    contentBase: path.resolve('./dist'),
+    historyApiFallback: true,
+    port: 8567,
+  },
   entry: './src/index.js',
   output: {
     path: path.resolve('./dist'),
@@ -56,11 +61,6 @@ if (env === 'production') {
   };
 } else {
   baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-  baseConfig.devServer = {
-    contentBase: path.resolve('./dist'),
-    historyApiFallback: true,
-    port: 8567,
-  };
 }
 
 module.exports = baseConfig;

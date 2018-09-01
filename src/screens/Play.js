@@ -37,6 +37,9 @@ const allPlaygrounds = Object.keys(PlaygroundExamples).map(
 
 const options = {
   fontSize: 14,
+  minimap: {
+    enabled: false,
+  },
 };
 
 const editorDidMount = (editor) => {
