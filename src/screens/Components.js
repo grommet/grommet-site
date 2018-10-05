@@ -135,7 +135,7 @@ class Components extends Component {
               <strong>Read our documentation</strong>
             </Heading>
             <Paragraph size='large'>
-              These are the building blocks of the grommet libray, master
+              These are the building blocks of the grommet library, master
               them, and become a l33t.
             </Paragraph>
           </Box>
