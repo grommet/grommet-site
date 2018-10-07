@@ -67,7 +67,7 @@ class Use extends Component {
               snippet={(<code>npm install grommet-icons --save</code>)}
               description='SVG icon library built for React apps and most
                 importantly grommet! Learn
-                more, [grommet.io/grommet-icons](http://grommet.io/grommet-icons/).'
+                more, [grommet.io/grommet-icons](https://grommet.io/grommet-icons/).'
             />
 
             <Heading level={2}>Design Elements</Heading>

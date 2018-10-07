@@ -171,7 +171,7 @@ class Try extends Component {
     const name = event.target.value;
     // remove all previously loaded fonts
     // <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rob" media="all">
-    const links = document.querySelectorAll('link[href^="http://fonts.googleapis.com"]');
+    const links = document.querySelectorAll('link[href^="https://fonts.googleapis.com"]');
     for (let i = 0; i < links.length; i += 1) {
       links[i].remove();
     }
