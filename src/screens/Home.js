@@ -109,7 +109,7 @@ class Home extends Component {
             </Paragraph>
             <RoutedButton
               a11yTitle='Start reading about components'
-              path='components'
+              path='/components'
               primary={true}
               label='start reading'
             />
