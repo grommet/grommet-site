@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "src/index.js",
   "description": "Site for Grommet v2",
-  "homepage": "http://v2.grommet.io",
+  "homepage": "https://v2.grommet.io",
   "bugs": "https://github.com/grommet/grommet-site/issues",
   "repository": {
     "type": "git",

@@ -69,7 +69,7 @@ class Examples extends Component {
           </Box>
 
           <Box basis='medium' margin='small'>
-            <Button href='http://grommet.io/grommet-swagger'>
+            <Button href='https://grommet.io/grommet-swagger'>
               <Box background='neutral-3' pad='large' round='large'>
                 <Heading level={3} margin={{ top: 'none' }}>API Browser</Heading>
                 <Box flex={true} basis='small' align='start'>
@@ -94,7 +94,7 @@ class Examples extends Component {
           </Box>
 
           <Box basis='medium' margin='small'>
-            <Button href='http://grommet.io/grommet-weather'>
+            <Button href='https://grommet.io/grommet-weather'>
               <Box background='neutral-1' pad='large' round='large'>
                 <Heading level={3} margin={{ top: 'none' }}>Weather</Heading>
                 <Box flex={true} basis='small' direction='row'>
