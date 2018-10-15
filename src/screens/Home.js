@@ -180,7 +180,7 @@ class Home extends Component {
                 {'Let\'s hang out'}
               </Heading>
               <Paragraph size='large' textAlign='center'>
-                We’re cool, your cool—It just makes sense. Come check out
+                We’re cool, you’re cool—It just makes sense. Come check out
                 our code and all the folks that make grommet great. We want
                 to make grommet the best UI framework on React, so come
                 say hi!
