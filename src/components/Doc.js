@@ -212,6 +212,7 @@ Doc.propTypes = {
   example: PropTypes.node,
   examples: PropTypes.object,
   name: PropTypes.string.isRequired,
+  props: PropTypes.shape({}),
   text: PropTypes.string,
 };
 
@@ -220,6 +221,7 @@ Doc.defaultProps = {
   desc: undefined,
   example: null,
   examples: {},
+  props: {},
   text: undefined,
 };
 
