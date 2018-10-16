@@ -172,10 +172,10 @@ class Doc extends Component {
                         </Paragraph>
                       </Box>
                       <Box flex={true} align='start'>
-                        <Text color='neutral-3' style={{ maxWidth: '100%' }}>
+                        <Text color='neutral-1' style={{ maxWidth: '100%' }}>
                           <code>
                             {(props[property.name] && (
-                              <pre>{props[property.name]}</pre>
+                              <pre style={{ margin: 0 }}>{props[property.name].trim()}</pre>
                             ))
                             || (
                               <Value value={parseFormat(property.format)} />
