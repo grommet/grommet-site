@@ -106,7 +106,7 @@ class Doc extends Component {
 
   render() {
     const {
-      children, code, desc, name, example, examples, text,
+      children, code, desc, name, example, examples, props, text,
     } = this.props;
     return (
       <Box>
@@ -174,7 +174,12 @@ class Doc extends Component {
                       <Box flex={true} align='start'>
                         <Text color='neutral-3' style={{ maxWidth: '100%' }}>
                           <code>
-                            <Value value={parseFormat(property.format)} />
+                            {(props[property.name] && (
+                              <pre>{props[property.name]}</pre>
+                            ))
+                            || (
+                              <Value value={parseFormat(property.format)} />
+                            )}
                           </code>
                         </Text>
                       </Box>
