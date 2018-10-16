@@ -4444,7 +4444,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
 
 "grommet@https://github.com/grommet/grommet/tarball/NEXT-stable":
   version "2.0.0-beta.6"
-  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#b8e7be1cb68d896af29a2bee00e43b9a97270e7a"
+  resolved "https://github.com/grommet/grommet/tarball/NEXT-stable#4ecb8ee25265df8cc0da780790280a9daa7c0ba0"
   dependencies:
     css "^2.2.3"
     markdown-to-jsx "^6.6.6"
