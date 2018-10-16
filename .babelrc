@@ -1,11 +1,10 @@
 {
-  "presets": [ ["env", { "modules": false }], "stage-1", "react"],
-  "plugins": [
-    "styled-components"
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
-  "env": {
-    "development": {
-      "presets": ["react-hmre"]
-    }
-  }
+  "plugins": [
+    "styled-components",
+    "@babel/plugin-proposal-class-properties"
+  ]
 }
