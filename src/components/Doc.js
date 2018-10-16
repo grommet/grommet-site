@@ -151,7 +151,11 @@ class Doc extends Component {
           <Box pad={{ bottom: 'large' }}>
             <Box pad='large' round='large' background='light-1'>
               {desc.properties
-                ? desc.properties.map((property, index) => (
+                ? desc.properties.sort((a, b) => {
+                  if (a.name < b.name) return -1;
+                  if (a.name > b.name) return 1;
+                  return 0;
+                }).map((property, index) => (
                   <Box
                     key={property.name}
                     border='bottom'
