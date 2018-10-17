@@ -35,7 +35,7 @@ import Markdown from '../screens/Markdown';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
 import Paragraph from '../screens/Paragraph';
-import Play from '../screens/Play';
+// import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
 import RangeInput from '../screens/RangeInput';
 import RangeSelector from '../screens/RangeSelector';
@@ -101,7 +101,7 @@ export default () => (
   <React.Fragment>
     <Route exact={true} path='/' component={Home} />
 
-    <Route exact={true} path='/play' component={Play} />
+    {/* <Route exact={true} path='/play' component={Play} /> */}
     <Route exact={true} path='/theme' component={Try} />
     <Route exact={true} path='/try' component={Try} />
     <Route exact={true} path='/start' component={Use} />
