@@ -48,6 +48,8 @@ export default () => (
           {
             color: 'neutral-1',
             dark: true,
+            opacity: true,
+            position: 'bottom',
             image: 'url(//my.com/assets/img.png)',
           },
           {
@@ -75,6 +77,15 @@ export default () => (
               size: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
             },
           },
+        ],
+        elevation: [
+          'none',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any custom elevation name in the current theme',
         ],
         gap: [
           'xsmall',
@@ -135,9 +146,12 @@ export default () => (
             size: '...',
             corner: 'top-left',
           },
-          'corner: \'top\' \'left\' \'bottom\' \'right\'',
-          '        \'top-left\' \'top-right\'',
-          '        \'bottom-left\' \'bottom-right\'',
+          {
+            VALUES: {
+              corner: ['top', 'left', 'bottom', 'right',
+                'top-left', 'top-right', 'bottom-left', 'bottom-right'],
+            },
+          },
         ],
         width: [
           'xsmall',
