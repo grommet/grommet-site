@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Grid/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Grid).toJSON();
 
@@ -13,6 +14,43 @@ export default () => (
     <Doc
       name='Grid'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        areas: [{
+          name: 'header',
+          start: [0, 0],
+          end: [0, 2],
+        }],
+        columns: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size',
+          ['small', '...'],
+          [['small', 'medium'], '...'],
+          {
+            count: 'fit',
+            size: '...',
+          },
+          {
+            VALUES: {
+              count: ['fit', 'fill'],
+            },
+          },
+        ],
+        gap: ['small', 'medium', 'large', 'none', 'any CSS size',
+          {
+            row: '...',
+            column: '...',
+          },
+        ],
+        rows: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size',
+          ['small', '...'],
+          [['small', 'medium'], '...'],
+          {
+            VALUES: {
+              'array values': ['xsmall', 'small', 'medium', 'large', 'xlarge',
+                'full', 'flex', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4'],
+            },
+          },
+        ],
+      }}
       example={(
         <Grid
           fill={true}

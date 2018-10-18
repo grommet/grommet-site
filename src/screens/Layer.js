@@ -54,6 +54,26 @@ export default class LayerDoc extends Component {
         <Doc
           name='Layer'
           desc={desc}
+          syntaxes={{
+            margin: [
+              'none',
+              'xsmall',
+              'small',
+              'medium',
+              'large',
+              'any CSS size',
+              {
+                vertical: '...',
+                horizontal: '...',
+                top: '...',
+                bottom: '...',
+                left: '...',
+                right: '...',
+              },
+            ],
+            onClickOutside: '() => {}',
+            onEsc: '() => {}',
+          }}
           examples={{
             full: (
               <Box>

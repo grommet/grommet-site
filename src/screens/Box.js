@@ -3,6 +3,7 @@ import { Box } from 'grommet';
 import { doc } from 'grommet/components/Box/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Box).toJSON();
 
@@ -18,6 +19,135 @@ export default () => (
           pad='medium'
         />
       )}
+      syntaxes={{
+        ...genericSyntaxes,
+        align: ['start', 'center', 'end', 'baseline', 'stretch'],
+        alignContent: ['start', 'center', 'end', 'between', 'around', 'stretch'],
+        animation: [
+          'fadeIn',
+          'fadeOut',
+          'jiggle',
+          'pulse',
+          'slideUp',
+          'slideDown',
+          'slideLeft',
+          'slideRight',
+          'zoomIn',
+          'zoomOut',
+          {
+            type: '...',
+            delay: 0,
+            duration: 1000,
+            size: 'xsmall',
+          },
+          ['fadeIn', 'slideDown', '...'],
+        ],
+        background: [
+          'neutral-1',
+          'url(//my.com/assets/img.png)',
+          {
+            color: 'neutral-1',
+            dark: true,
+            image: 'url(//my.com/assets/img.png)',
+          },
+          {
+            dark: 'light-2',
+            light: 'dark-2',
+          },
+          {
+            VALUES: {
+              opacity: ['weak', 'medium', 'strong', true],
+              position: 'any CSS for background-position',
+            },
+          },
+        ],
+        basis: ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full',
+          '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto'],
+        border: ['top', 'left', 'bottom', 'right',
+          'horizontal', 'vertical', 'all',
+          {
+            side: '...',
+            color: 'border',
+            size: 'medium',
+          },
+          {
+            VALUES: {
+              size: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
+            },
+          },
+        ],
+        gap: [
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any CSS size',
+        ],
+        height: [
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any CSS size',
+        ],
+        overflow: [
+          'auto',
+          'hidden',
+          'scroll',
+          'visible',
+          'any CSS overflow',
+          {
+            vertical: '...',
+            horizontal: '...',
+          },
+        ],
+        pad: [
+          'none',
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any CSS size',
+          {
+            vertical: '...',
+            horizontal: '...',
+            top: '...',
+            bottom: '...',
+            left: '...',
+            right: '...',
+          },
+        ],
+        round: [
+          true,
+          false,
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'full',
+          'any CSS size',
+          {
+            size: '...',
+            corner: 'top-left',
+          },
+          'corner: \'top\' \'left\' \'bottom\' \'right\'',
+          '        \'top-left\' \'top-right\'',
+          '        \'bottom-left\' \'bottom-right\'',
+        ],
+        width: [
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any CSS size',
+        ],
+      }}
       examples={{
         align: (
           <Box direction='row' justify='end' wrap={true}>
