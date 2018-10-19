@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Text/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Text).toJSON();
 
@@ -13,6 +14,10 @@ export default () => (
     <Doc
       name='Text'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        color: 'status-critical',
+      }}
       examples={{
         color: <Text color='status-critical'>status-critical</Text>,
         size: (

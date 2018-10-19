@@ -11,6 +11,7 @@ import { doc as docAccordionPanel } from 'grommet/components/AccordionPanel/doc'
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = docAccordion(Accordion).toJSON();
 const descAccordionPanel = docAccordionPanel(AccordionPanel).toJSON();
@@ -20,6 +21,12 @@ export default () => (
     <Doc
       name='Accordion'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        activeIndex: [0, [0, 2]],
+        children: 'node',
+        onActive: '([0]) => {}',
+      }}
       example={(
         <Accordion>
           <AccordionPanel label='Panel 1'>

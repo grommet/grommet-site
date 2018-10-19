@@ -7,6 +7,7 @@ import { doc } from 'grommet/components/DropButton/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(DropButton).toJSON();
 
@@ -20,6 +21,16 @@ export default class DropButtonDoc extends Component {
         <Doc
           name='DropButton'
           desc={desc}
+          syntaxes={{
+            ...genericSyntaxes,
+            dropAlign: [
+              { top: 'top', left: 'left' },
+              { bottom: 'bottom', right: 'right' },
+            ],
+            dropContent: '<Box>...</Box>',
+            onClose: '() => {}',
+            onOpen: '() => {}',
+          }}
           example={(
             <DropButton
               label='Fancy Selector'

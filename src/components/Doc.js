@@ -144,7 +144,7 @@ const Syntax = ({
       );
     });
   }
-  if (format !== 'function') {
+  if (format !== 'function' && syntax[0] !== '<') {
     content = stringify(syntax, { maxLength: 40 });
   }
   if (defaultValue !== undefined && syntax === defaultValue) {

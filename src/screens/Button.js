@@ -7,6 +7,7 @@ import { Close, Edit } from 'grommet-icons';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Button).toJSON();
 
@@ -15,6 +16,14 @@ export default () => (
     <Doc
       name='Button'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        color: 'accent-1',
+        href: '//my.com/path',
+        icon: '<Add />',
+        label: ['Add', '<Box>...</Box>'],
+        onClick: '() => {}',
+      }}
       example={(
         <Box flex={true} justify='center' align='center'>
           <Button icon={<Edit />} label='Edit' onClick={() => {}} />

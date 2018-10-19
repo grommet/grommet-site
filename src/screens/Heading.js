@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Heading/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Heading).toJSON();
 
@@ -13,6 +14,12 @@ export default () => (
     <Doc
       name='Heading'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        a11yTitle: 'Open Drop',
+        color: 'neutral-1',
+        level: [1, 2, 3, 4, 5, 6],
+      }}
       examples={{
         color: (
           <Heading margin='none' color='accent-2'>A</Heading>

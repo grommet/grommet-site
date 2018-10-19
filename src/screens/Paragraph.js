@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Paragraph/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Paragraph).toJSON();
 
@@ -13,6 +14,10 @@ export default () => (
     <Doc
       name='Paragraph'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        color: 'neutral-1',
+      }}
       examples={{
         size: (
           <Box direction='row' justify='end' wrap={true}>

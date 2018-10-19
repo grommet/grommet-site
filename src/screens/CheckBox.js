@@ -13,6 +13,12 @@ export default () => (
     <Doc
       name='CheckBox'
       desc={desc}
+      syntaxes={{
+        id: 'a-dom-id',
+        label: ['enabled', '<Box>...</Box>'],
+        name: 'a-dom-name',
+        onChange: '() => {}',
+      }}
       examples={{
         checked: <CheckBox label='A' checked={true} onChange={() => {}} />,
         disabled: <CheckBox label='A' disabled={true} />,

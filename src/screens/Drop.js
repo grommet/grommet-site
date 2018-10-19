@@ -15,6 +15,14 @@ export default class DropDoc extends Component {
         <Doc
           name='Drop'
           desc={desc}
+          syntaxes={{
+            align: [
+              { top: 'top', left: 'left' },
+              { bottom: 'bottom', right: 'right' },
+            ],
+            onClickOutside: '() => {}',
+            onEsc: '() => {}',
+          }}
         />
       </Page>
     );
