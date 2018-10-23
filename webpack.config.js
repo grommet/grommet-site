@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
-// const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'production';
 
@@ -28,7 +28,7 @@ const baseConfig = {
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([{ from: './public' }]),
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
-    // new MonacoWebpackPlugin()
+    new MonacoWebpackPlugin()
   ],
   module: {
     rules: [
