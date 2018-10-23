@@ -21,7 +21,7 @@ export const HelloWorld = `/**
 const Header = () => (
   <Box
     tag='header'
-    background={{ color: 'brand', dark: false }}
+    background='brand'
     pad='small'
     elevation='small'
     justify='between'

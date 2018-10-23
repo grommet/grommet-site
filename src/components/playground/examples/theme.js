@@ -45,13 +45,9 @@ const myTheme = {
       horizontal: '24px',
     },
     extend: props => \`
-      span strong {
-        font-weight: 500;
-      }
-      span {
-        text-transform: uppercase;
-        font-size: 14px;
-      }
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
 
       \${props && props.primary && 'color: white;'}
     \`,
@@ -83,7 +79,7 @@ const myTheme = {
 const Header = () => (
   <Box
     tag='header'
-    background={{ color: 'brand', dark: false }}
+    background='brand'
     pad='small'
     elevation='small'
     justify='between'
