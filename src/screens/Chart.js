@@ -5,6 +5,7 @@ import { doc, docCalcs } from 'grommet/components/Chart/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Chart).toJSON();
 const Dummy = () => (<div />);
@@ -39,6 +40,43 @@ export default () => (
     <Doc
       name='Chart'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        bounds: [[[0, 10], [0, 100]]],
+        color: [
+          'accent-1',
+          { color: 'accent-1', opacity: true },
+          {
+            VALUES: {
+              opacity: ['weak', 'medium', 'strong', true],
+            },
+          },
+        ],
+        onClick: '() => {}',
+        onHover: '(true) => {}',
+        size: [
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any CSS size',
+          { height: '...', width: '...' },
+        ],
+        values: [
+          [20, 30],
+          [{ value: [10, 20] }],
+          [
+            {
+              value: [10, 10, 20],
+              label: 'first',
+              onClick: '() => {}',
+              onHover: '() => {}',
+            },
+          ],
+        ],
+      }}
       examples={{
         color: (
           <Chart

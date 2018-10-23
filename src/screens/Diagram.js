@@ -73,6 +73,32 @@ class DiagramDoc extends Component {
         <Doc
           name='Diagram'
           desc={desc}
+          syntaxes={{
+            connections: [
+              {
+                fromTarget: 'my-dom-id-1',
+                toTarget: 'my-dom-id-2',
+              },
+              {
+                anchor: 'center',
+                color: 'accent-1',
+                fromTarget: 'my-dom-id-1',
+                label: 'link 5',
+                offset: undefined,
+                thickness: 'medium',
+                toTarget: 'my-dom-id-2',
+                type: 'rectilinear',
+              },
+              {
+                VALUES: {
+                  anchor: ['center', 'vertical', 'horizonta'],
+                  offset: ['xsmall', 'small', 'medium', 'large', 'any CSS size'],
+                  thickness: ['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'any CSS size'],
+                  type: ['direct', 'curved', 'rectilinear'],
+                },
+              },
+            ],
+          }}
           example={<Example />}
         />
       </Page>

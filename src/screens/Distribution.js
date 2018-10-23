@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Distribution/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Distribution).toJSON();
 
@@ -13,9 +14,13 @@ export default () => (
     <Doc
       name='Distribution'
       desc={desc}
+      syntaxes={{
+        ...genericSyntaxes,
+        children: '({ value: 60 }) => {}',
+        values: [[{ value: 60 }, { value: 40 }]],
+      }}
       example={(
         <Distribution
-          basis='medium'
           values={[
             { value: 50, color: 'light-3' },
             { value: 30, color: 'brand' },

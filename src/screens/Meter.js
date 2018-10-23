@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Meter/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Meter).toJSON();
 
@@ -42,6 +43,27 @@ export default class MeterDoc extends Component {
         <Doc
           name='Meter'
           desc={desc}
+          syntaxes={{
+            ...genericSyntaxes,
+            backgroundColor: [
+              'light-2',
+              {
+                color: 'light-2',
+                opacity: 'medium',
+              },
+            ],
+            values: [
+              [{ value: 75 }],
+              [{
+                value: 45,
+                color: 'accent-1',
+                highlight: false,
+                label: 'utilization',
+                onClick: '() => {}',
+                onHover: '(true) => {}',
+              }],
+            ],
+          }}
           examples={{
             background: (
               <Meter
