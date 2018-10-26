@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Box, Diagram, Stack } from 'grommet';
 import { doc } from 'grommet/components/Diagram/doc';
@@ -66,44 +66,38 @@ const Example = () => (
   </Stack>
 );
 
-class DiagramDoc extends Component {
-  render() {
-    return (
-      <Page>
-        <Doc
-          name='Diagram'
-          desc={desc}
-          syntaxes={{
-            connections: [
-              {
-                fromTarget: 'my-dom-id-1',
-                toTarget: 'my-dom-id-2',
-              },
-              {
-                anchor: 'center',
-                color: 'accent-1',
-                fromTarget: 'my-dom-id-1',
-                label: 'link 5',
-                offset: undefined,
-                thickness: 'medium',
-                toTarget: 'my-dom-id-2',
-                type: 'rectilinear',
-              },
-              {
-                VALUES: {
-                  anchor: ['center', 'vertical', 'horizonta'],
-                  offset: ['xsmall', 'small', 'medium', 'large', 'any CSS size'],
-                  thickness: ['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'any CSS size'],
-                  type: ['direct', 'curved', 'rectilinear'],
-                },
-              },
-            ],
-          }}
-          example={<Example />}
-        />
-      </Page>
-    );
-  }
-}
-
-export default DiagramDoc;
+export default () => (
+  <Page>
+    <Doc
+      name='Diagram'
+      desc={desc}
+      syntaxes={{
+        connections: [
+          {
+            fromTarget: 'my-dom-id-1',
+            toTarget: 'my-dom-id-2',
+          },
+          {
+            anchor: 'center',
+            color: 'accent-1',
+            fromTarget: 'my-dom-id-1',
+            label: 'link 5',
+            offset: undefined,
+            thickness: 'medium',
+            toTarget: 'my-dom-id-2',
+            type: 'rectilinear',
+          },
+          {
+            VALUES: {
+              anchor: ['center', 'vertical', 'horizonta'],
+              offset: ['xsmall', 'small', 'medium', 'large', 'any CSS size'],
+              thickness: ['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'any CSS size'],
+              type: ['direct', 'curved', 'rectilinear'],
+            },
+          },
+        ],
+      }}
+      example={<Example />}
+    />
+  </Page>
+);

@@ -42,7 +42,7 @@ export default class LayerDoc extends Component {
               Are you sure you want to close this layer?
             </Text>
             <Box align='start' margin={{ vertical: 'medium' }}>
-              <Button primary={true} label='Sure, close it' onClick={close} />
+              <Button primary label='Sure, close it' onClick={close} />
             </Box>
           </Box>
         </Layer>

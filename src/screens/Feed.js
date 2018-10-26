@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   Box, Button, Heading, Markdown, Paragraph, Text,
 } from 'grommet';
@@ -55,6 +56,14 @@ const Item = ({
   </Box>
 );
 
+Item.propTypes = {
+  date: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  snippet: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
+
 class Feed extends Component {
   constructor(props) {
     super(props);
@@ -81,7 +90,7 @@ class Feed extends Component {
 
         <Box
           direction='row'
-          wrap={true}
+          wrap
           pad={{ horizontal: 'large', bottom: 'large' }}
           gap='large'
         >

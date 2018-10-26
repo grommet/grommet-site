@@ -2,9 +2,10 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
 import {
-  Box, Button, Heading, Paragraph, Text,
+  Box, Anchor, Heading, Paragraph, Text,
 } from 'grommet';
-import { withContext } from '../Context';
+import { LinkNext } from 'grommet-icons';
+import Header from './Header';
 import { genericSyntaxes } from '../utils/props';
 
 // parseFormat() parses the react-desc property format string into
@@ -82,19 +83,24 @@ const Values = ({ name, values, defaultValue }) => {
           if (isDefault) {
             valueContent = <strong>{valueContent}</strong>;
           }
-          return <span key={index * 32}>{valueContent}</span>;
+          return <span key={`${index + 0}`}>{valueContent}</span>;
         })}
     </Box>
   );
   if (name) {
-    content = <Box direction='row' gap='small'>{name}{content}</Box>;
+    content = (
+      <Box direction='row' gap='small'>
+        {name}
+        {content}
+      </Box>
+    );
   }
   content = (
     <Box>
       {content}
       {values
         .filter(v => (v.type))
-        .map((value, index) => <Value key={index} value={value} />)}
+        .map((value, index) => <Value key={`${index + 0}`} value={value} />)}
     </Box>
   );
   return content;
@@ -123,7 +129,7 @@ const Syntax = ({
     return (
       <Fragment>
         {syntax.map((s, i) => (
-          <Syntax key={i} syntax={s} leaf={true} defaultValue={defaultValue} />
+          <Syntax key={`${i + 0}`} syntax={s} leaf defaultValue={defaultValue} />
         ))}
       </Fragment>
     );
@@ -157,8 +163,21 @@ const Syntax = ({
   );
 };
 
+Syntax.propTypes = {
+  syntax: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  format: PropTypes.string,
+  defaultValue: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  leaf: PropTypes.bool,
+};
+
+Syntax.defaultProps = {
+  defaultValue: undefined,
+  format: undefined,
+  leaf: false,
+};
+
 const Prop = ({
-  property, syntax, example, first,
+  property, syntax, first,
 }) => (
   <Box
     border='bottom'
@@ -166,19 +185,19 @@ const Prop = ({
     pad={{ top: (!first ? 'medium' : undefined), bottom: 'medium' }}
   >
     <Heading level={3} margin='none'>
-      <strong>{property.name}</strong>
+      {property.name}
     </Heading>
     <Box
       direction='row-responsive'
       justify='between'
       align='start'
     >
-      <Box basis='1/3' margin={{ right: 'large' }}>
+      <Box basis='1/2' margin={{ right: 'large' }}>
         <Paragraph margin='none'>
           {property.description}
         </Paragraph>
       </Box>
-      <Box flex={true} align='start'>
+      <Box flex align='start'>
         <Text color='neutral-1' style={{ maxWidth: '100%' }}>
           <code>
             {(syntax && (
@@ -196,21 +215,21 @@ const Prop = ({
           </code>
         </Text>
       </Box>
-      {example && (
-        <Box flex={true} align='end'>
-          {example}
-        </Box>
-      )}
     </Box>
   </Box>
 );
 
-class Doc extends Component {
-  constructor(props) {
-    super(props);
-    props.context.setColor('#FFF5CC');
-  }
+Prop.propTypes = {
+  property: PropTypes.shape({}).isRequired,
+  syntax: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  first: PropTypes.bool.isRequired,
+};
 
+Prop.defaultProps = {
+  syntax: undefined,
+};
+
+class Doc extends Component {
   state = {}
 
   componentDidMount() {
@@ -224,66 +243,61 @@ class Doc extends Component {
       children, desc, name, example, examples, syntaxes, text,
     } = this.props;
     return (
-      <Box>
-        <Box direction='row-responsive' margin={{ bottom: 'large' }}>
-          <Box basis='2/3' align='start'>
-            <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
-              <strong>{name}</strong>
-            </Heading>
-            {desc && (
-              <Paragraph size='large'>
-                {desc.description}
-              </Paragraph>
-            )}
-            {text && (
-              <Paragraph size='large'>
-                {text}
-              </Paragraph>
-            )}
-            {desc && desc.availableAt
-              && (Array.isArray(desc.availableAt)
-                ? (
-                  <Box direction='row' gap='small'>
-                    {desc.availableAt.map(at => (
-                      <Button key={at.url} href={at.url} label={at.label} />
-                    ))}
-                  </Box>
-                ) : (
-                  <Button
-                    href={desc.availableAt.url}
-                    label={desc.availableAt.label}
-                  />
-                )
-              )
-            }
-          </Box>
-          <Box flex={true} pad={{ top: 'large', horizontal: 'medium' }}>
-            {example}
-          </Box>
+      <Box margin={{ bottom: 'large' }}>
+        <Header
+          label={name}
+          summary={(desc && desc.description) || text}
+        />
+        <Box align='center' pad={{ top: 'large', horizontal: 'medium' }}>
+          {example}
         </Box>
 
         {desc && (
-          <Box pad={{ bottom: 'large' }}>
-            <Box pad='large' round='large' background='light-1'>
-              {desc.properties
-                ? desc.properties.sort((a, b) => {
-                  if (a.name < b.name) return -1;
-                  if (a.name > b.name) return 1;
-                  return 0;
-                }).map((property, index) => (
-                  <Prop
-                    key={property.name}
-                    property={property}
-                    first={!index}
-                    syntax={(syntaxes || genericSyntaxes)[property.name]}
-                    example={examples[property.name]}
-                  />
-                ))
-                : <Text color='light-5'>No properties</Text>
-              }
-            </Box>
+          <Box pad={{ vertical: 'xlarge' }}>
+            {desc.properties
+              ? desc.properties.sort((a, b) => {
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+              }).map((property, index) => (
+                <Prop
+                  key={property.name}
+                  property={property}
+                  first={!index}
+                  syntax={(syntaxes || genericSyntaxes)[property.name]}
+                  example={examples[property.name]}
+                />
+              ))
+              : <Text color='light-5'>No properties</Text>
+            }
           </Box>
         )}
+
+        {desc && desc.availableAt
+          && (Array.isArray(desc.availableAt)
+            ? (
+              <Box alignSelf='center' direction='row' gap='large'>
+                {desc.availableAt.map(at => (
+                  <Anchor
+                    key={at.url}
+                    href={at.url}
+                    label={<Text size='large'>{at.label}</Text>}
+                    icon={<LinkNext />}
+                    reverse
+                  />
+                ))}
+              </Box>
+            ) : (
+              <Anchor
+                alignSelf='center'
+                href={desc.availableAt.url}
+                label={<Text size='large'>{desc.availableAt.label}</Text>}
+                icon={<LinkNext />}
+                reverse
+              />
+            )
+          )
+        }
 
         {children}
       </Box>
@@ -293,10 +307,8 @@ class Doc extends Component {
 
 Doc.propTypes = {
   // code: PropTypes.string,
-  context: PropTypes.shape({
-    setColor: PropTypes.func.isRequired,
-  }).isRequired,
-  desc: PropTypes.object,
+  children: PropTypes.node,
+  desc: PropTypes.shape({}),
   example: PropTypes.node,
   examples: PropTypes.shape({}),
   name: PropTypes.string.isRequired,
@@ -307,6 +319,7 @@ Doc.propTypes = {
 
 Doc.defaultProps = {
   // code: undefined,
+  children: undefined,
   desc: undefined,
   example: null,
   examples: {},
@@ -315,4 +328,4 @@ Doc.defaultProps = {
   text: undefined,
 };
 
-export default withContext(Doc);
+export default Doc;

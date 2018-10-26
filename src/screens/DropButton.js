@@ -42,7 +42,7 @@ export default class DropButtonDoc extends Component {
                   {['one', 'two', 'three', 'four', 'five'].map((label, index) => (
                     <Button
                       key={label}
-                      hoverIndicator={true}
+                      hoverIndicator
                       onClick={() => this.setState({ open: undefined })}
                     >
                       <Box

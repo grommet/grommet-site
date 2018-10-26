@@ -17,7 +17,7 @@ export default () => (
       desc={desc}
       examples={{
         fit: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['contain', 'cover'].map(fit => (
               <Box
                 key={fit}

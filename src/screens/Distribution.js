@@ -30,7 +30,7 @@ export default () => (
           ]}
         >
           {value => (
-            <Box pad='xsmall' background={value.color} fill={true}>
+            <Box pad='xsmall' background={value.color} fill>
               <Text size='large'>{value.value}</Text>
             </Box>
           )}

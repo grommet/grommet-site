@@ -25,17 +25,17 @@ export default () => (
         onClick: '() => {}',
       }}
       example={(
-        <Box flex={true} justify='center' align='center'>
+        <Box flex justify='center' align='center'>
           <Button icon={<Edit />} label='Edit' onClick={() => {}} />
         </Box>
       )}
       examples={{
-        active: <Button active={true} label='Submit' onClick={() => {}} />,
+        active: <Button active label='Submit' onClick={() => {}} />,
         color: <Button color='status-critical' label='Submit' onClick={() => {}} />,
         icon: <Button icon={<Close />} onClick={() => {}} />,
         label: <Button label='Submit' onClick={() => {}} />,
-        primary: <Button primary={true} label='Submit' onClick={() => {}} />,
-        reverse: <Button reverse={true} icon={<Edit />} label='Edit' onClick={() => {}} />,
+        primary: <Button primary label='Submit' onClick={() => {}} />,
+        reverse: <Button reverse icon={<Edit />} label='Edit' onClick={() => {}} />,
       }}
     />
   </Page>

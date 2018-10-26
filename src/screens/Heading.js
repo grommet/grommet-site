@@ -25,7 +25,7 @@ export default () => (
           <Heading margin='none' color='accent-2'>A</Heading>
         ),
         level: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {[1, 2, 3, 4].map(level => (
               <Box key={level} margin='xsmall'>
                 <Heading level={level} margin='none'>A</Heading>
@@ -34,7 +34,7 @@ export default () => (
           </Box>
         ),
         margin: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['none', 'small', 'medium', 'large'].map(margin => (
               <Box key={margin} margin='xsmall'>
                 <Heading level={2} margin={margin}>A</Heading>
@@ -43,7 +43,7 @@ export default () => (
           </Box>
         ),
         size: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {[1, 2, 3, 4].map(level => (
               <Box key={level} direction='row' justify='end'>
                 {['small', 'medium', 'large'].map(size => (

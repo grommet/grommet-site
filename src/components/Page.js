@@ -5,13 +5,14 @@ import Nav from './Nav';
 export default ({ children, ...rest }) => (
   <Box
     pad={{ horizontal: 'xlarge', vertical: 'large' }}
-    direction='row'
-    justify='center'
+    align='center'
     {...rest}
   >
-    <Box basis='xlarge'>
-      <Nav gridArea='header' />
-      <Box gridArea='content'>{children}</Box>
+    <Box width='xlarge'>
+      <Nav />
+      <Box margin={{ top: 'large' }}>
+        {children}
+      </Box>
     </Box>
   </Box>
 );

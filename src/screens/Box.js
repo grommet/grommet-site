@@ -14,7 +14,7 @@ export default () => (
       desc={desc}
       example={(
         <Box
-          flex={true}
+          flex
           border={{ color: 'brand', size: 'large' }}
           pad='medium'
         />
@@ -164,7 +164,7 @@ export default () => (
       }}
       examples={{
         align: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['start', 'center', 'end'].map(align => (
               <Box
                 key={align}
@@ -196,7 +196,7 @@ export default () => (
         //   </Box>
         // ),
         background: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {[undefined, 'strong', 'medium', 'weak'].map(opacity => (
               <Box
                 key={opacity || 'opacity'}
@@ -208,7 +208,7 @@ export default () => (
           </Box>
         ),
         border: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['xsmall', 'small', 'medium', 'large'].map(size => (
               <Box
                 key={size}
@@ -220,7 +220,7 @@ export default () => (
           </Box>
         ),
         elevation: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'].map(elevation => (
               <Box
                 key={elevation}
@@ -232,7 +232,7 @@ export default () => (
           </Box>
         ),
         gap: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['xsmall', 'small', 'medium', 'large'].map(gap => (
               <Box
                 key={gap}
@@ -254,7 +254,7 @@ export default () => (
           </Box>
         ),
         justify: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['start', 'center', 'between', 'end'].map(justify => (
               <Box
                 key={justify}
@@ -277,7 +277,7 @@ export default () => (
           </Box>
         ),
         margin: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['none', 'xsmall', 'small', 'medium'].map(margin => (
               <Box
                 key={margin}
@@ -289,7 +289,7 @@ export default () => (
           </Box>
         ),
         pad: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['none', 'xsmall', 'small', 'medium'].map(pad => (
               <Box
                 key={pad}
@@ -306,7 +306,7 @@ export default () => (
           </Box>
         ),
         round: (
-          <Box direction='row' justify='end' wrap={true} align='start'>
+          <Box direction='row' justify='end' wrap align='start'>
             {['xsmall', 'small', 'medium'].map(round => (
               <Box
                 key={round}
@@ -319,12 +319,12 @@ export default () => (
           </Box>
         ),
         wrap: (
-          <Box fill={true} direction='row' justify='end'>
+          <Box fill direction='row' justify='end'>
             <Box
               basis='small'
               align='end'
               direction='row'
-              wrap={true}
+              wrap
               background={{ color: 'accent-2', opacity: 'weak' }}
             >
               {[0, 1, 2, 3, 4, 5, 6].map(index => (

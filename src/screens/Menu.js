@@ -13,6 +13,7 @@ const desc = doc(Menu).toJSON();
 
 function onClick(event) {
   event.preventDefault();
+  // eslint-disable-next-line no-alert
   alert('hi');
 }
 

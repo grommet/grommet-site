@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {
   Box, Button, CheckBox, Heading, Select, Text, TextInput,
@@ -101,74 +101,75 @@ const userRules = (user) => {
   return defaultValidation;
 };
 
-export default class FormDoc extends Component {
-  render() {
-    const text = `Grommet 2.0 does not provide Form or FormField components.
-      Instead, we have a reference on how to build a form
-      using the basic Box, Text, and control components.`;
-    return (
-      <Doc
-        name='Form'
-        text={text}
-      >
-        <Box direction='row' justify='center'>
-          <Box basis='medium' margin={{ bottom: 'large' }}>
-            <Form
-              rules={userRules}
-              defaultErrors={{ email: 'This is an existing email' }}
-              defaultValue={{ size: 'medium', email: 'alan@gmail.com' }}
-              onSubmit={user => alert(JSON.stringify(user, null, 2))}
-            >
-              {(state, errors) => (
-                <Box>
-                  <Heading level={2}>Add user</Heading>
-                  <Text margin={{ bottom: 'small' }}>
-                    All fields are required and your email must be unique.
-                  </Text>
-                  <Field label='Name' help='Full name preferred' error={errors.name}>
-                    <TextInput plain={true} {...state.name} />
-                  </Field>
-                  <Field label='Email' error={errors.email}>
-                    <TextInput type='email' plain={true} {...state.email} />
-                  </Field>
-                  <Field
-                    label='Street'
-                    error={errors.get('address.home.street')}
-                  >
-                    <TextInput plain={true} {...state.address.home.street} />
-                  </Field>
-                  <Field
-                    label='City'
-                    error={errors.get('address.city')}
-                  >
-                    <TextInput plain={true} {...state.get('address.city')} />
-                  </Field>
-                  <Field label='T-shirt Size' error={errors.size}>
-                    <Select
-                      a11yTitle='Open Size Select'
-                      placeholder='Select Size'
-                      options={['small', 'medium', 'large', 'xlarge', 'xxlarge']}
-                      plain={true}
-                      {...state.get('size')}
+export default () => {
+  const text = `Grommet 2.0 does not provide Form or FormField components.
+    Instead, we have a reference on how to build a form
+    using the basic Box, Text, and control components.`;
+  return (
+    <Doc
+      name='Form'
+      text={text}
+    >
+      <Box direction='row' justify='center'>
+        <Box basis='medium' margin={{ bottom: 'large' }}>
+          <Form
+            rules={userRules}
+            defaultErrors={{ email: 'This is an existing email' }}
+            defaultValue={{ size: 'medium', email: 'alan@gmail.com' }}
+            onSubmit={user => (
+              // eslint-disable-next-line no-alert
+              alert(JSON.stringify(user, null, 2))
+            )}
+          >
+            {(state, errors) => (
+              <Box>
+                <Heading level={2}>Add user</Heading>
+                <Text margin={{ bottom: 'small' }}>
+                  All fields are required and your email must be unique.
+                </Text>
+                <Field label='Name' help='Full name preferred' error={errors.name}>
+                  <TextInput plain {...state.name} />
+                </Field>
+                <Field label='Email' error={errors.email}>
+                  <TextInput type='email' plain {...state.email} />
+                </Field>
+                <Field
+                  label='Street'
+                  error={errors.get('address.home.street')}
+                >
+                  <TextInput plain {...state.address.home.street} />
+                </Field>
+                <Field
+                  label='City'
+                  error={errors.get('address.city')}
+                >
+                  <TextInput plain {...state.get('address.city')} />
+                </Field>
+                <Field label='T-shirt Size' error={errors.size}>
+                  <Select
+                    a11yTitle='Open Size Select'
+                    placeholder='Select Size'
+                    options={['small', 'medium', 'large', 'xlarge', 'xxlarge']}
+                    plain
+                    {...state.get('size')}
+                  />
+                </Field>
+                <Field justify='start' error={errors.confirm}>
+                  <Box pad='small'>
+                    <CheckBox
+                      label='I confirm I provided the truth nothing but the truth'
+                      {...state.confirm}
                     />
-                  </Field>
-                  <Field justify='start' error={errors.confirm}>
-                    <Box pad='small'>
-                      <CheckBox
-                        label='I confirm I provided the truth nothing but the truth'
-                        {...state.confirm}
-                      />
-                    </Box>
-                  </Field>
-                  <Box margin={{ top: 'large' }}>
-                    <Button primary={true} type='submit' label='Submit' />
                   </Box>
+                </Field>
+                <Box margin={{ top: 'large' }}>
+                  <Button primary type='submit' label='Submit' />
                 </Box>
-              )}
-            </Form>
-          </Box>
+              </Box>
+            )}
+          </Form>
         </Box>
-      </Doc>
-    );
-  }
-}
+      </Box>
+    </Doc>
+  );
+};

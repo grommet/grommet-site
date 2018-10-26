@@ -41,7 +41,7 @@ export default () => (
       )}
       examples={{
         anchor: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['top-left', 'left', 'center'].map(anchor => (
               <Box
                 key={anchor}

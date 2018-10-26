@@ -25,15 +25,15 @@ export default () => (
         onClick: '() => {}',
       }}
       example={(
-        <Box flex={true} justify='center' align='center'>
-          <Anchor href='#' primary={true} label='For Example' />
+        <Box flex justify='center' align='center'>
+          <Anchor href='#' primary label='For Example' />
         </Box>
       )}
       examples={{
         icon: <Anchor href='#' icon={<Edit />} />,
         label: <Anchor href='#' label='Edit' />,
-        primary: <Anchor href='#' primary={true} label='Edit' />,
-        reverse: <Anchor href='#' icon={<Edit />} label='Edit' reverse={true} />,
+        primary: <Anchor href='#' primary label='Edit' />,
+        reverse: <Anchor href='#' icon={<Edit />} label='Edit' reverse />,
       }}
     />
   </Page>

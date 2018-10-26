@@ -58,7 +58,7 @@ export default class SelectDoc extends Component {
             ),
             plain: (
               <Select
-                plain={true}
+                plain
                 options={stringOptions}
                 value={size}
                 onChange={({ option }) => this.setState({ size: option })}

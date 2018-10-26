@@ -25,7 +25,7 @@ class TextInputDoc extends Component {
           desc={desc}
           examples={{
             placeholder: <TextInput placeholder='abc' />,
-            plain: <TextInput value='A' plain={true} />,
+            plain: <TextInput value='A' plain />,
             size: (
               <Box>
                 <Box margin={{ bottom: 'xsmall' }} align='end'>

@@ -16,7 +16,7 @@ const CONTENT = [
     kind='subtitles'
     srcLang='en'
     src='/assets/small-en.vtt'
-    default={true}
+    default
   />,
 ];
 
@@ -44,7 +44,7 @@ export default () => (
       )}
       examples={{
         controls: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {[false, 'over', 'below'].map(controls => (
               <Box key={controls} basis='small' margin='xsmall'>
                 <Video controls={controls} fit='cover'>
@@ -55,7 +55,7 @@ export default () => (
           </Box>
         ),
         fit: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['contain', 'cover'].map(fit => (
               <Box
                 key={fit}

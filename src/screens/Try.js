@@ -5,7 +5,6 @@ import {
   Paragraph, Select, Text, TextInput,
 } from 'grommet';
 import { Previous as PreviousIcon } from 'grommet-icons';
-import { withContext } from '../Context';
 import Page from '../components/Page';
 import {
   hslToRgb, parseRGBString, rgbToHsl, toRGBString,
@@ -86,11 +85,9 @@ const colorsForMood = (color, mood) => {
   return result;
 };
 
-class Try extends Component {
+export default class Try extends Component {
   constructor(props) {
     super(props);
-    // This is for the page background, not for the theme itself.
-    props.context.setColor('#DDE6FF');
 
     const font = 'Fira Sans';
     const color = '#99cc33';
@@ -235,7 +232,7 @@ class Try extends Component {
     } = this.state;
     return (
       <Page background={{ image: 'url("img/circles.svg")' }}>
-        <Box direction='row' gap='large' wrap={true} align='start'>
+        <Box direction='row' gap='large' wrap align='start'>
           <Box basis='medium' margin={{ bottom: 'large' }}>
             <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
               <strong>Try us without writing a single line of code</strong>
@@ -248,7 +245,7 @@ class Try extends Component {
               <Box pad={{ vertical: 'medium' }}>
                 <FormField label='Name'>
                   <TextInput
-                    plain={true}
+                    plain
                     value={name}
                     onChange={this.onChangeName}
                   />
@@ -260,7 +257,7 @@ class Try extends Component {
                 >
                   <Box direction='row' align='center' justify='between'>
                     <TextInput
-                      plain={true}
+                      plain
                       value={color}
                       onChange={this.onChangeColor}
                     />
@@ -282,14 +279,14 @@ class Try extends Component {
                   error={errors.font}
                 >
                   <TextInput
-                    plain={true}
+                    plain
                     value={font}
                     onChange={this.onChangeFont}
                   />
                 </FormField>
                 <FormField label='Sharpness'>
                   <Select
-                    plain={true}
+                    plain
                     value={sharpness}
                     options={SHARPNESSES}
                     onChange={this.onChangeSharpness}
@@ -297,7 +294,7 @@ class Try extends Component {
                 </FormField>
                 <FormField label='Mood'>
                   <Select
-                    plain={true}
+                    plain
                     value={mood}
                     options={MOODS}
                     onChange={this.onChangeMood}
@@ -308,7 +305,7 @@ class Try extends Component {
                 <Button
                   type='submit'
                   label='Download'
-                  primary={true}
+                  primary
                   onClick={this.onDownload}
                 />
               </Box>
@@ -350,7 +347,7 @@ class Try extends Component {
                     overflow='hidden'
                   >
                     <Button icon={<PreviousIcon />} onClick={() => {}} />
-                    <Button primary={true} label='Subscribe' onClick={() => {}} />
+                    <Button primary label='Subscribe' onClick={() => {}} />
                   </Box>
                   <Box pad='large' align='start'>
                     <Heading level={1} margin={{ top: 'none' }}>Bring it on!</Heading>
@@ -379,5 +376,3 @@ class Try extends Component {
     );
   }
 }
-
-export default withContext(Try);

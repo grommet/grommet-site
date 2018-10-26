@@ -45,7 +45,7 @@ export default () => (
       name='DataTable'
       desc={desc}
       example={(
-        <DataTable columns={columns} data={data} sortable={true} />
+        <DataTable columns={columns} data={data} sortable />
       )}
     />
   </Page>

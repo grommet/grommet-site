@@ -93,9 +93,12 @@ export default () => (
               <Box key={type} margin={{ bottom: 'xsmall' }}>
                 <Chart
                   type={type}
-                  round={true}
+                  round
                   bounds={BOUNDS}
-                  onClick={() => alert(`Clicked ${type}`)}
+                  onClick={() => (
+                    // eslint-disable-next-line no-alert
+                    alert(`Clicked ${type}`)
+                  )}
                   values={VALUES}
                   size={{ width: 'small', height: 'xsmall' }}
                   aria-label={`${type} rounded chart`}
@@ -110,7 +113,7 @@ export default () => (
               <Box key={type} margin={{ bottom: 'xsmall' }}>
                 <Chart
                   type={type}
-                  round={true}
+                  round
                   bounds={BOUNDS}
                   onHover={over => console.log(`over ${type} ${over}`)}
                   values={VALUES}
@@ -127,7 +130,7 @@ export default () => (
               <Box key={type} margin={{ bottom: 'xsmall' }}>
                 <Chart
                   type={type}
-                  round={true}
+                  round
                   bounds={BOUNDS}
                   values={VALUES}
                   size={{ width: 'small', height: 'xsmall' }}

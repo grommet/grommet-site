@@ -20,7 +20,7 @@ export default () => (
       }}
       examples={{
         size: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['small', 'medium', 'large', 'xlarge'].map(size => (
               <Box key={size} margin='xsmall'>
                 <Paragraph size={size} margin='none'>

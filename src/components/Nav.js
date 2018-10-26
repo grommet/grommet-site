@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { Box, Text } from 'grommet';
-import { ResponsiveContext } from 'grommet/contexts';
+import { Box, Text, ResponsiveContext } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
-
-const NavAnchor = ({ path, label }) => (
-  <RoutedAnchor path={path}>
-    <Text size='large'><strong>{label}</strong></Text>
-  </RoutedAnchor>
-);
+import RoutedButton from './RoutedButton';
 
 export default class extends Component {
   state = {}
@@ -16,30 +10,30 @@ export default class extends Component {
   render() {
     return (
       <ResponsiveContext.Consumer>
-        {responsive => (
+        {size => (
           <Box
             direction='row'
             justify='between'
             align='center'
-            margin={{ bottom: 'xlarge' }}
             {...this.props}
           >
-            <RoutedAnchor path='/'>
-              <Box direction='row' align='center' margin={{ right: 'small' }}>
-                <GrommetIcon size='large' color='brand' />
-                {responsive === 'wide'
-                  ? (
-                    <Box margin={{ horizontal: 'small' }}>
-                      <Text size='large'><strong>grommet</strong></Text>
-                    </Box>
-                  ) : null}
+            <RoutedAnchor
+              path='/'
+              icon={<GrommetIcon size='large' />}
+              label={size !== 'small' && <Text size='xlarge'>grommet</Text>}
+            />
+            <RoutedButton
+              path='/components'
+              plain
+            >
+              <Box
+                pad={{ vertical: 'small', horizontal: 'medium' }}
+                round='xlarge'
+                background='accent-2'
+              >
+                <Text size='large'>components</Text>
               </Box>
-            </RoutedAnchor>
-            <Box direction='row' align='center' gap='medium'>
-              <NavAnchor path='/play' label='play' />
-              <NavAnchor path='/start' label='start' />
-              <NavAnchor path='/components' label='components' />
-            </Box>
+            </RoutedButton>
           </Box>
         )}
       </ResponsiveContext.Consumer>

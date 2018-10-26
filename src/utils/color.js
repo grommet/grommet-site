@@ -84,10 +84,10 @@ export const rgbToHsl = (r, g, b) => {
     const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
     switch (max) {
-      case nr: h = ((ng - nb) / d) + (ng < nb ? 6 : 0); break;
-      case ng: h = ((nb - nr) / d) + 2; break;
-      case nb: h = ((nr - ng) / d) + 4; break;
-      default: console.error('Bug in rgbToHsl');
+    case nr: h = ((ng - nb) / d) + (ng < nb ? 6 : 0); break;
+    case ng: h = ((nb - nr) / d) + 2; break;
+    case nb: h = ((nr - ng) / d) + 4; break;
+    default: console.error('Bug in rgbToHsl');
     }
     h /= 6;
   }

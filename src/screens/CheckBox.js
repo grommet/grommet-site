@@ -20,15 +20,15 @@ export default () => (
         onChange: '() => {}',
       }}
       examples={{
-        checked: <CheckBox label='A' checked={true} onChange={() => {}} />,
-        disabled: <CheckBox label='A' disabled={true} />,
-        reverse: <CheckBox label='A' reverse={true} onChange={() => {}} />,
+        checked: <CheckBox label='A' checked onChange={() => {}} />,
+        disabled: <CheckBox label='A' disabled />,
+        reverse: <CheckBox label='A' reverse onChange={() => {}} />,
         toggle: (
           <Box>
             <Box margin={{ bottom: 'xsmall' }}>
-              <CheckBox label='A' toggle={true} onChange={() => {}} />
+              <CheckBox label='A' toggle onChange={() => {}} />
             </Box>
-            <CheckBox label='B' toggle={true} checked={true} onChange={() => {}} />
+            <CheckBox label='B' toggle checked onChange={() => {}} />
           </Box>
         ),
       }}
