@@ -281,6 +281,7 @@ class Doc extends Component {
                   <Anchor
                     key={at.url}
                     href={at.url}
+                    target='_blank'
                     label={<Text size='large'>{at.label}</Text>}
                     icon={<LinkNext />}
                     reverse
@@ -291,6 +292,7 @@ class Doc extends Component {
               <Anchor
                 alignSelf='center'
                 href={desc.availableAt.url}
+                target='_blank'
                 label={<Text size='large'>{desc.availableAt.label}</Text>}
                 icon={<LinkNext />}
                 reverse

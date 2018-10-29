@@ -8,7 +8,7 @@ export default class Hero extends Component {
     this.timer = setInterval(() => {
       const { build } = this.state;
       this.setState({ build: !build });
-    }, 8000);
+    }, 4000);
   }
 
   componentWillUnmount() {
@@ -44,37 +44,37 @@ export default class Hero extends Component {
           <Box
             animation={build
               ? [
+                { type: 'fadeIn', delay: 1000 },
+                { type: 'slideLeft', size: 'large', delay: 1000 },
+              ]
+              : [
+                { type: 'fadeOut', delay: 2000 },
+              ]
+            }
+            background='light-4'
+            pad='medium'
+          />
+          <Box
+            animation={build
+              ? [
+                { type: 'fadeIn', delay: 1500 },
+                { type: 'slideLeft', size: 'large', delay: 1500 },
+              ]
+              : [
+                { type: 'fadeOut', delay: 1500 },
+              ]
+            }
+            background='light-4'
+            pad='medium'
+          />
+          <Box
+            animation={build
+              ? [
                 { type: 'fadeIn', delay: 2000 },
                 { type: 'slideLeft', size: 'large', delay: 2000 },
               ]
               : [
-                { type: 'fadeOut', delay: 4000 },
-              ]
-            }
-            background='light-4'
-            pad='medium'
-          />
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 3000 },
-                { type: 'slideLeft', size: 'large', delay: 3000 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 3000 },
-              ]
-            }
-            background='light-4'
-            pad='medium'
-          />
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 4000 },
-                { type: 'slideLeft', size: 'large', delay: 4000 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 2000 },
+                { type: 'fadeOut', delay: 1000 },
               ]
             }
             background='light-4'
@@ -84,11 +84,11 @@ export default class Hero extends Component {
         <Box
           animation={build
             ? [
-              { type: 'fadeIn', delay: 1000 },
-              { type: 'slideRight', size: 'large', delay: 1000 },
+              { type: 'fadeIn', delay: 500 },
+              { type: 'slideRight', size: 'large', delay: 500 },
             ]
             : [
-              { type: 'fadeOut', delay: 5000 },
+              { type: 'fadeOut', delay: 2500 },
             ]
           }
           basis='2/3'
@@ -100,11 +100,11 @@ export default class Hero extends Component {
           <Box
             animation={build
               ? [
-                { type: 'fadeIn', delay: 5000 },
-                { type: 'slideDown', size: 'large', delay: 5000 },
+                { type: 'fadeIn', delay: 2500 },
+                { type: 'slideDown', size: 'large', delay: 2500 },
               ]
               : [
-                { type: 'fadeOut', delay: 1000 },
+                { type: 'fadeOut', delay: 500 },
               ]
             }
             background='light-4'
@@ -113,8 +113,8 @@ export default class Hero extends Component {
           <Box
             animation={build
               ? [
-                { type: 'fadeIn', delay: 6000 },
-                { type: 'slideDown', size: 'large', delay: 6000 },
+                { type: 'fadeIn', delay: 3000 },
+                { type: 'slideDown', size: 'large', delay: 3000 },
               ]
               : [
                 { type: 'fadeOut', delay: 0 },
