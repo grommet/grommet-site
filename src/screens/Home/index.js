@@ -131,7 +131,7 @@ export default class Home extends Component {
             border='bottom'
           >
             <Message
-              image={<Box pad='large' round='full' background='light-5' />}
+              imageSrc='/img/avatars/puppet_200x200.jpeg'
               name='@nikmd23'
               summary={(
                 <span>
@@ -143,7 +143,7 @@ export default class Home extends Component {
             />
 
             <Message
-              image={<Box pad='large' round='full' background='light-5' />}
+              imageSrc='/img/avatars/puppet_200x200.jpeg'
               name='@nikmd23'
               summary={(
                 <span>
@@ -158,7 +158,7 @@ export default class Home extends Component {
             />
 
             <Message
-              image={<Box pad='large' round='full' background='light-5' />}
+              imageSrc='/img/avatars/1nCCU4b3_200x200.jpg'
               name='@tomsthoughtfeed'
               summary={(
                 <span>
@@ -169,7 +169,7 @@ export default class Home extends Component {
             />
 
             <Message
-              image={<Box pad='large' round='full' background='light-5' />}
+              imageSrc='/img/avatars/06IweXPF_200x200.jpg'
               name='@linghucong'
               summary={(
                 <span>
@@ -180,7 +180,7 @@ export default class Home extends Component {
             />
 
             <Message
-              image={<Box pad='large' round='full' background='light-5' />}
+              imageSrc='/img/avatars/VQlHfV6m_200x200.jpg'
               name='@ravishtiwari'
               summary={(
                 <span>

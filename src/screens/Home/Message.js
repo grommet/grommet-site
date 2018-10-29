@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading, Paragraph } from 'grommet';
+import {
+  Box, Heading, Image, Paragraph,
+} from 'grommet';
 
 const Message = ({
-  image, name, summary, ...rest
+  imageSrc, name, summary, ...rest
 }) => (
   <Box basis='medium' align='center'>
-    <Box height='xsmall' align='center' justify='center' {...rest}>
-      {image}
+    <Box
+      height='xsmall'
+      width='xsmall'
+      round='full'
+      overflow='hidden'
+      align='center'
+      justify='center'
+      {...rest}
+    >
+      <Image width={96} fit='cover' src={imageSrc} />
     </Box>
     <Box width='medium' pad='medium'>
       <Heading level={3} textAlign='center' margin='none'>
@@ -21,7 +31,7 @@ const Message = ({
 );
 
 Message.propTypes = {
-  image: PropTypes.node.isRequired,
+  imageSrc: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   summary: PropTypes.node.isRequired,
 };
