@@ -2,50 +2,26 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Anchor, Box, Heading, Image, Paragraph, Button,
-  Stack, Text, TextArea,
+  Text, TextArea,
 } from 'grommet';
 import {
-  Github, FormDown, Next, Share, Slack, Twitter,
+  Github, Next, Share, Slack, Twitter,
 } from 'grommet-icons';
-import { withContext } from '../Context';
-import Nav from '../components/Nav';
-import Header from '../components/Header';
-import RoutedAnchor from '../components/RoutedAnchor';
-import RoutedButton from '../components/RoutedButton';
-
-const Section = ({ children, ...rest }) => (
-  <Box
-    align='center'
-    pad={{ horizontal: 'xlarge', vertical: 'large' }}
-    {...rest}
-  >
-    <Box width='xlarge'>
-      {children}
-    </Box>
-  </Box>
-);
+import Nav from '../../components/Nav';
+import Header from '../../components/Header';
+import RoutedAnchor from '../../components/RoutedAnchor';
+import RoutedButton from '../../components/RoutedButton';
+import Section from './Section';
+import Message from './Message';
+import Hero from './Hero';
+import Composable from './Composable';
+import Accessible from './Accessible';
+import Themable from './Themable';
+import Layouts from './Layouts';
 
 const COMPANIES = ['HPE', 'Netflix', 'GE', 'IBM', 'MicroFocus', 'GitHub',
   'Samsung', 'Uber', 'Shopify', 'Twilio', 'Sony', 'HP',
   'Boeing'];
-
-const Tile = ({
-  children, name, summary, ...rest
-}) => (
-  <Box basis='medium' align='center' margin='large'>
-    <Box height='small' align='center' justify='center' {...rest}>
-      {children}
-    </Box>
-    <Box width='medium' margin={{ top: 'large' }}>
-      <Heading level={3} size='xlarge' textAlign='center' margin='none'>
-        {name}
-      </Heading>
-      <Paragraph size='xlarge' textAlign='center'>
-        {summary}
-      </Paragraph>
-    </Box>
-  </Box>
-);
 
 const Dot = ({ color }) => (
   <svg viewBox='0 0 12 12' width={12} height={12}>
@@ -57,31 +33,7 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-const Message = ({
-  image, name, summary, ...rest
-}) => (
-  <Box basis='medium' align='center'>
-    <Box height='xsmall' align='center' justify='center' {...rest}>
-      {image}
-    </Box>
-    <Box width='medium' pad='medium'>
-      <Heading level={3} textAlign='center' margin='none'>
-        {name}
-      </Heading>
-      <Paragraph size='large' textAlign='center'>
-        {summary}
-      </Paragraph>
-    </Box>
-  </Box>
-);
-
-Message.propTypes = {
-  image: PropTypes.node.isRequired,
-  name: PropTypes.string.isRequired,
-  summary: PropTypes.node.isRequired,
-};
-
-class Home extends Component {
+export default class Home extends Component {
   componentDidMount() {
     document.title = 'Grommet';
   }
@@ -92,31 +44,7 @@ class Home extends Component {
         <Section>
           <Nav />
 
-          <Box
-            direction='row'
-            pad='large'
-            elevation='large'
-            round='medium'
-            margin='xlarge'
-          >
-            <Box
-              basis='1/3'
-              background='light-1'
-              pad='large'
-              margin='small'
-              gap='medium'
-            >
-              <Box background='light-2' pad='medium' />
-              <Box background='light-2' pad='medium' />
-              <Box background='light-2' pad='medium' />
-            </Box>
-            <Box
-              basis='2/3'
-              background='light-1'
-              pad='large'
-              margin='small'
-            />
-          </Box>
+          <Hero />
 
           <Header
             label='streamline the way you develop apps'
@@ -173,151 +101,13 @@ class Home extends Component {
           />
 
           <Box direction='row-responsive' justify='center'>
-
-            <Tile
-              name='mix, match, and make stuff'
-              summary={(
-                <span>
-                  tailor composite components with grommet. embrace
-                  atomic design methods and build a library that fits your
-                  needs.
-                </span>
-              )}
-              direction='row'
-              wrap
-              justify='between'
-            >
-              <Box elevation='medium'>
-                <Box
-                  direction='row'
-                  align='center'
-                  gap='medium'
-                  pad={{ vertical: 'small', left: 'medium', right: 'small' }}
-                >
-                  <Text size='large'>Menu</Text>
-                  <FormDown />
-                </Box>
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'medium' }}
-                  background='light-2'
-                >
-                  <Text>first</Text>
-                </Box>
-                <Box pad={{ vertical: 'small', horizontal: 'medium' }}>
-                  <Text>second</Text>
-                </Box>
-              </Box>
-            </Tile>
-
-            <Tile
-              name='accessible is being inclusive'
-              summary={(
-                <span>
-                  keyboard navigation, screen reader tags, and more. grommet
-                  provides support for
-                  W3c’s
-                  {' '}
-                  <Anchor href='https://www.w3.org/TR/WCAG21/'>
-                    WCAG 2.1 spec
-                  </Anchor>
-                  {' '}
-                  out of the box.
-                </span>
-              )}
-            >
-              <Stack anchor='center'>
-                <Box direction='row' gap='medium'>
-                  <Box background='accent-1' round='full' pad='large' />
-                  <Box background='accent-2' round='full' pad='large' />
-                </Box>
-                <Box direction='row' justify='center'>
-                  <Box
-                    background={{ color: 'neutral-1', opacity: 'strong' }}
-                    round='full'
-                    pad='large'
-                  >
-                    <Text size='xxlarge' weight='bold'>Aa</Text>
-                  </Box>
-                </Box>
-              </Stack>
-            </Tile>
-
+            <Composable />
+            <Accessible />
           </Box>
 
           <Box direction='row-responsive' justify='center'>
-
-            <Tile
-              name='powerful theming tools'
-              summary={(
-                <span>
-                  tailor the component library to align with your
-                  Color, Type, Layout needs. You can even control
-                  component interaction.
-                </span>
-              )}
-              gap='medium'
-            >
-              <Button label='Log in' />
-              <Button label='GET STARTED' />
-              <Button label='click me' />
-            </Tile>
-
-            <Tile
-              name='layouts can be more flexible'
-              summary={(
-                <span>
-                  Support all the devices! use
-                  {' '}
-                  <RoutedAnchor path='/box'>
-                    Flexbox
-                  </RoutedAnchor>
-                  {' '}
-                  and
-                  {' '}
-                  <RoutedAnchor path='/grid'>
-                    CSS Grid
-                  </RoutedAnchor>
-                  {' '}
-                  to provide layouts for all those new phones
-                  and widescreen displays.
-                </span>
-              )}
-              direction='row'
-              gap='small'
-            >
-              <Box justify='center'>
-                <Box
-                  basis='1/2'
-                  pad={{ horizontal: 'medium', vertical: 'large' }}
-                  background='accent-1'
-                  round='small'
-                />
-              </Box>
-              <Box gap='small'>
-                <Box
-                  basis='2/3'
-                  pad='large'
-                  background='neutral-1'
-                  round='small'
-                />
-                <Box
-                  basis='1/3'
-                  pad='medium'
-                  background='neutral-2'
-                  round='small'
-                />
-              </Box>
-              <Box gap='small' align='start'>
-                <Box
-                  pad={{ horizontal: 'large', vertical: 'medium' }}
-                  background='status-ok'
-                  round='small'
-                />
-                <Box pad='medium' background='status-warning' round='small' />
-                <Box pad='medium' background='status-critical' round='small' />
-              </Box>
-            </Tile>
-
+            <Themable />
+            <Layouts />
           </Box>
         </Section>
 
@@ -614,5 +404,3 @@ class Home extends Component {
     );
   }
 }
-
-export default withContext(Home);
