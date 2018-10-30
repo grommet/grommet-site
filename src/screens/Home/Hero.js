@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Box } from 'grommet';
+import { Ad } from 'grommet-icons';
 
 export default class Hero extends Component {
   state = { build: true };
@@ -8,7 +9,7 @@ export default class Hero extends Component {
     this.timer = setInterval(() => {
       const { build } = this.state;
       this.setState({ build: !build });
-    }, 4000);
+    }, 5000);
   }
 
   componentWillUnmount() {
@@ -32,13 +33,12 @@ export default class Hero extends Component {
               { type: 'slideLeft', size: 'large' },
             ]
             : [
-              { type: 'fadeOut', delay: 6000 },
+              { type: 'fadeOut', delay: 3000 },
             ]
           }
           basis='1/3'
-          background='light-2'
+          background='brand'
           pad='large'
-          margin='small'
           gap='medium'
         >
           <Box
@@ -51,7 +51,7 @@ export default class Hero extends Component {
                 { type: 'fadeOut', delay: 2000 },
               ]
             }
-            background='light-4'
+            background='accent-1'
             pad='medium'
           />
           <Box
@@ -64,7 +64,7 @@ export default class Hero extends Component {
                 { type: 'fadeOut', delay: 1500 },
               ]
             }
-            background='light-4'
+            background='accent-2'
             pad='medium'
           />
           <Box
@@ -77,7 +77,7 @@ export default class Hero extends Component {
                 { type: 'fadeOut', delay: 1000 },
               ]
             }
-            background='light-4'
+            background='accent-3'
             pad='medium'
           />
         </Box>
@@ -93,8 +93,8 @@ export default class Hero extends Component {
           }
           basis='2/3'
           background='light-2'
+          border={{ side: 'top', color: 'brand', size: 'large' }}
           pad='large'
-          margin='small'
           gap='medium'
         >
           <Box
@@ -107,9 +107,22 @@ export default class Hero extends Component {
                 { type: 'fadeOut', delay: 500 },
               ]
             }
-            background='light-4'
-            pad='medium'
-          />
+            basis='xsmall'
+            direction='row'
+            justify='between'
+            gap='medium'
+          >
+            <Box
+              basis='xsmall'
+              round='full'
+              background='accent-1'
+              align='center'
+              justify='center'
+            >
+              <Ad size='large' />
+            </Box>
+            <Box flex background='accent-1' />
+          </Box>
           <Box
             animation={build
               ? [
@@ -121,7 +134,7 @@ export default class Hero extends Component {
               ]
             }
             flex
-            background='light-4'
+            background='accent-1'
             pad='medium'
           />
         </Box>
