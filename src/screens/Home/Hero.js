@@ -183,6 +183,7 @@ export default class Hero extends Component {
                     { type: 'slideDown', size: 'large' },
                   ],
                   background: 'light-3',
+                  round: undefined,
                 }}
               >
                 <Ad />
