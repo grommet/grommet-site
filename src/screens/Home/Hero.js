@@ -1,15 +1,70 @@
-import React, { Component } from 'react';
+import React, { Component, createContext } from 'react';
+import PropTypes from 'prop-types';
 import { Box } from 'grommet';
 import { Ad } from 'grommet-icons';
 
+const interval = 300;
+const animationDuration = interval * 0.75;
+
+const Context = createContext();
+
+const BuildBox = ({ phase: boxPhase, inProps, outProps, ...rest }) => (
+  <Context.Consumer>
+    {({ build, phase }) => {
+      let buildStartPhase;
+      let buildEndPhase;
+      if (Array.isArray(boxPhase)) {
+        [buildStartPhase, buildEndPhase] = boxPhase;
+      } else {
+        buildStartPhase = boxPhase;
+        buildEndPhase = boxPhase;
+      }
+      let buildProps = {};
+      if (
+        (build && phase >= buildStartPhase && phase <= buildEndPhase) ||
+        (!build && phase === buildStartPhase)
+      ) {
+        buildProps = build ? inProps : outProps;
+        if (buildProps.animation) {
+          if (Array.isArray(buildProps.animation)) {
+            buildProps.animation = buildProps.animation.map(a => ({
+              ...a,
+              duration: animationDuration,
+            }));
+          } else if (typeof buildProps.animation === 'object') {
+            buildProps.animation.duration = interval * 0.75;
+          }
+        }
+      }
+      return phase >= buildStartPhase && <Box {...rest} {...buildProps} />;
+    }}
+  </Context.Consumer>
+);
+
+BuildBox.propTypes = {
+  phase: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number),
+  ]).isRequired,
+  inProps: PropTypes.shape({}),
+  outProps: PropTypes.shape({}),
+};
+
+BuildBox.defaultProps = {
+  inProps: { animation: { type: 'fadeIn', duration: animationDuration } },
+  outProps: { animation: { type: 'fadeOut', duration: animationDuration } },
+};
+
 export default class Hero extends Component {
-  state = { build: true };
+  state = { build: true, phase: 1 };
 
   componentDidMount() {
     this.timer = setInterval(() => {
-      const { build } = this.state;
-      this.setState({ build: !build });
-    }, 5000);
+      const { build, phase } = this.state;
+      const nextBuild = (build && phase < 10) || (!build && phase === 1);
+      const nextPhase = nextBuild ? phase + 1 : phase - 1;
+      this.setState({ build: nextBuild, phase: nextPhase });
+    }, interval);
   }
 
   componentWillUnmount() {
@@ -17,128 +72,154 @@ export default class Hero extends Component {
   }
 
   render() {
-    const { build } = this.state;
     return (
-      <Box
-        direction='row'
-        pad='large'
-        elevation='large'
-        round='medium'
-        margin='xlarge'
-      >
+      <Context.Provider value={this.state}>
         <Box
-          animation={build
-            ? [
-              { type: 'fadeIn' },
-              { type: 'slideLeft', size: 'large' },
-            ]
-            : [
-              { type: 'fadeOut', delay: 3000 },
-            ]
-          }
-          basis='1/3'
-          background='brand'
-          pad='large'
-          gap='medium'
+          alignSelf="center"
+          direction="row"
+          width="medium"
+          height="medium"
+          pad="medium"
+          elevation="large"
+          round="medium"
+          margin="xlarge"
         >
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 1000 },
-                { type: 'slideLeft', size: 'large', delay: 1000 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 2000 },
-              ]
-            }
-            background='accent-1'
-            pad='medium'
-          />
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 1500 },
-                { type: 'slideLeft', size: 'large', delay: 1500 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 1500 },
-              ]
-            }
-            background='accent-2'
-            pad='medium'
-          />
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 2000 },
-                { type: 'slideLeft', size: 'large', delay: 2000 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 1000 },
-              ]
-            }
-            background='accent-3'
-            pad='medium'
-          />
-        </Box>
-        <Box
-          animation={build
-            ? [
-              { type: 'fadeIn', delay: 500 },
-              { type: 'slideRight', size: 'large', delay: 500 },
-            ]
-            : [
-              { type: 'fadeOut', delay: 2500 },
-            ]
-          }
-          basis='2/3'
-          background='light-2'
-          border={{ side: 'top', color: 'brand', size: 'large' }}
-          pad='large'
-          gap='medium'
-        >
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 2500 },
-                { type: 'slideDown', size: 'large', delay: 2500 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 500 },
-              ]
-            }
-            basis='xsmall'
-            direction='row'
-            justify='between'
-            gap='medium'
+          <BuildBox
+            basis="1/3"
+            background="brand"
+            pad="medium"
+            gap="medium"
+            phase={[2, 5]}
+            inProps={{
+              animation: [
+                { type: 'fadeIn' },
+                { type: 'slideLeft', size: 'large' },
+              ],
+              background: 'light-5',
+            }}
           >
-            <Box
-              basis='xsmall'
-              round='full'
-              background='accent-1'
-              align='center'
-              justify='center'
+            <BuildBox
+              background="accent-1"
+              pad={{ vertical: 'small' }}
+              round
+              phase={[3, 5]}
+              inProps={{
+                animation: [
+                  { type: 'fadeIn' },
+                  { type: 'slideDown', size: 'large' },
+                ],
+                background: 'light-2',
+                round: undefined,
+              }}
+            />
+            <BuildBox
+              background="accent-2"
+              pad={{ vertical: 'small' }}
+              round
+              phase={[4, 5]}
+              inProps={{
+                animation: [
+                  { type: 'fadeIn' },
+                  { type: 'slideDown', size: 'large' },
+                ],
+                background: 'light-2',
+                round: undefined,
+              }}
+            />
+            <BuildBox
+              background="accent-3"
+              pad={{ vertical: 'small' }}
+              round
+              phase={5}
+              inProps={{
+                animation: [
+                  { type: 'fadeIn' },
+                  { type: 'slideDown', size: 'large' },
+                ],
+                background: 'light-2',
+                round: undefined,
+              }}
+            />
+          </BuildBox>
+          <BuildBox
+            basis="2/3"
+            background="light-2"
+            border={{ side: 'top', size: 'large', color: 'brand' }}
+            pad="medium"
+            gap="medium"
+            phase={[3, 8]}
+            inProps={{
+              animation: [
+                { type: 'fadeIn' },
+                { type: 'slideRight', size: 'large' },
+              ],
+              background: 'light-4',
+              border: { side: 'top', size: 'large', color: 'light-4' },
+            }}
+          >
+            <BuildBox
+              basis="xxsmall"
+              direction="row"
+              justify="between"
+              gap="medium"
+              phase={[6, 9]}
+              inProps={{
+                animation: [
+                  { type: 'fadeIn' },
+                  { type: 'slideDown', size: 'large' },
+                ],
+              }}
             >
-              <Ad size='large' />
-            </Box>
-            <Box flex background='accent-1' />
-          </Box>
-          <Box
-            animation={build
-              ? [
-                { type: 'fadeIn', delay: 3000 },
-                { type: 'slideDown', size: 'large', delay: 3000 },
-              ]
-              : [
-                { type: 'fadeOut', delay: 0 },
-              ]
-            }
-            flex
-            background='accent-1'
-            pad='medium'
-          />
+              <BuildBox
+                basis="xxsmall"
+                round="full"
+                background="accent-1"
+                align="center"
+                justify="center"
+                phase={[7, 9]}
+                inProps={{
+                  animation: [
+                    { type: 'fadeIn' },
+                    { type: 'slideDown', size: 'large' },
+                  ],
+                  background: 'light-3',
+                }}
+              >
+                <Ad />
+              </BuildBox>
+              <BuildBox
+                flex
+                background="accent-1"
+                round
+                phase={[7, 9]}
+                inProps={{
+                  animation: [
+                    { type: 'fadeIn' },
+                    { type: 'slideDown', size: 'large' },
+                  ],
+                  background: 'light-3',
+                  round: undefined,
+                }}
+              />
+            </BuildBox>
+            <BuildBox
+              flex
+              background="accent-1"
+              pad="medium"
+              round
+              phase={[8, 9]}
+              inProps={{
+                animation: [
+                  { type: 'fadeIn' },
+                  { type: 'slideDown', size: 'large' },
+                ],
+                background: 'light-5',
+                round: undefined,
+              }}
+            />
+          </BuildBox>
         </Box>
-      </Box>
+      </Context.Provider>
     );
   }
 }
