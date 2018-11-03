@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'grommet';
-import { doc } from 'grommet/components/Box/doc';
+import { doc, themeDoc } from 'grommet/components/Box/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
@@ -10,19 +10,22 @@ const desc = doc(Box).toJSON();
 export default () => (
   <Page>
     <Doc
-      name='Box'
+      name="Box"
       desc={desc}
-      example={(
-        <Box
-          flex
-          border={{ color: 'brand', size: 'large' }}
-          pad='medium'
-        />
-      )}
+      example={
+        <Box flex border={{ color: 'brand', size: 'large' }} pad="medium" />
+      }
       syntaxes={{
         ...genericSyntaxes,
         align: ['start', 'center', 'end', 'baseline', 'stretch'],
-        alignContent: ['start', 'center', 'end', 'between', 'around', 'stretch'],
+        alignContent: [
+          'start',
+          'center',
+          'end',
+          'between',
+          'around',
+          'stretch',
+        ],
         animation: [
           'fadeIn',
           'fadeOut',
@@ -63,10 +66,30 @@ export default () => (
             },
           },
         ],
-        basis: ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full',
-          '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto'],
-        border: ['top', 'left', 'bottom', 'right',
-          'horizontal', 'vertical', 'all',
+        basis: [
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'full',
+          '1/2',
+          '1/3',
+          '2/3',
+          '1/4',
+          '2/4',
+          '3/4',
+          'auto',
+        ],
+        border: [
+          'top',
+          'left',
+          'bottom',
+          'right',
+          'horizontal',
+          'vertical',
+          'all',
           {
             side: '...',
             color: 'border',
@@ -74,7 +97,14 @@ export default () => (
           },
           {
             VALUES: {
-              size: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
+              size: [
+                'xsmall',
+                'small',
+                'medium',
+                'large',
+                'xlarge',
+                'any CSS size',
+              ],
             },
           },
         ],
@@ -87,14 +117,7 @@ export default () => (
           'xlarge',
           'any custom elevation name in the current theme',
         ],
-        gap: [
-          'xsmall',
-          'small',
-          'medium',
-          'large',
-          'xlarge',
-          'any CSS size',
-        ],
+        gap: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
         height: [
           'xsmall',
           'small',
@@ -148,37 +171,38 @@ export default () => (
           },
           {
             VALUES: {
-              corner: ['top', 'left', 'bottom', 'right',
-                'top-left', 'top-right', 'bottom-left', 'bottom-right'],
+              corner: [
+                'top',
+                'left',
+                'bottom',
+                'right',
+                'top-left',
+                'top-right',
+                'bottom-left',
+                'bottom-right',
+              ],
             },
           },
         ],
-        width: [
-          'xsmall',
-          'small',
-          'medium',
-          'large',
-          'xlarge',
-          'any CSS size',
-        ],
+        width: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
       }}
       examples={{
         align: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {['start', 'center', 'end'].map(align => (
               <Box
                 key={align}
-                direction='row'
+                direction="row"
                 align={align}
-                margin='xsmall'
+                margin="xsmall"
                 background={{ color: 'accent-2', opacity: 'weak' }}
               >
                 <Box
-                  pad='medium'
+                  pad="medium"
                   background={{ color: 'accent-2', opacity: 'weak' }}
                 />
                 <Box
-                  pad='small'
+                  pad="small"
                   background={{ color: 'accent-2', opacity: 'strong' }}
                 />
               </Box>
@@ -196,80 +220,82 @@ export default () => (
         //   </Box>
         // ),
         background: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {[undefined, 'strong', 'medium', 'weak'].map(opacity => (
               <Box
                 key={opacity || 'opacity'}
                 background={{ color: 'accent-2', opacity }}
-                pad='medium'
-                margin='xsmall'
+                pad="medium"
+                margin="xsmall"
               />
             ))}
           </Box>
         ),
         border: (
-          <Box direction='row' justify='end' wrap align='start'>
+          <Box direction="row" justify="end" wrap align="start">
             {['xsmall', 'small', 'medium', 'large'].map(size => (
               <Box
                 key={size}
                 border={{ side: 'all', size, color: 'accent-2' }}
-                pad='small'
-                margin='xsmall'
+                pad="small"
+                margin="xsmall"
               />
             ))}
           </Box>
         ),
         elevation: (
-          <Box direction='row' justify='end' wrap align='start'>
-            {['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'].map(elevation => (
-              <Box
-                key={elevation}
-                elevation={elevation}
-                pad='medium'
-                margin='xsmall'
-              />
-            ))}
+          <Box direction="row" justify="end" wrap align="start">
+            {['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'].map(
+              elevation => (
+                <Box
+                  key={elevation}
+                  elevation={elevation}
+                  pad="medium"
+                  margin="xsmall"
+                />
+              ),
+            )}
           </Box>
         ),
         gap: (
-          <Box direction='row' justify='end' wrap align='start'>
+          <Box direction="row" justify="end" wrap align="start">
             {['xsmall', 'small', 'medium', 'large'].map(gap => (
               <Box
                 key={gap}
                 gap={gap}
-                direction='row'
+                direction="row"
                 background={{ color: 'accent-2', opacity: 'weak' }}
-                margin='xsmall'
+                margin="xsmall"
               >
                 <Box
                   background={{ color: 'accent-2', opacity: 'strong' }}
-                  pad='small'
+                  pad="small"
                 />
                 <Box
                   background={{ color: 'accent-2', opacity: 'strong' }}
-                  pad='small'
+                  pad="small"
                 />
               </Box>
             ))}
           </Box>
         ),
         justify: (
-          <Box direction='row' justify='end' wrap align='start'>
+          <Box direction="row" justify="end" wrap align="start">
             {['start', 'center', 'between', 'end'].map(justify => (
               <Box
                 key={justify}
-                basis='xsmall'
-                direction='row'
+                basis="xsmall"
+                direction="row"
                 justify={justify}
                 background={{ color: 'accent-2', opacity: 'weak' }}
-                margin='xsmall'
+                margin="xsmall"
               >
                 <Box
-                  pad='small'
+                  pad="small"
                   background={{ color: 'accent-2', opacity: 'medium' }}
                 />
                 <Box
-                  pad='small'
+                  pad="small"
                   background={{ color: 'accent-2', opacity: 'strong' }}
                 />
               </Box>
@@ -277,28 +303,28 @@ export default () => (
           </Box>
         ),
         margin: (
-          <Box direction='row' justify='end' wrap align='start'>
+          <Box direction="row" justify="end" wrap align="start">
             {['none', 'xsmall', 'small', 'medium'].map(margin => (
               <Box
                 key={margin}
                 margin={margin}
-                pad='small'
+                pad="small"
                 background={{ color: 'accent-2', opacity: 'strong' }}
               />
             ))}
           </Box>
         ),
         pad: (
-          <Box direction='row' justify='end' wrap align='start'>
+          <Box direction="row" justify="end" wrap align="start">
             {['none', 'xsmall', 'small', 'medium'].map(pad => (
               <Box
                 key={pad}
                 pad={pad}
                 background={{ color: 'accent-2', opacity: 'weak' }}
-                margin='xsmall'
+                margin="xsmall"
               >
                 <Box
-                  pad='small'
+                  pad="small"
                   background={{ color: 'accent-2', opacity: 'strong' }}
                 />
               </Box>
@@ -306,32 +332,32 @@ export default () => (
           </Box>
         ),
         round: (
-          <Box direction='row' justify='end' wrap align='start'>
+          <Box direction="row" justify="end" wrap align="start">
             {['xsmall', 'small', 'medium'].map(round => (
               <Box
                 key={round}
                 round={round}
-                pad='medium'
+                pad="medium"
                 background={{ color: 'accent-2', opacity: 'strong' }}
-                margin='xsmall'
+                margin="xsmall"
               />
             ))}
           </Box>
         ),
         wrap: (
-          <Box fill direction='row' justify='end'>
+          <Box fill direction="row" justify="end">
             <Box
-              basis='small'
-              align='end'
-              direction='row'
+              basis="small"
+              align="end"
+              direction="row"
               wrap
               background={{ color: 'accent-2', opacity: 'weak' }}
             >
               {[0, 1, 2, 3, 4, 5, 6].map(index => (
                 <Box
                   key={index * 10}
-                  pad='small'
-                  margin='xsmall'
+                  pad="small"
+                  margin="xsmall"
                   background={{ color: 'accent-2', opacity: 'strong' }}
                 />
               ))}
@@ -339,6 +365,7 @@ export default () => (
           </Box>
         ),
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );
