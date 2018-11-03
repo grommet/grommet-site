@@ -1,19 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
-import {
-  Box, Anchor, Heading, Paragraph, Text,
-} from 'grommet';
+import { Box, Anchor, Heading, Markdown, Text } from 'grommet';
 import { LinkNext } from 'grommet-icons';
 import Header from './Header';
 import { genericSyntaxes } from '../utils/props';
 
 // parseFormat() parses the react-desc property format string into
 // an object that makes it easier for us to style the content.
-const parseFormat = (format) => {
+const parseFormat = format => {
   const lines = format.split(/\n/);
   const working = [{ values: [] }];
-  lines.forEach((line) => {
+  lines.forEach(line => {
     if (line.indexOf('{') !== -1) {
       working.unshift({ type: 'object', values: [] });
     } else if (line.indexOf('}') !== -1) {
@@ -40,7 +38,9 @@ const parseFormat = (format) => {
     } else if (line.indexOf(':') !== -1 && line.indexOf(',') !== -1) {
       const parts = line.split(':');
       working[0].values.push({
-        type: 'property', name: `${parts[0]}:`, values: [parts[1]],
+        type: 'property',
+        name: `${parts[0]}:`,
+        values: [parts[1]],
       });
     } else if (line.indexOf(':') !== -1) {
       working.unshift({ type: 'property', name: line, values: [] });
@@ -58,38 +58,41 @@ const parseFormat = (format) => {
 const Values = ({ name, values, defaultValue }) => {
   let content = (
     <Box>
-      {values
-        .filter(v => (!v.type))
-        .map((value, index) => {
-          if (value === 'boolean') {
-            return [true, false].map((v) => {
-              if (v === defaultValue) {
-                return <span key={v}><strong>{stringify(v)}</strong></span>;
-              }
-              return <span key={v}>{stringify(v)}</span>;
-            });
-          }
-          let valueContent = value.trim();
-          let isDefault = (valueContent === defaultValue
-            || (defaultValue === true && valueContent === 'true')
-            || (defaultValue === false && valueContent === 'false'));
-          if (values.length === 1 && valueContent === 'string' && defaultValue) {
-            valueContent = defaultValue;
-            isDefault = true;
-          }
-          if (value !== 'true' && value !== 'false') {
-            valueContent = `"${valueContent}"`;
-          }
-          if (isDefault) {
-            valueContent = <strong>{valueContent}</strong>;
-          }
-          return <span key={`${index + 0}`}>{valueContent}</span>;
-        })}
+      {values.filter(v => !v.type).map((value, index) => {
+        if (value === 'boolean') {
+          return [true, false].map(v => {
+            if (v === defaultValue) {
+              return (
+                <span key={v}>
+                  <strong>{stringify(v)}</strong>
+                </span>
+              );
+            }
+            return <span key={v}>{stringify(v)}</span>;
+          });
+        }
+        let valueContent = value.trim();
+        let isDefault =
+          valueContent === defaultValue ||
+          (defaultValue === true && valueContent === 'true') ||
+          (defaultValue === false && valueContent === 'false');
+        if (values.length === 1 && valueContent === 'string' && defaultValue) {
+          valueContent = defaultValue;
+          isDefault = true;
+        }
+        if (value !== 'true' && value !== 'false') {
+          valueContent = `"${valueContent}"`;
+        }
+        if (isDefault) {
+          valueContent = <strong>{valueContent}</strong>;
+        }
+        return <span key={`${index + 0}`}>{valueContent}</span>;
+      })}
     </Box>
   );
   if (name) {
     content = (
-      <Box direction='row' gap='small'>
+      <Box direction="row" gap="small">
         {name}
         {content}
       </Box>
@@ -98,23 +101,23 @@ const Values = ({ name, values, defaultValue }) => {
   content = (
     <Box>
       {content}
-      {values
-        .filter(v => (v.type))
-        .map((value, index) => <Value key={`${index + 0}`} value={value} />)}
+      {values.filter(v => v.type).map((value, index) => (
+        <Value key={`${index + 0}`} value={value} />
+      ))}
     </Box>
   );
   return content;
 };
 
 const Value = ({ value: { name, type, values }, defaultValue }) => {
-  let content = <Values name={name} values={values} defaultValue={defaultValue} />;
+  let content = (
+    <Values name={name} values={values} defaultValue={defaultValue} />
+  );
   if (type === 'object' || type === 'array') {
     content = (
       <Box>
         {type === 'array' ? '[' : '{'}
-        <Box pad={{ left: 'medium' }}>
-          {content}
-        </Box>
+        <Box pad={{ left: 'medium' }}>{content}</Box>
         {type === 'array' ? ']' : '}'}
       </Box>
     );
@@ -122,30 +125,37 @@ const Value = ({ value: { name, type, values }, defaultValue }) => {
   return content;
 };
 
-const Syntax = ({
-  syntax, format, defaultValue, leaf,
-}) => {
+const Syntax = ({ syntax, format, defaultValue, leaf }) => {
   if (!leaf && Array.isArray(syntax)) {
     return (
       <Fragment>
         {syntax.map((s, i) => (
-          <Syntax key={`${i + 0}`} syntax={s} leaf defaultValue={defaultValue} />
+          <Syntax
+            key={`${i + 0}`}
+            syntax={s}
+            leaf
+            defaultValue={defaultValue}
+          />
         ))}
       </Fragment>
     );
   }
   let content = syntax;
   if (typeof syntax === 'object' && syntax.VALUES) {
-    return Object.keys(syntax.VALUES).map((key) => {
+    return Object.keys(syntax.VALUES).map(key => {
       const values = syntax.VALUES[key];
       return (
         <Box key={key} margin={{ top: 'small' }}>
-          <Text color='dark-3'>{`where ${key} could be:`}</Text>
-          {Array.isArray(values)
-            ? values.map(v => (
-              <Text key={v} margin={{ left: 'medium' }}>{stringify(v)}</Text>
+          <Text color="dark-3">{`where ${key} could be:`}</Text>
+          {Array.isArray(values) ? (
+            values.map(v => (
+              <Text key={v} margin={{ left: 'medium' }}>
+                {stringify(v)}
+              </Text>
             ))
-            : <Text>{values}</Text>}
+          ) : (
+            <Text>{values}</Text>
+          )}
         </Box>
       );
     });
@@ -156,11 +166,7 @@ const Syntax = ({
   if (defaultValue !== undefined && syntax === defaultValue) {
     content = <strong>{content}</strong>;
   }
-  return (
-    <pre style={{ margin: 0 }}>
-      {content}
-    </pre>
-  );
+  return <pre style={{ margin: 0 }}>{content}</pre>;
 };
 
 Syntax.propTypes = {
@@ -176,29 +182,21 @@ Syntax.defaultProps = {
   leaf: false,
 };
 
-const Prop = ({
-  property, syntax, first,
-}) => (
+const Prop = ({ property, syntax, first }) => (
   <Box
-    border='bottom'
-    gap='small'
-    pad={{ top: (!first ? 'medium' : undefined), bottom: 'medium' }}
+    border="bottom"
+    gap="small"
+    pad={{ top: !first ? 'medium' : undefined, bottom: 'medium' }}
   >
-    <Heading level={3} margin='none'>
+    <Heading level={3} margin="none">
       {property.name}
     </Heading>
-    <Box
-      direction='row-responsive'
-      justify='between'
-      align='start'
-    >
-      <Box basis='1/2' margin={{ right: 'large' }}>
-        <Paragraph margin='none'>
-          {property.description}
-        </Paragraph>
+    <Box direction="row-responsive" justify="between" align="start">
+      <Box basis="1/2" margin={{ right: 'large' }}>
+        <Markdown>{property.description}</Markdown>
       </Box>
-      <Box flex align='start'>
-        <Text color='neutral-1' style={{ maxWidth: '100%' }}>
+      <Box flex align="start">
+        <Text color="neutral-1" style={{ maxWidth: '100%' }}>
           <code>
             {(syntax && (
               <Syntax
@@ -206,12 +204,13 @@ const Prop = ({
                 format={property.format}
                 defaultValue={property.defaultValue}
               />
-            )) || (
-              <Value
-                value={parseFormat(property.format)}
-                defaultValue={property.defaultValue}
-              />
-            )}
+            )) ||
+              property.type || (
+                <Value
+                  value={parseFormat(property.format)}
+                  defaultValue={property.defaultValue}
+                />
+              )}
           </code>
         </Text>
       </Box>
@@ -230,7 +229,7 @@ Prop.defaultProps = {
 };
 
 class Doc extends Component {
-  state = {}
+  state = {};
 
   componentDidMount() {
     const { name } = this.props;
@@ -240,66 +239,87 @@ class Doc extends Component {
 
   render() {
     const {
-      children, desc, name, example, examples, syntaxes, text,
+      children,
+      desc,
+      name,
+      example,
+      examples,
+      syntaxes,
+      text,
+      themeDoc,
     } = this.props;
     return (
       <Box margin={{ bottom: 'large' }}>
-        <Header
-          label={name}
-          summary={(desc && desc.description) || text}
-        />
-        <Box align='center' pad={{ top: 'large', horizontal: 'medium' }}>
+        <Header label={name} summary={(desc && desc.description) || text} />
+        <Box align="center" pad={{ top: 'large', horizontal: 'medium' }}>
           {example}
         </Box>
 
         {desc && (
           <Box pad={{ vertical: 'xlarge' }}>
-            {desc.properties
-              ? desc.properties.sort((a, b) => {
-                if (a.name < b.name) return -1;
-                if (a.name > b.name) return 1;
-                return 0;
-              }).map((property, index) => (
-                <Prop
-                  key={property.name}
-                  property={property}
-                  first={!index}
-                  syntax={(syntaxes || genericSyntaxes)[property.name]}
-                  example={examples[property.name]}
-                />
-              ))
-              : <Text color='light-5'>No properties</Text>
-            }
+            {desc.properties ? (
+              desc.properties
+                .sort((a, b) => {
+                  if (a.name < b.name) return -1;
+                  if (a.name > b.name) return 1;
+                  return 0;
+                })
+                .map((property, index) => (
+                  <Prop
+                    key={property.name}
+                    property={property}
+                    first={!index}
+                    syntax={(syntaxes || genericSyntaxes)[property.name]}
+                    example={examples[property.name]}
+                  />
+                ))
+            ) : (
+              <Text color="light-5">No properties</Text>
+            )}
           </Box>
         )}
 
-        {desc && desc.availableAt
-          && (Array.isArray(desc.availableAt)
-            ? (
-              <Box alignSelf='center' direction='row' gap='large'>
-                {desc.availableAt.map(at => (
-                  <Anchor
-                    key={at.url}
-                    href={at.url}
-                    target='_blank'
-                    label={<Text size='large'>{at.label}</Text>}
-                    icon={<LinkNext />}
-                    reverse
-                  />
-                ))}
-              </Box>
-            ) : (
-              <Anchor
-                alignSelf='center'
-                href={desc.availableAt.url}
-                target='_blank'
-                label={<Text size='large'>{desc.availableAt.label}</Text>}
-                icon={<LinkNext />}
-                reverse
-              />
-            )
-          )
-        }
+        {desc &&
+          desc.availableAt &&
+          (Array.isArray(desc.availableAt) ? (
+            <Box alignSelf="center" direction="row" gap="large">
+              {desc.availableAt.map(at => (
+                <Anchor
+                  key={at.url}
+                  href={at.url}
+                  target="_blank"
+                  label={<Text size="large">{at.label}</Text>}
+                  icon={<LinkNext />}
+                  reverse
+                />
+              ))}
+            </Box>
+          ) : (
+            <Anchor
+              alignSelf="center"
+              href={desc.availableAt.url}
+              target="_blank"
+              label={<Text size="large">{desc.availableAt.label}</Text>}
+              icon={<LinkNext />}
+              reverse
+            />
+          ))}
+
+        {themeDoc && (
+          <Box pad={{ vertical: 'xlarge' }}>
+            <Heading level={2}>Theme</Heading>
+            {Object.keys(themeDoc).map((key, index) => {
+              const themeProp = themeDoc[key];
+              return (
+                <Prop
+                  key={key}
+                  property={{ name: key, ...themeProp }}
+                  first={!index}
+                />
+              );
+            })}
+          </Box>
+        )}
 
         {children}
       </Box>
@@ -317,6 +337,7 @@ Doc.propTypes = {
   props: PropTypes.shape({}),
   syntaxes: PropTypes.shape({}),
   text: PropTypes.string,
+  themeDoc: PropTypes.shape({}),
 };
 
 Doc.defaultProps = {
@@ -328,6 +349,7 @@ Doc.defaultProps = {
   props: {},
   syntaxes: undefined,
   text: undefined,
+  themeDoc: undefined,
 };
 
 export default Doc;
