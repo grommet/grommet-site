@@ -259,14 +259,20 @@ class Doc extends Component {
     } = this.props;
     return (
       <Box margin={{ bottom: 'large' }}>
-        <Header label={name} summary={(desc && desc.description) || text} />
-        <Box align="center" pad={{ top: 'large', horizontal: 'medium' }}>
+        <Box
+          alignSelf="center"
+          align="center"
+          pad="medium"
+          elevation="large"
+          margin={{ bottom: 'large' }}
+        >
           {example}
         </Box>
+        <Header label={name} summary={(desc && desc.description) || text} />
 
         {desc &&
           desc.availableAt && (
-            <Box margin={{ vertical: 'large' }}>
+            <Box margin={{ vertical: 'medium' }}>
               {Array.isArray(desc.availableAt) ? (
                 <Box alignSelf="center" direction="row" gap="large">
                   {desc.availableAt.map(at => (
