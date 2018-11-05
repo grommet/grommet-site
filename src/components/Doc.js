@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
-import { Box, Anchor, Heading, Markdown, Text } from 'grommet';
+import { Box, Anchor, Heading, Markdown, Text, ThemeContext } from 'grommet';
 import { LinkNext } from 'grommet-icons';
 import Header from './Header';
 import { genericSyntaxes } from '../utils/props';
@@ -160,7 +160,7 @@ const Syntax = ({ syntax, format, defaultValue, leaf }) => {
       );
     });
   }
-  if (format !== 'function' && syntax[0] !== '<') {
+  if (format !== 'function' && syntax[0] !== '(' && syntax[0] !== '<') {
     content = stringify(syntax, { maxLength: 40 });
   }
   if (defaultValue !== undefined && syntax === defaultValue) {
@@ -228,6 +228,15 @@ Prop.defaultProps = {
   syntax: undefined,
 };
 
+const themeValue = (theme, path) => {
+  const parts = path.split('.');
+  let node = theme;
+  while (node && parts.length) {
+    node = node[parts.shift()];
+  }
+  return node;
+};
+
 class Doc extends Component {
   state = {};
 
@@ -255,8 +264,38 @@ class Doc extends Component {
           {example}
         </Box>
 
+        {desc &&
+          desc.availableAt && (
+            <Box margin={{ vertical: 'large' }}>
+              {Array.isArray(desc.availableAt) ? (
+                <Box alignSelf="center" direction="row" gap="large">
+                  {desc.availableAt.map(at => (
+                    <Anchor
+                      key={at.url}
+                      href={at.url}
+                      target="_blank"
+                      label={<Text size="large">{at.label}</Text>}
+                      icon={<LinkNext />}
+                      reverse
+                    />
+                  ))}
+                </Box>
+              ) : (
+                <Anchor
+                  alignSelf="center"
+                  href={desc.availableAt.url}
+                  target="_blank"
+                  label={<Text size="large">{desc.availableAt.label}</Text>}
+                  icon={<LinkNext />}
+                  reverse
+                />
+              )}
+            </Box>
+          )}
+
         {desc && (
-          <Box pad={{ vertical: 'xlarge' }}>
+          <Box margin={{ vertical: 'large' }}>
+            <Heading level={2}>Props</Heading>
             {desc.properties ? (
               desc.properties
                 .sort((a, b) => {
@@ -279,45 +318,32 @@ class Doc extends Component {
           </Box>
         )}
 
-        {desc &&
-          desc.availableAt &&
-          (Array.isArray(desc.availableAt) ? (
-            <Box alignSelf="center" direction="row" gap="large">
-              {desc.availableAt.map(at => (
-                <Anchor
-                  key={at.url}
-                  href={at.url}
-                  target="_blank"
-                  label={<Text size="large">{at.label}</Text>}
-                  icon={<LinkNext />}
-                  reverse
-                />
-              ))}
-            </Box>
-          ) : (
-            <Anchor
-              alignSelf="center"
-              href={desc.availableAt.url}
-              target="_blank"
-              label={<Text size="large">{desc.availableAt.label}</Text>}
-              icon={<LinkNext />}
-              reverse
-            />
-          ))}
-
         {themeDoc && (
-          <Box pad={{ vertical: 'xlarge' }}>
+          <Box margin={{ vertical: 'large' }}>
             <Heading level={2}>Theme</Heading>
-            {Object.keys(themeDoc).map((key, index) => {
-              const themeProp = themeDoc[key];
-              return (
-                <Prop
-                  key={key}
-                  property={{ name: key, ...themeProp }}
-                  first={!index}
-                />
-              );
-            })}
+            <ThemeContext.Consumer>
+              {theme =>
+                Object.keys(themeDoc).map((key, index) => {
+                  const themeProp = themeDoc[key];
+                  return (
+                    <Prop
+                      key={key}
+                      property={{ name: key, ...themeProp }}
+                      first={!index}
+                      syntax={
+                        (syntaxes || {})[key] ||
+                        themeValue(theme, key) ||
+                        (key.endsWith('.extend') && [
+                          'any CSS',
+                          '(props) => {}',
+                        ])
+                      }
+                      example={examples[key]}
+                    />
+                  );
+                })
+              }
+            </ThemeContext.Consumer>
           </Box>
         )}
 
