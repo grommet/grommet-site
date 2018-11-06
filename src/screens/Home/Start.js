@@ -7,10 +7,7 @@ import MonacoEditor from 'react-monaco-editor';
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
 import * as Themes from 'grommet/themes';
-import {
-  Anchor, Box, Heading, Button,
-  Text,
-} from 'grommet';
+import { Anchor, Box, Heading, Text } from 'grommet';
 import { Next, Share } from 'grommet-icons';
 /* eslint-enable import/no-duplicates */
 import Header from '../../components/Header';
@@ -18,7 +15,11 @@ import RoutedAnchor from '../../components/RoutedAnchor';
 import Section from './Section';
 
 const scope = {
-  ...Grommet, Icons, Themes, styled, css,
+  ...Grommet,
+  Icons,
+  Themes,
+  styled,
+  css,
 };
 
 const options = {
@@ -28,14 +29,14 @@ const options = {
   },
 };
 
-const editorDidMount = (editor) => {
+const editorDidMount = editor => {
   editor.focus();
 
   window.addEventListener('resize', () => editor.layout());
 };
 
 const Dot = ({ color }) => (
-  <svg viewBox='0 0 12 12' width={12} height={12}>
+  <svg viewBox="0 0 12 12" width={12} height={12}>
     <circle cx={6} cy={6} r={6} fill={color} />
   </svg>
 );
@@ -59,7 +60,7 @@ export default class Home extends Component {
 
 render(<App />);
 `,
-  }
+  };
 
   render() {
     const { code } = this.state;
@@ -73,55 +74,55 @@ render(<App />);
         <Section pad={{ top: 'xlarge' }}>
           <Header
             level={2}
-            label='start coding'
-            summary={(
+            label="start coding"
+            summary={
               <span>
                 already working on a project, starting fresh, or just want to
                 poke around and see how all this junk works?
               </span>
-            )}
+            }
           />
 
           <Box
-            direction='row-responsive'
-            justify='center'
-            gap='large'
-            margin='large'
+            direction="row-responsive"
+            justify="center"
+            gap="large"
+            margin="large"
           >
-            <RoutedAnchor
-              path='/start'
-              label={<Text size='large'>Start New App</Text>}
+            <Anchor
+              href="https://github.com/grommet/grommet-starter-new-app"
+              label={<Text size="large">Start New App</Text>}
               icon={<Next />}
               reverse
+              target="_blank"
             />
-            <RoutedAnchor
-              path='/start'
-              label={<Text size='large'>I have an Exisiting Codebase</Text>}
+            <Anchor
+              href="https://github.com/grommet/grommet-starter-existing-app"
+              label={<Text size="large">I have an Exisiting Codebase</Text>}
               icon={<Next />}
               reverse
+              target="_blank"
             />
           </Box>
 
-          <Box alignSelf='center' width='large' margin={{ top: 'medium' }}>
-            <Box
-              border
-              round={{ corner: 'top' }}
-              direction='row'
-              justify='between'
-              align='center'
-              pad={{ left: 'medium', vertical: 'small', right: 'small' }}
-            >
-              <RoutedAnchor
-                path='/play'
-                color='brand'
-                label='grommet playground'
-              />
-              <Button icon={<Share />} />
-            </Box>
-            <Box border={{ side: 'vertical' }} height='medium'>
+          <Box alignSelf="center" width="large" margin={{ top: 'medium' }}>
+            <RoutedAnchor path="/play" target="_blank">
+              <Box
+                border
+                round={{ corner: 'top' }}
+                direction="row"
+                justify="between"
+                align="center"
+                pad="medium"
+              >
+                <Text color="brand">grommet playground</Text>
+                <Share />
+              </Box>
+            </RoutedAnchor>
+            <Box border={{ side: 'vertical' }} height="medium">
               <MonacoEditor
-                theme='vs-light'
-                language='javascript'
+                theme="vs-light"
+                language="javascript"
                 value={code}
                 options={options}
                 onChange={newCode => this.setState({ code: newCode })}
@@ -131,13 +132,13 @@ render(<App />);
           </Box>
         </Section>
 
-        <Section background='neutral-1' pad='none'>
+        <Section background="neutral-1" pad="none">
           <Box
-            alignSelf='center'
-            background='brand'
-            width='large'
-            elevation='small'
-            pad='medium'
+            alignSelf="center"
+            background="brand"
+            width="large"
+            elevation="small"
+            pad="medium"
             round={{ corner: 'bottom' }}
             margin={{ bottom: 'xlarge' }}
           >
@@ -146,56 +147,53 @@ render(<App />);
 
           <Header
             level={2}
-            label='and start designing'
-            summary={(
+            label="and start designing"
+            summary={
               <span>
-                sticker sheets, design patterns, app templates,
-                and icons galore.
+                sticker sheets, design patterns, app templates, and icons
+                galore.
               </span>
-            )}
+            }
           />
 
           <Box
-            direction='row-responsive'
-            justify='center'
-            gap='large'
-            margin='medium'
+            direction="row-responsive"
+            justify="center"
+            gap="large"
+            margin="medium"
           >
             <Anchor
-              href='//github.com/grommet/grommet-design'
-              label={<Text size='large'>Grommet Design Kit</Text>}
+              href="//github.com/grommet/grommet-design"
+              label={<Text size="large">Grommet Design Kit</Text>}
               icon={<Next />}
-              color='accent-2'
+              color="accent-2"
               reverse
+              target="_blank"
             />
             <Anchor
-              href='//grommet.io/grommet-icons'
-              label={<Text size='large'>Grommet Icons</Text>}
+              href="//grommet.io/grommet-icons"
+              label={<Text size="large">Grommet Icons</Text>}
               icon={<Next />}
-              color='accent-2'
+              color="accent-2"
               reverse
+              target="_blank"
             />
           </Box>
 
           <Box
-            alignSelf='center'
-            width='large'
-            height='small'
+            alignSelf="center"
+            width="large"
+            height="small"
             round={{ corner: 'top' }}
             background={{ color: '#2C176D' }}
             margin={{ top: 'xlarge' }}
           >
-            <Box
-              alignSelf='start'
-              direction='row'
-              margin='medium'
-              gap='small'
-            >
-              <Dot color='#ff0000' />
-              <Dot color='#ffff00' />
-              <Dot color='#00ff00' />
+            <Box alignSelf="start" direction="row" margin="medium" gap="small">
+              <Dot color="#ff0000" />
+              <Dot color="#ffff00" />
+              <Dot color="#00ff00" />
             </Box>
-            <Heading level={1} color='neutral-1' margin='large'>
+            <Heading level={1} color="neutral-1" margin="large">
               Hello World!
             </Heading>
           </Box>
