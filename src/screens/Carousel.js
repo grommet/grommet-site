@@ -16,7 +16,7 @@ export default () => (
       example={(
         <Box>
           <Box basis='small'>
-            <Carousel fill={true}>
+            <Carousel fill>
               <Image fit='cover' src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
               <Image fit='cover' src='//v2.grommet.io/assets/IMG_4245.jpg' />
               <Image fit='cover' src='//v2.grommet.io/assets/IMG_4210.jpg' />

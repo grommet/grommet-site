@@ -10,13 +10,16 @@ import { genericSyntaxes } from '../utils/props';
 const desc = doc(Meter).toJSON();
 
 const SINGLE_VALUE = [
+  // eslint-disable-next-line no-alert
   { value: 60, label: 'sixty', onClick: () => alert('60') },
 ];
 const MULTIPLE_VALUES = [
   {
+    // eslint-disable-next-line no-alert
     value: 60, label: 'sixty', color: 'neutral-1', onClick: () => alert('60'),
   },
   {
+    // eslint-disable-next-line no-alert
     value: 10, label: 'ten', color: 'accent-1', onClick: () => alert('10'),
   },
 ];
@@ -75,7 +78,7 @@ export default class MeterDoc extends Component {
             ),
             round: (
               <Meter
-                round={true}
+                round
                 size='xsmall'
                 values={SINGLE_VALUE}
                 aria-label='rounded meter'
@@ -83,7 +86,7 @@ export default class MeterDoc extends Component {
               />
             ),
             thickness: (
-              <Box direction='row' justify='end' wrap={true}>
+              <Box direction='row' justify='end' wrap>
                 {['xsmall', 'small', 'medium', 'large', 'xlarge'].map(thickness => (
                   <Box key={thickness} margin='xsmall'>
                     <Meter
@@ -98,7 +101,7 @@ export default class MeterDoc extends Component {
               </Box>
             ),
             type: (
-              <Box direction='row' justify='end' wrap={true}>
+              <Box direction='row' justify='end' wrap>
                 {['bar', 'circle'].map(type => (
                   <Box key={type} margin='xsmall'>
                     <Meter
@@ -113,7 +116,7 @@ export default class MeterDoc extends Component {
               </Box>
             ),
             values: (
-              <Box direction='row' justify='end' wrap={true}>
+              <Box direction='row' justify='end' wrap>
                 <Box margin='xsmall'>
                   <Meter
                     size='xsmall'
@@ -124,7 +127,7 @@ export default class MeterDoc extends Component {
                 </Box>
                 <Box margin='xsmall'>
                   <Meter
-                    round={true}
+                    round
                     size='xsmall'
                     values={multipleValues}
                     aria-label='multiple value meter'
@@ -133,7 +136,7 @@ export default class MeterDoc extends Component {
                 </Box>
                 <Box margin='xsmall'>
                   <Meter
-                    round={true}
+                    round
                     type='circle'
                     size='xsmall'
                     values={multipleValues}

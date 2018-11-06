@@ -64,10 +64,10 @@ class Play extends Component {
       <LiveProvider
         code={code}
         scope={scope}
-        noInline={true}
+        noInline
         style={{ height: '100vh' }}
       >
-        <Box direction='row' fill={true}>
+        <Box direction='row' fill>
           <Box basis='1/2'>
             <Box
               direction='row'
@@ -78,7 +78,7 @@ class Play extends Component {
               align='center'
               flex={false}
             >
-              <RoutedButton icon={<Previous />} path='/' label='Back' plain={true} />
+              <RoutedButton icon={<Previous />} path='/' label='Back' plain />
               <Select
                 value={selectedPlayground}
                 options={allPlaygrounds}
@@ -90,7 +90,7 @@ class Play extends Component {
                 }
               />
             </Box>
-            <Box flex={true} overflow='hidden'>
+            <Box flex overflow='hidden'>
               <MonacoEditor
                 theme='vs-dark'
                 language='javascript'

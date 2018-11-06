@@ -1,13 +1,11 @@
 import React from 'react';
 
-import {
-  Accordion,
-  AccordionPanel,
-  Box,
-  Text,
-} from 'grommet';
+import { Accordion, AccordionPanel, Box, Text } from 'grommet';
 import { doc as docAccordion } from 'grommet/components/Accordion/doc';
-import { doc as docAccordionPanel } from 'grommet/components/AccordionPanel/doc';
+import {
+  doc as docAccordionPanel,
+  themeDoc,
+} from 'grommet/components/AccordionPanel/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -19,7 +17,7 @@ const descAccordionPanel = docAccordionPanel(AccordionPanel).toJSON();
 export default () => (
   <Page>
     <Doc
-      name='Accordion'
+      name="Accordion"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
@@ -27,32 +25,41 @@ export default () => (
         children: 'node',
         onActive: '([0]) => {}',
       }}
-      example={(
+      example={
         <Accordion>
-          <AccordionPanel label='Panel 1'>
+          <AccordionPanel label="Panel 1">
             <Box
-              align='center'
-              justify='center'
+              align="center"
+              justify="center"
               background={{ color: 'brand', opacity: 'weak' }}
-              height='small'
+              height="small"
             >
-              <Text color='text'>Panel 1 contents</Text>
+              <Text color="text">Panel 1 contents</Text>
             </Box>
           </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
+          <AccordionPanel label="Panel 2">
             <Box
-              align='center'
-              justify='center'
+              align="center"
+              justify="center"
               background={{ color: 'brand', opacity: 'weak' }}
-              height='small'
+              height="small"
             >
-              <Text color='text'>Panel 2 contents</Text>
+              <Text color="text">Panel 2 contents</Text>
             </Box>
           </AccordionPanel>
         </Accordion>
-      )}
+      }
     />
 
-    <Doc name='AccordionPanel' nav={false} desc={descAccordionPanel} />
+    <Doc
+      name="AccordionPanel"
+      nav={false}
+      desc={descAccordionPanel}
+      themeDoc={themeDoc}
+      syntaxes={{
+        'accordion.icons.collapse': '<UpIcon />',
+        'accordion.icons.expand': '<DownIcon />',
+      }}
+    />
   </Page>
 );

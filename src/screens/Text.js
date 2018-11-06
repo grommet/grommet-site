@@ -21,7 +21,7 @@ export default () => (
       examples={{
         color: <Text color='status-critical'>status-critical</Text>,
         size: (
-          <Box direction='row' justify='end' wrap={true}>
+          <Box direction='row' justify='end' wrap>
             {['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].map(size => (
               <Box key={size} margin='xsmall'>
                 <Text size={size}>A</Text>
@@ -32,7 +32,7 @@ export default () => (
         truncate: (
           <Box direction='row' justify='end'>
             <Box basis='xsmall'>
-              <Text truncate={true}>Lorem ipsum</Text>
+              <Text truncate>Lorem ipsum</Text>
             </Box>
           </Box>
         ),

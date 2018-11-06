@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
-  Anchor, Box, Heading, Markdown, Paragraph, Text,
+  Anchor, Box, Heading, Markdown, Text,
 } from 'grommet';
-import { withContext } from '../Context';
 import Page from '../components/Page';
+import Header from '../components/Header';
 
 const Item = ({ label, snippet, description }) => (
-  <Box border='bottom' margin={{ bottom: 'medium' }} pad={{ bottom: 'small' }}>
-    <Box direction='row' responsive={true} justify='between'>
+  <Box
+    border='bottom'
+    margin={{ bottom: 'large' }}
+    pad={{ bottom: 'medium' }}
+  >
+    <Box direction='row' responsive justify='between'>
       <Text size='large' margin={{ bottom: 'small' }}>
         <strong>{label}</strong>
       </Text>
@@ -17,76 +22,64 @@ const Item = ({ label, snippet, description }) => (
   </Box>
 );
 
-class Use extends Component {
-  constructor(props) {
-    super(props);
-    props.context.setColor('#D8FDE6');
-  }
+Item.propTypes = {
+  description: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  snippet: PropTypes.node.isRequired,
+};
 
+export default class Use extends Component {
   componentDidMount() {
     document.title = 'Use - Grommet';
   }
 
   render() {
     return (
-      <Page background={{ image: 'url("img/shapes.svg")' }}>
-        <Box direction='row-responsive' margin={{ bottom: 'large' }}>
-          <Box basis='1/2'>
-            <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
-              <strong>Use the grommet React.js library</strong>
-            </Heading>
-            <Paragraph size='large'>
-              Grommet is delivered as an npm package.
-            </Paragraph>
-          </Box>
-        </Box>
+      <Page>
+        <Header label='Start' />
 
         <Box pad={{ bottom: 'large' }}>
-          <Box pad='large' round='large' background='white'>
 
-            <Heading level={2}>New Application</Heading>
-            <Item
-              label='grommet cli'
-              snippet={(<code>npm install -g grommet-cli@next</code>)}
-              description='Get grommet command line tools on your local environment.'
-            />
-            <Item
-              label='new application'
-              snippet={(<code>grommet new [app-name]</code>)}
-              description='Generate a new application.'
-            />
+          <Heading level={2}>New Application</Heading>
+          <Item
+            label='grommet cli'
+            snippet={(<code>npm install -g grommet-cli@next</code>)}
+            description='Get grommet command line tools on your local environment.'
+          />
+          <Item
+            label='new application'
+            snippet={(<code>grommet new [app-name]</code>)}
+            description='Generate a new application.'
+          />
 
-            <Heading level={2}>Existing Application</Heading>
-            <Item
-              label='grommet library'
-              snippet={(<code>npm install grommet@next --save</code>)}
-              description='Get grommet on your local environment.'
-            />
-            <Item
-              label='grommet icons'
-              snippet={(<code>npm install grommet-icons --save</code>)}
-              description='SVG icon library built for React apps and most
-                importantly grommet! Learn
-                more, [grommet.io/grommet-icons](https://grommet.io/grommet-icons/).'
-            />
+          <Heading level={2}>Existing Application</Heading>
+          <Item
+            label='grommet library'
+            snippet={(<code>npm install grommet@next --save</code>)}
+            description='Get grommet on your local environment.'
+          />
+          <Item
+            label='grommet icons'
+            snippet={(<code>npm install grommet-icons --save</code>)}
+            description='SVG icon library built for React apps and most
+              importantly grommet! Learn
+              more, [grommet.io/grommet-icons](https://grommet.io/grommet-icons/).'
+          />
 
-            <Heading level={2}>Design Elements</Heading>
-            <Item
-              label='sketch resources'
-              snippet={(
-                <Anchor href='https://github.com/grommet/grommet-design'>
-                  github
-                </Anchor>
-              )}
-              description='Are you a designer? Use [Sketch](https://www.sketchapp.com)?
-                Grab our library and templates to start designing with grommet.'
-            />
+          <Heading level={2}>Design Elements</Heading>
+          <Item
+            label='sketch resources'
+            snippet={(
+              <Anchor href='https://github.com/grommet/grommet-design'>
+                github
+              </Anchor>
+            )}
+            description='Are you a designer? Use [Sketch](https://www.sketchapp.com)?
+              Grab our library and templates to start designing with grommet.'
+          />
 
-          </Box>
         </Box>
       </Page>
     );
   }
 }
-
-export default withContext(Use);

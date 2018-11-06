@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { Box, Heading } from 'grommet';
 import { Gremlin } from '../Gremlin';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class PlaygroundPlaceholder extends Component {
   static contextTypes = {
-    live: PropTypes.object,
+    live: PropTypes.shape({}),
   }
 
   render() {
@@ -18,7 +19,7 @@ class PlaygroundPlaceholder extends Component {
       <Box
         pad={{ top: 'xlarge' }}
         background='light-2'
-        fill={true}
+        fill
         align='center'
       >
         <Heading>Oh, no!</Heading>

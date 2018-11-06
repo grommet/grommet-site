@@ -28,7 +28,7 @@ const baseConfig = {
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([{ from: './public' }]),
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
-    new MonacoWebpackPlugin()
+    new MonacoWebpackPlugin(),
   ],
   module: {
     rules: [
@@ -39,8 +39,8 @@ const baseConfig = {
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      }
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
 };

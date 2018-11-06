@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Box, Text } from 'grommet';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class PlaygroundError extends Component {
   static contextTypes = {
-    live: PropTypes.object,
+    live: PropTypes.shape({}),
   }
 
   render() {

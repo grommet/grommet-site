@@ -14,8 +14,8 @@ export default () => (
       name='RadioButton'
       desc={desc}
       examples={{
-        checked: <RadioButton label='A' checked={true} onChange={() => {}} />,
-        disabled: <RadioButton label='A' disabled={true} onChange={() => {}} />,
+        checked: <RadioButton label='A' checked onChange={() => {}} />,
+        disabled: <RadioButton label='A' disabled onChange={() => {}} />,
         label: <RadioButton label='A' onChange={() => {}} />,
       }}
     />

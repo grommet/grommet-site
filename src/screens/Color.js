@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Box, Text } from 'grommet';
 import { ThemeContext } from 'grommet/contexts';
 
@@ -15,14 +15,19 @@ const DARK_REGEXP = /^dark-/i;
 
 const Cell = ({ name, value }) => (
   <Box basis='small' margin={{ bottom: 'medium' }}>
-    <Box pad='medium' background={name} />
+    <Box pad='medium' background={name} round='small' />
     <Text><strong>{name}</strong></Text>
     <Text>{value}</Text>
   </Box>
 );
 
+Cell.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};
+
 const Set = ({ regexp, colors }) => (
-  <Box direction='row' wrap={true} gap='medium'>
+  <Box direction='row' wrap gap='medium'>
     {Object.keys(colors)
       .filter(name => regexp.test(name))
       .map(name => (
@@ -30,6 +35,11 @@ const Set = ({ regexp, colors }) => (
       ))}
   </Box>
 );
+
+Set.propTypes = {
+  regexp: PropTypes.shape({}).isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 const Color = () => (
   <Page>

@@ -53,8 +53,7 @@ export default () => (
       }}
       example={(
         <Grid
-          fill={true}
-          rows={['xxsmall', 'flex']}
+          rows={['xxsmall', 'xsmall']}
           columns={['xsmall', 'flex', 'small']}
           gap='small'
           areas={[

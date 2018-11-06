@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Anchor, Box } from 'grommet';
-import { doc } from 'grommet/components/Anchor/doc';
+import { doc, themeDoc } from 'grommet/components/Anchor/doc';
 
 import { Edit } from 'grommet-icons';
 
@@ -14,7 +14,7 @@ const desc = doc(Anchor).toJSON();
 export default () => (
   <Page>
     <Doc
-      name='Anchor'
+      name="Anchor"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
@@ -24,17 +24,18 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      example={(
-        <Box flex={true} justify='center' align='center'>
-          <Anchor href='#' primary={true} label='For Example' />
+      example={
+        <Box flex justify="center" align="center">
+          <Anchor href="#" primary label="For Example" />
         </Box>
-      )}
+      }
       examples={{
-        icon: <Anchor href='#' icon={<Edit />} />,
-        label: <Anchor href='#' label='Edit' />,
-        primary: <Anchor href='#' primary={true} label='Edit' />,
-        reverse: <Anchor href='#' icon={<Edit />} label='Edit' reverse={true} />,
+        icon: <Anchor href="#" icon={<Edit />} />,
+        label: <Anchor href="#" label="Edit" />,
+        primary: <Anchor href="#" primary label="Edit" />,
+        reverse: <Anchor href="#" icon={<Edit />} label="Edit" reverse />,
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );

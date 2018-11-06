@@ -3,6 +3,7 @@
 // be keeping up with React changes.
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const RouterContext = React.createContext({});
 
@@ -49,11 +50,20 @@ export class Router extends Component {
   }
 }
 
+Router.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export const Route = ({ component: Comp, path }) => (
   <RouterContext.Consumer>
     {({ path: currentPath }) => (currentPath === path ? <Comp /> : null)}
   </RouterContext.Consumer>
 );
+
+Route.propTypes = {
+  component: PropTypes.func.isRequired,
+  path: PropTypes.string.isRequired,
+};
 
 export const Clicker = ({ children, path }) => (
   <RouterContext.Consumer>
@@ -64,10 +74,19 @@ export const Clicker = ({ children, path }) => (
   </RouterContext.Consumer>
 );
 
+Clicker.propTypes = {
+  children: PropTypes.func.isRequired,
+  path: PropTypes.string.isRequired,
+};
+
 export const Watcher = ({ children }) => (
   <RouterContext.Consumer>
     {({ path }) => children(path)}
   </RouterContext.Consumer>
 );
+
+Watcher.propTypes = {
+  children: PropTypes.func.isRequired,
+};
 
 export default Router;
