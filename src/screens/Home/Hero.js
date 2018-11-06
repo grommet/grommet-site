@@ -53,7 +53,7 @@ export default () => (
             {
               phase: [2, 5],
               props: {
-                animation: [{ type: 'fadeIn' }, { type: 'slideLeft' }],
+                animation: 'fadeIn',
                 background: 'light-5',
               },
             },
@@ -67,7 +67,7 @@ export default () => (
               {
                 phase: [3, 5],
                 props: {
-                  animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                  animation: 'fadeIn',
                   background: 'light-2',
                   round: undefined,
                 },
@@ -82,7 +82,7 @@ export default () => (
               {
                 phase: [4, 5],
                 props: {
-                  animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                  animation: 'fadeIn',
                   background: 'light-2',
                   round: undefined,
                 },
@@ -97,7 +97,7 @@ export default () => (
               {
                 phase: 5,
                 props: {
-                  animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                  animation: 'fadeIn',
                   background: 'light-2',
                   round: undefined,
                 },
@@ -115,7 +115,7 @@ export default () => (
             {
               phase: [3, 8],
               props: {
-                animation: [{ type: 'fadeIn' }, { type: 'slideLeft' }],
+                animation: 'fadeIn',
                 background: 'light-4',
                 border: { side: 'top', size: 'large', color: 'light-4' },
               },
@@ -131,7 +131,7 @@ export default () => (
               {
                 phase: [6, 9],
                 props: {
-                  animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                  animation: 'fadeIn',
                 },
               },
             ]}
@@ -146,7 +146,7 @@ export default () => (
                 {
                   phase: [7, 9],
                   props: {
-                    animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                    animation: 'fadeIn',
                     background: 'light-3',
                     round: undefined,
                   },
@@ -163,7 +163,7 @@ export default () => (
                 {
                   phase: [7, 9],
                   props: {
-                    animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                    animation: 'fadeIn',
                     background: 'light-3',
                     round: undefined,
                   },
@@ -180,7 +180,7 @@ export default () => (
               {
                 phase: [8, 9],
                 props: {
-                  animation: [{ type: 'fadeIn' }, { type: 'slideDown' }],
+                  animation: 'fadeIn',
                   background: 'light-5',
                   round: undefined,
                 },
