@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Anchor, Box, Paragraph, Text } from 'grommet';
+import { Anchor, Box, Image, Paragraph, Text } from 'grommet';
 import { Github, Slack, Twitter } from 'grommet-icons';
 import Nav from '../../components/Nav';
 import Header from '../../components/Header';
@@ -94,7 +94,7 @@ export default class Home extends Component {
 
         <Messages />
 
-        <Section pad="xlarge">
+        <Section pad={{ top: 'xlarge', left: 'xlarge', right: 'xlarge' }}>
           <Header
             level={2}
             label="try grommet"
@@ -116,13 +116,8 @@ export default class Home extends Component {
             </Box>
           </RoutedButton>
 
-          <Box
-            direction="row-responsive"
-            justify="between"
-            align="end"
-            margin={{ top: 'xlarge' }}
-          >
-            <Box>
+          <Box direction="row-responsive" justify="between" align="end">
+            <Box margin={{ vertical: 'xlarge' }}>
               <Box direction="row" gap="small">
                 <Anchor
                   target="_blank"
@@ -152,6 +147,8 @@ export default class Home extends Component {
                 .
               </Paragraph>
             </Box>
+
+            <Image src="/img/stak-hurrah.svg" />
           </Box>
         </Section>
       </Box>
