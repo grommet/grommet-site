@@ -116,6 +116,7 @@ const Item = ({ name, path, children, center, ...rest }) => (
         pad={center ? 'small' : undefined}
         overflow="hidden"
         round="small"
+        style={{ pointerEvents: 'none' }}
         {...rest}
       >
         {children}
