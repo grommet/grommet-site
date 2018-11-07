@@ -258,15 +258,17 @@ class Doc extends Component {
     } = this.props;
     return (
       <Box margin={{ bottom: 'large' }}>
-        <Box
-          alignSelf="center"
-          align="center"
-          pad="medium"
-          elevation="large"
-          margin={{ bottom: 'large' }}
-        >
-          {example}
-        </Box>
+        {example && (
+          <Box
+            alignSelf="center"
+            align="center"
+            pad="medium"
+            elevation="large"
+            margin={{ bottom: 'large' }}
+          >
+            {example}
+          </Box>
+        )}
         <Header label={name} summary={(desc && desc.description) || text} />
 
         {desc &&
