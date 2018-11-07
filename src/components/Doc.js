@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
 import { Box, Anchor, Heading, Markdown, Text, ThemeContext } from 'grommet';
-import { LinkNext } from 'grommet-icons';
 import Header from './Header';
 import { genericSyntaxes } from '../utils/props';
 
@@ -166,7 +165,7 @@ const Syntax = ({ syntax, format, defaultValue, leaf }) => {
   if (defaultValue !== undefined && syntax === defaultValue) {
     content = <strong>{content}</strong>;
   }
-  return <pre style={{ margin: 0 }}>{content}</pre>;
+  return <pre style={{ margin: 0, whiteSpace: 'pre-line' }}>{content}</pre>;
 };
 
 Syntax.propTypes = {
@@ -192,11 +191,11 @@ const Prop = ({ property, syntax, first }) => (
       {property.name}
     </Heading>
     <Box direction="row-responsive" justify="between" align="start">
-      <Box basis="1/2" margin={{ right: 'large' }}>
+      <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
         <Markdown>{property.description}</Markdown>
       </Box>
       <Box flex align="start">
-        <Text color="neutral-1" style={{ maxWidth: '100%' }}>
+        <Text color="neutral-1">
           <code>
             {(syntax && (
               <Syntax
@@ -274,15 +273,13 @@ class Doc extends Component {
           desc.availableAt && (
             <Box margin={{ vertical: 'medium' }}>
               {Array.isArray(desc.availableAt) ? (
-                <Box alignSelf="center" direction="row" gap="large">
+                <Box alignSelf="center" direction="row-responsive" gap="large">
                   {desc.availableAt.map(at => (
                     <Anchor
                       key={at.url}
                       href={at.url}
                       target="_blank"
                       label={<Text size="large">{at.label}</Text>}
-                      icon={<LinkNext />}
-                      reverse
                     />
                   ))}
                 </Box>
@@ -292,15 +289,16 @@ class Doc extends Component {
                   href={desc.availableAt.url}
                   target="_blank"
                   label={<Text size="large">{desc.availableAt.label}</Text>}
-                  icon={<LinkNext />}
-                  reverse
                 />
               )}
             </Box>
           )}
 
         {desc && (
-          <Box margin={{ vertical: 'large' }}>
+          <Box
+            margin={{ vertical: 'large' }}
+            border={{ side: 'top', size: 'large', color: 'brand' }}
+          >
             <Heading level={2}>Props</Heading>
             {desc.properties ? (
               desc.properties
@@ -325,7 +323,10 @@ class Doc extends Component {
         )}
 
         {themeDoc && (
-          <Box margin={{ vertical: 'large' }}>
+          <Box
+            margin={{ vertical: 'large' }}
+            border={{ side: 'top', size: 'large', color: 'brand' }}
+          >
             <Heading level={2}>Theme</Heading>
             <ThemeContext.Consumer>
               {theme =>

@@ -18,14 +18,15 @@ import {
   RadioButton,
   RangeInput,
   RangeSelector,
+  ResponsiveContext,
   Select,
   Stack,
   Text,
   TextArea,
   TextInput,
+  ThemeContext,
   WorldMap,
 } from 'grommet';
-import { ThemeContext } from 'grommet/contexts';
 import {
   Add,
   CirclePlay,
@@ -73,19 +74,23 @@ const Section = ({ children, index, name }) => (
     <Heading level={2} margin={{ top: 'none', horizontal: 'small' }}>
       {name}
     </Heading>
-    {Grid.available ? (
-      <Grid columns="medium" rows="small" gap={{ row: 'medium' }}>
-        {children}
-      </Grid>
-    ) : (
-      <Box direction="row" wrap gap="medium">
-        {React.Children.map(children, child => (
-          <Box basis="small" margin={{ bottom: 'medium' }}>
-            <Box basis="small">{child}</Box>
+    <ResponsiveContext.Consumer>
+      {responsive =>
+        Grid.available ? (
+          <Grid columns={responsive} rows="small" gap={{ row: 'medium' }}>
+            {children}
+          </Grid>
+        ) : (
+          <Box direction="row" wrap gap="medium">
+            {React.Children.map(children, child => (
+              <Box basis="small" margin={{ bottom: 'medium' }}>
+                <Box basis="small">{child}</Box>
+              </Box>
+            ))}
           </Box>
-        ))}
-      </Box>
-    )}
+        )
+      }
+    </ResponsiveContext.Consumer>
   </Box>
 );
 
