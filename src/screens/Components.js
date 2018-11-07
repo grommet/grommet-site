@@ -11,6 +11,7 @@ import {
   FormField,
   Grid,
   Heading,
+  Image,
   Menu,
   Meter,
   Paragraph,
@@ -26,18 +27,15 @@ import {
 } from 'grommet';
 import { ThemeContext } from 'grommet/contexts';
 import {
-  Actions,
   Add,
-  Announce,
+  CirclePlay,
   Descend,
   FormDown,
   Grommet as GrommetIcon,
-  Group,
-  CirclePlay,
   Next,
   Paint,
   Previous,
-  TreeOption,
+  Sign,
 } from 'grommet-icons';
 import Page from '../components/Page';
 import Header from '../components/Header';
@@ -345,6 +343,7 @@ export default class Components extends Component {
               <Box direction="row" gap="small">
                 {[1, 2, 3, 4, 5].map(n => (
                   <Box
+                    key={n * 100}
                     width="xxsmall"
                     height="xxsmall"
                     align="center"
@@ -440,15 +439,16 @@ export default class Components extends Component {
             <Box gap="xsmall">
               <Box background="brand" />
               {[0, 1, 2, 3].map(row => (
-                <Box key={row} direction="row" gap="xsmall">
+                <Box key={row * 100} direction="row" gap="xsmall">
                   {[0, 1, 2].map(col => (
                     <Box
-                      key={col}
+                      key={col * 100 + row * 10}
                       background={
                         (!row && 'brand') ||
-                        (!col && { color: 'brand', opacity: 'medium' })
+                        (!col && { color: 'brand', opacity: 'medium' }) ||
+                        undefined
                       }
-                      border={col && row && { color: 'brand' }}
+                      border={col && row ? { color: 'brand' } : undefined}
                       width={col ? 'xsmall' : 'xxsmall'}
                       pad="small"
                     />
@@ -557,30 +557,55 @@ export default class Components extends Component {
         </Section>
 
         <Section name="Media" index={6}>
-          <Item name="Carousel" path="/carousel" center>
-            <Box fill direction="row" justify="between" align="center">
-              <Previous size="medium" color="brand" />
-              <Group size="xlarge" color="brand" />
-              <Next size="medium" color="brand" />
+          <Item name="Carousel" path="/carousel" center pad="none">
+            <Box
+              fill
+              direction="row"
+              justify="between"
+              align="center"
+              gap="small"
+            >
+              <Box
+                height="xsmall"
+                background="white"
+                elevation="medium"
+                justify="center"
+                pad="small"
+              >
+                <Previous size="medium" color="brand" />
+              </Box>
+              <Box
+                width="medium"
+                height="xsmall"
+                background="white"
+                elevation="medium"
+              />
+              <Box
+                height="xsmall"
+                background="white"
+                elevation="medium"
+                justify="center"
+                pad="small"
+              >
+                <Next size="medium" color="brand" />
+              </Box>
             </Box>
           </Item>
-          <Item name="Image" path="/image" center>
-            <Box direction="row" justify="center" align="end" fill>
-              <Box alignSelf="start">
-                <Actions size="large" color="brand" />
-              </Box>
-              <TreeOption size="xlarge" color="brand" />
-            </Box>
+          <Item name="Image" path="/image">
+            <Image
+              src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+              fit="cover"
+            />
           </Item>
 
           <Item name="Video" path="/video" center>
-            <CirclePlay size="xlarge" color="brand" />
+            <CirclePlay color="brand" size="xlarge" />
           </Item>
         </Section>
 
         <Section name="Utilities" index={7}>
           <Item name="AnnounceContext" path="/announcecontext" center>
-            <Announce color="brand" size="xlarge" />
+            <Sign color="brand" size="xlarge" />
           </Item>
 
           <Item name="Grommet" path="/grommet" center>
@@ -593,7 +618,7 @@ export default class Components extends Component {
 
           <Item name="Keyboard" path="/keyboard" center>
             <Box direction="row" align="center" gap="small">
-              <Key label="&#8984;" />
+              <Key label=" &#8984; " />
               <Add color="brand" />
               <Key label="Z" />
             </Box>
