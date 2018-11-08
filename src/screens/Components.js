@@ -36,6 +36,7 @@ import {
   Next,
   Paint,
   Previous,
+  Shift,
   Sign,
 } from 'grommet-icons';
 import Page from '../components/Page';
@@ -612,6 +613,10 @@ export default class Components extends Component {
         <Section name="Utilities" index={7}>
           <Item name="AnnounceContext" path="/announcecontext" center>
             <Sign color="brand" size="xlarge" />
+          </Item>
+
+          <Item name="Collapsible" path="/collapsible" center>
+            <Shift color="brand" size="xlarge" />
           </Item>
 
           <Item name="Grommet" path="/grommet" center>

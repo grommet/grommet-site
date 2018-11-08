@@ -14,6 +14,7 @@ import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
 import Clock from '../screens/Clock';
+import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
 import DataTable from '../screens/DataTable';
@@ -99,60 +100,61 @@ import WorldMap from '../screens/WorldMap';
 
 export default () => (
   <React.Fragment>
-    <Route exact path='/' component={Home} />
+    <Route exact path="/" component={Home} />
 
-    <Route exact path='/play' component={Play} />
-    <Route exact path='/theme' component={Try} />
-    <Route exact path='/try' component={Try} />
-    <Route exact path='/start' component={Use} />
-    <Route exact path='/use' component={Use} />
-    <Route exact path='/components' component={Components} />
+    <Route exact path="/play" component={Play} />
+    <Route exact path="/theme" component={Try} />
+    <Route exact path="/try" component={Try} />
+    <Route exact path="/start" component={Use} />
+    <Route exact path="/use" component={Use} />
+    <Route exact path="/components" component={Components} />
 
-    <Route exact path='/about' component={About} />
+    <Route exact path="/about" component={About} />
 
-    <Route exact path='/accordion' component={Accordion} />
-    <Route exact path='/anchor' component={Anchor} />
-    <Route exact path='/announcecontext' component={AnnounceContext} />
-    <Route exact path='/box' component={Box} />
-    <Route exact path='/button' component={Button} />
-    <Route exact path='/calendar' component={Calendar} />
-    <Route exact path='/carousel' component={Carousel} />
-    <Route exact path='/chart' component={Chart} />
-    <Route exact path='/checkbox' component={CheckBox} />
-    <Route exact path='/clock' component={Clock} />
-    <Route exact path='/color' component={Color} />
-    <Route exact path='/datatable' component={DataTable} />
-    <Route exact path='/diagram' component={Diagram} />
-    <Route exact path='/distribution' component={Distribution} />
-    <Route exact path='/drop' component={Drop} />
-    <Route exact path='/dropbutton' component={DropButton} />
-    <Route exact path='/form' component={Form} />
-    <Route exact path='/formfield' component={FormField} />
-    <Route exact path='/grid' component={Grid} />
-    <Route exact path='/grommet' component={Grommet} />
-    <Route exact path='/heading' component={Heading} />
-    <Route exact path='/image' component={Image} />
-    <Route exact path='/infinitescroll' component={InfiniteScroll} />
-    <Route exact path='/keyboard' component={Keyboard} />
-    <Route exact path='/layer' component={Layer} />
-    <Route exact path='/markdown' component={Markdown} />
-    <Route exact path='/menu' component={Menu} />
-    <Route exact path='/meter' component={Meter} />
-    <Route exact path='/radiobutton' component={RadioButton} />
-    <Route exact path='/rangeinput' component={RangeInput} />
-    <Route exact path='/rangeselector' component={RangeSelector} />
-    <Route exact path='/responsivecontext' component={ResponsiveContext} />
-    <Route exact path='/paragraph' component={Paragraph} />
-    <Route exact path='/select' component={Select} />
-    <Route exact path='/skiplinks' component={SkipLinks} />
-    <Route exact path='/stack' component={Stack} />
-    <Route exact path='/table' component={Table} />
-    <Route exact path='/tabs' component={Tabs} />
-    <Route exact path='/text' component={Text} />
-    <Route exact path='/textarea' component={TextArea} />
-    <Route exact path='/textinput' component={TextInput} />
-    <Route exact path='/themecontext' component={ThemeContext} />
-    <Route exact path='/video' component={Video} />
-    <Route exact path='/worldmap' component={WorldMap} />
+    <Route exact path="/accordion" component={Accordion} />
+    <Route exact path="/anchor" component={Anchor} />
+    <Route exact path="/announcecontext" component={AnnounceContext} />
+    <Route exact path="/box" component={Box} />
+    <Route exact path="/button" component={Button} />
+    <Route exact path="/calendar" component={Calendar} />
+    <Route exact path="/carousel" component={Carousel} />
+    <Route exact path="/chart" component={Chart} />
+    <Route exact path="/checkbox" component={CheckBox} />
+    <Route exact path="/clock" component={Clock} />
+    <Route exact path="/collapsible" component={Collapsible} />
+    <Route exact path="/color" component={Color} />
+    <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/diagram" component={Diagram} />
+    <Route exact path="/distribution" component={Distribution} />
+    <Route exact path="/drop" component={Drop} />
+    <Route exact path="/dropbutton" component={DropButton} />
+    <Route exact path="/form" component={Form} />
+    <Route exact path="/formfield" component={FormField} />
+    <Route exact path="/grid" component={Grid} />
+    <Route exact path="/grommet" component={Grommet} />
+    <Route exact path="/heading" component={Heading} />
+    <Route exact path="/image" component={Image} />
+    <Route exact path="/infinitescroll" component={InfiniteScroll} />
+    <Route exact path="/keyboard" component={Keyboard} />
+    <Route exact path="/layer" component={Layer} />
+    <Route exact path="/markdown" component={Markdown} />
+    <Route exact path="/menu" component={Menu} />
+    <Route exact path="/meter" component={Meter} />
+    <Route exact path="/radiobutton" component={RadioButton} />
+    <Route exact path="/rangeinput" component={RangeInput} />
+    <Route exact path="/rangeselector" component={RangeSelector} />
+    <Route exact path="/responsivecontext" component={ResponsiveContext} />
+    <Route exact path="/paragraph" component={Paragraph} />
+    <Route exact path="/select" component={Select} />
+    <Route exact path="/skiplinks" component={SkipLinks} />
+    <Route exact path="/stack" component={Stack} />
+    <Route exact path="/table" component={Table} />
+    <Route exact path="/tabs" component={Tabs} />
+    <Route exact path="/text" component={Text} />
+    <Route exact path="/textarea" component={TextArea} />
+    <Route exact path="/textinput" component={TextInput} />
+    <Route exact path="/themecontext" component={ThemeContext} />
+    <Route exact path="/video" component={Video} />
+    <Route exact path="/worldmap" component={WorldMap} />
   </React.Fragment>
 );
