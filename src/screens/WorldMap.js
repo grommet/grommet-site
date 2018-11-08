@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, WorldMap } from 'grommet';
-import { doc } from 'grommet/components/WorldMap/doc';
+import { doc, themeDoc } from 'grommet/components/WorldMap/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -11,12 +11,12 @@ const desc = doc(WorldMap).toJSON();
 const WorldMapDoc = () => (
   <Page>
     <Doc
-      name='WorldMap'
+      name="WorldMap"
       desc={desc}
-      example={(
-        <Box flex justify='center' align='center'>
+      example={
+        <Box flex justify="center" align="center">
           <WorldMap
-            color='neutral-1'
+            color="neutral-1"
             continents={[
               {
                 name: 'Africa',
@@ -25,10 +25,10 @@ const WorldMapDoc = () => (
                 onClick: name => alert(name),
               },
             ]}
-            onSelectPlaceX={(lat, lon) => (
+            onSelectPlaceX={(lat, lon) =>
               // eslint-disable-next-line no-alert
               alert(lat, lon)
-            )}
+            }
             places={[
               {
                 name: 'Sydney',
@@ -38,10 +38,11 @@ const WorldMapDoc = () => (
                 onClick: name => alert(name),
               },
             ]}
-            selectColor='accent-2'
+            selectColor="accent-2"
           />
         </Box>
-      )}
+      }
+      themeDoc={themeDoc}
     />
   </Page>
 );
