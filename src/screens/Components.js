@@ -64,7 +64,6 @@ const STATUS_REGEXP = /^status-/i;
 
 const Section = ({ children, index, name }) => (
   <Box
-    flex={false}
     pad={{ vertical: 'medium' }}
     animation={[
       { type: 'zoomIn', duration: 500, delay: 100 + 100 * index },
@@ -75,7 +74,11 @@ const Section = ({ children, index, name }) => (
       {name}
     </Heading>
     {Grid.available ? (
-      <Grid columns="medium" rows="small" gap={{ row: 'medium' }}>
+      <Grid
+        columns={{ count: 'fit', size: 'medium' }}
+        rows="small"
+        gap={{ row: 'medium' }}
+      >
         {children}
       </Grid>
     ) : (
@@ -162,7 +165,7 @@ export default class Components extends Component {
           }
         />
 
-        <Section align="stretch" name="Layout" index={0}>
+        <Section name="Layout" index={0}>
           <Item name="Box" path="/box">
             <Box flex border={{ color: 'brand', size: 'xlarge' }} />
           </Item>

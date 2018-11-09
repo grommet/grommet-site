@@ -66,7 +66,7 @@ export default class Home extends Component {
           </Box>
         </Section>
 
-        <Section background="light-1" pad={{ top: 'xlarge' }}>
+        <Section background="light-1" pad={{ top: 'xlarge' }} width="auto">
           <Header
             level={2}
             label="part design system, part framework, and all awesome"
@@ -79,14 +79,16 @@ export default class Home extends Component {
             }
           />
 
-          <Box direction="row-responsive" justify="center">
-            <Composable />
-            <Accessible />
-          </Box>
+          <Box direction="row" wrap justify="center">
+            <Box direction="row-responsive" justify="center">
+              <Composable />
+              <Accessible />
+            </Box>
 
-          <Box direction="row-responsive" justify="center">
-            <Themable />
-            <Layouts />
+            <Box direction="row-responsive" justify="center">
+              <Themable />
+              <Layouts />
+            </Box>
           </Box>
         </Section>
 

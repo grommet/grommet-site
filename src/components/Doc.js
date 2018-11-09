@@ -267,7 +267,7 @@ class Doc extends Component {
       themeDoc,
     } = this.props;
     return (
-      <Box margin={{ bottom: 'large' }}>
+      <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
         {example && (
           <Box
             alignSelf="center"
