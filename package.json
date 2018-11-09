@@ -22,7 +22,7 @@
     "prettier": "pretty-quick --staged"
   },
   "dependencies": {
-    "grommet": "https://github.com/grommet/grommet/tarball/NEXT-stable",
+    "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "3.1.0",
     "json-stringify-pretty-compact": "^1.2.0",
     "offline-plugin": "^5.0.3",

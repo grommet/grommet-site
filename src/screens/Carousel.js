@@ -11,19 +11,20 @@ const desc = doc(Carousel).toJSON();
 export default () => (
   <Page>
     <Doc
-      name='Carousel'
+      name="Carousel"
       desc={desc}
-      example={(
-        <Box>
-          <Box basis='small'>
-            <Carousel fill>
-              <Image fit='cover' src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
-              <Image fit='cover' src='//v2.grommet.io/assets/IMG_4245.jpg' />
-              <Image fit='cover' src='//v2.grommet.io/assets/IMG_4210.jpg' />
-            </Carousel>
-          </Box>
+      example={
+        <Box height="small" width="medium" overflow="hidden">
+          <Carousel fill>
+            <Image
+              fit="cover"
+              src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+            />
+            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
+            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
+          </Carousel>
         </Box>
-      )}
+      }
     />
   </Page>
 );
