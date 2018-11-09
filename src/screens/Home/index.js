@@ -52,7 +52,7 @@ export default class Home extends Component {
             <Anchor
               target="_blank"
               a11yTitle="Share feedback on Github"
-              href="https://github.com/grommet/grommet/tree/NEXT"
+              href="https://github.com/grommet/grommet"
               icon={<Github color="brand" size="large" />}
               label={<Text size="large">Share feedback on GitHub</Text>}
             />
@@ -130,7 +130,7 @@ export default class Home extends Component {
                 <Anchor
                   target="_blank"
                   a11yTitle="Share feedback on Github"
-                  href="https://github.com/grommet/grommet/tree/NEXT"
+                  href="https://github.com/grommet/grommet"
                   icon={<Github color="brand" size="large" />}
                 />
                 <Anchor
