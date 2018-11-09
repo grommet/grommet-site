@@ -18,7 +18,6 @@ import {
   RadioButton,
   RangeInput,
   RangeSelector,
-  ResponsiveContext,
   Select,
   Stack,
   Text,
@@ -75,23 +74,19 @@ const Section = ({ children, index, name }) => (
     <Heading level={2} margin={{ top: 'none', horizontal: 'small' }}>
       {name}
     </Heading>
-    <ResponsiveContext.Consumer>
-      {responsive =>
-        Grid.available ? (
-          <Grid columns={responsive} rows="small" gap={{ row: 'medium' }}>
-            {children}
-          </Grid>
-        ) : (
-          <Box direction="row" wrap gap="medium">
-            {React.Children.map(children, child => (
-              <Box basis="small" margin={{ bottom: 'medium' }}>
-                <Box basis="small">{child}</Box>
-              </Box>
-            ))}
+    {Grid.available ? (
+      <Grid columns="medium" rows="small" gap={{ row: 'medium' }}>
+        {children}
+      </Grid>
+    ) : (
+      <Box direction="row" wrap>
+        {React.Children.map(children, child => (
+          <Box basis="medium" pad="small">
+            <Box basis="small">{child}</Box>
           </Box>
-        )
-      }
-    </ResponsiveContext.Consumer>
+        ))}
+      </Box>
+    )}
   </Box>
 );
 
