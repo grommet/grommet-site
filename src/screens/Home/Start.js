@@ -163,7 +163,7 @@ render(<App />);
             margin="medium"
           >
             <Anchor
-              href="//github.com/grommet/grommet-design"
+              href="//github.com/grommet/design-kit"
               label={<Text size="large">Grommet Design Kit</Text>}
               icon={<Next />}
               color="accent-2"

@@ -141,7 +141,7 @@ export default class Home extends Component {
               <Paragraph>
                 Maintained by the core team and the help of our contributors.
                 you can always kick it old school with{' '}
-                <Anchor target="_blank" href="https://grommet.io">
+                <Anchor target="_blank" href="https://v1.grommet.io">
                   Grommet v1
                 </Anchor>
                 .
