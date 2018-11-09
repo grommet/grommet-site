@@ -13,7 +13,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "build-alias": "cross-env USE_ALIAS=true NODE_ENV=production webpack --mode production",
-    "release-heroku": "babel-node --presets @babel/preset-env ./tools/release-heroku.js",
+    "release-gh-pages": "babel-node --presets @babel/preset-env ./tools/release-gh-pages.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "start-alias": "cross-env USE_ALIAS=true webpack-dev-server --mode development --open",
     "lint": "eslint src",
