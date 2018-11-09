@@ -57,36 +57,42 @@ const parseFormat = format => {
 const Values = ({ name, values, defaultValue }) => {
   let content = (
     <Box>
-      {values.filter(v => !v.type).map((value, index) => {
-        if (value === 'boolean') {
-          return [true, false].map(v => {
-            if (v === defaultValue) {
-              return (
-                <span key={v}>
-                  <strong>{stringify(v)}</strong>
-                </span>
-              );
-            }
-            return <span key={v}>{stringify(v)}</span>;
-          });
-        }
-        let valueContent = value.trim();
-        let isDefault =
-          valueContent === defaultValue ||
-          (defaultValue === true && valueContent === 'true') ||
-          (defaultValue === false && valueContent === 'false');
-        if (values.length === 1 && valueContent === 'string' && defaultValue) {
-          valueContent = defaultValue;
-          isDefault = true;
-        }
-        if (value !== 'true' && value !== 'false') {
-          valueContent = `"${valueContent}"`;
-        }
-        if (isDefault) {
-          valueContent = <strong>{valueContent}</strong>;
-        }
-        return <span key={`${index + 0}`}>{valueContent}</span>;
-      })}
+      {values
+        .filter(v => !v.type)
+        .map((value, index) => {
+          if (value === 'boolean') {
+            return [true, false].map(v => {
+              if (v === defaultValue) {
+                return (
+                  <span key={v}>
+                    <strong>{stringify(v)}</strong>
+                  </span>
+                );
+              }
+              return <span key={v}>{stringify(v)}</span>;
+            });
+          }
+          let valueContent = value.trim();
+          let isDefault =
+            valueContent === defaultValue ||
+            (defaultValue === true && valueContent === 'true') ||
+            (defaultValue === false && valueContent === 'false');
+          if (
+            values.length === 1 &&
+            valueContent === 'string' &&
+            defaultValue
+          ) {
+            valueContent = defaultValue;
+            isDefault = true;
+          }
+          if (value !== 'true' && value !== 'false') {
+            valueContent = `"${valueContent}"`;
+          }
+          if (isDefault) {
+            valueContent = <strong>{valueContent}</strong>;
+          }
+          return <span key={`${index + 0}`}>{valueContent}</span>;
+        })}
     </Box>
   );
   if (name) {
@@ -100,9 +106,11 @@ const Values = ({ name, values, defaultValue }) => {
   content = (
     <Box>
       {content}
-      {values.filter(v => v.type).map((value, index) => (
-        <Value key={`${index + 0}`} value={value} />
-      ))}
+      {values
+        .filter(v => v.type)
+        .map((value, index) => (
+          <Value key={`${index + 0}`} value={value} />
+        ))}
     </Box>
   );
   return content;
@@ -192,7 +200,9 @@ const Prop = ({ property, syntax, first }) => (
     </Heading>
     <Box direction="row-responsive" justify="between" align="start">
       <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
-        <Markdown>{property.description}</Markdown>
+        <Markdown>
+          {property.description.replace('<', '&lt;').replace('>', '&gt;')}
+        </Markdown>
       </Box>
       <Box flex align="start">
         <Text color="neutral-1">
@@ -271,30 +281,29 @@ class Doc extends Component {
         )}
         <Header label={name} summary={(desc && desc.description) || text} />
 
-        {desc &&
-          desc.availableAt && (
-            <Box margin={{ vertical: 'medium' }}>
-              {Array.isArray(desc.availableAt) ? (
-                <Box alignSelf="center" direction="row-responsive" gap="large">
-                  {desc.availableAt.map(at => (
-                    <Anchor
-                      key={at.url}
-                      href={at.url}
-                      target="_blank"
-                      label={<Text size="large">{at.label}</Text>}
-                    />
-                  ))}
-                </Box>
-              ) : (
-                <Anchor
-                  alignSelf="center"
-                  href={desc.availableAt.url}
-                  target="_blank"
-                  label={<Text size="large">{desc.availableAt.label}</Text>}
-                />
-              )}
-            </Box>
-          )}
+        {desc && desc.availableAt && (
+          <Box margin={{ vertical: 'medium' }}>
+            {Array.isArray(desc.availableAt) ? (
+              <Box alignSelf="center" direction="row-responsive" gap="large">
+                {desc.availableAt.map(at => (
+                  <Anchor
+                    key={at.url}
+                    href={at.url}
+                    target="_blank"
+                    label={<Text size="large">{at.label}</Text>}
+                  />
+                ))}
+              </Box>
+            ) : (
+              <Anchor
+                alignSelf="center"
+                href={desc.availableAt.url}
+                target="_blank"
+                label={<Text size="large">{desc.availableAt.label}</Text>}
+              />
+            )}
+          </Box>
+        )}
 
         {desc && (
           <Box
