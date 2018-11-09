@@ -3,7 +3,7 @@ import git from 'simple-git/promise';
 import del from 'del';
 import fs from 'fs-extra';
 
-const repoURL = `https://github.com/grommet/grommet-site.git`;
+const repoURL = `https://${process.env.GH_TOKEN}@github.com/grommet/grommet-site.git`;
 const localFolder = path.resolve('./.tmp/grommet-site');
 const localDist = path.resolve('./dist');
 
