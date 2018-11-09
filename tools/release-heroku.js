@@ -7,7 +7,7 @@ const repoURL = `https://${process.env.GH_TOKEN}@github.com/grommet/grommet-site
 const localFolder = path.resolve('./.tmp/grommet-site');
 const localDist = path.resolve('./dist');
 
-if (true || process.env.CI) {
+if (process.env.CI) {
   del(localFolder).then(() => {
     git()
       .silent(true)
