@@ -169,6 +169,7 @@ const Syntax = ({ syntax, format, defaultValue, leaf }) => {
   }
   if (format !== 'function' && syntax[0] !== '(' && syntax[0] !== '<') {
     content = stringify(syntax, { maxLength: 40 });
+    content = <code className="language-json">{content}</code>;
   }
   if (defaultValue !== undefined && syntax === defaultValue) {
     content = <strong>{content}</strong>;
@@ -206,21 +207,19 @@ const Prop = ({ property, syntax, first }) => (
       </Box>
       <Box flex align="start">
         <Text color="neutral-1">
-          <code>
-            {(syntax && (
-              <Syntax
-                syntax={syntax}
-                format={property.format}
+          {(syntax && (
+            <Syntax
+              syntax={syntax}
+              format={property.format}
+              defaultValue={property.defaultValue}
+            />
+          )) ||
+            property.type || (
+              <Value
+                value={parseFormat(property.format)}
                 defaultValue={property.defaultValue}
               />
-            )) ||
-              property.type || (
-                <Value
-                  value={parseFormat(property.format)}
-                  defaultValue={property.defaultValue}
-                />
-              )}
-          </code>
+            )}
         </Text>
       </Box>
     </Box>
@@ -308,9 +307,11 @@ class Doc extends Component {
         {desc && (
           <Box
             margin={{ vertical: 'large' }}
-            border={{ side: 'top', size: 'large', color: 'brand' }}
+            border={{ side: 'top', size: 'medium', color: 'brand' }}
           >
-            <Heading level={2}>Props</Heading>
+            <Heading level={2} margin={{ top: 'medium', bottom: 'xlarge' }}>
+              Props
+            </Heading>
             {desc.properties ? (
               desc.properties
                 .sort((a, b) => {
@@ -336,9 +337,11 @@ class Doc extends Component {
         {themeDoc && (
           <Box
             margin={{ vertical: 'large' }}
-            border={{ side: 'top', size: 'large', color: 'brand' }}
+            border={{ side: 'top', size: 'medium', color: 'brand' }}
           >
-            <Heading level={2}>Theme</Heading>
+            <Heading level={2} margin={{ top: 'medium', bottom: 'xlarge' }}>
+              Theme
+            </Heading>
             <ThemeContext.Consumer>
               {theme =>
                 Object.keys(themeDoc).map((key, index) => {
