@@ -45,7 +45,7 @@ export default class Home extends Component {
             <Anchor
               target="_blank"
               a11yTitle="Follow us on Twitter"
-              href="https://twitter.com/grommetux"
+              href="https://twitter.com/grommet_io"
               icon={<Twitter color="brand" size="large" />}
               label={<Text size="large">Follow us on Twitter</Text>}
             />
@@ -122,7 +122,7 @@ export default class Home extends Component {
                 <Anchor
                   target="_blank"
                   a11yTitle="Follow us on Twitter"
-                  href="https://twitter.com/grommetux"
+                  href="https://twitter.com/grommet_io"
                   icon={<Twitter color="brand" size="large" />}
                 />
                 <Anchor
