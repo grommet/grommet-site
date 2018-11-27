@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Box, Calendar } from 'grommet';
-import { doc } from 'grommet/components/Calendar/doc';
+import { doc, themeDoc } from 'grommet/components/Calendar/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -10,24 +10,24 @@ import { genericSyntaxes } from '../utils/props';
 const desc = doc(Calendar).toJSON();
 
 export default class extends Component {
-  state = { date: (new Date()).toISOString() }
+  state = { date: new Date().toISOString() };
 
   render() {
     const { date } = this.state;
     return (
       <Page>
         <Doc
-          name='Calendar'
+          name="Calendar"
           desc={desc}
-          example={(
-            <Box align='center'>
+          example={
+            <Box align="center">
               <Calendar
-                size='small'
+                size="small"
                 date={date}
                 onSelect={nextDate => this.setState({ date: nextDate })}
               />
             </Box>
-          )}
+          }
           syntaxes={{
             ...genericSyntaxes,
             animate: [true, false],
@@ -51,13 +51,18 @@ export default class extends Component {
   nextInBound: bool,
 }) => {}`,
             locale: 'en-US',
-            onReference: '(\'2018-10-22T12:22:00Z\') => {}',
-            onSelect: '(\'2018-10-22T12:22:00Z\') => {}',
+            onReference: "('2018-10-22T12:22:00Z') => {}",
+            onSelect: "('2018-10-22T12:22:00Z') => {}",
             range: [true, false],
             reference: '2018-10',
             showAdjacentDays: [true, false],
             size: ['small', 'medium', 'large'],
+            'calendar.icons.next': '<Next />',
+            'calendar.icons.previous': '<Previous />',
+            'calendar.icons.small.next': '<FormNext />',
+            'calendar.icons.small.previous': '<FormPrevious />',
           }}
+          themeDoc={themeDoc}
         />
       </Page>
     );
