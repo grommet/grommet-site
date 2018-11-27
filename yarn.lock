@@ -4518,7 +4518,7 @@ grommet-icons@3.1.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.0.1"
-  resolved "https://github.com/grommet/grommet/tarball/stable#b5fbabb3594a08ce0a5e97fc188b4f2c1bb45745"
+  resolved "https://github.com/grommet/grommet/tarball/stable#18cd337466a51e1e13f153abd20593a4ae566110"
   dependencies:
     css "^2.2.3"
     markdown-to-jsx "^6.6.6"
