@@ -1,3 +1,1103 @@
-var __wpo = {"assets":{"main":["/editor.worker.js","/json.worker.js","/html.worker.js","/css.worker.js","/typescript.worker.js","/0-9fe359720c216020eeb9.js","/main-fe5df00622b3a3df8d6c.js","/vendors~main-55e1d3b665e780251f5c.js","/3-c9489ba3e1dd700eeace.js","/4-2874a148731cc3a973c7.js","/5-7fff552c03aa33cc40a2.js","/6-096950f68fb064ad5b9d.js","/7-be2a5e1a7a1475399b70.js","/8-c2071cd3ab8e641dc6a0.js","/9-bc3ec36dace8f24ccb32.js","/10-6cba91875d8d74bfe5b7.js","/11-adfff9fc207f6385ea02.js","/12-5fe16c833d65bf71baa6.js","/13-6cde3f4f53c0f47ba408.js","/14-0296cf85eff83d4596d3.js","/15-84ff5a9c3c64b9fb265d.js","/16-3524e317c6d38f9abaa7.js","/17-4faae48e505658d01f12.js","/18-aa8c87a56e2278bf1330.js","/19-548cd64d7be664dd5221.js","/20-ced4b56d8db15cf2b011.js","/21-1023b94062f53ddb2686.js","/22-9d902d145951ff31dbe3.js","/23-7d3f0b7e1e7b5ca27286.js","/24-e5b6fd3add4373a87e28.js","/25-c04ae9ce4ac64dccf5bf.js","/26-1003241fb5ec3090d72d.js","/27-5f9233b2d02820694518.js","/28-748c0c351c6e362ccd6b.js","/29-8de6fe0a2b542294ccbd.js","/30-0bb19898cd629f148ecc.js","/31-c30a657ede6cb067c51f.js","/32-73811325c648f2cfec6d.js","/33-730b6cc3e9665768991e.js","/34-b235859cf1191a4e4f7c.js","/35-2ee7c610a0c41083b03a.js","/36-7e0002ad3fc013854a75.js","/37-1779d7e31844fb97fd4c.js","/38-7d93246a7e033b3a8d19.js","/39-3f70965a43ac72b0c7dd.js","/40-3c5ec96162387223e2c8.js","/41-524919b433099017ea3d.js","/42-ed0c3bcd11f106168548.js","/43-130d5879a5ea68c76591.js","/44-d918e4935f8581d2ef52.js","/45-8e547d3dd0ce58369ad3.js","/46-2aec2ebdbf31873e99be.js","/47-dd6ada24b7ffe500b914.js","/48-44a3d9309b83989ad485.js","/49-418ff8ff1b7a3b9cde70.js","/50-78395523be9820abf860.js","/51-1302cdaf56e27cd79afb.js","/52-42b6c96d878ed73c4ff0.js","/53-8f9b3acf9e37c4edb7a9.js","/54-dba3f1d81f0eaffe2681.js","/assets/IMG_4210.jpg","/assets/IMG_4245.jpg","/assets/small-en.vtt","/assets/small-fr.vtt","/assets/small.mp4","/assets/Wilderpeople_Ricky.jpg","/img/avatars/06IweXPF_200x200.jpg","/img/avatars/1nCCU4b3_200x200.jpg","/img/avatars/puppet_200x200.jpeg","/img/avatars/VQlHfV6m_200x200.jpg","/img/circles.svg","/img/do-all-things.svg","/img/double-grommet.svg","/img/icons/grommet-152x152.png","/img/icons/grommet-192x192.png","/img/icons/grommet-72x72.png","/img/icons/grommet-96x96.png","/img/logos/Aruba-logo.svg","/img/logos/Boeing-logo.svg","/img/logos/DXC-logo.svg","/img/logos/GE-logo.svg","/img/logos/GitHub-logo.svg","/img/logos/HP-logo.svg","/img/logos/HPE-logo.svg","/img/logos/IBM-logo.svg","/img/logos/MicroFocus-logo.svg","/img/logos/Netflix-logo.svg","/img/logos/Samsung-logo.svg","/img/logos/Shopify-logo.svg","/img/logos/Sony-logo.svg","/img/logos/Twilio-logo.svg","/img/logos/Uber-logo.svg","/img/mobile-app-icon.png","/img/mobile-app-icon.svg","/img/shapes.svg","/img/shortcut-icon.png","/img/stak-full.svg","/img/stak-hurrah.svg","/img/Stak.svg","/","/manifest.json","/package.json","/server.js"],"additional":[],"optional":[]},"externals":[],"hashesMap":{"2eba74d8044a027ee025642eda157a0dad718702":"/editor.worker.js","ac6c3799fc1b03f76d0378bdcb0126fbde96b43a":"/json.worker.js","9b5a60a6d3f87eb6c821ef235edfa4e2fdb7cbe2":"/html.worker.js","8e43fae9c480b56de46e589465b011e9d222a9ab":"/css.worker.js","3c074c16785457b08cbfbc8875dad2052e5d2547":"/typescript.worker.js","a4ee8bb87fb6536c16657337384ace7f779fc7f5":"/0-9fe359720c216020eeb9.js","5ae1e4d6d6ac744984c84379614f8f6e2f92c780":"/main-fe5df00622b3a3df8d6c.js","3c32e3aeea427bb87455ebcd6878806bdb72c4e8":"/vendors~main-55e1d3b665e780251f5c.js","927448140bb38794c21e6bbab26323f637c0f67d":"/3-c9489ba3e1dd700eeace.js","7d9bf9e5b8bbf89bd792d6b5d3e345669ca9ef6d":"/4-2874a148731cc3a973c7.js","731dd3fc55fe30381cfa44d48102c0fd30492086":"/5-7fff552c03aa33cc40a2.js","f9b854096c257d9d132aa2ecbbfa18b465f320da":"/6-096950f68fb064ad5b9d.js","3b674fcf97963d7e7404102d808143246dd16e39":"/7-be2a5e1a7a1475399b70.js","12e4d69e9c14183f594058f67371a8d0fc965799":"/8-c2071cd3ab8e641dc6a0.js","6c1e9f546bd5c8fc0baa1def7be9521134fae88b":"/9-bc3ec36dace8f24ccb32.js","e898856b001af2b1b735d8ff9082f2b041634ae3":"/10-6cba91875d8d74bfe5b7.js","4c88f4697daba10c5266c97e018484f32280bd04":"/11-adfff9fc207f6385ea02.js","83c0cc14912c9e829afef15d65f35aa48f2761a8":"/12-5fe16c833d65bf71baa6.js","d1621baa38208808f4529c63cdf2c337be15a446":"/13-6cde3f4f53c0f47ba408.js","c011e706042c6b79c0e6f154aca97a24f330b007":"/14-0296cf85eff83d4596d3.js","9da56ccd1c02a196e48571d8f030156c29fd8096":"/15-84ff5a9c3c64b9fb265d.js","1bde6769229227705987853ece7233a4c73e3818":"/16-3524e317c6d38f9abaa7.js","6150cd7a7b34338a1bfb7647705c8bcd4aba7f09":"/17-4faae48e505658d01f12.js","1ab5a64b3c70d943ac4c0365f6ad315fdcb6bd8e":"/18-aa8c87a56e2278bf1330.js","ffbdc381e265771ba000c2421047990bfcf1e0b2":"/19-548cd64d7be664dd5221.js","c6a3200d015ad6abe835f8c8ec54fe264260b083":"/20-ced4b56d8db15cf2b011.js","e72ae847af9d184a2a72f398c50934ed92fed3eb":"/21-1023b94062f53ddb2686.js","88feefc2ca0fb5e36ee76452883e57dbb6675cbd":"/22-9d902d145951ff31dbe3.js","78e5a174820d6991dd0d97093e10389ab42ecbfb":"/23-7d3f0b7e1e7b5ca27286.js","613f5766afdc85a16986d82d74e395f4d3140e2b":"/24-e5b6fd3add4373a87e28.js","a1b8c80475b78c7533e9e9ef1437174998f5a85d":"/25-c04ae9ce4ac64dccf5bf.js","547a6179682d563fae1932f8f30a52bdf580ed0a":"/26-1003241fb5ec3090d72d.js","220e0007817ebdeac8b46998dfda6356e0bf9def":"/27-5f9233b2d02820694518.js","5d88af221f1ce49543a10c329cbb0ebe2d4f60a2":"/28-748c0c351c6e362ccd6b.js","22dc607dc418f83e0f7a6b272f9889f637b76b1f":"/29-8de6fe0a2b542294ccbd.js","a2dd337db4d113b34e6e8d67f9b9051bd71f2368":"/30-0bb19898cd629f148ecc.js","11194c2d2dfd1a198416d28404475c051057adb0":"/31-c30a657ede6cb067c51f.js","48fb3b1c65969ca4d510b8b9fdd11f60e5c2e94b":"/32-73811325c648f2cfec6d.js","94f482af9c9e299467870c9bcb82798e5d3b9a9e":"/33-730b6cc3e9665768991e.js","ece18c1ff3af6175252e04249cef13c9a8131ecd":"/34-b235859cf1191a4e4f7c.js","9cb1cc65f20e557488bfabbbdef85efbc410d419":"/35-2ee7c610a0c41083b03a.js","ab34f3dc1a6092683033cd3103c887cdea757a64":"/36-7e0002ad3fc013854a75.js","89afcdb3f86113c19964d156bc90c74210917fe5":"/37-1779d7e31844fb97fd4c.js","8a508256697928713f1bfdf573f318757add6cab":"/38-7d93246a7e033b3a8d19.js","f2e6b30285ef0edb3bc62187f470bd4949439442":"/39-3f70965a43ac72b0c7dd.js","df0ab011d83324e1d66842082c2db57e049ed17d":"/40-3c5ec96162387223e2c8.js","12e6028960cbcc2a9ef4f03cca7e09a57ae52214":"/41-524919b433099017ea3d.js","7beadf2b9bd5a361f921290770be7a0cd4e40355":"/42-ed0c3bcd11f106168548.js","00d3e4950348c2156806756681b553de1ae75b79":"/43-130d5879a5ea68c76591.js","025dbd4d562bf5e4403308f2242d81f74ba91691":"/44-d918e4935f8581d2ef52.js","bb364596816728a1995b41115a389d56632b846c":"/45-8e547d3dd0ce58369ad3.js","445228e696d4ecbc9ed707ef1ad476efdc143c4e":"/46-2aec2ebdbf31873e99be.js","b7736d72bd1268300e93f45b0875f171e10b41d1":"/47-dd6ada24b7ffe500b914.js","0450c497b1da3ba275c34e0b1e090ef4a7788d7d":"/48-44a3d9309b83989ad485.js","c54de474b8c5fcb69cafb742b6420acc29b14d30":"/49-418ff8ff1b7a3b9cde70.js","d24d5b322ee953d40ef77e97b7c2b536ed45b059":"/50-78395523be9820abf860.js","2eafd55175b47cc295053e9c457c26baee6e005e":"/51-1302cdaf56e27cd79afb.js","de64368071095bd179003ab9bce1b43c2c00b906":"/52-42b6c96d878ed73c4ff0.js","e31f017e3ebf6d90e8f6332117ef44f1873c0a25":"/53-8f9b3acf9e37c4edb7a9.js","51d230c5b7ba3f8b135374eaf44201d20dabbbb4":"/54-dba3f1d81f0eaffe2681.js","fb28b293bc43d453a0101e8be9295f0542e4f1aa":"/assets/IMG_4210.jpg","5b940442218c4ef0a0fe5f0ff058a5188620beba":"/assets/IMG_4245.jpg","397ef16b44d2b5df21fe736ccb109f8d34e51805":"/assets/small-en.vtt","0cde54b497a47e8bb667381feb4877ebdb95e157":"/assets/small-fr.vtt","5c5a07267317b166a218e5edb7667ccd2b5351be":"/assets/small.mp4","f851f7e0d6614aa2d401348338b4dc1f4aee2d54":"/assets/Wilderpeople_Ricky.jpg","e1aa3b88c7e9fe3d8739d33a4656913f62a715ec":"/img/avatars/06IweXPF_200x200.jpg","a155022b088dad12599f34b0c5b6ed927b428634":"/img/avatars/1nCCU4b3_200x200.jpg","a3c24e14906f4c36abd0dfc5533a5d232c14d308":"/img/avatars/puppet_200x200.jpeg","ec519b1cb865888b150a6739b325f37cd55c8d79":"/img/avatars/VQlHfV6m_200x200.jpg","85989fa46a07256e414c65562ce32232644905cc":"/img/circles.svg","89c75f58281cb11ebd6f752313af3b3aaff4126a":"/img/do-all-things.svg","b4952698a334372df8a6b6c67a3668ec86661dca":"/img/double-grommet.svg","0753720be79750d0cd67adeef961deb498ebbf23":"/img/mobile-app-icon.png","29561d4d656fbd70ee2076ad611cb120e5a6e19b":"/img/icons/grommet-192x192.png","406d5d24cda50f990e891d819efdf27ed8f44ce7":"/img/icons/grommet-72x72.png","6775d68fb6000b10ffb54d4398af9a17a5e71627":"/img/icons/grommet-96x96.png","2f0d633b4860564bc3bd30d4d34061bd9c016202":"/img/logos/Aruba-logo.svg","7161c023793171aaf91f22bc1f20e5086ec3832e":"/img/logos/Boeing-logo.svg","a20fded03a2bca1dd96a86a3ad8b5daeccf5f8f1":"/img/logos/DXC-logo.svg","b92bfa4462074ca141125b0e33f3e397b7f54ad5":"/img/logos/GE-logo.svg","d278813449e57997e2bdab41a1f3e5db08f02957":"/img/logos/GitHub-logo.svg","c72294a91ee396e3f9caa1d20e27b1f38d4ea255":"/img/logos/HP-logo.svg","8acc3e35a9b0c4a8346e1b0f561c39760ed91cb9":"/img/logos/HPE-logo.svg","d989b20f5530ad8ad2c585dcbe49d94d914f3551":"/img/logos/IBM-logo.svg","486c17ed7189fe6f9f1272c82a4e55dfa9bbb8a2":"/img/logos/MicroFocus-logo.svg","82045d4ab876b407747f07dbae9bbe22c1f5d8e0":"/img/logos/Netflix-logo.svg","8c5126843f3ae97d6051d5dba55bee92a5d0e281":"/img/logos/Samsung-logo.svg","5c9270503a4038f7cc64562a558dff4641357cb2":"/img/logos/Shopify-logo.svg","4fbe45364870a0207dec98f37cba4498ebe3584d":"/img/logos/Sony-logo.svg","7183a9a9a909340a316dc2d49c464e8f7e39af49":"/img/logos/Twilio-logo.svg","e6b30fe0e023aff314be987f40dfd4dea6885620":"/img/logos/Uber-logo.svg","c6e22c95a0f9b7e819ab41d8fa052f743063a122":"/img/mobile-app-icon.svg","f398f27d2ef452babf70a6df38775347bc8dc62a":"/img/shapes.svg","17078fc7bada104ec816f1f394418d7888d9a138":"/img/shortcut-icon.png","46d15025c587225df25357fc247bdd61c0c85acb":"/img/stak-full.svg","b6c9e1991e982288d7beb05525666d776e68f3bf":"/img/stak-hurrah.svg","223dd82b52f2a079b848977348221cac5daeafec":"/img/Stak.svg","8d80cfb4d66d1ff7be000ba860904c38051e47e0":"/","fbe85641ca7b921daa4952f443cd3c8059c10258":"/manifest.json","23e431790a3bb55de82b7125f683f3399c9080eb":"/package.json","1de2c4bb47739e8fd27da6be8cc2f9e874054466":"/server.js"},"strategy":"changed","responseStrategy":"cache-first","version":"2018-11-9 22:52:12","name":"webpack-offline","pluginVersion":"5.0.5","relativePaths":false};
+var __wpo = {
+  "assets": {
+    "main": [
+      "/editor.worker.js",
+      "/json.worker.js",
+      "/html.worker.js",
+      "/css.worker.js",
+      "/typescript.worker.js",
+      "/0-cfbcdd9e9df0021c42b8.js",
+      "/main-31d3637a666f29a5432d.js",
+      "/vendors~main-0f0bc9cd0865bdd945bb.js",
+      "/3-f96a8bf7a2ad72ba7a93.js",
+      "/4-0f8899b4380deccfe698.js",
+      "/5-d69d5ba635245795f212.js",
+      "/6-e7c8e61a635b4bb57085.js",
+      "/7-d0700818d2c139a3812a.js",
+      "/8-39f8ce1e2aca8dbcf6d6.js",
+      "/9-df2bdf3064f35429abc6.js",
+      "/10-7a7f6d1390c03c6a6ab7.js",
+      "/11-771552f1b395741fa0aa.js",
+      "/12-f7f157dc7a6c32712c7e.js",
+      "/13-b84e1fa40bb1212dc656.js",
+      "/14-ce6d0294cf2c83bac3f2.js",
+      "/15-c97b54a98707a322d9ce.js",
+      "/16-acf18259047139ba72d0.js",
+      "/17-6ff5f2a45a641b63c709.js",
+      "/18-2b272bfc7ca6dcfcbd7a.js",
+      "/19-c296abfa226ba1dbc889.js",
+      "/20-41045ea41584c4e14842.js",
+      "/21-8a8b73ffefca3991dd0f.js",
+      "/22-278ebc9d3c18911c756b.js",
+      "/23-35184c92b8c4ecb3ca24.js",
+      "/24-7f3fff17d8dbc585c576.js",
+      "/25-402ec2dbf13d3eac12e3.js",
+      "/26-f8edcb65a7a539e3529a.js",
+      "/27-3c3fc842327c9289d030.js",
+      "/28-40ec567fec6576386a8b.js",
+      "/29-cc6bef4e801fbd9727b7.js",
+      "/30-230d748aad15b8586a37.js",
+      "/31-ec7f86f54fbe538fc67f.js",
+      "/32-ebe140178d0c52e19249.js",
+      "/33-0e753e19ac52e7651b9f.js",
+      "/34-03ab239150738c9d5071.js",
+      "/35-7f46064faf3ab8d60fdd.js",
+      "/36-8c00ee6e8a7b1b236d3c.js",
+      "/37-21f0aefd5c1e6edd1d38.js",
+      "/38-dfc367bb21e825f805ea.js",
+      "/39-414e2789aaaac02e3407.js",
+      "/40-6379865edea2e40e4af8.js",
+      "/41-83a0526754c173b9b3b1.js",
+      "/42-f22795f1f91502a6168d.js",
+      "/43-9509f4ea43dc917df953.js",
+      "/44-00f44fc1bb1f088f7ce4.js",
+      "/45-ee609d155e558ba0a335.js",
+      "/46-e139bfd37bdea936bbe6.js",
+      "/47-d2c71e4e5f0e5dfcd051.js",
+      "/48-63b92727ce60d373e102.js",
+      "/49-b3ed7008d9d008f6eee0.js",
+      "/50-8cac2ff78ca09de3a482.js",
+      "/51-e2e1d1f978d58a6ac1d6.js",
+      "/52-dfd38fbe392cbf0098ca.js",
+      "/53-576784112a62affb05ef.js",
+      "/54-2e745d8baaed41bf0020.js",
+      "/assets/IMG_4210.jpg",
+      "/assets/IMG_4245.jpg",
+      "/assets/small-en.vtt",
+      "/assets/small-fr.vtt",
+      "/assets/small.mp4",
+      "/assets/Wilderpeople_Ricky.jpg",
+      "/img/avatars/06IweXPF_200x200.jpg",
+      "/img/avatars/1nCCU4b3_200x200.jpg",
+      "/img/avatars/puppet_200x200.jpeg",
+      "/img/avatars/VQlHfV6m_200x200.jpg",
+      "/img/circles.svg",
+      "/img/do-all-things.svg",
+      "/img/double-grommet.svg",
+      "/img/icons/grommet-152x152.png",
+      "/img/icons/grommet-192x192.png",
+      "/img/icons/grommet-72x72.png",
+      "/img/icons/grommet-96x96.png",
+      "/img/logos/Aruba-logo.svg",
+      "/img/logos/Boeing-logo.svg",
+      "/img/logos/DXC-logo.svg",
+      "/img/logos/GE-logo.svg",
+      "/img/logos/GitHub-logo.svg",
+      "/img/logos/HP-logo.svg",
+      "/img/logos/HPE-logo.svg",
+      "/img/logos/IBM-logo.svg",
+      "/img/logos/MicroFocus-logo.svg",
+      "/img/logos/Netflix-logo.svg",
+      "/img/logos/Samsung-logo.svg",
+      "/img/logos/Shopify-logo.svg",
+      "/img/logos/Sony-logo.svg",
+      "/img/logos/Twilio-logo.svg",
+      "/img/logos/Uber-logo.svg",
+      "/img/mobile-app-icon.png",
+      "/img/mobile-app-icon.svg",
+      "/img/shapes.svg",
+      "/img/shortcut-icon.png",
+      "/img/stak-full.svg",
+      "/img/stak-hurrah.svg",
+      "/img/Stak.svg",
+      "/",
+      "/manifest.json",
+      "/package.json",
+      "/server.js"
+    ],
+    "additional": [],
+    "optional": []
+  },
+  "externals": [],
+  "hashesMap": {
+    "021edf2bb7e728cfd1cf37032268e815ccad25c2": "/editor.worker.js",
+    "b3e5ef2fd21c1686134772431aac0b6608d3253b": "/json.worker.js",
+    "2f4b075c524b201947dad9348b6e6315fa7f8da8": "/html.worker.js",
+    "629233e3859b14aa31113dd86130c2d74da13728": "/css.worker.js",
+    "fbcf003f163da2db25358343bd58d9e0a46ec98c": "/typescript.worker.js",
+    "f25e0d99f72d934734896d1d010338e0ec758bed": "/0-cfbcdd9e9df0021c42b8.js",
+    "5f7a8a2b6227d64f036d21a684c1f83170647032": "/main-31d3637a666f29a5432d.js",
+    "e3fddee812c219cf3eb815ad79081045f2d3d7a5": "/vendors~main-0f0bc9cd0865bdd945bb.js",
+    "1a8e57bdfe5e29b8c1683b22d97a68238ac23552": "/3-f96a8bf7a2ad72ba7a93.js",
+    "349237349d3ead4ed40f83243396f073bc2e9046": "/4-0f8899b4380deccfe698.js",
+    "a910ad3f4680d67113c91e99d620d56eaa569d7d": "/5-d69d5ba635245795f212.js",
+    "e83a6637b09a2c396517d379ae4cbe2e2e6cb29a": "/6-e7c8e61a635b4bb57085.js",
+    "161084fcd94d4c2e3dd2107227938699ed4ce1e0": "/7-d0700818d2c139a3812a.js",
+    "e3fc6682168eb89240fa6d826f7036a0e534e103": "/8-39f8ce1e2aca8dbcf6d6.js",
+    "e33d30e821dab7b1a349e0c4b9dd956446488059": "/9-df2bdf3064f35429abc6.js",
+    "02ce4d9b1c474a003b6aaa462856cda6252c7eb3": "/10-7a7f6d1390c03c6a6ab7.js",
+    "7f35bf697fdbb48a0460d6fd28b2024d08c456c0": "/11-771552f1b395741fa0aa.js",
+    "2c72646ca9fb2c819c562dbd552b6ef411eaf695": "/12-f7f157dc7a6c32712c7e.js",
+    "2e3821b7fbc6d69ce478d09f3a301b6524c6fac1": "/13-b84e1fa40bb1212dc656.js",
+    "e2254055e2fea800ad78184c77e9b65d08d00307": "/14-ce6d0294cf2c83bac3f2.js",
+    "ea76bcfb8b795f437ebbb701a664450c0c3c3518": "/15-c97b54a98707a322d9ce.js",
+    "0a674bb58b58dfc4f469086a3db3f7530a55974d": "/16-acf18259047139ba72d0.js",
+    "6337391785e5751beb9046e284347a6a3f798404": "/17-6ff5f2a45a641b63c709.js",
+    "eba503389824d631a82e195b3611a3579c437491": "/18-2b272bfc7ca6dcfcbd7a.js",
+    "a8a0008737da97e95376d42e8d69dd370bddbc23": "/19-c296abfa226ba1dbc889.js",
+    "9327dd1fa9b895b087b4920e9eca38cbd4def060": "/20-41045ea41584c4e14842.js",
+    "577b5f7313f47c2008deafe271125f250472c9dd": "/21-8a8b73ffefca3991dd0f.js",
+    "4a0994533e1d23bced20f78ec3e770b9cd36e13e": "/22-278ebc9d3c18911c756b.js",
+    "69bff82df594b81f7f646aa10ce2706b1e7cf682": "/23-35184c92b8c4ecb3ca24.js",
+    "d6d6b68167c43d83c5555218a516b4e6bdff3675": "/24-7f3fff17d8dbc585c576.js",
+    "6694ac82ce010882147ba1c34737e7e283211169": "/25-402ec2dbf13d3eac12e3.js",
+    "afc067b729b8304293e339984551208508416697": "/26-f8edcb65a7a539e3529a.js",
+    "cdb9255ca96c8d518b4ebd8ca95be8246b46d3da": "/27-3c3fc842327c9289d030.js",
+    "e1478e3505fe49f350d133a9372bf963cbf3b372": "/28-40ec567fec6576386a8b.js",
+    "1b977abc2105bec4f76c77576baf23c40dee79ca": "/29-cc6bef4e801fbd9727b7.js",
+    "75dc7ef4bebade1252ca9b364cf0fa827905e34e": "/30-230d748aad15b8586a37.js",
+    "f2acc86a196c4013cfea51cf605d17cfad4bb7e7": "/31-ec7f86f54fbe538fc67f.js",
+    "0353457c2b20023f3fc639f4d6fc49d6f07fca46": "/32-ebe140178d0c52e19249.js",
+    "20239cdb6b5a8ec9f323ff2c80dcfc536e82da00": "/33-0e753e19ac52e7651b9f.js",
+    "da4b24bd40026838898e45cf8de3f97371c9be28": "/34-03ab239150738c9d5071.js",
+    "b9d5b49f7b978961b421e05e69f4f6fc18c45857": "/35-7f46064faf3ab8d60fdd.js",
+    "826455d1b7b416a8963d07a92aee7ca2fb302967": "/36-8c00ee6e8a7b1b236d3c.js",
+    "f2eecc21bbdcf8bbe1b74dba43b83f7488fdb311": "/37-21f0aefd5c1e6edd1d38.js",
+    "ff1cd2f50561cdcd344e4decf1ce6b757c503d5b": "/38-dfc367bb21e825f805ea.js",
+    "738c1fa79f42cc8bfd84f7c83a1656b36a14b7e2": "/39-414e2789aaaac02e3407.js",
+    "8eb4725f0e5bac6d6a065f3ef2220c3909cc45a9": "/40-6379865edea2e40e4af8.js",
+    "649e86ae745a888a249c6cc5e44cff2926e538dc": "/41-83a0526754c173b9b3b1.js",
+    "c260c8f9095eb2dd1ee7bec5d7b2fd120c5a0e0f": "/42-f22795f1f91502a6168d.js",
+    "067c69115f3ecba785759ff825186c328f8bc590": "/43-9509f4ea43dc917df953.js",
+    "d65bcb34cda1b942a13fececccd99620e9203743": "/44-00f44fc1bb1f088f7ce4.js",
+    "7581d074bd9151b0f459536c19f0c4d686e1dd33": "/45-ee609d155e558ba0a335.js",
+    "fc81be7cbccb2cb12ac5f7b412e2cbfa7b953a58": "/46-e139bfd37bdea936bbe6.js",
+    "131261cebc1a7d7ff8cfbab85758e31e440d3c27": "/47-d2c71e4e5f0e5dfcd051.js",
+    "d44451db5e94f6180a5eff4214ee587be65f895c": "/48-63b92727ce60d373e102.js",
+    "1a7a874f72bfe89646d22faa659fc956636a00ae": "/49-b3ed7008d9d008f6eee0.js",
+    "a0e70b258ab774bb584303a4abdddaf23c967611": "/50-8cac2ff78ca09de3a482.js",
+    "709f492e551989593de79c00387af0c607ee4110": "/51-e2e1d1f978d58a6ac1d6.js",
+    "1e863b6f5dc99fa7f6f4f7efe3b9bd5dcb5c02d1": "/52-dfd38fbe392cbf0098ca.js",
+    "f885373e81bedb03db54200d86e9f3cb9b88a88c": "/53-576784112a62affb05ef.js",
+    "214ddb8519f27b79e632c3b6043b349b6bc47059": "/54-2e745d8baaed41bf0020.js",
+    "fb28b293bc43d453a0101e8be9295f0542e4f1aa": "/assets/IMG_4210.jpg",
+    "5b940442218c4ef0a0fe5f0ff058a5188620beba": "/assets/IMG_4245.jpg",
+    "397ef16b44d2b5df21fe736ccb109f8d34e51805": "/assets/small-en.vtt",
+    "0cde54b497a47e8bb667381feb4877ebdb95e157": "/assets/small-fr.vtt",
+    "5c5a07267317b166a218e5edb7667ccd2b5351be": "/assets/small.mp4",
+    "f851f7e0d6614aa2d401348338b4dc1f4aee2d54": "/assets/Wilderpeople_Ricky.jpg",
+    "e1aa3b88c7e9fe3d8739d33a4656913f62a715ec": "/img/avatars/06IweXPF_200x200.jpg",
+    "a155022b088dad12599f34b0c5b6ed927b428634": "/img/avatars/1nCCU4b3_200x200.jpg",
+    "a3c24e14906f4c36abd0dfc5533a5d232c14d308": "/img/avatars/puppet_200x200.jpeg",
+    "ec519b1cb865888b150a6739b325f37cd55c8d79": "/img/avatars/VQlHfV6m_200x200.jpg",
+    "85989fa46a07256e414c65562ce32232644905cc": "/img/circles.svg",
+    "89c75f58281cb11ebd6f752313af3b3aaff4126a": "/img/do-all-things.svg",
+    "b4952698a334372df8a6b6c67a3668ec86661dca": "/img/double-grommet.svg",
+    "0753720be79750d0cd67adeef961deb498ebbf23": "/img/mobile-app-icon.png",
+    "29561d4d656fbd70ee2076ad611cb120e5a6e19b": "/img/icons/grommet-192x192.png",
+    "406d5d24cda50f990e891d819efdf27ed8f44ce7": "/img/icons/grommet-72x72.png",
+    "6775d68fb6000b10ffb54d4398af9a17a5e71627": "/img/icons/grommet-96x96.png",
+    "2f0d633b4860564bc3bd30d4d34061bd9c016202": "/img/logos/Aruba-logo.svg",
+    "7161c023793171aaf91f22bc1f20e5086ec3832e": "/img/logos/Boeing-logo.svg",
+    "a20fded03a2bca1dd96a86a3ad8b5daeccf5f8f1": "/img/logos/DXC-logo.svg",
+    "b92bfa4462074ca141125b0e33f3e397b7f54ad5": "/img/logos/GE-logo.svg",
+    "d278813449e57997e2bdab41a1f3e5db08f02957": "/img/logos/GitHub-logo.svg",
+    "c72294a91ee396e3f9caa1d20e27b1f38d4ea255": "/img/logos/HP-logo.svg",
+    "8acc3e35a9b0c4a8346e1b0f561c39760ed91cb9": "/img/logos/HPE-logo.svg",
+    "d989b20f5530ad8ad2c585dcbe49d94d914f3551": "/img/logos/IBM-logo.svg",
+    "486c17ed7189fe6f9f1272c82a4e55dfa9bbb8a2": "/img/logos/MicroFocus-logo.svg",
+    "82045d4ab876b407747f07dbae9bbe22c1f5d8e0": "/img/logos/Netflix-logo.svg",
+    "8c5126843f3ae97d6051d5dba55bee92a5d0e281": "/img/logos/Samsung-logo.svg",
+    "5c9270503a4038f7cc64562a558dff4641357cb2": "/img/logos/Shopify-logo.svg",
+    "4fbe45364870a0207dec98f37cba4498ebe3584d": "/img/logos/Sony-logo.svg",
+    "7183a9a9a909340a316dc2d49c464e8f7e39af49": "/img/logos/Twilio-logo.svg",
+    "e6b30fe0e023aff314be987f40dfd4dea6885620": "/img/logos/Uber-logo.svg",
+    "c6e22c95a0f9b7e819ab41d8fa052f743063a122": "/img/mobile-app-icon.svg",
+    "f398f27d2ef452babf70a6df38775347bc8dc62a": "/img/shapes.svg",
+    "17078fc7bada104ec816f1f394418d7888d9a138": "/img/shortcut-icon.png",
+    "46d15025c587225df25357fc247bdd61c0c85acb": "/img/stak-full.svg",
+    "b6c9e1991e982288d7beb05525666d776e68f3bf": "/img/stak-hurrah.svg",
+    "223dd82b52f2a079b848977348221cac5daeafec": "/img/Stak.svg",
+    "4d9a8663c502841995cb943b687351f4bd4ca70c": "/",
+    "fbe85641ca7b921daa4952f443cd3c8059c10258": "/manifest.json",
+    "23e431790a3bb55de82b7125f683f3399c9080eb": "/package.json",
+    "1de2c4bb47739e8fd27da6be8cc2f9e874054466": "/server.js"
+  },
+  "strategy": "changed",
+  "responseStrategy": "cache-first",
+  "version": "2018-11-27 18:58:08",
+  "name": "webpack-offline",
+  "pluginVersion": "5.0.6",
+  "relativePaths": false
+};
 
-!function(e){var n={};function t(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,t),i.l=!0,i.exports}t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{enumerable:!0,get:r})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,n){if(1&n&&(e=t(e)),8&n)return e;if(4&n&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&n&&"string"!=typeof e)for(var i in e)t.d(r,i,function(n){return e[n]}.bind(null,i));return r},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},t.p="/",t(t.s=0)}([function(e,n,t){"use strict";var r,i,o;if(r=ExtendableEvent.prototype.waitUntil,i=FetchEvent.prototype.respondWith,o=new WeakMap,ExtendableEvent.prototype.waitUntil=function(e){var n=this,t=o.get(n);if(!t)return t=[Promise.resolve(e)],o.set(n,t),r.call(n,Promise.resolve().then(function e(){var r=t.length;return Promise.all(t.map(function(e){return e.catch(function(){})})).then(function(){return t.length!=r?e():(o.delete(n),Promise.all(t))})}));t.push(Promise.resolve(e))},FetchEvent.prototype.respondWith=function(e){return this.waitUntil(e),i.call(this,e)},void 0===a)var a=!1;function u(e,n){return caches.match(e,{cacheName:n}).then(function(t){return c(t)?t:s(t).then(function(t){return caches.open(n).then(function(n){return n.put(e,t)}).then(function(){return t})})}).catch(function(){})}function c(e){return!e||!e.redirected||!e.ok||"opaqueredirect"===e.type}function s(e){return c(e)?Promise.resolve(e):("body"in e?Promise.resolve(e.body):e.blob()).then(function(n){return new Response(n,{headers:e.headers,status:e.status})})}function f(e,n){n.forEach(function(e){})}!function(e,n){var t=n.cacheMaps,r=n.navigationPreload,i=e.strategy,o=e.responseStrategy,a=e.assets,c=e.hashesMap,l=e.externals,h=e.prefetchRequest||{credentials:"same-origin",mode:"cors"},d=e.name,p=e.version,v=d+":"+p,m=d+"$preload",g="__offline_webpack__data";Object.keys(a).forEach(function(e){a[e]=a[e].map(function(e){var n=new URL(e,location);return n.hash="",-1===l.indexOf(e)&&(n.search=""),n.toString()})}),c=Object.keys(c).reduce(function(e,n){var t=new URL(c[n],location);return t.search="",t.hash="",e[n]=t.toString(),e},{}),l=l.map(function(e){var n=new URL(e,location);return n.hash="",n.toString()});var y=[].concat(a.main,a.additional,a.optional);function w(n){var t=a[n];return caches.open(v).then(function(r){return q(r,t,{bust:e.version,request:h,failAll:"main"===n})}).then(function(){f(0,t)}).catch(function(e){throw e})}function P(n){return caches.keys().then(function(e){for(var n=e.length,t=void 0;n--&&0!==(t=e[n]).indexOf(d););if(t){var r=void 0;return caches.open(t).then(function(e){return r=e,e.match(new URL(g,location).toString())}).then(function(e){if(e)return Promise.all([r,r.keys(),e.json()])})}}).then(function(t){if(!t)return w(n);var r=t[0],i=t[1],o=t[2],u=o.hashmap,s=o.version;if(!o.hashmap||s===e.version)return w(n);var l=Object.keys(u).map(function(e){return u[e]}),d=i.map(function(e){var n=new URL(e.url);return n.search="",n.hash="",n.toString()}),p=a[n],m=[],g=p.filter(function(e){return-1===d.indexOf(e)||-1===l.indexOf(e)});Object.keys(c).forEach(function(e){var n=c[e];if(-1!==p.indexOf(n)&&-1===g.indexOf(n)&&-1===m.indexOf(n)){var t=u[e];t&&-1!==d.indexOf(t)?m.push([t,n]):g.push(n)}}),f(0,g),f(0,m);var y=Promise.all(m.map(function(e){return r.match(e[0]).then(function(n){return[e[1],n]})}));return caches.open(v).then(function(t){var r=y.then(function(e){return Promise.all(e.map(function(e){return t.put(e[0],e[1])}))});return Promise.all([r,q(t,g,{bust:e.version,request:h,failAll:"main"===n,deleteFirst:"main"!==n})])})})}function b(){return caches.keys().then(function(e){var n=e.map(function(e){if(0===e.indexOf(d)&&0!==e.indexOf(v))return caches.delete(e)});return Promise.all(n)})}function O(){return caches.open(v).then(function(n){var t=new Response(JSON.stringify({version:e.version,hashmap:c}));return n.put(new URL(g,location).toString(),t)})}self.addEventListener("install",function(e){var n=void 0;n="changed"===i?P("main"):w("main"),e.waitUntil(n)}),self.addEventListener("activate",function(e){var n=function(){if(!a.additional.length)return Promise.resolve();return("changed"===i?P("additional"):w("additional")).catch(function(e){})}();n=(n=(n=n.then(O)).then(b)).then(function(){if(self.clients&&self.clients.claim)return self.clients.claim()}),r&&self.registration.navigationPreload&&(n=Promise.all([n,self.registration.navigationPreload.enable()])),e.waitUntil(n)}),self.addEventListener("fetch",function(e){if("GET"===e.request.method&&("only-if-cached"!==e.request.cache||"same-origin"===e.request.mode)){var n=new URL(e.request.url);n.hash="";var i=n.toString();-1===l.indexOf(i)&&(n.search="",i=n.toString());var a=-1!==y.indexOf(i),c=i;if(!a){var s=function(e){var n=e.url,r=new URL(n),i=void 0;i=function(e){return"navigate"===e.mode||e.headers.get("Upgrade-Insecure-Requests")||-1!==(e.headers.get("Accept")||"").indexOf("text/html")}(e)?"navigate":r.origin===location.origin?"same-origin":"cross-origin";for(var o=0;o<t.length;o++){var a=t[o];if(a&&(!a.requestTypes||-1!==a.requestTypes.indexOf(i))){var u=void 0;if((u="function"==typeof a.match?a.match(r,e):n.replace(a.match,a.to))&&u!==n)return u}}}(e.request);s&&(c=s,a=!0)}if(a){var f=void 0;f="network-first"===o?function(e,n,t){return U(e).then(function(e){if(e.ok)return e;throw e}).catch(function(e){return u(t,v).then(function(n){if(n)return n;if(e instanceof Response)return e;throw e})})}(e,0,c):function(e,n,t){return function(e){if(r&&"function"==typeof r.map&&e.preloadResponse&&"navigate"===e.request.mode){var n=r.map(new URL(e.request.url),e.request);n&&function(e,n){var t=new URL(e,location),r=n.preloadResponse;x.set(r,{url:t,response:r});var i=function(){return x.has(r)},o=r.then(function(e){if(e&&i()){var n=e.clone();return caches.open(m).then(function(e){if(i())return e.put(t,n).then(function(){if(!i())return caches.open(m).then(function(e){return e.delete(t)})})})}});n.waitUntil(o)}(n,e)}}(e),u(t,v).then(function(r){return r||fetch(e.request).then(function(r){return r.ok?(t===n&&(i=r.clone(),o=caches.open(v).then(function(e){return e.put(n,i)}).then(function(){}),e.waitUntil(o)),r):r;var i,o})})}(e,i,c),e.respondWith(f)}else{if("navigate"===e.request.mode&&!0===r)return void e.respondWith(U(e));if(r){var h=function(e){var n=new URL(e.request.url);if(self.registration.navigationPreload&&r&&r.test&&r.test(n,e.request)){var t=function(e){if(x){var n=void 0,t=void 0;return x.forEach(function(r,i){r.url.href===e.href&&(n=r.response,t=i)}),n?(x.delete(t),n):void 0}}(n),i=e.request;return t?(e.waitUntil(caches.open(m).then(function(e){return e.delete(i)})),t):u(i,m).then(function(n){return n&&e.waitUntil(caches.open(m).then(function(e){return e.delete(i)})),n||fetch(e.request)})}}(e);if(h)return void e.respondWith(h)}}}}),self.addEventListener("message",function(e){var n=e.data;if(n)switch(n.action){case"skipWaiting":self.skipWaiting&&self.skipWaiting()}});var x=new Map;function q(e,n,t){var r=t.bust,i=!1!==t.failAll,o=!0===t.deleteFirst,a=t.request||{credentials:"omit",mode:"cors"},u=Promise.resolve();return o&&(u=Promise.all(n.map(function(n){return e.delete(n).catch(function(){})}))),Promise.all(n.map(function(e){var n,t,i;return r&&(t=r,i=-1!==(n=e).indexOf("?"),e=n+(i?"&":"?")+"__uncache="+encodeURIComponent(t)),fetch(e,a).then(s).then(function(e){return e.ok?{response:e}:{error:!0}},function(){return{error:!0}})})).then(function(t){return i&&t.some(function(e){return e.error})?Promise.reject(new Error("Wrong response status")):(i||(t=t.filter(function(e){return!e.error})),u.then(function(){var r=t.map(function(t,r){var i=t.response;return e.put(n[r],i)});return Promise.all(r)}))})}function U(e){return e.preloadResponse&&!0===r?e.preloadResponse.then(function(n){return n||fetch(e.request)}):fetch(e.request)}}(__wpo,{loaders:{},cacheMaps:[],navigationPreload:!1}),e.exports=t(1)},function(e,n){}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function () {
+  var waitUntil = ExtendableEvent.prototype.waitUntil;
+  var respondWith = FetchEvent.prototype.respondWith;
+  var promisesMap = new WeakMap();
+
+  ExtendableEvent.prototype.waitUntil = function (promise) {
+    var extendableEvent = this;
+    var promises = promisesMap.get(extendableEvent);
+
+    if (promises) {
+      promises.push(Promise.resolve(promise));
+      return;
+    }
+
+    promises = [Promise.resolve(promise)];
+    promisesMap.set(extendableEvent, promises);
+
+    // call original method
+    return waitUntil.call(extendableEvent, Promise.resolve().then(function processPromises() {
+      var len = promises.length;
+
+      // wait for all to settle
+      return Promise.all(promises.map(function (p) {
+        return p["catch"](function () {});
+      })).then(function () {
+        // have new items been added? If so, wait again
+        if (promises.length != len) return processPromises();
+        // we're done!
+        promisesMap["delete"](extendableEvent);
+        // reject if one of the promises rejected
+        return Promise.all(promises);
+      });
+    }));
+  };
+
+  FetchEvent.prototype.respondWith = function (promise) {
+    this.waitUntil(promise);
+    return respondWith.call(this, promise);
+  };
+})();;
+        'use strict';
+
+if (typeof DEBUG === 'undefined') {
+  var DEBUG = false;
+}
+
+function WebpackServiceWorker(params, helpers) {
+  var cacheMaps = helpers.cacheMaps;
+  // navigationPreload: true, { map: (URL) => URL, test: (URL) => boolean }
+  var navigationPreload = helpers.navigationPreload;
+
+  // (update)strategy: changed, all
+  var strategy = params.strategy;
+  // responseStrategy: cache-first, network-first
+  var responseStrategy = params.responseStrategy;
+
+  var assets = params.assets;
+
+  var hashesMap = params.hashesMap;
+  var externals = params.externals;
+
+  var prefetchRequest = params.prefetchRequest || {
+    credentials: 'same-origin',
+    mode: 'cors'
+  };
+
+  var CACHE_PREFIX = params.name;
+  var CACHE_TAG = params.version;
+  var CACHE_NAME = CACHE_PREFIX + ':' + CACHE_TAG;
+
+  var PRELOAD_CACHE_NAME = CACHE_PREFIX + '$preload';
+  var STORED_DATA_KEY = '__offline_webpack__data';
+
+  mapAssets();
+
+  var allAssets = [].concat(assets.main, assets.additional, assets.optional);
+
+  self.addEventListener('install', function (event) {
+    console.log('[SW]:', 'Install event');
+
+    var installing = undefined;
+
+    if (strategy === 'changed') {
+      installing = cacheChanged('main');
+    } else {
+      installing = cacheAssets('main');
+    }
+
+    event.waitUntil(installing);
+  });
+
+  self.addEventListener('activate', function (event) {
+    console.log('[SW]:', 'Activate event');
+
+    var activation = cacheAdditional();
+
+    // Delete all assets which name starts with CACHE_PREFIX and
+    // is not current cache (CACHE_NAME)
+    activation = activation.then(storeCacheData);
+    activation = activation.then(deleteObsolete);
+    activation = activation.then(function () {
+      if (self.clients && self.clients.claim) {
+        return self.clients.claim();
+      }
+    });
+
+    if (navigationPreload && self.registration.navigationPreload) {
+      activation = Promise.all([activation, self.registration.navigationPreload.enable()]);
+    }
+
+    event.waitUntil(activation);
+  });
+
+  function cacheAdditional() {
+    if (!assets.additional.length) {
+      return Promise.resolve();
+    }
+
+    if (DEBUG) {
+      console.log('[SW]:', 'Caching additional');
+    }
+
+    var operation = undefined;
+
+    if (strategy === 'changed') {
+      operation = cacheChanged('additional');
+    } else {
+      operation = cacheAssets('additional');
+    }
+
+    // Ignore fail of `additional` cache section
+    return operation['catch'](function (e) {
+      console.error('[SW]:', 'Cache section `additional` failed to load');
+    });
+  }
+
+  function cacheAssets(section) {
+    var batch = assets[section];
+
+    return caches.open(CACHE_NAME).then(function (cache) {
+      return addAllNormalized(cache, batch, {
+        bust: params.version,
+        request: prefetchRequest,
+        failAll: section === 'main'
+      });
+    }).then(function () {
+      logGroup('Cached assets: ' + section, batch);
+    })['catch'](function (e) {
+      console.error(e);
+      throw e;
+    });
+  }
+
+  function cacheChanged(section) {
+    return getLastCache().then(function (args) {
+      if (!args) {
+        return cacheAssets(section);
+      }
+
+      var lastCache = args[0];
+      var lastKeys = args[1];
+      var lastData = args[2];
+
+      var lastMap = lastData.hashmap;
+      var lastVersion = lastData.version;
+
+      if (!lastData.hashmap || lastVersion === params.version) {
+        return cacheAssets(section);
+      }
+
+      var lastHashedAssets = Object.keys(lastMap).map(function (hash) {
+        return lastMap[hash];
+      });
+
+      var lastUrls = lastKeys.map(function (req) {
+        var url = new URL(req.url);
+        url.search = '';
+        url.hash = '';
+
+        return url.toString();
+      });
+
+      var sectionAssets = assets[section];
+      var moved = [];
+      var changed = sectionAssets.filter(function (url) {
+        if (lastUrls.indexOf(url) === -1 || lastHashedAssets.indexOf(url) === -1) {
+          return true;
+        }
+
+        return false;
+      });
+
+      Object.keys(hashesMap).forEach(function (hash) {
+        var asset = hashesMap[hash];
+
+        // Return if not in sectionAssets or in changed or moved array
+        if (sectionAssets.indexOf(asset) === -1 || changed.indexOf(asset) !== -1 || moved.indexOf(asset) !== -1) return;
+
+        var lastAsset = lastMap[hash];
+
+        if (lastAsset && lastUrls.indexOf(lastAsset) !== -1) {
+          moved.push([lastAsset, asset]);
+        } else {
+          changed.push(asset);
+        }
+      });
+
+      logGroup('Changed assets: ' + section, changed);
+      logGroup('Moved assets: ' + section, moved);
+
+      var movedResponses = Promise.all(moved.map(function (pair) {
+        return lastCache.match(pair[0]).then(function (response) {
+          return [pair[1], response];
+        });
+      }));
+
+      return caches.open(CACHE_NAME).then(function (cache) {
+        var move = movedResponses.then(function (responses) {
+          return Promise.all(responses.map(function (pair) {
+            return cache.put(pair[0], pair[1]);
+          }));
+        });
+
+        return Promise.all([move, addAllNormalized(cache, changed, {
+          bust: params.version,
+          request: prefetchRequest,
+          failAll: section === 'main',
+          deleteFirst: section !== 'main'
+        })]);
+      });
+    });
+  }
+
+  function deleteObsolete() {
+    return caches.keys().then(function (keys) {
+      var all = keys.map(function (key) {
+        if (key.indexOf(CACHE_PREFIX) !== 0 || key.indexOf(CACHE_NAME) === 0) return;
+
+        console.log('[SW]:', 'Delete cache:', key);
+        return caches['delete'](key);
+      });
+
+      return Promise.all(all);
+    });
+  }
+
+  function getLastCache() {
+    return caches.keys().then(function (keys) {
+      var index = keys.length;
+      var key = undefined;
+
+      while (index--) {
+        key = keys[index];
+
+        if (key.indexOf(CACHE_PREFIX) === 0) {
+          break;
+        }
+      }
+
+      if (!key) return;
+
+      var cache = undefined;
+
+      return caches.open(key).then(function (_cache) {
+        cache = _cache;
+        return _cache.match(new URL(STORED_DATA_KEY, location).toString());
+      }).then(function (response) {
+        if (!response) return;
+
+        return Promise.all([cache, cache.keys(), response.json()]);
+      });
+    });
+  }
+
+  function storeCacheData() {
+    return caches.open(CACHE_NAME).then(function (cache) {
+      var data = new Response(JSON.stringify({
+        version: params.version,
+        hashmap: hashesMap
+      }));
+
+      return cache.put(new URL(STORED_DATA_KEY, location).toString(), data);
+    });
+  }
+
+  self.addEventListener('fetch', function (event) {
+    // Handle only GET requests
+    if (event.request.method !== 'GET') {
+      return;
+    }
+
+    // This prevents some weird issue with Chrome DevTools and 'only-if-cached'
+    // Fixes issue #385, also ref to:
+    // - https://github.com/paulirish/caltrainschedule.io/issues/49
+    // - https://bugs.chromium.org/p/chromium/issues/detail?id=823392
+    if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
+      return;
+    }
+
+    var url = new URL(event.request.url);
+    url.hash = '';
+
+    var urlString = url.toString();
+
+    // Not external, so search part of the URL should be stripped,
+    // if it's external URL, the search part should be kept
+    if (externals.indexOf(urlString) === -1) {
+      url.search = '';
+      urlString = url.toString();
+    }
+
+    var assetMatches = allAssets.indexOf(urlString) !== -1;
+    var cacheUrl = urlString;
+
+    if (!assetMatches) {
+      var cacheRewrite = matchCacheMap(event.request);
+
+      if (cacheRewrite) {
+        cacheUrl = cacheRewrite;
+        assetMatches = true;
+      }
+    }
+
+    if (!assetMatches) {
+      // Use request.mode === 'navigate' instead of isNavigateRequest
+      // because everything what supports navigationPreload supports
+      // 'navigate' request.mode
+      if (event.request.mode === 'navigate') {
+        // Requesting with fetchWithPreload().
+        // Preload is used only if navigationPreload is enabled and
+        // navigationPreload mapping is not used.
+        if (navigationPreload === true) {
+          event.respondWith(fetchWithPreload(event));
+          return;
+        }
+      }
+
+      // Something else, positive, but not `true`
+      if (navigationPreload) {
+        var preloadedResponse = retrivePreloadedResponse(event);
+
+        if (preloadedResponse) {
+          event.respondWith(preloadedResponse);
+          return;
+        }
+      }
+
+      // Logic exists here if no cache match
+      return;
+    }
+
+    // Cache handling/storing/fetching starts here
+    var resource = undefined;
+
+    if (responseStrategy === 'network-first') {
+      resource = networkFirstResponse(event, urlString, cacheUrl);
+    }
+    // 'cache-first' otherwise
+    // (responseStrategy has been validated before)
+    else {
+        resource = cacheFirstResponse(event, urlString, cacheUrl);
+      }
+
+    event.respondWith(resource);
+  });
+
+  self.addEventListener('message', function (e) {
+    var data = e.data;
+    if (!data) return;
+
+    switch (data.action) {
+      case 'skipWaiting':
+        {
+          if (self.skipWaiting) self.skipWaiting();
+        }break;
+    }
+  });
+
+  function cacheFirstResponse(event, urlString, cacheUrl) {
+    handleNavigationPreload(event);
+
+    return cachesMatch(cacheUrl, CACHE_NAME).then(function (response) {
+      if (response) {
+        if (DEBUG) {
+          console.log('[SW]:', 'URL [' + cacheUrl + '](' + urlString + ') from cache');
+        }
+
+        return response;
+      }
+
+      // Load and cache known assets
+      var fetching = fetch(event.request).then(function (response) {
+        if (!response.ok) {
+          if (DEBUG) {
+            console.log('[SW]:', 'URL [' + urlString + '] wrong response: [' + response.status + '] ' + response.type);
+          }
+
+          return response;
+        }
+
+        if (DEBUG) {
+          console.log('[SW]:', 'URL [' + urlString + '] from network');
+        }
+
+        if (cacheUrl === urlString) {
+          (function () {
+            var responseClone = response.clone();
+            var storing = caches.open(CACHE_NAME).then(function (cache) {
+              return cache.put(urlString, responseClone);
+            }).then(function () {
+              console.log('[SW]:', 'Cache asset: ' + urlString);
+            });
+
+            event.waitUntil(storing);
+          })();
+        }
+
+        return response;
+      });
+
+      return fetching;
+    });
+  }
+
+  function networkFirstResponse(event, urlString, cacheUrl) {
+    return fetchWithPreload(event).then(function (response) {
+      if (response.ok) {
+        if (DEBUG) {
+          console.log('[SW]:', 'URL [' + urlString + '] from network');
+        }
+
+        return response;
+      }
+
+      // Throw to reach the code in the catch below
+      throw response;
+    })
+    // This needs to be in a catch() and not just in the then() above
+    // cause if your network is down, the fetch() will throw
+    ['catch'](function (erroredResponse) {
+      if (DEBUG) {
+        console.log('[SW]:', 'URL [' + urlString + '] from cache if possible');
+      }
+
+      return cachesMatch(cacheUrl, CACHE_NAME).then(function (response) {
+        if (response) {
+          return response;
+        }
+
+        if (erroredResponse instanceof Response) {
+          return erroredResponse;
+        }
+
+        // Not a response at this point, some other error
+        throw erroredResponse;
+        // return Response.error();
+      });
+    });
+  }
+
+  function handleNavigationPreload(event) {
+    if (navigationPreload && typeof navigationPreload.map === 'function' &&
+    // Use request.mode === 'navigate' instead of isNavigateRequest
+    // because everything what supports navigationPreload supports
+    // 'navigate' request.mode
+    event.preloadResponse && event.request.mode === 'navigate') {
+      var mapped = navigationPreload.map(new URL(event.request.url), event.request);
+
+      if (mapped) {
+        storePreloadedResponse(mapped, event);
+      }
+    }
+  }
+
+  // Temporary in-memory store for faster access
+  var navigationPreloadStore = new Map();
+
+  function storePreloadedResponse(_url, event) {
+    var url = new URL(_url, location);
+    var preloadResponsePromise = event.preloadResponse;
+
+    navigationPreloadStore.set(preloadResponsePromise, {
+      url: url,
+      response: preloadResponsePromise
+    });
+
+    var isSamePreload = function isSamePreload() {
+      return navigationPreloadStore.has(preloadResponsePromise);
+    };
+
+    var storing = preloadResponsePromise.then(function (res) {
+      // Return if preload isn't enabled or hasn't happened
+      if (!res) return;
+
+      // If navigationPreloadStore already consumed
+      // or navigationPreloadStore already contains another preload,
+      // then do not store anything and return
+      if (!isSamePreload()) {
+        return;
+      }
+
+      var clone = res.clone();
+
+      // Storing the preload response for later consume (hasn't yet been consumed)
+      return caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+        if (!isSamePreload()) return;
+
+        return cache.put(url, clone).then(function () {
+          if (!isSamePreload()) {
+            return caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+              return cache['delete'](url);
+            });
+          }
+        });
+      });
+    });
+
+    event.waitUntil(storing);
+  }
+
+  function retriveInMemoryPreloadedResponse(url) {
+    if (!navigationPreloadStore) {
+      return;
+    }
+
+    var foundResponse = undefined;
+    var foundKey = undefined;
+
+    navigationPreloadStore.forEach(function (store, key) {
+      if (store.url.href === url.href) {
+        foundResponse = store.response;
+        foundKey = key;
+      }
+    });
+
+    if (foundResponse) {
+      navigationPreloadStore['delete'](foundKey);
+      return foundResponse;
+    }
+  }
+
+  function retrivePreloadedResponse(event) {
+    var url = new URL(event.request.url);
+
+    if (self.registration.navigationPreload && navigationPreload && navigationPreload.test && navigationPreload.test(url, event.request)) {} else {
+      return;
+    }
+
+    var fromMemory = retriveInMemoryPreloadedResponse(url);
+    var request = event.request;
+
+    if (fromMemory) {
+      event.waitUntil(caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+        return cache['delete'](request);
+      }));
+
+      return fromMemory;
+    }
+
+    return cachesMatch(request, PRELOAD_CACHE_NAME).then(function (response) {
+      if (response) {
+        event.waitUntil(caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+          return cache['delete'](request);
+        }));
+      }
+
+      return response || fetch(event.request);
+    });
+  }
+
+  function mapAssets() {
+    Object.keys(assets).forEach(function (key) {
+      assets[key] = assets[key].map(function (path) {
+        var url = new URL(path, location);
+
+        url.hash = '';
+
+        if (externals.indexOf(path) === -1) {
+          url.search = '';
+        }
+
+        return url.toString();
+      });
+    });
+
+    hashesMap = Object.keys(hashesMap).reduce(function (result, hash) {
+      var url = new URL(hashesMap[hash], location);
+      url.search = '';
+      url.hash = '';
+
+      result[hash] = url.toString();
+      return result;
+    }, {});
+
+    externals = externals.map(function (path) {
+      var url = new URL(path, location);
+      url.hash = '';
+
+      return url.toString();
+    });
+  }
+
+  function addAllNormalized(cache, requests, options) {
+    var bustValue = options.bust;
+    var failAll = options.failAll !== false;
+    var deleteFirst = options.deleteFirst === true;
+    var requestInit = options.request || {
+      credentials: 'omit',
+      mode: 'cors'
+    };
+
+    var deleting = Promise.resolve();
+
+    if (deleteFirst) {
+      deleting = Promise.all(requests.map(function (request) {
+        return cache['delete'](request)['catch'](function () {});
+      }));
+    }
+
+    return Promise.all(requests.map(function (request) {
+      if (bustValue) {
+        request = applyCacheBust(request, bustValue);
+      }
+
+      return fetch(request, requestInit).then(fixRedirectedResponse).then(function (response) {
+        if (!response.ok) {
+          return { error: true };
+        }
+
+        return { response: response };
+      }, function () {
+        return { error: true };
+      });
+    })).then(function (responses) {
+      if (failAll && responses.some(function (data) {
+        return data.error;
+      })) {
+        return Promise.reject(new Error('Wrong response status'));
+      }
+
+      if (!failAll) {
+        responses = responses.filter(function (data) {
+          return !data.error;
+        });
+      }
+
+      return deleting.then(function () {
+        var addAll = responses.map(function (_ref, i) {
+          var response = _ref.response;
+
+          return cache.put(requests[i], response);
+        });
+
+        return Promise.all(addAll);
+      });
+    });
+  }
+
+  function matchCacheMap(request) {
+    var urlString = request.url;
+    var url = new URL(urlString);
+
+    var requestType = undefined;
+
+    if (isNavigateRequest(request)) {
+      requestType = 'navigate';
+    } else if (url.origin === location.origin) {
+      requestType = 'same-origin';
+    } else {
+      requestType = 'cross-origin';
+    }
+
+    for (var i = 0; i < cacheMaps.length; i++) {
+      var map = cacheMaps[i];
+
+      if (!map) continue;
+      if (map.requestTypes && map.requestTypes.indexOf(requestType) === -1) {
+        continue;
+      }
+
+      var newString = undefined;
+
+      if (typeof map.match === 'function') {
+        newString = map.match(url, request);
+      } else {
+        newString = urlString.replace(map.match, map.to);
+      }
+
+      if (newString && newString !== urlString) {
+        return newString;
+      }
+    }
+  }
+
+  function fetchWithPreload(event) {
+    if (!event.preloadResponse || navigationPreload !== true) {
+      return fetch(event.request);
+    }
+
+    return event.preloadResponse.then(function (response) {
+      return response || fetch(event.request);
+    });
+  }
+}
+
+function cachesMatch(request, cacheName) {
+  return caches.match(request, {
+    cacheName: cacheName
+  }).then(function (response) {
+    if (isNotRedirectedResponse(response)) {
+      return response;
+    }
+
+    // Fix already cached redirected responses
+    return fixRedirectedResponse(response).then(function (fixedResponse) {
+      return caches.open(cacheName).then(function (cache) {
+        return cache.put(request, fixedResponse);
+      }).then(function () {
+        return fixedResponse;
+      });
+    });
+  })
+  // Return void if error happened (cache not found)
+  ['catch'](function () {});
+}
+
+function applyCacheBust(asset, key) {
+  var hasQuery = asset.indexOf('?') !== -1;
+  return asset + (hasQuery ? '&' : '?') + '__uncache=' + encodeURIComponent(key);
+}
+
+function isNavigateRequest(request) {
+  return request.mode === 'navigate' || request.headers.get('Upgrade-Insecure-Requests') || (request.headers.get('Accept') || '').indexOf('text/html') !== -1;
+}
+
+function isNotRedirectedResponse(response) {
+  return !response || !response.redirected || !response.ok || response.type === 'opaqueredirect';
+}
+
+// Based on https://github.com/GoogleChrome/sw-precache/pull/241/files#diff-3ee9060dc7a312c6a822cac63a8c630bR85
+function fixRedirectedResponse(response) {
+  if (isNotRedirectedResponse(response)) {
+    return Promise.resolve(response);
+  }
+
+  var body = 'body' in response ? Promise.resolve(response.body) : response.blob();
+
+  return body.then(function (data) {
+    return new Response(data, {
+      headers: response.headers,
+      status: response.status
+    });
+  });
+}
+
+function copyObject(original) {
+  return Object.keys(original).reduce(function (result, key) {
+    result[key] = original[key];
+    return result;
+  }, {});
+}
+
+function logGroup(title, assets) {
+  console.groupCollapsed('[SW]:', title);
+
+  assets.forEach(function (asset) {
+    console.log('Asset:', asset);
+  });
+
+  console.groupEnd();
+}
+        WebpackServiceWorker(__wpo, {
+loaders: {},
+cacheMaps: [],
+navigationPreload: false,
+});
+        module.exports = __webpack_require__(1)
+      
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+
+
+/***/ })
+/******/ ]);
