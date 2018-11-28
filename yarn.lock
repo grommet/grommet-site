@@ -4516,6 +4516,33 @@ grommet-icons@3.1.0:
   resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-3.1.0.tgz#8bba65157c96aeb87bd6bdf7c162a1aba7005db1"
   integrity sha512-o7cek/FxvfedW8lZ0bHOVLxWXw89erAtpUtNTORXGRdkdPTKutARH+2csjLHE40zJ2AhqTTcgYCW4euKuq5bRQ==
 
+grommet-theme-aruba@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-aruba/-/grommet-theme-aruba-0.1.0.tgz#379179c633270fa2117da9e8bcb3c55d047cbafd"
+  integrity sha512-j5dZhtmAXsQI3cCoyRwT9o6FkwY6NX77T4kii7Hmtue6LeVng03RYEQRfIBT/yhVgkd4PDfA7Q5GoeqfIDXD/A==
+
+grommet-theme-dxc@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-dxc/-/grommet-theme-dxc-0.1.0.tgz#413c73e073ebf9137ff1ef31f04c0b279896a1f0"
+  integrity sha512-7FoKZuZ5NHuTwYXMc0Ax8MQsjf+YJunrernGoj+MCWzLolqEmjrYoekm1C+KwLLxndJsAawDIBIXsQwTOfc36g==
+
+grommet-theme-hp@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.0.tgz#061404a47596490ab0667a3b372d908f44eeae9b"
+  integrity sha512-hLgvH2Zl8z1MKYV9WqV9ug/h5xcDl1s1Xogvz/RoLHr09EpnaX2RiItiwI94Q5a6QMIBPcx1WXVH3L2r2c3giw==
+
+grommet-theme-hpe@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-0.4.0.tgz#55e3c3379e08cf0846883be652ae06dff741644d"
+  integrity sha512-J8b3m2nUITm3nk5nRqM2mJXXVmSFi8LsVUDCYaC68ywKMGEwE335OpptbWLCFQ+1tcqWjE7+sTgSjbaPRJ7yyg==
+
+grommet-theme-v1@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-v1/-/grommet-theme-v1-0.1.0.tgz#5ecb9ffda2deedd10083b964f46845507b96aba0"
+  integrity sha512-mjG7atfZdKz/hDfh3SRWQRAOVIWdpwd4MFz4DhDuVIW3CXUk/BkaRl39OsmjsTgiHQF6ji1zRapNTl2/N+AEIA==
+  dependencies:
+    polished "^2.3.0"
+
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.0.1"
   resolved "https://github.com/grommet/grommet/tarball/stable#18cd337466a51e1e13f153abd20593a4ae566110"
@@ -6563,7 +6590,7 @@ pluralize@^7.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
   integrity sha512-ARhBOdzS3e41FbkW/XWrTEtukqqLoK5+Z/4UeDaLuSW+39JPeFgs4gCGqsrJHVZX0fUrx//4OF0K1CUGwlIFow==
 
-polished@^2.2.0:
+polished@^2.2.0, polished@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/polished/-/polished-2.3.0.tgz#66c8b66bc666e95d9d12d760dac9df758aed8f8e"
   integrity sha512-G2yD9LhJy5HBuU+Im5qe70ubaJI/ZTTOIJO6GRMwJ2WSoAiPzlm8+LjAXMnm9/K0E0NumRVHvQu2HHPKQSYQjw==
