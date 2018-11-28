@@ -751,10 +751,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@emotion/cache@10.0.0-beta.13":
-  version "10.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.0-beta.13.tgz#0ddf86b93bf3ef49f8043660204c7e09084a994e"
-  integrity sha512-gVYuef+06gyTYaH+pKlIbaAkfhyjjrYDrHIjAylV0pFOKWGx0vtjMgLTgIdis3U3zmDRicNzDiQE7nM/2vW19A==
+"@emotion/cache@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.0.tgz#e22eadcb770de4131ec707c84207e9e1ce210413"
+  integrity sha512-1/sT6GNyvWmxCtJek8ZDV+b+a+NMDx8/61UTnnF3rqrTY7bLTjw+fmXO7WgUIH0owuWKxza/J/FfAWC/RU4G7A==
   dependencies:
     "@emotion/sheet" "0.9.2"
     "@emotion/stylis" "0.8.3"
@@ -782,24 +782,24 @@
     "@emotion/utils" "^0.8.2"
 
 "@emotion/core@^10.0.0-beta.6":
-  version "10.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.0-beta.13.tgz#30ea2092f15e3ad445ee687a5831f154f05d01d3"
-  integrity sha512-qQ3U/jU1+vsKlyzsHU7D4S7wHru0VKobRaScmjKXNhHP9gPHzgY2cGb+VzbZZ2/2/S2eBFovK2G+PNPMzQyEyg==
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.0.tgz#4ec44fdafce2d111f286862388cbd4c3c7502d40"
+  integrity sha512-VnOWGQ40F2ESyPwEOarUXoG1ts43dQOceXIZZIL4jbjJdzsycOuazODB9RpW/jjY8NnsO8Nb+QnVzHSjz2a9Rg==
   dependencies:
-    "@emotion/cache" "10.0.0-beta.13"
-    "@emotion/css" "10.0.0-beta.13"
+    "@emotion/cache" "10.0.0"
+    "@emotion/css" "10.0.0"
     "@emotion/serialize" "0.11.0"
     "@emotion/sheet" "0.9.2"
     "@emotion/utils" "0.11.1"
 
-"@emotion/css@10.0.0-beta.13":
-  version "10.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@emotion/css/-/css-10.0.0-beta.13.tgz#6b902f98a03475c15981830f0d2935d8eab19d0d"
-  integrity sha512-Q1RsBg0eHOlzIo1ww3/+2zVxpJ48I3bwtKaS5gaAIivys3vBR6gBTQZ3Fw0u9pTdkZSZB5tAEG50jqHEOYTq8Q==
+"@emotion/css@10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@emotion/css/-/css-10.0.0.tgz#aee814e8edee4ae9fa8e682abf2eb30f22cdb840"
+  integrity sha512-XvPKeXSnLhxJkMTKXZqd605rXRnUht/ncelbyhV0+MuojhLihH+/3oV4m5ltqhvFcnNpDrtqS2QjuMhUpmXxIw==
   dependencies:
     "@emotion/serialize" "0.11.0"
     "@emotion/utils" "0.11.1"
-    babel-plugin-emotion "10.0.0-beta.13"
+    babel-plugin-emotion "10.0.0"
 
 "@emotion/css@^0.9.8":
   version "0.9.8"
@@ -1863,10 +1863,10 @@ babel-messages@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-emotion@10.0.0-beta.13:
-  version "10.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.0-beta.13.tgz#f4ee501cdc02ab05ce8d68eb369200d8ed51420e"
-  integrity sha512-9mNJwOFcv6DGPSqQjPhYB19bSQcyqsTeBYCUunofcjOWLtfMYtOuh/cAhVMy/DJRqsgTOL6qnPrk/8DuFzhs6A==
+babel-plugin-emotion@10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.0.tgz#ceb177a64d5ccba3c28d7de4a0697d0f3a66315f"
+  integrity sha512-O0ykSwaJQVHuZcAd0/TuMbG6QzuArGheL9XeEoQfgBeFlcyrGEj/2JexsCk4iMMiykxW7hfulm0zKy864PWOSw==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@emotion/hash" "0.7.1"
@@ -4545,7 +4545,7 @@ grommet-theme-v1@^0.1.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.0.1"
-  resolved "https://github.com/grommet/grommet/tarball/stable#18cd337466a51e1e13f153abd20593a4ae566110"
+  resolved "https://github.com/grommet/grommet/tarball/stable#c43113f952760f81abb58a9da078efc7ce74be35"
   dependencies:
     css "^2.2.3"
     markdown-to-jsx "^6.6.6"
@@ -7034,9 +7034,9 @@ react-fuzzy@^0.5.2:
     prop-types "^15.5.9"
 
 react-ga@^2.5.3:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.5.5.tgz#b809c41d5964125fb4ce7bf480abe76d845c4f89"
-  integrity sha512-qqbv0nzSa33T1HWJuJWwNb2kn2BjJq35MJtHwiV2RGC5/OzBXM3qoH95bzl830Nj8ncUE42YhChGt+y/WojSVQ==
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.5.6.tgz#5a2e2fa78ae298e5b0a4498210eeec631ef1b562"
+  integrity sha512-g04dz6zrbdHRxVaURPWT3RUbjLflh74sS6dCuhGeZupj7ii+UEt9lwTjALb2ST2w+7wAmzG1YqYlNX4yvRXe1g==
 
 react-inspector@^2.3.0:
   version "2.3.0"
