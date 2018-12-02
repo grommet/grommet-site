@@ -98,7 +98,7 @@ render(<App />);
             />
             <Anchor
               href="https://github.com/grommet/grommet-starter-existing-app"
-              label={<Text size="large">I have an Exisiting Codebase</Text>}
+              label={<Text size="large">I have an Existing Codebase</Text>}
               icon={<Next />}
               reverse
               target="_blank"
