@@ -10,6 +10,6 @@ const desc = doc(ThemeContext.Extend).toJSON();
 
 export default () => (
   <Page>
-    <Doc name='ThemeContext.Extend' desc={desc} />
+    <Doc name="ThemeContext .Extend" desc={desc} />
   </Page>
 );
