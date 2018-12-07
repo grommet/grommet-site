@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
-    "grommet-icons": "3.2.1",
+    "grommet-icons": "^4.0.0",
+    "grommet-styles": "^0.2.0",
     "grommet-theme-aruba": "^0.1.0",
     "grommet-theme-dxc": "^0.1.0",
     "grommet-theme-hp": "^0.1.0",
