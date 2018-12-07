@@ -45,7 +45,7 @@ export default () => (
       <Builder phases={12} interval={400}>
         <BuilderBox
           basis="1/3"
-          background="neutral-1"
+          background="neutral-2"
           pad="medium"
           gap="medium"
           phases={[
@@ -60,7 +60,7 @@ export default () => (
           ]}
         >
           <BuilderBox
-            background="neutral-2"
+            background="accent-3"
             pad={{ vertical: 'small' }}
             round
             phases={[
@@ -75,7 +75,7 @@ export default () => (
             ]}
           />
           <BuilderBox
-            background="neutral-2"
+            background="accent-3"
             pad={{ vertical: 'small' }}
             round
             phases={[
@@ -90,7 +90,7 @@ export default () => (
             ]}
           />
           <BuilderBox
-            background="neutral-2"
+            background="accent-3"
             pad={{ vertical: 'small' }}
             round
             phases={[
@@ -108,7 +108,7 @@ export default () => (
         <BuilderBox
           basis="2/3"
           background="light-2"
-          border={{ side: 'top', size: 'large', color: 'neutral-1' }}
+          border={{ side: 'top', size: 'large', color: 'neutral-2' }}
           pad="medium"
           gap="medium"
           phases={[

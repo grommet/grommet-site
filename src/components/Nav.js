@@ -28,7 +28,7 @@ export default class extends Component {
               <Box
                 pad={{ vertical: 'small', horizontal: 'medium' }}
                 round="xlarge"
-                background="accent-2"
+                background="accent-1"
               >
                 <Text size="large">components</Text>
               </Box>

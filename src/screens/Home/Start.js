@@ -49,9 +49,10 @@ export default class Home extends Component {
   state = {
     code: `const App = props => (
   <Grommet theme={grommet}>
-    <Box align="center" background="brand">
+    <Box align="center" background="neutral-2">
       <Button
-        label="hello world" 
+        label="hello world"
+        primary 
         onClick={() => alert('hello, world')}
       />
     </Box>
@@ -132,12 +133,11 @@ render(<App />);
           </Box>
         </Section>
 
-        <Section background="neutral-1" pad="none">
+        <Section background="brand" pad="none">
           <Box
             alignSelf="center"
-            background="brand"
+            background="neutral-2"
             width="large"
-            elevation="small"
             pad="medium"
             round={{ corner: 'bottom' }}
             margin={{ bottom: 'xlarge' }}
@@ -166,7 +166,6 @@ render(<App />);
               href="//github.com/grommet/design-kit"
               label={<Text size="large">Grommet Design Kit</Text>}
               icon={<Next />}
-              color="accent-2"
               reverse
               target="_blank"
             />
@@ -174,7 +173,6 @@ render(<App />);
               href="//grommet.io/grommet-icons"
               label={<Text size="large">Grommet Icons</Text>}
               icon={<Next />}
-              color="accent-2"
               reverse
               target="_blank"
             />
@@ -185,7 +183,7 @@ render(<App />);
             width="large"
             height="small"
             round={{ corner: 'top' }}
-            background={{ color: '#2C176D' }}
+            background="neutral-2"
             margin={{ top: 'xlarge' }}
           >
             <Box alignSelf="start" direction="row" margin="medium" gap="small">
@@ -193,7 +191,7 @@ render(<App />);
               <Dot color="#ffff00" />
               <Dot color="#00ff00" />
             </Box>
-            <Heading level={1} color="neutral-1" margin="large">
+            <Heading level={1} color="brand" margin="large">
               Hello World!
             </Heading>
           </Box>
