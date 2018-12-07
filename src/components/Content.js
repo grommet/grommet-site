@@ -33,6 +33,7 @@ import InfiniteScroll from '../screens/InfiniteScroll';
 import Keyboard from '../screens/Keyboard';
 import Layer from '../screens/Layer';
 import Markdown from '../screens/Markdown';
+import MaskedInput from '../screens/MaskedInput';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
 import Paragraph from '../screens/Paragraph';
@@ -138,6 +139,7 @@ export default () => (
     <Route exact path="/keyboard" component={Keyboard} />
     <Route exact path="/layer" component={Layer} />
     <Route exact path="/markdown" component={Markdown} />
+    <Route exact path="/maskedinput" component={MaskedInput} />
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
     <Route exact path="/radiobutton" component={RadioButton} />
