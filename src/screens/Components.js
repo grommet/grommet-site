@@ -12,6 +12,7 @@ import {
   Grid,
   Heading,
   Image,
+  MaskedInput,
   Menu,
   Meter,
   Paragraph,
@@ -336,6 +337,23 @@ export default class Components extends Component {
         <Section name="Input" index={4}>
           <Item name="CheckBox" path="/checkbox" center>
             <CheckBox checked onChange={() => {}} />
+          </Item>
+          <Item
+            name="MaskedInput"
+            path="/maskedinput"
+            center
+            pad={{ horizontal: 'xlarge' }}
+          >
+            <MaskedInput
+              mask={[
+                { placeholder: 'hh' },
+                { fixed: ':' },
+                { placeholder: 'mm' },
+                { fixed: ' ' },
+                { placeholder: 'ap' },
+              ]}
+              disabled
+            />
           </Item>
           <Item name="RadioButton" path="/radiobutton" center>
             <RadioButton name="radio" checked onChange={() => {}} />

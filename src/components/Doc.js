@@ -167,7 +167,12 @@ const Syntax = ({ syntax, format, defaultValue, leaf }) => {
       );
     });
   }
-  if (format !== 'function' && syntax[0] !== '(' && syntax[0] !== '<') {
+  if (
+    format !== 'function' &&
+    syntax[0] !== '(' &&
+    syntax[0] !== '<' &&
+    syntax[0] !== '['
+  ) {
     content = stringify(syntax, { maxLength: 40 });
     content = <code className="language-json">{content}</code>;
   }
