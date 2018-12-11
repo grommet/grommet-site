@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Text } from 'grommet';
-import { doc } from 'grommet/components/Text/doc';
+import { doc, themeDoc } from 'grommet/components/Text/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -12,31 +12,34 @@ const desc = doc(Text).toJSON();
 export default () => (
   <Page>
     <Doc
-      name='Text'
+      name="Text"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
         color: 'status-critical',
       }}
       examples={{
-        color: <Text color='status-critical'>status-critical</Text>,
+        color: <Text color="status-critical">status-critical</Text>,
         size: (
-          <Box direction='row' justify='end' wrap>
-            {['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].map(size => (
-              <Box key={size} margin='xsmall'>
-                <Text size={size}>A</Text>
-              </Box>
-            ))}
+          <Box direction="row" justify="end" wrap>
+            {['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].map(
+              size => (
+                <Box key={size} margin="xsmall">
+                  <Text size={size}>A</Text>
+                </Box>
+              ),
+            )}
           </Box>
         ),
         truncate: (
-          <Box direction='row' justify='end'>
-            <Box basis='xsmall'>
+          <Box direction="row" justify="end">
+            <Box basis="xsmall">
               <Text truncate>Lorem ipsum</Text>
             </Box>
           </Box>
         ),
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );
