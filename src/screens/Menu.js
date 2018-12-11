@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Menu } from 'grommet';
-import { doc } from 'grommet/components/Menu/doc';
+import { doc, themeDoc } from 'grommet/components/Menu/doc';
 
 import { More } from 'grommet-icons';
 
@@ -20,7 +20,7 @@ function onClick(event) {
 export default () => (
   <Page>
     <Doc
-      name='Menu'
+      name="Menu"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
@@ -45,21 +45,21 @@ export default () => (
         label: ['Actions', '<Box>...</Box>'],
         messages: [{ openMenu: 'Open Menu', closeMenu: 'Close Menu' }],
       }}
-      example={(
+      example={
         <Menu
-          label='Menu'
+          label="Menu"
           items={[
             { label: 'First Action', onClick },
             { label: 'Second Action', onClick },
           ]}
         />
-      )}
+      }
       examples={{
         icon: (
           <Menu
             dropAlign={{ top: 'top', right: 'right' }}
-            background='neutral-4'
-            icon={<More color='brand' />}
+            background="neutral-4"
+            icon={<More color="brand" />}
             items={[
               { label: 'First Action', onClick },
               { label: 'Second Action', onClick },
@@ -68,7 +68,7 @@ export default () => (
         ),
         label: (
           <Menu
-            label='Menu'
+            label="Menu"
             items={[
               { label: 'First Action', onClick },
               { label: 'Second Action', onClick },
@@ -76,6 +76,7 @@ export default () => (
           />
         ),
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );

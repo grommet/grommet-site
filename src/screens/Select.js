@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Select } from 'grommet';
-import { doc } from 'grommet/components/Select/doc';
+import { doc, themeDoc } from 'grommet/components/Select/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -11,22 +11,22 @@ const desc = doc(Select).toJSON();
 const stringOptions = ['small', 'medium', 'large', 'xlarge', 'huge'];
 
 export default class SelectDoc extends Component {
-  state = { size: stringOptions[0] }
+  state = { size: stringOptions[0] };
 
   render() {
     const { size } = this.state;
     return (
       <Page>
         <Doc
-          name='Select'
+          name="Select"
           desc={desc}
-          example={(
+          example={
             <Select
               options={stringOptions}
               value={size}
               onChange={({ option }) => this.setState({ size: option })}
             />
-          )}
+          }
           examples={{
             dropAlign: (
               <Select
@@ -37,7 +37,7 @@ export default class SelectDoc extends Component {
             ),
             dropBackground: (
               <Select
-                dropBackground='dark-3'
+                dropBackground="dark-3"
                 options={stringOptions}
                 onChange={({ option }) => this.setState({ size: option })}
               />
@@ -51,7 +51,7 @@ export default class SelectDoc extends Component {
             ),
             placeholder: (
               <Select
-                placeholder='Choose one'
+                placeholder="Choose one"
                 options={stringOptions}
                 onChange={({ option }) => this.setState({ size: option })}
               />
@@ -67,7 +67,7 @@ export default class SelectDoc extends Component {
             searchPlaceholder: (
               <Select
                 options={stringOptions}
-                searchPlaceholder='Type something here'
+                searchPlaceholder="Type something here"
                 onSearch={() => {}}
                 onChange={({ option }) => this.setState({ size: option })}
               />
@@ -80,6 +80,7 @@ export default class SelectDoc extends Component {
               />
             ),
           }}
+          themeDoc={themeDoc}
         />
       </Page>
     );
