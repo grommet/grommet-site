@@ -4,6 +4,7 @@ import { doc, themeDoc } from 'grommet/components/Box/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Box).toJSON();
 
@@ -368,4 +369,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const BoxItem = props => (
+  <Item {...props}>
+    <Box flex border={{ color: 'brand', size: 'xlarge' }} />
+  </Item>
 );

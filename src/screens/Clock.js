@@ -6,6 +6,7 @@ import { doc } from 'grommet/components/Clock/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Clock).toJSON();
 
@@ -79,4 +80,10 @@ export default () => (
       }}
     />
   </Page>
+);
+
+export const ClockItem = props => (
+  <Item {...props} center>
+    <Clock size="large" type="digital" />
+  </Item>
 );

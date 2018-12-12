@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/TextInput/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(TextInput).toJSON();
 
@@ -99,3 +100,9 @@ class TextInputDoc extends Component {
 }
 
 export default TextInputDoc;
+
+export const TextInputItem = props => (
+  <Item {...props} center pad={{ horizontal: 'xlarge' }}>
+    <TextInput placeholder="Placeholder" disabled />
+  </Item>
+);

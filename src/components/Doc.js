@@ -2,8 +2,11 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
 import { Box, Anchor, Heading, Markdown, Text, ThemeContext } from 'grommet';
+import { Link as LinkIcon, Next, Previous } from 'grommet-icons';
 import Header from './Header';
+import RoutedButton from './RoutedButton';
 import { genericSyntaxes } from '../utils/props';
+import { nameToPath, nextComponent, previousComponent } from '../structure';
 
 // parseFormat() parses the react-desc property format string into
 // an object that makes it easier for us to style the content.
@@ -195,41 +198,60 @@ Syntax.defaultProps = {
   leaf: false,
 };
 
-const Prop = ({ property, syntax, first }) => (
-  <Box
-    border="bottom"
-    gap="small"
-    pad={{ top: !first ? 'medium' : undefined, bottom: 'medium' }}
-  >
-    <Heading level={3} margin="none">
-      {property.name}
-    </Heading>
-    <Box direction="row-responsive" justify="between" align="start">
-      <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
-        <Markdown>
-          {property.description.replace('<', '&lt;').replace('>', '&gt;')}
-        </Markdown>
+class Prop extends Component {
+  state = {};
+
+  render() {
+    const { property, syntax, first } = this.props;
+    const { over } = this.state;
+    return (
+      <Box
+        id={property.name}
+        border="bottom"
+        gap="small"
+        pad={{ top: !first ? 'medium' : undefined, bottom: 'medium' }}
+        onMouseOver={() => this.setState({ over: true })}
+        onMouseOut={() => this.setState({ over: false })}
+        onFocus={() => this.setState({ over: true })}
+        onBlur={() => this.setState({ over: false })}
+      >
+        <Box direction="row" justify="between" align="center">
+          <Heading level={3} margin="none">
+            {property.name}
+          </Heading>
+          <Anchor
+            href={`#${property.name}`}
+            icon={<LinkIcon color={over ? 'light-4' : 'white'} />}
+          />
+        </Box>
+        <Box direction="row-responsive" justify="between" align="start">
+          <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
+            <Markdown>
+              {property.description.replace('<', '&lt;').replace('>', '&gt;')}
+            </Markdown>
+          </Box>
+          <Box flex align="start">
+            <Text color="neutral-1">
+              {(syntax && (
+                <Syntax
+                  syntax={syntax}
+                  format={property.format}
+                  defaultValue={property.defaultValue}
+                />
+              )) ||
+                property.type || (
+                  <Value
+                    value={parseFormat(property.format)}
+                    defaultValue={property.defaultValue}
+                  />
+                )}
+            </Text>
+          </Box>
+        </Box>
       </Box>
-      <Box flex align="start">
-        <Text color="neutral-1">
-          {(syntax && (
-            <Syntax
-              syntax={syntax}
-              format={property.format}
-              defaultValue={property.defaultValue}
-            />
-          )) ||
-            property.type || (
-              <Value
-                value={parseFormat(property.format)}
-                defaultValue={property.defaultValue}
-              />
-            )}
-        </Text>
-      </Box>
-    </Box>
-  </Box>
-);
+    );
+  }
+}
 
 Prop.propTypes = {
   property: PropTypes.shape({}).isRequired,
@@ -250,6 +272,7 @@ const themeValue = (theme, path) => {
   return node;
 };
 
+// eslint-disable-next-line react/no-multi-comp
 class Doc extends Component {
   state = {};
 
@@ -270,44 +293,78 @@ class Doc extends Component {
       text,
       themeDoc,
     } = this.props;
+
+    const nextName = nextComponent(name);
+    const nextLink = nextName ? (
+      <RoutedButton path={nameToPath(nextName)}>
+        <Box pad={{ vertical: 'medium' }}>
+          <Next />
+        </Box>
+      </RoutedButton>
+    ) : (
+      <Box width="xxsmall" />
+    );
+
+    const previousName = previousComponent(name);
+    const previousLink = previousName ? (
+      <RoutedButton path={nameToPath(previousName)}>
+        <Box pad={{ vertical: 'medium' }}>
+          <Previous />
+        </Box>
+      </RoutedButton>
+    ) : (
+      <Box width="xxsmall" />
+    );
+
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
-        {example && (
-          <Box
-            alignSelf="center"
-            align="center"
-            pad="medium"
-            elevation="large"
-            margin={{ bottom: 'large' }}
-          >
-            {example}
-          </Box>
-        )}
-        <Header label={name} summary={(desc && desc.description) || text} />
-
-        {desc && desc.availableAt && (
-          <Box margin={{ vertical: 'medium' }}>
-            {Array.isArray(desc.availableAt) ? (
-              <Box alignSelf="center" direction="row-responsive" gap="large">
-                {desc.availableAt.map(at => (
-                  <Anchor
-                    key={at.url}
-                    href={at.url}
-                    target="_blank"
-                    label={<Text size="large">{at.label}</Text>}
-                  />
-                ))}
-              </Box>
-            ) : (
-              <Anchor
+        <Box direction="row" justify="between">
+          {previousLink}
+          <Box align="center">
+            {example && (
+              <Box
                 alignSelf="center"
-                href={desc.availableAt.url}
-                target="_blank"
-                label={<Text size="large">{desc.availableAt.label}</Text>}
-              />
+                align="center"
+                pad="medium"
+                elevation="large"
+                margin={{ bottom: 'large' }}
+              >
+                {example}
+              </Box>
+            )}
+
+            <Header label={name} summary={(desc && desc.description) || text} />
+
+            {desc && desc.availableAt && (
+              <Box margin={{ vertical: 'medium' }}>
+                {Array.isArray(desc.availableAt) ? (
+                  <Box
+                    alignSelf="center"
+                    direction="row-responsive"
+                    gap="large"
+                  >
+                    {desc.availableAt.map(at => (
+                      <Anchor
+                        key={at.url}
+                        href={at.url}
+                        target="_blank"
+                        label={<Text size="large">{at.label}</Text>}
+                      />
+                    ))}
+                  </Box>
+                ) : (
+                  <Anchor
+                    alignSelf="center"
+                    href={desc.availableAt.url}
+                    target="_blank"
+                    label={<Text size="large">{desc.availableAt.label}</Text>}
+                  />
+                )}
+              </Box>
             )}
           </Box>
-        )}
+          {nextLink}
+        </Box>
 
         {desc && (
           <Box

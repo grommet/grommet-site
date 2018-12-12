@@ -6,13 +6,14 @@ import { doc } from 'grommet/components/Heading/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Heading).toJSON();
 
 export default () => (
   <Page>
     <Doc
-      name='Heading'
+      name="Heading"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
@@ -22,33 +23,41 @@ export default () => (
       }}
       examples={{
         color: (
-          <Heading margin='none' color='accent-2'>A</Heading>
+          <Heading margin="none" color="accent-2">
+            A
+          </Heading>
         ),
         level: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {[1, 2, 3, 4].map(level => (
-              <Box key={level} margin='xsmall'>
-                <Heading level={level} margin='none'>A</Heading>
+              <Box key={level} margin="xsmall">
+                <Heading level={level} margin="none">
+                  A
+                </Heading>
               </Box>
             ))}
           </Box>
         ),
         margin: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {['none', 'small', 'medium', 'large'].map(margin => (
-              <Box key={margin} margin='xsmall'>
-                <Heading level={2} margin={margin}>A</Heading>
+              <Box key={margin} margin="xsmall">
+                <Heading level={2} margin={margin}>
+                  A
+                </Heading>
               </Box>
             ))}
           </Box>
         ),
         size: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {[1, 2, 3, 4].map(level => (
-              <Box key={level} direction='row' justify='end'>
+              <Box key={level} direction="row" justify="end">
                 {['small', 'medium', 'large'].map(size => (
-                  <Box key={size} margin='xsmall'>
-                    <Heading level={level} margin='none' size={size}>A</Heading>
+                  <Box key={size} margin="xsmall">
+                    <Heading level={level} margin="none" size={size}>
+                      A
+                    </Heading>
                   </Box>
                 ))}
               </Box>
@@ -58,4 +67,12 @@ export default () => (
       }}
     />
   </Page>
+);
+
+export const HeadingItem = props => (
+  <Item {...props} center>
+    <Heading level={2} margin="none">
+      Chapter 1
+    </Heading>
+  </Item>
 );

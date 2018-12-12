@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/MaskedInput/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(MaskedInput).toJSON();
 
@@ -83,3 +84,18 @@ class MaskedInputDoc extends Component {
 }
 
 export default MaskedInputDoc;
+
+export const MaskedInputItem = props => (
+  <Item {...props} center pad={{ horizontal: 'xlarge' }}>
+    <MaskedInput
+      mask={[
+        { placeholder: 'hh' },
+        { fixed: ':' },
+        { placeholder: 'mm' },
+        { fixed: ' ' },
+        { placeholder: 'ap' },
+      ]}
+      disabled
+    />
+  </Item>
+);

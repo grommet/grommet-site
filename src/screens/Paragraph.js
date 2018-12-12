@@ -6,6 +6,7 @@ import { doc, themeDoc } from 'grommet/components/Paragraph/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Paragraph).toJSON();
 
@@ -34,4 +35,13 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const ParagraphItem = props => (
+  <Item {...props} center>
+    <Paragraph>
+      OASIS was much more than a game or an entertainment platform.
+      {" It's "}a new way of life.
+    </Paragraph>
+  </Item>
 );

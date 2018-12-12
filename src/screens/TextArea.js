@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/TextArea/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(TextArea).toJSON();
 
@@ -22,4 +23,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const TextAreaItem = props => (
+  <Item {...props} center pad={{ horizontal: 'xlarge' }}>
+    <TextArea placeholder="Placeholder" disabled />
+  </Item>
 );

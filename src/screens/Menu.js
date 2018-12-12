@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Menu } from 'grommet';
+import { Box, Menu } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Menu/doc';
 
 import { More } from 'grommet-icons';
@@ -8,6 +8,7 @@ import { More } from 'grommet-icons';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Menu).toJSON();
 
@@ -79,4 +80,16 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const MenuItem = props => (
+  <Item {...props} center>
+    <Box flex={false}>
+      <Menu tabIndex="-1" size="large" label="i'm a menu" items={[]} />
+      <Box
+        elevation="medium"
+        pad={{ horizontal: 'xlarge', vertical: 'large' }}
+      />
+    </Box>
+  </Item>
 );

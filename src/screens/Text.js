@@ -6,6 +6,7 @@ import { doc, themeDoc } from 'grommet/components/Text/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Text).toJSON();
 
@@ -42,4 +43,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const TextItem = props => (
+  <Item {...props} center>
+    <Text size="large">non-sematic text</Text>
+  </Item>
 );

@@ -5,6 +5,7 @@ import { doc } from 'grommet/components/Markdown/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Markdown).toJSON();
 
@@ -16,14 +17,12 @@ Favorite thing, [link](https://www.instagram.com/explore/tags/grommetux/)
 
 export default () => (
   <Page>
-    <Doc
-      name='Markdown'
-      desc={desc}
-      example={(
-        <Markdown>
-          {CONTENT}
-        </Markdown>
-      )}
-    />
+    <Doc name="Markdown" desc={desc} example={<Markdown>{CONTENT}</Markdown>} />
   </Page>
+);
+
+export const MarkdownItem = props => (
+  <Item {...props} center>
+    <code>grommet **heart**&#39;s markdown</code>
+  </Item>
 );

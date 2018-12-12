@@ -8,6 +8,7 @@ import { Close, Edit } from 'grommet-icons';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Button).toJSON();
 
@@ -44,4 +45,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const ButtonItem = props => (
+  <Item {...props} center>
+    <Button label="i'm a button" primary onClick={() => {}} />
+  </Item>
 );

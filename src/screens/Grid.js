@@ -6,6 +6,7 @@ import { doc } from 'grommet/components/Grid/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Grid).toJSON();
 
@@ -120,4 +121,14 @@ export default () => (
       }
     />
   </Page>
+);
+
+export const GridItem = props => (
+  <Item {...props}>
+    <Box flex direction="row">
+      <Box basis="1/4" background="brand" margin={{ right: 'small' }} />
+      <Box flex background="brand" />
+      <Box basis="1/4" background="brand" margin={{ left: 'small' }} />
+    </Box>
+  </Item>
 );
