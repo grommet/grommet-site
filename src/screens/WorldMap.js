@@ -14,7 +14,7 @@ const WorldMapDoc = () => (
       name="WorldMap"
       desc={desc}
       example={
-        <Box flex justify="center" align="center">
+        <Box height="small">
           <WorldMap
             color="neutral-1"
             continents={[

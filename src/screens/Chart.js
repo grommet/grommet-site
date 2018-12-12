@@ -8,7 +8,7 @@ import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Chart).toJSON();
-const Dummy = () => (<div />);
+const Dummy = () => <div />;
 const descCalcs = docCalcs(Dummy).toJSON();
 
 const BOUNDS = [[0, 7], [0, 100]];
@@ -38,7 +38,7 @@ const VALUES2 = [
 export default () => (
   <Page>
     <Doc
-      name='Chart'
+      name="Chart"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
@@ -77,14 +77,15 @@ export default () => (
           ],
         ],
       }}
+      example={<Chart bounds={BOUNDS} values={VALUES} aria-label="chart" />}
       examples={{
         color: (
           <Chart
-            color='brand'
+            color="brand"
             bounds={BOUNDS}
             values={VALUES}
             size={{ width: 'small', height: 'xsmall' }}
-            aria-label='colored chart'
+            aria-label="colored chart"
           />
         ),
         onClick: (
@@ -95,10 +96,10 @@ export default () => (
                   type={type}
                   round
                   bounds={BOUNDS}
-                  onClick={() => (
+                  onClick={() =>
                     // eslint-disable-next-line no-alert
                     alert(`Clicked ${type}`)
-                  )}
+                  }
                   values={VALUES}
                   size={{ width: 'small', height: 'xsmall' }}
                   aria-label={`${type} rounded chart`}
@@ -188,6 +189,6 @@ export default () => (
       }}
     />
 
-    <Doc name='calcs' nav={false} desc={descCalcs} />
+    <Doc name="calcs" nav={false} desc={descCalcs} />
   </Page>
 );
