@@ -21,6 +21,7 @@ export default () => (
         color: 'neutral-1',
         level: [1, 2, 3, 4, 5, 6],
       }}
+      example={<Heading margin="none">Chapter 1</Heading>}
       examples={{
         color: (
           <Heading margin="none" color="accent-2">

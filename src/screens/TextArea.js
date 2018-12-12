@@ -14,6 +14,7 @@ export default () => (
     <Doc
       name="TextArea"
       desc={desc}
+      example={<TextArea value="Things get typed here" />}
       examples={{
         focusIndicator: <TextArea value="A B C" plain focusIndicator />,
         placeholder: <TextArea placeholder="placeholder" />,

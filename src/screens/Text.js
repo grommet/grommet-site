@@ -19,6 +19,7 @@ export default () => (
         ...genericSyntaxes,
         color: 'status-critical',
       }}
+      example={<Text>simple text</Text>}
       examples={{
         color: <Text color="status-critical">status-critical</Text>,
         size: (

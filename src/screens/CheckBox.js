@@ -20,6 +20,7 @@ export default () => (
         name: 'a-dom-name',
         onChange: '() => {}',
       }}
+      example={<CheckBox checked label="interested?" />}
       examples={{
         checked: <CheckBox label="A" checked onChange={() => {}} />,
         disabled: <CheckBox label="A" disabled />,

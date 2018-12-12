@@ -23,6 +23,16 @@ export default () => (
         messages: [{ tabContents: 'Tab Contents' }],
         onActive: '(1) => {}',
       }}
+      example={
+        <Tabs>
+          <Tab title="tab 1">
+            <Box pad="medium">Tab 1 content</Box>
+          </Tab>
+          <Tab title="tab 2">
+            <Box pad="medium">Tab 2 content</Box>
+          </Tab>
+        </Tabs>
+      }
     />
 
     <Doc

@@ -14,6 +14,11 @@ export default () => (
     <Doc
       name="FormField"
       desc={desc}
+      example={
+        <FormField label="Field label">
+          <TextInput placeholder="type here" />
+        </FormField>
+      }
       examples={{
         border: (
           <Box gap="small">

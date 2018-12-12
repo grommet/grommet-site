@@ -24,6 +24,7 @@ class TextInputDoc extends Component {
         <Doc
           name="TextInput"
           desc={desc}
+          example={<TextInput value="Things get typed here" />}
           examples={{
             placeholder: <TextInput placeholder="abc" />,
             plain: <TextInput value="A" plain />,

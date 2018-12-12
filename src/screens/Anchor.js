@@ -25,11 +25,7 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      example={
-        <Box flex justify="center" align="center">
-          <Anchor href="#" primary label="For Example" />
-        </Box>
-      }
+      example={<Anchor href="#" primary label="For Example" />}
       examples={{
         icon: <Anchor href="#" icon={<Edit />} />,
         label: <Anchor href="#" label="Edit" />,

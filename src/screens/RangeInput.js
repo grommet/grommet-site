@@ -21,6 +21,7 @@ class RangeInputDoc extends Component {
         <Doc
           name="RangeInput"
           desc={desc}
+          example={<RangeInput />}
           examples={{
             value: (
               <RangeInput

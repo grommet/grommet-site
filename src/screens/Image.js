@@ -15,6 +15,14 @@ export default () => (
     <Doc
       name="Image"
       desc={desc}
+      example={
+        <Box height="small">
+          <Image
+            fit="cover"
+            src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+          />
+        </Box>
+      }
       examples={{
         fit: (
           <Box direction="row" justify="end" wrap>

@@ -22,6 +22,7 @@ export default () => (
         onClickOutside: '() => {}',
         onEsc: '() => {}',
       }}
+      example={<Box pad="large" />}
     />
   </Page>
 );
