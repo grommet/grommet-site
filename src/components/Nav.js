@@ -59,14 +59,12 @@ export default class extends Component {
                             />
                           )}
                         </Heading>
-                        {section.components
-                          ? section.components.map(component => (
-                              <RoutedAnchor
-                                path={nameToPath(component)}
-                                label={component}
-                              />
-                            ))
-                          : null}
+                        {(section.components || []).map(component => (
+                          <RoutedAnchor
+                            path={nameToPath(component)}
+                            label={component}
+                          />
+                        ))}
                       </Box>
                     ))}
                   </Box>
