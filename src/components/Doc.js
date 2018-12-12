@@ -368,12 +368,21 @@ class Doc extends Component {
 
         {desc && (
           <Box
+            id="props"
             margin={{ vertical: 'large' }}
             border={{ side: 'top', size: 'medium', color: 'brand' }}
           >
-            <Heading level={2} margin={{ top: 'medium', bottom: 'xlarge' }}>
-              Props
-            </Heading>
+            <Box
+              direction="row"
+              justify="between"
+              align="center"
+              margin={{ top: 'medium', bottom: 'xlarge' }}
+            >
+              <Heading level={2} margin="none">
+                Props
+              </Heading>
+              <Anchor href="#props" icon={<LinkIcon color="light-4" />} />
+            </Box>
             {desc.properties ? (
               desc.properties
                 .sort((a, b) => {
@@ -398,12 +407,21 @@ class Doc extends Component {
 
         {themeDoc && (
           <Box
+            id="theme"
             margin={{ vertical: 'large' }}
             border={{ side: 'top', size: 'medium', color: 'brand' }}
           >
-            <Heading level={2} margin={{ top: 'medium', bottom: 'xlarge' }}>
-              Theme
-            </Heading>
+            <Box
+              direction="row"
+              justify="between"
+              align="center"
+              margin={{ top: 'medium', bottom: 'xlarge' }}
+            >
+              <Heading level={2} margin="none">
+                Theme
+              </Heading>
+              <Anchor href="#theme" icon={<LinkIcon color="light-4" />} />
+            </Box>
             <ThemeContext.Consumer>
               {theme =>
                 Object.keys(themeDoc).map((key, index) => {
