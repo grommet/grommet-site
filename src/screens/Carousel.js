@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { Box, Carousel, Image } from 'grommet';
+import { Next, Previous } from 'grommet-icons';
 import { doc } from 'grommet/components/Carousel/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Carousel).toJSON();
 
@@ -27,4 +29,35 @@ export default () => (
       }
     />
   </Page>
+);
+
+export const CarouselItem = props => (
+  <Item {...props} center pad="none">
+    <Box fill direction="row" justify="between" align="center" gap="small">
+      <Box
+        height="xsmall"
+        background="white"
+        elevation="medium"
+        justify="center"
+        pad="small"
+      >
+        <Previous size="medium" color="brand" />
+      </Box>
+      <Box
+        width="medium"
+        height="xsmall"
+        background="white"
+        elevation="medium"
+      />
+      <Box
+        height="xsmall"
+        background="white"
+        elevation="medium"
+        justify="center"
+        pad="small"
+      >
+        <Next size="medium" color="brand" />
+      </Box>
+    </Box>
+  </Item>
 );

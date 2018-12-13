@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/WorldMap/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(WorldMap).toJSON();
 
@@ -48,3 +49,9 @@ const WorldMapDoc = () => (
 );
 
 export default WorldMapDoc;
+
+export const WorldMapItem = props => (
+  <Item {...props} center pad="medium">
+    <WorldMap color="brand" />
+  </Item>
+);

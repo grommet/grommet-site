@@ -1,53 +1,56 @@
 import React from 'react';
 
 import { Box, Video } from 'grommet';
+import { CirclePlay } from 'grommet-icons';
 import { doc } from 'grommet/components/Video/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Video).toJSON();
 
 const CONTENT = [
-  <source key='video' src='/assets/small.mp4' type='video/mp4' />,
+  <source key="video" src="/assets/small.mp4" type="video/mp4" />,
   <track
-    key='cc'
-    label='English'
-    kind='subtitles'
-    srcLang='en'
-    src='/assets/small-en.vtt'
+    key="cc"
+    label="English"
+    kind="subtitles"
+    srcLang="en"
+    src="/assets/small-en.vtt"
     default
   />,
 ];
 
-const CONTENT2 = [...CONTENT,
+const CONTENT2 = [
+  ...CONTENT,
   <track
-    key='cc2'
-    label='French'
-    kind='subtitles'
-    srcLang='fr'
-    src='/assets/small-fr.vtt'
+    key="cc2"
+    label="French"
+    kind="subtitles"
+    srcLang="fr"
+    src="/assets/small-fr.vtt"
   />,
 ];
 
 export default () => (
   <Page>
     <Doc
-      name='Video'
+      name="Video"
       desc={desc}
-      example={(
+      example={
         <Box>
-          <Video controls='over' fit='cover'>
+          <Video controls="over" fit="cover">
             {CONTENT2}
           </Video>
         </Box>
-      )}
+      }
       examples={{
         controls: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {[false, 'over', 'below'].map(controls => (
-              <Box key={controls} basis='small' margin='xsmall'>
-                <Video controls={controls} fit='cover'>
+              <Box key={controls} basis="small" margin="xsmall">
+                <Video controls={controls} fit="cover">
                   {CONTENT2}
                 </Video>
               </Box>
@@ -55,16 +58,16 @@ export default () => (
           </Box>
         ),
         fit: (
-          <Box direction='row' justify='end' wrap>
+          <Box direction="row" justify="end" wrap>
             {['contain', 'cover'].map(fit => (
               <Box
                 key={fit}
-                basis='small'
-                margin='xsmall'
+                basis="small"
+                margin="xsmall"
                 background={{ color: 'accent-2', opacity: 'weak' }}
               >
-                <Box basis='small'>
-                  <Video controls='over' fit={fit}>
+                <Box basis="small">
+                  <Video controls="over" fit={fit}>
                     {CONTENT}
                   </Video>
                 </Box>
@@ -75,4 +78,10 @@ export default () => (
       }}
     />
   </Page>
+);
+
+export const VideoItem = props => (
+  <Item {...props} center>
+    <CirclePlay color="brand" size="xlarge" />
+  </Item>
 );

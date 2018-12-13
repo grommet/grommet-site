@@ -48,7 +48,7 @@ export default class extends Component {
                     wrap
                   >
                     {structure.sections.map(section => (
-                      <Box width="small">
+                      <Box key={section.name} width="small">
                         <Heading level={3} margin={{ top: 'none' }}>
                           {section.components ? (
                             section.name
@@ -61,6 +61,7 @@ export default class extends Component {
                         </Heading>
                         {(section.components || []).map(component => (
                           <RoutedAnchor
+                            key={component}
                             path={nameToPath(component)}
                             label={component}
                           />

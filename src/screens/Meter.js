@@ -6,6 +6,7 @@ import { doc } from 'grommet/components/Meter/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Meter).toJSON();
 
@@ -163,3 +164,17 @@ export default class MeterDoc extends Component {
     );
   }
 }
+
+export const MeterItem = props => (
+  <Item {...props} center>
+    <Meter
+      aria-label="Meter example"
+      type="circle"
+      size="full"
+      thickness="large"
+      round
+      background={{ color: 'brand', opacity: 'weak' }}
+      values={[{ value: 60, label: 'sixty', color: 'brand' }]}
+    />
+  </Item>
+);

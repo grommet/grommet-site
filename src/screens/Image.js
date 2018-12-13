@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/Image/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Image).toJSON();
 
@@ -44,4 +45,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const ImageItem = props => (
+  <Item {...props}>
+    <Image src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" fit="cover" />
+  </Item>
 );
