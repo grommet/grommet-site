@@ -12,7 +12,11 @@ const desc = doc(AnnounceContext.Consumer).toJSON();
 
 export default () => (
   <Page>
-    <Doc name="Announce Context .Consumer" desc={desc} />
+    <Doc
+      name="AnnounceContext"
+      title="Announce Context .Consumer"
+      desc={desc}
+    />
   </Page>
 );
 

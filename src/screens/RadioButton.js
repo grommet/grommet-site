@@ -14,12 +14,14 @@ export default () => (
     <Doc
       name="RadioButton"
       desc={desc}
-      example={<RadioButton checked label="chosen" />}
-      examples={{
-        checked: <RadioButton label="A" checked onChange={() => {}} />,
-        disabled: <RadioButton label="A" disabled onChange={() => {}} />,
-        label: <RadioButton label="A" onChange={() => {}} />,
-      }}
+      example={
+        <RadioButton
+          checked
+          name="choices"
+          label="chosen"
+          onChange={() => {}}
+        />
+      }
     />
   </Page>
 );

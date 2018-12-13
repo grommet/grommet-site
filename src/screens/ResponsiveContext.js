@@ -12,7 +12,11 @@ const desc = doc(ResponsiveContext.Consumer).toJSON();
 
 export default () => (
   <Page>
-    <Doc name="Responsive Context .Consumer" desc={desc} />
+    <Doc
+      name="ResponsiveContext"
+      title="Responsive Context .Consumer"
+      desc={desc}
+    />
   </Page>
 );
 

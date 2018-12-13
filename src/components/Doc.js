@@ -1,10 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
-import { Box, Anchor, Heading, Markdown, Text, ThemeContext } from 'grommet';
+import {
+  Box,
+  Anchor,
+  Heading,
+  Keyboard,
+  Markdown,
+  Text,
+  ThemeContext,
+} from 'grommet';
 import { Link as LinkIcon, Next, Previous } from 'grommet-icons';
 import Header from './Header';
 import RoutedButton from './RoutedButton';
+import { Pusher } from '../Router';
 import { genericSyntaxes } from '../utils/props';
 import { nameToPath, nextComponent, previousComponent } from '../structure';
 
@@ -292,6 +301,7 @@ class Doc extends Component {
       syntaxes,
       text,
       themeDoc,
+      title,
     } = this.props;
 
     const nextName = nextComponent(name);
@@ -318,53 +328,68 @@ class Doc extends Component {
 
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
-        <Box direction="row" justify="between">
-          {previousLink}
-          <Box align="center">
-            {example && (
-              <Box
-                alignSelf="center"
-                align="center"
-                pad="medium"
-                elevation="large"
-                margin={{ bottom: 'large' }}
-              >
-                {example}
-              </Box>
-            )}
+        <Pusher>
+          {push => (
+            <Keyboard
+              target="document"
+              onLeft={previousName && (() => push(nameToPath(previousName)))}
+              onRight={nextName && (() => push(nameToPath(nextName)))}
+            >
+              <Box direction="row" justify="between">
+                {previousLink}
+                <Box align="center">
+                  {example && (
+                    <Box
+                      alignSelf="center"
+                      align="center"
+                      pad="medium"
+                      elevation="large"
+                      margin={{ bottom: 'large' }}
+                    >
+                      {example}
+                    </Box>
+                  )}
 
-            <Header label={name} summary={(desc && desc.description) || text} />
-
-            {desc && desc.availableAt && (
-              <Box margin={{ vertical: 'medium' }}>
-                {Array.isArray(desc.availableAt) ? (
-                  <Box
-                    alignSelf="center"
-                    direction="row-responsive"
-                    gap="large"
-                  >
-                    {desc.availableAt.map(at => (
-                      <Anchor
-                        key={at.url}
-                        href={at.url}
-                        target="_blank"
-                        label={<Text size="large">{at.label}</Text>}
-                      />
-                    ))}
-                  </Box>
-                ) : (
-                  <Anchor
-                    alignSelf="center"
-                    href={desc.availableAt.url}
-                    target="_blank"
-                    label={<Text size="large">{desc.availableAt.label}</Text>}
+                  <Header
+                    label={title || name}
+                    summary={(desc && desc.description) || text}
                   />
-                )}
+
+                  {desc && desc.availableAt && (
+                    <Box margin={{ vertical: 'medium' }}>
+                      {Array.isArray(desc.availableAt) ? (
+                        <Box
+                          alignSelf="center"
+                          direction="row-responsive"
+                          gap="large"
+                        >
+                          {desc.availableAt.map(at => (
+                            <Anchor
+                              key={at.url}
+                              href={at.url}
+                              target="_blank"
+                              label={<Text size="large">{at.label}</Text>}
+                            />
+                          ))}
+                        </Box>
+                      ) : (
+                        <Anchor
+                          alignSelf="center"
+                          href={desc.availableAt.url}
+                          target="_blank"
+                          label={
+                            <Text size="large">{desc.availableAt.label}</Text>
+                          }
+                        />
+                      )}
+                    </Box>
+                  )}
+                </Box>
+                {nextLink}
               </Box>
-            )}
-          </Box>
-          {nextLink}
-        </Box>
+            </Keyboard>
+          )}
+        </Pusher>
 
         {desc && (
           <Box
@@ -465,6 +490,7 @@ Doc.propTypes = {
   syntaxes: PropTypes.shape({}),
   text: PropTypes.string,
   themeDoc: PropTypes.shape({}),
+  title: PropTypes.string,
 };
 
 Doc.defaultProps = {
@@ -477,6 +503,7 @@ Doc.defaultProps = {
   syntaxes: undefined,
   text: undefined,
   themeDoc: undefined,
+  title: undefined,
 };
 
 export default Doc;
