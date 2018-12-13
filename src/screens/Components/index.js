@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { structure, nameToPath } from '../../structure';
 import Page from '../../components/Page';
 import Header from '../../components/Header';
-import Item from './Item';
 import Section from './Section';
 import Color from './Color';
 
@@ -124,9 +123,9 @@ export default class Components extends Component {
               <Color index={index} />
             ) : (
               components.map(component => {
-                const ItemX = Items[component] || Item;
+                const Item = Items[component];
                 return (
-                  <ItemX
+                  <Item
                     key={component}
                     name={component}
                     path={nameToPath(component)}

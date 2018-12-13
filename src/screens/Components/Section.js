@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Grid, Heading } from 'grommet';
+import { Anchor, Box, Grid, Heading } from 'grommet';
+import { Link as LinkIcon } from 'grommet-icons';
 
 const Section = ({ children, index, name }) => (
   <Box
+    id={name}
     pad={{ vertical: 'medium' }}
     animation={[
       { type: 'zoomIn', duration: 500, delay: 100 + 100 * index },
       { type: 'fadeIn', duration: 500, delay: 100 * index },
     ]}
   >
-    <Heading level={2} margin={{ top: 'none', horizontal: 'small' }}>
-      {name}
-    </Heading>
+    <Box
+      direction="row"
+      justify="between"
+      align="center"
+      margin={{ top: 'none', horizontal: 'small' }}
+    >
+      <Heading level={2}>{name}</Heading>
+      <Anchor href={`#${name}`} icon={<LinkIcon color="light-4" />} />
+    </Box>
     {Grid.available ? (
       <Grid
         columns={{ count: 'fit', size: 'medium' }}
