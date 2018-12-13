@@ -1,11 +1,11 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/json.worker.js",
       "/css.worker.js",
+      "/editor.worker.js",
       "/typescript.worker.js",
       "/html.worker.js",
-      "/editor.worker.js",
+      "/json.worker.js",
       "/0-ebae2a1bb629dc76c094.js",
       "/main-bcbe2e9fcd7c3bb0ff3f.js",
       "/vendors~main-b51a27f85c47f35528d7.js",
@@ -110,11 +110,11 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "025191ebc9fbef73f9dfd87150c308790d7d290d": "/json.worker.js",
     "0ab8ae37be563d35b622b904fc79ffeb3e195afb": "/css.worker.js",
+    "13d6ca9c49f437742dbb3a64c35b80ed8d5f91a3": "/editor.worker.js",
     "b9d9b6c74fdc5641284e08ef0109abcf4f152b44": "/typescript.worker.js",
     "63e4dc8647276f3d61eb7d07a9c90fc0e7ac52b0": "/html.worker.js",
-    "13d6ca9c49f437742dbb3a64c35b80ed8d5f91a3": "/editor.worker.js",
+    "025191ebc9fbef73f9dfd87150c308790d7d290d": "/json.worker.js",
     "8b8368028c34529abc1904ae6072cbf7abc502f9": "/0-ebae2a1bb629dc76c094.js",
     "85dcf2a9e435b9f1320800ce0a7762e11647161b": "/main-bcbe2e9fcd7c3bb0ff3f.js",
     "4364479715fa1b2e306812e2e9a1a1122e6cea0e": "/vendors~main-b51a27f85c47f35528d7.js",
@@ -195,7 +195,7 @@ var __wpo = {
     "b92bfa4462074ca141125b0e33f3e397b7f54ad5": "/img/logos/GE-logo.svg",
     "d278813449e57997e2bdab41a1f3e5db08f02957": "/img/logos/GitHub-logo.svg",
     "c72294a91ee396e3f9caa1d20e27b1f38d4ea255": "/img/logos/HP-logo.svg",
-    "8acc3e35a9b0c4a8346e1b0f561c39760ed91cb9": "/img/logos/HPE-logo.svg",
+    "8de47b5c1a2268167d73ca86ed2a2d3e77b4cb8e": "/img/logos/HPE-logo.svg",
     "d989b20f5530ad8ad2c585dcbe49d94d914f3551": "/img/logos/IBM-logo.svg",
     "486c17ed7189fe6f9f1272c82a4e55dfa9bbb8a2": "/img/logos/MicroFocus-logo.svg",
     "82045d4ab876b407747f07dbae9bbe22c1f5d8e0": "/img/logos/Netflix-logo.svg",
@@ -215,7 +215,7 @@ var __wpo = {
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2018-12-13 19:22:41",
+  "version": "2018-12-13 20:52:38",
   "name": "webpack-offline",
   "pluginVersion": "5.0.6",
   "relativePaths": false
