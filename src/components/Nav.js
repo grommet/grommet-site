@@ -18,6 +18,7 @@ export default class extends Component {
             align="center"
             width="xlarge"
             alignSelf="center"
+            gap="medium"
             {...this.props}
           >
             <RoutedAnchor

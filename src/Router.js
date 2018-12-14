@@ -60,7 +60,9 @@ Router.propTypes = {
 
 export const Route = ({ component: Comp, path }) => (
   <RouterContext.Consumer>
-    {({ path: currentPath }) => (currentPath === path ? <Comp /> : null)}
+    {({ path: currentPath }) =>
+      currentPath && currentPath.split('#')[0] === path ? <Comp /> : null
+    }
   </RouterContext.Consumer>
 );
 

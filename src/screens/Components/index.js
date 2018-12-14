@@ -100,9 +100,33 @@ const Items = {
 };
 
 export default class Components extends Component {
+  sectionRefs = {};
+
+  constructor() {
+    super();
+    structure.sections.forEach(({ name }) => {
+      this.sectionRefs[name] = React.createRef();
+    });
+  }
+
   componentDidMount() {
     document.title = 'Components - Grommet';
+    this.scrollToSection();
   }
+
+  componentDidUpdate() {
+    this.scrollToSection();
+  }
+
+  scrollToSection = () => {
+    const name = window.location.hash.split('#')[1];
+    if (name && this.sectionRefs[name]) {
+      this.sectionRefs[name].current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   render() {
     return (
@@ -118,7 +142,12 @@ export default class Components extends Component {
         />
 
         {structure.sections.map(({ name, components }, index) => (
-          <Section key={name} name={name} index={index}>
+          <Section
+            ref={this.sectionRefs[name]}
+            key={name}
+            name={name}
+            index={index}
+          >
             {name === 'Color' ? (
               <Color index={index} />
             ) : (

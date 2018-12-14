@@ -4,13 +4,13 @@ import { Search } from 'grommet-icons';
 import { structure, nameToPath } from '../structure';
 import { Pusher } from '../Router';
 
-const allComponents = structure.sections
-  .map(section => section.components || [])
+const allSuggestions = structure.sections
+  .map(section => (section.components || []).concat(section.name))
   .flat()
   .sort();
 
 export default class extends Component {
-  state = { value: '', suggestions: allComponents };
+  state = { value: '', suggestions: allSuggestions };
 
   searchRef = React.createRef();
 
@@ -25,9 +25,9 @@ export default class extends Component {
     let suggestions;
     if (value) {
       const regexp = new RegExp(value, 'i');
-      suggestions = allComponents.filter(c => regexp.test(c));
+      suggestions = allSuggestions.filter(c => regexp.test(c));
     } else {
-      suggestions = allComponents;
+      suggestions = allSuggestions;
     }
     // don't use newer value if nothing matches it
     if (suggestions.length > 0) {
@@ -41,7 +41,7 @@ export default class extends Component {
       if (suggestions.length === 1) {
         push(nameToPath(suggestions[0]));
       } else {
-        const matches = allComponents.filter(
+        const matches = allSuggestions.filter(
           c => c.toLowerCase() === value.toLowerCase(),
         );
         if (matches.length === 1) {

@@ -1,5 +1,3 @@
-export const nameToPath = name => `/${name.toLowerCase()}`;
-
 export const structure = {
   sections: [
     {
@@ -71,6 +69,16 @@ export const structure = {
       ],
     },
   ],
+};
+
+export const nameToPath = name => {
+  if (
+    structure.sections.filter(s => s.name === name).length &&
+    name !== 'Color'
+  ) {
+    return `/components#${name}`;
+  }
+  return `/${name.toLowerCase()}`;
 };
 
 export const nextComponent = name => {

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Anchor, Box, Grid, Heading } from 'grommet';
 import { Link as LinkIcon } from 'grommet-icons';
 
-const Section = ({ children, index, name }) => (
+const Section = forwardRef(({ children, index, name }, ref) => (
   <Box
+    ref={ref}
     id={name}
     pad={{ vertical: 'medium' }}
     animation={[
@@ -39,7 +40,7 @@ const Section = ({ children, index, name }) => (
       </Box>
     )}
   </Box>
-);
+));
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
