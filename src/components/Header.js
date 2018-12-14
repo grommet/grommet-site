@@ -11,12 +11,15 @@ const Header = ({ details, label, level, size, summary }) => (
     </Heading>
     {summary && (
       <Paragraph size="xxlarge" textAlign="center">
-        {summary}
+        {summary.toLowerCase()}
       </Paragraph>
     )}
     {details && (
       <Markdown components={{ p: CenteredParagraph }}>
-        {details.replace('<', '&lt;').replace('>', '&gt;')}
+        {details
+          .replace('<', '&lt;')
+          .replace('>', '&gt;')
+          .trim()}
       </Markdown>
     )}
   </Box>
