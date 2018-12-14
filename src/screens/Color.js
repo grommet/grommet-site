@@ -45,7 +45,7 @@ Set.propTypes = {
 
 const Color = () => (
   <Page>
-    <Doc name="Color">
+    <Doc name="Color" text="The color pallette.">
       <ThemeContext.Consumer>
         {theme => (
           <Box gap="large" margin={{ vertical: 'large' }}>

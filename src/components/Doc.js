@@ -326,6 +326,10 @@ class Doc extends Component {
       <Box width="xxsmall" />
     );
 
+    const [summary, ...details] = ((desc && desc.description) || text).split(
+      '.',
+    );
+
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
         <Pusher>
@@ -352,7 +356,8 @@ class Doc extends Component {
 
                   <Header
                     label={title || name}
-                    summary={(desc && desc.description) || text}
+                    summary={summary}
+                    details={details.join('.')}
                   />
 
                   {desc && desc.availableAt && (
