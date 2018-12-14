@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Heading, Paragraph } from 'grommet';
+import { Box, Heading, Markdown, Paragraph } from 'grommet';
+
+const CenteredParagraph = props => <Paragraph textAlign="center" {...props} />;
 
 const Header = ({ details, label, level, size, summary }) => (
   <Box align="center" margin={{ horizontal: 'large' }}>
@@ -13,9 +15,9 @@ const Header = ({ details, label, level, size, summary }) => (
       </Paragraph>
     )}
     {details && (
-      <Paragraph size="large" textAlign="center">
-        {details}
-      </Paragraph>
+      <Markdown components={{ p: CenteredParagraph }}>
+        {details.replace('<', '&lt;').replace('>', '&gt;')}
+      </Markdown>
     )}
   </Box>
 );
