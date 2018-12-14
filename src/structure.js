@@ -1,4 +1,5 @@
 export const structure = {
+  externals: [{ name: 'Icons', url: 'https://grommet.io/grommet-icons/' }],
   sections: [
     {
       name: 'Layout',
@@ -72,11 +73,13 @@ export const structure = {
 };
 
 export const nameToPath = name => {
-  if (
-    structure.sections.filter(s => s.name === name).length &&
-    name !== 'Color'
-  ) {
+  const section = structure.sections.filter(s => s.name === name)[0];
+  if (section && name !== 'Color') {
     return `/components#${name}`;
+  }
+  const external = structure.externals.filter(e => e.name === name)[0];
+  if (external) {
+    return external.url;
   }
   return `/${name.toLowerCase()}`;
 };

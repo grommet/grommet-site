@@ -34,12 +34,16 @@ export class Router extends Component {
   onPush = nextPath => {
     const { path, search } = this.state;
     if (nextPath !== path) {
-      window.history.pushState(
-        undefined,
-        undefined,
-        `${nextPath}${search || ''}`,
-      );
-      this.setState({ path: nextPath });
+      if (nextPath.startsWith('http')) {
+        window.location = nextPath;
+      } else {
+        window.history.pushState(
+          undefined,
+          undefined,
+          `${nextPath}${search || ''}`,
+        );
+        this.setState({ path: nextPath });
+      }
     }
   };
 
