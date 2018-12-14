@@ -16,17 +16,17 @@ const SINGLE_VALUE = [
 ];
 const MULTIPLE_VALUES = [
   {
-    // eslint-disable-next-line no-alert
     value: 60,
     label: 'sixty',
     color: 'neutral-1',
+    // eslint-disable-next-line no-alert
     onClick: () => alert('60'),
   },
   {
-    // eslint-disable-next-line no-alert
     value: 10,
     label: 'ten',
     color: 'accent-1',
+    // eslint-disable-next-line no-alert
     onClick: () => alert('10'),
   },
 ];

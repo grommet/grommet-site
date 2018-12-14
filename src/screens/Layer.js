@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Box, Button, Heading, Layer, Text } from 'grommet';
-import { doc } from 'grommet/components/Layer/doc';
+import { doc, themeDoc } from 'grommet/components/Layer/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -152,6 +152,7 @@ export default class LayerDoc extends Component {
               </Box>
             ),
           }}
+          themeDoc={themeDoc}
         >
           {layerNode}
         </Doc>
