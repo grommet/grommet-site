@@ -73,6 +73,7 @@ export default class extends Component {
                 plain
                 value={value}
                 suggestions={suggestions}
+                dropHeight="medium"
                 dropTarget={refReady && this.searchRef.current}
                 onChange={this.onChange}
                 onSelect={this.onSelect(push)}
