@@ -9,11 +9,13 @@ const Header = ({ details, label, level, size, summary }) => (
     <Heading level={level} size={size} textAlign="center" margin="none">
       {label}
     </Heading>
-    {summary && (
-      <Paragraph size="xxlarge" textAlign="center">
-        {summary.toLowerCase()}
-      </Paragraph>
-    )}
+    {summary &&
+      ((typeof summary === 'string' && (
+        <Paragraph size="xxlarge" textAlign="center">
+          {summary.toLowerCase()}
+        </Paragraph>
+      )) ||
+        summary)}
     {details && (
       <Markdown components={{ p: CenteredParagraph }}>
         {details
