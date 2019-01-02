@@ -36,6 +36,7 @@ export const structure = {
         'TextArea',
         'TextInput',
         'FormField',
+        'Form',
       ],
     },
     {

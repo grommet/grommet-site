@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Box, Diagram, Stack } from 'grommet';
 import { doc } from 'grommet/components/Diagram/doc';
@@ -20,6 +21,10 @@ const Node = ({ id, ...rest }) => (
     {...rest}
   />
 );
+
+Node.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,

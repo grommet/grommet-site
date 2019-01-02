@@ -14,6 +14,7 @@ export { DiagramItem } from '../Diagram';
 export { DistributionItem } from '../Distribution';
 export { DropItem } from '../Drop';
 export { DropButtonItem } from '../DropButton';
+export { FormItem } from '../Form';
 export { FormFieldItem } from '../FormField';
 export { GridItem } from '../Grid';
 export { GrommetItem } from '../Grommet';
