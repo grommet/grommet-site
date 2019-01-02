@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Grid } from 'grommet';
-import { doc } from 'grommet/components/Grid/doc';
+import { doc, themeDoc } from 'grommet/components/Grid/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -119,6 +119,7 @@ export default () => (
           <Box gridArea="side" background="light-2" />
         </Grid>
       }
+      themeDoc={themeDoc}
     />
   </Page>
 );
