@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Carousel, Image } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
-import { doc } from 'grommet/components/Carousel/doc';
+import { doc, themeDoc } from 'grommet/components/Carousel/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -27,6 +27,7 @@ export default () => (
           </Carousel>
         </Box>
       }
+      themeDoc={themeDoc}
     />
   </Page>
 );
