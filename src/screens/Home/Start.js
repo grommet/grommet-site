@@ -170,7 +170,7 @@ render(<App />);
               target="_blank"
             />
             <Anchor
-              href="//grommet.io/grommet-icons"
+              href="//icons.grommet.io"
               label={<Text size="large">Grommet Icons</Text>}
               icon={<Next />}
               reverse
