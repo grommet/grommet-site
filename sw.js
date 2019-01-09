@@ -63,6 +63,7 @@ var __wpo = {
       "/54-7ba91175f37f1974b245.js",
       "/",
       "/package.json",
+      "/_redirects",
       "/assets/IMG_4210.jpg",
       "/assets/IMG_4245.jpg",
       "/assets/small-en.vtt",
@@ -95,6 +96,7 @@ var __wpo = {
       "/img/logos/Twilio-logo.svg",
       "/img/logos/Uber-logo.svg",
       "/img/mobile-app-icon.png",
+      "/assets/Wilderpeople_Ricky.jpg",
       "/img/mobile-app-icon.svg",
       "/img/shapes.svg",
       "/img/shortcut-icon.png",
@@ -102,8 +104,7 @@ var __wpo = {
       "/img/stak-hurrah.svg",
       "/img/Stak.svg",
       "/manifest.json",
-      "/server.js",
-      "/assets/Wilderpeople_Ricky.jpg"
+      "/server.js"
     ],
     "additional": [],
     "optional": []
@@ -172,6 +173,7 @@ var __wpo = {
     "64b8c18d450cd735a865608d025ab440c2b8302e": "/54-7ba91175f37f1974b245.js",
     "cec0cc96e9d626954899e76d566244b81731f284": "/",
     "23e431790a3bb55de82b7125f683f3399c9080eb": "/package.json",
+    "a8ac78c7cfb4a5995d57cecd4cb7234dd6f3b4cc": "/_redirects",
     "fb28b293bc43d453a0101e8be9295f0542e4f1aa": "/assets/IMG_4210.jpg",
     "5b940442218c4ef0a0fe5f0ff058a5188620beba": "/assets/IMG_4245.jpg",
     "397ef16b44d2b5df21fe736ccb109f8d34e51805": "/assets/small-en.vtt",
@@ -203,6 +205,7 @@ var __wpo = {
     "4fbe45364870a0207dec98f37cba4498ebe3584d": "/img/logos/Sony-logo.svg",
     "7183a9a9a909340a316dc2d49c464e8f7e39af49": "/img/logos/Twilio-logo.svg",
     "e6b30fe0e023aff314be987f40dfd4dea6885620": "/img/logos/Uber-logo.svg",
+    "f851f7e0d6614aa2d401348338b4dc1f4aee2d54": "/assets/Wilderpeople_Ricky.jpg",
     "c6e22c95a0f9b7e819ab41d8fa052f743063a122": "/img/mobile-app-icon.svg",
     "f398f27d2ef452babf70a6df38775347bc8dc62a": "/img/shapes.svg",
     "17078fc7bada104ec816f1f394418d7888d9a138": "/img/shortcut-icon.png",
@@ -210,12 +213,11 @@ var __wpo = {
     "b6c9e1991e982288d7beb05525666d776e68f3bf": "/img/stak-hurrah.svg",
     "223dd82b52f2a079b848977348221cac5daeafec": "/img/Stak.svg",
     "fbe85641ca7b921daa4952f443cd3c8059c10258": "/manifest.json",
-    "1de2c4bb47739e8fd27da6be8cc2f9e874054466": "/server.js",
-    "f851f7e0d6614aa2d401348338b4dc1f4aee2d54": "/assets/Wilderpeople_Ricky.jpg"
+    "1de2c4bb47739e8fd27da6be8cc2f9e874054466": "/server.js"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2019-1-9 19:26:58",
+  "version": "2019-1-9 23:06:41",
   "name": "webpack-offline",
   "pluginVersion": "5.0.6",
   "relativePaths": false
