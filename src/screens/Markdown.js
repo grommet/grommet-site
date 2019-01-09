@@ -12,7 +12,7 @@ const desc = doc(Markdown).toJSON();
 const CONTENT = `
 # Grommet **heart**s markdown
 
-Favorite thing, [link](https://www.instagram.com/explore/tags/grommetux/)
+Favorite thing, [link](https://twitter.com/grommet_io)
 `;
 
 export default () => (
