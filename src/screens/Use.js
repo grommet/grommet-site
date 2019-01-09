@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Anchor, Box, Heading, Markdown, Text,
-} from 'grommet';
+import { Anchor, Box, Heading, Markdown, Text } from 'grommet';
 import Page from '../components/Page';
 import Header from '../components/Header';
 
 const Item = ({ label, snippet, description }) => (
-  <Box
-    border='bottom'
-    margin={{ bottom: 'large' }}
-    pad={{ bottom: 'medium' }}
-  >
-    <Box direction='row' responsive justify='between'>
-      <Text size='large' margin={{ bottom: 'small' }}>
+  <Box border="bottom" margin={{ bottom: 'large' }} pad={{ bottom: 'medium' }}>
+    <Box direction="row" responsive justify="between">
+      <Text size="large" margin={{ bottom: 'small' }}>
         <strong>{label}</strong>
       </Text>
       <Text>{snippet}</Text>
@@ -36,48 +30,46 @@ export default class Use extends Component {
   render() {
     return (
       <Page>
-        <Header label='Start' />
+        <Header label="Start" />
 
         <Box pad={{ bottom: 'large' }}>
-
           <Heading level={2}>New Application</Heading>
           <Item
-            label='grommet cli'
-            snippet={(<code>npm install -g grommet-cli@next</code>)}
-            description='Get grommet command line tools on your local environment.'
+            label="grommet cli"
+            snippet={<code>npm install -g grommet-cli@next</code>}
+            description="Get grommet command line tools on your local environment."
           />
           <Item
-            label='new application'
-            snippet={(<code>grommet new [app-name]</code>)}
-            description='Generate a new application.'
+            label="new application"
+            snippet={<code>grommet new [app-name]</code>}
+            description="Generate a new application."
           />
 
           <Heading level={2}>Existing Application</Heading>
           <Item
-            label='grommet library'
-            snippet={(<code>npm install grommet@next --save</code>)}
-            description='Get grommet on your local environment.'
+            label="grommet library"
+            snippet={<code>npm install grommet@next --save</code>}
+            description="Get grommet on your local environment."
           />
           <Item
-            label='grommet icons'
-            snippet={(<code>npm install grommet-icons --save</code>)}
-            description='SVG icon library built for React apps and most
+            label="grommet icons"
+            snippet={<code>npm install grommet-icons --save</code>}
+            description="SVG icon library built for React apps and most
               importantly grommet! Learn
-              more, [grommet.io/grommet-icons](https://grommet.io/grommet-icons/).'
+              more, [icons.grommet.io](https://http://icons.grommet.io//)."
           />
 
           <Heading level={2}>Design Elements</Heading>
           <Item
-            label='sketch resources'
-            snippet={(
-              <Anchor href='https://github.com/grommet/grommet-design'>
+            label="sketch resources"
+            snippet={
+              <Anchor href="https://github.com/grommet/grommet-design">
                 github
               </Anchor>
-            )}
-            description='Are you a designer? Use [Sketch](https://www.sketchapp.com)?
-              Grab our library and templates to start designing with grommet.'
+            }
+            description="Are you a designer? Use [Sketch](https://www.sketchapp.com)?
+              Grab our library and templates to start designing with grommet."
           />
-
         </Box>
       </Page>
     );
