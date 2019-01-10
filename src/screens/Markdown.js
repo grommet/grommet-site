@@ -17,7 +17,23 @@ Favorite thing, [link](https://twitter.com/grommet_io)
 
 export default () => (
   <Page>
-    <Doc name="Markdown" desc={desc} example={<Markdown>{CONTENT}</Markdown>} />
+    <Doc
+      name="Markdown"
+      desc={desc}
+      example={<Markdown>{CONTENT}</Markdown>}
+      syntaxes={{
+        components: [
+          {
+            p: {
+              component: 'Paragraph',
+              props: {
+                size: 'medium',
+              },
+            },
+          },
+        ],
+      }}
+    />
   </Page>
 );
 
