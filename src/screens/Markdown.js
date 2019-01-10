@@ -12,12 +12,28 @@ const desc = doc(Markdown).toJSON();
 const CONTENT = `
 # Grommet **heart**s markdown
 
-Favorite thing, [link](https://www.instagram.com/explore/tags/grommetux/)
+Favorite thing, [link](https://twitter.com/grommet_io)
 `;
 
 export default () => (
   <Page>
-    <Doc name="Markdown" desc={desc} example={<Markdown>{CONTENT}</Markdown>} />
+    <Doc
+      name="Markdown"
+      desc={desc}
+      example={<Markdown>{CONTENT}</Markdown>}
+      syntaxes={{
+        components: [
+          {
+            p: {
+              component: 'Paragraph',
+              props: {
+                size: 'medium',
+              },
+            },
+          },
+        ],
+      }}
+    />
   </Page>
 );
 

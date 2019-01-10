@@ -191,7 +191,7 @@ const Syntax = ({ syntax, format, defaultValue, leaf }) => {
   if (defaultValue !== undefined && syntax === defaultValue) {
     content = <strong>{content}</strong>;
   }
-  return <pre style={{ margin: 0, whiteSpace: 'pre-line' }}>{content}</pre>;
+  return <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{content}</pre>;
 };
 
 Syntax.propTypes = {
