@@ -135,12 +135,8 @@ export default class Components extends Component {
       <Page>
         <Header
           label="Components"
-          summary={
-            <span>
-              These are the building blocks of the grommet library, master them,
-              and become a l33t.
-            </span>
-          }
+          summary="These are the building blocks of the grommet library, master them,
+              and become a l33t."
         />
 
         {structure.sections.map(({ name, components }, index) => (

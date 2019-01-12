@@ -27,19 +27,15 @@ export default () => (
     <Header
       level={2}
       label="don’t take our word for it"
-      summary={
-        <span>
-          here&#39;s what our community of designers and developers have to say
-          about grommet
-        </span>
-      }
+      summary="here's what our community of designers and developers have to say
+        about grommet"
     />
 
     <Box
       direction="row"
       wrap
       justify="center"
-      margin={{ vertical: 'xlarge' }}
+      margin={{ top: 'large', bottom: 'xlarge' }}
       pad={{ bottom: 'large' }}
       border="bottom"
     >
@@ -105,12 +101,8 @@ export default () => (
     <Header
       level={2}
       label="grommet is used by folks at these fine companies"
-      summary={
-        <span>
-          if people from these fine establishments are using it, how can it be
-          bad?
-        </span>
-      }
+      summary="if people from these fine establishments are using it, how can it be
+        bad?"
     />
 
     <Box
@@ -118,7 +110,7 @@ export default () => (
       wrap
       justify="center"
       align="center"
-      margin={{ vertical: 'xlarge' }}
+      margin={{ top: 'large', bottom: 'xlarge' }}
     >
       {COMPANIES.map(name => (
         <Box
