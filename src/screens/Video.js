@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Video } from 'grommet';
 import { CirclePlay } from 'grommet-icons';
-import { doc } from 'grommet/components/Video/doc';
+import { doc, themeDoc } from 'grommet/components/Video/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -76,6 +76,7 @@ export default () => (
           </Box>
         ),
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );
