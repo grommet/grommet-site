@@ -29,6 +29,7 @@ export { MenuItem } from '../Menu';
 export { MeterItem } from '../Meter';
 export { ParagraphItem } from '../Paragraph';
 export { RadioButtonItem } from '../RadioButton';
+export { RadioButtonGroupItem } from '../RadioButtonGroup';
 export { RangeInputItem } from '../RangeInput';
 export { RangeSelectorItem } from '../RangeSelector';
 export { ResponsiveContextItem } from '../ResponsiveContext';

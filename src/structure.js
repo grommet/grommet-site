@@ -30,6 +30,7 @@ export const structure = {
         'CheckBox',
         'MaskedInput',
         'RadioButton',
+        'RadioButtonGroup',
         'RangeInput',
         'RangeSelector',
         'Select',
