@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Anchor, Heading, Text, ThemeContext } from 'grommet';
-import { Link as LinkIcon } from 'grommet-icons';
+import { Box, Anchor, Text } from 'grommet';
 import Header from '../Header';
-import { genericSyntaxes } from '../../utils/props';
-import { Prop } from './Prop';
+import { Props } from './Props';
+import { ThemeProps } from './ThemeProps';
 
-const themeValue = (theme, path) => {
-  const parts = path.split('.');
-  let node = theme;
-  while (node && parts.length) {
-    node = node[parts.shift()];
-  }
-  return node;
-};
-
-// eslint-disable-next-line react/no-multi-comp
 class Doc extends Component {
   state = {};
 
@@ -88,86 +77,14 @@ class Doc extends Component {
           )}
         </Box>
 
-        {desc && (
-          <Box
-            id="props"
-            margin={{ vertical: 'large' }}
-            border={{ side: 'top', size: 'medium', color: 'brand' }}
-          >
-            <Box
-              direction="row"
-              justify="between"
-              align="center"
-              margin={{ top: 'medium', bottom: 'xlarge' }}
-            >
-              <Heading level={2} margin="none">
-                Props
-              </Heading>
-              <Anchor href="#props" icon={<LinkIcon color="light-4" />} />
-            </Box>
-            {desc.properties ? (
-              desc.properties
-                .sort((a, b) => {
-                  if (a.name < b.name) return -1;
-                  if (a.name > b.name) return 1;
-                  return 0;
-                })
-                .map((property, index) => (
-                  <Prop
-                    key={property.name}
-                    property={property}
-                    first={!index}
-                    syntax={(syntaxes || genericSyntaxes)[property.name]}
-                    example={examples[property.name]}
-                  />
-                ))
-            ) : (
-              <Text color="light-5">No properties</Text>
-            )}
-          </Box>
-        )}
+        {desc && <Props desc={desc} examples={examples} syntaxes={syntaxes} />}
 
         {themeDoc && (
-          <Box
-            id="theme"
-            margin={{ vertical: 'large' }}
-            border={{ side: 'top', size: 'medium', color: 'brand' }}
-          >
-            <Box
-              direction="row"
-              justify="between"
-              align="center"
-              margin={{ top: 'medium', bottom: 'xlarge' }}
-            >
-              <Heading level={2} margin="none">
-                Theme
-              </Heading>
-              <Anchor href="#theme" icon={<LinkIcon color="light-4" />} />
-            </Box>
-            <ThemeContext.Consumer>
-              {theme =>
-                Object.keys(themeDoc).map((key, index) => {
-                  const themeProp = themeDoc[key];
-                  return (
-                    <Prop
-                      key={key}
-                      property={{ name: key, ...themeProp }}
-                      first={!index}
-                      syntax={
-                        (syntaxes || {})[key] ||
-                        themeValue(theme, key) ||
-                        (key.endsWith('.extend') && [
-                          'any CSS',
-                          '(props) => {}',
-                        ])
-                      }
-                      example={examples[key]}
-                    />
-                  );
-                })
-              }
-            </ThemeContext.Consumer>
-          </Box>
+          <ThemeProps
+            examples={examples}
+            syntaxes={syntaxes}
+            themeDoc={themeDoc}
+          />
         )}
 
         {children}
