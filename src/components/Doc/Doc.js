@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Anchor, Text } from 'grommet';
 import Header from '../Header';
+import { Code } from './Code';
+import { Example } from './Example';
 import { Props } from './Props';
 import { ThemeProps } from './ThemeProps';
 
@@ -17,6 +19,7 @@ class Doc extends Component {
   render() {
     const {
       children,
+      code,
       desc,
       name,
       example,
@@ -34,17 +37,8 @@ class Doc extends Component {
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
         <Box align="center">
-          {example && (
-            <Box
-              alignSelf="center"
-              align="center"
-              pad="medium"
-              elevation="large"
-              margin={{ bottom: 'large' }}
-            >
-              {example}
-            </Box>
-          )}
+          {example && !code && <Example example={example} />}
+          {code && <Code code={code} />}
 
           <Header
             label={title || name}
@@ -94,7 +88,7 @@ class Doc extends Component {
 }
 
 Doc.propTypes = {
-  // code: PropTypes.string,
+  code: PropTypes.string,
   children: PropTypes.node,
   desc: PropTypes.shape({}),
   example: PropTypes.node,
@@ -108,7 +102,7 @@ Doc.propTypes = {
 };
 
 Doc.defaultProps = {
-  // code: undefined,
+  code: undefined,
   children: undefined,
   desc: undefined,
   example: null,
