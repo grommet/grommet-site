@@ -38,7 +38,7 @@ class Doc extends Component {
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
         <Box align="center">
           {example && !code && <Example example={example} />}
-          {code && <Code code={code} />}
+          {code && <Code code={code} name={name} />}
 
           <Header
             label={title || name}

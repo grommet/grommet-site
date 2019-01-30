@@ -13,6 +13,7 @@ export default () => (
     <Doc
       name="Box"
       desc={desc}
+      code={`<Box flex border={{ color: 'brand', size: 'large' }} pad="medium" />`}
       example={
         <Box flex border={{ color: 'brand', size: 'large' }} pad="medium" />
       }

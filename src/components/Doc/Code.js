@@ -43,6 +43,7 @@ export class Code extends Component {
   state = {};
 
   componentDidMount() {
+    const { name } = this.props;
     const { propsCode } = this.state;
     const params = {};
     document.location.search
@@ -52,7 +53,7 @@ export class Code extends Component {
         const [k, v] = p.split('=');
         params[k] = v;
       });
-    const encodedCode = params.c || window.localStorage.getItem('code');
+    const encodedCode = params.c || window.localStorage.getItem(`code-${name}`);
     if (encodedCode) {
       const code = LZString.decompressFromEncodedURIComponent(encodedCode);
       this.setState({ code, editing: code !== propsCode });
@@ -60,14 +61,15 @@ export class Code extends Component {
   }
 
   onChange = code => {
+    const { name } = this.props;
     const { propsCode } = this.state;
     this.setState({ code });
     if (propsCode !== code) {
       const encodedCode = LZString.compressToEncodedURIComponent(code);
-      window.localStorage.setItem('code', encodedCode);
+      window.localStorage.setItem(`code-${name}`, encodedCode);
       window.history.replaceState(null, '', `?c=${encodedCode}`);
     } else {
-      window.localStorage.removeItem('code');
+      window.localStorage.removeItem(`code-${name}`);
       window.history.replaceState(null, '', `?`);
     }
   };
@@ -129,4 +131,5 @@ export class Code extends Component {
 
 Code.propTypes = {
   code: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
+  name: PropTypes.string.isRequired,
 };

@@ -25,6 +25,7 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
+      code={`<Anchor href="#" primary label="For Example" />`}
       example={<Anchor href="#" primary label="For Example" />}
       examples={{
         icon: <Anchor href="#" icon={<Edit />} />,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button } from 'grommet';
+import { Button } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Button/doc';
 
 import { Close, Edit } from 'grommet-icons';
@@ -25,11 +25,7 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      example={
-        <Box flex justify="center" align="center">
-          <Button icon={<Edit />} label="Edit" onClick={() => {}} />
-        </Box>
-      }
+      example={<Button icon={<Edit />} label="Edit" onClick={() => {}} />}
       examples={{
         active: <Button active label="Submit" onClick={() => {}} />,
         color: (
