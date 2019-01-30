@@ -36,7 +36,7 @@ export default class Use extends Component {
           <Heading level={2}>New Application</Heading>
           <Item
             label="grommet cli"
-            snippet={<code>npm install -g grommet-cli@next</code>}
+            snippet={<code>npm install -g grommet-cli</code>}
             description="Get grommet command line tools on your local environment."
           />
           <Item
@@ -48,7 +48,7 @@ export default class Use extends Component {
           <Heading level={2}>Existing Application</Heading>
           <Item
             label="grommet library"
-            snippet={<code>npm install grommet@next --save</code>}
+            snippet={<code>npm install grommet --save</code>}
             description="Get grommet on your local environment."
           />
           <Item
