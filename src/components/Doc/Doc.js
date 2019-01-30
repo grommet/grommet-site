@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Anchor, Heading, Keyboard, Text, ThemeContext } from 'grommet';
-import { Link as LinkIcon, Next, Previous } from 'grommet-icons';
+import { Box, Anchor, Heading, Text, ThemeContext } from 'grommet';
+import { Link as LinkIcon } from 'grommet-icons';
 import Header from '../Header';
-import RoutedButton from '../RoutedButton';
-import { Pusher } from '../../Router';
 import { genericSyntaxes } from '../../utils/props';
-import { nameToPath, nextComponent, previousComponent } from '../../structure';
 import { Prop } from './Prop';
 
 const themeValue = (theme, path) => {
@@ -41,97 +38,55 @@ class Doc extends Component {
       title,
     } = this.props;
 
-    const nextName = nextComponent(name);
-    const nextLink = nextName ? (
-      <RoutedButton path={nameToPath(nextName)}>
-        <Box pad={{ vertical: 'medium' }}>
-          <Next />
-        </Box>
-      </RoutedButton>
-    ) : (
-      <Box width="xxsmall" />
-    );
-
-    const previousName = previousComponent(name);
-    const previousLink = previousName ? (
-      <RoutedButton path={nameToPath(previousName)}>
-        <Box pad={{ vertical: 'medium' }}>
-          <Previous />
-        </Box>
-      </RoutedButton>
-    ) : (
-      <Box width="xxsmall" />
-    );
-
     const [summary, ...details] = ((desc && desc.description) || text).split(
       '.',
     );
 
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
-        <Pusher>
-          {push => (
-            <Keyboard
-              target="document"
-              onLeft={previousName && (() => push(nameToPath(previousName)))}
-              onRight={nextName && (() => push(nameToPath(nextName)))}
+        <Box align="center">
+          {example && (
+            <Box
+              alignSelf="center"
+              align="center"
+              pad="medium"
+              elevation="large"
+              margin={{ bottom: 'large' }}
             >
-              <Box direction="row" justify="between">
-                {previousLink}
-                <Box align="center">
-                  {example && (
-                    <Box
-                      alignSelf="center"
-                      align="center"
-                      pad="medium"
-                      elevation="large"
-                      margin={{ bottom: 'large' }}
-                    >
-                      {example}
-                    </Box>
-                  )}
-
-                  <Header
-                    label={title || name}
-                    summary={summary}
-                    details={details.join('.')}
-                  />
-
-                  {desc && desc.availableAt && (
-                    <Box margin={{ vertical: 'medium' }}>
-                      {Array.isArray(desc.availableAt) ? (
-                        <Box
-                          alignSelf="center"
-                          direction="row-responsive"
-                          gap="large"
-                        >
-                          {desc.availableAt.map(at => (
-                            <Anchor
-                              key={at.url}
-                              href={at.url}
-                              target="_blank"
-                              label={<Text size="large">{at.label}</Text>}
-                            />
-                          ))}
-                        </Box>
-                      ) : (
-                        <Anchor
-                          alignSelf="center"
-                          href={desc.availableAt.url}
-                          target="_blank"
-                          label={
-                            <Text size="large">{desc.availableAt.label}</Text>
-                          }
-                        />
-                      )}
-                    </Box>
-                  )}
-                </Box>
-                {nextLink}
-              </Box>
-            </Keyboard>
+              {example}
+            </Box>
           )}
-        </Pusher>
+
+          <Header
+            label={title || name}
+            summary={summary}
+            details={details.join('.')}
+          />
+
+          {desc && desc.availableAt && (
+            <Box margin={{ vertical: 'medium' }}>
+              {Array.isArray(desc.availableAt) ? (
+                <Box alignSelf="center" direction="row-responsive" gap="large">
+                  {desc.availableAt.map(at => (
+                    <Anchor
+                      key={at.url}
+                      href={at.url}
+                      target="_blank"
+                      label={<Text size="large">{at.label}</Text>}
+                    />
+                  ))}
+                </Box>
+              ) : (
+                <Anchor
+                  alignSelf="center"
+                  href={desc.availableAt.url}
+                  target="_blank"
+                  label={<Text size="large">{desc.availableAt.label}</Text>}
+                />
+              )}
+            </Box>
+          )}
+        </Box>
 
         {desc && (
           <Box
