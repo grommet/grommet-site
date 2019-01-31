@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Box, Diagram, Stack } from 'grommet';
-import { doc } from 'grommet/components/Diagram/doc';
+import { doc, themeDoc } from 'grommet/components/Diagram/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -112,6 +112,7 @@ export default () => (
         ],
       }}
       example={<Example />}
+      themeDoc={themeDoc}
     />
   </Page>
 );

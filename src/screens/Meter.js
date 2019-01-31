@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Box, Meter } from 'grommet';
-import { doc } from 'grommet/components/Meter/doc';
+import { doc, themeDoc } from 'grommet/components/Meter/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -159,6 +159,7 @@ export default class MeterDoc extends Component {
               </Box>
             ),
           }}
+          themeDoc={themeDoc}
         />
       </Page>
     );
