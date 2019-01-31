@@ -37,14 +37,14 @@ class Doc extends Component {
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
         <Box align="center">
-          {example && !code && <Example example={example} />}
-          {code && <Code code={code} name={name} />}
-
           <Header
             label={title || name}
             summary={summary}
             details={details.join('.')}
           />
+
+          {example && !code && <Example example={example} />}
+          {code && <Code code={code} name={name} />}
 
           {desc && desc.availableAt && (
             <Box margin={{ vertical: 'medium' }}>

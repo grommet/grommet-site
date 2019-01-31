@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import LZString from 'lz-string';
 /* eslint-disable import/no-duplicates */
 import { Box, Button, Text } from 'grommet';
-import { Code as CodeIcon, Refresh } from 'grommet-icons';
+import { Refresh } from 'grommet-icons';
 import { LiveError, LiveProvider, LivePreview } from 'react-live';
 import MonacoEditor from 'react-monaco-editor';
 import * as Icons from 'grommet-icons';
@@ -28,7 +28,7 @@ const options = {
 };
 
 const editorDidMount = editor => {
-  editor.focus();
+  // editor.focus();
   window.addEventListener('resize', () => editor.layout());
 };
 
@@ -40,7 +40,7 @@ export class Code extends Component {
     return null;
   }
 
-  state = {};
+  state = { editing: true };
 
   componentDidMount() {
     const { name } = this.props;
@@ -84,18 +84,28 @@ export class Code extends Component {
     else editorHeight = 'large';
 
     return (
-      <LiveProvider code={code} scope={scope}>
-        <Box direction="row" margin={{ bottom: 'large' }}>
-          <Box pad="medium" />
-          <Box width="large" elevation="large">
-            <Box pad="medium">
+      <Box
+        alignSelf="stretch"
+        margin={{ top: 'large' }}
+        border={{ color: 'brand' }}
+        round
+        overflow="hidden"
+      >
+        <LiveProvider code={code} scope={scope}>
+          <Box direction="row-responsive">
+            <Box flex basis="1/2" pad="medium">
               <LivePreview />
             </Box>
             {editing && (
-              <Fragment>
-                <Box flex={false} height={editorHeight} width="large">
+              <Box
+                flex
+                basis="1/2"
+                border={{ side: 'left', color: 'brand' }}
+                pad={{ vertical: 'xsmall', right: 'small' }}
+              >
+                <Box height={editorHeight}>
                   <MonacoEditor
-                    theme="vs-dark"
+                    theme="vs-light"
                     language="javascript"
                     value={code}
                     options={options}
@@ -108,23 +118,17 @@ export class Code extends Component {
                     <LiveError />
                   </Text>
                 </Box>
-              </Fragment>
+                {editing && code !== propsCode && (
+                  <Button
+                    icon={<Refresh />}
+                    onClick={() => this.onChange(propsCode)}
+                  />
+                )}
+              </Box>
             )}
           </Box>
-          <Box justify="between">
-            <Button
-              icon={<CodeIcon />}
-              onClick={() => this.setState({ editing: !editing })}
-            />
-            {editing && code !== propsCode && (
-              <Button
-                icon={<Refresh />}
-                onClick={() => this.onChange(propsCode)}
-              />
-            )}
-          </Box>
-        </Box>
-      </LiveProvider>
+        </LiveProvider>
+      </Box>
     );
   }
 }

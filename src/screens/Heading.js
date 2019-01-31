@@ -21,7 +21,7 @@ export default () => (
         color: 'neutral-1',
         level: [1, 2, 3, 4, 5, 6],
       }}
-      code={'<Heading margin="none">Chapter 1</Heading>'}
+      code={`<Heading margin="none">Chapter 1</Heading>`}
       example={<Heading margin="none">Chapter 1</Heading>}
       examples={{
         color: (
