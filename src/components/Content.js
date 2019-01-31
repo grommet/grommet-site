@@ -162,5 +162,6 @@ export default () => (
     <Route exact path="/worldmap" component={WorldMap} />
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
+    <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
   </React.Fragment>
 );
