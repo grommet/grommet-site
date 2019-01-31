@@ -160,5 +160,7 @@ export default () => (
     <Route exact path="/themecontext" component={ThemeContext} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
+
+    <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
   </React.Fragment>
 );

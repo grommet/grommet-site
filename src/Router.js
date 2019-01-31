@@ -62,17 +62,32 @@ Router.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export const Route = ({ component: Comp, path }) => (
+export const Route = ({ component: Comp, path, redirect }) => (
   <RouterContext.Consumer>
-    {({ path: currentPath }) =>
-      currentPath && currentPath.split('#')[0] === path ? <Comp /> : null
-    }
+    {({ path: currentPath }) => {
+      if (currentPath && currentPath.split('#')[0] === path) {
+        if (redirect) {
+          window.location.replace(redirect);
+        } else if (Comp) {
+          return <Comp />;
+        } else {
+          console.error('Route missing component or redirect');
+        }
+      }
+      return null;
+    }}
   </RouterContext.Consumer>
 );
 
 Route.propTypes = {
-  component: PropTypes.func.isRequired,
+  component: PropTypes.func,
   path: PropTypes.string.isRequired,
+  redirect: PropTypes.string,
+};
+
+Route.defaultProps = {
+  component: undefined,
+  redirect: undefined,
 };
 
 export const Clicker = ({ children, path }) => (
