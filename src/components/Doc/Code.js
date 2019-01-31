@@ -44,7 +44,6 @@ export class Code extends Component {
 
   componentDidMount() {
     const { name } = this.props;
-    const { propsCode } = this.state;
     const params = {};
     document.location.search
       .slice(1)
@@ -56,7 +55,7 @@ export class Code extends Component {
     const encodedCode = params.c || window.localStorage.getItem(`code-${name}`);
     if (encodedCode) {
       const code = LZString.decompressFromEncodedURIComponent(encodedCode);
-      this.setState({ code, editing: code !== propsCode });
+      this.setState({ code });
     }
   }
 
@@ -93,7 +92,7 @@ export class Code extends Component {
       >
         <LiveProvider code={code} scope={scope}>
           <Box direction="row-responsive">
-            <Box flex basis="1/2" pad="medium">
+            <Box flex basis="1/2" pad="medium" align="center">
               <LivePreview />
             </Box>
             {editing && (
@@ -101,7 +100,7 @@ export class Code extends Component {
                 flex
                 basis="1/2"
                 border={{ side: 'left', color: 'brand' }}
-                pad={{ vertical: 'xsmall', right: 'small' }}
+                pad={{ vertical: 'small', right: 'small' }}
               >
                 <Box height={editorHeight}>
                   <MonacoEditor

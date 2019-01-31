@@ -14,6 +14,10 @@ export default () => (
     <Doc
       name="Stack"
       desc={desc}
+      code={`<Stack anchor="top-right">
+  <Icons.Notification size="large" />
+  <Box background="brand" pad={{ horizontal: 'xsmall' }} round>8</Box>
+</Stack>`}
       example={
         <Stack anchor="center">
           <Box

@@ -9,18 +9,16 @@ import Item from './Components/Item';
 
 const desc = doc(Markdown).toJSON();
 
-const CONTENT = `
-# Grommet **heart**s markdown
+const CONTENT = `## Grommet **heart**s markdown
 
-Favorite thing, [link](https://twitter.com/grommet_io)
-`;
+Favorite thing, [link](https://twitter.com/grommet_io)`;
 
 export default () => (
   <Page>
     <Doc
       name="Markdown"
       desc={desc}
-      example={<Markdown>{CONTENT}</Markdown>}
+      code={`<Markdown>${CONTENT}</Markdown>`}
       syntaxes={{
         components: [
           {

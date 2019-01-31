@@ -14,10 +14,13 @@ export default () => (
       name="Box"
       desc={desc}
       code={`<Box
-  flex
+  direction="row"
   border={{ color: 'brand', size: 'large' }}
   pad="medium"
-/>`}
+>
+  <Box pad="small" background="dark-3" />
+  <Box pad="medium" background="light-3" />
+</Box>`}
       example={
         <Box flex border={{ color: 'brand', size: 'large' }} pad="medium" />
       }
