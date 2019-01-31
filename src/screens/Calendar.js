@@ -6,6 +6,7 @@ import { doc, themeDoc } from 'grommet/components/Calendar/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Calendar).toJSON();
 
@@ -68,3 +69,30 @@ export default class extends Component {
     );
   }
 }
+
+export const CalendarItem = props => (
+  <Item {...props} center>
+    <Box flex={false} gap="xsmall">
+      {[0, 1, 2, 3, 4].map(week => (
+        <Box key={week * 100} flex direction="row" gap="xsmall">
+          {[0, 1, 2, 3, 4, 5, 6].map(day => (
+            <Box
+              key={week * 100 + day * 10}
+              flex={false}
+              pad="xsmall"
+              round
+              background={{
+                color: 'brand',
+                opacity:
+                  (week === 0 && day < 3 && 'weak') ||
+                  (week === 1 && day === 5 && 'strong') ||
+                  (week === 4 && day > 4 && 'weak') ||
+                  'medium',
+              }}
+            />
+          ))}
+        </Box>
+      ))}
+    </Box>
+  </Item>
+);

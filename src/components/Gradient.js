@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Stack } from 'grommet';
 
 export default class Gradient extends Component {
+  static propTypes = {
+    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = { priorColors: props.colors };
@@ -9,8 +14,10 @@ export default class Gradient extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { colors } = this.props;
-    if (nextProps.colors[0] !== colors[0]
-      || nextProps.colors[1] !== colors[1]) {
+    if (
+      nextProps.colors[0] !== colors[0] ||
+      nextProps.colors[1] !== colors[1]
+    ) {
       this.setState({ nextColors: nextProps.colors });
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
@@ -31,18 +38,20 @@ export default class Gradient extends Component {
         <Box
           style={{
             height: '100%',
-            backgroundImage:
-              `linear-gradient(to bottom, ${(nextColors || priorColors)[0]}, ${(nextColors || priorColors)[1]})`,
-            opacity: (nextColors ? 1 : 0),
+            backgroundImage: `linear-gradient(to bottom, ${
+              (nextColors || priorColors)[0]
+            }, ${(nextColors || priorColors)[1]})`,
+            opacity: nextColors ? 1 : 0,
             transition: 'opacity 2s',
           }}
         />
         <Box
           style={{
             height: '100%',
-            backgroundImage:
-              `linear-gradient(to bottom, ${priorColors[0]}, ${priorColors[1]})`,
-            opacity: (nextColors ? 0 : 1),
+            backgroundImage: `linear-gradient(to bottom, ${priorColors[0]}, ${
+              priorColors[1]
+            })`,
+            opacity: nextColors ? 0 : 1,
             transition: 'opacity 2s',
           }}
         />

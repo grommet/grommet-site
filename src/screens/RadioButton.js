@@ -5,19 +5,29 @@ import { doc } from 'grommet/components/RadioButton/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(RadioButton).toJSON();
 
 export default () => (
   <Page>
     <Doc
-      name='RadioButton'
+      name="RadioButton"
       desc={desc}
-      examples={{
-        checked: <RadioButton label='A' checked onChange={() => {}} />,
-        disabled: <RadioButton label='A' disabled onChange={() => {}} />,
-        label: <RadioButton label='A' onChange={() => {}} />,
-      }}
+      example={
+        <RadioButton
+          checked
+          name="choices"
+          label="chosen"
+          onChange={() => {}}
+        />
+      }
     />
   </Page>
+);
+
+export const RadioButtonItem = props => (
+  <Item {...props} center>
+    <RadioButton name="radio" checked onChange={() => {}} />
+  </Item>
 );

@@ -10,6 +10,7 @@ import {
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = docAccordion(Accordion).toJSON();
 const descAccordionPanel = docAccordionPanel(AccordionPanel).toJSON();
@@ -62,4 +63,15 @@ export default () => (
       }}
     />
   </Page>
+);
+
+export const AccordionItem = props => (
+  <Item {...props} center>
+    <Box width="small">
+      <Box pad="small" background="brand" />
+      <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
+      <Box pad="small" background="brand" />
+      <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
+    </Box>
+  </Item>
 );

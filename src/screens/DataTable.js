@@ -1,12 +1,11 @@
 import React from 'react';
 
-import {
-  Box, DataTable, Meter, Text,
-} from 'grommet';
+import { Box, DataTable, Meter, Text } from 'grommet';
 import { doc } from 'grommet/components/DataTable/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(DataTable).toJSON();
 
@@ -22,7 +21,11 @@ const columns = [
     header: 'Complete',
     render: datum => (
       <Box pad={{ vertical: 'xsmall' }}>
-        <Meter values={[{ value: datum.percent }]} thickness='small' size='small' />
+        <Meter
+          values={[{ value: datum.percent }]}
+          thickness="small"
+          size="small"
+        />
       </Box>
     ),
   },
@@ -42,11 +45,34 @@ const data = [
 export default () => (
   <Page>
     <Doc
-      name='DataTable'
+      name="DataTable"
       desc={desc}
-      example={(
-        <DataTable columns={columns} data={data} sortable />
-      )}
+      example={<DataTable columns={columns} data={data} sortable />}
     />
   </Page>
+);
+
+export const DataTableItem = props => (
+  <Item {...props} center>
+    <Box gap="xsmall">
+      <Box background="brand" />
+      {[0, 1, 2, 3].map(row => (
+        <Box key={row * 100} direction="row" gap="xsmall">
+          {[0, 1, 2].map(col => (
+            <Box
+              key={col * 100 + row * 10}
+              background={
+                (!row && 'brand') ||
+                (!col && { color: 'brand', opacity: 'medium' }) ||
+                undefined
+              }
+              border={col && row ? { color: 'brand' } : undefined}
+              width={col ? 'xsmall' : 'xxsmall'}
+              pad="small"
+            />
+          ))}
+        </Box>
+      ))}
+    </Box>
+  </Item>
 );

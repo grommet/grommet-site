@@ -76,12 +76,9 @@ render(<App />);
           <Header
             level={2}
             label="start coding"
-            summary={
-              <span>
-                already working on a project, starting fresh, or just want to
-                poke around and see how all this junk works?
-              </span>
-            }
+            summary="
+              already working on a project, starting fresh, or just want to
+              poke around and see how all this junk works?"
           />
 
           <Box
@@ -148,12 +145,8 @@ render(<App />);
           <Header
             level={2}
             label="and start designing"
-            summary={
-              <span>
-                sticker sheets, design patterns, app templates, and icons
-                galore.
-              </span>
-            }
+            summary="sticker sheets, design patterns, app templates, and icons
+              galore."
           />
 
           <Box
@@ -170,7 +163,7 @@ render(<App />);
               target="_blank"
             />
             <Anchor
-              href="//grommet.io/grommet-icons"
+              href="//icons.grommet.io"
               label={<Text size="large">Grommet Icons</Text>}
               icon={<Next />}
               reverse

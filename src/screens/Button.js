@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button } from 'grommet';
+import { Button } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Button/doc';
 
 import { Close, Edit } from 'grommet-icons';
@@ -8,6 +8,7 @@ import { Close, Edit } from 'grommet-icons';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Button).toJSON();
 
@@ -24,11 +25,7 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      example={
-        <Box flex justify="center" align="center">
-          <Button icon={<Edit />} label="Edit" onClick={() => {}} />
-        </Box>
-      }
+      example={<Button icon={<Edit />} label="Edit" onClick={() => {}} />}
       examples={{
         active: <Button active label="Submit" onClick={() => {}} />,
         color: (
@@ -44,4 +41,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const ButtonItem = props => (
+  <Item {...props} center>
+    <Button label="i'm a button" primary onClick={() => {}} />
+  </Item>
 );

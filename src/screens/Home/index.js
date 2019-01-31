@@ -28,12 +28,8 @@ export default class Home extends Component {
 
           <Header
             label="streamline the way you develop apps"
-            summary={
-              <span>
-                build responsive and accessible mobile-first projects for the
-                web with an easy to use component library
-              </span>
-            }
+            summary="build responsive and accessible mobile-first projects for the
+              web with an easy to use component library"
           />
 
           <Box
@@ -71,11 +67,11 @@ export default class Home extends Component {
             level={2}
             label="part design system, part framework, and all awesome"
             summary={
-              <span>
+              <Paragraph size="xxlarge" textAlign="center">
                 grommet is a <Anchor href="https://reactjs.org">react</Anchor>
                 -based framework that provides accessibility, modularity,
                 responsiveness, and theming in a tidy package
-              </span>
+              </Paragraph>
             }
           />
 
@@ -100,12 +96,8 @@ export default class Home extends Component {
           <Header
             level={2}
             label="try grommet"
-            summary={
-              <span>
-                we want to make grommet the best ui framework on react. so, come
-                for the code and stay for the peeps.
-              </span>
-            }
+            summary="we want to make grommet the best ui framework on react.
+              so, come for the code and stay for the peeps."
           />
 
           <RoutedButton alignSelf="center" path="/components" plain>

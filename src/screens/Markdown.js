@@ -5,25 +5,40 @@ import { doc } from 'grommet/components/Markdown/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Markdown).toJSON();
 
 const CONTENT = `
 # Grommet **heart**s markdown
 
-Favorite thing, [link](https://www.instagram.com/explore/tags/grommetux/)
+Favorite thing, [link](https://twitter.com/grommet_io)
 `;
 
 export default () => (
   <Page>
     <Doc
-      name='Markdown'
+      name="Markdown"
       desc={desc}
-      example={(
-        <Markdown>
-          {CONTENT}
-        </Markdown>
-      )}
+      example={<Markdown>{CONTENT}</Markdown>}
+      syntaxes={{
+        components: [
+          {
+            p: {
+              component: 'Paragraph',
+              props: {
+                size: 'medium',
+              },
+            },
+          },
+        ],
+      }}
     />
   </Page>
+);
+
+export const MarkdownItem = props => (
+  <Item {...props} center>
+    <code>grommet **heart**&#39;s markdown</code>
+  </Item>
 );

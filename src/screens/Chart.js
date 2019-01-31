@@ -6,9 +6,10 @@ import { doc, docCalcs } from 'grommet/components/Chart/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Chart).toJSON();
-const Dummy = () => (<div />);
+const Dummy = () => <div />;
 const descCalcs = docCalcs(Dummy).toJSON();
 
 const BOUNDS = [[0, 7], [0, 100]];
@@ -38,7 +39,7 @@ const VALUES2 = [
 export default () => (
   <Page>
     <Doc
-      name='Chart'
+      name="Chart"
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
@@ -77,14 +78,15 @@ export default () => (
           ],
         ],
       }}
+      example={<Chart bounds={BOUNDS} values={VALUES} aria-label="chart" />}
       examples={{
         color: (
           <Chart
-            color='brand'
+            color="brand"
             bounds={BOUNDS}
             values={VALUES}
             size={{ width: 'small', height: 'xsmall' }}
-            aria-label='colored chart'
+            aria-label="colored chart"
           />
         ),
         onClick: (
@@ -95,10 +97,10 @@ export default () => (
                   type={type}
                   round
                   bounds={BOUNDS}
-                  onClick={() => (
+                  onClick={() =>
                     // eslint-disable-next-line no-alert
                     alert(`Clicked ${type}`)
-                  )}
+                  }
                   values={VALUES}
                   size={{ width: 'small', height: 'xsmall' }}
                   aria-label={`${type} rounded chart`}
@@ -188,6 +190,27 @@ export default () => (
       }}
     />
 
-    <Doc name='calcs' nav={false} desc={descCalcs} />
+    <Doc name="calcs" nav={false} desc={descCalcs} />
   </Page>
+);
+
+const CHART_VALUES = [
+  { value: [4, 5], label: '4' },
+  { value: [3, 2], label: '3' },
+  { value: [2, 10], label: '2' },
+  { value: [1, 7], label: '1' },
+  { value: [0, 3], label: '0' },
+];
+
+export const ChartItem = props => (
+  <Item {...props} center>
+    <Chart
+      aria-label="Chart example"
+      bounds={[[0, 4], [0, 10]]}
+      size={{ width: 'small', height: 'xsmall' }}
+      round
+      color="brand"
+      values={CHART_VALUES}
+    />
+  </Item>
 );

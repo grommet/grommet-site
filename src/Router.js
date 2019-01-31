@@ -15,7 +15,7 @@ export class Router extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
   componentDidMount() {
     window.addEventListener('popstate', this.onPopState);
@@ -29,15 +29,23 @@ export class Router extends Component {
   onPopState = () => {
     const { location } = document;
     this.setState({ path: location.pathname, search: location.search });
-  }
+  };
 
-  onPush = (nextPath) => {
+  onPush = nextPath => {
     const { path, search } = this.state;
     if (nextPath !== path) {
-      window.history.pushState(undefined, undefined, `${nextPath}${search || ''}`);
-      this.setState({ path: nextPath });
+      if (nextPath.startsWith('http')) {
+        window.location = nextPath;
+      } else {
+        window.history.pushState(
+          undefined,
+          undefined,
+          `${nextPath}${search || ''}`,
+        );
+        this.setState({ path: nextPath });
+      }
     }
-  }
+  };
 
   render() {
     const { children } = this.props;
@@ -56,7 +64,9 @@ Router.propTypes = {
 
 export const Route = ({ component: Comp, path }) => (
   <RouterContext.Consumer>
-    {({ path: currentPath }) => (currentPath === path ? <Comp /> : null)}
+    {({ path: currentPath }) =>
+      currentPath && currentPath.split('#')[0] === path ? <Comp /> : null
+    }
   </RouterContext.Consumer>
 );
 
@@ -67,10 +77,12 @@ Route.propTypes = {
 
 export const Clicker = ({ children, path }) => (
   <RouterContext.Consumer>
-    {({ push }) => children((event) => {
-      event.preventDefault();
-      push(path);
-    })}
+    {({ push }) =>
+      children(event => {
+        event.preventDefault();
+        push(path);
+      })
+    }
   </RouterContext.Consumer>
 );
 
@@ -86,6 +98,16 @@ export const Watcher = ({ children }) => (
 );
 
 Watcher.propTypes = {
+  children: PropTypes.func.isRequired,
+};
+
+export const Pusher = ({ children }) => (
+  <RouterContext.Consumer>
+    {({ push }) => children(push)}
+  </RouterContext.Consumer>
+);
+
+Pusher.propTypes = {
   children: PropTypes.func.isRequired,
 };
 

@@ -8,6 +8,7 @@ import { Edit } from 'grommet-icons';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
+import Item from './Components/Item';
 
 const desc = doc(Anchor).toJSON();
 
@@ -24,11 +25,8 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      example={
-        <Box flex justify="center" align="center">
-          <Anchor href="#" primary label="For Example" />
-        </Box>
-      }
+      code={`<Anchor href="#" primary label="For Example" />`}
+      example={<Anchor href="#" primary label="For Example" />}
       examples={{
         icon: <Anchor href="#" icon={<Edit />} />,
         label: <Anchor href="#" label="Edit" />,
@@ -38,4 +36,15 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const AnchorItem = props => (
+  <Item {...props} center>
+    <Box width="small">
+      <Box pad="small" background="brand" />
+      <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
+      <Box pad="small" background="brand" />
+      <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
+    </Box>
+  </Item>
 );

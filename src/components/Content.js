@@ -39,6 +39,7 @@ import Meter from '../screens/Meter';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
+import RadioButtonGroup from '../screens/RadioButtonGroup';
 import RangeInput from '../screens/RangeInput';
 import RangeSelector from '../screens/RangeSelector';
 import ResponsiveContext from '../screens/ResponsiveContext';
@@ -143,6 +144,7 @@ export default () => (
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
     <Route exact path="/radiobutton" component={RadioButton} />
+    <Route exact path="/radiobuttongroup" component={RadioButtonGroup} />
     <Route exact path="/rangeinput" component={RangeInput} />
     <Route exact path="/rangeselector" component={RangeSelector} />
     <Route exact path="/responsivecontext" component={ResponsiveContext} />

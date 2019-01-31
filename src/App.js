@@ -49,7 +49,7 @@ export default class App extends Component {
     return (
       <Router search={search}>
         <Analytics>
-          <Grommet theme={THEMES[themeName || 'grommet']}>
+          <Grommet full theme={THEMES[themeName || 'grommet']}>
             <Content />
           </Grommet>
         </Analytics>

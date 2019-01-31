@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/Stack/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Stack).toJSON();
 
@@ -62,4 +63,12 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const StackItem = props => (
+  <Item {...props}>
+    <Box flex border={{ color: 'brand', size: 'xlarge' }}>
+      <Box flex background="brand" margin="medium" />
+    </Box>
+  </Item>
 );

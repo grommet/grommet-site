@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/Image/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Image).toJSON();
 
@@ -15,6 +16,14 @@ export default () => (
     <Doc
       name="Image"
       desc={desc}
+      example={
+        <Box height="small">
+          <Image
+            fit="cover"
+            src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+          />
+        </Box>
+      }
       examples={{
         fit: (
           <Box direction="row" justify="end" wrap>
@@ -36,4 +45,10 @@ export default () => (
       themeDoc={themeDoc}
     />
   </Page>
+);
+
+export const ImageItem = props => (
+  <Item {...props}>
+    <Image src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" fit="cover" />
+  </Item>
 );

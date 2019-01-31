@@ -5,6 +5,7 @@ import { doc, themeDoc } from 'grommet/components/Layer/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
+import Item from './Components/Item';
 
 const desc = doc(Layer).toJSON();
 
@@ -159,3 +160,12 @@ export default class LayerDoc extends Component {
     );
   }
 }
+
+export const LayerItem = props => (
+  <Item {...props}>
+    <Box flex direction="row">
+      <Box basis="1/3" background={{ color: 'brand', opacity: 'weak' }} />
+      <Box flex background="brand" />
+    </Box>
+  </Item>
+);
