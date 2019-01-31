@@ -25,7 +25,11 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      example={<Button icon={<Edit />} label="Edit" onClick={() => {}} />}
+      code={`<Button
+  icon={<Icons.Edit />}
+  label="Edit"
+  onClick={() => {}}
+/>`}
       examples={{
         active: <Button active label="Submit" onClick={() => {}} />,
         color: (

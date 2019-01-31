@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Accordion, AccordionPanel, Box, Text } from 'grommet';
+import { Accordion, AccordionPanel, Box } from 'grommet';
 import { doc as docAccordion } from 'grommet/components/Accordion/doc';
 import {
   doc as docAccordionPanel,
@@ -26,30 +26,18 @@ export default () => (
         children: 'node',
         onActive: '([0]) => {}',
       }}
-      example={
-        <Accordion>
-          <AccordionPanel label="Panel 1">
-            <Box
-              align="center"
-              justify="center"
-              background={{ color: 'brand', opacity: 'weak' }}
-              height="small"
-            >
-              <Text color="text">Panel 1 contents</Text>
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel label="Panel 2">
-            <Box
-              align="center"
-              justify="center"
-              background={{ color: 'brand', opacity: 'weak' }}
-              height="small"
-            >
-              <Text color="text">Panel 2 contents</Text>
-            </Box>
-          </AccordionPanel>
-        </Accordion>
-      }
+      code={`<Accordion>
+  <AccordionPanel label="Panel 1">
+    <Box pad="medium" background="light-2">
+      <Text>One</Text>
+    </Box>
+  </AccordionPanel>
+  <AccordionPanel label="Panel 2">
+    <Box pad="medium" background="light-2">
+      <Text>Two</Text>
+    </Box>
+  </AccordionPanel>
+</Accordion>`}
     />
 
     <Doc

@@ -46,15 +46,13 @@ export default () => (
         label: ['Actions', '<Box>...</Box>'],
         messages: [{ openMenu: 'Open Menu', closeMenu: 'Close Menu' }],
       }}
-      example={
-        <Menu
-          label="Menu"
-          items={[
-            { label: 'First Action', onClick },
-            { label: 'Second Action', onClick },
-          ]}
-        />
-      }
+      code={`<Menu
+  label="Menu"
+  items={[
+    { label: 'First Action', onClick: () => {} },
+    { label: 'Second Action', onClick: () => {} },
+  ]}
+/>`}
       examples={{
         icon: (
           <Menu
