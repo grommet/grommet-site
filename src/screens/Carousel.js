@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Carousel, Image } from 'grommet';
+import { Box, Carousel } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
 import { doc, themeDoc } from 'grommet/components/Carousel/doc';
 
@@ -15,18 +15,13 @@ export default () => (
     <Doc
       name="Carousel"
       desc={desc}
-      example={
-        <Box height="small" width="medium" overflow="hidden">
-          <Carousel fill>
-            <Image
-              fit="cover"
-              src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
-            />
-            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
-            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
-          </Carousel>
-        </Box>
-      }
+      code={`<Box height="small" width="medium" overflow="hidden">
+  <Carousel fill>
+    <Image fit="cover" src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" />
+    <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
+    <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
+  </Carousel>
+</Box>`}
       themeDoc={themeDoc}
     />
   </Page>

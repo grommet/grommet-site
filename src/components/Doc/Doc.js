@@ -40,7 +40,7 @@ class Doc extends Component {
           <Header
             label={title || name}
             summary={summary}
-            details={details.join('.')}
+            details={desc && (desc.details || details.join('.'))}
           />
 
           {example && !code && <Example example={example} />}

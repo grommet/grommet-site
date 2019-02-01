@@ -36,47 +36,40 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   ...rest,
 });
 
-const Example = () => (
-  <Stack guidingChild={1}>
-    <Diagram
-      connections={[
-        connection('1', '2'),
-        connection('6', '7'),
-        connection('3', '8'),
-      ]}
-    />
-    <Box>
-      <Box direction="row">
-        {[1, 2, 3].map(id => (
-          <Node key={id} id={id} />
-        ))}
-      </Box>
-      <Box direction="row">
-        {[4, 5].map(id => (
-          <Node key={id} id={id} />
-        ))}
-      </Box>
-      <Box direction="row">
-        {[6, 7, 8].map(id => (
-          <Node key={id} id={id} />
-        ))}
-      </Box>
-    </Box>
-    <Diagram
-      connections={[
-        connection('3', '5', { color: 'accent-2' }),
-        connection('4', '1', { color: 'accent-2' }),
-        connection('4', '7', { color: 'accent-2' }),
-      ]}
-    />
-  </Stack>
-);
-
 export default () => (
   <Page>
     <Doc
       name="Diagram"
       desc={desc}
+      code={`<Stack guidingChild={1}>
+  <Diagram
+    connections={[
+      {
+        fromTarget: '1',
+        toTarget: '2',
+        thickness: 'xsmall',
+        color: 'accent-2',
+      },
+      {
+        fromTarget: '1',
+        toTarget: '4',
+        thickness: 'xsmall',
+        color: 'accent-2',
+        type: 'rectilinear',
+      },
+    ]}
+  />
+  <Box>
+    <Box direction="row">
+      <Box id="1" margin="small" pad="medium" background="neutral-1" />
+      <Box id="2" margin="small" pad="medium" background="neutral-1" />
+    </Box>
+    <Box direction="row">
+      <Box id="3" margin="small" pad="medium" background="neutral-1" />
+      <Box id="4" margin="small" pad="medium" background="neutral-1" />
+    </Box>
+  </Box>
+</Stack>`}
       syntaxes={{
         connections: [
           {
@@ -111,7 +104,6 @@ export default () => (
           },
         ],
       }}
-      example={<Example />}
       themeDoc={themeDoc}
     />
   </Page>

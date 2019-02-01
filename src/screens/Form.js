@@ -14,12 +14,10 @@ export default () => (
     <Doc
       name="Form"
       desc={desc}
-      example={
-        <Form>
-          <FormField name="name" label="Name" />
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      }
+      code={`<Form>
+  <FormField name="name" label="Name" />
+  <Button type="submit" primary label="Submit" />
+</Form>`}
     />
   </Page>
 );

@@ -14,13 +14,10 @@ export default () => (
     <Doc
       name="TextArea"
       desc={desc}
-      example={<TextArea value="Things get typed here" />}
-      examples={{
-        focusIndicator: <TextArea value="A B C" plain focusIndicator />,
-        placeholder: <TextArea placeholder="placeholder" />,
-        plain: <TextArea plain valuer="A B C" />,
-        value: <TextArea value="A B C" />,
-      }}
+      code={`<TextArea
+  value="Things get typed here"
+  onChange={(event) => {/* event.target.value */}}
+/>`}
       themeDoc={themeDoc}
     />
   </Page>

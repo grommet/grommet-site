@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, WorldMap } from 'grommet';
+import { WorldMap } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/WorldMap/doc';
 
 import Page from '../components/Page';
@@ -14,35 +14,26 @@ const WorldMapDoc = () => (
     <Doc
       name="WorldMap"
       desc={desc}
-      example={
-        <Box height="small">
-          <WorldMap
-            color="neutral-1"
-            continents={[
-              {
-                name: 'Africa',
-                color: 'accent-1',
-                // eslint-disable-next-line no-alert
-                onClick: name => alert(name),
-              },
-            ]}
-            onSelectPlaceX={(lat, lon) =>
-              // eslint-disable-next-line no-alert
-              alert(lat, lon)
-            }
-            places={[
-              {
-                name: 'Sydney',
-                location: [-33.8830555556, 151.216666667],
-                color: 'accent-2',
-                // eslint-disable-next-line no-alert
-                onClick: name => alert(name),
-              },
-            ]}
-            selectColor="accent-2"
-          />
-        </Box>
-      }
+      code={`<WorldMap
+  color="neutral-1"
+  continents={[
+    {
+      name: 'Africa',
+      color: 'light-5',
+      onClick: (name) => {},
+    },
+  ]}
+  onSelectPlace={(lat, lon) => {}}
+  places={[
+    {
+      name: 'Sydney',
+      location: [-33.8830555556, 151.216666667],
+      color: 'accent-2',
+      onClick: (name) => {},
+    },
+  ]}
+  selectColor="accent-2"
+/>`}
       themeDoc={themeDoc}
     />
   </Page>

@@ -14,14 +14,12 @@ export default () => (
     <Doc
       name="RadioButton"
       desc={desc}
-      example={
-        <RadioButtonGroup
-          name="doc"
-          options={['one', 'two']}
-          value="one"
-          onChange={() => {}}
-        />
-      }
+      code={`<RadioButtonGroup
+  name="doc"
+  options={['one', 'two']}
+  value="one"
+  onChange={() => {}}
+/>`}
       syntaxes={{
         options: [
           ['string'],

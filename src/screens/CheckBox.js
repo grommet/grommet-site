@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, CheckBox } from 'grommet';
+import { CheckBox } from 'grommet';
 import { doc } from 'grommet/components/CheckBox/doc';
 
 import Page from '../components/Page';
@@ -20,20 +20,11 @@ export default () => (
         name: 'a-dom-name',
         onChange: '() => {}',
       }}
-      example={<CheckBox checked label="interested?" onChange={() => {}} />}
-      examples={{
-        checked: <CheckBox label="A" checked onChange={() => {}} />,
-        disabled: <CheckBox label="A" disabled />,
-        reverse: <CheckBox label="A" reverse onChange={() => {}} />,
-        toggle: (
-          <Box>
-            <Box margin={{ bottom: 'xsmall' }}>
-              <CheckBox label="A" toggle onChange={() => {}} />
-            </Box>
-            <CheckBox label="B" toggle checked onChange={() => {}} />
-          </Box>
-        ),
-      }}
+      code={`<CheckBox
+  checked={true}
+  label="interested?"
+  onChange={(event) => {/* event.target.checked */}}
+/>`}
     />
   </Page>
 );

@@ -14,14 +14,12 @@ export default () => (
     <Doc
       name="RadioButton"
       desc={desc}
-      example={
-        <RadioButton
-          checked
-          name="choices"
-          label="chosen"
-          onChange={() => {}}
-        />
-      }
+      code={`<RadioButton
+  checked
+  name="choices"
+  label="chosen"
+  onChange={(event) => {/* event.target.value */}}
+/>`}
     />
   </Page>
 );
