@@ -14,9 +14,11 @@ class Doc extends Component {
   state = {};
 
   componentDidMount() {
-    const { name } = this.props;
-    document.title = `${name} - Grommet`;
-    window.scrollTo(0, 0);
+    const { name, nav } = this.props;
+    if (nav) {
+      document.title = `${name} - Grommet`;
+      window.scrollTo(0, 0);
+    }
   }
 
   render() {

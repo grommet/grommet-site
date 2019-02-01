@@ -1237,9 +1237,9 @@
   integrity sha512-3AQoUxQcQtLHsK25wtTWIoIpgYjH3vSDroZOUr7PpCHw/jLY1RB9z9E8dBT/OSmwStVgkRNvdh+ZHNiomRieaw==
 
 "@types/react@*":
-  version "16.7.22"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.22.tgz#5bc6d166d5ac34b835756f0b736c7b1af0043e81"
-  integrity sha512-j/3tVoY09kHcTfbia4l67ofQn9xvktUvlC/4QN0KuBHAXlbU/wuGKMb8WfEb/vIcWxsOxHv559uYprkFDFfP8Q==
+  version "16.8.1"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.1.tgz#b431b104ecc6febda170b718caa9f50be66a6750"
+  integrity sha512-tD1ETKJcuhANOejRc/p7OgQ16DKnbGi0M3LccelKlPnUCDp2a5koVxZFoRN9HN+A+m84HB5VGN7I+r3nNhS3PA==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -4637,7 +4637,7 @@ grommet-theme-v1@^0.1.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.3.1"
-  resolved "https://github.com/grommet/grommet/tarball/stable#8aa0641320547e6b7a21135ff793afd88a4900f2"
+  resolved "https://github.com/grommet/grommet/tarball/stable#f098df9f6d9c6546b16bd66142826cde42c3ae95"
   dependencies:
     css "^2.2.3"
     grommet-icons "^4.0.0"

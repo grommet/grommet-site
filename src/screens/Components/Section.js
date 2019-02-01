@@ -24,7 +24,7 @@ const Section = forwardRef(({ children, index, name }, ref) => (
     </Box>
     {Grid.available ? (
       <Grid
-        columns={{ count: 'fit', size: 'medium' }}
+        columns={{ count: 'fill', size: ['small', 'medium'] }}
         rows="small"
         gap={{ row: 'medium' }}
       >
