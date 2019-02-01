@@ -1,13 +1,13 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/typescript.worker.js",
-      "/editor.worker.js",
       "/css.worker.js",
       "/html.worker.js",
       "/json.worker.js",
+      "/typescript.worker.js",
+      "/editor.worker.js",
       "/0-f7bba91722241efdd833.js",
-      "/main-96dc789fb355d5c7a2ff.js",
+      "/main-e2bf3aae2a282701f545.js",
       "/vendors~main-373eaa2a6ca9edcb2989.js",
       "/3-ee1b23c239fbae984a67.js",
       "/4-183ec9a93f1bbf977033.js",
@@ -63,7 +63,6 @@ var __wpo = {
       "/54-3574d52e4312e358355c.js",
       "/",
       "/package.json",
-      "/_redirects",
       "/assets/IMG_4210.jpg",
       "/assets/IMG_4245.jpg",
       "/assets/small-en.vtt",
@@ -104,20 +103,21 @@ var __wpo = {
       "/img/stak-hurrah.svg",
       "/img/Stak.svg",
       "/manifest.json",
-      "/server.js"
+      "/server.js",
+      "/_redirects"
     ],
     "additional": [],
     "optional": []
   },
   "externals": [],
   "hashesMap": {
-    "b9d9b6c74fdc5641284e08ef0109abcf4f152b44": "/typescript.worker.js",
-    "13d6ca9c49f437742dbb3a64c35b80ed8d5f91a3": "/editor.worker.js",
     "0ab8ae37be563d35b622b904fc79ffeb3e195afb": "/css.worker.js",
     "63e4dc8647276f3d61eb7d07a9c90fc0e7ac52b0": "/html.worker.js",
     "025191ebc9fbef73f9dfd87150c308790d7d290d": "/json.worker.js",
+    "b9d9b6c74fdc5641284e08ef0109abcf4f152b44": "/typescript.worker.js",
+    "13d6ca9c49f437742dbb3a64c35b80ed8d5f91a3": "/editor.worker.js",
     "f5444f940e0b3b5620bd5b44d7bd25b66a81fc3d": "/0-f7bba91722241efdd833.js",
-    "5b4ff7bc98f312eac8e266745142b1faf8aea5ce": "/main-96dc789fb355d5c7a2ff.js",
+    "d033a95c647b31a595121773b6e1b8937b1fbc5b": "/main-e2bf3aae2a282701f545.js",
     "0fe57ace9e2bb596a1b60da0c2b82f57b6247515": "/vendors~main-373eaa2a6ca9edcb2989.js",
     "0d58b63458642b1e281827b4ecefc2dba1156f63": "/3-ee1b23c239fbae984a67.js",
     "cff41054b3785987da1aefa4e63b22330768714d": "/4-183ec9a93f1bbf977033.js",
@@ -171,9 +171,8 @@ var __wpo = {
     "1bde26a48d12e891ffc6c1d9a1ecb1c41ed42783": "/52-de771d4eaeefbcb1a38e.js",
     "5e87ad1ebbfde839758bdd770c39503da38bebd3": "/53-da7dda9336fe21fdb36c.js",
     "0f89176a6c3c40e997aef6084a5e259a4010d1b9": "/54-3574d52e4312e358355c.js",
-    "54a50d21604e89c432670508b703550779fd8193": "/",
+    "55d8cf5f1dceefe02c9bacce28b571c3c198a3ef": "/",
     "23e431790a3bb55de82b7125f683f3399c9080eb": "/package.json",
-    "fc85342b05081910c4bcabac928d23bba80a391a": "/_redirects",
     "fb28b293bc43d453a0101e8be9295f0542e4f1aa": "/assets/IMG_4210.jpg",
     "5b940442218c4ef0a0fe5f0ff058a5188620beba": "/assets/IMG_4245.jpg",
     "397ef16b44d2b5df21fe736ccb109f8d34e51805": "/assets/small-en.vtt",
@@ -213,11 +212,12 @@ var __wpo = {
     "b6c9e1991e982288d7beb05525666d776e68f3bf": "/img/stak-hurrah.svg",
     "223dd82b52f2a079b848977348221cac5daeafec": "/img/Stak.svg",
     "fbe85641ca7b921daa4952f443cd3c8059c10258": "/manifest.json",
-    "1de2c4bb47739e8fd27da6be8cc2f9e874054466": "/server.js"
+    "1de2c4bb47739e8fd27da6be8cc2f9e874054466": "/server.js",
+    "fc85342b05081910c4bcabac928d23bba80a391a": "/_redirects"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2019-2-1 21:36:12",
+  "version": "2019-2-1 21:37:32",
   "name": "webpack-offline",
   "pluginVersion": "5.0.6",
   "relativePaths": false
