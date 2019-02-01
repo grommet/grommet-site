@@ -12,7 +12,7 @@ const desc = doc(RadioButtonGroup).toJSON();
 export default () => (
   <Page>
     <Doc
-      name="RadioButton"
+      name="RadioButtonGroup"
       desc={desc}
       code={`<RadioButtonGroup
   name="doc"

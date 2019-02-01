@@ -27,11 +27,11 @@ export default () => (
         onOpen: '() => {}',
       }}
       code={`<DropButton
-label="Fancy Selector"
-dropAlign={{ top: 'bottom', right: 'right' }}
-dropContent={
-<Box pad="large" background="light-2" />
-}
+  label="Fancy Selector"
+  dropAlign={{ top: 'bottom', right: 'right' }}
+  dropContent={
+    <Box pad="large" background="light-2" />
+  }
 />`}
     />
   </Page>

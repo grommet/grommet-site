@@ -83,7 +83,7 @@ export const nameToPath = name => {
   if (external) {
     return external.url;
   }
-  return `/${name.toLowerCase()}`;
+  return name ? `/${name.toLowerCase()}` : '/components';
 };
 
 export const nextComponent = name => {

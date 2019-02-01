@@ -61,12 +61,12 @@ export default () => (
   />
   <Box>
     <Box direction="row">
-      <Box id="1" margin="small" pad="medium" background="neutral-1" />
-      <Box id="2" margin="small" pad="medium" background="neutral-1" />
+      <Box id="1" margin="small" pad="medium" background="light-4" />
+      <Box id="2" margin="small" pad="medium" background="light-4" />
     </Box>
     <Box direction="row">
-      <Box id="3" margin="small" pad="medium" background="neutral-1" />
-      <Box id="4" margin="small" pad="medium" background="neutral-1" />
+      <Box id="3" margin="small" pad="medium" background="light-4" />
+      <Box id="4" margin="small" pad="medium" background="light-4" />
     </Box>
   </Box>
 </Stack>`}

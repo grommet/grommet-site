@@ -36,6 +36,7 @@ export default () => (
     <Doc
       name="Tab"
       desc={descTab}
+      nav={false}
       syntaxes={{
         title: ['Tab Title', '<Box>...</Box>'],
       }}

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Anchor, Text } from 'grommet';
+import { Anchor, Box, Layer, Text } from 'grommet';
+import { Next, Previous } from 'grommet-icons';
+import { nameToPath, nextComponent, previousComponent } from '../../structure';
 import Header from '../Header';
+import RoutedButton from '../RoutedButton';
 import { Code } from './Code';
 import { Example } from './Example';
 import { Props } from './Props';
@@ -22,6 +25,7 @@ class Doc extends Component {
       code,
       desc,
       name,
+      nav,
       example,
       examples,
       syntaxes,
@@ -37,6 +41,20 @@ class Doc extends Component {
     return (
       <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
         <Box align="center">
+          {nav && false && (
+            <Layer modal={false} position="top">
+              <Box direction="row" gap="medium">
+                <RoutedButton
+                  path={nameToPath(previousComponent(name))}
+                  icon={<Previous />}
+                />
+                <RoutedButton
+                  path={nameToPath(nextComponent(name))}
+                  icon={<Next />}
+                />
+              </Box>
+            </Layer>
+          )}
           <Header
             label={title || name}
             summary={summary}
@@ -94,6 +112,7 @@ Doc.propTypes = {
   example: PropTypes.node,
   examples: PropTypes.shape({}),
   name: PropTypes.string.isRequired,
+  nav: PropTypes.bool,
   props: PropTypes.shape({}),
   syntaxes: PropTypes.shape({}),
   text: PropTypes.string,
@@ -107,6 +126,7 @@ Doc.defaultProps = {
   desc: undefined,
   example: null,
   examples: {},
+  nav: true,
   props: {},
   syntaxes: undefined,
   text: undefined,
