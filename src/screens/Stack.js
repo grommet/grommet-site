@@ -16,7 +16,13 @@ export default () => (
       desc={desc}
       code={`<Stack anchor="top-right">
   <Icons.Notification size="large" />
-  <Box background="brand" pad={{ horizontal: 'xsmall' }} round>8</Box>
+  <Box
+    background="brand"
+    pad={{ horizontal: 'xsmall' }}
+    round
+  >
+    <Text>8</Text>
+  </Box>
 </Stack>`}
       themeDoc={themeDoc}
     />
