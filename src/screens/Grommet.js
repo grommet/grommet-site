@@ -12,7 +12,16 @@ const desc = doc(Grommet).toJSON();
 
 export default () => (
   <Page>
-    <Doc name="Grommet" desc={desc} themeDoc={themeDoc} />
+    <Doc
+      name="Grommet"
+      desc={desc}
+      code={`<Grommet
+  theme={{ global: { colors: { doc: '#ff99cc' } } }}
+>
+  <Box pad="large" background="doc" />
+</Grommet>`}
+      themeDoc={themeDoc}
+    />
   </Page>
 );
 

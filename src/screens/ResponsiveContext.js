@@ -16,6 +16,13 @@ export default () => (
       name="ResponsiveContext"
       title="Responsive Context .Consumer"
       desc={desc}
+      code={`<ResponsiveContext.Consumer>
+  {(size) => (
+    <Box pad="medium">
+      <Text>{size}</Text>
+    </Box>
+  )}
+</ResponsiveContext.Consumer>`}
     />
   </Page>
 );

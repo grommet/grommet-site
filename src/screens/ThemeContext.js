@@ -12,7 +12,16 @@ const desc = doc(ThemeContext.Extend).toJSON();
 
 export default () => (
   <Page>
-    <Doc name="ThemeContext" title="ThemeContext .Extend" desc={desc} />
+    <Doc
+      name="ThemeContext"
+      title="ThemeContext .Extend"
+      desc={desc}
+      code={`<ThemeContext.Extend
+  value={{ global: { colors: { doc: '#ff99cc' } } }}
+>
+  <Box pad="large" background="doc" />
+</ThemeContext.Extend>`}
+    />
   </Page>
 );
 

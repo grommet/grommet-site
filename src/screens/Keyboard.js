@@ -13,7 +13,13 @@ const desc = doc(Keyboard).toJSON();
 
 export default () => (
   <Page>
-    <Doc name="Keyboard" desc={desc} />
+    <Doc
+      name="Keyboard"
+      desc={desc}
+      code={`<Keyboard onEsc={() => {}}>
+  <Box pad="large" background="light-4" />
+</Keyboard>`}
+    />
   </Page>
 );
 

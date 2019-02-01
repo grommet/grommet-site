@@ -12,7 +12,23 @@ const desc = doc(InfiniteScroll).toJSON();
 
 export default () => (
   <Page>
-    <Doc name="InfiniteScroll" desc={desc} />
+    <Doc
+      name="InfiniteScroll"
+      desc={desc}
+      code={`<Box height="small" overflow="auto">
+  <InfiniteScroll items={[1, 2, 3, 4, 5, 6, 7]}>
+    {(item) => (
+      <Box
+        flex={false}
+        pad="medium"
+        background={\`dark-\${(item % 3) + 1}\`}
+      >
+        <Text>{item}</Text>
+      </Box>
+    )}
+  </InfiniteScroll>
+</Box>`}
+    />
   </Page>
 );
 
