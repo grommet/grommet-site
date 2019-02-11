@@ -17,6 +17,7 @@ export default () => (
     <Doc
       name="Chart"
       desc={desc}
+      themeDoc={themeDoc}
       code={`<Chart
   bounds={[[0, 7], [0, 100]]}
   values={[
@@ -70,7 +71,7 @@ export default () => (
       }}
     />
 
-    <Doc name="calcs" nav={false} desc={descCalcs} themeDoc={themeDoc} />
+    <Doc name="calcs" nav={false} desc={descCalcs} />
   </Page>
 );
 
