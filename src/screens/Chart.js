@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Chart } from 'grommet';
-import { doc, docCalcs } from 'grommet/components/Chart/doc';
+import { doc, docCalcs, themeDoc } from 'grommet/components/Chart/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -70,7 +70,7 @@ export default () => (
       }}
     />
 
-    <Doc name="calcs" nav={false} desc={descCalcs} />
+    <Doc name="calcs" nav={false} desc={descCalcs} themeDoc={themeDoc} />
   </Page>
 );
 
