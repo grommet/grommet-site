@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Chart } from 'grommet';
-import { doc, docCalcs } from 'grommet/components/Chart/doc';
+import { doc, docCalcs, themeDoc } from 'grommet/components/Chart/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -17,6 +17,7 @@ export default () => (
     <Doc
       name="Chart"
       desc={desc}
+      themeDoc={themeDoc}
       code={`<Chart
   bounds={[[0, 7], [0, 100]]}
   values={[
