@@ -7,7 +7,7 @@ import { Pusher } from '../Router';
 const allSuggestions = structure.sections
   .map(section => (section.components || []).concat(section.name))
   .concat(structure.externals.map(e => e.name))
-  .flat()
+  .reduce((acc, val) => acc.concat(val), [])
   .sort();
 
 export default class extends Component {
