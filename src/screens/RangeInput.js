@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RangeInput } from 'grommet';
-import { doc } from 'grommet/components/RangeInput/doc';
+import { doc, themeDoc } from 'grommet/components/RangeInput/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -18,6 +18,7 @@ export default () => (
   value={10}
   onChange={(event) => {/* event.target.value */}}
 />`}
+      themeDoc={themeDoc}
     />
   </Page>
 );
