@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Anchor, Box } from 'grommet';
+import { Anchor } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Anchor/doc';
 
 import { Edit } from 'grommet-icons';
@@ -40,11 +40,6 @@ export default () => (
 
 export const AnchorItem = props => (
   <Item {...props} center>
-    <Box width="small">
-      <Box pad="small" background="brand" />
-      <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
-      <Box pad="small" background="brand" />
-      <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
-    </Box>
+    <Anchor as="span">Anchor</Anchor>
   </Item>
 );
