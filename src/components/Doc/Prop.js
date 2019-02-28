@@ -86,7 +86,7 @@ export class Prop extends Component {
               {property.description.replace('<', '&lt;').replace('>', '&gt;')}
             </Markdown>
           </Box>
-          <Box flex align="start">
+          <Box flex align="start" margin={{ bottom: 'medium' }}>
             <Text color="neutral-1">
               {(syntax && (
                 <Syntax
