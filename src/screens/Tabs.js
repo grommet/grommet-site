@@ -3,11 +3,11 @@ import React from 'react';
 import { Box, Tabs, Tab, Text } from 'grommet';
 import {
   doc as docTabs,
-  themeDoc as tabsThemeDoc,
+  themeDoc as themeDocTabs,
 } from 'grommet/components/Tabs/doc';
 import {
   doc as docTab,
-  themeDoc as tabThemeDoc,
+  themeDoc as themeDocTab,
 } from 'grommet/components/Tab/doc';
 
 import Page from '../components/Page';
@@ -37,7 +37,7 @@ export default () => (
     <Box pad="medium">Two</Box>
   </Tab>
 </Tabs>`}
-      themeDoc={tabsThemeDoc}
+      themeDoc={themeDocTabs}
     />
 
     <Doc
@@ -47,7 +47,7 @@ export default () => (
       syntaxes={{
         title: ['Tab Title', '<Box>...</Box>'],
       }}
-      themeDoc={tabThemeDoc}
+      themeDoc={themeDocTab}
     />
   </Page>
 );
