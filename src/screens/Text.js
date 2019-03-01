@@ -49,6 +49,6 @@ export default () => (
 
 export const TextItem = props => (
   <Item {...props} center>
-    <Text size="large">non-sematic text</Text>
+    <Text size="large">non-semantic text</Text>
   </Item>
 );
