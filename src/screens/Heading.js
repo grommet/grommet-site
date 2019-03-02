@@ -21,8 +21,8 @@ export default () => (
         color: [
           'neutral-1',
           {
-            dark: 'dark-1',
-            light: 'light-2',
+            dark: 'light-1',
+            light: 'dark-2',
           },
         ],
         level: [1, 2, 3, 4, 5, 6],
