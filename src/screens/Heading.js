@@ -18,7 +18,13 @@ export default () => (
       syntaxes={{
         ...genericSyntaxes,
         a11yTitle: 'Open Drop',
-        color: 'neutral-1',
+        color: [
+          'neutral-1',
+          {
+            dark: 'dark-1',
+            light: 'light-2',
+          },
+        ],
         level: [1, 2, 3, 4, 5, 6],
       }}
       code={`<Heading margin="none">Chapter 1</Heading>`}
