@@ -66,7 +66,7 @@ export default () => (
 
     <Doc name="TableHeader" nav={false} desc={descTableHeader} />
     <Doc name="TableBody" nav={false} desc={descTableBody} />
-    <Doc name="TableFooter" nav={false} desc={descTableFooter} />
+    <Doc name="TableFooter" nav={false} title="Table" desc={descTableFooter} />
   </Page>
 );
 

@@ -44,6 +44,7 @@ export default () => (
       name="Tab"
       desc={descTab}
       nav={false}
+      title="Tabs"
       syntaxes={{
         title: ['Tab Title', '<Box>...</Box>'],
       }}

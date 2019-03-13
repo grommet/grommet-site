@@ -45,6 +45,7 @@ export default () => (
       nav={false}
       desc={descAccordionPanel}
       themeDoc={themeDoc}
+      title="Accordion"
       syntaxes={{
         'accordion.icons.collapse': '<UpIcon />',
         'accordion.icons.expand': '<DownIcon />',
