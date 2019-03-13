@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Drop } from 'grommet';
-import { doc } from 'grommet/components/Drop/doc';
+import { doc, themeDoc } from 'grommet/components/Drop/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -23,6 +23,7 @@ export default () => (
         onEsc: '() => {}',
       }}
       example={<Box pad="large" />}
+      themeDoc={themeDoc}
     />
   </Page>
 );
