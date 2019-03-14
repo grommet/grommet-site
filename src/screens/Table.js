@@ -9,9 +9,15 @@ import {
   TableHeader,
   TableRow,
 } from 'grommet';
-import { doc as docTable } from 'grommet/components/Table/doc';
+import {
+  doc as docTable,
+  themeDoc as themeDocTable,
+} from 'grommet/components/Table/doc';
 import { doc as docTableBody } from 'grommet/components/TableBody/doc';
-import { doc as docTableCell } from 'grommet/components/TableCell/doc';
+import {
+  doc as docTableCell,
+  themeDoc as themeDocTableCell,
+} from 'grommet/components/TableCell/doc';
 import { doc as docTableFooter } from 'grommet/components/TableFooter/doc';
 import { doc as docTableHeader } from 'grommet/components/TableHeader/doc';
 import { doc as docTableRow } from 'grommet/components/TableRow/doc';
@@ -58,9 +64,15 @@ export default () => (
     </TableRow>
   </TableBody>
 </Table>`}
+      themeDoc={themeDocTable}
     />
 
-    <Doc name="TableCell" nav={false} desc={descTableCell} />
+    <Doc
+      name="TableCell"
+      nav={false}
+      desc={descTableCell}
+      themeDoc={themeDocTableCell}
+    />
 
     <Doc name="TableRow" nav={false} desc={descTableRow} />
 
