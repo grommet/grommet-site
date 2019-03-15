@@ -14,10 +14,15 @@ export default () => (
     <Doc
       name="RangeInput"
       desc={desc}
-      code={`<RangeInput
-  value={10}
-  onChange={(event) => {/* event.target.value */}}
-/>`}
+      code={`function Example() {
+  const [value, setValue] = React.useState(10);
+  return (
+    <RangeInput
+      value={value}
+      onChange={event => setValue(event.target.value)}
+    />
+  );
+}`}
       themeDoc={themeDoc}
     />
   </Page>

@@ -14,11 +14,16 @@ export default () => (
     <Doc
       name="Select"
       desc={desc}
-      code={`<Select
-  options={['small', 'medium', 'large']}
-  value={'medium'}
-  onChange={({ option }) => {}}
-/>`}
+      code={`function Example() {
+  const [value, setValue] = React.useState('medium');
+  return (
+    <Select
+      options={['small', 'medium', 'large']}
+      value={value}
+      onChange={({ option }) => setValue(option)}
+    />
+  );
+}`}
       themeDoc={themeDoc}
     />
   </Page>

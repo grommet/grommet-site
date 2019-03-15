@@ -14,10 +14,16 @@ export default () => (
     <Doc
       name="TextInput"
       desc={desc}
-      code={`<TextInput
-  value="Things get typed here"
-  onChange={(event) => {/* event.target.value */}}
-/>`}
+      code={`function Example() {
+  const [value, setValue] = React.useState('');
+  return (
+    <TextInput
+      placeholder="type here"
+      value={value}
+      onChange={event => setValue(event.target.value)}
+    />
+  );
+}`}
       themeDoc={themeDoc}
     >
       <Box basis="large" pad={{ horizontal: 'large', bottom: 'xlarge' }}>

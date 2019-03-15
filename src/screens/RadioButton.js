@@ -14,12 +14,16 @@ export default () => (
     <Doc
       name="RadioButton"
       desc={desc}
-      code={`<RadioButton
-  checked
-  name="choices"
-  label="chosen"
-  onChange={(event) => {/* event.target.value */}}
-/>`}
+      code={`function Example() {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <RadioButton
+      checked={checked}
+      label="chosen"
+      onChange={(event) => setChecked(event.target.checked)}
+    />
+  );
+}`}
     />
   </Page>
 );

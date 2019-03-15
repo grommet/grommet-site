@@ -14,10 +14,16 @@ export default () => (
     <Doc
       name="TextArea"
       desc={desc}
-      code={`<TextArea
-  value="Things get typed here"
-  onChange={(event) => {/* event.target.value */}}
-/>`}
+      code={`function Example() {
+  const [value, setValue] = React.useState('');
+  return (
+    <TextArea
+      placeholder="type here"
+      value={value}
+      onChange={event => setValue(event.target.value)}
+    />
+  );
+}`}
       themeDoc={themeDoc}
     />
   </Page>

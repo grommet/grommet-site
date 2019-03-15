@@ -25,7 +25,7 @@ const baseConfig = {
     extensions: ['.js', '.json'],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: './public' }]),
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
     new MonacoWebpackPlugin(),

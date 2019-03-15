@@ -14,12 +14,17 @@ export default () => (
     <Doc
       name="RadioButtonGroup"
       desc={desc}
-      code={`<RadioButtonGroup
-  name="doc"
-  options={['one', 'two']}
-  value="one"
-  onChange={() => {}}
-/>`}
+      code={`function Example() {
+  const [value, setValue] = React.useState('one');
+  return (
+    <RadioButtonGroup
+      name="doc"
+      options={['one', 'two']}
+      value={value}
+      onChange={(event) => setValue(event.target.value)}
+    />
+  );
+}`}
       syntaxes={{
         options: [
           ['string'],

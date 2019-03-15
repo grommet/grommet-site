@@ -20,11 +20,16 @@ export default () => (
         name: 'a-dom-name',
         onChange: '() => {}',
       }}
-      code={`<CheckBox
-  checked={true}
-  label="interested?"
-  onChange={(event) => {/* event.target.checked */}}
-/>`}
+      code={`function Example() {
+  const [checked, setChecked] = React.useState(true);
+  return (
+    <CheckBox
+      checked={checked}
+      label="interested?"
+      onChange={(event) => setChecked(event.target.checked)}
+    />
+  );
+}`}
     />
   </Page>
 );
