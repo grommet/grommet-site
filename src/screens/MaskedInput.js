@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MaskedInput } from 'grommet';
-import { doc } from 'grommet/components/MaskedInput/doc';
+import { doc, themeDoc } from 'grommet/components/MaskedInput/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -53,6 +53,7 @@ export default () => (
   ...
 ]`,
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );
