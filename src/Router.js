@@ -2,7 +2,7 @@
 // to avoid dependencies on react-router, which doesn't appear to
 // be keeping up with React changes.
 
-import React, { Component } from 'react';
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 
 const RouterContext = React.createContext({});
@@ -60,6 +60,32 @@ export class Router extends Component {
 
 Router.propTypes = {
   children: PropTypes.node.isRequired,
+};
+
+export const Routes = ({ children, notFoundRedirect }) => (
+  <RouterContext.Consumer>
+    {({ path: currentPath }) => {
+      let found;
+      Children.forEach(children, child => {
+        if (
+          !found &&
+          currentPath &&
+          currentPath.split('#')[0] === child.props.path
+        ) {
+          found = child;
+        }
+      });
+      if (currentPath && !found) {
+        window.location.replace(notFoundRedirect);
+      }
+      return found;
+    }}
+  </RouterContext.Consumer>
+);
+
+Routes.propTypes = {
+  children: PropTypes.node.isRequired,
+  notFoundRedirect: PropTypes.string.isRequired,
 };
 
 export const Route = ({ component: Comp, path, redirect }) => (

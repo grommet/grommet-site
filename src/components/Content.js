@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Route, Switch } from 'react-router-dom';
 // import { Box, Text } from 'grommet';
-import { Route } from '../Router';
+import { Route, Routes } from '../Router';
 
 import Accordion from '../screens/Accordion';
 import About from '../screens/About';
@@ -101,7 +101,7 @@ import WorldMap from '../screens/WorldMap';
 // });
 
 export default () => (
-  <React.Fragment>
+  <Routes notFoundRedirect="/">
     <Route exact path="/" component={Home} />
 
     <Route exact path="/play" component={Play} />
@@ -163,5 +163,5 @@ export default () => (
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
-  </React.Fragment>
+  </Routes>
 );
