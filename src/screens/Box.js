@@ -100,9 +100,10 @@ export default () => (
           'vertical',
           'all',
           {
-            side: '...',
             color: 'border',
+            side: '...',
             size: 'medium',
+            style: 'solid',
           },
           {
             VALUES: {
