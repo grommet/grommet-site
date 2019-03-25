@@ -100,9 +100,10 @@ export default () => (
           'vertical',
           'all',
           {
-            side: '...',
             color: 'border',
             size: 'medium',
+            style: 'dashed',
+            side: 'all',
           },
           {
             VALUES: {
@@ -113,6 +114,26 @@ export default () => (
                 'large',
                 'xlarge',
                 'any CSS size',
+              ],
+              style: [
+                'solid',
+                'dashed',
+                'dotted',
+                'double',
+                'groove',
+                'ridge',
+                'inset',
+                'outset',
+                'hidden',
+              ],
+              side: [
+                'top',
+                'left',
+                'bottom',
+                'right',
+                'horizontal',
+                'vertical',
+                'all',
               ],
             },
           },
@@ -245,7 +266,7 @@ export default () => (
             {['xsmall', 'small', 'medium', 'large'].map(size => (
               <Box
                 key={size}
-                border={{ side: 'all', size, color: 'accent-2' }}
+                border={{ side: 'all', size, color: 'accent-2', style: 'dashed' }}
                 pad="small"
                 margin="xsmall"
               />
