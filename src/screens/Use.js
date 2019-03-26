@@ -35,11 +35,6 @@ export default class Use extends Component {
         <Box pad={{ bottom: 'large' }}>
           <Heading level={2}>New Application</Heading>
           <Item
-            label="grommet cli"
-            snippet={<code>npm install -g grommet-cli</code>}
-            description="Get grommet command line tools on your local environment."
-          />
-          <Item
             label="new application"
             snippet={<code>grommet new [app-name]</code>}
             description="Generate a new application."
