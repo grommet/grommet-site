@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CheckBox } from 'grommet';
-import { doc } from 'grommet/components/CheckBox/doc';
+import { doc, themeDoc } from 'grommet/components/CheckBox/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -30,6 +30,7 @@ export default () => (
     />
   );
 }`}
+      themeDoc={themeDoc}
     />
   </Page>
 );
