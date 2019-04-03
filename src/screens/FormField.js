@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FormField, TextInput } from 'grommet';
-import { doc } from 'grommet/components/FormField/doc';
+import { doc, themeDoc } from 'grommet/components/FormField/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -17,6 +17,7 @@ export default () => (
       code={`<FormField label="Field label">
   <TextInput placeholder="type here" />
 </FormField>`}
+      themeDoc={themeDoc}
     />
   </Page>
 );
