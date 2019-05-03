@@ -43,6 +43,7 @@ export class Router extends Component {
           `${nextPath}${search || ''}`,
         );
         this.setState({ path: nextPath });
+        window.scrollTo(0, 0);
       }
     }
   };
