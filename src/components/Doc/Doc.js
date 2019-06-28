@@ -110,7 +110,22 @@ class Doc extends Component {
 Doc.propTypes = {
   code: PropTypes.string,
   children: PropTypes.node,
-  desc: PropTypes.shape({}),
+  desc: PropTypes.shape({
+    availableAt: PropTypes.oneOfType([
+      PropTypes.shape({
+        label: PropTypes.string,
+        url: PropTypes.string,
+      }),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          url: PropTypes.string,
+        }),
+      ),
+    ]),
+    details: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+  }),
   example: PropTypes.node,
   examples: PropTypes.shape({}),
   name: PropTypes.string.isRequired,

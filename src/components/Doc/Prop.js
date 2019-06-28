@@ -110,7 +110,13 @@ export class Prop extends Component {
 }
 
 Prop.propTypes = {
-  property: PropTypes.shape({}).isRequired,
+  property: PropTypes.shape({
+    defaultValue: PropTypes.string,
+    description: PropTypes.string,
+    format: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.node,
+  }).isRequired,
   syntax: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   first: PropTypes.bool.isRequired,
 };

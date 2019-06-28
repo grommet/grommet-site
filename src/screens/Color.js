@@ -39,7 +39,7 @@ const Set = ({ regexp, colors }) => (
 );
 
 Set.propTypes = {
-  regexp: PropTypes.shape({}).isRequired,
+  regexp: PropTypes.instanceOf(RegExp).isRequired,
   colors: PropTypes.shape({}).isRequired,
 };
 

@@ -45,7 +45,13 @@ export const Props = ({ desc, examples, syntaxes }) => (
 );
 
 Props.propTypes = {
-  desc: PropTypes.shape({}),
+  desc: PropTypes.shape({
+    properties: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+      }),
+    ),
+  }),
   examples: PropTypes.shape({}),
   syntaxes: PropTypes.shape({}),
 };
