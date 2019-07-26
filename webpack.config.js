@@ -34,7 +34,12 @@ const baseConfig = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, 'src'),
+          // the following modules contain un-transpiled es6 code
+          path.resolve(__dirname, 'node_modules/regexpu-core'),
+          path.resolve(__dirname, 'node_modules/unicode-match-property'),
+        ],
         loader: 'babel-loader',
       },
       {

@@ -3383,7 +3383,7 @@ core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
   integrity sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
 
-core-js@^3.0.0, core-js@^3.0.1, core-js@^3.0.4:
+core-js@^3.0.0, core-js@^3.0.1, core-js@^3.0.4, core-js@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.1.4.tgz#3a2837fc48e582e1ae25907afcd6cf03b0cc7a07"
   integrity sha512-YNZN8lt82XIMLnLirj9MhKDFZHalwzzrL9YLt6eb0T5D0EDl4IQ90IGkua8mHbnxNrkj1d8hbdizMc0Qmg1WnQ==
@@ -5134,8 +5134,9 @@ grommet-theme-v1@^0.1.2:
     polished "^2.3.0"
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
-  version "2.7.3"
+  version "2.7.4"
   resolved "https://github.com/grommet/grommet/tarball/stable#81e4f087835e9ee843d9fe33657b4a70eabdce92"
+  integrity sha1-5vg8KY3kz4S3JNqRXSYOtr9npi8=
   dependencies:
     css "^2.2.3"
     grommet-icons "^4.2.0"
