@@ -20,6 +20,7 @@
     "prettier": "pretty-quick --staged"
   },
   "dependencies": {
+    "core-js": "^3.1.4",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "^4.0.0",
     "grommet-styles": "^0.2.0",
