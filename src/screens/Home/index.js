@@ -133,6 +133,16 @@ export default class Home extends Component {
                 />
               </Box>
               <Paragraph>
+                Grommet is a{' '}
+                <Anchor
+                  target="_blank"
+                  href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
+                >
+                  PWA
+                </Anchor>
+                . Save it for offline reading.
+              </Paragraph>
+              <Paragraph>
                 Maintained by the core team and the help of our contributors.
                 you can always kick it old school with{' '}
                 <Anchor target="_blank" href="https://v1.grommet.io">
