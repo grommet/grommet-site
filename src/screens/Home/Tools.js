@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Anchor, Box, Image, Text, Paragraph } from 'grommet';
 import { Next } from 'grommet-icons';
@@ -6,7 +7,6 @@ import { Next } from 'grommet-icons';
 import Header from '../../components/Header';
 import Section from './Section';
 
-// eslint-disable-next-line react/prop-types
 const Tile = ({ desc, label, link }) => (
   <Box align="center" size="small" pad={{ horizontal: 'large' }}>
     <Anchor
@@ -22,6 +22,12 @@ const Tile = ({ desc, label, link }) => (
     </Paragraph>
   </Box>
 );
+
+Tile.propTypes = {
+  desc: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+};
 
 export const Tools = () => {
   return (
