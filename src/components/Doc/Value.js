@@ -27,13 +27,13 @@ const Values = ({ name, values, defaultValue }) => {
             (defaultValue === false && valueContent === 'false');
           if (
             values.length === 1 &&
-            valueContent === 'string' &&
-            defaultValue
+            (valueContent === 'string' || valueContent === 'number') &&
+            defaultValue !== undefined
           ) {
             valueContent = defaultValue;
             isDefault = true;
           }
-          if (value !== 'true' && value !== 'false') {
+          if (value !== 'true' && value !== 'false' && value !== 'number') {
             valueContent = `"${valueContent}"`;
           }
           if (isDefault) {
