@@ -20,6 +20,7 @@ import Components from '../screens/Components';
 import DataTable from '../screens/DataTable';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
+import Docs from '../screens/Docs';
 import Drop from '../screens/Drop';
 import DropButton from '../screens/DropButton';
 import Form from '../screens/Form';
@@ -110,6 +111,7 @@ export default () => (
     <Route exact path="/start" component={Use} />
     <Route exact path="/use" component={Use} />
     <Route exact path="/components" component={Components} />
+    <Route exact path="/docs" component={Docs} />
 
     <Route exact path="/about" component={About} />
 

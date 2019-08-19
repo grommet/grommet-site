@@ -12,6 +12,8 @@ import Themable from './Themable';
 import Layouts from './Layouts';
 import Start from './Start';
 import Messages from './Messages';
+import { Tools } from './Tools';
+import { nameToPath } from '../../structure';
 
 export default class Home extends Component {
   componentDidMount() {
@@ -92,6 +94,8 @@ export default class Home extends Component {
 
         <Messages />
 
+        <Tools />
+
         <Section pad={{ top: 'xlarge', left: 'xlarge', right: 'xlarge' }}>
           <Header
             level={2}
@@ -100,15 +104,26 @@ export default class Home extends Component {
               so, come for the code and stay for the peeps."
           />
 
-          <RoutedButton alignSelf="center" path="/components" plain>
-            <Box
-              pad={{ vertical: 'small', horizontal: 'medium' }}
-              round="xlarge"
-              background="accent-1"
-            >
-              <Text size="large">components</Text>
-            </Box>
-          </RoutedButton>
+          <Box direction="row" gap="medium" alignSelf="center">
+            <RoutedButton alignSelf="center" path="/components" plain>
+              <Box
+                pad={{ vertical: 'small', horizontal: 'medium' }}
+                round="xlarge"
+                background="accent-1"
+              >
+                <Text size="large">component library</Text>
+              </Box>
+            </RoutedButton>
+            <RoutedButton alignSelf="center" path={nameToPath('docs')} plain>
+              <Box
+                pad={{ vertical: 'small', horizontal: 'large' }}
+                round="xlarge"
+                background="accent-4"
+              >
+                <Text size="large">grommet docs</Text>
+              </Box>
+            </RoutedButton>
+          </Box>
 
           <Box direction="row-responsive" justify="between" align="end">
             <Box margin={{ vertical: 'xlarge' }}>
