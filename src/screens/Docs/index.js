@@ -1,28 +1,30 @@
 import React from 'react';
 
-import { Box, Markdown } from 'grommet';
+import { MarkdownTemplate } from './MarkdownTemplate';
+import { nameToPath } from '../../structure';
 
 import Page from '../../components/Page';
 
-const content = `
-  #Docs 
+// Enhancment context = grommet principles, best practices, accessibilty support
 
-  ## you got questions, we got some answers. something missing, hit us up on [slack](https://slackin.grommet.io/), or open an [issue](https://github.com/grommet/grommet/issues).  
+const content = `
   
-  ### grommet principles
-  ### best practices
-  ### getting started with grommet
-  ### accessibilty support
-  ### browser support
-  ### theming grommet for your app
-  ### functions
-  ### resources
+  ### [getting started with grommet](${nameToPath('starter')})
+  
+  ### [functions](${nameToPath('functions')})
+  
+  ### [resources](${nameToPath('resources')})
+  
+  ### [browser support](${nameToPath('browsers')})
 `;
 
 export default () => (
   <Page>
-    <Box pad={{ horizontal: 'xlarge' }}>
-      <Markdown>{content}</Markdown>
-    </Box>
+    <MarkdownTemplate
+      name="Docs"
+      desc="you got questions, we got some answers. something missing, hit us up on [slack](https://slackin.grommet.io/), or open an [issue](https://github.com/grommet/grommet/issues)."
+    >
+      {content}
+    </MarkdownTemplate>
   </Page>
 );
