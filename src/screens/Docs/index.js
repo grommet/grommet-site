@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MarkdownTemplate } from './MarkdownTemplate';
+import { MarkdownTemplate } from '../../components/MarkdownTemplate';
 import { nameToPath } from '../../structure';
 
 import Page from '../../components/Page';
