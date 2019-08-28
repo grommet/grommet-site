@@ -28,7 +28,15 @@ export default () => (
       syntaxes={{
         options: [
           ['string'],
-          [{ disabled: false, id: 'ONE', name: 'one', value: '1' }],
+          [
+            {
+              disabled: false,
+              id: 'ONE',
+              name: 'one',
+              value: '1',
+              label: 'one',
+            },
+          ],
         ],
       }}
     />
