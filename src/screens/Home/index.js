@@ -111,7 +111,7 @@ export default class Home extends Component {
                 round="xlarge"
                 background="accent-1"
               >
-                <Text size="large">component library</Text>
+                <Text size="large">components</Text>
               </Box>
             </RoutedButton>
             <RoutedButton alignSelf="center" path={nameToPath('docs')} plain>
@@ -120,7 +120,7 @@ export default class Home extends Component {
                 round="xlarge"
                 background="accent-4"
               >
-                <Text size="large">grommet docs</Text>
+                <Text size="large">docs</Text>
               </Box>
             </RoutedButton>
           </Box>

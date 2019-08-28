@@ -58,6 +58,11 @@ import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
 
+import Browsers from '../screens/Docs/Browsers';
+import Functions from '../screens/Docs/Functions';
+import GettingStarted from '../screens/Docs/GettingStarted';
+import Resources from '../screens/Docs/Resources';
+
 // NOTE: This commented out code illustrates how to code-split per-screen
 // class DynamicImport extends Component {
 //   state = {
@@ -162,6 +167,11 @@ export default () => (
     <Route exact path="/themecontext" component={ThemeContext} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
+
+    <Route exact path="/browsers" component={Browsers} />
+    <Route exact path="/functions" component={Functions} />
+    <Route exact path="/starter" component={GettingStarted} />
+    <Route exact path="/resources" component={Resources} />
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
