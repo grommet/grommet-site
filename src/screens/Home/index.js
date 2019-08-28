@@ -111,7 +111,7 @@ export default class Home extends Component {
                 round="xlarge"
                 background="accent-1"
               >
-                <Text size="large">component</Text>
+                <Text size="large">components</Text>
               </Box>
             </RoutedButton>
             <RoutedButton alignSelf="center" path={nameToPath('docs')} plain>

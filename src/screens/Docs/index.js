@@ -8,13 +8,9 @@ import Page from '../../components/Page';
 // Enhancment context = grommet principles, best practices, accessibilty support
 
 const content = `
-  
   ### [getting started with grommet](${nameToPath('starter')})
-  
   ### [functions](${nameToPath('functions')})
-  
   ### [resources](${nameToPath('resources')})
-  
   ### [browser support](${nameToPath('browsers')})
 `;
 
