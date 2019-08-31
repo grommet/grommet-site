@@ -28,7 +28,7 @@ const CustomPrimaryButton = () => (
       <Button primary label="deepMerge custom button" onClick={() => {}} />
     </Box>
     <Text>
-      The Button Text font is taken from the grommet theme, while the
+      The Button font is taken from the grommet theme, while its
       primary color is taken from myCustomTheme.
     </Text>
   </Grommet>
@@ -40,7 +40,7 @@ const CustomPrimaryButton = () => (
 export default () => (
   <Page>
     <Box width="xlarge" alignSelf="center">
-      <MarkdownTemplate name="Functions" desc="grommet util functions">
+      <MarkdownTemplate name="Functions" desc="">
         {children}
       </MarkdownTemplate>
     </Box>
