@@ -7,7 +7,7 @@ import Page from '../../components/Page';
 const children = `
 
 ### deepMerge
-A function that recieves two themes and returns a theme that includes
+A function that recieves two theme objects and returns a theme object that includes
           both theme values. 
 In case different styling are found for the same components on the two themes, the second argument theme will determine the styling. 
 
@@ -21,23 +21,18 @@ const myCustomTheme = deepMerge(grommet, {
     },
   },
 });
-\`\`\`
 
-
-### deepFreeze
-A function that recieves two themes and returns a theme that includes
-          both theme values.
-
-\`\`\`
-import { deepFreeze } from 'grommet/utils';
-...
-<ThemeContext.Extend>
-  value={deepFreeze(grommet, { global: { colors: { doc: "#ff99cc" } } })}>
-    <Box pad="large" background="doc" />
+const CustomPrimaryButton = () => (
+  <Grommet theme={myCustomTheme}>
+    <Box align="center" pad="large" gap="small">
+      <Button primary label="deepMerge custom button" onClick={() => {}} />
+    </Box>
     <Text>
-      grommet theme and a custom theme are generating a new theme.
+      The Button Text font is taken from the grommet theme, while the
+      primary color is taken from myCustomTheme.
     </Text>
-</ThemeContext.Extend>
+  </Grommet>
+);
 \`\`\`
 
 `;
