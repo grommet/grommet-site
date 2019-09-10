@@ -149,11 +149,17 @@ export default () => (
         ],
         gap: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
         height: [
+          'xxsmall',
           'xsmall',
           'small',
           'medium',
           'large',
           'xlarge',
+          'xxlarge',
+          {
+            min: '...',
+            max: '...',
+          },
           'any CSS size',
         ],
         overflow: [
@@ -214,7 +220,20 @@ export default () => (
             },
           },
         ],
-        width: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
+        width: [
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'xxlarge',
+          {
+            min: '...',
+            max: '...',
+          },
+          'any CSS size',
+        ],
       }}
       examples={{
         align: (
@@ -266,7 +285,12 @@ export default () => (
             {['xsmall', 'small', 'medium', 'large'].map(size => (
               <Box
                 key={size}
-                border={{ side: 'all', size, color: 'accent-2', style: 'dashed' }}
+                border={{
+                  side: 'all',
+                  size,
+                  color: 'accent-2',
+                  style: 'dashed',
+                }}
                 pad="small"
                 margin="xsmall"
               />
