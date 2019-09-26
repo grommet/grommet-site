@@ -15,6 +15,8 @@ New to Fornt-End development? Check out [Slides](https://slides.grommet.io/?id=g
 
 Learn how to work with the grommet [theme](https://github.com/grommet/grommet/wiki/Grommet-v2-theming-documentation).
 
+Explore how to incorporate [colors](https://github.com/grommet/grommet/wiki/Color-Properties) into themes & components to enhance your application.
+
 Grommet out of the box [patterns, and starters][sandboxes].
 
 More questions? something is missing? hit us on the [#getstarted][slack] or [#general][slack] channels on [slack][slack].
