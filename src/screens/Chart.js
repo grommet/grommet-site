@@ -71,7 +71,7 @@ export default () => (
       }}
     />
 
-    <Doc title="Chart" name="calcs" nav={false} desc={descCalcs} />
+    <Doc title="Calc" name="calcs" nav={false} desc={descCalcs} />
   </Page>
 );
 
