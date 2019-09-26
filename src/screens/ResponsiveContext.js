@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box } from 'grommet';
 import { ResponsiveContext } from 'grommet/contexts';
-import { doc } from 'grommet/contexts/ResponsiveContext/doc';
+import { doc, themeDoc } from 'grommet/contexts/ResponsiveContext/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -16,6 +16,7 @@ export default () => (
       name="ResponsiveContext"
       title="Responsive Context .Consumer"
       desc={desc}
+      themeDoc={themeDoc}
       code={`<ResponsiveContext.Consumer>
   {(size) => (
     <Box pad="medium">
