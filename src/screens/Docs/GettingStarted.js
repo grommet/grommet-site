@@ -11,7 +11,7 @@ const children = `
 
 Check out the getting started [tutorial](https://github.com/grommet/grommet-starter-new-app).
 
-New to Fornt-End development? Check out [Slides](https://slides.grommet.io/?id=grommet-training-eric-soderberg-hpe-com) to learn the essential development tools for grommet
+New to Front-End development? Check out [Slides](https://slides.grommet.io/?id=grommet-training-eric-soderberg-hpe-com) to learn the essential development tools for grommet
 
 Learn how to work with the grommet [theme](https://github.com/grommet/grommet/wiki/Grommet-v2-theming-documentation).
 
