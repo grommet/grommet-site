@@ -27,6 +27,7 @@ const options = {
   minimap: {
     enabled: false,
   },
+  scrollBeyondLastLine: false,
 };
 
 const editorDidMount = editor => {
