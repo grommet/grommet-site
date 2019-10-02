@@ -26,8 +26,8 @@ export default class Layouts extends Component {
         name="layouts can be more flexible"
         summary={
           <span>
-            Support all the devices! use{' '}
-            <RoutedAnchor path="/box">Flexbox</RoutedAnchor> and{' '}
+            Support all the devices! use
+            <RoutedAnchor path="/box">Flexbox</RoutedAnchor> and
             <RoutedAnchor path="/grid">CSS Grid</RoutedAnchor> to provide
             layouts for all those new phones and widescreen displays.
           </span>

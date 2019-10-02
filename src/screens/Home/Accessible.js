@@ -24,8 +24,8 @@ export default class Accessible extends Component {
         summary={
           <span>
             keyboard navigation, screen reader tags, and more. grommet provides
-            support for W3c’s{' '}
-            <Anchor href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 spec</Anchor>{' '}
+            support for W3c’s
+            <Anchor href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 spec</Anchor>
             out of the box.
           </span>
         }
