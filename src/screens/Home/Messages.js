@@ -55,11 +55,11 @@ export default () => (
         name="@nikmd23"
         summary={
           <span>
-            this accessibility demo is
+            this accessibility demo is&nbsp;
             <span role="img" aria-label="money">
               💰💰💰
             </span>
-            https://vimeo.com/187068246 great work @grommetux!
+            &nbsp; https://vimeo.com/187068246 great work @grommetux!
           </span>
         }
       />

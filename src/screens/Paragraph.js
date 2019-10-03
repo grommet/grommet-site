@@ -46,8 +46,8 @@ export default () => (
 export const ParagraphItem = props => (
   <Item {...props} center>
     <Paragraph>
-      OASIS was much more than a game or an entertainment platform. It is a new
-      way of life.
+      OASIS was much more than a game or an entertainment platform. It&apos;s a
+      new way of life.
     </Paragraph>
   </Item>
 );
