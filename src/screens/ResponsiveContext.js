@@ -14,16 +14,17 @@ export default () => (
   <Page>
     <Doc
       name="ResponsiveContext"
-      title="Responsive Context .Consumer"
+      title="Responsive Context"
       desc={desc}
       themeDoc={themeDoc}
-      code={`<ResponsiveContext.Consumer>
-  {(size) => (
+      code={`function Example() {
+  const size = React.useContext(ResponsiveContext);
+  return (
     <Box pad="medium">
       <Text>{size}</Text>
     </Box>
-  )}
-</ResponsiveContext.Consumer>`}
+  );
+}`}
     />
   </Page>
 );
