@@ -43,11 +43,13 @@ export default () => (
   </Page>
 );
 
-export const ParagraphItem = props => (
-  <Item {...props} center>
+export const ParagraphItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Paragraph>
       OASIS was much more than a game or an entertainment platform. It&apos;s a
       new way of life.
     </Paragraph>
   </Item>
 );
+
+ParagraphItem.propTypes = Item.propTypes;

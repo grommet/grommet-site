@@ -51,8 +51,8 @@ export default () => (
   </Page>
 );
 
-export const MeterItem = props => (
-  <Item {...props} center>
+export const MeterItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Meter
       aria-label="Meter example"
       type="circle"
@@ -64,3 +64,5 @@ export const MeterItem = props => (
     />
   </Item>
 );
+
+MeterItem.propTypes = Item.propTypes;

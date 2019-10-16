@@ -83,8 +83,8 @@ const CHART_VALUES = [
   { value: [0, 3], label: '0' },
 ];
 
-export const ChartItem = props => (
-  <Item {...props} center>
+export const ChartItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Chart
       aria-label="Chart example"
       bounds={[[0, 4], [0, 10]]}
@@ -95,3 +95,5 @@ export const ChartItem = props => (
     />
   </Item>
 );
+
+ChartItem.propTypes = Item.propTypes;

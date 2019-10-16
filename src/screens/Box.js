@@ -424,8 +424,10 @@ export default () => (
   </Page>
 );
 
-export const BoxItem = props => (
-  <Item {...props}>
+export const BoxItem = ({ name, path }) => (
+  <Item name={name} path={path}>
     <Box flex border={{ color: 'brand', size: 'xlarge' }} />
   </Item>
 );
+
+BoxItem.propTypes = Item.propTypes;

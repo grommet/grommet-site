@@ -45,8 +45,8 @@ export default () => (
   </Page>
 );
 
-export const RangeSelectorItem = props => (
-  <Item {...props} center>
+export const RangeSelectorItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Stack>
       <Box direction="row" gap="small">
         {[1, 2, 3, 4, 5].map(n => (
@@ -72,3 +72,5 @@ export const RangeSelectorItem = props => (
     </Stack>
   </Item>
 );
+
+RangeSelectorItem.propTypes = Item.propTypes;

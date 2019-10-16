@@ -27,8 +27,8 @@ export default () => (
   </Page>
 );
 
-export const CarouselItem = props => (
-  <Item {...props} center pad="none">
+export const CarouselItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad="none">
     <Box fill direction="row" justify="between" align="center" gap="small">
       <Box
         height="xsmall"
@@ -57,3 +57,5 @@ export const CarouselItem = props => (
     </Box>
   </Item>
 );
+
+CarouselItem.propTypes = Item.propTypes;

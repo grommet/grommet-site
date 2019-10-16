@@ -41,8 +41,10 @@ const WorldMapDoc = () => (
 
 export default WorldMapDoc;
 
-export const WorldMapItem = props => (
-  <Item {...props} center pad="medium">
+export const WorldMapItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad="medium">
     <WorldMap color="brand" />
   </Item>
 );
+
+WorldMapItem.propTypes = Item.propTypes;

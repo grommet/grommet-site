@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Anchor, Heading, Markdown, Text } from 'grommet';
 import { Link as LinkIcon } from 'grommet-icons';
@@ -54,64 +54,60 @@ const parseFormat = format => {
   return working.shift();
 };
 
-export class Prop extends Component {
-  state = {};
+export const Prop = ({ property, syntax, first }) => {
+  const [over, setOver] = React.useState();
 
-  render() {
-    const { property, syntax, first } = this.props;
-    const { over } = this.state;
-    return (
-      <Box
-        id={property.name}
-        border="bottom"
-        gap="small"
-        pad={{ top: !first ? 'medium' : undefined, bottom: 'medium' }}
-        onMouseOver={() => this.setState({ over: true })}
-        onMouseOut={() => this.setState({ over: false })}
-        onFocus={() => this.setState({ over: true })}
-        onBlur={() => this.setState({ over: false })}
-      >
-        <Box direction="row" justify="between" align="center">
-          <Heading level={3} margin="none">
-            {property.name}
-          </Heading>
-          <Anchor
-            href={`#${property.name}`}
-            icon={<LinkIcon color={over ? 'light-4' : 'white'} />}
-          />
+  return (
+    <Box
+      id={property.name}
+      border="bottom"
+      gap="small"
+      pad={{ top: !first ? 'medium' : undefined, bottom: 'medium' }}
+      onMouseOver={() => setOver(true)}
+      onMouseOut={() => setOver(false)}
+      onFocus={() => setOver(true)}
+      onBlur={() => setOver(false)}
+    >
+      <Box direction="row" justify="between" align="center">
+        <Heading level={3} margin="none">
+          {property.name}
+        </Heading>
+        <Anchor
+          href={`#${property.name}`}
+          icon={<LinkIcon color={over ? 'light-4' : 'white'} />}
+        />
+      </Box>
+      <Box direction="row-responsive" justify="between" align="start">
+        <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
+          <Markdown>
+            {property.description.replace('<', '&lt;').replace('>', '&gt;')}
+          </Markdown>
         </Box>
-        <Box direction="row-responsive" justify="between" align="start">
-          <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
-            <Markdown>
-              {property.description.replace('<', '&lt;').replace('>', '&gt;')}
-            </Markdown>
-          </Box>
-          <Box flex align="start">
-            <Text color="neutral-1">
-              {(syntax && (
-                <Syntax
-                  syntax={syntax}
-                  format={property.format}
+        <Box flex align="start">
+          <Text color="neutral-1">
+            {(syntax && (
+              <Syntax
+                syntax={syntax}
+                format={property.format}
+                defaultValue={property.defaultValue}
+              />
+            )) ||
+              property.type || (
+                <Value
+                  value={parseFormat(property.format)}
                   defaultValue={property.defaultValue}
                 />
-              )) ||
-                property.type || (
-                  <Value
-                    value={parseFormat(property.format)}
-                    defaultValue={property.defaultValue}
-                  />
-                )}
-            </Text>
-          </Box>
+              )}
+          </Text>
         </Box>
       </Box>
-    );
-  }
-}
+    </Box>
+  );
+};
 
 Prop.propTypes = {
   property: PropTypes.shape({
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     description: PropTypes.string,
     format: PropTypes.string,
     name: PropTypes.string,

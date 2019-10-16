@@ -47,8 +47,10 @@ export default () => (
   </Page>
 );
 
-export const ButtonItem = props => (
-  <Item {...props} center>
+export const ButtonItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Button label="i'm a button" primary onClick={() => {}} />
   </Item>
 );
+
+ButtonItem.propTypes = Item.propTypes;

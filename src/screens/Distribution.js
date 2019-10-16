@@ -39,8 +39,8 @@ export default () => (
   </Page>
 );
 
-export const DistributionItem = props => (
-  <Item {...props} center pad="medium">
+export const DistributionItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad="medium">
     <Box fill>
       <Distribution
         values={[
@@ -62,3 +62,5 @@ export const DistributionItem = props => (
     </Box>
   </Item>
 );
+
+DistributionItem.propTypes = Item.propTypes;

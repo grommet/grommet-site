@@ -38,8 +38,10 @@ export default () => (
   </Page>
 );
 
-export const AnchorItem = props => (
-  <Item {...props} center>
+export const AnchorItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Anchor as="span">Anchor</Anchor>
   </Item>
 );
+
+AnchorItem.propTypes = Item.propTypes;

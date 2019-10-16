@@ -80,8 +80,8 @@ export default () => (
   </Page>
 );
 
-export const MenuItem = props => (
-  <Item {...props} center>
+export const MenuItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box flex={false}>
       <Menu tabIndex="-1" size="large" label="i'm a menu" items={[]} />
       <Box
@@ -91,3 +91,5 @@ export const MenuItem = props => (
     </Box>
   </Item>
 );
+
+MenuItem.propTypes = Item.propTypes;

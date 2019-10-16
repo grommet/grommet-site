@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import URLSearchParams from 'url-search-params';
 import { Grommet } from 'grommet';
 import { grommet, dark } from 'grommet/themes';
@@ -21,39 +21,28 @@ const THEMES = {
   v1,
 };
 
-export default class App extends Component {
-  state = {
-    themeName: 'grommet',
-  };
+export default () => {
+  const [themeName, setThemeName] = React.useState('grommet');
+  const [search, setSearch] = React.useState();
 
-  componentDidMount() {
+  React.useEffect(() => {
     if (window.location.search) {
       const {
-        location: { search },
+        location: { search: nextSearch },
       } = window;
-      const params = new URLSearchParams(search);
-      // eslint-disable-next-line
-      this.setState({ search, themeName: params.get('theme') });
+      const params = new URLSearchParams(nextSearch);
+      setSearch(nextSearch);
+      setThemeName(params.get('theme'));
     }
-  }
+  }, []);
 
-  componentWillUnmount() {
-    if (this.unlisten) {
-      this.unlisten();
-      this.unlisten = undefined;
-    }
-  }
-
-  render() {
-    const { search, themeName } = this.state;
-    return (
-      <Router search={search}>
-        <Analytics>
-          <Grommet theme={THEMES[themeName || 'grommet']}>
-            <Content />
-          </Grommet>
-        </Analytics>
-      </Router>
-    );
-  }
-}
+  return (
+    <Router search={search}>
+      <Analytics>
+        <Grommet theme={THEMES[themeName || 'grommet']}>
+          <Content />
+        </Grommet>
+      </Analytics>
+    </Router>
+  );
+};

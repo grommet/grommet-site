@@ -48,8 +48,10 @@ export default () => (
   </Page>
 );
 
-export const SkipLinksItem = props => (
-  <Item {...props} center>
+export const SkipLinksItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Key label="Tab" />
   </Item>
 );
+
+SkipLinksItem.propTypes = Item.propTypes;

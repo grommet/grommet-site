@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import MonacoEditor from 'react-monaco-editor';
 /* eslint-disable import/no-duplicates */
@@ -10,14 +10,13 @@ import { Box, Select } from 'grommet';
 import { Previous } from 'grommet-icons';
 /* eslint-enable import/no-duplicates */
 
-import {
-  LiveProvider,
-  LivePreview,
-} from 'react-live';
+import { LiveProvider, LivePreview } from 'react-live';
 
-import { withContext } from '../Context';
 import RoutedButton from '../components/RoutedButton';
-import { PlaygroundError, PlaygroundPlaceholder } from '../components/playground';
+import {
+  PlaygroundError,
+  PlaygroundPlaceholder,
+} from '../components/playground';
 import * as PlaygroundExamples from '../components/playground/examples';
 
 const StyledPreview = styled(Box)`
@@ -28,11 +27,15 @@ const StyledPreview = styled(Box)`
 `;
 
 const scope = {
-  ...Grommet, Icons, Themes, styled, css,
+  ...Grommet,
+  Icons,
+  Themes,
+  styled,
+  css,
 };
 
-const allPlaygrounds = Object.keys(PlaygroundExamples).map(
-  value => value.replace(/([A-Z])/g, ' $1').trim()
+const allPlaygrounds = Object.keys(PlaygroundExamples).map(value =>
+  value.replace(/([A-Z])/g, ' $1').trim(),
 );
 
 const options = {
@@ -42,74 +45,66 @@ const options = {
   },
 };
 
-const editorDidMount = (editor) => {
-  editor.focus();
+const Play = () => {
+  const [selectedPlayground, setSelectedPlayground] = React.useState(
+    'Hello World',
+  );
+  const [code, setCode] = React.useState(PlaygroundExamples.HelloWorld);
 
-  window.addEventListener('resize', () => editor.layout());
+  React.useEffect(() => {
+    document.title = 'Play - Grommet';
+  }, []);
+
+  return (
+    <LiveProvider
+      code={code}
+      scope={scope}
+      noInline
+      style={{ height: '100vh' }}
+    >
+      <Box direction="row" fill>
+        <Box basis="1/2">
+          <Box
+            direction="row"
+            tag="header"
+            background="dark-1"
+            pad="small"
+            justify="between"
+            align="center"
+            flex={false}
+          >
+            <RoutedButton icon={<Previous />} path="/" label="Back" plain />
+            <Select
+              value={selectedPlayground}
+              options={allPlaygrounds}
+              onChange={({ option }) => {
+                setSelectedPlayground(option);
+                setCode(PlaygroundExamples[option.replace(/ /g, '')]);
+              }}
+            />
+          </Box>
+          <Box flex overflow="hidden">
+            <MonacoEditor
+              theme="vs-dark"
+              language="javascript"
+              value={code}
+              options={options}
+              onChange={newCode => setCode(newCode)}
+              editorDidMount={editor => {
+                editor.focus();
+                window.addEventListener('resize', () => editor.layout());
+              }}
+            />
+          </Box>
+          <PlaygroundError />
+        </Box>
+        <StyledPreview basis="1/2" background="white">
+          <LivePreview />
+          <PlaygroundPlaceholder />
+        </StyledPreview>
+      </Box>
+    </LiveProvider>
+  );
 };
 
-class Play extends Component {
-  state = {
-    selectedPlayground: 'Hello World',
-    code: PlaygroundExamples.HelloWorld,
-  }
-
-  componentDidMount() {
-    document.title = 'Play - Grommet';
-  }
-
-  render() {
-    const { code, selectedPlayground } = this.state;
-    return (
-      <LiveProvider
-        code={code}
-        scope={scope}
-        noInline
-        style={{ height: '100vh' }}
-      >
-        <Box direction='row' fill>
-          <Box basis='1/2'>
-            <Box
-              direction='row'
-              tag='header'
-              background='dark-1'
-              pad='small'
-              justify='between'
-              align='center'
-              flex={false}
-            >
-              <RoutedButton icon={<Previous />} path='/' label='Back' plain />
-              <Select
-                value={selectedPlayground}
-                options={allPlaygrounds}
-                onChange={
-                  ({ option }) => this.setState({
-                    selectedPlayground: option,
-                    code: PlaygroundExamples[option.replace(/ /g, '')],
-                  })
-                }
-              />
-            </Box>
-            <Box flex overflow='hidden'>
-              <MonacoEditor
-                theme='vs-dark'
-                language='javascript'
-                value={code}
-                options={options}
-                onChange={newCode => this.setState({ code: newCode })}
-                editorDidMount={editorDidMount}
-              />
-            </Box>
-            <PlaygroundError />
-          </Box>
-          <StyledPreview basis='1/2' background='white'>
-            <LivePreview />
-            <PlaygroundPlaceholder />
-          </StyledPreview>
-        </Box>
-      </LiveProvider>
-    );
-  }
-}
-
-export default withContext(Play);
+export default Play;

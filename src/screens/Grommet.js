@@ -25,8 +25,10 @@ export default () => (
   </Page>
 );
 
-export const GrommetItem = props => (
-  <Item {...props} center>
+export const GrommetItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <GrommetIcon color="brand" size="xlarge" />
   </Item>
 );
+
+GrommetItem.propTypes = Item.propTypes;

@@ -28,8 +28,8 @@ export default () => (
   </Page>
 );
 
-export const ResponsiveContextItem = props => (
-  <Item {...props} center>
+export const ResponsiveContextItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box direction="row" align="end" gap="xsmall">
       <Box align="center">
         <Box
@@ -47,3 +47,5 @@ export const ResponsiveContextItem = props => (
     </Box>
   </Item>
 );
+
+ResponsiveContextItem.propTypes = Item.propTypes;

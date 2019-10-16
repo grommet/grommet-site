@@ -20,8 +20,10 @@ export default () => (
   </Page>
 );
 
-export const AnnounceContextItem = props => (
-  <Item {...props} center>
+export const AnnounceContextItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Sign color="brand" size="xlarge" />
   </Item>
 );
+
+AnnounceContextItem.propTypes = Item.propTypes;

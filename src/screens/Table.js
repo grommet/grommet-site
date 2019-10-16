@@ -82,8 +82,8 @@ export default () => (
   </Page>
 );
 
-export const TableItem = props => (
-  <Item {...props} center>
+export const TableItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box>
       {[0, 1, 2, 4].map(row => (
         <Box key={row} direction="row">
@@ -100,3 +100,5 @@ export const TableItem = props => (
     </Box>
   </Item>
 );
+
+TableItem.propTypes = Item.propTypes;

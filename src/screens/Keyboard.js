@@ -23,8 +23,8 @@ export default () => (
   </Page>
 );
 
-export const KeyboardItem = props => (
-  <Item {...props} center>
+export const KeyboardItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box direction="row" align="center" gap="small">
       <Key label=" &#8984; " />
       <Add color="brand" />
@@ -32,3 +32,5 @@ export const KeyboardItem = props => (
     </Box>
   </Item>
 );
+
+KeyboardItem.propTypes = Item.propTypes;

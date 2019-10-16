@@ -54,8 +54,8 @@ export default () => (
   </Page>
 );
 
-export const AccordionItem = props => (
-  <Item {...props} center>
+export const AccordionItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box width="small">
       <Box pad="small" background="brand" />
       <Box pad="small" background={{ color: 'brand', opacity: 'medium' }} />
@@ -64,3 +64,5 @@ export const AccordionItem = props => (
     </Box>
   </Item>
 );
+
+AccordionItem.propTypes = Item.propTypes;

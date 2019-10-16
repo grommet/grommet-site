@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import stringify from 'json-stringify-pretty-compact';
 import { Box, Text } from 'grommet';
@@ -6,7 +6,7 @@ import { Box, Text } from 'grommet';
 export const Syntax = ({ syntax, format, defaultValue, leaf }) => {
   if (!leaf && Array.isArray(syntax)) {
     return (
-      <Fragment>
+      <>
         {syntax.map((s, i) => (
           <Syntax
             key={`${i + 0}`}
@@ -15,7 +15,7 @@ export const Syntax = ({ syntax, format, defaultValue, leaf }) => {
             defaultValue={defaultValue}
           />
         ))}
-      </Fragment>
+      </>
     );
   }
   let content = syntax;

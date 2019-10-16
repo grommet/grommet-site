@@ -140,8 +140,8 @@ export default () => (
   </Page>
 );
 
-export const GridItem = props => (
-  <Item {...props}>
+export const GridItem = ({ name, path }) => (
+  <Item name={name} path={path}>
     <Box flex direction="row">
       <Box basis="1/4" background="brand" margin={{ right: 'small' }} />
       <Box flex background="brand" />
@@ -149,3 +149,5 @@ export const GridItem = props => (
     </Box>
   </Item>
 );
+
+GridItem.propTypes = Item.propTypes;

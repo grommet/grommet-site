@@ -28,8 +28,10 @@ export default () => (
   </Page>
 );
 
-export const RangeInputItem = props => (
-  <Item {...props} center pad="large">
+export const RangeInputItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad="large">
     <RangeInput />
   </Item>
 );
+
+RangeInputItem.propTypes = Item.propTypes;

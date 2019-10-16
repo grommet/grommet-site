@@ -59,8 +59,10 @@ export default () => (
   </Page>
 );
 
-export const TextInputItem = props => (
-  <Item {...props} center pad={{ horizontal: 'xlarge' }}>
+export const TextInputItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
     <TextInput placeholder="Placeholder" disabled />
   </Item>
 );
+
+TextInputItem.propTypes = Item.propTypes;

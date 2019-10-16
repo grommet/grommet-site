@@ -78,10 +78,12 @@ export default () => (
   </Page>
 );
 
-export const HeadingItem = props => (
-  <Item {...props} center>
+export const HeadingItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Heading level={2} margin="none">
       Chapter 1
     </Heading>
   </Item>
 );
+
+HeadingItem.propTypes = Item.propTypes;

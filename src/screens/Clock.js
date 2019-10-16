@@ -27,8 +27,10 @@ export default () => (
   </Page>
 );
 
-export const ClockItem = props => (
-  <Item {...props} center>
+export const ClockItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Clock size="large" type="digital" />
   </Item>
 );
+
+ClockItem.propTypes = Item.propTypes;

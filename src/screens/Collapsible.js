@@ -16,8 +16,10 @@ export default () => (
   </Page>
 );
 
-export const CollapsibleItem = props => (
-  <Item {...props} center>
+export const CollapsibleItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Shift color="brand" size="xlarge" />
   </Item>
 );
+
+CollapsibleItem.propTypes = Item.propTypes;

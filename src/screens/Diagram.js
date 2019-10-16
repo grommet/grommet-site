@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Box, Diagram, Stack } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Diagram/doc';
@@ -9,22 +8,6 @@ import Doc from '../components/Doc';
 import Item from './Components/Item';
 
 const desc = doc(Diagram).toJSON();
-
-const Node = ({ id, ...rest }) => (
-  <Box
-    id={id}
-    basis="xxsmall"
-    margin="small"
-    pad="medium"
-    round="small"
-    background={{ color: 'neutral-3' }}
-    {...rest}
-  />
-);
-
-Node.propTypes = {
-  id: PropTypes.string.isRequired,
-};
 
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,
@@ -115,8 +98,8 @@ const itemProps = {
   round: true,
 };
 
-export const DiagramItem = props => (
-  <Item {...props} center>
+export const DiagramItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Stack>
       <Box>
         <Box direction="row">
@@ -158,3 +141,5 @@ export const DiagramItem = props => (
     </Stack>
   </Item>
 );
+
+DiagramItem.propTypes = Item.propTypes;

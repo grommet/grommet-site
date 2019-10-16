@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import LZString from 'lz-string';
@@ -32,18 +32,11 @@ const editorDidMount = editor => {
   window.addEventListener('resize', () => editor.layout());
 };
 
-export class Code extends Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.code !== prevState.propsCode) {
-      return { code: nextProps.code, propsCode: nextProps.code };
-    }
-    return null;
-  }
+export const Code = ({ code: propsCode, name }) => {
+  const [editing] = React.useState(true);
+  const [code, setCode] = React.useState(propsCode);
 
-  state = { editing: true };
-
-  componentDidMount() {
-    const { name } = this.props;
+  React.useEffect(() => {
     const params = {};
     document.location.search
       .slice(1)
@@ -54,17 +47,15 @@ export class Code extends Component {
       });
     const encodedCode = params.c || window.localStorage.getItem(`code-${name}`);
     if (encodedCode) {
-      const code = LZString.decompressFromEncodedURIComponent(encodedCode);
-      this.setState({ code });
+      const nextCode = LZString.decompressFromEncodedURIComponent(encodedCode);
+      setCode(nextCode);
     }
-  }
+  }, []);
 
-  onChange = code => {
-    const { name } = this.props;
-    const { propsCode } = this.state;
-    this.setState({ code });
-    if (propsCode !== code) {
-      const encodedCode = LZString.compressToEncodedURIComponent(code);
+  const onChange = nextCode => {
+    setCode(nextCode);
+    if (propsCode !== nextCode) {
+      const encodedCode = LZString.compressToEncodedURIComponent(nextCode);
       window.localStorage.setItem(`code-${name}`, encodedCode);
       window.history.replaceState(null, '', `?c=${encodedCode}`);
     } else {
@@ -73,64 +64,61 @@ export class Code extends Component {
     }
   };
 
-  render() {
-    const { code, editing, propsCode } = this.state;
-    const lines = code.split('\n').length;
-    let editorHeight;
-    if (lines <= 4) editorHeight = 'xsmall';
-    else if (lines <= 8) editorHeight = 'small';
-    else if (lines <= 16) editorHeight = 'medium';
-    else editorHeight = 'large';
+  const lines = code.split('\n').length;
+  let editorHeight;
+  if (lines <= 4) editorHeight = 'xsmall';
+  else if (lines <= 8) editorHeight = 'small';
+  else if (lines <= 16) editorHeight = 'medium';
+  else editorHeight = 'large';
 
-    return (
-      <Box
-        alignSelf="stretch"
-        margin={{ top: 'large' }}
-        border={{ color: 'brand' }}
-        round
-        overflow="hidden"
-      >
-        <LiveProvider code={code} scope={scope}>
-          <Box direction="row-responsive">
-            <Box flex basis="1/2" pad="medium" align="center">
-              <LivePreview />
-            </Box>
-            {editing && (
-              <Box
-                flex
-                basis="1/2"
-                border={{ side: 'left', color: 'brand' }}
-                pad={{ vertical: 'small', right: 'small' }}
-              >
-                <Box height={editorHeight}>
-                  <MonacoEditor
-                    theme="vs-light"
-                    language="javascript"
-                    value={code}
-                    options={options}
-                    onChange={this.onChange}
-                    editorDidMount={editorDidMount}
-                  />
-                </Box>
-                <Box pad={{ horizontal: 'medium' }}>
-                  <Text color="status-critical">
-                    <LiveError />
-                  </Text>
-                </Box>
-                {editing && code !== propsCode && (
-                  <Button
-                    icon={<Refresh />}
-                    onClick={() => this.onChange(propsCode)}
-                  />
-                )}
-              </Box>
-            )}
+  return (
+    <Box
+      alignSelf="stretch"
+      margin={{ top: 'large' }}
+      border={{ color: 'brand' }}
+      round
+      overflow="hidden"
+    >
+      <LiveProvider code={code} scope={scope}>
+        <Box direction="row-responsive">
+          <Box flex basis="1/2" pad="medium" align="center">
+            <LivePreview />
           </Box>
-        </LiveProvider>
-      </Box>
-    );
-  }
-}
+          {editing && (
+            <Box
+              flex
+              basis="1/2"
+              border={{ side: 'left', color: 'brand' }}
+              pad={{ vertical: 'small', right: 'small' }}
+            >
+              <Box height={editorHeight}>
+                <MonacoEditor
+                  theme="vs-light"
+                  language="javascript"
+                  value={code}
+                  options={options}
+                  onChange={onChange}
+                  editorDidMount={editorDidMount}
+                />
+              </Box>
+              <Box pad={{ horizontal: 'medium' }}>
+                <Text color="status-critical">
+                  <LiveError />
+                </Text>
+              </Box>
+              {editing && code !== propsCode && (
+                <Button
+                  icon={<Refresh />}
+                  onClick={() => onChange(propsCode)}
+                />
+              )}
+            </Box>
+          )}
+        </Box>
+      </LiveProvider>
+    </Box>
+  );
+};
 
 Code.propTypes = {
   code: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types

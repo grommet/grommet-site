@@ -22,7 +22,7 @@ const BuilderBox = ({
   phases,
   inProps,
   outProps,
-  ...rest
+  ...boxProps
 }) => (
   <BuilderContext.Consumer>
     {({ animationDuration, build, phase }) => {
@@ -52,7 +52,8 @@ const BuilderBox = ({
           buildProps.animation,
           animationDuration,
         );
-        return <Box {...rest} {...buildProps} />;
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <Box {...boxProps} {...buildProps} />;
       }
       return null;
     }}
@@ -60,6 +61,7 @@ const BuilderBox = ({
 );
 
 BuilderBox.propTypes = {
+  ...Box.propTypes,
   phase: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number),

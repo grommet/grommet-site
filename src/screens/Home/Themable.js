@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Grommet } from 'grommet';
 import Tile from './Tile';
 
-export default class Themable extends Component {
-  state = {
-    build: true,
-    phase: 1,
-    theme1: undefined,
-    theme2: undefined,
-    theme3: undefined,
-  };
+export default () => {
+  const [build, setBuild] = React.useState(true);
+  const [phase, setPhase] = React.useState(1);
+  const [theme1, setTheme1] = React.useState();
+  const [theme2, setTheme2] = React.useState();
+  const [theme3, setTheme3] = React.useState();
 
-  componentDidMount() {
-    this.timer = setInterval(() => {
-      const {
-        build, phase, theme1, theme2, theme3,
-      } = this.state;
+  React.useEffect(() => {
+    const timer = setInterval(() => {
       const nextBuild = (build && phase < 6) || (!build && phase === 1);
-      const nextPhase = (nextBuild ? phase + 1 : phase - 1);
+      const nextPhase = nextBuild ? phase + 1 : phase - 1;
       let nextTheme1 = theme1;
       let nextTheme2 = theme2;
       let nextTheme3 = theme3;
@@ -102,45 +97,35 @@ export default class Themable extends Component {
       } else {
         nextTheme3 = undefined;
       }
-
-      this.setState({
-        build: nextBuild,
-        phase: nextPhase,
-        theme1: nextTheme1,
-        theme2: nextTheme2,
-        theme3: nextTheme3,
-      });
+      setBuild(nextBuild);
+      setPhase(nextPhase);
+      setTheme1(nextTheme1);
+      setTheme2(nextTheme2);
+      setTheme3(nextTheme3);
     }, 1000);
-  }
+    return () => clearInterval(timer);
+  }, [build, phase, theme1, theme2, theme3]);
 
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  render() {
-    const { theme1, theme2, theme3 } = this.state;
-    return (
-      <Tile
-        name='powerful theming tools'
-        summary={(
-          <span>
-            tailor the component library to align with your
-            Color, Type, Layout needs. You can even control
-            component interaction.
-          </span>
-        )}
-        gap='medium'
-      >
-        <Grommet theme={theme1}>
-          <Button label='Log in' />
-        </Grommet>
-        <Grommet theme={theme2}>
-          <Button label='GET STARTED' />
-        </Grommet>
-        <Grommet theme={theme3}>
-          <Button label='click me' />
-        </Grommet>
-      </Tile>
-    );
-  }
-}
+  return (
+    <Tile
+      name="powerful theming tools"
+      summary={
+        <span>
+          tailor the component library to align with your Color, Type, Layout
+          needs. You can even control component interaction.
+        </span>
+      }
+      gap="medium"
+    >
+      <Grommet theme={theme1}>
+        <Button label="Log in" />
+      </Grommet>
+      <Grommet theme={theme2}>
+        <Button label="GET STARTED" />
+      </Grommet>
+      <Grommet theme={theme3}>
+        <Button label="click me" />
+      </Grommet>
+    </Tile>
+  );
+};
