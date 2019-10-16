@@ -53,6 +53,7 @@ export default () => (
           'medium',
           'large',
           'xlarge',
+          'full',
           'any CSS size',
           { height: '...', width: '...' },
         ],
