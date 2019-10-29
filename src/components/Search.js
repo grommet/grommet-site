@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Keyboard, TextInput } from 'grommet';
+import { Box, DropButton, Keyboard, TextInput } from 'grommet';
 import { Search } from 'grommet-icons';
 import { structure, nameToPath } from '../structure';
 import { RouterContext } from '../Router';
@@ -14,8 +14,7 @@ export default () => {
   const { go } = React.useContext(RouterContext);
   const [value, setValue] = React.useState('');
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
-  const [focus, setFocus] = React.useState();
-  const searchRef = React.createRef();
+  const inputRef = React.createRef();
 
   const onChange = event => {
     const {
@@ -55,26 +54,33 @@ export default () => {
   };
 
   return (
-    <Keyboard onEnter={onEnter}>
-      <Box
-        ref={searchRef}
-        direction="row"
-        align="center"
-        border={{ side: 'bottom', color: focus ? 'focus' : 'border' }}
-      >
-        <Search />
-        <TextInput
-          plain
-          value={value}
-          suggestions={suggestions}
-          dropHeight="medium"
-          dropTarget={searchRef.current}
-          onChange={onChange}
-          onSelect={onSelect}
-          onFocus={() => setFocus(true)}
-          onBlur={() => setFocus(false)}
-        />
-      </Box>
-    </Keyboard>
+    <DropButton
+      plain
+      dropAlign={{ top: 'bottom', right: 'right' }}
+      dropContent={
+        <Keyboard onEnter={onEnter}>
+          <TextInput
+            ref={inputRef}
+            placeholder="search ..."
+            value={value}
+            suggestions={suggestions}
+            dropHeight="medium"
+            onChange={onChange}
+            onSelect={onSelect}
+          />
+        </Keyboard>
+      }
+      onOpen={() => inputRef.current.focus()}
+    >
+      {({ hover }) => (
+        <Box
+          pad="small"
+          round="xlarge"
+          background={hover ? 'active' : undefined}
+        >
+          <Search />
+        </Box>
+      )}
+    </DropButton>
   );
 };

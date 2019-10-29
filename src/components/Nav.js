@@ -21,16 +21,20 @@ export default () => {
         icon={<GrommetIcon size="large" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
-      <Search />
-      <RoutedButton path="/components" plain>
-        <Box
-          pad={{ vertical: 'small', horizontal: 'medium' }}
-          round="xlarge"
-          background="accent-1"
-        >
-          <Text>components</Text>
-        </Box>
-      </RoutedButton>
+      <Box direction="row">
+        <RoutedButton path="/components" plain>
+          {({ hover }) => (
+            <Box
+              pad={{ vertical: 'small', horizontal: 'medium' }}
+              round="xlarge"
+              background={hover ? 'active' : 'accent-1'}
+            >
+              <Text>components</Text>
+            </Box>
+          )}
+        </RoutedButton>
+        <Search />
+      </Box>
     </Box>
   );
 };
