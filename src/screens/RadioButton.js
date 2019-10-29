@@ -28,8 +28,10 @@ export default () => (
   </Page>
 );
 
-export const RadioButtonItem = props => (
-  <Item {...props} center>
+export const RadioButtonItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <RadioButton name="radio" checked onChange={() => {}} />
   </Item>
 );
+
+RadioButtonItem.propTypes = Item.propTypes;

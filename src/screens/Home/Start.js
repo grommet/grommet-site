@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { LiveProvider, LivePreview } from 'react-live';
@@ -27,12 +27,7 @@ const options = {
   minimap: {
     enabled: false,
   },
-};
-
-const editorDidMount = editor => {
-  editor.focus();
-
-  window.addEventListener('resize', () => editor.layout());
+  scrollBeyondLastLine: false,
 };
 
 const Dot = ({ color }) => (
@@ -45,9 +40,8 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-export default class Home extends Component {
-  state = {
-    code: `const App = props => (
+export default () => {
+  const [code, setCode] = React.useState(`const App = props => (
   <Grommet theme={grommet}>
     <Box align="center" background="neutral-2">
       <Button
@@ -60,136 +54,130 @@ export default class Home extends Component {
 );
 
 render(<App />);
-`,
-  };
+`);
 
-  render() {
-    const { code } = this.state;
-    return (
-      <LiveProvider
-        code={code}
-        scope={scope}
-        noInline
-        style={{ height: '100%' }}
-      >
-        <Section pad={{ top: 'xlarge' }}>
-          <Header
-            level={2}
-            label="start coding"
-            summary="
-              already working on a project, starting fresh, or just want to
-              poke around and see how all this junk works?"
+  return (
+    <LiveProvider code={code} scope={scope} noInline style={{ height: '100%' }}>
+      <Section pad={{ top: 'xlarge' }}>
+        <Header
+          level={2}
+          label="start coding"
+          summary="
+            already working on a project, starting fresh, or just want to
+            poke around and see how all this junk works?"
+        />
+
+        <Box
+          direction="row-responsive"
+          justify="center"
+          gap="large"
+          margin="large"
+        >
+          <Anchor
+            href="https://github.com/grommet/grommet-starter-new-app"
+            label={<Text size="large">Start New App</Text>}
+            icon={<Next />}
+            reverse
+            target="_blank"
           />
-
-          <Box
-            direction="row-responsive"
-            justify="center"
-            gap="large"
-            margin="large"
-          >
-            <Anchor
-              href="https://github.com/grommet/grommet-starter-new-app"
-              label={<Text size="large">Start New App</Text>}
-              icon={<Next />}
-              reverse
-              target="_blank"
-            />
-            <Anchor
-              href="https://github.com/grommet/grommet-starter-existing-app"
-              label={<Text size="large">I have an Existing Codebase</Text>}
-              icon={<Next />}
-              reverse
-              target="_blank"
-            />
-          </Box>
-
-          <Box alignSelf="center" width="large" margin={{ top: 'medium' }}>
-            <RoutedAnchor path="/play" target="_blank">
-              <Box
-                border
-                round={{ corner: 'top' }}
-                direction="row"
-                justify="between"
-                align="center"
-                pad="medium"
-              >
-                <Text color="brand">grommet playground</Text>
-                <Share />
-              </Box>
-            </RoutedAnchor>
-            <Box border={{ side: 'vertical' }} height="medium">
-              <MonacoEditor
-                theme="vs-light"
-                language="javascript"
-                value={code}
-                options={options}
-                onChange={newCode => this.setState({ code: newCode })}
-                editorDidMount={editorDidMount}
-              />
-            </Box>
-          </Box>
-        </Section>
-
-        <Section background="brand" pad="none">
-          <Box
-            alignSelf="center"
-            background="neutral-2"
-            width="large"
-            pad="medium"
-            round={{ corner: 'bottom' }}
-            margin={{ bottom: 'xlarge' }}
-          >
-            <LivePreview />
-          </Box>
-
-          <Header
-            level={2}
-            label="and start designing"
-            summary="sticker sheets, design patterns, app templates, and icons
-              galore."
+          <Anchor
+            href="https://github.com/grommet/grommet-starter-existing-app"
+            label={<Text size="large">I have an Existing Codebase</Text>}
+            icon={<Next />}
+            reverse
+            target="_blank"
           />
+        </Box>
 
-          <Box
-            direction="row-responsive"
-            justify="center"
-            gap="large"
-            margin="medium"
-          >
-            <Anchor
-              href="//github.com/grommet/design-kit"
-              label={<Text size="large">Grommet Design Kit</Text>}
-              icon={<Next />}
-              reverse
-              target="_blank"
-            />
-            <Anchor
-              href="//icons.grommet.io"
-              label={<Text size="large">Grommet Icons</Text>}
-              icon={<Next />}
-              reverse
-              target="_blank"
-            />
-          </Box>
-
-          <Box
-            alignSelf="center"
-            width="large"
-            height="small"
-            round={{ corner: 'top' }}
-            background="neutral-2"
-            margin={{ top: 'xlarge' }}
-          >
-            <Box alignSelf="start" direction="row" margin="medium" gap="small">
-              <Dot color="#ff0000" />
-              <Dot color="#ffff00" />
-              <Dot color="#00ff00" />
+        <Box alignSelf="center" width="large" margin={{ top: 'medium' }}>
+          <RoutedAnchor path="/play" target="_blank">
+            <Box
+              border
+              round={{ corner: 'top' }}
+              direction="row"
+              justify="between"
+              align="center"
+              pad="medium"
+            >
+              <Text color="brand">grommet playground</Text>
+              <Share />
             </Box>
-            <Heading level={1} color="brand" margin="large">
-              Hello World!
-            </Heading>
+          </RoutedAnchor>
+          <Box border={{ side: 'vertical' }} height="medium">
+            <MonacoEditor
+              theme="vs-light"
+              language="javascript"
+              value={code}
+              options={options}
+              onChange={newCode => setCode(newCode)}
+              editorDidMount={editor => {
+                editor.focus();
+                window.addEventListener('resize', () => editor.layout());
+              }}
+            />
           </Box>
-        </Section>
-      </LiveProvider>
-    );
-  }
-}
+        </Box>
+      </Section>
+
+      <Section background="brand" pad="none">
+        <Box
+          alignSelf="center"
+          background="neutral-2"
+          width="large"
+          pad="medium"
+          round={{ corner: 'bottom' }}
+          margin={{ bottom: 'xlarge' }}
+        >
+          <LivePreview />
+        </Box>
+
+        <Header
+          level={2}
+          label="and start designing"
+          summary="sticker sheets, design patterns, app templates, and icons
+            galore."
+        />
+
+        <Box
+          direction="row-responsive"
+          justify="center"
+          gap="large"
+          margin="medium"
+        >
+          <Anchor
+            href="//github.com/grommet/design-kit"
+            label={<Text size="large">Grommet Design Kit</Text>}
+            icon={<Next />}
+            reverse
+            target="_blank"
+          />
+          <Anchor
+            href="//icons.grommet.io"
+            label={<Text size="large">Grommet Icons</Text>}
+            icon={<Next />}
+            reverse
+            target="_blank"
+          />
+        </Box>
+
+        <Box
+          alignSelf="center"
+          width="large"
+          height="small"
+          round={{ corner: 'top' }}
+          background="neutral-2"
+          margin={{ top: 'xlarge' }}
+        >
+          <Box alignSelf="start" direction="row" margin="medium" gap="small">
+            <Dot color="#ff0000" />
+            <Dot color="#ffff00" />
+            <Dot color="#00ff00" />
+          </Box>
+          <Heading level={1} color="brand" margin="large">
+            Hello World!
+          </Heading>
+        </Box>
+      </Section>
+    </LiveProvider>
+  );
+};

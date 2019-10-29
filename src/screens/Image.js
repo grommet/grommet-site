@@ -25,8 +25,10 @@ export default () => (
   </Page>
 );
 
-export const ImageItem = props => (
-  <Item {...props}>
+export const ImageItem = ({ name, path }) => (
+  <Item name={name} path={path}>
     <Image src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" fit="cover" />
   </Item>
 );
+
+ImageItem.propTypes = Item.propTypes;

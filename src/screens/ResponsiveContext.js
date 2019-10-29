@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box } from 'grommet';
 import { ResponsiveContext } from 'grommet/contexts';
-import { doc } from 'grommet/contexts/ResponsiveContext/doc';
+import { doc, themeDoc } from 'grommet/contexts/ResponsiveContext/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -16,6 +16,7 @@ export default () => (
       name="ResponsiveContext"
       title="Responsive Context .Consumer"
       desc={desc}
+      themeDoc={themeDoc}
       code={`<ResponsiveContext.Consumer>
   {(size) => (
     <Box pad="medium">
@@ -27,8 +28,8 @@ export default () => (
   </Page>
 );
 
-export const ResponsiveContextItem = props => (
-  <Item {...props} center>
+export const ResponsiveContextItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box direction="row" align="end" gap="xsmall">
       <Box align="center">
         <Box
@@ -46,3 +47,5 @@ export const ResponsiveContextItem = props => (
     </Box>
   </Item>
 );
+
+ResponsiveContextItem.propTypes = Item.propTypes;

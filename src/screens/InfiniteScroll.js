@@ -32,8 +32,10 @@ export default () => (
   </Page>
 );
 
-export const InfiniteScrollItem = props => (
-  <Item {...props} center>
+export const InfiniteScrollItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Descend color="brand" size="xlarge" />
   </Item>
 );
+
+InfiniteScrollItem.propTypes = Item.propTypes;

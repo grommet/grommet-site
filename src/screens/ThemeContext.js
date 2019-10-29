@@ -25,8 +25,10 @@ export default () => (
   </Page>
 );
 
-export const ThemeContextItem = props => (
-  <Item {...props} center>
+export const ThemeContextItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Paint color="brand" size="xlarge" />
   </Item>
 );
+
+ThemeContextItem.propTypes = Item.propTypes;

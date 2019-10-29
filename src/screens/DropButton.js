@@ -37,8 +37,8 @@ export default () => (
   </Page>
 );
 
-export const DropButtonItem = props => (
-  <Item {...props} center>
+export const DropButtonItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box flex={false}>
       <Button
         label="i'm a button"
@@ -53,3 +53,5 @@ export const DropButtonItem = props => (
     </Box>
   </Item>
 );
+
+DropButtonItem.propTypes = Item.propTypes;

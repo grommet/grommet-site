@@ -29,8 +29,10 @@ export default () => (
   </Page>
 );
 
-export const TextAreaItem = props => (
-  <Item {...props} center pad={{ horizontal: 'xlarge' }}>
+export const TextAreaItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
     <TextArea placeholder="Placeholder" disabled />
   </Item>
 );
+
+TextAreaItem.propTypes = Item.propTypes;

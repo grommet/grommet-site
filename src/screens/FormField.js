@@ -22,10 +22,12 @@ export default () => (
   </Page>
 );
 
-export const FormFieldItem = props => (
-  <Item {...props} center>
+export const FormFieldItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <FormField label="Label">
       <TextInput placeholder="value" />
     </FormField>
   </Item>
 );
+
+FormFieldItem.propTypes = Item.propTypes;

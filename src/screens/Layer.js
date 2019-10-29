@@ -55,11 +55,13 @@ export default () => (
   </Page>
 );
 
-export const LayerItem = props => (
-  <Item {...props}>
+export const LayerItem = ({ name, path }) => (
+  <Item name={name} path={path}>
     <Box flex direction="row">
       <Box basis="1/3" background={{ color: 'brand', opacity: 'weak' }} />
       <Box flex background="brand" />
     </Box>
   </Item>
 );
+
+LayerItem.propTypes = Item.propTypes;

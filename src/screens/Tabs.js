@@ -44,7 +44,7 @@ export default () => (
       name="Tab"
       desc={descTab}
       nav={false}
-      title="Tabs"
+      title="Tab"
       syntaxes={{
         title: ['Tab Title', '<Box>...</Box>'],
       }}
@@ -53,8 +53,8 @@ export default () => (
   </Page>
 );
 
-export const TabsItem = props => (
-  <Item {...props} center justify="end" pad="none">
+export const TabsItem = ({ name, path }) => (
+  <Item name={name} path={path} center justify="end" pad="none">
     <Box direction="row" align="end" alignSelf="stretch" gap="small">
       <Box
         flex
@@ -80,3 +80,5 @@ export const TabsItem = props => (
     </Box>
   </Item>
 );
+
+TabsItem.propTypes = Item.propTypes;

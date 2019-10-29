@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import WebFont from 'webfontloader';
 import {
-  Anchor, Box, Button, FormField, Grommet, Heading, Image,
-  Paragraph, Select, Text, TextInput,
+  Anchor,
+  Box,
+  Button,
+  FormField,
+  Grommet,
+  Heading,
+  Image,
+  Paragraph,
+  Select,
+  Text,
+  TextInput,
 } from 'grommet';
 import { Previous as PreviousIcon } from 'grommet-icons';
 import Page from '../components/Page';
 import {
-  hslToRgb, parseRGBString, rgbToHsl, toRGBString,
+  hslToRgb,
+  parseRGBString,
+  rgbToHsl,
+  toRGBString,
 } from '../utils/color';
 import { mergeDeep } from '../utils/object';
 
-const SHARPNESSES = [
-  'soft',
-  'medium',
-  'hard',
-];
+const SHARPNESSES = ['soft', 'medium', 'hard'];
 
 const SHARPNESS_ROUND_SIZE = {
   soft: 'large',
@@ -44,11 +52,7 @@ const SHARPNESS = {
   },
 };
 
-const MOODS = [
-  'happy',
-  'even',
-  'serious',
-];
+const MOODS = ['happy', 'even', 'serious'];
 
 const MOOD = {
   happy: { saturationBoost: 0.1, luminenceBoost: 0.2 },
@@ -61,7 +65,7 @@ const deriveHues = (h, count) => {
   const offset = 360 / (count + 1);
   const result = [];
   for (let i = 1; i <= count; i += 1) {
-    result.push(((degH + (offset * i)) % 360) / 360.0);
+    result.push(((degH + offset * i) % 360) / 360.0);
   }
   return result;
 };
@@ -78,9 +82,9 @@ const colorsForMood = (color, mood) => {
     const accentHues = deriveHues(h, 2);
     const accentSat = between(s + MOOD[mood].saturationBoost, 0.2, 0.8);
     const accentLum = between(1.0 - (l - MOOD[mood].luminenceBoost), 0.2, 0.8);
-    result.global.colors.accent = accentHues.map(ah => (
-      `#${toRGBString(hslToRgb(ah, accentSat, accentLum))}`
-    ));
+    result.global.colors.accent = accentHues.map(
+      ah => `#${toRGBString(hslToRgb(ah, accentSat, accentLum))}`,
+    );
   }
   return result;
 };
@@ -115,10 +119,8 @@ export default class Try extends Component {
     document.title = 'Try - Grommet';
   }
 
-  onChangeColor = (event) => {
-    const {
-      errors, key, mood, theme,
-    } = this.state;
+  onChangeColor = event => {
+    const { errors, key, mood, theme } = this.state;
     const color = event.target.value;
     const colors = colorsForMood(color, mood);
     if (colors) {
@@ -134,7 +136,7 @@ export default class Try extends Component {
         errors: { ...errors, color: 'must be #RRGGBB' },
       });
     }
-  }
+  };
 
   onFontLoaded = name => () => {
     const { key, loading, theme } = this.state;
@@ -159,16 +161,18 @@ export default class Try extends Component {
       errors: { ...errors, font: 'unavailable' },
       loading: { ...loading, font: undefined },
     });
-  }
+  };
 
-  onChangeName = event => this.setState({ name: event.target.value })
+  onChangeName = event => this.setState({ name: event.target.value });
 
-  onChangeFont = (event) => {
+  onChangeFont = event => {
     const { errors, loading } = this.state;
     const name = event.target.value;
     // remove all previously loaded fonts
     // <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rob" media="all">
-    const links = document.querySelectorAll('link[href^="https://fonts.googleapis.com"]');
+    const links = document.querySelectorAll(
+      'link[href^="https://fonts.googleapis.com"]',
+    );
     for (let i = 0; i < links.length; i += 1) {
       links[i].remove();
     }
@@ -184,7 +188,7 @@ export default class Try extends Component {
       active: this.onFontLoaded(name),
       google: { families: [name] },
     });
-  }
+  };
 
   onChangeSharpness = ({ option: sharpness }) => {
     const { key, theme } = this.state;
@@ -193,7 +197,7 @@ export default class Try extends Component {
       sharpness,
       theme: mergeDeep(theme, SHARPNESS[sharpness]),
     });
-  }
+  };
 
   onChangeMood = ({ option: mood }) => {
     const { key, theme } = this.state;
@@ -202,19 +206,21 @@ export default class Try extends Component {
       mood,
       theme: mergeDeep(
         theme,
-        colorsForMood(theme.global.colors.brand, mood) || {}
+        colorsForMood(theme.global.colors.brand, mood) || {},
       ),
     });
-  }
+  };
 
-  onDownload = (event) => {
+  onDownload = event => {
     const { name, theme } = this.state;
     event.preventDefault();
     // extract font-face from link in header
-    const fontLink = document.querySelector('link[href*="fonts.googleapis.com"]');
+    const fontLink = document.querySelector(
+      'link[href*="fonts.googleapis.com"]',
+    );
     fetch(fontLink.getAttribute('href'))
       .then(response => response.text())
-      .then((face) => {
+      .then(face => {
         const downloadTheme = mergeDeep(theme, { global: { font: { face } } });
         const jsonString = encodeURIComponent(JSON.stringify(downloadTheme));
         const data = `data:text/json;charset=utf-8,${jsonString}`;
@@ -224,38 +230,42 @@ export default class Try extends Component {
         element.click();
         element.remove();
       });
-  }
+  };
 
   render() {
     const {
-      color, errors, font, key, loading, mood, name, sharpness, theme,
+      color,
+      errors,
+      font,
+      key,
+      loading,
+      mood,
+      name,
+      sharpness,
+      theme,
     } = this.state;
     return (
       <Page background={{ image: 'url("img/circles.svg")' }}>
-        <Box direction='row' gap='large' wrap align='start'>
-          <Box basis='medium' margin={{ bottom: 'large' }}>
+        <Box direction="row" gap="large" wrap align="start">
+          <Box basis="medium" margin={{ bottom: 'large' }}>
             <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
               <strong>Try us without writing a single line of code</strong>
             </Heading>
-            <Paragraph size='large'>
+            <Paragraph size="large">
               Learn more about how you can theme using the grommet library.
             </Paragraph>
 
             <form onSubmit={this.onDownload}>
               <Box pad={{ vertical: 'medium' }}>
-                <FormField label='Name'>
-                  <TextInput
-                    plain
-                    value={name}
-                    onChange={this.onChangeName}
-                  />
+                <FormField label="Name">
+                  <TextInput plain value={name} onChange={this.onChangeName} />
                 </FormField>
                 <FormField
-                  label='Brand Color'
-                  help='hex RGB'
+                  label="Brand Color"
+                  help="hex RGB"
                   error={errors.color}
                 >
-                  <Box direction='row' align='center' justify='between'>
+                  <Box direction="row" align="center" justify="between">
                     <TextInput
                       plain
                       value={color}
@@ -263,28 +273,28 @@ export default class Try extends Component {
                     />
                     <Box
                       background={theme.global.colors.brand}
-                      pad='small'
-                      round='small'
+                      pad="small"
+                      round="small"
                     />
                   </Box>
                 </FormField>
                 <FormField
-                  label='Font Name'
-                  help={loading.font ? 'loading ...' : (
-                    <Anchor
-                      href='https://fonts.google.com/'
-                      label='google fonts'
-                    />
-                  )}
+                  label="Font Name"
+                  help={
+                    loading.font ? (
+                      'loading ...'
+                    ) : (
+                      <Anchor
+                        href="https://fonts.google.com/"
+                        label="google fonts"
+                      />
+                    )
+                  }
                   error={errors.font}
                 >
-                  <TextInput
-                    plain
-                    value={font}
-                    onChange={this.onChangeFont}
-                  />
+                  <TextInput plain value={font} onChange={this.onChangeFont} />
                 </FormField>
-                <FormField label='Sharpness'>
+                <FormField label="Sharpness">
                   <Select
                     plain
                     value={sharpness}
@@ -292,7 +302,7 @@ export default class Try extends Component {
                     onChange={this.onChangeSharpness}
                   />
                 </FormField>
-                <FormField label='Mood'>
+                <FormField label="Mood">
                   <Select
                     plain
                     value={mood}
@@ -303,8 +313,8 @@ export default class Try extends Component {
               </Box>
               <Box pad={{ vertical: 'medium' }}>
                 <Button
-                  type='submit'
-                  label='Download'
+                  type="submit"
+                  label="Download"
                   primary
                   onClick={this.onDownload}
                 />
@@ -312,15 +322,15 @@ export default class Try extends Component {
             </form>
           </Box>
 
-          <Box direction='row'>
+          <Box direction="row">
             <Box
-              justify='center'
-              gap='medium'
+              justify="center"
+              gap="medium"
               style={{ position: 'relative', right: -12 }}
             >
-              <Box pad='large' round='full' background='brand' />
-              <Box pad='large' round='full' background='brand' />
-              <Box pad='large' round='full' background='brand' />
+              <Box pad="large" round="full" background="brand" />
+              <Box pad="large" round="full" background="brand" />
+              <Box pad="large" round="full" background="brand" />
             </Box>
             <Grommet
               key={key}
@@ -328,29 +338,31 @@ export default class Try extends Component {
               style={{ position: 'relative', zIndex: 10 }}
             >
               <Box
-                direction='column'
-                round='medium'
-                animation='fadeIn'
-                background='black'
+                direction="column"
+                round="medium"
+                animation="fadeIn"
+                background="black"
                 border={{ size: 'xlarge', color: 'black' }}
-                overflow='hidden'
-                elevation='xlarge'
+                overflow="hidden"
+                elevation="xlarge"
               >
-                <Box round='medium' overflow='hidden' background='white'>
+                <Box round="medium" overflow="hidden" background="white">
                   <Box
-                    pad='medium'
-                    background='accent-1'
-                    direction='row'
-                    justify='between'
-                    align='center'
+                    pad="medium"
+                    background="accent-1"
+                    direction="row"
+                    justify="between"
+                    align="center"
                     round={SHARPNESS_ROUND_SIZE[sharpness]}
-                    overflow='hidden'
+                    overflow="hidden"
                   >
                     <Button icon={<PreviousIcon />} onClick={() => {}} />
-                    <Button primary label='Subscribe' onClick={() => {}} />
+                    <Button primary label="Subscribe" onClick={() => {}} />
                   </Box>
-                  <Box pad='large' align='start'>
-                    <Heading level={1} margin={{ top: 'none' }}>Bring it on!</Heading>
+                  <Box pad="large" align="start">
+                    <Heading level={1} margin={{ top: 'none' }}>
+                      Bring it on!
+                    </Heading>
                     <Text>January</Text>
                     <Paragraph>
                       Biodiesel small batch blue bottle you probably have not
@@ -358,17 +370,17 @@ export default class Try extends Component {
                       messenger bag. Prism cred, poutine bespoke tumeric tofu
                       helvetica put a bird on it.
                     </Paragraph>
-                    <Image src='https://myjourneytosixmillion.files.wordpress.com/2018/01/park-dasol-146056.jpg?w=300' />
+                    <Image src="https://myjourneytosixmillion.files.wordpress.com/2018/01/park-dasol-146056.jpg?w=300" />
                   </Box>
                 </Box>
               </Box>
             </Grommet>
             <Box
-              justify='center'
-              gap='medium'
+              justify="center"
+              gap="medium"
               style={{ position: 'relative', left: -12 }}
             >
-              <Box pad='large' round='full' background='brand' />
+              <Box pad="large" round="full" background="brand" />
             </Box>
           </Box>
         </Box>

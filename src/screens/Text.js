@@ -47,8 +47,10 @@ export default () => (
   </Page>
 );
 
-export const TextItem = props => (
-  <Item {...props} center>
+export const TextItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Text size="large">non-semantic text</Text>
   </Item>
 );
+
+TextItem.propTypes = Item.propTypes;

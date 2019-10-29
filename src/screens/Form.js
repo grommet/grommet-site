@@ -22,11 +22,13 @@ export default () => (
   </Page>
 );
 
-export const FormItem = props => (
-  <Item {...props} center>
+export const FormItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Form>
       <FormField name="name" label="Name" />
       <Button type="submit" primary label="Submit" />
     </Form>
   </Item>
 );
+
+FormItem.propTypes = Item.propTypes;

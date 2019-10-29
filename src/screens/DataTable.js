@@ -46,8 +46,8 @@ export default () => (
   </Page>
 );
 
-export const DataTableItem = props => (
-  <Item {...props} center>
+export const DataTableItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box gap="xsmall">
       <Box background="brand" />
       {[0, 1, 2, 3].map(row => (
@@ -70,3 +70,5 @@ export const DataTableItem = props => (
     </Box>
   </Item>
 );
+
+DataTableItem.propTypes = Item.propTypes;

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Box, ThemeContext } from 'grommet';
 import Item from './Item';
 
@@ -9,7 +9,7 @@ const STATUS_REGEXP = /^status-/i;
 export default () => (
   <ThemeContext.Consumer>
     {theme => (
-      <Fragment>
+      <>
         <Item name="Brand" path="/color">
           <Box flex direction="row" background="brand" />
         </Item>
@@ -40,7 +40,7 @@ export default () => (
               ))}
           </Box>
         </Item>
-      </Fragment>
+      </>
     )}
   </ThemeContext.Consumer>
 );

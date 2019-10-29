@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Heading, Markdown, Paragraph } from 'grommet';
 
-const CenteredParagraph = props => <Paragraph textAlign="center" {...props} />;
+const CenteredParagraph = () => <Paragraph textAlign="center" />;
 
 const Header = ({ details, label, level, size, summary }) => (
   <Box align="center" margin={{ horizontal: 'large' }}>

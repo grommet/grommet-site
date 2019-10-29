@@ -29,8 +29,10 @@ export default () => (
   </Page>
 );
 
-export const SelectItem = props => (
-  <Item {...props} center pad={{ horizontal: 'large' }}>
+export const SelectItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad={{ horizontal: 'large' }}>
     <Select options={[]} placeholder="Choices" tabIndex="-1" />
   </Item>
 );
+
+SelectItem.propTypes = Item.propTypes;

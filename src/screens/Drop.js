@@ -28,8 +28,8 @@ export default () => (
   </Page>
 );
 
-export const DropItem = props => (
-  <Item {...props} center>
+export const DropItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box
       border={{ color: 'brand', size: 'large' }}
       round="medium"
@@ -38,3 +38,5 @@ export const DropItem = props => (
     />
   </Item>
 );
+
+DropItem.propTypes = Item.propTypes;

@@ -53,6 +53,7 @@ export default () => (
           'medium',
           'large',
           'xlarge',
+          'full',
           'any CSS size',
           { height: '...', width: '...' },
         ],
@@ -71,7 +72,7 @@ export default () => (
       }}
     />
 
-    <Doc title="Chart" name="calcs" nav={false} desc={descCalcs} />
+    <Doc title="Calc" name="calcs" nav={false} desc={descCalcs} />
   </Page>
 );
 
@@ -83,8 +84,8 @@ const CHART_VALUES = [
   { value: [0, 3], label: '0' },
 ];
 
-export const ChartItem = props => (
-  <Item {...props} center>
+export const ChartItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Chart
       aria-label="Chart example"
       bounds={[[0, 4], [0, 10]]}
@@ -95,3 +96,5 @@ export const ChartItem = props => (
     />
   </Item>
 );
+
+ChartItem.propTypes = Item.propTypes;

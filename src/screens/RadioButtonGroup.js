@@ -43,8 +43,8 @@ export default () => (
   </Page>
 );
 
-export const RadioButtonGroupItem = props => (
-  <Item {...props} center>
+export const RadioButtonGroupItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <RadioButtonGroup
       name="group"
       options={['one', 'two']}
@@ -53,3 +53,5 @@ export const RadioButtonGroupItem = props => (
     />
   </Item>
 );
+
+RadioButtonGroupItem.propTypes = Item.propTypes;

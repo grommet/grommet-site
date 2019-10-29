@@ -56,8 +56,8 @@ export default () => (
   </Page>
 );
 
-export const CalendarItem = props => (
-  <Item {...props} center>
+export const CalendarItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <Box flex={false} gap="xsmall">
       {[0, 1, 2, 3, 4].map(week => (
         <Box key={week * 100} flex direction="row" gap="xsmall">
@@ -82,3 +82,5 @@ export const CalendarItem = props => (
     </Box>
   </Item>
 );
+
+CalendarItem.propTypes = Item.propTypes;

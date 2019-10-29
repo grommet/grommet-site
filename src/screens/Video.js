@@ -31,8 +31,10 @@ export default () => (
   </Page>
 );
 
-export const VideoItem = props => (
-  <Item {...props} center>
+export const VideoItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <CirclePlay color="brand" size="xlarge" />
   </Item>
 );
+
+VideoItem.propTypes = Item.propTypes;

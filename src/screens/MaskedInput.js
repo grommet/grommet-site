@@ -58,8 +58,8 @@ export default () => (
   </Page>
 );
 
-export const MaskedInputItem = props => (
-  <Item {...props} center pad={{ horizontal: 'xlarge' }}>
+export const MaskedInputItem = ({ name, path }) => (
+  <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
     <MaskedInput
       mask={[
         { placeholder: 'hh' },
@@ -72,3 +72,5 @@ export const MaskedInputItem = props => (
     />
   </Item>
 );
+
+MaskedInputItem.propTypes = Item.propTypes;

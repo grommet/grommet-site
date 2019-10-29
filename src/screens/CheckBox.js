@@ -35,8 +35,10 @@ export default () => (
   </Page>
 );
 
-export const CheckBoxItem = props => (
-  <Item {...props} center>
+export const CheckBoxItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <CheckBox checked onChange={() => {}} />
   </Item>
 );
+
+CheckBoxItem.propTypes = Item.propTypes;

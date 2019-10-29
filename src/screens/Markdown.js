@@ -35,8 +35,10 @@ export default () => (
   </Page>
 );
 
-export const MarkdownItem = props => (
-  <Item {...props} center>
+export const MarkdownItem = ({ name, path }) => (
+  <Item name={name} path={path} center>
     <code>grommet **heart**&#39;s markdown</code>
   </Item>
 );
+
+MarkdownItem.propTypes = Item.propTypes;

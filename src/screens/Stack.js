@@ -29,10 +29,12 @@ export default () => (
   </Page>
 );
 
-export const StackItem = props => (
-  <Item {...props}>
+export const StackItem = ({ name, path }) => (
+  <Item name={name} path={path}>
     <Box flex border={{ color: 'brand', size: 'xlarge' }}>
       <Box flex background="brand" margin="medium" />
     </Box>
   </Item>
 );
+
+StackItem.propTypes = Item.propTypes;

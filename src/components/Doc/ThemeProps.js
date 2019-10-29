@@ -13,45 +13,44 @@ const themeValue = (theme, path) => {
   return node;
 };
 
-export const ThemeProps = ({ examples, syntaxes, themeDoc }) => (
-  <Box
-    id="theme"
-    margin={{ vertical: 'large' }}
-    border={{ side: 'top', size: 'medium', color: 'brand' }}
-  >
+export const ThemeProps = ({ examples, syntaxes, themeDoc }) => {
+  const theme = React.useContext(ThemeContext);
+  return (
     <Box
-      direction="row"
-      justify="between"
-      align="center"
-      margin={{ top: 'medium', bottom: 'xlarge' }}
+      id="theme"
+      margin={{ vertical: 'large' }}
+      border={{ side: 'top', size: 'medium', color: 'brand' }}
     >
-      <Heading level={2} margin="none">
-        Theme
-      </Heading>
-      <Anchor href="#theme" icon={<LinkIcon color="light-4" />} />
+      <Box
+        direction="row"
+        justify="between"
+        align="center"
+        margin={{ top: 'medium', bottom: 'xlarge' }}
+      >
+        <Heading level={2} margin="none">
+          Theme
+        </Heading>
+        <Anchor href="#theme" icon={<LinkIcon color="light-4" />} />
+      </Box>
+      {Object.keys(themeDoc).map((key, index) => {
+        const themeProp = themeDoc[key];
+        return (
+          <Prop
+            key={key}
+            property={{ name: key, ...themeProp }}
+            first={!index}
+            syntax={
+              (syntaxes || {})[key] ||
+              themeValue(theme, key) ||
+              (key.endsWith('.extend') && ['any CSS', '(props) => {}'])
+            }
+            example={examples[key]}
+          />
+        );
+      })}
     </Box>
-    <ThemeContext.Consumer>
-      {theme =>
-        Object.keys(themeDoc).map((key, index) => {
-          const themeProp = themeDoc[key];
-          return (
-            <Prop
-              key={key}
-              property={{ name: key, ...themeProp }}
-              first={!index}
-              syntax={
-                (syntaxes || {})[key] ||
-                themeValue(theme, key) ||
-                (key.endsWith('.extend') && ['any CSS', '(props) => {}'])
-              }
-              example={examples[key]}
-            />
-          );
-        })
-      }
-    </ThemeContext.Consumer>
-  </Box>
-);
+  );
+};
 
 ThemeProps.propTypes = {
   desc: PropTypes.shape({}),
