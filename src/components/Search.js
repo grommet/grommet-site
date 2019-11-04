@@ -15,7 +15,6 @@ const SearchButton = ({ setSearchOpen, searchOpen }) => {
   const { go } = React.useContext(RouterContext);
   const [value, setValue] = React.useState('');
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
-  // const [filtering, setFiltering] = React.useState(false);
   const inputRef = React.createRef();
 
   React.useEffect(() => {
