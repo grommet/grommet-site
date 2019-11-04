@@ -7,6 +7,8 @@ import Search from './Search';
 
 export default () => {
   const size = React.useContext(ResponsiveContext);
+  const [searchOpen, setSearchOpen] = React.useState(false);
+
   return (
     <Box
       direction="row"
@@ -21,19 +23,21 @@ export default () => {
         icon={<GrommetIcon size="large" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
-      <Box direction="row">
-        <RoutedButton path="/components" plain>
-          {({ hover }) => (
-            <Box
-              pad={{ vertical: 'small', horizontal: 'medium' }}
-              round="xlarge"
-              background={hover ? 'active' : 'accent-1'}
-            >
-              <Text>components</Text>
-            </Box>
-          )}
-        </RoutedButton>
-        <Search />
+      <Box direction="row" gap="small">
+        {!searchOpen && (
+          <RoutedButton path="/components" plain>
+            {({ hover }) => (
+              <Box
+                pad={{ vertical: 'small', horizontal: 'medium' }}
+                round="xlarge"
+                background={hover ? 'active' : 'accent-1'}
+              >
+                <Text>components</Text>
+              </Box>
+            )}
+          </RoutedButton>
+        )}
+        <Search open={searchOpen} setOpen={value => setSearchOpen(value)} />
       </Box>
     </Box>
   );
