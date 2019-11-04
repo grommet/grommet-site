@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Button, Keyboard, TextInput } from 'grommet';
-import { Search } from 'grommet-icons';
+import { Search as SearchIcon } from 'grommet-icons';
 import { structure, nameToPath } from '../structure';
 import { RouterContext } from '../Router';
 
@@ -11,7 +11,7 @@ const allSuggestions = structure.sections
   .reduce((acc, val) => acc.concat(val), [])
   .sort();
 
-const SearchButton = ({ open, setOpen }) => {
+const Search = ({ open, setOpen }) => {
   const { go } = React.useContext(RouterContext);
   const [value, setValue] = React.useState('');
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
@@ -101,16 +101,16 @@ const SearchButton = ({ open, setOpen }) => {
           pad="small"
           background={hover ? 'active' : undefined}
         >
-          <Search />
+          <SearchIcon />
         </Box>
       )}
     </Button>
   );
 };
 
-SearchButton.propTypes = {
+Search.propTypes = {
   open: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired,
 };
 
-export default SearchButton;
+export default Search;
