@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, DropButton, Keyboard, TextInput } from 'grommet';
+import PropTypes from 'prop-types';
+import { Box, Button, Keyboard, TextInput } from 'grommet';
 import { Search } from 'grommet-icons';
 import { structure, nameToPath } from '../structure';
 import { RouterContext } from '../Router';
@@ -10,11 +11,18 @@ const allSuggestions = structure.sections
   .reduce((acc, val) => acc.concat(val), [])
   .sort();
 
-export default () => {
+const SearchButton = ({ setSearchOpen, searchOpen }) => {
   const { go } = React.useContext(RouterContext);
   const [value, setValue] = React.useState('');
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
+  // const [filtering, setFiltering] = React.useState(false);
   const inputRef = React.createRef();
+
+  React.useEffect(() => {
+    if (inputRef.current && searchOpen) {
+      inputRef.current.focus();
+    }
+  }, [searchOpen]);
 
   const onChange = event => {
     const {
@@ -53,34 +61,57 @@ export default () => {
     go(nameToPath(event.suggestion));
   };
 
+  if (searchOpen) {
+    return (
+      <Keyboard
+        onEsc={() => {
+          setSearchOpen(false);
+        }}
+        onEnter={onEnter}
+      >
+        <TextInput
+          ref={inputRef}
+          name="search-components"
+          dropHeight="medium"
+          placeholder="search..."
+          value={value}
+          suggestions={suggestions}
+          onChange={onChange}
+          onSelect={onSelect}
+          onSuggestionsOpen={() => {
+            setSearchOpen(true);
+          }}
+          onSuggestionsClose={() => {
+            setSearchOpen(false);
+          }}
+        />
+      </Keyboard>
+    );
+  }
+
   return (
-    <DropButton
+    <Button
       plain
-      dropAlign={{ top: 'bottom', right: 'right' }}
-      dropContent={
-        <Keyboard onEnter={onEnter}>
-          <TextInput
-            ref={inputRef}
-            placeholder="search ..."
-            value={value}
-            suggestions={suggestions}
-            dropHeight="medium"
-            onChange={onChange}
-            onSelect={onSelect}
-          />
-        </Keyboard>
-      }
-      onOpen={() => inputRef.current.focus()}
+      onClick={() => {
+        setSearchOpen(true);
+      }}
     >
       {({ hover }) => (
         <Box
-          pad="small"
           round="xlarge"
+          pad="small"
           background={hover ? 'active' : undefined}
         >
           <Search />
         </Box>
       )}
-    </DropButton>
+    </Button>
   );
 };
+
+SearchButton.propTypes = {
+  searchOpen: PropTypes.bool.isRequired,
+  setSearchOpen: PropTypes.func.isRequired,
+};
+
+export default SearchButton;
