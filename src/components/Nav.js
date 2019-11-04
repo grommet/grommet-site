@@ -37,10 +37,7 @@ export default () => {
             )}
           </RoutedButton>
         )}
-        <Search
-          searchOpen={searchOpen}
-          setSearchOpen={value => setSearchOpen(value)}
-        />
+        <Search open={searchOpen} setOpen={value => setSearchOpen(value)} />
       </Box>
     </Box>
   );

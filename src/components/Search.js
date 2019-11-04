@@ -11,17 +11,17 @@ const allSuggestions = structure.sections
   .reduce((acc, val) => acc.concat(val), [])
   .sort();
 
-const SearchButton = ({ setSearchOpen, searchOpen }) => {
+const SearchButton = ({ open, setOpen }) => {
   const { go } = React.useContext(RouterContext);
   const [value, setValue] = React.useState('');
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
   const inputRef = React.createRef();
 
   React.useEffect(() => {
-    if (inputRef.current && searchOpen) {
+    if (inputRef.current && open) {
       inputRef.current.focus();
     }
-  }, [searchOpen]);
+  }, [open]);
 
   const onChange = event => {
     const {
@@ -60,11 +60,11 @@ const SearchButton = ({ setSearchOpen, searchOpen }) => {
     go(nameToPath(event.suggestion));
   };
 
-  if (searchOpen) {
+  if (open) {
     return (
       <Keyboard
         onEsc={() => {
-          setSearchOpen(false);
+          setOpen(false);
         }}
         onEnter={onEnter}
       >
@@ -78,10 +78,10 @@ const SearchButton = ({ setSearchOpen, searchOpen }) => {
           onChange={onChange}
           onSelect={onSelect}
           onSuggestionsOpen={() => {
-            setSearchOpen(true);
+            setOpen(true);
           }}
           onSuggestionsClose={() => {
-            setSearchOpen(false);
+            setOpen(false);
           }}
         />
       </Keyboard>
@@ -92,7 +92,7 @@ const SearchButton = ({ setSearchOpen, searchOpen }) => {
     <Button
       plain
       onClick={() => {
-        setSearchOpen(true);
+        setOpen(true);
       }}
     >
       {({ hover }) => (
@@ -109,8 +109,8 @@ const SearchButton = ({ setSearchOpen, searchOpen }) => {
 };
 
 SearchButton.propTypes = {
-  searchOpen: PropTypes.bool.isRequired,
-  setSearchOpen: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 export default SearchButton;
