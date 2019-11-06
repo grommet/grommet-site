@@ -6,6 +6,7 @@ import { doc } from 'grommet/components/DataTable/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import Item from './Components/Item';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(DataTable).toJSON();
 
@@ -42,6 +43,60 @@ export default () => (
     { name: 'Eric', percent: 80 },
   ]}
 />`}
+      syntaxes={{
+        ...genericSyntaxes,
+        background: [
+          'light-2',
+          ['white', 'light-2'],
+          {
+            header: 'dark-2',
+            body: ['white', 'light-2'],
+            footer: 'dark-3',
+          },
+        ],
+        border: [
+          true,
+          'horizontal',
+          { color: 'border', side: 'horizontal', size: 'small' },
+          {
+            header: 'bottom',
+            body: { color: 'light-2', side: 'bottom' },
+            footer: 'top',
+          },
+        ],
+        columns: [
+          [
+            {
+              align: 'center',
+              aggregate: 'avg',
+              footer: { aggregate: true },
+              header: 'Name',
+              primary: true,
+              property: 'name',
+              render: '(datum) => <Content />',
+              search: true,
+              sortable: true,
+            },
+          ],
+          {
+            VALUES: {
+              align: ['start', 'center', 'end'],
+              aggregate: ['avg', 'max', 'min', 'sum'],
+            },
+          },
+        ],
+        groupBy: [
+          'location',
+          {
+            property: 'location',
+            expand: ['Paris', 'Los Angeles'],
+            onExpand: '(key) => {...}',
+          },
+        ],
+        onClickRow: ['({ datum }) => {...}'],
+        onMore: ['() => {...}'],
+        onSearch: ['({ key: "search text", ... }) => {...}'],
+      }}
     />
   </Page>
 );
