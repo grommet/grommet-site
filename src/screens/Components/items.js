@@ -23,6 +23,7 @@ export { ImageItem } from '../Image';
 export { InfiniteScrollItem } from '../InfiniteScroll';
 export { KeyboardItem } from '../Keyboard';
 export { LayerItem } from '../Layer';
+export { ListItem } from '../List';
 export { MarkdownItem } from '../Markdown';
 export { MaskedInputItem } from '../MaskedInput';
 export { MenuItem } from '../Menu';

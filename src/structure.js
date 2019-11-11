@@ -49,6 +49,7 @@ export const structure = {
         'DataTable',
         'Diagram',
         'Distribution',
+        'List',
         'Meter',
         'Table',
         'WorldMap',
