@@ -10,6 +10,9 @@
     "url": "https://github.com/grommet/grommet-site.git"
   },
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 10"
+  },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "release-heroku": "babel-node --presets @babel/preset-env ./tools/release-heroku.js",
