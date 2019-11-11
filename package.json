@@ -10,6 +10,7 @@
     "url": "https://github.com/grommet/grommet-site.git"
   },
   "license": "Apache-2.0",
+  "engine-strict": true,
   "engines": {
     "node": ">= 10"
   },
