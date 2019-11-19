@@ -65,7 +65,9 @@ export const Routes = ({ children, notFoundRedirect }) => {
     }
   });
   if (currentPath && !found) {
-    window.location.replace(notFoundRedirect);
+    if (typeof window !== 'undefined') {
+      window.location.replace(notFoundRedirect);
+    }
   }
   return found || null;
 };

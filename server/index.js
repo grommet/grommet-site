@@ -11,7 +11,7 @@ const manifest = require('../dist/webpack-manifest.json');
 
 app.use(Express.static(path.resolve(__dirname, '..', 'dist')));
 
-app.get('/', (req, res) => {
+app.use((req, res) => {
   const sheet = new ServerStyleSheet();
   const body = renderToString(
     sheet.collectStyles(<App initialPath={req.path} />),
