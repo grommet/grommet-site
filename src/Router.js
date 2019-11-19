@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 
 export const RouterContext = React.createContext({});
 
-export const Router = ({ children }) => {
-  const [path, setPath] = React.useState();
+export const Router = ({ children, initialPath }) => {
+  const [path, setPath] = React.useState(initialPath);
   const [search, setSearch] = React.useState();
 
   React.useEffect(() => {
@@ -49,6 +49,7 @@ export const Router = ({ children }) => {
 
 Router.propTypes = {
   children: PropTypes.node.isRequired,
+  initialPath: PropTypes.string.isRequired,
 };
 
 export const Routes = ({ children, notFoundRedirect }) => {

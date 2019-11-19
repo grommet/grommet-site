@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import URLSearchParams from 'url-search-params';
 import { Grommet } from 'grommet';
 import { grommet, dark } from 'grommet/themes';
@@ -21,7 +22,7 @@ const THEMES = {
   v1,
 };
 
-export default () => {
+const App = ({ initialPath }) => {
   const [themeName, setThemeName] = React.useState('grommet');
   const [search, setSearch] = React.useState();
 
@@ -37,7 +38,7 @@ export default () => {
   }, []);
 
   return (
-    <Router search={search}>
+    <Router initialPath={initialPath} search={search}>
       <Analytics>
         <Grommet theme={THEMES[themeName || 'grommet']}>
           <Content />
@@ -46,3 +47,9 @@ export default () => {
     </Router>
   );
 };
+
+App.propTypes = {
+  initialPath: PropTypes.string.isRequired,
+};
+
+export default App;
