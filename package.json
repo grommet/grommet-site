@@ -44,8 +44,10 @@
     "react-dom": "^16.8.0",
     "react-formify": "^0.11.0",
     "react-ga": "^2.5.3",
+    "react-helmet": "^5.2.1",
     "react-live": "2.2.1",
     "react-monaco-editor": "^0.31.0",
+    "react-side-effect": "2.1.0",
     "styled-components": "^4.0.0",
     "url-search-params": "^1.0.2",
     "webfontloader": "^1.6.28",
@@ -99,5 +101,8 @@
     "lint-fix",
     "prettier"
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "resolutions": {
+    "react-helmet/react-side-effect": "2.1.0"
+  }
 }

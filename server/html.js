@@ -1,10 +1,10 @@
-export default ({ body, styles, title, scripts }) => `<!DOCTYPE html>
+export default ({ body, styles, scripts, helmet }) => `<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
-    <title>Grommet</title>
-    <meta name="description" content="Grommet version 2 documentation" />
+    ${helmet.title.toString()}
+    ${helmet.meta.toString()}
     <meta name="fragment" content="!" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="mobile-web-app-capable" content="yes" />

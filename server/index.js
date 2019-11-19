@@ -1,5 +1,6 @@
 import Express from 'express';
 import React from 'react';
+import Helmet from 'react-helmet';
 import path from 'path';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
@@ -16,9 +17,10 @@ app.use((req, res) => {
   const body = renderToString(
     sheet.collectStyles(<App initialPath={req.path} />),
   );
+  const helmet = Helmet.renderStatic();
   const styles = sheet.getStyleTags();
   const scripts = [manifest['main.js'], manifest['vendors~main.js']];
-  const htmlString = html({ body, styles, scripts });
+  const htmlString = html({ body, styles, scripts, helmet });
   res.send(htmlString);
 });
 
