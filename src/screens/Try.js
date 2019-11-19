@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import WebFont from 'webfontloader';
 import {
   Anchor,
   Box,
@@ -22,6 +21,9 @@ import {
   toRGBString,
 } from '../utils/color';
 import { mergeDeep } from '../utils/object';
+
+const WebFont =
+  typeof window !== 'undefined' ? require('webfontloader') : undefined;
 
 const SHARPNESSES = ['soft', 'medium', 'hard'];
 
@@ -182,12 +184,14 @@ export default class Try extends Component {
       errors: { ...errors, font: undefined },
       loading: { ...loading, font: true },
     });
-    WebFont.load({
-      classes: false,
-      inactive: this.onFontError(name),
-      active: this.onFontLoaded(name),
-      google: { families: [name] },
-    });
+    if (WebFont) {
+      WebFont.load({
+        classes: false,
+        inactive: this.onFontError(name),
+        active: this.onFontLoaded(name),
+        google: { families: [name] },
+      });
+    }
   };
 
   onChangeSharpness = ({ option: sharpness }) => {
