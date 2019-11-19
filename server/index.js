@@ -1,5 +1,6 @@
 import Express from 'express';
 import React from 'react';
+import path from 'path';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import App from '../src/App';
@@ -7,13 +8,17 @@ import html from './html';
 
 const app = Express();
 const sheet = new ServerStyleSheet();
+const manifest = require('../dist/webpack-manifest.json');
+
+app.use(Express.static(path.resolve(__dirname, '..', 'dist')));
 
 app.get('/', (req, res) => {
   const body = renderToString(
     sheet.collectStyles(<App initialPath={req.path} />),
   );
   const styles = sheet.getStyleTags();
-  const htmlString = html({ body, styles });
+  const scripts = [manifest['main.js'], manifest['vendors~main.js']];
+  const htmlString = html({ body, styles, scripts });
   res.send(htmlString);
 });
 

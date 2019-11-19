@@ -48,7 +48,8 @@
     "react-monaco-editor": "^0.31.0",
     "styled-components": "^4.0.0",
     "url-search-params": "^1.0.2",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "webpack-manifest-plugin": "^2.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",

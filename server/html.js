@@ -1,4 +1,4 @@
-export default ({ body, styles, title }) => `<!DOCTYPE html>
+export default ({ body, styles, title, scripts }) => `<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,7 +24,7 @@ export default ({ body, styles, title }) => `<!DOCTYPE html>
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
     />
-    <link rel="manifest" href="/manifest.json" />\
+    <link rel="manifest" href="/manifest.json" />
     ${styles}
   </head>
   <body>
@@ -35,5 +35,8 @@ export default ({ body, styles, title }) => `<!DOCTYPE html>
         can be done with Grommet. You must enable javascript to proceed.
       </p>
     </noscript>
+    ${scripts &&
+      scripts.length &&
+      scripts.map(scriptSrc => `<script src="${scriptSrc}"></script>`).join('')}
   </body>
 </html>`;

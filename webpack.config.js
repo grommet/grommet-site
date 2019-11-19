@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestWebpackPlugin = require('webpack-manifest-plugin');
 const OfflinePlugin = require('offline-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
@@ -29,6 +30,7 @@ const baseConfig = {
     new CopyWebpackPlugin([{ from: './public' }]),
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
     new MonacoWebpackPlugin(),
+    new ManifestWebpackPlugin({ fileName: 'webpack-manifest.json' }),
   ],
   module: {
     rules: [
