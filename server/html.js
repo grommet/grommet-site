@@ -1,4 +1,4 @@
-export default ({ body, title }) => `<!DOCTYPE html>
+export default ({ body, styles, title }) => `<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,7 +24,8 @@ export default ({ body, title }) => `<!DOCTYPE html>
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
     />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />\
+    ${styles}
   </head>
   <body>
     <div id="content">${body}</div>
