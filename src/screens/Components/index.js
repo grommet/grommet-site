@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { structure, nameToPath } from '../../structure';
 import Page from '../../components/Page';
 import Header from '../../components/Header';
@@ -116,7 +117,6 @@ export default class Components extends Component {
   }
 
   componentDidMount() {
-    document.title = 'Components - Grommet';
     this.scrollToSection();
   }
 
@@ -135,13 +135,15 @@ export default class Components extends Component {
   };
 
   render() {
+    const desc =
+      'These are the building blocks of the grommet library, master them, and become a l33t.';
     return (
       <Page>
-        <Header
-          label="Components"
-          summary="These are the building blocks of the grommet library, master them,
-              and become a l33t."
-        />
+        <Helmet>
+          <title>Components</title>
+          <meta name="description" content={desc} />
+        </Helmet>
+        <Header label="Components" summary={desc} />
 
         {structure.sections.map(({ name, components }, index) => (
           <Section

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Helmet from 'react-helmet';
 /* eslint-disable import/no-duplicates */
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
@@ -51,10 +52,6 @@ const Play = () => {
   );
   const [code, setCode] = React.useState(PlaygroundExamples.HelloWorld);
 
-  React.useEffect(() => {
-    document.title = 'Play - Grommet';
-  }, []);
-
   return (
     <LiveProvider
       code={code}
@@ -62,6 +59,10 @@ const Play = () => {
       noInline
       style={{ height: '100vh' }}
     >
+      <Helmet>
+        <title>Play</title>
+        <meta name="description" content="Grommet component playground" />
+      </Helmet>
       <Box direction="row" fill>
         <Box basis="1/2">
           <Box

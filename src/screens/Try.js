@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import {
   Anchor,
   Box,
@@ -118,7 +119,6 @@ export default class Try extends Component {
   componentDidMount() {
     const { font } = this.state;
     this.onChangeFont({ target: { value: font } });
-    document.title = 'Try - Grommet';
   }
 
   onChangeColor = event => {
@@ -250,6 +250,9 @@ export default class Try extends Component {
     } = this.state;
     return (
       <Page background={{ image: 'url("img/circles.svg")' }}>
+        <Helmet>
+          <title>Try</title>
+        </Helmet>
         <Box direction="row" gap="large" wrap align="start">
           <Box basis="medium" margin={{ bottom: 'large' }}>
             <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>
