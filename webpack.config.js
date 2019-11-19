@@ -27,8 +27,7 @@ const baseConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './public' }]),
-    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+    new CopyWebpackPlugin([{ from: './public', ignore: '*.html' }]), // SSR will generate our html string.
     new MonacoWebpackPlugin(),
     new ManifestWebpackPlugin({ fileName: 'webpack-manifest.json' }),
   ],
@@ -68,6 +67,9 @@ if (env === 'production') {
   };
 } else {
   baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+  baseConfig.plugins.push(
+    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+  );
 }
 
 module.exports = baseConfig;
