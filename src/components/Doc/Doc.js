@@ -24,12 +24,6 @@ const Doc = ({
   themeDoc,
   title,
 }) => {
-  React.useEffect(() => {
-    if (nav) {
-      window.scrollTo(0, 0);
-    }
-  }, [name, nav, title]);
-
   const [summary, ...details] = ((desc && desc.description) || text).split('.');
 
   return (
