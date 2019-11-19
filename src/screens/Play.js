@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import MonacoEditor from 'react-monaco-editor';
 /* eslint-disable import/no-duplicates */
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
@@ -13,6 +12,7 @@ import { Previous } from 'grommet-icons';
 import { LiveProvider, LivePreview } from 'react-live';
 
 import RoutedButton from '../components/RoutedButton';
+import MonacoEditor from '../components/Doc/MonacoEditor';
 import {
   PlaygroundError,
   PlaygroundPlaceholder,
