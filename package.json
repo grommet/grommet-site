@@ -18,7 +18,7 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "release-heroku": "babel-node --presets @babel/preset-env ./tools/release-heroku.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
-    "start:ssr": "nodemon server/index.js --exec babel-node --presets @babel/preset-env",
+    "start:ssr": "cross-env NODE_ENV=development nodemon server/index.js --exec babel-node --presets @babel/preset-env",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test": "eslint src",

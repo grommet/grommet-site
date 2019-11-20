@@ -2,15 +2,24 @@ import Express from 'express';
 import React from 'react';
 import Helmet from 'react-helmet';
 import path from 'path';
+import fs from 'fs';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import App from '../src/App';
 import html from './html';
 
 const app = Express();
-const manifest = require('../dist/webpack-manifest.json');
+const publicPath = path.resolve(__dirname, '..', 'dist');
 
-app.use(Express.static(path.resolve(__dirname, '..', 'dist')));
+if (!fs.existsSync(publicPath)) {
+  throw new Error(
+    `No distribution folder detected. Run 'yarn build' first to create the site bundle.`,
+  );
+}
+
+const manifest = require(`${publicPath}/webpack-manifest.json`); // eslint-disable-line import/no-dynamic-require
+
+app.use(Express.static(publicPath));
 
 app.use((req, res) => {
   const sheet = new ServerStyleSheet();
