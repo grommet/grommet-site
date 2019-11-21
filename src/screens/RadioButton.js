@@ -24,6 +24,10 @@ export default () => (
     />
   );
 }`}
+      syntaxes={{
+        children: ['({ checked }) => {...}'],
+        onChange: ['({ target: { checked } }) => {...}'],
+      }}
     />
   </Page>
 );

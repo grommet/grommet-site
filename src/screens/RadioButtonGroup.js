@@ -26,6 +26,7 @@ export default () => (
   );
 }`}
       syntaxes={{
+        onChange: ['({ target: { value } }) => {...}'],
         options: [
           ['string'],
           [
