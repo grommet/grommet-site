@@ -27,6 +27,7 @@ import Form from '../screens/Form';
 import FormField from '../screens/FormField';
 import Grid from '../screens/Grid';
 import Grommet from '../screens/Grommet';
+import Header from '../screens/Header';
 import Heading from '../screens/Heading';
 import Home from '../screens/Home';
 import Image from '../screens/Image';
@@ -142,6 +143,7 @@ export default () => (
     <Route exact path="/formfield" component={FormField} />
     <Route exact path="/grid" component={Grid} />
     <Route exact path="/grommet" component={Grommet} />
+    <Route exact path="/header" component={Header} />
     <Route exact path="/heading" component={Heading} />
     <Route exact path="/image" component={Image} />
     <Route exact path="/infinitescroll" component={InfiniteScroll} />
