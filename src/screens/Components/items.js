@@ -18,6 +18,7 @@ export { FormItem } from '../Form';
 export { FormFieldItem } from '../FormField';
 export { GridItem } from '../Grid';
 export { GrommetItem } from '../Grommet';
+export { HeaderItem } from '../Header';
 export { HeadingItem } from '../Heading';
 export { ImageItem } from '../Image';
 export { InfiniteScrollItem } from '../InfiniteScroll';
