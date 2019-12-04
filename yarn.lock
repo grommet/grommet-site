@@ -5402,7 +5402,7 @@ grommet-theme-v1@^0.1.2:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.8.1"
-  resolved "https://github.com/grommet/grommet/tarball/stable#3b1f1d38f2b0d11f28c036e23b576b862608d090"
+  resolved "https://github.com/grommet/grommet/tarball/stable#0e74d916be58449a8998cd0a6418fd98ae94aa8d"
   dependencies:
     "@testing-library/dom" "^6.1.0"
     "@testing-library/jest-dom" "^4.2.4"
