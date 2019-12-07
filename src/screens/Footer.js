@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Footer } from 'grommet';
+import { Box, Footer } from 'grommet';
 import { doc } from 'grommet/components/Footer/doc';
 
 import Page from '../components/Page';
@@ -15,10 +15,10 @@ export default () => (
       name="Footer"
       desc={desc}
       code={`  <>
-    <Main background="light-4" pad="small">
-        <Text size="xsmall">Header</Text>
+    <Main pad="small">
+        <Text size="xsmall">Main</Text>
     </Main>
-    <Footer pad="small">
+    <Footer pad="small" background="light-4">
         Footer is a good place to place your content.
     </Footer>
 </>`}
@@ -28,7 +28,10 @@ export default () => (
 
 export const FooterItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Footer pad="small">Footer content of a document.</Footer>
+    <Box flex />
+    <Footer pad="small" background="brand">
+      © 2019 Copyright
+    </Footer>
   </Item>
 );
 
