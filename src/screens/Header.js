@@ -27,14 +27,16 @@ export default () => (
 );
 
 export const HeaderItem = ({ name, path }) => (
-  <Item name={name} path={path} center>
-    <Header background="brand" pad="small" gap="large">
-      <Box direction="row" gap="xsmall">
-        <Gremlin />
-        <Box>Header</Box>
-      </Box>
-      <Box>Nav-options</Box>
-    </Header>
+  <Item name={name} path={path} center justify="start">
+    <Box>
+      <Header background="brand" pad="small" gap="large">
+        <Box direction="row" gap="xsmall">
+          <Gremlin />
+          <Box>Header</Box>
+        </Box>
+        <Box>Nav-options</Box>
+      </Header>
+    </Box>
   </Item>
 );
 
