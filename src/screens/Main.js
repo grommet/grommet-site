@@ -28,7 +28,9 @@ export default () => (
 
 export const MainItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Main pad="small">Main content of a document.</Main>
+    <Main pad="small" background="brand">
+      Main content of a document.
+    </Main>
   </Item>
 );
 
