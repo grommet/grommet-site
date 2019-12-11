@@ -1,14 +1,13 @@
-import Express from 'express';
 import React from 'react';
 import Helmet from 'react-helmet';
 import path from 'path';
+import cheerio from 'cheerio';
 import fs from 'fs';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import App from '../src/App';
 import html from './html';
 
-const app = Express();
 const publicPath = path.resolve(__dirname, '..', 'dist');
 
 if (!fs.existsSync(publicPath)) {
@@ -18,21 +17,77 @@ if (!fs.existsSync(publicPath)) {
 }
 
 const manifest = require(`${publicPath}/webpack-manifest.json`); // eslint-disable-line import/no-dynamic-require
+const linksToVisit = [];
+const linksVisited = [];
+let isDone = false;
 
-app.use(Express.static(publicPath));
+const hasVisited = link => {
+  const linkVisited = linksVisited.find(item => item === link);
+  return typeof linkVisited === 'string';
+};
 
-app.use((req, res) => {
+const renderHtmlString = pagePath => {
   const sheet = new ServerStyleSheet();
   const body = renderToString(
-    sheet.collectStyles(<App initialPath={req.path} />),
+    sheet.collectStyles(<App initialPath={pagePath} />),
   );
   const helmet = Helmet.renderStatic();
   const styles = sheet.getStyleTags();
   const scripts = [manifest['main.js'], manifest['vendors~main.js']];
   const htmlString = html({ body, styles, scripts, helmet });
-  res.send(htmlString);
-});
+  return htmlString;
+};
 
-app.listen('3000', () => {
-  console.log('🛸 Grommet Site SSR listening on port 3000 🛸');
+function crawlForLinks(pagePath, done) {
+  linksVisited.push(pagePath);
+  const renderHtml = renderHtmlString(pagePath);
+  const $ = cheerio.load(renderHtml);
+  const links = $('a');
+
+  $(links).each((i, link) => {
+    const linkHref = $(link).attr('href');
+    if (
+      linkHref &&
+      typeof linkHref === 'string' &&
+      linkHref.charAt(0) === '/' &&
+      linkHref.charAt(1) !== '/'
+    ) {
+      if (!hasVisited(linkHref)) {
+        linksToVisit.push(linkHref);
+      }
+    }
+  });
+
+  linksToVisit.forEach(link => {
+    if (!hasVisited(link)) {
+      console.log('queueing', link);
+      crawlForLinks(link, done);
+    }
+  });
+  if (!isDone) {
+    done();
+  }
+}
+
+crawlForLinks('/', () => {
+  isDone = true;
+  // dedupe just in case
+  const siteLinks = [...new Set(linksVisited)];
+
+  siteLinks.forEach(page => {
+    const fileName = `${page.replace('/', '')}.html`;
+    const filePath = path.resolve(
+      __dirname,
+      '..',
+      'dist',
+      fileName !== '.html' ? fileName : 'index.html',
+    );
+    const stream = fs.createWriteStream(filePath);
+    const pageHtml = renderHtmlString(page);
+
+    console.log('Creating page: ', filePath);
+    stream.once('open', () => {
+      stream.end(pageHtml);
+    });
+  });
 });
