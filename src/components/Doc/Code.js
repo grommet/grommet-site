@@ -91,7 +91,7 @@ export const Code = ({ code: propsCode, name }) => {
               border={{ side: 'left', color: 'brand' }}
               pad={{ vertical: 'small', right: 'small' }}
             >
-              <Box height={editorHeight}>
+              <Box height={editorHeight} pad={{ vertical: 'medium' }}>
                 <MonacoEditor
                   theme="vs-light"
                   language="javascript"
