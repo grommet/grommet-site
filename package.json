@@ -28,7 +28,6 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.1.4",
-    "express": "^4.17.1",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "^4.0.0",
     "grommet-styles": "^0.2.0",
