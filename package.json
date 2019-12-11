@@ -19,6 +19,7 @@
     "release-heroku": "babel-node --presets @babel/preset-env ./tools/release-heroku.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "start:ssr": "cross-env NODE_ENV=development nodemon server/index.js --exec babel-node --presets @babel/preset-env",
+    "start:html-gen": "cross-env NODE_ENV=development nodemon tools/generate-html.js --exec babel-node --presets @babel/preset-env",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test": "eslint src",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "core-js": "^3.1.4",
+    "crawler": "^1.2.1",
     "express": "^4.17.1",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "^4.0.0",
