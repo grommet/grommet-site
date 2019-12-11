@@ -26,6 +26,8 @@ export default () => (
   );
 }`}
       syntaxes={{
+        children: ['(option, { checked, hover }) => {...}'],
+        onChange: ['({ target: { value } }) => {...}'],
         options: [
           ['string'],
           [
