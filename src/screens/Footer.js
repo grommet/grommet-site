@@ -27,11 +27,9 @@ export default () => (
 );
 
 export const FooterItem = ({ name, path }) => (
-  <Item name={name} path={path} center>
-    <Box flex />
-    <Footer pad="small" background="brand">
-      © 2019 Copyright
-    </Footer>
+  <Item name={name} path={path}>
+    <Box flex background={{ color: 'brand', opacity: 'weak' }} />
+    <Footer background="brand" pad="medium" />
   </Item>
 );
 

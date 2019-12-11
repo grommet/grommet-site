@@ -27,10 +27,13 @@ export default () => (
 );
 
 export const MainItem = ({ name, path }) => (
-  <Item name={name} path={path} center>
-    <Main pad="small" background="brand">
-      Main content of a document.
-    </Main>
+  <Item name={name} path={path}>
+    <Main
+      pad="small"
+      background="brand"
+      overflow="scroll"
+      border={{ side: 'right', size: 'large', color: 'light-4' }}
+    />
   </Item>
 );
 
