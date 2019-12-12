@@ -77,7 +77,6 @@ export const Code = ({ code: propsCode, name }) => {
       margin={{ top: 'large' }}
       border={{ color: 'brand' }}
       round
-      overflow="hidden"
     >
       <LiveProvider code={code} scope={scope}>
         <Box direction="row-responsive">
