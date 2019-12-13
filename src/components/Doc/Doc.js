@@ -4,6 +4,7 @@ import { Anchor, Box, Layer, Text } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
 import { nameToPath, nextComponent, previousComponent } from '../../structure';
 import Header from '../Header';
+import RoutedAnchor from '../RoutedAnchor';
 import RoutedButton from '../RoutedButton';
 import { Code } from './Code';
 import { Example } from './Example';
@@ -18,6 +19,7 @@ const Doc = ({
   nav,
   example,
   examples,
+  isA,
   syntaxes,
   text,
   themeDoc,
@@ -83,6 +85,34 @@ const Doc = ({
         )}
       </Box>
 
+      {isA && (
+        <Box
+          margin={{ top: 'large' }}
+          border={{ side: 'top', size: 'medium', color: 'brand' }}
+          pad={{ top: 'medium' }}
+        >
+          <Text size="large">
+            {name} is a <RoutedAnchor path={isA.path} label={isA.base} /> with
+            these presets
+          </Text>
+          <Box as="ul" alignSelf="start">
+            {Object.keys(isA.defaultProps).map(key => (
+              <Box
+                key={key}
+                as="li"
+                direction="row"
+                align="center"
+                justify="between"
+                gap="large"
+              >
+                <RoutedAnchor path={`${isA.path}#${key}`} label={key} />
+                <Text>{JSON.stringify(isA.defaultProps[key])}</Text>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )}
+
       {desc && <Props desc={desc} examples={examples} syntaxes={syntaxes} />}
 
       {themeDoc && (
@@ -122,9 +152,13 @@ Doc.propTypes = {
   }),
   example: PropTypes.node,
   examples: PropTypes.shape({}),
+  isA: PropTypes.shape({
+    base: PropTypes.string,
+    defaultProps: PropTypes.shape({}),
+    path: PropTypes.string,
+  }),
   name: PropTypes.string.isRequired,
   nav: PropTypes.bool,
-  props: PropTypes.shape({}),
   syntaxes: PropTypes.shape({}),
   text: PropTypes.string,
   themeDoc: PropTypes.shape({}),
@@ -137,8 +171,8 @@ Doc.defaultProps = {
   desc: undefined,
   example: null,
   examples: {},
+  isA: undefined,
   nav: true,
-  props: {},
   syntaxes: undefined,
   text: undefined,
   themeDoc: undefined,
