@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Anchor, Box, Layer, Text } from 'grommet';
+import { Anchor, Box, Layer, Paragraph, Text } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
 import { nameToPath, nextComponent, previousComponent } from '../../structure';
 import Header from '../Header';
@@ -91,10 +91,11 @@ const Doc = ({
           border={{ side: 'top', size: 'medium', color: 'brand' }}
           pad={{ top: 'medium' }}
         >
-          <Text size="large">
+          <Paragraph size="large">
             {name} is a <RoutedAnchor path={isA.path} label={isA.base} /> with
-            these presets
-          </Text>
+            the following properties preset. You can customize it using the
+            properties available in {isA.base}.
+          </Paragraph>
           <Box as="ul" alignSelf="start">
             {Object.keys(isA.defaultProps).map(key => (
               <Box
