@@ -14,13 +14,22 @@ export default () => (
     <Doc
       name="Header"
       desc={desc}
-      code={`<Header background="light-4" pad="small" gap="large">
-  <Box direction="row" gap="xsmall">
-    <Icons.Gremlin color="brand"/>
-    <Box>Header</Box>
-  </Box>
-  <Box>Nav-options</Box>
+      code={`<Header background="brand">
+  <Button icon={<Icons.Home />} hoverIndicator />
+  <Menu label="account" items={[{ label: 'logout' }]} />
 </Header>`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          align: 'center',
+          as: 'header',
+          direction: 'row',
+          flex: false,
+          gap: 'medium',
+          justify: 'between',
+        },
+      }}
     />
   </Page>
 );
