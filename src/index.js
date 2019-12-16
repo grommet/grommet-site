@@ -13,6 +13,14 @@ if (typeof window !== 'undefined') {
 }
 
 const element = document.getElementById('content');
-ReactDOM.render(<App />, element);
+const { NODE_ENV: env } = process.env;
+
+// ReactDOM's hydrate method is used when html is already present on the page.
+// https://reactjs.org/docs/react-dom.html#hydrate
+if (env === 'production') {
+  ReactDOM.hydrate(<App />, element);
+} else {
+  ReactDOM.render(<App />, element);
+}
 
 document.body.classList.remove('loading');
