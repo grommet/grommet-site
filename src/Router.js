@@ -54,7 +54,11 @@ export const Router = ({ children, initialPath }) => {
 
 Router.propTypes = {
   children: PropTypes.node.isRequired,
-  initialPath: PropTypes.string.isRequired,
+  initialPath: PropTypes.string, // Path passed in from static page renderer.
+};
+
+Router.defaultProps = {
+  initialPath: undefined,
 };
 
 export const Routes = ({ children, notFoundRedirect }) => {

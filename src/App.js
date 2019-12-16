@@ -58,7 +58,11 @@ const App = ({ initialPath }) => {
 };
 
 App.propTypes = {
-  initialPath: PropTypes.string.isRequired,
+  initialPath: PropTypes.string, // Path passed in from static page renderer.
+};
+
+App.defaultProps = {
+  initialPath: undefined,
 };
 
 export default App;
