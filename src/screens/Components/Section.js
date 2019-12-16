@@ -22,7 +22,7 @@ const Section = forwardRef(({ children, index, name }, ref) => (
       <Heading level={2}>{name}</Heading>
       <Anchor href={`#${name}`} icon={<LinkIcon color="light-4" />} />
     </Box>
-    {typeof window !== 'undefined' || Grid.available ? (
+    {typeof window === 'undefined' || Grid.available ? (
       // Defaults to grid available during server/static renders as this
       // option represents the majority of browsers.
       <Grid
