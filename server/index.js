@@ -47,6 +47,17 @@ const hasVisited = link => {
   return typeof linkVisited === 'string';
 };
 
+// Remove hash links from URLs i.e. `/box#overflow` => `/box`
+const stripHash = link => {
+  const hashIndex = link.indexOf('#');
+  if (hashIndex === -1) {
+    return link;
+  }
+  const linkWithoutHash = link.substring(0, hashIndex);
+
+  return linkWithoutHash;
+};
+
 // Crawl a path in our React app to discover app pages
 function crawlForLinks(pagePath, done) {
   linksVisited.push(pagePath);
@@ -67,8 +78,9 @@ function crawlForLinks(pagePath, done) {
       linkHref.charAt(1) !== '/'
     ) {
       // Avoid queue duplicates and performance bottlenecks.
-      if (!hasVisited(linkHref)) {
-        linksToVisit.push(linkHref);
+      const linkHrefWithoutHash = stripHash(linkHref);
+      if (!hasVisited(linkHrefWithoutHash)) {
+        linksToVisit.push(linkHrefWithoutHash);
       }
     }
   });
