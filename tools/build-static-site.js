@@ -6,7 +6,7 @@ import fs from 'fs';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import App from '../src/App';
-import html from './html';
+import html from './renderHtml';
 
 const publicPath = path.resolve(__dirname, '..', 'dist');
 
