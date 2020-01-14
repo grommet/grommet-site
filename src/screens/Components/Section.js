@@ -3,16 +3,8 @@ import PropTypes from 'prop-types';
 import { Anchor, Box, Grid, Heading } from 'grommet';
 import { Link as LinkIcon } from 'grommet-icons';
 
-const Section = forwardRef(({ children, index, name }, ref) => (
-  <Box
-    ref={ref}
-    id={name}
-    pad={{ vertical: 'medium' }}
-    animation={[
-      { type: 'zoomIn', duration: 500, delay: 100 + 100 * index },
-      { type: 'fadeIn', duration: 500, delay: 100 * index },
-    ]}
-  >
+const Section = forwardRef(({ children, name }, ref) => (
+  <Box ref={ref} id={name} pad={{ vertical: 'medium' }}>
     <Box
       direction="row"
       justify="between"
@@ -46,7 +38,6 @@ const Section = forwardRef(({ children, index, name }, ref) => (
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
-  index: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
 };
 
