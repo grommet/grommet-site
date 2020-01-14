@@ -31,6 +31,7 @@ export { MarkdownItem } from '../Markdown';
 export { MaskedInputItem } from '../MaskedInput';
 export { MenuItem } from '../Menu';
 export { MeterItem } from '../Meter';
+export { NavItem } from '../Nav';
 export { ParagraphItem } from '../Paragraph';
 export { RadioButtonItem } from '../RadioButton';
 export { RadioButtonGroupItem } from '../RadioButtonGroup';

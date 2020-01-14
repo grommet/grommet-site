@@ -21,6 +21,7 @@ export const structure = {
         'Drop',
         'DropButton',
         'Menu',
+        'Nav',
         'Tabs',
       ],
     },
