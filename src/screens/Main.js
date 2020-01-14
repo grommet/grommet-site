@@ -14,23 +14,32 @@ export default () => (
     <Doc
       name="Main"
       desc={desc}
-      code={`  <>
-    <Header background="light-4" pad="small">
-        <Text size="xsmall">Header</Text>
-    </Header>
-    <Main pad="small">
-        Main is a good place to place your content.
-    </Main>
-</>`}
+      code={`<Main pad="large">
+  <Heading>Something</Heading>
+  <Paragraph>Something about something</Paragraph>
+</Main>`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          as: 'main',
+          fill: 'vertical',
+          flex: 'grow',
+          overflow: 'auto',
+        },
+      }}
     />
   </Page>
 );
 
 export const MainItem = ({ name, path }) => (
-  <Item name={name} path={path} center>
-    <Main pad="small" background="brand">
-      Main content of a document.
-    </Main>
+  <Item name={name} path={path}>
+    <Main
+      pad="small"
+      background="brand"
+      overflow="scroll"
+      border={{ side: 'right', size: 'large', color: 'light-4' }}
+    />
   </Item>
 );
 

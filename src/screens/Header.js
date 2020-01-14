@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Header, Box } from 'grommet';
-import { Gremlin } from 'grommet-icons';
 import { doc } from 'grommet/components/Header/doc';
 
 import Page from '../components/Page';
@@ -15,28 +14,30 @@ export default () => (
     <Doc
       name="Header"
       desc={desc}
-      code={`<Header background="light-4" pad="small" gap="large">
-  <Box direction="row" gap="xsmall">
-    <Icons.Gremlin color="brand"/>
-    <Box>Header</Box>
-  </Box>
-  <Box>Nav-options</Box>
+      code={`<Header background="brand">
+  <Button icon={<Icons.Home />} hoverIndicator />
+  <Menu label="account" items={[{ label: 'logout' }]} />
 </Header>`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          align: 'center',
+          as: 'header',
+          direction: 'row',
+          flex: false,
+          gap: 'medium',
+          justify: 'between',
+        },
+      }}
     />
   </Page>
 );
 
 export const HeaderItem = ({ name, path }) => (
-  <Item name={name} path={path} center justify="start">
-    <Box>
-      <Header background="brand" pad="small" gap="large">
-        <Box direction="row" gap="xsmall">
-          <Gremlin />
-          <Box>Header</Box>
-        </Box>
-        <Box>Nav-options</Box>
-      </Header>
-    </Box>
+  <Item name={name} path={path}>
+    <Header background="brand" pad="medium" />
+    <Box flex background={{ color: 'brand', opacity: 'weak' }} />
   </Item>
 );
 

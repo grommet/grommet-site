@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { LiveProvider, LivePreview } from 'react-live';
-import MonacoEditor from 'react-monaco-editor';
 /* eslint-disable import/no-duplicates */
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
@@ -10,6 +9,7 @@ import * as Themes from 'grommet/themes';
 import { Anchor, Box, Heading, Text } from 'grommet';
 import { Next, Share } from 'grommet-icons';
 /* eslint-enable import/no-duplicates */
+import MonacoEditor from '../../components/Doc/MonacoEditor';
 import Header from '../../components/Header';
 import RoutedAnchor from '../../components/RoutedAnchor';
 import Section from './Section';

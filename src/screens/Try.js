@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WebFont from 'webfontloader';
+import Helmet from 'react-helmet';
 import {
   Anchor,
   Box,
@@ -22,6 +22,9 @@ import {
   toRGBString,
 } from '../utils/color';
 import { mergeDeep } from '../utils/object';
+
+const WebFont =
+  typeof window !== 'undefined' ? require('webfontloader') : undefined;
 
 const SHARPNESSES = ['soft', 'medium', 'hard'];
 
@@ -116,7 +119,6 @@ export default class Try extends Component {
   componentDidMount() {
     const { font } = this.state;
     this.onChangeFont({ target: { value: font } });
-    document.title = 'Try - Grommet';
   }
 
   onChangeColor = event => {
@@ -182,12 +184,14 @@ export default class Try extends Component {
       errors: { ...errors, font: undefined },
       loading: { ...loading, font: true },
     });
-    WebFont.load({
-      classes: false,
-      inactive: this.onFontError(name),
-      active: this.onFontLoaded(name),
-      google: { families: [name] },
-    });
+    if (WebFont) {
+      WebFont.load({
+        classes: false,
+        inactive: this.onFontError(name),
+        active: this.onFontLoaded(name),
+        google: { families: [name] },
+      });
+    }
   };
 
   onChangeSharpness = ({ option: sharpness }) => {
@@ -246,6 +250,9 @@ export default class Try extends Component {
     } = this.state;
     return (
       <Page background={{ image: 'url("img/circles.svg")' }}>
+        <Helmet>
+          <title>Try</title>
+        </Helmet>
         <Box direction="row" gap="large" wrap align="start">
           <Box basis="medium" margin={{ bottom: 'large' }}>
             <Heading level={1} margin={{ top: 'none', bottom: 'small' }}>

@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import URLSearchParams from 'url-search-params';
+import Helmet from 'react-helmet';
 import { Grommet } from 'grommet';
 import { grommet, dark } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
@@ -21,7 +23,7 @@ const THEMES = {
   v1,
 };
 
-export default () => {
+const App = ({ initialPath }) => {
   const [themeName, setThemeName] = React.useState('grommet');
   const [search, setSearch] = React.useState();
 
@@ -37,7 +39,14 @@ export default () => {
   }, []);
 
   return (
-    <Router search={search}>
+    <Router initialPath={initialPath} search={search}>
+      <Helmet titleTemplate="%s - Grommet" defaultTitle="Grommet">
+        <meta name="description" content="Grommet V2 Documentation" />
+        <meta
+          name="keywords"
+          content="React, UI Kit, Grommet, Grommet Design, UI/UX Framework"
+        />
+      </Helmet>
       <Analytics>
         <Grommet theme={THEMES[themeName || 'grommet']}>
           <Content />
@@ -46,3 +55,13 @@ export default () => {
     </Router>
   );
 };
+
+App.propTypes = {
+  initialPath: PropTypes.string, // Path passed in from static page renderer.
+};
+
+App.defaultProps = {
+  initialPath: undefined,
+};
+
+export default App;

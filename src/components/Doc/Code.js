@@ -6,10 +6,10 @@ import LZString from 'lz-string';
 import { Box, Button, Text } from 'grommet';
 import { Refresh } from 'grommet-icons';
 import { LiveError, LiveProvider, LivePreview } from 'react-live';
-import MonacoEditor from 'react-monaco-editor';
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
 import * as Themes from 'grommet/themes';
+import MonacoEditor from './MonacoEditor';
 /* eslint-enable import/no-duplicates */
 
 const scope = {
@@ -77,7 +77,6 @@ export const Code = ({ code: propsCode, name }) => {
       margin={{ top: 'large' }}
       border={{ color: 'brand' }}
       round
-      overflow="hidden"
     >
       <LiveProvider code={code} scope={scope}>
         <Box direction="row-responsive">
