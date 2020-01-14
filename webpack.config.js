@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestWebpackPlugin = require('webpack-manifest-plugin');
 const OfflinePlugin = require('offline-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
@@ -26,9 +27,9 @@ const baseConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './public' }]),
-    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+    new CopyWebpackPlugin([{ from: './public', ignore: ['*.html'] }]), // SSR will generate our html string.
     new MonacoWebpackPlugin(),
+    new ManifestWebpackPlugin({ fileName: 'webpack-manifest.json' }),
   ],
   module: {
     rules: [
@@ -66,6 +67,9 @@ if (env === 'production') {
   };
 } else {
   baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+  baseConfig.plugins.push(
+    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+  );
 }
 
 module.exports = baseConfig;

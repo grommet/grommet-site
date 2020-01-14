@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { Anchor, Box, Layer, Paragraph, Text } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
 import { nameToPath, nextComponent, previousComponent } from '../../structure';
@@ -25,17 +26,14 @@ const Doc = ({
   themeDoc,
   title,
 }) => {
-  React.useEffect(() => {
-    if (nav) {
-      document.title = `${title || name} - Grommet`;
-      window.scrollTo(0, 0);
-    }
-  }, [name, nav, title]);
-
   const [summary, ...details] = ((desc && desc.description) || text).split('.');
 
   return (
     <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
+      <Helmet>
+        <title>{title || name}</title>
+        <meta name="description" content={summary} />
+      </Helmet>
       <Box align="center">
         {nav && false && (
           <Layer modal={false} position="top">

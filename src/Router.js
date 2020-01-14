@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 
 export const RouterContext = React.createContext({});
 
-export const Router = ({ children }) => {
-  const [path, setPath] = React.useState();
+export const Router = ({ children, initialPath }) => {
+  const [path, setPath] = React.useState(initialPath);
   const [search, setSearch] = React.useState();
 
   React.useEffect(() => {
@@ -16,6 +16,11 @@ export const Router = ({ children }) => {
       const { location } = document;
       setPath(location.pathname);
       setSearch(location.search);
+      // Any time the route updates the user will be scrolled to
+      // the hash. This is loose and may be problematic.
+      if (typeof window !== 'undefined' && location.hash) {
+        window.scrollTo(document.getElementById(location.hash));
+      }
     };
     window.addEventListener('popstate', onPopState);
     onPopState();
@@ -49,6 +54,11 @@ export const Router = ({ children }) => {
 
 Router.propTypes = {
   children: PropTypes.node.isRequired,
+  initialPath: PropTypes.string, // Path passed in from static page renderer.
+};
+
+Router.defaultProps = {
+  initialPath: undefined,
 };
 
 export const Routes = ({ children, notFoundRedirect }) => {
@@ -64,7 +74,9 @@ export const Routes = ({ children, notFoundRedirect }) => {
     }
   });
   if (currentPath && !found) {
-    window.location.replace(notFoundRedirect);
+    if (typeof window !== 'undefined') {
+      window.location.replace(notFoundRedirect);
+    }
   }
   return found || null;
 };
