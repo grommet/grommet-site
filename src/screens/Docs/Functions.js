@@ -29,7 +29,7 @@ const CustomPrimaryButton = () => (
     </Box>
     <Text>
       The Button font is taken from the grommet theme, while its
-      primary color is taken from myCustomTheme.
+      brand color is taken from myCustomTheme.
     </Text>
   </Grommet>
 );
