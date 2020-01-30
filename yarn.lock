@@ -5675,7 +5675,7 @@ grommet-theme-v1@^0.1.2:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.10.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#4bd2fffdd79d5075736359877c98857f37f64b60"
+  resolved "https://github.com/grommet/grommet/tarball/stable#b937dd89ce8c3c7d26c663065ec148fe12393dbc"
   dependencies:
     "@testing-library/dom" "^6.1.0"
     "@testing-library/jest-dom" "^4.2.4"
