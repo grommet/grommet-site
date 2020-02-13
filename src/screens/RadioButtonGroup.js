@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RadioButtonGroup } from 'grommet';
-import { doc } from 'grommet/components/RadioButtonGroup/doc';
+import { doc, themeDoc } from 'grommet/components/RadioButton/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -41,6 +41,7 @@ export default () => (
           ],
         ],
       }}
+      themeDoc={themeDoc}
     />
   </Page>
 );
