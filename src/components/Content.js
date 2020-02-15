@@ -41,6 +41,7 @@ import Markdown from '../screens/Markdown';
 import MaskedInput from '../screens/MaskedInput';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
+import Nav from '../screens/Nav';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
@@ -158,6 +159,7 @@ export default () => (
     <Route exact path="/maskedinput" component={MaskedInput} />
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
+    <Route exact path="/nav" component={Nav} />
     <Route exact path="/radiobutton" component={RadioButton} />
     <Route exact path="/radiobuttongroup" component={RadioButtonGroup} />
     <Route exact path="/rangeinput" component={RangeInput} />

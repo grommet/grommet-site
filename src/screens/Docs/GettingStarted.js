@@ -9,7 +9,7 @@ const desc = 'you came to the right place.';
 
 const children = ` 
 
-Check out the getting started [tutorial](https://github.com/grommet/grommet-starter-new-app).
+Check out the getting started [tutorial](https://github.com/grommet/grommet-starter-new-app), and [blog](https://developer.hpe.com/blog/using-your-first-grommet-component-with-create-react-app).
 
 New to Front-End development? Check out [Slides](https://slides.grommet.io/?id=grommet-training-eric-soderberg-hpe-com) to learn the essential development tools for grommet
 
