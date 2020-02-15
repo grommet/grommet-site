@@ -103,7 +103,7 @@ export default () => (
           <Box
             pad={{ vertical: 'small', horizontal: 'medium' }}
             round="xlarge"
-            background="accent-1"
+            background="graph-0"
           >
             <Text size="large">components</Text>
           </Box>
