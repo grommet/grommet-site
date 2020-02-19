@@ -356,7 +356,7 @@ export default class Try extends Component {
                 <Box round="medium" overflow="hidden" background="white">
                   <Box
                     pad="medium"
-                    background="accent-1"
+                    background="graph-0"
                     direction="row"
                     justify="between"
                     align="center"

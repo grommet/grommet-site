@@ -26,7 +26,7 @@ export default () => {
           },
           button: {
             border: {
-              color: 'accent-1',
+              color: 'control',
               width: '6px',
               radius: '8px',
             },

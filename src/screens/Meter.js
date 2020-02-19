@@ -37,7 +37,7 @@ export default () => (
           [
             {
               value: 45,
-              color: 'accent-1',
+              color: 'graph-0',
               highlight: false,
               label: 'utilization',
               onClick: '() => {}',
