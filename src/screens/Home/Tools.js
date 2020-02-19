@@ -23,7 +23,7 @@ const Tile = ({ desc, label, link, src }) => {
         size="xlarge"
         href={link}
         label={<Text size="large">{label}</Text>}
-        icon={<Next color="accent-1" />}
+        icon={<Next color="control" />}
         reverse
         target="_blank"
       />

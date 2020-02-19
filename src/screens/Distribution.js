@@ -24,7 +24,7 @@ export default () => (
   values={[
     { value: 50, color: 'light-3' },
     { value: 30, color: 'brand' },
-    { value: 20, color: 'accent-1' },
+    { value: 20, color: 'graph-0' },
     { value: 10, color: 'light-3' },
     { value: 5, color: 'brand' },
   ]}

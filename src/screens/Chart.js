@@ -34,10 +34,15 @@ export default () => (
 />`}
       syntaxes={{
         ...genericSyntaxes,
-        bounds: [[[0, 10], [0, 100]]],
+        bounds: [
+          [
+            [0, 10],
+            [0, 100],
+          ],
+        ],
         color: [
-          'accent-1',
-          { color: 'accent-1', opacity: true },
+          'graph-0',
+          { color: 'graph-0', opacity: true },
           {
             VALUES: {
               opacity: ['weak', 'medium', 'strong', true],
@@ -88,7 +93,10 @@ export const ChartItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Chart
       aria-label="Chart example"
-      bounds={[[0, 4], [0, 10]]}
+      bounds={[
+        [0, 4],
+        [0, 10],
+      ]}
       size={{ width: 'small', height: 'xsmall' }}
       round
       color="brand"

@@ -30,7 +30,7 @@ export default () => {
               <Box
                 pad={{ vertical: 'small', horizontal: 'medium' }}
                 round="xlarge"
-                background={hover ? 'active' : 'accent-1'}
+                background={hover ? 'active' : 'control'}
               >
                 <Text>components</Text>
               </Box>

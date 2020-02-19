@@ -12,7 +12,7 @@ const desc = doc(Diagram).toJSON();
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,
   toTarget,
-  color: color || 'accent-1',
+  color: color || 'graph-0',
   thickness: 'xsmall',
   round: true,
   type: 'rectilinear',
@@ -61,7 +61,7 @@ export default () => (
           },
           {
             anchor: 'center',
-            color: 'accent-1',
+            color: 'graph-0',
             fromTarget: 'my-dom-id-1',
             label: 'link 5',
             offset: undefined,

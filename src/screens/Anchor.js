@@ -19,7 +19,7 @@ export default () => (
       desc={desc}
       syntaxes={{
         ...genericSyntaxes,
-        color: 'accent-1',
+        color: 'control',
         href: '//my.com/path',
         icon: '<Add />',
         label: ['Add', '<Box>...</Box>'],
