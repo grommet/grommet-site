@@ -92,10 +92,13 @@ export default () => (
           'auto',
         ],
         border: [
+          true,
+          false,
           'top',
           'left',
           'bottom',
           'right',
+          'between',
           'horizontal',
           'vertical',
           'all',
