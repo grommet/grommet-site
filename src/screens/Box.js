@@ -62,6 +62,8 @@ export default () => (
             dark: true,
             opacity: true,
             position: 'bottom',
+            repeat: 'no-repeat',
+            size: 'cover',
             image: 'url(//my.com/assets/img.png)',
           },
           {
@@ -72,6 +74,8 @@ export default () => (
             VALUES: {
               opacity: ['weak', 'medium', 'strong', true],
               position: 'any CSS for background-position',
+              repeat: ['no-repeat', 'repeat', 'string'],
+              size: ['cover', 'contain', 'string'],
             },
           },
         ],
