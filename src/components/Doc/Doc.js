@@ -112,7 +112,9 @@ const Doc = ({
         </Box>
       )}
 
-      {desc && <Props desc={desc} examples={examples} syntaxes={syntaxes} />}
+      {desc && desc.properties && (
+        <Props desc={desc} examples={examples} syntaxes={syntaxes} />
+      )}
 
       {themeDoc && (
         <ThemeProps
@@ -148,6 +150,7 @@ Doc.propTypes = {
       PropTypes.string,
     ]),
     description: PropTypes.string,
+    properties: PropTypes.arrayOf(PropTypes.object),
   }),
   example: PropTypes.node,
   examples: PropTypes.shape({}),
