@@ -154,7 +154,16 @@ export default () => (
           'xlarge',
           'any custom elevation name in the current theme',
         ],
-        gap: ['xsmall', 'small', 'medium', 'large', 'xlarge', 'any CSS size'],
+        gap: [
+          'none',
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'any CSS size',
+        ],
         height: [
           'xxsmall',
           'xsmall',
