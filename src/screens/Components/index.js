@@ -9,6 +9,7 @@ import Color from './Color';
 import {
   AccordionItem,
   AnchorItem,
+  AvatarItem,
   AnnounceContextItem,
   BoxItem,
   ButtonItem,
@@ -63,6 +64,7 @@ import {
 const Items = {
   Accordion: AccordionItem,
   Anchor: AnchorItem,
+  Avatar: AvatarItem,
   AnnounceContext: AnnounceContextItem,
   Box: BoxItem,
   Button: ButtonItem,

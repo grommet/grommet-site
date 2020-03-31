@@ -44,6 +44,7 @@ export const structure = {
     {
       name: 'Visualizations',
       components: [
+        'Avatar',
         'Calendar',
         'Chart',
         'Clock',
