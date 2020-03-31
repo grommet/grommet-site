@@ -6,6 +6,7 @@ import { Route, Routes } from '../Router';
 import Accordion from '../screens/Accordion';
 import About from '../screens/About';
 import Anchor from '../screens/Anchor';
+import Avatar from '../screens/Avatar';
 import AnnounceContext from '../screens/AnnounceContext';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
@@ -127,6 +128,7 @@ export default () => (
 
     <Route exact path="/accordion" component={Accordion} />
     <Route exact path="/anchor" component={Anchor} />
+    <Route exact path="/avatar" component={Avatar} />
     <Route exact path="/announcecontext" component={AnnounceContext} />
     <Route exact path="/box" component={Box} />
     <Route exact path="/button" component={Button} />

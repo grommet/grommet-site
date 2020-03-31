@@ -1,5 +1,6 @@
 export { AccordionItem } from '../Accordion';
 export { AnchorItem } from '../Anchor';
+export { AvatarItem } from '../Avatar';
 export { AnnounceContextItem } from '../AnnounceContext';
 export { BoxItem } from '../Box';
 export { ButtonItem } from '../Button';
