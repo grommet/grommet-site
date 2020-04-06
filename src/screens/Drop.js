@@ -22,7 +22,6 @@ export default () => (
         onClickOutside: '() => {}',
         onEsc: '() => {}',
       }}
-      example={<Box pad="large" />}
       themeDoc={themeDoc}
     />
   </Page>
