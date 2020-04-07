@@ -5,7 +5,7 @@ import { Link as LinkIcon } from 'grommet-icons';
 import { genericSyntaxes } from '../../utils/props';
 import { Prop } from './Prop';
 
-export const Props = ({ desc, examples, syntaxes }) => (
+export const Props = ({ desc, syntaxes }) => (
   <Box
     id="props"
     margin={{ vertical: 'large' }}
@@ -35,7 +35,6 @@ export const Props = ({ desc, examples, syntaxes }) => (
             property={property}
             first={!index}
             syntax={(syntaxes || genericSyntaxes)[property.name]}
-            example={examples[property.name]}
           />
         ))
     ) : (
@@ -52,12 +51,10 @@ Props.propTypes = {
       }),
     ),
   }),
-  examples: PropTypes.shape({}),
   syntaxes: PropTypes.shape({}),
 };
 
 Props.defaultProps = {
   desc: undefined,
-  examples: {},
   syntaxes: undefined,
 };

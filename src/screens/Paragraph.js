@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Paragraph } from 'grommet';
+import { Paragraph } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Paragraph/doc';
 
 import Page from '../components/Page';
@@ -25,19 +25,6 @@ export default () => (
   sed do eiusmod tempor incididunt ut
   labore et dolore magna aliqua.
 </Paragraph>`}
-      examples={{
-        size: (
-          <Box direction="row" justify="end" wrap>
-            {['small', 'medium', 'large', 'xlarge'].map(size => (
-              <Box key={size} margin="xsmall">
-                <Paragraph size={size} margin="none">
-                  Lorem ipsum ...
-                </Paragraph>
-              </Box>
-            ))}
-          </Box>
-        ),
-      }}
       themeDoc={themeDoc}
     />
   </Page>

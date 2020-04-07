@@ -13,7 +13,7 @@ const themeValue = (theme, path) => {
   return node;
 };
 
-export const ThemeProps = ({ examples, syntaxes, themeDoc }) => {
+export const ThemeProps = ({ syntaxes, themeDoc }) => {
   const theme = React.useContext(ThemeContext);
   return (
     <Box
@@ -44,7 +44,6 @@ export const ThemeProps = ({ examples, syntaxes, themeDoc }) => {
               themeValue(theme, key) ||
               (key.endsWith('.extend') && ['any CSS', '(props) => {}'])
             }
-            example={examples[key]}
           />
         );
       })}
@@ -54,14 +53,12 @@ export const ThemeProps = ({ examples, syntaxes, themeDoc }) => {
 
 ThemeProps.propTypes = {
   desc: PropTypes.shape({}),
-  examples: PropTypes.shape({}),
   syntaxes: PropTypes.shape({}),
   themeDoc: PropTypes.shape({}),
 };
 
 ThemeProps.defaultProps = {
   desc: undefined,
-  examples: {},
   syntaxes: undefined,
   themeDoc: undefined,
 };

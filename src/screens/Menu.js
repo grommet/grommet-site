@@ -3,20 +3,12 @@ import React from 'react';
 import { Box, Menu } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Menu/doc';
 
-import { More } from 'grommet-icons';
-
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
 import Item from './Components/Item';
 
 const desc = doc(Menu).toJSON();
-
-function onClick(event) {
-  event.preventDefault();
-  // eslint-disable-next-line no-alert
-  alert('hi');
-}
 
 export default () => (
   <Page>
@@ -53,28 +45,6 @@ export default () => (
     { label: 'Second Action', onClick: () => {} },
   ]}
 />`}
-      examples={{
-        icon: (
-          <Menu
-            dropAlign={{ top: 'top', right: 'right' }}
-            background="neutral-4"
-            icon={<More color="brand" />}
-            items={[
-              { label: 'First Action', onClick },
-              { label: 'Second Action', onClick },
-            ]}
-          />
-        ),
-        label: (
-          <Menu
-            label="Menu"
-            items={[
-              { label: 'First Action', onClick },
-              { label: 'Second Action', onClick },
-            ]}
-          />
-        ),
-      }}
       themeDoc={themeDoc}
     />
   </Page>
