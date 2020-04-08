@@ -57,6 +57,11 @@ export default () => (
         border: [
           true,
           'horizontal',
+          'vertical',
+          'top',
+          'bottom',
+          'right',
+          'left',
           { color: 'border', side: 'horizontal', size: 'small' },
           {
             header: 'bottom',
