@@ -3,8 +3,6 @@ import React from 'react';
 import { Button } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Button/doc';
 
-import { Close, Edit } from 'grommet-icons';
-
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
@@ -30,18 +28,6 @@ export default () => (
   label="Edit"
   onClick={() => {}}
 />`}
-      examples={{
-        active: <Button active label="Submit" onClick={() => {}} />,
-        color: (
-          <Button color="status-critical" label="Submit" onClick={() => {}} />
-        ),
-        icon: <Button icon={<Close />} onClick={() => {}} />,
-        label: <Button label="Submit" onClick={() => {}} />,
-        primary: <Button primary label="Submit" onClick={() => {}} />,
-        reverse: (
-          <Button reverse icon={<Edit />} label="Edit" onClick={() => {}} />
-        ),
-      }}
       themeDoc={themeDoc}
     />
   </Page>
