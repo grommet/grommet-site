@@ -3,7 +3,16 @@ export const structure = {
   sections: [
     {
       name: 'Layout',
-      components: ['Box', 'Footer', 'Grid', 'Header', 'Layer', 'Main', 'Stack'],
+      components: [
+        'Box',
+        'Footer',
+        'Grid',
+        'Header',
+        'Layer',
+        'Main',
+        'Sidebar',
+        'Stack',
+      ],
     },
     {
       name: 'Type',
