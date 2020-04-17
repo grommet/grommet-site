@@ -52,6 +52,7 @@ import RangeSelector from '../screens/RangeSelector';
 import ResponsiveContext from '../screens/ResponsiveContext';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
+import Sidebar from '../screens/Sidebar';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
@@ -169,6 +170,7 @@ export default () => (
     <Route exact path="/responsivecontext" component={ResponsiveContext} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/select" component={Select} />
+    <Route exact path="/sidebar" component={Sidebar} />
     <Route exact path="/skiplinks" component={SkipLinks} />
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/table" component={Table} />

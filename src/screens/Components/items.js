@@ -40,6 +40,7 @@ export { RangeInputItem } from '../RangeInput';
 export { RangeSelectorItem } from '../RangeSelector';
 export { ResponsiveContextItem } from '../ResponsiveContext';
 export { SelectItem } from '../Select';
+export { SidebarItem } from '../Sidebar';
 export { SkipLinksItem } from '../SkipLinks';
 export { StackItem } from '../Stack';
 export { TableItem } from '../Table';
