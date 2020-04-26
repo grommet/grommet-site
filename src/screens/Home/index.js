@@ -152,7 +152,7 @@ export default () => (
             . Save it for offline reading.
           </Paragraph>
           <Paragraph>
-            Maintained by the core team and the help of our contributors. you
+            maintained by the core team with the help of our contributors. you
             can always kick it old school with&nbsp;
             <Anchor target="_blank" href="https://v1.grommet.io">
               Grommet v1
