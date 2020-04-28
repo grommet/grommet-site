@@ -23,7 +23,7 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      code={`<Anchor href="#" primary label="For Example" />`}
+      code={`<Anchor href="#" label="For Example" />`}
       themeDoc={themeDoc}
     />
   </Page>
