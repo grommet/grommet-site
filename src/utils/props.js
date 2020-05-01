@@ -3,7 +3,6 @@ export const genericSyntaxes = {
   alignSelf: ['start', 'center', 'end', 'stretch'],
   gridArea: 'a parent grid area name',
   margin: [
-    'none',
     'xsmall',
     'small',
     'medium',

@@ -10,13 +10,16 @@ import Item from './Components/Item';
 
 const desc = doc(Heading).toJSON();
 
+const extendedGenericSyntaxes = JSON.parse(JSON.stringify(genericSyntaxes));
+extendedGenericSyntaxes.margin.unshift('none');
+
 export default () => (
   <Page>
     <Doc
       name="Heading"
       desc={desc}
       syntaxes={{
-        ...genericSyntaxes,
+        ...extendedGenericSyntaxes,
         a11yTitle: 'Open Drop',
         color: [
           'neutral-1',
