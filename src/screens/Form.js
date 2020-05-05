@@ -49,8 +49,8 @@ const Examples = () => (
       onReset={() => setValue({})}
       onSubmit={({ value }) => {}}
     >
-      <FormField name="name" label="Name">
-        <TextInput name="name" />
+      <FormField name="name" htmlfor="text-input-id" label="Name">
+        <TextInput id="text-input-id" name="name" />
       </FormField>
       <Box direction="row" gap="medium">
         <Button type="submit" primary label="Submit" />
@@ -75,8 +75,8 @@ const Examples = () => (
       code={`() => {
   return (
     <Form onSubmit={({ value }) => {}}>
-      <FormField name="name" label="Name">
-        <TextInput name="name" />
+      <FormField name="name" htmlfor="textinput-id" label="Name">
+        <TextInput id="textinput-id" name="name" />
       </FormField>
       <Box direction="row" gap="medium">
         <Button type="submit" primary label="Submit" />
