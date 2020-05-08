@@ -20,11 +20,12 @@ const Examples = () => (
       screen. If an <code>href</code> is provided, it will be rendered in the
       DOM with <code>&lt;a/&gt;</code>. An{' '}
       <RoutedAnchor path="/anchor" label="Anchor" /> component should be used
-      for inline anchors within textual contexts. Otherwise, Button should be
-      used.
+      for inline anchors within textual contexts.
     </Paragraph>
     <Paragraph size="large">
-      There are three kinds of Buttons, based on their prominence.
+      In May 2020, we enhanced Button to have three kinds, outlined below. In
+      order to maintain backwards compatibility, this approach is only available
+      when the theme being used defines <code>button.default</code>.
     </Paragraph>
     <Heading level={2}>default</Heading>
     <Paragraph size="large">
@@ -59,6 +60,7 @@ export default () => (
       desc={desc}
       text=""
       examples={<Examples />}
+      code={'<Button primary label="label" />'}
       syntaxes={{
         ...genericSyntaxes,
         color: 'control',
