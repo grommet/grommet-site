@@ -79,6 +79,7 @@ export default () => (
               primary: true,
               property: 'name',
               render: '(datum) => <Content />',
+              size: 'small',
               search: true,
               sortable: true,
             },
