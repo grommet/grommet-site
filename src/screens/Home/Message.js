@@ -12,7 +12,7 @@ const Message = ({ imageSrc, name, summary }) => (
       align="center"
       justify="center"
     >
-      <Image width={96} fit="cover" src={imageSrc} />
+      <Image width={96} fit="cover" src={imageSrc} a11yTitle={name} />
     </Box>
     <Box width="medium" pad="medium">
       <Heading level={3} textAlign="center" margin="none">
