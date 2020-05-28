@@ -31,7 +31,7 @@ const Tile = ({ desc, label, link, src }) => {
         {desc}
       </Paragraph>
       <Box flex />
-      <Image width={imgWidth} src={src} />
+      <Image width={imgWidth} src={src} a11yTitle={label} />
     </Box>
   );
 };

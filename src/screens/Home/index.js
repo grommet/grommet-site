@@ -64,7 +64,10 @@ export default () => (
         label="part design system, part framework, and all awesome"
         summary={
           <Paragraph size="xxlarge" textAlign="center">
-            grommet is a <Anchor href="https://reactjs.org">react</Anchor>
+            grommet is a{' '}
+            <Anchor href="https://reactjs.org" a11yTitle="reactjs">
+              react
+            </Anchor>
             -based framework that provides accessibility, modularity,
             responsiveness, and theming in a tidy package
           </Paragraph>
@@ -161,7 +164,7 @@ export default () => (
           </Paragraph>
         </Box>
 
-        <Image src="/img/stak-hurrah.svg" />
+        <Image src="/img/stak-hurrah.svg" a11yTitle="gremlin" />
       </Box>
     </Section>
   </Box>
