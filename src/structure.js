@@ -57,6 +57,7 @@ export const structure = {
         'Calendar',
         'Chart',
         'Clock',
+        'DataChart',
         'DataTable',
         'Diagram',
         'Distribution',

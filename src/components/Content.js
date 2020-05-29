@@ -18,6 +18,7 @@ import Clock from '../screens/Clock';
 import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import DataChart from '../screens/DataChart';
 import DataTable from '../screens/DataTable';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
@@ -140,6 +141,7 @@ export default () => (
     <Route exact path="/clock" component={Clock} />
     <Route exact path="/collapsible" component={Collapsible} />
     <Route exact path="/color" component={Color} />
+    <Route exact path="/datachart" component={DataChart} />
     <Route exact path="/datatable" component={DataTable} />
     <Route exact path="/diagram" component={Diagram} />
     <Route exact path="/distribution" component={Distribution} />

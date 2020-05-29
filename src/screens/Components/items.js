@@ -10,6 +10,7 @@ export { ChartItem } from '../Chart';
 export { CheckBoxItem } from '../CheckBox';
 export { ClockItem } from '../Clock';
 export { CollapsibleItem } from '../Collapsible';
+export { DataChartItem } from '../DataChart';
 export { DataTableItem } from '../DataTable';
 export { DiagramItem } from '../Diagram';
 export { DistributionItem } from '../Distribution';
