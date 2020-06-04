@@ -93,7 +93,9 @@ export default () => (
           {
             guide: true,
             labels: 3,
-            render: '(value, axisIndex) => element',
+            // prefix: '$',
+            render: '(value, data, dataIndex, axisIndex) => element',
+            // suffix: '%',
           },
         ],
       }}
