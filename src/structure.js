@@ -38,6 +38,7 @@ export const structure = {
       name: 'Input',
       components: [
         'CheckBox',
+        'CheckBoxGroup',
         'MaskedInput',
         'RadioButton',
         'RadioButtonGroup',
