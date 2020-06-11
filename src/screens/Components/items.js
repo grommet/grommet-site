@@ -8,6 +8,7 @@ export { CalendarItem } from '../Calendar';
 export { CarouselItem } from '../Carousel';
 export { ChartItem } from '../Chart';
 export { CheckBoxItem } from '../CheckBox';
+export { CheckBoxGroupItem } from '../CheckBoxGroup';
 export { ClockItem } from '../Clock';
 export { CollapsibleItem } from '../Collapsible';
 export { DataChartItem } from '../DataChart';

@@ -14,6 +14,7 @@ import Calendar from '../screens/Calendar';
 import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
+import CheckBoxGroup from '../screens/CheckBoxGroup';
 import Clock from '../screens/Clock';
 import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
@@ -138,6 +139,7 @@ export default () => (
     <Route exact path="/carousel" component={Carousel} />
     <Route exact path="/chart" component={Chart} />
     <Route exact path="/checkbox" component={CheckBox} />
+    <Route exact path="/checkboxgroup" component={CheckBoxGroup} />
     <Route exact path="/clock" component={Clock} />
     <Route exact path="/collapsible" component={Collapsible} />
     <Route exact path="/color" component={Color} />
