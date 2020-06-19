@@ -30,6 +30,8 @@ export default () => (
         onChange: ['({ target: { value } }) => {...}'],
         options: [
           ['string'],
+          [true, false],
+          ['number'],
           [
             {
               disabled: false,
