@@ -20,6 +20,13 @@ export default () => (
     <CheckBoxGroup options={["Maui", "Kauai", "Oahu"]} />
   </Box>
 </Grommet>`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          gap: 'small',
+        },
+      }}
       syntaxes={{
         ...genericSyntaxes,
         onChange: ['({ value, option }) => {...}'],

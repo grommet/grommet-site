@@ -25,6 +25,13 @@ export default () => (
     />
   );
 }`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          gap: 'small',
+        },
+      }}
       syntaxes={{
         children: ['(option, { checked, hover }) => {...}'],
         onChange: ['({ target: { value } }) => {...}'],
