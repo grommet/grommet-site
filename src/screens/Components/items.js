@@ -13,6 +13,7 @@ export { ClockItem } from '../Clock';
 export { CollapsibleItem } from '../Collapsible';
 export { DataChartItem } from '../DataChart';
 export { DataTableItem } from '../DataTable';
+export { DateInputItem } from '../DateInput';
 export { DiagramItem } from '../Diagram';
 export { DistributionItem } from '../Distribution';
 export { DropItem } from '../Drop';

@@ -21,6 +21,7 @@ import Color from '../screens/Color';
 import Components from '../screens/Components';
 import DataChart from '../screens/DataChart';
 import DataTable from '../screens/DataTable';
+import DateInput from '../screens/DateInput';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
 import Docs from '../screens/Docs';
@@ -145,6 +146,7 @@ export default () => (
     <Route exact path="/color" component={Color} />
     <Route exact path="/datachart" component={DataChart} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/dateinput" component={DateInput} />
     <Route exact path="/diagram" component={Diagram} />
     <Route exact path="/distribution" component={Distribution} />
     <Route exact path="/drop" component={Drop} />
