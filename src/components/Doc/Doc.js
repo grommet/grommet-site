@@ -8,17 +8,16 @@ import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
 import RoutedButton from '../RoutedButton';
 import { Code } from './Code';
-import { Example } from './Example';
 import { Props } from './Props';
 import { ThemeProps } from './ThemeProps';
 
 const Doc = ({
+  align = 'center',
   children,
   code,
   desc,
   name,
   nav,
-  example,
   examples,
   isA,
   syntaxes,
@@ -34,7 +33,7 @@ const Doc = ({
         <title>{title || name}</title>
         <meta name="description" content={summary} />
       </Helmet>
-      <Box align="center">
+      <Box align={align}>
         {nav && false && (
           <Layer modal={false} position="top">
             <Box direction="row" gap="medium">
@@ -50,13 +49,14 @@ const Doc = ({
           </Layer>
         )}
         <Header
+          align={align}
           label={title || name}
           summary={summary}
           details={desc && (desc.details || details.join('.'))}
         />
 
-        {example && !code && <Example example={example} />}
         {code && <Code code={code} name={name} />}
+        {examples}
 
         {desc && desc.availableAt && (
           <Box margin={{ vertical: 'medium' }}>
@@ -112,15 +112,9 @@ const Doc = ({
         </Box>
       )}
 
-      {desc && <Props desc={desc} examples={examples} syntaxes={syntaxes} />}
+      {desc && desc.properties && <Props desc={desc} syntaxes={syntaxes} />}
 
-      {themeDoc && (
-        <ThemeProps
-          examples={examples}
-          syntaxes={syntaxes}
-          themeDoc={themeDoc}
-        />
-      )}
+      {themeDoc && <ThemeProps syntaxes={syntaxes} themeDoc={themeDoc} />}
 
       {children}
     </Box>
@@ -128,6 +122,7 @@ const Doc = ({
 };
 
 Doc.propTypes = {
+  align: PropTypes.string,
   code: PropTypes.string,
   children: PropTypes.node,
   desc: PropTypes.shape({
@@ -148,9 +143,9 @@ Doc.propTypes = {
       PropTypes.string,
     ]),
     description: PropTypes.string,
+    properties: PropTypes.arrayOf(PropTypes.object),
   }),
-  example: PropTypes.node,
-  examples: PropTypes.shape({}),
+  examples: PropTypes.node,
   isA: PropTypes.shape({
     base: PropTypes.string,
     defaultProps: PropTypes.shape({}),
@@ -165,11 +160,11 @@ Doc.propTypes = {
 };
 
 Doc.defaultProps = {
+  align: undefined,
   code: undefined,
   children: undefined,
   desc: undefined,
-  example: null,
-  examples: {},
+  examples: undefined,
   isA: undefined,
   nav: true,
   syntaxes: undefined,

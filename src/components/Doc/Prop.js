@@ -8,6 +8,7 @@ import { Value } from './Value';
 // parseFormat() parses the react-desc property format string into
 // an object that makes it easier for us to style the content.
 const parseFormat = format => {
+  if (!format) return '';
   const lines = format.split(/\n/);
   const working = [{ values: [] }];
   lines.forEach(line => {
@@ -54,7 +55,7 @@ const parseFormat = format => {
   return working.shift();
 };
 
-export const Prop = ({ property, syntax, first }) => {
+export const Prop = ({ children, property, syntax, first }) => {
   const [over, setOver] = React.useState();
 
   return (
@@ -82,6 +83,7 @@ export const Prop = ({ property, syntax, first }) => {
           <Markdown>
             {property.description.replace('<', '&lt;').replace('>', '&gt;')}
           </Markdown>
+          {children}
         </Box>
         <Box flex align="start">
           <Text color="neutral-1">
@@ -92,12 +94,13 @@ export const Prop = ({ property, syntax, first }) => {
                 defaultValue={property.defaultValue}
               />
             )) ||
-              property.type || (
+              property.type ||
+              (property.format && (
                 <Value
                   value={parseFormat(property.format)}
                   defaultValue={property.defaultValue}
                 />
-              )}
+              ))}
           </Text>
         </Box>
       </Box>
@@ -106,8 +109,14 @@ export const Prop = ({ property, syntax, first }) => {
 };
 
 Prop.propTypes = {
+  children: PropTypes.node,
   property: PropTypes.shape({
-    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    defaultValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+      PropTypes.number,
+      PropTypes.object,
+    ]),
     description: PropTypes.string,
     format: PropTypes.string,
     name: PropTypes.string,
@@ -118,5 +127,6 @@ Prop.propTypes = {
 };
 
 Prop.defaultProps = {
+  children: undefined,
   syntax: undefined,
 };

@@ -41,7 +41,7 @@ const App = ({ initialPath }) => {
   return (
     <Router initialPath={initialPath} search={search}>
       <Helmet titleTemplate="%s - Grommet" defaultTitle="Grommet">
-        <meta name="description" content="Grommet V2 Documentation" />
+        <meta name="description" content="Grommet documentation" />
         <meta
           name="keywords"
           content="React, UI Kit, Grommet, Grommet Design, UI/UX Framework"

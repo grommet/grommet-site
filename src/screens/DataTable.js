@@ -57,6 +57,11 @@ export default () => (
         border: [
           true,
           'horizontal',
+          'vertical',
+          'top',
+          'bottom',
+          'right',
+          'left',
           { color: 'border', side: 'horizontal', size: 'small' },
           {
             header: 'bottom',
@@ -74,6 +79,7 @@ export default () => (
               primary: true,
               property: 'name',
               render: '(datum) => <Content />',
+              size: 'small',
               search: true,
               sortable: true,
             },
