@@ -5711,7 +5711,7 @@ grommet-theme-v1@^0.1.2:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.14.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#bea33f636cb81396552b8091cc077bdcb2baecff"
+  resolved "https://github.com/grommet/grommet/tarball/stable#17505aba74b413bc297f1fb406e0b79ec03e4e3b"
   dependencies:
     grommet-icons "^4.2.0"
     hoist-non-react-statics "^3.2.0"
