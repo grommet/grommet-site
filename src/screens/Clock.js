@@ -18,7 +18,7 @@ export default () => (
       syntaxes={{
         ...genericSyntaxes,
         hourLimit: [12, 24, '12', '24'],
-        onChange: "('2018-10-23T10:37:46') => {}",
+        onChange: "('T10:37:46') => {}",
         time: ['2018-10-23T10:37:45', 'T10:37:45', 'PT10H37M45S'],
       }}
       code={`<Clock type="digital" />`}
