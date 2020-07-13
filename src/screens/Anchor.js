@@ -3,8 +3,6 @@ import React from 'react';
 import { Anchor } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/Anchor/doc';
 
-import { Edit } from 'grommet-icons';
-
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
@@ -25,14 +23,7 @@ export default () => (
         label: ['Add', '<Box>...</Box>'],
         onClick: '() => {}',
       }}
-      code={`<Anchor href="#" primary label="For Example" />`}
-      example={<Anchor href="#" primary label="For Example" />}
-      examples={{
-        icon: <Anchor href="#" icon={<Edit />} />,
-        label: <Anchor href="#" label="Edit" />,
-        primary: <Anchor href="#" primary label="Edit" />,
-        reverse: <Anchor href="#" icon={<Edit />} label="Edit" reverse />,
-      }}
+      code={`<Anchor href="#" label="For Example" />`}
       themeDoc={themeDoc}
     />
   </Page>

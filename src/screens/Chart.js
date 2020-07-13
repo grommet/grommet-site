@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Chart } from 'grommet';
+import { Chart, Heading, Paragraph } from 'grommet';
 import { doc, docCalcs, themeDoc } from 'grommet/components/Chart/doc';
 
 import Page from '../components/Page';
-import Doc from '../components/Doc';
+import Doc, { Prop } from '../components/Doc';
 import { genericSyntaxes } from '../utils/props';
 import Item from './Components/Item';
 
@@ -77,7 +77,85 @@ export default () => (
       }}
     />
 
-    <Doc title="Calc" name="calcs" nav={false} desc={descCalcs} />
+    <Doc title="calcs()" name="calcs" nav={false} desc={descCalcs}>
+      <code>
+        {`const { axis, bounds, pad, thickness } = calcs(values, { coarseness, steps })`}
+      </code>
+      <Paragraph>
+        <code>calcs()</code> takes an array of values and provides
+        recommendations on how to set Chart properties and construct axes.
+      </Paragraph>
+      <Heading level={2}>options</Heading>
+      <Prop
+        property={{
+          name: 'coarseness',
+          description: `affects the precision of the bounds and axes.
+        For example, if the values are [27.35, 9.47], higher
+        coarseness would bound it from 0-50, lower coarseness would bound it
+        from 9-28.`,
+          format: 'number',
+          defaultValue: 5,
+        }}
+        first
+      />
+      <Prop
+        property={{
+          name: 'steps',
+          description: `affects the stepping of the axis values`,
+        }}
+        syntax="[1, 1]"
+        first={false}
+      />
+      <Heading level={2}>returns</Heading>
+      <Prop
+        property={{
+          name: 'bounds',
+          description: `an array of arrays suitable for use with the
+          Chart bounds property`,
+        }}
+        syntax="[[0, 2], [0, 100]]"
+        first
+      />
+      <Prop
+        property={{
+          name: 'thickness',
+          description: `a string suitable for use with the Chart
+          thickness property`,
+        }}
+        syntax="medium"
+        first={false}
+      />
+      <Prop
+        property={{
+          name: 'pad',
+          description: `a string suitable for use with the Chart pad
+          property`,
+        }}
+        syntax="medium"
+        first={false}
+      />
+      <Prop
+        property={{
+          name: 'axes',
+          description: `an array of arrays. The first array is for X axis
+          values. The second array is for Y axis values.`,
+        }}
+        syntax="[[0, 1, 2], [0, 50, 100]]"
+        first={false}
+      >
+        <Paragraph>
+          The X axis values could be rendered however you like, perhaps with
+          something like:
+        </Paragraph>
+        <pre>
+          <code>
+            {`<Box direction="row" justify="between" gap="small">
+  {axis[0].map(a => <Text color="text-xweak" />)}
+</Box>`}
+          </code>
+        </pre>
+      </Prop>
+    </Doc>
   </Page>
 );
 

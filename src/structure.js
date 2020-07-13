@@ -3,7 +3,16 @@ export const structure = {
   sections: [
     {
       name: 'Layout',
-      components: ['Box', 'Footer', 'Grid', 'Header', 'Layer', 'Main', 'Stack'],
+      components: [
+        'Box',
+        'Footer',
+        'Grid',
+        'Header',
+        'Layer',
+        'Main',
+        'Sidebar',
+        'Stack',
+      ],
     },
     {
       name: 'Type',
@@ -29,6 +38,8 @@ export const structure = {
       name: 'Input',
       components: [
         'CheckBox',
+        'CheckBoxGroup',
+        'DateInput',
         'MaskedInput',
         'RadioButton',
         'RadioButtonGroup',
@@ -44,9 +55,11 @@ export const structure = {
     {
       name: 'Visualizations',
       components: [
+        'Avatar',
         'Calendar',
         'Chart',
         'Clock',
+        'DataChart',
         'DataTable',
         'Diagram',
         'Distribution',

@@ -6,6 +6,7 @@ import { doc, themeDoc } from 'grommet/components/Select/doc';
 import Page from '../components/Page';
 import Doc from '../components/Doc';
 import Item from './Components/Item';
+import { genericSyntaxes } from '../utils/props';
 
 const desc = doc(Select).toJSON();
 
@@ -24,6 +25,17 @@ export default () => (
     />
   );
 }`}
+      syntaxes={{
+        ...genericSyntaxes,
+        children: [
+          '(option, index, options, { active, disabled, selected }) => {...}',
+        ],
+        onChange: ['({ value, option }) => {...}'],
+        onClose: ['() => {...}'],
+        onMore: ['() => {...}'],
+        onOpen: ['() => {...}'],
+        onSearch: ['(string) => {...}'],
+      }}
       themeDoc={themeDoc}
     />
   </Page>

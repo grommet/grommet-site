@@ -2,32 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Heading, Markdown, Paragraph } from 'grommet';
 
-const CenteredParagraph = () => <Paragraph textAlign="center" />;
-
-const Header = ({ details, label, level, size, summary }) => (
-  <Box align="center" margin={{ horizontal: 'large' }}>
-    <Heading level={level} size={size} textAlign="center" margin="none">
-      {label}
-    </Heading>
-    {summary &&
-      ((typeof summary === 'string' && (
-        <Paragraph size="xxlarge" textAlign="center">
-          {summary.toLowerCase()}
-        </Paragraph>
-      )) ||
-        summary)}
-    {details && (
-      <Markdown components={{ p: CenteredParagraph }}>
-        {details
-          .replace('<', '&lt;')
-          .replace('>', '&gt;')
-          .trim()}
-      </Markdown>
-    )}
-  </Box>
-);
+const Header = ({ align = 'center', details, label, level, size, summary }) => {
+  const textAlign = align === 'center' ? align : undefined;
+  return (
+    <Box align={align}>
+      <Heading level={level} size={size} textAlign={textAlign} margin="none">
+        {label}
+      </Heading>
+      {summary &&
+        ((typeof summary === 'string' && (
+          <Paragraph size="xxlarge" textAlign={textAlign}>
+            {summary.toLowerCase()}
+          </Paragraph>
+        )) ||
+          summary)}
+      {details && (
+        <Markdown components={{ p: () => <Paragraph textAlign={textAlign} /> }}>
+          {details
+            .replace('<', '&lt;')
+            .replace('>', '&gt;')
+            .trim()}
+        </Markdown>
+      )}
+    </Box>
+  );
+};
 
 Header.propTypes = {
+  align: PropTypes.string,
   details: PropTypes.string,
   label: PropTypes.string.isRequired,
   level: PropTypes.number,
@@ -36,6 +38,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
+  align: undefined,
   details: undefined,
   level: 1,
   size: 'large',

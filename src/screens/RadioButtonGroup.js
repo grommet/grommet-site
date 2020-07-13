@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RadioButtonGroup } from 'grommet';
-import { doc, themeDoc } from 'grommet/components/RadioButton/doc';
+import { doc, themeDoc } from 'grommet/components/RadioButtonGroup/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -25,11 +25,20 @@ export default () => (
     />
   );
 }`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          gap: 'small',
+        },
+      }}
       syntaxes={{
         children: ['(option, { checked, hover }) => {...}'],
         onChange: ['({ target: { value } }) => {...}'],
         options: [
           ['string'],
+          [true, false],
+          ['number'],
           [
             {
               disabled: false,

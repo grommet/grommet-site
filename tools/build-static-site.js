@@ -29,7 +29,7 @@ const renderHtmlString = pagePath => {
     sheet.collectStyles(<App initialPath={pagePath} />),
   );
   const helmet = Helmet.renderStatic();
-  const styles = sheet.getStyleTags();
+  const styles = `${sheet.getStyleTags()}<style>body { margin: 0; }</style>`;
   const scripts = [manifest['main.js'], manifest['vendors~main.js']];
   const htmlString = html({ body, styles, scripts, helmet });
   return htmlString;

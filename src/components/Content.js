@@ -6,6 +6,7 @@ import { Route, Routes } from '../Router';
 import Accordion from '../screens/Accordion';
 import About from '../screens/About';
 import Anchor from '../screens/Anchor';
+import Avatar from '../screens/Avatar';
 import AnnounceContext from '../screens/AnnounceContext';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
@@ -13,11 +14,14 @@ import Calendar from '../screens/Calendar';
 import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
+import CheckBoxGroup from '../screens/CheckBoxGroup';
 import Clock from '../screens/Clock';
 import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import DataChart from '../screens/DataChart';
 import DataTable from '../screens/DataTable';
+import DateInput from '../screens/DateInput';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
 import Docs from '../screens/Docs';
@@ -51,6 +55,7 @@ import RangeSelector from '../screens/RangeSelector';
 import ResponsiveContext from '../screens/ResponsiveContext';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
+import Sidebar from '../screens/Sidebar';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
@@ -127,6 +132,7 @@ export default () => (
 
     <Route exact path="/accordion" component={Accordion} />
     <Route exact path="/anchor" component={Anchor} />
+    <Route exact path="/avatar" component={Avatar} />
     <Route exact path="/announcecontext" component={AnnounceContext} />
     <Route exact path="/box" component={Box} />
     <Route exact path="/button" component={Button} />
@@ -134,10 +140,13 @@ export default () => (
     <Route exact path="/carousel" component={Carousel} />
     <Route exact path="/chart" component={Chart} />
     <Route exact path="/checkbox" component={CheckBox} />
+    <Route exact path="/checkboxgroup" component={CheckBoxGroup} />
     <Route exact path="/clock" component={Clock} />
     <Route exact path="/collapsible" component={Collapsible} />
     <Route exact path="/color" component={Color} />
+    <Route exact path="/datachart" component={DataChart} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/dateinput" component={DateInput} />
     <Route exact path="/diagram" component={Diagram} />
     <Route exact path="/distribution" component={Distribution} />
     <Route exact path="/drop" component={Drop} />
@@ -167,6 +176,7 @@ export default () => (
     <Route exact path="/responsivecontext" component={ResponsiveContext} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/select" component={Select} />
+    <Route exact path="/sidebar" component={Sidebar} />
     <Route exact path="/skiplinks" component={SkipLinks} />
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/table" component={Table} />

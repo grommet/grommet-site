@@ -32,7 +32,7 @@ const editorDidMount = editor => {
   window.addEventListener('resize', () => editor.layout());
 };
 
-export const Code = ({ code: propsCode, name }) => {
+export const Code = ({ basis = ['1/2', '1/2'], code: propsCode, name }) => {
   const [editing] = React.useState(true);
   const [code, setCode] = React.useState(propsCode);
 
@@ -68,8 +68,7 @@ export const Code = ({ code: propsCode, name }) => {
   let editorHeight;
   if (lines <= 4) editorHeight = 'xsmall';
   else if (lines <= 8) editorHeight = 'small';
-  else if (lines <= 16) editorHeight = 'medium';
-  else editorHeight = 'large';
+  else editorHeight = 'medium';
 
   return (
     <Box
@@ -80,13 +79,13 @@ export const Code = ({ code: propsCode, name }) => {
     >
       <LiveProvider code={code} scope={scope}>
         <Box direction="row-responsive">
-          <Box flex basis="1/2" pad="medium" align="center">
+          <Box flex basis={basis[0]} pad="medium" align="center">
             <LivePreview />
           </Box>
           {editing && (
             <Box
               flex
-              basis="1/2"
+              basis={basis[1]}
               border={{ side: 'left', color: 'brand' }}
               pad={{ vertical: 'small', right: 'small' }}
             >
@@ -120,6 +119,11 @@ export const Code = ({ code: propsCode, name }) => {
 };
 
 Code.propTypes = {
+  basis: PropTypes.arrayOf(PropTypes.string),
   code: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
   name: PropTypes.string.isRequired,
+};
+
+Code.defaultProps = {
+  basis: undefined,
 };
