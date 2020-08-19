@@ -19,7 +19,7 @@ export default () => (
         ...genericSyntaxes,
         color: 'status-critical',
       }}
-      code={'<Text>simple text</Text>'}
+      code="<Text>simple text</Text>"
       themeDoc={themeDoc}
     />
   </Page>
