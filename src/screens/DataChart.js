@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Paragraph } from 'grommet';
+import { DataChart } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/DataChart/doc';
 
 import Page from '../components/Page';
@@ -12,28 +12,12 @@ const desc = doc(DataChart).toJSON();
 
 export default () => (
   <Page>
-    <Box
-      alignSelf="center"
-      align="center"
-      background="status-disabled"
-      pad={{ horizontal: 'large', vertical: 'small' }}
-      margin={{ bottom: 'medium' }}
-      round
-    >
-      <Paragraph size="large">
-        NOTE: DataChart is an experimental component. Its properties are likely
-        to change in a way that breaks compatibility. It will not abide by
-        semantic versioning rules until this note is removed. We are publishing
-        it to make it easier for it to be evaluated. Please send your feedback
-        in the #general channel on slack.
-      </Paragraph>
-    </Box>
     <Doc
       name="DataChart"
       desc={desc}
       themeDoc={themeDoc}
       code={`<DataChart
-  chart={{ key: 'amount' }}
+  series={['date', 'amount']}
   data={[
     { date: '2020-05-26', amount: 66 },
     { date: '2020-05-27', amount: 77 },
@@ -117,17 +101,29 @@ export const DataChartItem = ({ name, path }) => (
       aria-label="DataChart example"
       size={{ width: 'small', height: 'xsmall' }}
       data={DATA_CHART_DATA}
-      chart={{ key: 'amount', color: 'brand' }}
-      thickness="medium"
-      gap="xsmall"
-      xAxis={{
-        labels: 2,
-        render: i =>
-          new Date(DATA_CHART_DATA[i].date).toLocaleDateString('en-US', {
-            month: 'short',
-          }),
+      series={['date', 'amount']}
+      chart={[
+        {
+          property: 'amount',
+          type: 'line',
+          color: 'brand',
+          opacity: 'medium',
+          thickness: 'xsmall',
+        },
+        {
+          property: 'amount',
+          type: 'point',
+          point: 'diamond',
+          color: 'brand',
+          thickness: 'medium',
+        },
+      ]}
+      guide={{ x: true }}
+      pad="xsmall"
+      axis={{
+        x: { granularity: 'medium' },
+        y: { granularity: 'coarse' },
       }}
-      yAxis={{ guide: true, labels: 2 }}
     />
   </Item>
 );
