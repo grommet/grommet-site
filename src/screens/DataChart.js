@@ -26,21 +26,36 @@ export default () => (
 />`}
       syntaxes={{
         ...genericSyntaxes,
-        chart: [
-          [{ key: 'amount' }],
-          [
+        axis: {
+          x: [
+            true,
             {
-              key: 'amount',
-              type: 'line',
+              granularity: ['coarse', 'medium', 'fine'],
+              property: 'date',
+            },
+          ],
+          y: [
+            true,
+            {
+              granularity: ['coarse', 'medium', 'fine'],
+              property: 'amount',
+            },
+          ],
+        },
+        chart: [
+          [
+            'amount',
+            {
+              property: 'amount',
+              type: ['area', 'bar', 'line', 'point'],
               color: 'graph-1',
               thickness: 'medium',
               dash: true,
               round: true,
             },
-          ],
-          [
             {
-              keys: [{ key: 'amount' }, { key: 'percent' }],
+              property: ['amount', 'percent'],
+              type: 'bars',
               thickness: 'medium',
             },
           ],
@@ -62,26 +77,19 @@ export default () => (
         gap: ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
         pad: ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
         size: ['fill', { height: '...', width: '...' }],
+        series: [
+          [
+            'propertyName',
+            {
+              label: 'Property Label',
+              prefix: '$',
+              property: 'propertyName',
+              render: '(value, datam, dataIndex) => element',
+              suffix: '%',
+            },
+          ],
+        ],
         thickness: ['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
-        xAxis: [
-          true,
-          {
-            guide: true,
-            key: 'date',
-            labels: 2,
-            render: '(dataIndex, axisIndex) => element',
-          },
-        ],
-        yAxis: [
-          true,
-          {
-            guide: true,
-            labels: 3,
-            // prefix: '$',
-            render: '(value, data, dataIndex, axisIndex) => element',
-            // suffix: '%',
-          },
-        ],
       }}
     />
   </Page>
