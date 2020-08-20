@@ -5,6 +5,7 @@ export const structure = {
       name: 'Layout',
       components: [
         'Box',
+        'Card',
         'Footer',
         'Grid',
         'Header',

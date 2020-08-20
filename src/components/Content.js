@@ -11,6 +11,7 @@ import AnnounceContext from '../screens/AnnounceContext';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
+import Card from '../screens/Card';
 import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
@@ -137,6 +138,7 @@ export default () => (
     <Route exact path="/box" component={Box} />
     <Route exact path="/button" component={Button} />
     <Route exact path="/calendar" component={Calendar} />
+    <Route exact path="/card" component={Card} />
     <Route exact path="/carousel" component={Carousel} />
     <Route exact path="/chart" component={Chart} />
     <Route exact path="/checkbox" component={CheckBox} />
