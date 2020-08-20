@@ -14,7 +14,7 @@ export default () => (
   <Page>
     <Box alignSelf="center" pad="medium" round background="light-3">
       <Paragraph margin="none">
-        DataChart is in beta mode. We are anticipate making API surface changes
+        DataChart is in beta mode. We anticipate making API surface changes
         without changing the grommet major version number. This is to allow
         broader usage and feedback gathering.
       </Paragraph>
