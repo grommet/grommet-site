@@ -5744,7 +5744,7 @@ grommet-theme-hp@^0.1.2:
 
 "grommet-theme-hpe@https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable":
   version "0.0.0"
-  resolved "https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable#33106fbdd433842ba4376153648f3db222de9175"
+  resolved "https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable#16d3c4a602e3b5b4ea5634d3a327b806fc2e7dfa"
 
 grommet-theme-v1@^0.1.2:
   version "0.1.2"
@@ -5754,8 +5754,8 @@ grommet-theme-v1@^0.1.2:
     polished "^2.3.0"
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
-  version "2.14.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#ce809df0a91ca90ed53c1fb5c878a5eac5422d84"
+  version "2.15.0"
+  resolved "https://github.com/grommet/grommet/tarball/stable#f740324ba57679f315a5a400fb566673bf28d9be"
   dependencies:
     grommet-icons "^4.2.0"
     hoist-non-react-statics "^3.2.0"

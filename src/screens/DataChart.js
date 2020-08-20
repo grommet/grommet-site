@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, DataChart, Paragraph } from 'grommet';
+import { Anchor, Box, DataChart, Paragraph } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/DataChart/doc';
 
 import Page from '../components/Page';
@@ -16,7 +16,12 @@ export default () => (
       <Paragraph margin="none">
         DataChart is in beta mode. We anticipate making API surface changes
         without changing the grommet major version number. This is to allow
-        broader usage and feedback gathering.
+        broader usage and feedback gathering. In version 2.15.0, the API surface
+        changed, see{' '}
+        <Anchor href="https://github.com/grommet/grommet/pull/4226#issue-439480100">
+          notes
+        </Anchor>
+        .
       </Paragraph>
     </Box>
     <Doc
