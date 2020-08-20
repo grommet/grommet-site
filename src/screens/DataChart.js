@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DataChart } from 'grommet';
+import { Box, DataChart, Paragraph } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/DataChart/doc';
 
 import Page from '../components/Page';
@@ -12,6 +12,13 @@ const desc = doc(DataChart).toJSON();
 
 export default () => (
   <Page>
+    <Box alignSelf="center" pad="medium" round background="light-3">
+      <Paragraph margin="none">
+        DataChart is in beta mode. We are anticipate making API surface changes
+        without changing the grommet major version number. This is to allow
+        broader usage and feedback gathering.
+      </Paragraph>
+    </Box>
     <Doc
       name="DataChart"
       desc={desc}
