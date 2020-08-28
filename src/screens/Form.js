@@ -102,12 +102,18 @@ export default () => (
         ...genericSyntaxes,
         errors: [
           {
-            name: ['message', '<Box>...</Box>'],
+            name: 'string',
+          },
+          {
+            name: 'node',
           },
         ],
         infos: [
           {
-            name: ['message', '<Box>...</Box>'],
+            name: 'string',
+          },
+          {
+            name: 'node',
           },
         ],
         onChange: '(value) => {}',
