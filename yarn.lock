@@ -5773,7 +5773,7 @@ grommet-theme-v1@^0.1.2:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.15.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#78df2aadfbad54f6683461ccd346f8b48ce1cbc9"
+  resolved "https://github.com/grommet/grommet/tarball/stable#a509f4cce80ff3fcca81839bd094f1f0c079ce11"
   dependencies:
     grommet-icons "^4.2.0"
     hoist-non-react-statics "^3.2.0"
