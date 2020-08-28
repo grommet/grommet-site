@@ -90,24 +90,25 @@ const Doc = ({
           pad={{ top: 'medium' }}
         >
           <Paragraph size="large">
-            {name} is a <RoutedAnchor path={isA.path} label={isA.base} /> with
-            the following properties preset. You can customize it using the
-            properties available in {isA.base}.
+            {name} is a <RoutedAnchor path={isA.path} label={isA.base} />
+            {isA.defaultProps && ' with the following properties preset'}. You
+            can customize it using the properties available in {isA.base}.
           </Paragraph>
           <Box as="ul" alignSelf="start">
-            {Object.keys(isA.defaultProps).map(key => (
-              <Box
-                key={key}
-                as="li"
-                direction="row"
-                align="center"
-                justify="between"
-                gap="large"
-              >
-                <RoutedAnchor path={`${isA.path}#${key}`} label={key} />
-                <Text>{JSON.stringify(isA.defaultProps[key])}</Text>
-              </Box>
-            ))}
+            {isA.defaultProps &&
+              Object.keys(isA.defaultProps).map(key => (
+                <Box
+                  key={key}
+                  as="li"
+                  direction="row"
+                  align="center"
+                  justify="between"
+                  gap="large"
+                >
+                  <RoutedAnchor path={`${isA.path}#${key}`} label={key} />
+                  <Text>{JSON.stringify(isA.defaultProps[key])}</Text>
+                </Box>
+              ))}
           </Box>
         </Box>
       )}
