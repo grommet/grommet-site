@@ -24,7 +24,7 @@ More questions? something is missing? hit us on the [#getstarted][slack] or [#ge
 [Migration guide](https://github.com/grommet/grommet/wiki/2.0-Migration-Guide) from grommet v1 to v2. 
 
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
-[slack]: http://slackin.grommet.io
+[slack]: https://slack-invite.grommet.io
 `;
 
 export default () => (
