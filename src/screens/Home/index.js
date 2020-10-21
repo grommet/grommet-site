@@ -51,7 +51,7 @@ export default () => (
         <Anchor
           target="_blank"
           a11yTitle="Chat with us on Slack"
-          href="https://slackin.grommet.io/"
+          href="https://slack-invite.grommet.io"
           icon={<Slack color="brand" size="large" />}
           label={<Text size="large">Chat with us on Slack</Text>}
         />
@@ -140,7 +140,7 @@ export default () => (
             <Anchor
               target="_blank"
               a11yTitle="Chat with us on Slack"
-              href="https://slackin.grommet.io/"
+              href="https://slack-invite.grommet.io"
               icon={<Slack color="brand" size="large" />}
             />
           </Box>

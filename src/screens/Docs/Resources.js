@@ -24,7 +24,7 @@ Find us on [Twitter][twitter].
 [medium]: https://medium.com/grommet-io
 [playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
-[slack]: http://slackin.grommet.io
+[slack]: https://slack-invite.grommet.io
 [storybook]: https://storybook.grommet.io
 [twitter]: https://twitter.com/grommet_io
 `;
