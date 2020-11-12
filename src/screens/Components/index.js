@@ -62,6 +62,7 @@ import {
   TextAreaItem,
   TextInputItem,
   ThemeContextItem,
+  TipItem,
   VideoItem,
   WorldMapItem,
 } from './items';
@@ -122,6 +123,7 @@ const Items = {
   TextArea: TextAreaItem,
   TextInput: TextInputItem,
   ThemeContext: ThemeContextItem,
+  Tip: TipItem,
   Video: VideoItem,
   WorldMap: WorldMapItem,
 };

@@ -33,6 +33,7 @@ export const structure = {
         'Menu',
         'Nav',
         'Tabs',
+        'Tip',
       ],
     },
     {
