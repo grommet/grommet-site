@@ -64,6 +64,7 @@ import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
+import Tip from '../screens/Tip';
 import Try from '../screens/Try';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
@@ -187,6 +188,7 @@ export default () => (
     <Route exact path="/textarea" component={TextArea} />
     <Route exact path="/textinput" component={TextInput} />
     <Route exact path="/themecontext" component={ThemeContext} />
+    <Route exact path="/tip" component={Tip} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
 

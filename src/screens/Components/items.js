@@ -53,5 +53,6 @@ export { TextItem } from '../Text';
 export { TextAreaItem } from '../TextArea';
 export { TextInputItem } from '../TextInput';
 export { ThemeContextItem } from '../ThemeContext';
+export { TipItem } from '../Tip';
 export { VideoItem } from '../Video';
 export { WorldMapItem } from '../WorldMap';
