@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, DataTable } from 'grommet';
-import { doc } from 'grommet/components/DataTable/doc';
+import { doc, themeDoc } from 'grommet/components/DataTable/doc';
 
 import Page from '../components/Page';
 import Doc from '../components/Doc';
@@ -15,6 +15,7 @@ export default () => (
     <Doc
       name="DataTable"
       desc={desc}
+      themeDoc={themeDoc}
       code={`<DataTable
   columns={[
     {
