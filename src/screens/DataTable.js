@@ -83,6 +83,7 @@ export default () => (
               size: 'small',
               search: true,
               sortable: true,
+              units: 'GiB',
             },
           ],
           {
