@@ -49,7 +49,7 @@ const Examples = () => (
       onReset={() => setValue({})}
       onSubmit={({ value }) => {}}
     >
-      <FormField name="name" htmlfor="text-input-id" label="Name">
+      <FormField name="name" htmlFor="text-input-id" label="Name">
         <TextInput id="text-input-id" name="name" />
       </FormField>
       <Box direction="row" gap="medium">
@@ -75,7 +75,7 @@ const Examples = () => (
       code={`() => {
   return (
     <Form onSubmit={({ value }) => {}}>
-      <FormField name="name" htmlfor="textinput-id" label="Name">
+      <FormField name="name" htmlFor="textinput-id" label="Name">
         <TextInput id="textinput-id" name="name" />
       </FormField>
       <Box direction="row" gap="medium">
