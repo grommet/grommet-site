@@ -47,8 +47,8 @@ export default () => (
       themeDoc={themeDoc}
       title="Accordion Panel"
       syntaxes={{
-        'accordion.icons.collapse': '<UpIcon />',
-        'accordion.icons.expand': '<DownIcon />',
+        'accordion.icons.collapse': 'UpIcon',
+        'accordion.icons.expand': 'DownIcon',
       }}
     />
   </Page>

@@ -46,10 +46,10 @@ export default () => (
         reference: '2018-10',
         showAdjacentDays: [true, false],
         size: ['small', 'medium', 'large'],
-        'calendar.icons.next': '<Next />',
-        'calendar.icons.previous': '<Previous />',
-        'calendar.icons.small.next': '<FormNext />',
-        'calendar.icons.small.previous': '<FormPrevious />',
+        'calendar.icons.next': 'Next',
+        'calendar.icons.previous': 'Previous',
+        'calendar.icons.small.next': 'FormNext',
+        'calendar.icons.small.previous': 'FormPrevious',
       }}
       themeDoc={themeDoc}
     />
