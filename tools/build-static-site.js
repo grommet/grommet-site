@@ -30,7 +30,11 @@ const renderHtmlString = pagePath => {
   );
   const helmet = Helmet.renderStatic();
   const styles = `${sheet.getStyleTags()}<style>body { margin: 0; }</style>`;
-  const scripts = [manifest['main.js'], manifest['vendors~main.js']];
+  const scripts = [
+    manifest['main.js'],
+    manifest['grommet.js'],
+    manifest['vendors~main.js'],
+  ];
   const htmlString = html({ body, styles, scripts, helmet });
   return htmlString;
 };
