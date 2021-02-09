@@ -27,3 +27,11 @@ $ yarn build
 ```
 $ yarn test
 ```
+
+
+If you are experiencing hash errors during building your package.json, it occurs because grommet-site is referencing the latest stable branch of grommet. As new commits are added to the stable branch that are effecting the site deployment, the sha hash gets updated and becomes out of sync with the sha in the yarn.lock file.
+
+To fetch the latest grommet stable, remove yarn.lock and clean yarn cache, then yarn install as follows:
+```
+rm yarn.lock && yarn cache clean && yarn install
+```
