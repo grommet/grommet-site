@@ -8,17 +8,15 @@ export function cleanupMarkdown(md) {
   // split at code segments
   const split = md.split('`');
 
-  // If the markdown string starts with a code segment, clean all odd-indexed segments,
-  // otherwise clean all even-indexed segments
-  const needsCleanup =
-    md[0] === '`' ? index => index % 2 : index => index % 2 === 0;
-
   let cleanMd = '';
 
   for (let i = 0; i < split.length; i += 1) {
     const segment = split[i];
 
-    if (needsCleanup(i)) {
+    // In a proper markdown (all code segments are "closed")
+    // the code segments will be odd-indexed, therefore clean
+    // only even-indexed segments
+    if (i % 2 === 0) {
       cleanMd += segment.replace(/</g, '&lt;').replace(/>/g, '&gt;');
     } else {
       cleanMd += `\`${segment}\``;
