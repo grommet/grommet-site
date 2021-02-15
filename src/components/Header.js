@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Heading, Markdown, Paragraph } from 'grommet';
+import { cleanupMarkdown } from '../utils/md-clean';
 
 const Header = ({ align = 'center', details, label, level, size, summary }) => {
   const textAlign = align === 'center' ? align : undefined;
@@ -18,10 +19,7 @@ const Header = ({ align = 'center', details, label, level, size, summary }) => {
           summary)}
       {details && (
         <Markdown components={{ p: () => <Paragraph textAlign={textAlign} /> }}>
-          {details
-            .replace('<', '&lt;')
-            .replace('>', '&gt;')
-            .trim()}
+          {cleanupMarkdown(details).trim()}
         </Markdown>
       )}
     </Box>

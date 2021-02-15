@@ -4,6 +4,7 @@ import { Box, Anchor, Heading, Markdown, Text } from 'grommet';
 import { Link as LinkIcon } from 'grommet-icons';
 import { Syntax } from './Syntax';
 import { Value } from './Value';
+import { cleanupMarkdown } from '../../utils/md-clean';
 
 // parseFormat() parses the react-desc property format string into
 // an object that makes it easier for us to style the content.
@@ -80,9 +81,7 @@ export const Prop = ({ children, property, syntax, first }) => {
       </Box>
       <Box direction="row-responsive" justify="between" align="start">
         <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
-          <Markdown>
-            {property.description.replace('<', '&lt;').replace('>', '&gt;')}
-          </Markdown>
+          <Markdown>{cleanupMarkdown(property.description)}</Markdown>
           {children}
         </Box>
         <Box flex align="start">
