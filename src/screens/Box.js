@@ -37,6 +37,8 @@ export default () => (
           'fadeOut',
           'jiggle',
           'pulse',
+          'rotateRight',
+          'rotateLeft',
           'slideUp',
           'slideDown',
           'slideLeft',
