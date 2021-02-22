@@ -42,6 +42,7 @@ export const structure = {
         'CheckBox',
         'CheckBoxGroup',
         'DateInput',
+        'FileInput',
         'MaskedInput',
         'RadioButton',
         'RadioButtonGroup',

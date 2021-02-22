@@ -28,6 +28,7 @@ import Distribution from '../screens/Distribution';
 import Docs from '../screens/Docs';
 import Drop from '../screens/Drop';
 import DropButton from '../screens/DropButton';
+import FileInput from '../screens/FileInput';
 import Footer from '../screens/Footer';
 import Form from '../screens/Form';
 import FormField from '../screens/FormField';
@@ -155,6 +156,7 @@ export default () => (
     <Route exact path="/distribution" component={Distribution} />
     <Route exact path="/drop" component={Drop} />
     <Route exact path="/dropbutton" component={DropButton} />
+    <Route exact path="/fileinput" component={FileInput} />
     <Route exact path="/footer" component={Footer} />
     <Route exact path="/form" component={Form} />
     <Route exact path="/formfield" component={FormField} />

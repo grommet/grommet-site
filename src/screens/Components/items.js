@@ -19,6 +19,7 @@ export { DiagramItem } from '../Diagram';
 export { DistributionItem } from '../Distribution';
 export { DropItem } from '../Drop';
 export { DropButtonItem } from '../DropButton';
+export { FileInputItem } from '../FileInput';
 export { FooterItem } from '../Footer';
 export { FormItem } from '../Form';
 export { FormFieldItem } from '../FormField';
