@@ -47,6 +47,7 @@ import MaskedInput from '../screens/MaskedInput';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
 import Nav from '../screens/Nav';
+import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
@@ -172,12 +173,13 @@ export default () => (
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
     <Route exact path="/nav" component={Nav} />
+    <Route exact path="/pagination" component={Pagination} />
+    <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
     <Route exact path="/radiobuttongroup" component={RadioButtonGroup} />
     <Route exact path="/rangeinput" component={RangeInput} />
     <Route exact path="/rangeselector" component={RangeSelector} />
     <Route exact path="/responsivecontext" component={ResponsiveContext} />
-    <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/select" component={Select} />
     <Route exact path="/sidebar" component={Sidebar} />
     <Route exact path="/skiplinks" component={SkipLinks} />
