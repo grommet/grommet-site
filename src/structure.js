@@ -69,6 +69,7 @@ export const structure = {
         'List',
         'Meter',
         'Pagination',
+        'Spinner',
         'Table',
         'WorldMap',
       ],

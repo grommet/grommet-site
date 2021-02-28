@@ -59,6 +59,7 @@ import ResponsiveContext from '../screens/ResponsiveContext';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
 import Sidebar from '../screens/Sidebar';
+import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
@@ -185,6 +186,7 @@ export default () => (
     <Route exact path="/select" component={Select} />
     <Route exact path="/sidebar" component={Sidebar} />
     <Route exact path="/skiplinks" component={SkipLinks} />
+    <Route exact path="/spinner" component={Spinner} />
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
