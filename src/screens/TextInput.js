@@ -26,6 +26,7 @@ export default () => (
 }`}
       themeDoc={themeDoc}
     >
+      Hello World
       <Box basis="large" pad={{ horizontal: 'large', bottom: 'xlarge' }}>
         <Heading level={2} margin={{ top: 'none' }}>
           <strong>Examples</strong>
