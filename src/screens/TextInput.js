@@ -26,7 +26,29 @@ export default () => (
 }`}
       themeDoc={themeDoc}
     >
-      Hello World
+      <Box
+        margin={{ bottom: 'large' }}
+        border={{ side: 'bottom' }}
+        basis="medium"
+        pad={{ horizontal: 'large' }}
+      >
+        <Heading level={2}>
+          <strong>Intrinsic Properties</strong>
+        </Heading>
+
+        <p>
+          At its core, the TextInput component is a regular input tag. Thus, the
+          attributes and event handlers that come with the input tag are
+          accessible even when using TextInput.
+        </p>
+
+        <p>
+          To read more on the input attributes available, you can check out the
+          MDN Web Docs here. For custom events that are inherited from React,
+          you can also read more here.
+        </p>
+      </Box>
+
       <Box basis="large" pad={{ horizontal: 'large', bottom: 'xlarge' }}>
         <Heading level={2} margin={{ top: 'none' }}>
           <strong>Examples</strong>
