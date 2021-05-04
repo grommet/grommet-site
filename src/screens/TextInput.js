@@ -39,21 +39,31 @@ export default () => (
         <Box width="100%">
           <Paragraph fill="true">
             At its core, the TextInput component is a regular input tag. Thus,
-            the attributes and event handlers that come with the input tag are
-            accessible when using TextInput. To read more on the input
-            attributes, you can check out the MDN Web Docs{' '}
+            both the DOM&apos;s and React&apos;s properties, methods, and events
+            are accessible. To read up on all of the possible DOM attributes and
+            types available for input elements, check out this
             <Anchor
               href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
-              label="here"
+              label=" MDN Web Documents page"
               target="_blank"
             />
-            . For custom events that are inherited from React, you can read more{' '}
+            . To learn more about DOM events, you can read more here.
+          </Paragraph>
+
+          <Paragraph fill="true">
+            To learn more about React form elements as well as the properties
+            and methods it provides, check out
             <Anchor
               href="https://reactjs.org/docs/forms.html"
-              label="here"
+              label=" this React document. "
               target="_blank"
             />
-            .
+            To read more on event handling in React, see
+            <Anchor
+              href="https://reactjs.org/docs/handling-events.html"
+              label=" this article."
+              target="_blank"
+            />
           </Paragraph>
         </Box>
       </Box>
