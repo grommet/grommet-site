@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Heading, TextInput, Text } from 'grommet';
+import { Box, Heading, TextInput, Paragraph } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/TextInput/doc';
 
 import Page from '../components/Page';
@@ -27,26 +27,27 @@ export default () => (
       themeDoc={themeDoc}
     >
       <Box
-        margin={{ bottom: 'large' }}
+        direction="column"
         border={{ side: 'bottom' }}
-        basis="medium"
-        pad={{ horizontal: 'large' }}
+        pad={{ bottom: 'large' }}
+        margin={{ bottom: 'medium' }}
       >
-        <Heading level={2}>
-          <strong>Intrinsic Properties</strong>
+        <Heading level={2} margin={{ bottom: 'none' }}>
+          <strong>Built-In Properties</strong>
         </Heading>
 
-        <Text margin={{ bottom: 'medium' }}>
-          At its core, the TextInput component is a regular input tag. Thus, the
-          attributes and event handlers that come with the input tag are
-          accessible even when using TextInput.
-        </Text>
-
-        <Text>
-          To read more on the input attributes available, you can check out the
-          MDN Web Docs here. For custom events that are inherited from React,
-          you can also read more here.
-        </Text>
+        <Box direction="row" justify="between">
+          <Paragraph>
+            At its core, the TextInput component is a regular input tag. Thus,
+            the attributes and event handlers that come with the input tag are
+            accessible when using TextInput.
+          </Paragraph>
+          <Paragraph>
+            To read more on the input attributes, you can check out the MDN Web
+            Docs here. For custom events that are inherited from React, you can
+            read more here.
+          </Paragraph>
+        </Box>
       </Box>
 
       <Box basis="large" pad={{ horizontal: 'large', bottom: 'xlarge' }}>
