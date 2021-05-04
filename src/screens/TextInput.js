@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Heading, TextInput, Paragraph } from 'grommet';
+import { Box, Heading, TextInput, Paragraph, Anchor } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/TextInput/doc';
 
 import Page from '../components/Page';
@@ -33,19 +33,27 @@ export default () => (
         margin={{ bottom: 'medium' }}
       >
         <Heading level={2} margin={{ bottom: 'none' }}>
-          <strong>Built-In Properties</strong>
+          <strong>React/DOM Properties</strong>
         </Heading>
 
-        <Box direction="row" justify="between">
-          <Paragraph>
+        <Box width="100%">
+          <Paragraph fill="true">
             At its core, the TextInput component is a regular input tag. Thus,
             the attributes and event handlers that come with the input tag are
-            accessible when using TextInput.
-          </Paragraph>
-          <Paragraph>
-            To read more on the input attributes, you can check out the MDN Web
-            Docs here. For custom events that are inherited from React, you can
-            read more here.
+            accessible when using TextInput. To read more on the input
+            attributes, you can check out the MDN Web Docs{' '}
+            <Anchor
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
+              label="here"
+              target="_blank"
+            />
+            . For custom events that are inherited from React, you can read more{' '}
+            <Anchor
+              href="https://reactjs.org/docs/forms.html"
+              label="here"
+              target="_blank"
+            />
+            .
           </Paragraph>
         </Box>
       </Box>
