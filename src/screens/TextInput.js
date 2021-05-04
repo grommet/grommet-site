@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Heading, TextInput } from 'grommet';
+import { Box, Heading, TextInput, Text } from 'grommet';
 import { doc, themeDoc } from 'grommet/components/TextInput/doc';
 
 import Page from '../components/Page';
@@ -36,17 +36,17 @@ export default () => (
           <strong>Intrinsic Properties</strong>
         </Heading>
 
-        <p>
+        <Text margin={{ bottom: 'medium' }}>
           At its core, the TextInput component is a regular input tag. Thus, the
           attributes and event handlers that come with the input tag are
           accessible even when using TextInput.
-        </p>
+        </Text>
 
-        <p>
+        <Text>
           To read more on the input attributes available, you can check out the
           MDN Web Docs here. For custom events that are inherited from React,
           you can also read more here.
-        </p>
+        </Text>
       </Box>
 
       <Box basis="large" pad={{ horizontal: 'large', bottom: 'xlarge' }}>
