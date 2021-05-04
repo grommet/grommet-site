@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0ccebcd5-3c08-46b6-857d-bca551102609/deploy-status)](https://app.netlify.com/sites/upbeat-ardinghelli-95952e/deploys)
 
+Go to [deployment site](https://v2.grommet.io/).
+
 To run this application, execute the following commands:
 
 1. Install NPM modules
