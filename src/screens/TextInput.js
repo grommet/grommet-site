@@ -36,36 +36,39 @@ export default () => (
           <strong>React/DOM Properties</strong>
         </Heading>
 
-        <Box width="100%">
-          <Paragraph fill="true">
-            At its core, the TextInput component is a regular input tag. Thus,
-            both the DOM&apos;s and React&apos;s properties, methods, and events
-            are accessible. To read up on all of the possible DOM attributes and
-            types available for input elements, check out this
-            <Anchor
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
-              label=" MDN Web Documents page"
-              target="_blank"
-            />
-            . To learn more about DOM events, you can read more here.
-          </Paragraph>
+        <Paragraph>
+          At its core, the TextInput component is a regular input tag. Thus,
+          both the DOM&apos;s and React&apos;s properties, methods, and events
+          are accessible. To read up on all of the possible DOM attributes and
+          types available for input elements, check out this
+          <Anchor
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
+            label=" MDN Web Documents page"
+            target="_blank"
+          />
+          . To learn more about input element events, you can read more
+          <Anchor
+            href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"
+            label=" here."
+            target="_blank"
+          />
+        </Paragraph>
 
-          <Paragraph fill="true">
-            To learn more about React form elements as well as the properties
-            and methods it provides, check out
-            <Anchor
-              href="https://reactjs.org/docs/forms.html"
-              label=" this React document. "
-              target="_blank"
-            />
-            To read more on event handling in React, see
-            <Anchor
-              href="https://reactjs.org/docs/handling-events.html"
-              label=" this article."
-              target="_blank"
-            />
-          </Paragraph>
-        </Box>
+        <Paragraph>
+          To learn more about React form elements as well as the properties and
+          methods it provides, check out
+          <Anchor
+            href="https://reactjs.org/docs/forms.html"
+            label=" this React document. "
+            target="_blank"
+          />
+          To read more on event handling in React, see
+          <Anchor
+            href="https://reactjs.org/docs/handling-events.html"
+            label=" this article."
+            target="_blank"
+          />
+        </Paragraph>
       </Box>
 
       <Box basis="large" pad={{ horizontal: 'large', bottom: 'xlarge' }}>
