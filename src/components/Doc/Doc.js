@@ -10,6 +10,7 @@ import RoutedButton from '../RoutedButton';
 import { Code } from './Code';
 import { Props } from './Props';
 import { ThemeProps } from './ThemeProps';
+import { ReactDocs } from './ReactDocs';
 
 const Doc = ({
   align = 'center',
@@ -23,6 +24,7 @@ const Doc = ({
   syntaxes,
   text,
   themeDoc,
+  // domDocs
   title,
 }) => {
   const [summary, ...details] = ((desc && desc.description) || text).split('.');
@@ -114,6 +116,10 @@ const Doc = ({
       )}
 
       {desc && desc.properties && <Props desc={desc} syntaxes={syntaxes} />}
+      <Box>
+        {/* {domDocs && <CustomComponent />} */}
+        <ReactDocs />
+      </Box>
 
       {themeDoc && <ThemeProps syntaxes={syntaxes} themeDoc={themeDoc} />}
 
