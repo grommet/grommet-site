@@ -40,34 +40,42 @@ export default () => (
           At its core, the TextInput component is a regular input tag. Thus,
           both the DOM&apos;s and React&apos;s properties, methods, and events
           are accessible. To read up on all of the possible DOM attributes and
-          types available for input elements, check out this
+          types available for input elements, check out this{' '}
           <Anchor
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
-            label=" MDN Web Documents page"
+            label="MDN Web Documents page"
             target="_blank"
           />
-          . To learn more about input element events, you can read more
+          . To learn more about input element events, you can read more{' '}
           <Anchor
             href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"
-            label=" here."
+            label="here"
             target="_blank"
           />
+          .
         </Paragraph>
 
         <Paragraph>
           To learn more about React form elements as well as the properties and
-          methods it provides, check out
+          methods it provides, check out{' '}
           <Anchor
             href="https://reactjs.org/docs/forms.html"
-            label=" this React document. "
+            label="this React document"
             target="_blank"
           />
-          To read more on event handling in React, see
+          . Feel free to also read on{' '}
           <Anchor
             href="https://reactjs.org/docs/handling-events.html"
-            label=" this article."
+            label="React event handling"
             target="_blank"
           />
+          , or see how DOM attributes change in React{' '}
+          <Anchor
+            href="https://reactjs.org/docs/dom-elements.html"
+            label="here"
+            target="_blank"
+          />
+          .
         </Paragraph>
       </Box>
 
