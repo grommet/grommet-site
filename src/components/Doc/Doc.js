@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { Anchor, Box, Layer, Paragraph, Text } from 'grommet';
+import { Anchor, Box, Heading, Layer, Paragraph, Text } from 'grommet';
 import { Next, Previous } from 'grommet-icons';
 import { nameToPath, nextComponent, previousComponent } from '../../structure';
 import Header from '../Header';
@@ -11,6 +11,7 @@ import { Code } from './Code';
 import { Props } from './Props';
 import { ThemeProps } from './ThemeProps';
 import { ReactDocs } from './ReactDocs';
+import { DomDocs } from './DomDocs';
 
 const Doc = ({
   align = 'center',
@@ -24,10 +25,13 @@ const Doc = ({
   syntaxes,
   text,
   themeDoc,
-  // domDocs
   title,
 }) => {
   const [summary, ...details] = ((desc && desc.description) || text).split('.');
+
+  useEffect(() => {
+    console.log('desc: ', desc.intrinsicElement, desc);
+  }, []);
 
   return (
     <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
@@ -116,8 +120,16 @@ const Doc = ({
       )}
 
       {desc && desc.properties && <Props desc={desc} syntaxes={syntaxes} />}
-      <Box>
-        {/* {domDocs && <CustomComponent />} */}
+      <Box
+        margin={{ vertical: 'large' }}
+        border={{ side: 'top', size: 'medium', color: 'brand' }}
+      >
+        <Heading level={2} margin="none">
+          React/DOM Properties
+        </Heading>
+        {desc && desc.intrinsicElement && (
+          <DomDocs name={name} intrinsicElement={desc.intrinsicElement} />
+        )}
         <ReactDocs />
       </Box>
 
@@ -151,6 +163,7 @@ Doc.propTypes = {
     ]),
     description: PropTypes.string,
     properties: PropTypes.arrayOf(PropTypes.object),
+    intrinsicElement: PropTypes.string,
   }),
   examples: PropTypes.node,
   isA: PropTypes.shape({
