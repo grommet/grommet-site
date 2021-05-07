@@ -29,18 +29,16 @@ export const DomDocs = ({ name, intrinsicElement }) => {
         out this{' '}
         <Anchor
           href={`https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${intrinsicElement}`}
-          label="MDN Web Documents page"
+          label="MDN Web Documents page."
           target="_blank"
-        />
-        . To learn more about DOM events and methods, you can read more{' '}
+        />{' '}
+        To learn more about DOM events and methods, you can read more{' '}
         <Anchor
           href="https://developer.mozilla.org/en-US/docs/Web/Events"
-          label="here"
+          label="here."
           target="_blank"
         />
-        .
       </Paragraph>
-
       <ReactDocs />
     </Box>
   );
