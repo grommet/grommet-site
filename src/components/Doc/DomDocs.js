@@ -1,15 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Paragraph, Anchor, Heading } from 'grommet';
+import { Link as LinkIcon } from 'grommet-icons';
 
 export const DomDocs = ({ name, intrinsicElement }) => {
   return (
-    <Box>
-      <Heading level={2} margin="none">
-        React/DOM Properties
-      </Heading>
+    <Box
+      id="dom-react"
+      margin={{ vertical: 'large' }}
+      border={{ side: 'top', size: 'medium', color: 'brand' }}
+    >
+      <Box
+        direction="row"
+        justify="between"
+        align="center"
+        margin={{ top: 'medium', bottom: 'xlarge' }}
+      >
+        <Heading level={2} margin="none">
+          React/DOM Properties
+        </Heading>
+        <Anchor href="#dom-react" icon={<LinkIcon color="light-4" />} />
+      </Box>
       <Paragraph>
-        At its core, the {name} component is a regular {intrinsicElement}{' '}
+        At its core, the {name} component is a regular {`<${intrinsicElement}>`}{' '}
         element. Thus, both the DOM&apos;s and React&apos;s properties, methods,
         and events are accessible. To read up on all of the possible DOM
         attributes and types available for {intrinsicElement} elements, check
@@ -42,13 +55,12 @@ const ReactDocs = () => {
         label="types of React events available"
         target="_blank"
       />
-      , or see how DOM attributes change in React{' '}
+      , or see{' '}
       <Anchor
         href="https://reactjs.org/docs/dom-elements.html"
-        label="here"
+        label="how DOM attributes change in React."
         target="_blank"
       />
-      .
     </Paragraph>
   );
 };
