@@ -37,7 +37,7 @@ export const DomDocs = ({ name, intrinsicElement }) => {
           href="https://developer.mozilla.org/en-US/docs/Web/Events"
           label="MDN Web Events documentation page"
           target="_blank"
-        />
+        />.
       </Paragraph>
       <ReactDocs />
     </Box>
