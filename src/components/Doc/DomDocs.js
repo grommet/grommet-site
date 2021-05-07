@@ -44,8 +44,7 @@ export const DomDocs = ({ name, intrinsicElement }) => {
   );
 };
 
-const ReactDocs = () => {
-  return (
+const ReactDocs = () => (
     <Paragraph>
       Feel free to read on the{' '}
       <Anchor
