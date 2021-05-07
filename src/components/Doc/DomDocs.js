@@ -65,8 +65,7 @@ const ReactDocs = () => (
         target="_blank"
       />
     </Paragraph>
-  );
-};
+);
 
 DomDocs.propTypes = {
   name: PropTypes.string,
