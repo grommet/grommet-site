@@ -58,6 +58,12 @@ const ReactDocs = () => (
         label="how DOM attributes change in React."
         target="_blank"
       />
+      {' '}Working in tandem with Styled Components, you also have access to the {' '}
+      <Anchor
+        href="https://styled-components.com/docs/api#as-polymorphic-prop"
+        label="as property."
+        target="_blank"
+      />
     </Paragraph>
   );
 };
