@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Anchor, Box, Layer, Paragraph, Text } from 'grommet';
@@ -27,10 +27,6 @@ const Doc = ({
   title,
 }) => {
   const [summary, ...details] = ((desc && desc.description) || text).split('.');
-
-  useEffect(() => {
-    console.log('desc: ', desc.intrinsicElement, desc);
-  }, []);
 
   return (
     <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
