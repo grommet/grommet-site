@@ -32,7 +32,7 @@ export const DomDocs = ({ name, intrinsicElement }) => {
           label="MDN Web Documents page."
           target="_blank"
         />{' '}
-        To learn more about DOM events and methods, you can read more{' '}
+        To learn more about DOM events and methods, you can read more on the{' '}
         <Anchor
           href="https://developer.mozilla.org/en-US/docs/Web/Events"
           label="MDN Web Events documentation page"
