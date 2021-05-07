@@ -46,7 +46,7 @@ export const DomDocs = ({ name, intrinsicElement }) => {
 
 const ReactDocs = () => (
     <Paragraph>
-      Feel free to read on the{' '}
+      Also, feel free to read on the{' '}
       <Anchor
         href="https://reactjs.org/docs/handling-events.html"
         label="types of React events available"
