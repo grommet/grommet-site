@@ -35,7 +35,7 @@ export const DomDocs = ({ name, intrinsicElement }) => {
         To learn more about DOM events and methods, you can read more{' '}
         <Anchor
           href="https://developer.mozilla.org/en-US/docs/Web/Events"
-          label="here."
+          label="MDN Web Events documentation page"
           target="_blank"
         />
       </Paragraph>
