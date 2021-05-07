@@ -23,7 +23,7 @@ export const DomDocs = ({ name, intrinsicElement }) => {
       </Box>
       <Paragraph>
         At its core, the {name} component is a regular {`<${intrinsicElement}>`}{' '}
-        element. Thus, both the DOM&apos;s and React&apos;s properties, methods,
+        element. Thus, both DOM and React properties, methods,
         and events are accessible. To read up on all of the possible DOM
         attributes and types available for {intrinsicElement} elements, check
         out this{' '}
