@@ -37,6 +37,8 @@ export default ({ body, styles, scripts, helmet }) => `<!DOCTYPE html>
     </noscript>
     ${scripts &&
       scripts.length &&
-      scripts.map(scriptSrc => `<script src="${scriptSrc}"></script>`).join('')}
+      scripts
+        .map(scriptSrc => `<script src="${scriptSrc}" async></script>`)
+        .join('')}
   </body>
 </html>`;

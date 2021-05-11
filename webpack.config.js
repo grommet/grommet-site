@@ -28,7 +28,7 @@ const baseConfig = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: './public', ignore: ['*.html'] }]), // SSR will generate our html string.
-    new MonacoWebpackPlugin(),
+    new MonacoWebpackPlugin({ languages: ['javascript'] }),
     new ManifestWebpackPlugin({ fileName: 'webpack-manifest.json' }),
   ],
   module: {
