@@ -10,7 +10,7 @@ import RoutedButton from '../RoutedButton';
 import { Code } from './Code';
 import { Props } from './Props';
 import { ThemeProps } from './ThemeProps';
-import { DomDocs } from './DomDocs';
+import { DomProps } from './DomProps';
 
 const Doc = ({
   align = 'center',
@@ -117,7 +117,7 @@ const Doc = ({
       {desc && desc.properties && <Props desc={desc} syntaxes={syntaxes} />}
 
       {desc && desc.intrinsicElement && (
-        <DomDocs name={name} intrinsicElement={desc.intrinsicElement} />
+        <DomProps name={name} intrinsicElement={desc.intrinsicElement} />
       )}
 
       {themeDoc && <ThemeProps syntaxes={syntaxes} themeDoc={themeDoc} />}
