@@ -10,6 +10,7 @@ import RoutedButton from '../RoutedButton';
 import { Code } from './Code';
 import { Props } from './Props';
 import { ThemeProps } from './ThemeProps';
+import { DomProps } from './DomProps';
 
 const Doc = ({
   align = 'center',
@@ -115,6 +116,10 @@ const Doc = ({
 
       {desc && desc.properties && <Props desc={desc} syntaxes={syntaxes} />}
 
+      {desc && desc.intrinsicElement && (
+        <DomProps name={name} intrinsicElement={desc.intrinsicElement} />
+      )}
+
       {themeDoc && <ThemeProps syntaxes={syntaxes} themeDoc={themeDoc} />}
 
       {children}
@@ -145,6 +150,7 @@ Doc.propTypes = {
     ]),
     description: PropTypes.string,
     properties: PropTypes.arrayOf(PropTypes.object),
+    intrinsicElement: PropTypes.string,
   }),
   examples: PropTypes.node,
   isA: PropTypes.shape({
