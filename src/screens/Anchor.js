@@ -9,13 +9,14 @@ import {
   GenericGridArea,
   GenericMargin,
 } from '../utils/genericPropExamples';
+import { GenericExtend } from '../utils/genericThemeExamples';
 import {
   ComponentDoc,
   Properties,
   Property,
+  PropertyValue,
   Description,
   Example,
-  ExampleGroup,
   ThemeDoc,
 } from '../components/Doc';
 
@@ -45,31 +46,35 @@ export default () => (
     >
       <Properties>
         <Property name="a11yTitle">
-          <Description>Custom title to be used by screen readers.</Description>
-          <GenericA11yTitle />
+          <PropertyValue>
+            <Description>
+              Custom title to be used by screen readers.
+            </Description>
+            <GenericA11yTitle />
+          </PropertyValue>
         </Property>
 
         <Property name="alignSelf">
-          <Description>
-            How to align along the cross axis when contained in a Box or along
-            the column axis when contained in a Grid.
-          </Description>
-          <GenericAlignSelf />
+          <PropertyValue>
+            <Description>
+              How to align along the cross axis when contained in a Box or along
+              the column axis when contained in a Grid.
+            </Description>
+            <GenericAlignSelf />
+          </PropertyValue>
         </Property>
 
         <Property name="gridArea">
-          <Description>
-            The name of the area to place this inside a parent Grid.
-          </Description>
-          <GenericGridArea />
+          <PropertyValue>
+            <Description>
+              The name of the area to place this inside a parent Grid.
+            </Description>
+            <GenericGridArea />
+          </PropertyValue>
         </Property>
 
         <Property name="margin">
-          <Description>
-            The amount of margin around the component. An object can be
-            specified to distinguish horizontal margin, vertical margin, and
-            margin on a particular side.
-          </Description>
+          <Description>The amount of margin around the component.</Description>
           <GenericMargin />
         </Property>
 
@@ -77,57 +82,87 @@ export default () => (
           <Description>
             The DOM tag or react component to use for the element.
           </Description>
-          <Example>string</Example>
-          <Example>function</Example>
+          <PropertyValue>
+            <Example>string</Example>
+          </PropertyValue>
+          <PropertyValue>
+            <Example>function</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="color">
           <Description>
             Label color and icon color, if not specified on the icon.
           </Description>
-          <Example>string</Example>
-          <Example>
-            <Markdown>{`{dark: string, light: string}`}</Markdown>
-          </Example>
+          <PropertyValue>
+            <Description>A hex, name, or rgb value</Description>
+            <Example>string</Example>
+          </PropertyValue>
+          <PropertyValue>
+            <Description>
+              An object with a color for dark and light modes
+            </Description>
+            <Example>
+              <Markdown>{`{dark: string, light: string}`}</Markdown>
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="disabled">
-          <Description>Whether the anchor is disabled</Description>
-          <Example>true</Example>
-          <Example defaultValue>false</Example>
+          <PropertyValue>
+            <Description>Whether the anchor is disabled</Description>
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="href">
-          <Description>Hyperlink reference to place in the anchor.</Description>
-          <Example>"//my.com/path"</Example>
+          <PropertyValue>
+            <Description>
+              Hyperlink reference to place in the anchor.
+            </Description>
+            <Example>"//my.com/path"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="icon">
-          <Description>Icon element to place in the anchor.</Description>
-          <Example>{`<Add />`}</Example>
+          <PropertyValue>
+            <Description>Icon element to place in the anchor.</Description>
+            <Example>{`<Add />`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="label">
           <Description>Label text to place in the anchor.</Description>
-          <Example>"Add"</Example>
-          <Example>{`<Box>...</Box>`}</Example>
+          <PropertyValue>
+            <Description>A string with label text</Description>
+            <Example>"Add"</Example>
+          </PropertyValue>
+          <PropertyValue>
+            <Description>A component used to display the label</Description>
+            <Example>{`<Box>...</Box>`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="onClick">
-          <Description>
-            Click handler. It can be used, for example, to add analytics and
-            track who clicked in the anchor.
-          </Description>
-          <Example>{`( ) => { }`}</Example>
+          <PropertyValue>
+            <Description>
+              Click handler. It can be used, for example, to add analytics and
+              track who clicked in the anchor.
+            </Description>
+            <Example>{`( ) => { }`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="reverse">
-          <Description>
-            Whether an icon and label should be reversed so that the icon is at
-            the end of the anchor.
-          </Description>
-          <Example>true</Example>
-          <Example defaultValue>false</Example>
+          <PropertyValue>
+            <Description>
+              Whether an icon and label should be reversed so that the icon is
+              at the end of the anchor.
+            </Description>
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="size">
@@ -137,24 +172,32 @@ export default () => (
             typically when it is not contained in a 'Heading', 'Paragraph', or
             'Text'.
           </Description>
-          <ExampleGroup>
+          <PropertyValue>
+            <Description>T-shirt sizing based off the theme</Description>
             <Example>"xsmall"</Example>
             <Example>"small"</Example>
             <Example>"medium"</Example>
             <Example>"large"</Example>
             <Example>"xlarge"</Example>
             <Example>"xxlarge"</Example>
-          </ExampleGroup>
-          <Example>string</Example>
+          </PropertyValue>
+          <PropertyValue>
+            <Description>A specific size in px, em, etc.</Description>
+            <Example>string</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="weight">
           <Description>Sets font-weight property for anchor.</Description>
-          <ExampleGroup>
+          <PropertyValue>
+            <Description>Use browser definitions</Description>
             <Example>"normal"</Example>
             <Example>"bold"</Example>
-          </ExampleGroup>
-          <Example>number</Example>
+          </PropertyValue>
+          <PropertyValue>
+            <Description>Set to a specific numeric value</Description>
+            <Example>{`<number>`}</Example>
+          </PropertyValue>
         </Property>
       </Properties>
 
@@ -163,59 +206,82 @@ export default () => (
           <Description>
             The color of the label text and icon strokes.
           </Description>
-          <Example>{`{"dark": "accent-1", "light": "brand"}`}</Example>
+          <PropertyValue>
+            <Description>A hex, name, or rgb value</Description>
+            <Example>string</Example>
+          </PropertyValue>
+          <PropertyValue>
+            <Description>
+              An object with a color for dark and light mode
+            </Description>
+            <Example defaultValue>
+              <Markdown>{`{"dark": "accent-1", "light": "brand"}`}</Markdown>
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="anchor.fontWeight">
-          <Description>The font weight of the label.</Description>
-          <Example defaultValue>600</Example>
+          <PropertyValue>
+            <Description>The font weight of the label.</Description>
+            <Example defaultValue>600</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="anchor.textDecoration">
-          <Description>
-            The text decoration of the label. Refer to
-            [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-            for possible values.
-          </Description>
-          <Example defaultValue>"none"</Example>
+          <PropertyValue>
+            <Description>
+              The text decoration of the label. Refer to
+              [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+              for possible values.
+            </Description>
+            <Example defaultValue>"none"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="anchor.hover.fontWeight">
-          <Description>The font weight of the label when hovering.</Description>
-          <Example>number</Example>
+          <PropertyValue>
+            <Description>
+              The font weight of the label when hovering.
+            </Description>
+            <Example>number</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="anchor.hover.textDecoration">
-          <Description>
-            The text decoration of the label when hovering. Refer to
-            [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-            for possible values.
-          </Description>
-          <Example defaultValue>"underline"</Example>
+          <PropertyValue>
+            <Description>
+              The text decoration of the label when hovering. Refer to
+              [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+              for possible values.
+            </Description>
+            <Example defaultValue>"underline"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="anchor.hover.extend">
           <Description>
             Any additional style for the Anchor when hovering.
           </Description>
-          <Example>"any CSS"</Example>
-          <Example>(props) => {}</Example>
+          <GenericExtend />
         </Property>
 
         <Property name="anchor.extend">
           <Description>Any additional style for the Anchor.</Description>
-          <Example>"any CSS"</Example>
-          <Example>(props) => {}</Example>
+          <GenericExtend />
         </Property>
 
         <Property name="text.medium.size">
-          <Description>The font size of the text label.</Description>
-          <Example defaultValue>"18px"</Example>
+          <PropertyValue>
+            <Description>The font size of the text label.</Description>
+            <Example defaultValue>"18px"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="text.medium.height">
-          <Description>The line height of the text label.</Description>
-          <Example defaultValue>"24px"</Example>
+          <PropertyValue>
+            <Description>The line height of the text label.</Description>
+            <Example defaultValue>"24px"</Example>
+          </PropertyValue>
         </Property>
         <FocusStyle />
         <EdgeStyle description="The possible sizes for margin." />

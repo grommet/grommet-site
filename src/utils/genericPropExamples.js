@@ -1,7 +1,6 @@
 import React from 'react';
 import { Markdown } from 'grommet';
-import { Example } from '../components/Doc/PropExample';
-import { ExampleGroup } from '../components/Doc/ExampleGroup';
+import { Description, Example, PropertyValue } from '../components/Doc';
 
 export const GenericA11yTitle = () => (
   <Example>"a user friendly label for screen readers"</Example>
@@ -22,7 +21,8 @@ export const GenericGridArea = () => (
 
 export const GenericMargin = () => (
   <>
-    <ExampleGroup>
+    <PropertyValue>
+      <Description>A string value</Description>
       <Example>"none"</Example>
       <Example>"xxsmall"</Example>
       <Example>"xsmall"</Example>
@@ -30,10 +30,15 @@ export const GenericMargin = () => (
       <Example>"medium"</Example>
       <Example>"large"</Example>
       <Example>"xlarge"</Example>
-    </ExampleGroup>
-    <Example>
-      <Markdown>
-        {`
+    </PropertyValue>
+    <PropertyValue>
+      <Description>
+        An object can be specified to distinguish horizontal margin, vertical
+        margin, and margin on a particular side.
+      </Description>
+      <Example>
+        <Markdown>
+          {`
     {
         vertical: "...",
         horizontal: "...",
@@ -43,7 +48,8 @@ export const GenericMargin = () => (
         right: "..."
     }
             `}
-      </Markdown>
-    </Example>
+        </Markdown>
+      </Example>
+    </PropertyValue>
   </>
 );

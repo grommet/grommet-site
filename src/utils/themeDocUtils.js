@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Markdown } from 'grommet';
-import { Description } from '../components/Doc/Description';
-import { Example } from '../components/Doc/PropExample';
-import { Property } from '../components/Doc/Property';
+import {
+  Description,
+  Example,
+  Property,
+  PropertyValue,
+} from '../components/Doc';
 
 export const BreakpointStyle = ({ description }) => (
   <Property name="global.breakpoints">
-    <Description>{description}</Description>
-    <Example defaultValue>
-      <Markdown>
-        {`
+    <PropertyValue>
+      <Description>{description}</Description>
+      <Example defaultValue>
+        <Markdown>
+          {`
     {
       "small": {
         "value": 768,
@@ -45,8 +49,9 @@ export const BreakpointStyle = ({ description }) => (
       "large": {}
     }
         `}
-      </Markdown>
-    </Example>
+        </Markdown>
+      </Example>
+    </PropertyValue>
   </Property>
 );
 
@@ -56,17 +61,20 @@ BreakpointStyle.propTypes = {
 
 export const DisabledStyle = () => (
   <Property name="global.control.disabled.opacity">
-    <Description>The opacity when a component is disabled.</Description>
-    <Example defaultValue>0.3</Example>
+    <PropertyValue>
+      <Description>The opacity when a component is disabled.</Description>
+      <Example defaultValue>0.3</Example>
+    </PropertyValue>
   </Property>
 );
 
 export const EdgeStyle = ({ description }) => (
   <Property name="global.edgeSize">
-    <Description>{description}</Description>
-    <Example>
-      <Markdown>
-        {`
+    <PropertyValue>
+      <Description>{description}</Description>
+      <Example>
+        <Markdown>
+          {`
     {
       none: '0px',
       hair: '1px',
@@ -79,8 +87,9 @@ export const EdgeStyle = ({ description }) => (
       responsiveBreakpoint: 'small'
     }
         `}
-      </Markdown>
-    </Example>
+        </Markdown>
+      </Example>
+    </PropertyValue>
   </Property>
 );
 
@@ -94,34 +103,62 @@ export const FocusStyle = () => (
       <Description>
         The border color of the component when in focus.
       </Description>
-      <Example defaultValue>"focus"</Example>
-      <Example>{`{ dark: string, light: string }`}</Example>
+      <PropertyValue>
+        <Description>A string</Description>
+        <Example defaultValue>"focus"</Example>
+      </PropertyValue>
+      <PropertyValue>
+        <Description>
+          An object with a color for dark and light modes
+        </Description>
+        <Example>{`{ dark: string, light: string }`}</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.focus.outline.color">
       <Description>
         The outline color around the component when in focus.
       </Description>
-      <Example>string</Example>
-      <Example>{`{ dark: string, light: string }`}</Example>
+      <PropertyValue>
+        <Description>A hex, name, or rgb value</Description>
+        <Example>string</Example>
+      </PropertyValue>
+      <PropertyValue>
+        <Description>
+          An object with a color for dark and light modes
+        </Description>
+        <Example>{`{ dark: string, light: string }`}</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.focus.outline.size">
-      <Description>
-        The size of the outline around the component when in focus.
-      </Description>
-      <Example>string</Example>
+      <PropertyValue>
+        <Description>
+          The size of the outline around the component when in focus.
+        </Description>
+        <Example>string</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.focus.shadow.color">
       <Description>
         The shadow color around the component when in focus.
       </Description>
-      <Example defaultValue>"focus"</Example>
-      <Example>{`{ dark: string, light: string }`}</Example>
+      <PropertyValue>
+        <Description>A string</Description>
+        <Example defaultValue>"focus"</Example>
+      </PropertyValue>
+      <PropertyValue>
+        <Description>
+          An object with a color for dark and light modes
+        </Description>
+        <Example>{`{ dark: string, light: string }`}</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.focus.shadow.size">
-      <Description>
-        The size of the shadow around the component when in focus.
-      </Description>
-      <Example defaultValue>"2px"</Example>
+      <PropertyValue>
+        <Description>
+          The size of the shadow around the component when in focus.
+        </Description>
+        <Example defaultValue>"2px"</Example>
+      </PropertyValue>
     </Property>
   </>
 );
@@ -129,57 +166,84 @@ export const FocusStyle = () => (
 export const IconColor = () => (
   <Property name="global.colors.icon">
     <Description>The color of a given icon.</Description>
-    <Example defaultValue>{`{ dark: #f8f8f8, light: #666666 }`}</Example>
-    <Example>string</Example>
+    <PropertyValue>
+      <Description>An object with a color for dark and light modes</Description>
+      <Example defaultValue>{`{ dark: #f8f8f8, light: #666666 }`}</Example>
+    </PropertyValue>
+    <PropertyValue>
+      <Description>A hex, name, or rgb value</Description>
+      <Example>string</Example>
+    </PropertyValue>
   </Property>
 );
 
 export const InputStyle = () => (
   <>
     <Property name="global.input.font.height">
-      <Description>The line-height of the text.</Description>
-      <Example>string</Example>
+      <PropertyValue>
+        <Description>The line-height of the text.</Description>
+        <Example>string</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.input.font.size">
-      <Description>The size of the text.</Description>
-      <Example>string</Example>
+      <PropertyValue>
+        <Description>The size of the text.</Description>
+        <Example>string</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.input.font.weight">
-      <Description>
-        The font-weight of the text. This value will only be applied if
-        global.input.weight is undefined.
-      </Description>
-      <Example defaultValue>600</Example>
+      <PropertyValue>
+        <Description>
+          The font-weight of the text. This value will only be applied if
+          global.input.weight is undefined.
+        </Description>
+        <Example defaultValue>600</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.input.weight">
-      <Description>
-        This value has been deprecated and replaced by global.input.font.weight.
-      </Description>
-      <Example>number</Example>
-      <Example>string</Example>
+      <PropertyValue>
+        <Description>
+          This value has been deprecated and replaced by
+          global.input.font.weight.
+        </Description>
+        <Example>number</Example>
+        <Example>string</Example>
+      </PropertyValue>
     </Property>
     <Property name="global.input.padding">
       <Description>The padding of the text.</Description>
-      <Example defaultValue>12px</Example>
-      <Example>
-        {`{ top: string, bottom: string, left: string, right: 
+      <PropertyValue>
+        <Description>A string</Description>
+        <Example defaultValue>12px</Example>
+      </PropertyValue>
+      <PropertyValue>
+        <Description>
+          An object specifying padding for different sides of the component
+        </Description>
+        <Example>
+          {`{ top: string, bottom: string, left: string, right: 
     string, horizontal: string, vertical: string }`}
-      </Example>
+        </Example>
+      </PropertyValue>
     </Property>
   </>
 );
 
 export const placeholderStyle = () => (
   <Property name="global.colors.placeholder">
-    <Description>The placeholder color used for the component.</Description>
-    <Example defaultValue>"#AAAAAA"</Example>
+    <PropertyValue>
+      <Description>The placeholder color used for the component.</Description>
+      <Example defaultValue>"#AAAAAA"</Example>
+    </PropertyValue>
   </Property>
 );
 
 export const responsiveBreakpoint = ({ description }) => (
   <Property name="global.edgeSize.responsiveBreakpoint">
-    <Description>{description}</Description>
-    <Example defaultValue>"small"</Example>
+    <PropertyValue>
+      <Description>{description}</Description>
+      <Example defaultValue>"small"</Example>
+    </PropertyValue>
   </Property>
 );
 

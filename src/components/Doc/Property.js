@@ -5,16 +5,6 @@ import { Link as LinkIcon } from 'grommet-icons';
 
 export const Property = ({ name, first, children }) => {
   const [over, setOver] = React.useState();
-  const Descriptions = [];
-  const Examples = [];
-
-  React.Children.forEach(children, child => {
-    if (child.type.displayName === 'Description') {
-      Descriptions.push(child);
-    } else {
-      Examples.push(child);
-    }
-  });
 
   return (
     <Box
@@ -36,14 +26,7 @@ export const Property = ({ name, first, children }) => {
           icon={<LinkIcon color={over ? 'light-4' : 'white'} />}
         />
       </Box>
-      <Box direction="row-responsive" justify="between" align="start">
-        <Box basis="1/2" margin={{ right: 'large', bottom: 'medium' }}>
-          {Descriptions}
-        </Box>
-        <Box flex align="start">
-          {Examples}
-        </Box>
-      </Box>
+      {children}
     </Box>
   );
 };
