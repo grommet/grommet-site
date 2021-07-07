@@ -14,7 +14,7 @@ export const ComponentDoc = ({
   code,
   description,
   intrinsicElement,
-  isA,
+  isA, // used when component is a version of a html tag
   name,
 }) => {
   const properties = [];

@@ -2,10 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Anchor, Heading } from 'grommet';
 import { Link as LinkIcon } from 'grommet-icons';
+import { PropertyValue } from './PropertyValue';
 
 export const Property = ({ name, first, children }) => {
   const [over, setOver] = React.useState();
-
+  const Description = [];
+  const PropertyValues = [];
+  React.Children.forEach(children, child => {
+    if (child.type.displayName === 'Description') {
+      Description.push(child);
+    } else {
+      PropertyValues.push(child);
+    }
+  });
   return (
     <Box
       id={name}
@@ -26,7 +35,11 @@ export const Property = ({ name, first, children }) => {
           icon={<LinkIcon color={over ? 'light-4' : 'white'} />}
         />
       </Box>
-      {children}
+      {Description}
+      {Description.length !== 0 && PropertyValue.length !== 0 && (
+        <Box pad="small" />
+      )}
+      {PropertyValues}
     </Box>
   );
 };

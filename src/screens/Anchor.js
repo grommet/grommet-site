@@ -83,9 +83,11 @@ export default () => (
             The DOM tag or react component to use for the element.
           </Description>
           <PropertyValue>
+            <Description>The name of a component</Description>
             <Example>string</Example>
           </PropertyValue>
           <PropertyValue>
+            <Description>A component</Description>
             <Example>function</Example>
           </PropertyValue>
         </Property>
