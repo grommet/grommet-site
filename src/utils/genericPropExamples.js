@@ -21,8 +21,7 @@ export const GenericGridArea = () => (
 
 export const GenericMargin = () => (
   <>
-    <PropertyValue>
-      <Description>A string value</Description>
+    <PropertyValue type="string">
       <Example>"none"</Example>
       <Example>"xxsmall"</Example>
       <Example>"xsmall"</Example>
@@ -31,10 +30,10 @@ export const GenericMargin = () => (
       <Example>"large"</Example>
       <Example>"xlarge"</Example>
     </PropertyValue>
-    <PropertyValue>
+    <PropertyValue type="object">
       <Description>
-        An object can be specified to distinguish horizontal margin, vertical
-        margin, and margin on a particular side.
+        Can be specified to distinguish horizontal margin, vertical margin, and
+        margin on a particular side.
       </Description>
       <Example>
         <Markdown>
