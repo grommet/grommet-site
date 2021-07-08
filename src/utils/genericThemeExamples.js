@@ -5,13 +5,13 @@ export const GenericColor = () => (
   <>
     <PropertyValue type="string">
       <Description>A hex, name, or rgb value.</Description>
-      <Example>string</Example>
+      <Example>"brand"</Example>
     </PropertyValue>
     <PropertyValue type="object">
       <Description>
         An object with a color for dark and light modes.
       </Description>
-      <Example>{`{ dark: string, light: string }`}</Example>
+      <Example>{`{ dark: "string", light: "string" }`}</Example>
     </PropertyValue>
   </>
 );

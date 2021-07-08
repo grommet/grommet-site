@@ -46,29 +46,27 @@ export default () => (
     >
       <Properties>
         <Property name="a11yTitle">
+          <Description>Custom title to be used by screen readers.</Description>
           <PropertyValue type="string">
-            <Description>
-              Custom title to be used by screen readers.
-            </Description>
             <GenericA11yTitle />
           </PropertyValue>
         </Property>
 
         <Property name="alignSelf">
+          <Description>
+            How to align along the cross axis when contained in a Box or along
+            the column axis when contained in a Grid.
+          </Description>
           <PropertyValue type="string">
-            <Description>
-              How to align along the cross axis when contained in a Box or along
-              the column axis when contained in a Grid.
-            </Description>
             <GenericAlignSelf />
           </PropertyValue>
         </Property>
 
         <Property name="gridArea">
+          <Description>
+            The name of the area to place this inside a parent Grid.
+          </Description>
           <PropertyValue type="string">
-            <Description>
-              The name of the area to place this inside a parent Grid.
-            </Description>
             <GenericGridArea />
           </PropertyValue>
         </Property>
@@ -100,25 +98,23 @@ export default () => (
         </Property>
 
         <Property name="disabled">
+          <Description>Whether the anchor is disabled</Description>
           <PropertyValue type="boolean">
-            <Description>Whether the anchor is disabled</Description>
             <Example>true</Example>
             <Example defaultValue>false</Example>
           </PropertyValue>
         </Property>
 
         <Property name="href">
+          <Description>Hyperlink reference to place in the anchor.</Description>
           <PropertyValue type="string">
-            <Description>
-              Hyperlink reference to place in the anchor.
-            </Description>
             <Example>"//my.com/path"</Example>
           </PropertyValue>
         </Property>
 
         <Property name="icon">
+          <Description>Icon element to place in the anchor.</Description>
           <PropertyValue type="element">
-            <Description>Icon element to place in the anchor.</Description>
             <Example>{`<Add />`}</Example>
           </PropertyValue>
         </Property>
@@ -135,21 +131,21 @@ export default () => (
         </Property>
 
         <Property name="onClick">
+          <Description>
+            Click handler. It can be used, for example, to add analytics and
+            track who clicked in the anchor.
+          </Description>
           <PropertyValue type="function">
-            <Description>
-              Click handler. It can be used, for example, to add analytics and
-              track who clicked in the anchor.
-            </Description>
             <Example>{`( ) => { }`}</Example>
           </PropertyValue>
         </Property>
 
         <Property name="reverse">
+          <Description>
+            Whether an icon and label should be reversed so that the icon is at
+            the end of the anchor.
+          </Description>
           <PropertyValue type="boolean">
-            <Description>
-              Whether an icon and label should be reversed so that the icon is
-              at the end of the anchor.
-            </Description>
             <Example>true</Example>
             <Example defaultValue>false</Example>
           </PropertyValue>
@@ -211,39 +207,37 @@ export default () => (
         </Property>
 
         <Property name="anchor.fontWeight">
+          <Description>The font weight of the label.</Description>
           <PropertyValue type="number">
-            <Description>The font weight of the label.</Description>
             <Example defaultValue>600</Example>
           </PropertyValue>
         </Property>
 
         <Property name="anchor.textDecoration">
+          <Description>
+            The text decoration of the label. Refer to
+            [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+            for possible values.
+          </Description>
           <PropertyValue type="string">
-            <Description>
-              The text decoration of the label. Refer to
-              [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-              for possible values.
-            </Description>
             <Example defaultValue>"none"</Example>
           </PropertyValue>
         </Property>
 
         <Property name="anchor.hover.fontWeight">
+          <Description>The font weight of the label when hovering.</Description>
           <PropertyValue type="number">
-            <Description>
-              The font weight of the label when hovering.
-            </Description>
-            <Example>number</Example>
+            <Example>300</Example>
           </PropertyValue>
         </Property>
 
         <Property name="anchor.hover.textDecoration">
+          <Description>
+            The text decoration of the label when hovering. Refer to
+            [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+            for possible values.
+          </Description>
           <PropertyValue type="string">
-            <Description>
-              The text decoration of the label when hovering. Refer to
-              [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-              for possible values.
-            </Description>
             <Example defaultValue>"underline"</Example>
           </PropertyValue>
         </Property>
@@ -261,15 +255,15 @@ export default () => (
         </Property>
 
         <Property name="text.medium.size">
+          <Description>The font size of the text label.</Description>
           <PropertyValue type="string">
-            <Description>The font size of the text label.</Description>
             <Example defaultValue>"18px"</Example>
           </PropertyValue>
         </Property>
 
         <Property name="text.medium.height">
+          <Description>The line height of the text label.</Description>
           <PropertyValue type="string">
-            <Description>The line height of the text label.</Description>
             <Example defaultValue>"24px"</Example>
           </PropertyValue>
         </Property>

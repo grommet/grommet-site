@@ -11,8 +11,8 @@ import {
 
 export const BreakpointStyle = ({ description }) => (
   <Property name="global.breakpoints">
+    <Description>{description}</Description>
     <PropertyValue type="object">
-      <Description>{description}</Description>
       <Example defaultValue>
         <Markdown>
           {`
@@ -62,8 +62,8 @@ BreakpointStyle.propTypes = {
 
 export const DisabledStyle = () => (
   <Property name="global.control.disabled.opacity">
+    <Description>The opacity when a component is disabled.</Description>
     <PropertyValue type="number">
-      <Description>The opacity when a component is disabled.</Description>
       <Example defaultValue>0.3</Example>
     </PropertyValue>
   </Property>
@@ -71,8 +71,8 @@ export const DisabledStyle = () => (
 
 export const EdgeStyle = ({ description }) => (
   <Property name="global.edgeSize">
+    <Description>{description}</Description>
     <PropertyValue type="object">
-      <Description>{description}</Description>
       <Example>
         <Markdown>
           {`
@@ -112,7 +112,7 @@ export const FocusStyle = () => (
         <Description>
           An object with a color for dark and light modes.
         </Description>
-        <Example>{`{ dark: string, light: string }`}</Example>
+        <Example>{`{ dark: "string", light: "string" }`}</Example>
       </PropertyValue>
     </Property>
     <Property name="global.focus.outline.color">
@@ -122,11 +122,11 @@ export const FocusStyle = () => (
       <GenericColor />
     </Property>
     <Property name="global.focus.outline.size">
+      <Description>
+        The size of the outline around the component when in focus.
+      </Description>
       <PropertyValue type="string">
-        <Description>
-          The size of the outline around the component when in focus.
-        </Description>
-        <Example>string</Example>
+        <Example>"2px"</Example>
       </PropertyValue>
     </Property>
     <Property name="global.focus.shadow.color">
@@ -140,14 +140,14 @@ export const FocusStyle = () => (
         <Description>
           An object with a color for dark and light modes
         </Description>
-        <Example>{`{ dark: string, light: string }`}</Example>
+        <Example>{`{ dark: "string", light: "string" }`}</Example>
       </PropertyValue>
     </Property>
     <Property name="global.focus.shadow.size">
+      <Description>
+        The size of the shadow around the component when in focus.
+      </Description>
       <PropertyValue type="string">
-        <Description>
-          The size of the shadow around the component when in focus.
-        </Description>
         <Example defaultValue>"2px"</Example>
       </PropertyValue>
     </Property>
@@ -171,40 +171,43 @@ export const IconColor = () => (
 export const InputStyle = () => (
   <>
     <Property name="global.input.font.height">
+      <Description>The line-height of the text.</Description>
       <PropertyValue type="string">
-        <Description>The line-height of the text.</Description>
         <Example>string</Example>
       </PropertyValue>
     </Property>
     <Property name="global.input.font.size">
+      <Description>The size of the text.</Description>
       <PropertyValue type="string">
-        <Description>The size of the text.</Description>
-        <Example>string</Example>
+        <Example>"18px"</Example>
       </PropertyValue>
     </Property>
     <Property name="global.input.font.weight">
-      <PropertyValue type="string | number">
-        <Description>
-          The font-weight of the text. This value will only be applied if
-          global.input.weight is undefined.
-        </Description>
+      <Description>
+        The font-weight of the text. This value will only be applied if
+        global.input.weight is undefined.
+      </Description>
+      <PropertyValue type="string">
+        <Example>"bold"</Example>
+      </PropertyValue>
+      <PropertyValue type="number">
         <Example defaultValue>600</Example>
       </PropertyValue>
     </Property>
     <Property name="global.input.weight">
-      <PropertyValue type="string | number">
-        <Description>
-          This value has been deprecated and replaced by
-          global.input.font.weight.
-        </Description>
-        <Example>string</Example>
-        <Example>number</Example>
+      <Description>
+        This value has been deprecated and replaced by global.input.font.weight.
+      </Description>
+      <PropertyValue type="string">
+        <Example>"bold"</Example>
+      </PropertyValue>
+      <PropertyValue type="number">
+        <Example>300</Example>
       </PropertyValue>
     </Property>
     <Property name="global.input.padding">
       <Description>The padding of the text.</Description>
       <PropertyValue type="string">
-        <Description>A string</Description>
         <Example defaultValue>"12px"</Example>
       </PropertyValue>
       <PropertyValue type="object">
@@ -212,8 +215,8 @@ export const InputStyle = () => (
           An object specifying padding for different sides of the component
         </Description>
         <Example>
-          {`{ top: string, bottom: string, left: string, right: 
-    string, horizontal: string, vertical: string }`}
+          {`{ top: "string", bottom: "string", left: "string", right: 
+    "string", horizontal: "string", vertical: "string" }`}
         </Example>
       </PropertyValue>
     </Property>
@@ -222,8 +225,8 @@ export const InputStyle = () => (
 
 export const placeholderStyle = () => (
   <Property name="global.colors.placeholder">
+    <Description>The placeholder color used for the component.</Description>
     <PropertyValue type="string">
-      <Description>The placeholder color used for the component.</Description>
       <Example defaultValue>"#AAAAAA"</Example>
     </PropertyValue>
   </Property>
@@ -231,8 +234,8 @@ export const placeholderStyle = () => (
 
 export const responsiveBreakpoint = ({ description }) => (
   <Property name="global.edgeSize.responsiveBreakpoint">
+    <Description>{description}</Description>
     <PropertyValue type="string">
-      <Description>{description}</Description>
       <Example defaultValue>"small"</Example>
     </PropertyValue>
   </Property>
