@@ -159,16 +159,16 @@ export default () => (
             'Text'.
           </Description>
           <PropertyValue type="string">
-            <Description>T-shirt sizing based off the theme</Description>
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
             <Example>"xsmall"</Example>
             <Example>"small"</Example>
             <Example>"medium"</Example>
             <Example>"large"</Example>
             <Example>"xlarge"</Example>
             <Example>"xxlarge"</Example>
-          </PropertyValue>
-          <PropertyValue type="string">
-            <Description>A specific size in px, em, etc.</Description>
             <Example>"12px"</Example>
           </PropertyValue>
         </Property>
@@ -176,12 +176,11 @@ export default () => (
         <Property name="weight">
           <Description>Sets font-weight property for anchor.</Description>
           <PropertyValue type="string">
-            <Description>Use browser definitions</Description>
+            <Description>Any browser font-weight definition</Description>
             <Example>"normal"</Example>
             <Example>"bold"</Example>
           </PropertyValue>
           <PropertyValue type="number">
-            <Description>Set to a specific numeric value</Description>
             <Example>300</Example>
           </PropertyValue>
         </Property>

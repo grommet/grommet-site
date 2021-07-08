@@ -16,7 +16,7 @@ export const PropertyValue = ({ children, type }) => {
 
   return (
     <Box direction="row-responsive" justify="between" align="start">
-      <Box basis="1/2" margin={{ right: 'large' }}>
+      <Box basis="1/2" margin={{ right: 'large', bottom: 'xsmall' }}>
         {type && (
           <Text margin={{ bottom: 'xsmall' }} weight="bold">
             <code>{type}</code>
