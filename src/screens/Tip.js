@@ -9,7 +9,6 @@ import Item from './Components/Item';
 
 const desc = doc(Tip).toJSON();
 
-console.log(desc);
 export default () => (
   <Page>
     <Doc
