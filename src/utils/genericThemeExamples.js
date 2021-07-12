@@ -19,7 +19,7 @@ export const GenericColor = () => (
 export const GenericExtend = () => (
   <>
     <PropertyValue type="string">
-      <Description>Any CSS</Description>
+      <Description>Any CSS.</Description>
       <Example>css`color: 'blue'`</Example>
     </PropertyValue>
     <PropertyValue type="function">

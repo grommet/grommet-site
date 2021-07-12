@@ -81,11 +81,10 @@ export default () => (
             The DOM tag or react component to use for the element.
           </Description>
           <PropertyValue type="string">
-            <Description>The name of a component</Description>
+            <Description>The name of a component.</Description>
             <Example>"div"</Example>
           </PropertyValue>
           <PropertyValue type="function">
-            <Description>A component</Description>
             <Example>{`() => {}`}</Example>
           </PropertyValue>
         </Property>
@@ -98,7 +97,7 @@ export default () => (
         </Property>
 
         <Property name="disabled">
-          <Description>Whether the anchor is disabled</Description>
+          <Description>Whether the anchor is disabled.</Description>
           <PropertyValue type="boolean">
             <Example>true</Example>
             <Example defaultValue>false</Example>
@@ -125,7 +124,7 @@ export default () => (
             <Example>"Add"</Example>
           </PropertyValue>
           <PropertyValue type="element">
-            <Description>A component used to display the label</Description>
+            <Description>A component used to display the label.</Description>
             <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
         </Property>
@@ -176,7 +175,7 @@ export default () => (
         <Property name="weight">
           <Description>Sets font-weight property for anchor.</Description>
           <PropertyValue type="string">
-            <Description>Any browser font-weight definition</Description>
+            <Description>Any browser font-weight definition.</Description>
             <Example>"normal"</Example>
             <Example>"bold"</Example>
           </PropertyValue>

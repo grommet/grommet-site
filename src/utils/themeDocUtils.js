@@ -138,7 +138,7 @@ export const FocusStyle = () => (
       </PropertyValue>
       <PropertyValue type="object">
         <Description>
-          An object with a color for dark and light modes
+          An object with a color for dark and light modes.
         </Description>
         <Example>{`{ dark: "string", light: "string" }`}</Example>
       </PropertyValue>
@@ -158,11 +158,13 @@ export const IconColor = () => (
   <Property name="global.colors.icon">
     <Description>The color of a given icon.</Description>
     <PropertyValue type="string">
-      <Description>A hex, name, or rgb value</Description>
+      <Description>A hex, name, or rgb value.</Description>
       <Example>string</Example>
     </PropertyValue>
     <PropertyValue type="object">
-      <Description>An object with a color for dark and light modes</Description>
+      <Description>
+        An object with a color for dark and light modes.
+      </Description>
       <Example defaultValue>{`{ dark: #f8f8f8, light: #666666 }`}</Example>
     </PropertyValue>
   </Property>
@@ -212,7 +214,7 @@ export const InputStyle = () => (
       </PropertyValue>
       <PropertyValue type="object">
         <Description>
-          An object specifying padding for different sides of the component
+          An object specifying padding for different sides of the component.
         </Description>
         <Example>
           {`{ top: "string", bottom: "string", left: "string", right: 
