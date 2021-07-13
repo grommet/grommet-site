@@ -1,22 +1,57 @@
 import React from 'react';
-
-import { AnnounceContext } from 'grommet/contexts';
 import { Sign } from 'grommet-icons';
-import { doc } from 'grommet/contexts/AnnounceContext/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+} from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(AnnounceContext.Consumer).toJSON();
 
 export default () => (
   <Page>
-    <Doc
-      name="AnnounceContext"
-      title="Announce Context .Consumer"
-      desc={desc}
-    />
+    <ComponentDoc
+      name="Announce Context .Consumer"
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Utilities-AnnounceContext&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/announcecontext&module=%2Fsrc%2FAnnounceContext.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="A means of announcing events for screen readers"
+    >
+      <Properties>
+        <Property name="children">
+          <Description>
+            Render function that will be called with an 'announce' function that
+            can be called when something should be announced. 'announce'
+            function accepts 'message', 'mode' and 'timeout' as arguments and
+            these arguments can be passed as 'props' to the return component.
+            'mode' can be one of 'polite', 'assertive' or 'off'. 'timeout' is
+            measured in milliseconds.
+          </Description>
+          <PropertyValue type="function">
+            <Example>
+              {`
+            {announce => <Button onClick={() => announce( "Button was clicked", "polite", 1000 ) }
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 
