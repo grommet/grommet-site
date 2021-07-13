@@ -23,7 +23,7 @@ export const GenericExtend = () => (
       <Example>css`color: 'blue'`</Example>
     </PropertyValue>
     <PropertyValue type="function">
-      <Example>(props) => {}</Example>
+      <Example>{`(props) => {}`}</Example>
     </PropertyValue>
   </>
 );
