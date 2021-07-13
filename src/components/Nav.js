@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Text, ResponsiveContext } from 'grommet';
-import { Grommet as GrommetIcon } from 'grommet-icons';
+import { Box, Button, Text, ResponsiveContext } from 'grommet';
+import { Github, Grommet as GrommetIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
 import Search from './Search';
@@ -23,7 +23,13 @@ export default () => {
         icon={<GrommetIcon size="large" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
-      <Box direction="row" gap="small">
+      <Box align="center" direction="row" gap="small">
+        <Button
+          a11yTitle="Go to grommet on GitHub"
+          target="_blank"
+          href="https://github.com/grommet/grommet"
+          icon={<Github color="brand" size="large" />}
+        />
         {!searchOpen && (
           <RoutedButton path="/components" plain>
             {({ hover }) => (
