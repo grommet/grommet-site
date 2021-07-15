@@ -47,9 +47,7 @@ export default () => (
       <Properties>
         <Property name="a11yTitle">
           <Description>Custom title to be used by screen readers.</Description>
-          <PropertyValue type="string">
-            <GenericA11yTitle />
-          </PropertyValue>
+          <GenericA11yTitle />
         </Property>
 
         <Property name="alignSelf">
@@ -57,18 +55,14 @@ export default () => (
             How to align along the cross axis when contained in a Box or along
             the column axis when contained in a Grid.
           </Description>
-          <PropertyValue type="string">
-            <GenericAlignSelf />
-          </PropertyValue>
+          <GenericAlignSelf />
         </Property>
 
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
           </Description>
-          <PropertyValue type="string">
-            <GenericGridArea />
-          </PropertyValue>
+          <GenericGridArea />
         </Property>
 
         <Property name="margin">
