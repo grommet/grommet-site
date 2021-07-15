@@ -7,3 +7,4 @@ export { Property } from './Property';
 export { PropertyValue } from './PropertyValue';
 export { Example } from './PropExample';
 export { ThemeDoc } from './ThemeDoc';
+export { PropOptions } from './PropOptions';
