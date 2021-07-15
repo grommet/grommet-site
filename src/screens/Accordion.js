@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Markdown } from 'grommet';
+import { Box } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -41,17 +41,18 @@ export default () => (
       description="An accordion containing collapsible panels."
       intrinsicElement="div"
       code={`<Accordion>
-      <AccordionPanel label="Panel 1">
-        <Box pad="medium" background="light-2">
-          <Text>One</Text>
-        </Box>
-      </AccordionPanel>
-      <AccordionPanel label="Panel 2">
-        <Box pad="medium" background="light-2">
-          <Text>Two</Text>
-        </Box>
-      </AccordionPanel>
-    </Accordion>`}
+  <AccordionPanel label="Panel 1">
+    <Box pad="medium" background="light-2">
+      <Text>One</Text>
+    </Box>
+  </AccordionPanel>
+  <AccordionPanel label="Panel 2">
+    <Box pad="medium" background="light-2">
+      <Text>Two</Text>
+    </Box>
+  </AccordionPanel>
+</Accordion>
+    `}
     >
       <Properties>
         <Property name="a11yTitle">
@@ -59,9 +60,7 @@ export default () => (
             Custom label to be used by screen readers. When provided, an
             aria-label will be added to the element.
           </Description>
-          <PropertyValue type="string">
-            <GenericA11yTitle />
-          </PropertyValue>
+          <GenericA11yTitle />
         </Property>
 
         <Property name="alignSelf">
@@ -69,18 +68,14 @@ export default () => (
             How to align along the cross axis when contained in a Box or along
             the column axis when contained in a Grid.
           </Description>
-          <PropertyValue type="string">
-            <GenericAlignSelf />
-          </PropertyValue>
+          <GenericAlignSelf />
         </Property>
 
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
           </Description>
-          <PropertyValue type="string">
-            <GenericGridArea />
-          </PropertyValue>
+          <GenericGridArea />
         </Property>
 
         <Property name="margin">
@@ -145,13 +140,11 @@ export default () => (
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
-              <Markdown>
-                {`
-    {
-      tabContents: "Tab Contents"
-    }
+              {`
+{
+  tabContents: "Tab Contents"
+}
             `}
-              </Markdown>
             </Example>
           </PropertyValue>
         </Property>
