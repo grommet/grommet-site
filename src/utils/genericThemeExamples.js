@@ -28,6 +28,30 @@ export const GenericExtend = () => (
   </>
 );
 
+export const GenericOpacity = () => (
+  <>
+    <PropertyValue type="string">
+      <Example>"medium"</Example>
+    </PropertyValue>
+    <PropertyValue type="number">
+      <Example>0.5</Example>
+    </PropertyValue>
+  </>
+);
+
+export const GenericWeight = () => (
+  <>
+    <PropertyValue type="string">
+      <Description>Any browser font-weight definition.</Description>
+      <Example>"normal"</Example>
+      <Example>"bold"</Example>
+    </PropertyValue>
+    <PropertyValue type="number">
+      <Example>300</Example>
+    </PropertyValue>
+  </>
+);
+
 export const GlobalAnimation = () => (
   <PropertyValue type="object">
     <Example>
@@ -124,14 +148,10 @@ export const GlobalHoverBackgroundColor = () => (
 export const GlobalHoverBackgroundOpacity = () => (
   <>
     <PropertyValue type="string">
-      <Description>A hex, name, or rgb value.</Description>
       <Example defaultValue>"medium"</Example>
     </PropertyValue>
-    <PropertyValue type="object">
-      <Description>
-        An object with a color for dark and light modes.
-      </Description>
-      <Example>{`{ dark: "string", light: "string" }`}</Example>
+    <PropertyValue type="number">
+      <Example>0.5</Example>
     </PropertyValue>
   </>
 );
@@ -143,6 +163,9 @@ export const GlobalHoverColor = () => (
       <Example>"brand"</Example>
     </PropertyValue>
     <PropertyValue type="object">
+      <Description>
+        An object with a color for dark and light modes.
+      </Description>
       <Example defaultValue>{`{ dark: "white", light: "black" }`}</Example>
     </PropertyValue>
   </>

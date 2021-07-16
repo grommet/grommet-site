@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Markdown } from 'grommet';
 import { GenericColor } from './genericThemeExamples';
 import {
   Description,
@@ -14,43 +13,41 @@ export const BreakpointStyle = ({ description }) => (
     <Description>{description}</Description>
     <PropertyValue type="object">
       <Example defaultValue>
-        <Markdown>
-          {`
-    {
-      "small": {
-        "value": 768,
-        "borderSize": {
-          "xsmall": "1px",
-          "small": "2px",
-          "medium": "4px",
-          "large": "6px",
-          "xlarge": "12px"
-        },
-        "edgeSize": {
-          "none": "0px",
-          "hair": "1px",
-          "xxsmall": "2px",
-          "xsmall": "3px",
-          "small": "6px",
-          "medium": "12px",
-          "large": "24px",
-          "xlarge": "48px"
-        },
-        "size": {
-          "xxsmall": "24px",
-          "xsmall": "48px",
-          "small": "96px",
-          "medium": "192px",
-          "large": "384px",
-          "xlarge": "768px",
-          "full": "100%"
-        }
-      },
-      "medium": {"value": 1536},
-      "large": {}
+        {`
+{
+  "small": {
+    "value": 768,
+    "borderSize": {
+      "xsmall": "1px",
+      "small": "2px",
+      "medium": "4px",
+      "large": "6px",
+      "xlarge": "12px"
+    },
+    "edgeSize": {
+      "none": "0px",
+      "hair": "1px",
+      "xxsmall": "2px",
+      "xsmall": "3px",
+      "small": "6px",
+      "medium": "12px",
+      "large": "24px",
+      "xlarge": "48px"
+    },
+    "size": {
+      "xxsmall": "24px",
+      "xsmall": "48px",
+      "small": "96px",
+      "medium": "192px",
+      "large": "384px",
+      "xlarge": "768px",
+      "full": "100%"
     }
+  },
+  "medium": {"value": 1536},
+  "large": {}
+}
         `}
-        </Markdown>
       </Example>
     </PropertyValue>
   </Property>
@@ -74,8 +71,7 @@ export const EdgeStyle = ({ description }) => (
     <Description>{description}</Description>
     <PropertyValue type="object">
       <Example>
-        <Markdown>
-          {`
+        {`
     {
       none: '0px',
       hair: '1px',
@@ -88,7 +84,6 @@ export const EdgeStyle = ({ description }) => (
       responsiveBreakpoint: 'small'
     }
         `}
-        </Markdown>
       </Example>
     </PropertyValue>
   </Property>
@@ -159,7 +154,7 @@ export const IconColor = () => (
     <Description>The color of a given icon.</Description>
     <PropertyValue type="string">
       <Description>A hex, name, or rgb value.</Description>
-      <Example>string</Example>
+      <Example>"black"</Example>
     </PropertyValue>
     <PropertyValue type="object">
       <Description>
