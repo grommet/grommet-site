@@ -96,9 +96,7 @@ export default () => (
         </Property>
 
         <Property name="margin">
-          <Description>
-            The amount of margin around the component.
-          </Description>
+          <Description>The amount of margin around the component.</Description>
           <GenericMargin />
         </Property>
 

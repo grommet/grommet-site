@@ -19,12 +19,15 @@ export const ComponentDoc = ({
 }) => {
   const properties = [];
   const themeDoc = [];
+  const additionalChildren = [];
   if (children.length) {
     for (let i = 0; i < children.length; i += 1) {
       if (children[i].type.displayName === 'Properties') {
         properties.push(children[i]);
       } else if (children[i].type.displayName === 'ThemeDoc') {
         themeDoc.push(children[i]);
+      } else {
+        additionalChildren.push(children[i]);
       }
     }
   } else if (children) {
@@ -32,6 +35,8 @@ export const ComponentDoc = ({
       properties.push(children);
     } else if (children.type.displayName === 'ThemeDoc') {
       themeDoc.push(children);
+    } else {
+      additionalChildren.push(children);
     }
   }
 
@@ -100,6 +105,8 @@ export const ComponentDoc = ({
           </Box>
         </Box>
       )}
+
+      {additionalChildren}
 
       {properties}
 
