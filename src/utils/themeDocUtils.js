@@ -159,7 +159,7 @@ export const IconColor = () => (
     <Description>The color of a given icon.</Description>
     <PropertyValue type="string">
       <Description>A hex, name, or rgb value.</Description>
-      <Example>string</Example>
+      <Example>"black"</Example>
     </PropertyValue>
     <PropertyValue type="object">
       <Description>
