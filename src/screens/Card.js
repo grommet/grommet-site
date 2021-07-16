@@ -1,49 +1,101 @@
 import React from 'react';
 
 import { Box, Card, CardHeader, CardBody, CardFooter } from 'grommet';
-import { doc, themeDoc } from 'grommet/components/Card/doc';
-import { doc as docCardHeader } from 'grommet/components/CardHeader/doc';
-import { doc as docCardFooter } from 'grommet/components/CardFooter/doc';
-import { doc as docCardBody } from 'grommet/components/CardBody/doc';
 
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(Card).toJSON();
-const descCardHeader = docCardHeader(CardHeader).toJSON();
-const descCardBody = docCardBody(CardBody).toJSON();
-const descCardFooter = docCardFooter(CardFooter).toJSON();
+import {
+  ComponentDoc,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+  ThemeDoc,
+} from '../components/Doc';
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Card"
-      desc={desc}
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Layout-Card&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="A Card is a container of information that provides access to more 
+ details"
+      intrinsicElement="div"
       code={`<Card  height="small" width="small" background="light-1">
-      <CardHeader pad="medium">Header</CardHeader>
-      <CardBody pad="medium">Body</CardBody>
-      <CardFooter pad={{horizontal: "small"}} background="light-2">   
-      <Button
-      icon={<Icons.Favorite color="red" />}
-      hoverIndicator
+  <CardHeader pad="medium">Header</CardHeader>
+  <CardBody pad="medium">Body</CardBody>
+  <CardFooter pad={{horizontal: "small"}} background="light-2">
+    <Button
+    icon={<Icons.Favorite color="red" />}
+    hoverIndicator
     />
     <Button icon={<Icons.ShareOption color="plain" />} hoverIndicator />
-    </CardFooter>
+  </CardFooter>
 </Card>`}
-      themeDoc={themeDoc}
-    />
-    <Doc
+    >
+      <ThemeDoc>
+        <Property name="card.container">
+          <Description>Any valid Box prop for the Card container.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ round: "small", elevation: "small" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="card.header">
+          <Description>Any valid Box prop for the CardHeader.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="card.body">
+          <Description>Any valid Box prop for the CardBody.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="card.footer">
+          <Description>Any valid Box prop for the CardFooter.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ background: "background-contrast" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+      </ThemeDoc>
+    </ComponentDoc>
+
+    <ComponentDoc
       name="CardHeader"
-      desc={descCardHeader}
+      description="The Card Header"
+      intrinsicElement="div"
       isA={{
         base: 'Header',
         path: '/header',
       }}
     />
-    <Doc
+
+    <ComponentDoc
       name="CardBody"
-      desc={descCardBody}
+      description="The body of the card, mostly used for placing content"
+      intrinsicElement="div"
       isA={{
         base: 'Box',
         path: '/box',
@@ -52,9 +104,11 @@ export default () => (
         },
       }}
     />
-    <Doc
+
+    <ComponentDoc
       name="CardFooter"
-      desc={descCardFooter}
+      description="The Card Footer"
+      intrinsicElement="div"
       isA={{
         base: 'Footer',
         path: '/footer',

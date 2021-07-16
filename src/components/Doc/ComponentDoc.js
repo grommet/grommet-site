@@ -20,7 +20,7 @@ export const ComponentDoc = ({
   const properties = [];
   const themeDoc = [];
   const additionalChildren = [];
-  if (children.length) {
+  if (children && children.length) {
     for (let i = 0; i < children.length; i += 1) {
       if (children[i].type.displayName === 'Properties') {
         properties.push(children[i]);
