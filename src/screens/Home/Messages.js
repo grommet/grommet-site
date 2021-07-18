@@ -16,7 +16,6 @@ const COMPANIES = [
   'Twilio',
   'DXC',
   'MicroFocus',
-  'Shopify',
   'Sony',
   'IBM',
   'Aruba',
