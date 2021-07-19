@@ -1,25 +1,38 @@
 import React from 'react';
-
 import { CheckBoxGroup } from 'grommet';
-import { doc } from 'grommet/components/CheckBoxGroup/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+} from '../components/Doc';
 import Item from './Components/Item';
-import { genericSyntaxes } from '../utils/props';
-
-const desc = doc(CheckBoxGroup).toJSON();
+import { GenericBool } from '../utils/genericPropExamples';
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="CheckBoxGroup"
-      desc={desc}
-      code={`<Grommet theme={grommet}>
-  <Box pad="medium">
-    <CheckBoxGroup options={["Maui", "Kauai", "Oahu"]} />
-  </Box>
-</Grommet>`}
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Input-CheckBoxGroup&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="A group of CheckBoxes"
+      intrinsicElement="div"
       isA={{
         base: 'Box',
         path: '/box',
@@ -27,11 +40,102 @@ export default () => (
           gap: 'small',
         },
       }}
-      syntaxes={{
-        ...genericSyntaxes,
-        onChange: ['({ value, option }) => {...}'],
-      }}
-    />
+      code={`<Grommet theme={grommet}>
+  <Box pad="medium">
+    <CheckBoxGroup options={["Maui", "Kauai", "Oahu"]} />
+  </Box>
+</Grommet>`}
+    >
+      <Properties>
+        <Property name="value">
+          <Description>
+            An array of the values for the checked options. If options is
+            provided as an object, the value array will be the values that the
+            valueKey maps to.
+          </Description>
+          <PropertyValue type="array">
+            <Example>
+              {`
+[
+  number
+  "string"
+]
+`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="disabled">
+          <Description>Disables all options.</Description>
+          <GenericBool />
+        </Property>
+
+        <Property name="labelKey">
+          <Description>
+            When the options array contains objects, this property indicates how
+            to determine the label of each option. If a string is provided, it
+            is used as the key to retrieve each option's label.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"label"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="name">
+          <Description>
+            Required when used in the Context of Form and FormField.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"name"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onChange">
+          <Description>
+            Function that will be called when the user clicks on a CheckBox
+            option.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              The function will pass a React event object with the additional
+              CheckBoxGroup properties of 'option' and 'value'.
+            </Description>
+            <Example>{`({ value, option }) => {...}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="options">
+          <Description>The options to choose from.</Description>
+          <PropertyValue type="array[string]">
+            <Example>["Maui", "Kauai", "Oahu"]</Example>
+          </PropertyValue>
+          <PropertyValue type="array[object]">
+            <Description>
+              An array of objects of CheckBox props excluding the 'checked'
+              property, use CheckBoxGroup 'value' prop instead of 'checked'.
+            </Description>
+            <Example>
+              {`{[
+  { label: 'Maui' },
+  { label: 'Jerusalem' },
+  { label: 'Wuhan' },
+]}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="valueKey">
+          <Description>
+            When the options array contains objects, this property indicates how
+            to determine the value of each option. If a string is provided, it
+            is used as the key to retrieve each option's value.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"value"</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 
