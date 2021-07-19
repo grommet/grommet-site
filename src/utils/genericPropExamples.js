@@ -142,14 +142,14 @@ export const GenericPad = () => (
       <Example>
         {`
 {
-  bottom: "...",
-  end: "...",
+  vertical: "...",
   horizontal: "...",
+  top: "...",
+  bottom: "...",
   left: "...",
   right: "...",
   start: "...",
-  top: "...",
-  vertical: "..."
+  end: "..."
 }
         `}
       </Example>
