@@ -4,7 +4,7 @@ import { Box, Text } from 'grommet';
 import { ThemeContext } from 'grommet/contexts';
 
 import Page from '../components/Page';
-import Doc from '../components/Doc';
+import { ComponentDoc } from '../components/Doc';
 
 const BRAND_REGEXP = /^brand/i;
 const ACCENT_REGEXP = /^accent-/i;
@@ -45,7 +45,7 @@ Set.propTypes = {
 
 const Color = () => (
   <Page>
-    <Doc name="Color" text="The color palette.">
+    <ComponentDoc name="Color" description="The color palette">
       <ThemeContext.Consumer>
         {theme => (
           <Box gap="large" margin={{ vertical: 'large' }}>
@@ -58,7 +58,7 @@ const Color = () => (
           </Box>
         )}
       </ThemeContext.Consumer>
-    </Doc>
+    </ComponentDoc>
   </Page>
 );
 
