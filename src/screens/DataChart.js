@@ -1,17 +1,26 @@
 import React from 'react';
-
 import { Anchor, Box, DataChart, Heading, Paragraph } from 'grommet';
-import { doc, themeDoc } from 'grommet/components/DataChart/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
-import { genericSyntaxes } from '../utils/props';
 import Item from './Components/Item';
 import { Code } from '../components/Doc/Code';
-
-const desc = doc(DataChart).toJSON();
-delete desc.availableAt;
-delete desc.description;
+import {
+  GenericA11yTitle,
+  GenericAlignSelf,
+  GenericBool,
+  GenericGridArea,
+  GenericMargin,
+  SizesXsmallXlarge,
+  GenericPad,
+} from '../utils/genericPropExamples';
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+  PropOptions,
+} from '../components/Doc';
 
 const Examples = () => (
   <Box>
@@ -111,81 +120,353 @@ const Examples = () => (
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="DataChart"
-      align="stretch"
-      desc={desc}
-      text=""
-      examples={<Examples />}
-      themeDoc={themeDoc}
-      syntaxes={{
-        ...genericSyntaxes,
-        axis: {
-          x: [
-            true,
-            {
-              granularity: ['coarse', 'medium', 'fine'],
-              property: 'date',
-            },
-          ],
-          y: [
-            true,
-            {
-              granularity: ['coarse', 'medium', 'fine'],
-              property: 'amount',
-            },
-          ],
+      intrinsicElement="div"
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Visualizations-DataChart&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
         },
-        chart: [
-          [
-            'amount',
-            {
-              property: 'amount',
-              type: ['area', 'bar', 'line', 'point'],
-              color: 'graph-1',
-              thickness: 'medium',
-              dash: true,
-              round: true,
-            },
-            {
-              property: ['amount', 'percent'],
-              type: 'bars',
-              thickness: 'medium',
-            },
-          ],
-        ],
-        data: [
-          [
-            {
-              date: '2020-05-28',
-              amount: 88,
-              percent: 20,
-            },
-            {
-              date: '2020-05-27',
-              amount: 77,
-              percent: 15,
-            },
-          ],
-        ],
-        gap: ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
-        pad: ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
-        size: ['fill', { height: '...', width: '...' }],
-        series: [
-          [
-            'propertyName',
-            {
-              label: 'Property Label',
-              prefix: '$',
-              property: 'propertyName',
-              render: '(value, datam, dataIndex) => element',
-              suffix: '%',
-            },
-          ],
-        ],
-        thickness: ['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge'],
-      }}
-    />
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+    >
+      <Examples />
+      <Properties>
+        <Property name="a11yTitle">
+          <Description>
+            Custom label to be used by screen readers. When provided, an
+            aria-label will be added to the element.
+          </Description>
+          <GenericA11yTitle />
+        </Property>
+
+        <Property name="alignSelf">
+          <Description>
+            How to align along the cross axis when contained in a Box or along
+            the column axis when contained in a Grid.
+          </Description>
+          <GenericAlignSelf />
+        </Property>
+
+        <Property name="gridArea">
+          <Description>
+            The name of the area to place this inside a parent Grid.
+          </Description>
+          <GenericGridArea />
+        </Property>
+
+        <Property name="margin">
+          <Description>
+            The amount of margin around the component. An object can be
+            specified to distinguish horizontal margin, vertical margin, and
+            margin on a particular side.
+          </Description>
+          <GenericMargin />
+        </Property>
+
+        <Property name="axis">
+          <Description>
+            Whether to show an axis and how it should look.
+          </Description>
+          <PropertyValue type="boolean">
+            <Description>
+              If axis is true, DataChart will look for a property called 'date'
+              or 'time' and automatically use that for the x-axis. DataChart
+              will use the first property in 'series' for the y-axis.
+            </Description>
+            <Example defaultValue>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+
+          <PropertyValue type="string">
+            <Description>The name of a property.</Description>
+            <Example>"date"</Example>
+          </PropertyValue>
+
+          <PropertyValue type="object">
+            <Description>
+              If 'x' or 'y' is a string, it indicates the property to use to
+              determine the values to show. If 'x' is true, DataChart will look
+              for a property called 'date' or 'time' and automatically use that
+              for the x-axis. 'granularity' indicates how many values to show.
+              If DataChart can't find a property to use, it will use the data
+              index for the x-axis. If axis or 'y' is true, DataChart will use
+              the first property in 'series'. 'coarse' granularity shows two
+              values, one at each end. 'fine' granularity shows all x-axis
+              values and 5 y-axis values. 'medium' granularity picks something
+              in between.
+            </Description>
+            <Example>
+              {`
+{
+  x: boolean | string |
+    {
+      granularity: "...",
+      property: "date"
+    },
+  y: boolean | string |
+    {
+      granularity: "...",
+      "property": "amount"
+    }
+  ]
+}
+            `}
+            </Example>
+            <PropOptions prop="granularity">
+              <Example>"course"</Example>
+              <Example>"medium"</Example>
+              <Example>"fine"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="bounds">
+          <Description>
+            When set to 'align', indicates that the bounds of all series should
+            be aligned. When not set, the bounds of each series property are
+            based solely on the data found for that property.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"align"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="chart">
+          <Description>How to visualize the data.</Description>
+          <PropertyValue type="string">
+            <Description>
+              If only a string is specified, that is the property to use and all
+              other aspects are defaulted.
+            </Description>
+            <Example>"property"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              'property' indicates which property of the data objects to use.
+              When 'property' is an array, multiple properties are used for a
+              stacked bar chart. If 'property' is an object, it specifies a map
+              of properties to graphic aspects: x, y, color, thickness. If
+              'transform' is specified, it will be used to transform the data
+              value before using it. For example, to convert a data value to a
+              hex color string for the color.
+            </Description>
+            <Example>
+              {`
+{
+  property: "...",
+  color: "...",
+  dash: boolean,
+  opacity: "...",
+  point: "...",
+  round: boolean,
+  thickness: "...",
+  type: "..."
+}
+              `}
+            </Example>
+            <PropOptions prop="property">
+              <Example>"string"</Example>
+              <Example>array["property1", "property2"]</Example>
+              <Example>{`array[{ property: "...", color: "..." }]`}</Example>
+              <Example>{`{ color: "string" | { property: "...", transform: function }, thickness: "...", x: "string", y: "string" }`}</Example>
+            </PropOptions>
+            <PropOptions prop="color">
+              <Example>"string"</Example>
+              <Example>{`{ dark: "string", light: "string" }`}</Example>
+            </PropOptions>
+            <PropOptions prop="opacity">
+              <Example>"weak"</Example>
+              <Example>"medium"</Example>
+              <Example>"strong"</Example>
+              <Example>number</Example>
+              <Example>boolean</Example>
+            </PropOptions>
+            <PropOptions prop="point">
+              <Example>"circle"</Example>
+              <Example>"diamond"</Example>
+              <Example>"square"</Example>
+              <Example>"star"</Example>
+              <Example>"triangle"</Example>
+              <Example>"triangleDown"</Example>
+            </PropOptions>
+            <PropOptions prop="thickness">
+              <Example>"hair"</Example>
+              <SizesXsmallXlarge />
+              <Example>"none"</Example>
+              <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="type">
+              <Example>"bar"</Example>
+              <Example>"line"</Example>
+              <Example>"area"</Example>
+              <Example>"point"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="data">
+          <Description>The data set.</Description>
+          <PropertyValue type="array">
+            <Example>
+              {`
+[
+  {
+    "date": "2020-05-28",
+    "amount": 88,
+    "percent": 20
+  },
+  {
+    "date": "2020-05-27",
+    "amount": 77,
+    "percent": 15
+  }
+]
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="detail">
+          <Description>
+            Whether to add the ability to interact with the chart via mouse or
+            keyboard to show details on specific values in the chart. It shows
+            all properties specified in 'series', using any 'render' functions
+            therein.
+          </Description>
+          <GenericBool />
+        </Property>
+
+        <Property name="gap">
+          <Description>
+            The spacing between the axes and the Charts.
+          </Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"none"</Example>
+            <SizesXsmallXlarge />
+            <Example>"string"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="guide">
+          <Description>
+            Whether to put guidelines underneath the chart graphics. See the
+            description of 'granularity' under 'axis'.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  x: boolean |
+    {
+      granularity:
+        "coarse"
+        "medium"
+        "fine"
+    }
+  y: boolean |
+    {
+      granularity:
+        "coarse"
+        "medium"
+        "fine"
+    }
+}
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="legend">
+          <Description>Whether to include a legend</Description>
+          <GenericBool />
+        </Property>
+
+        <Property name="pad">
+          <Description>
+            Spacing around the outer edge of the drawing coordinate area for the
+            graphic elements to overflow into.
+          </Description>
+          <GenericPad />
+        </Property>
+
+        <Property name="series">
+          <Description disableMarkdown>
+            Describes which parts of the 'data' are of interest and how to
+            handle them.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"property"</Example>
+          </PropertyValue>
+          <PropertyValue type="array[string]">
+            <Example>["property1", "property2"]</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              {`'property' indicates which property of the 'data'
+ objects this series refers to. 'label' indicates how to label the series
+ in a legend or hover details. 'prefix' and 'suffix' are applied to the
+ data values shown in an axis, legend, or details. 'render' allows custom
+ rendering of the data value. 'render' is called with:
+ (value, datum, property) => { return < />; }`}
+            </Description>
+            <Example>
+              {`
+{
+  label: "string",
+  prefix: "$",
+  property: "string",
+  render: (value, datam, dataIndex) => element,
+  suffix: "%"
+}
+            `}
+            </Example>
+          </PropertyValue>
+          <PropertyValue type="array[object]">
+            <Example>
+              {`
+[
+  {
+    label: "string",
+    prefix: "$",
+    property: "string",
+    render: (value, datam, dataIndex) => element,
+    suffix: "%"
+  },
+]
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="size">
+          <Description>
+            The size of the Charts. This does not include the axes and any gap.
+            It is passed through to the underlying Chart.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"fill"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ height: "...", width: "..." }`}</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 
