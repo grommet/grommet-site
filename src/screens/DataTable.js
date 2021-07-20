@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Box } from 'grommet';
-
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -1033,102 +1031,6 @@ export default () => (
       </ThemeDoc>
     </ComponentDoc>
   </Page>
-  //   <Page>
-  //     <Doc
-  //       name="DataTable"
-  //       desc={desc}
-  //       themeDoc={themeDoc}
-  //       code={`<DataTable
-  //   columns={[
-  //     {
-  //       property: 'name',
-  //       header: <Text>Name</Text>,
-  //       primary: true,
-  //     },
-  //     {
-  //       property: 'percent',
-  //       header: 'Complete',
-  //       render: datum => (
-  //         <Box pad={{ vertical: 'xsmall' }}>
-  //           <Meter
-  //             values={[{ value: datum.percent }]}
-  //             thickness="small"
-  //             size="small"
-  //           />
-  //         </Box>
-  //       ),
-  //     },
-  //   ]}
-  //   data={[
-  //     { name: 'Alan', percent: 20 },
-  //     { name: 'Bryan', percent: 30 },
-  //     { name: 'Chris', percent: 40 },
-  //     { name: 'Eric', percent: 80 },
-  //   ]}
-  // />`}
-  //       syntaxes={{
-  //         ...genericSyntaxes,
-  //         background: [
-  //           'light-2',
-  //           ['white', 'light-2'],
-  //           {
-  //             header: 'dark-2',
-  //             body: ['white', 'light-2'],
-  //             footer: 'dark-3',
-  //           },
-  //         ],
-  //         border: [
-  //           true,
-  //           'horizontal',
-  //           'vertical',
-  //           'top',
-  //           'bottom',
-  //           'right',
-  //           'left',
-  //           { color: 'border', side: 'horizontal', size: 'small' },
-  //           {
-  //             header: 'bottom',
-  //             body: { color: 'light-2', side: 'bottom' },
-  //             footer: 'top',
-  //           },
-  //         ],
-  //         columns: [
-  //           [
-  //             {
-  //               align: 'center',
-  //               aggregate: 'avg',
-  //               footer: { aggregate: true },
-  //               header: 'Name',
-  //               primary: true,
-  //               property: 'name',
-  //               render: '(datum) => <Content />',
-  //               size: 'small',
-  //               search: true,
-  //               sortable: true,
-  //               units: 'GiB',
-  //             },
-  //           ],
-  //           {
-  //             VALUES: {
-  //               align: ['start', 'center', 'end'],
-  //               aggregate: ['avg', 'max', 'min', 'sum'],
-  //             },
-  //           },
-  //         ],
-  //         groupBy: [
-  //           'location',
-  //           {
-  //             property: 'location',
-  //             expand: ['Paris', 'Los Angeles'],
-  //             onExpand: '(key) => {...}',
-  //           },
-  //         ],
-  //         onClickRow: ['({ datum }) => {...}'],
-  //         onMore: ['() => {...}'],
-  //         onSearch: ['({ key: "search text", ... }) => {...}'],
-  //       }}
-  //     />
-  //   </Page>
 );
 
 export const DataTableItem = ({ name, path }) => (
