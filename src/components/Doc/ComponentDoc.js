@@ -109,7 +109,7 @@ export const ComponentDoc = ({
       {additionalChildren}
 
       {properties}
-      {console.log(typeof intrinsicElement)}
+
       {intrinsicElement && (
         <DomProps name={name} intrinsicElement={intrinsicElement} />
       )}
