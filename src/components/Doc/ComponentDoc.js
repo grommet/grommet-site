@@ -136,7 +136,10 @@ ComponentDoc.propTypes = {
   children: PropTypes.node,
   code: PropTypes.string,
   description: PropTypes.string,
-  intrinsicElement: PropTypes.string,
+  intrinsicElement: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   isA: PropTypes.shape({
     base: PropTypes.string,
     defaultProps: PropTypes.shape({}),

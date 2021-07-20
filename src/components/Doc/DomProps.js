@@ -4,6 +4,24 @@ import { Box, Paragraph, Anchor, Heading } from 'grommet';
 import { Link as LinkIcon } from 'grommet-icons';
 
 export const DomProps = ({ name, intrinsicElement }) => {
+  const Elements = [];
+  if (typeof intrinsicElement === 'object') {
+    console.log(intrinsicElement.length);
+    for (let i = 0; i < intrinsicElement.length; i += 1) {
+      Elements.push(
+        <IntrinsicDoc name={name} key={i} element={intrinsicElement[i]} />,
+      );
+    }
+  } else {
+    Elements.push(
+      <IntrinsicDoc
+        name={name}
+        key={intrinsicElement}
+        element={intrinsicElement}
+      />,
+    );
+  }
+
   return (
     <Box
       id="dom-react"
@@ -21,27 +39,41 @@ export const DomProps = ({ name, intrinsicElement }) => {
         </Heading>
         <Anchor href="#dom-react" icon={<LinkIcon color="light-4" />} />
       </Box>
-      <Paragraph>
-        At its core, the {name} component is a regular {`<${intrinsicElement}>`}{' '}
-        element. Thus, both DOM and React properties, methods, and events are
-        accessible. To read up on all of the possible DOM attributes and types
-        available for {intrinsicElement} elements, check out this{' '}
-        <Anchor
-          href={`https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${intrinsicElement}`}
-          label="MDN Web Documents page."
-          target="_blank"
-        />{' '}
-        To learn more about DOM events and methods, you can read more on the{' '}
-        <Anchor
-          href="https://developer.mozilla.org/en-US/docs/Web/Events"
-          label="MDN Web Events documentation page"
-          target="_blank"
-        />
-        .
-      </Paragraph>
+      {Elements}
       <ReactDocs />
     </Box>
   );
+};
+
+const IntrinsicDoc = ({ name, element }) => (
+  <Paragraph>
+    At its core, the {name} component is a regular {`<${element}>`} element.
+    Thus, both DOM and React properties, methods, and events are accessible. To
+    read up on all of the possible DOM attributes and types available for{' '}
+    {element} elements, check out this{' '}
+    <Anchor
+      href={`https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}`}
+      label="MDN Web Documents page."
+      target="_blank"
+    />{' '}
+    To learn more about DOM events and methods, you can read more on the{' '}
+    <Anchor
+      href="https://developer.mozilla.org/en-US/docs/Web/Events"
+      label="MDN Web Events documentation page"
+      target="_blank"
+    />
+    .
+  </Paragraph>
+);
+
+IntrinsicDoc.propTypes = {
+  name: PropTypes.string,
+  element: PropTypes.string,
+};
+
+IntrinsicDoc.defaultProps = {
+  name: undefined,
+  element: undefined,
 };
 
 const ReactDocs = () => (
@@ -69,7 +101,10 @@ const ReactDocs = () => (
 
 DomProps.propTypes = {
   name: PropTypes.string,
-  intrinsicElement: PropTypes.string,
+  intrinsicElement: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
 };
 
 DomProps.defaultProps = {
