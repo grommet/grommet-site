@@ -65,6 +65,21 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="children">
+          <Description>
+            Function that will be called to render the visual representation. It
+            will be passed an object indicating whether the button is checked.
+            It should return a react element.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              'option' and 'checked' can be passed as an argument that would
+              then return a react element.
+            </Description>
+            <Example>{`(option, { checked }) => <Box ...>{...}</Box>`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="disabled">
           <Description>Disables all options.</Description>
           <GenericBool />
