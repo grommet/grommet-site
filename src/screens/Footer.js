@@ -40,7 +40,7 @@ export default () => (
           justify: 'between',
         },
       }}
-    ></ComponentDoc>
+    />
   </Page>
 );
 
