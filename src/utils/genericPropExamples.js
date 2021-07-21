@@ -1,5 +1,10 @@
 import React from 'react';
-import { Description, Example, PropertyValue } from '../components/Doc';
+import {
+  Description,
+  Example,
+  PropertyValue,
+  PropOptions,
+} from '../components/Doc';
 
 export const GenericA11yTitle = () => (
   <PropertyValue type="string">
@@ -34,6 +39,52 @@ export const GenericAs = () => (
     </PropertyValue>
     <PropertyValue type="function">
       <Example>{`() => {}`}</Example>
+    </PropertyValue>
+  </>
+);
+
+export const GenericBackground = () => (
+  <>
+    <PropertyValue type="string">
+      <Description>A color or image url.</Description>
+      <Example>"neutral-1"</Example>
+      <Example>"url(//my.com/assets/img.png)"</Example>
+    </PropertyValue>
+    <PropertyValue type="object">
+      <Example>
+        {`
+{
+  color: "neutral-1",
+  dark: true,
+  image: "url(//my.com/assets/img.png)"
+  position: "bottom",
+  opacity: true,
+  repeat: "no-repeat",
+  size: "cover",
+  light: "string"
+}
+              `}
+      </Example>
+      <PropOptions prop="opacity">
+        <Example>"weak"</Example>
+        <Example>"medium"</Example>
+        <Example>"strong"</Example>
+        <Example>boolean</Example>
+        <Example>number</Example>
+      </PropOptions>
+      <PropOptions prop="position">
+        <Example>any CSS for background-position</Example>
+      </PropOptions>
+      <PropOptions prop="repeat">
+        <Example>"no-repeat"</Example>
+        <Example>"repeat"</Example>
+        <Example>"string"</Example>
+      </PropOptions>
+      <PropOptions prop="size">
+        <Example>"cover"</Example>
+        <Example>"contain"</Example>
+        <Example>"string"</Example>
+      </PropOptions>
     </PropertyValue>
   </>
 );

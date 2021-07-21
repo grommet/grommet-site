@@ -170,7 +170,7 @@ export const InputStyle = () => (
     <Property name="global.input.font.height">
       <Description>The line-height of the text.</Description>
       <PropertyValue type="string">
-        <Example>string</Example>
+        <Example>"normal"</Example>
       </PropertyValue>
     </Property>
     <Property name="global.input.font.size">
