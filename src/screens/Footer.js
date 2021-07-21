@@ -1,19 +1,29 @@
 import React from 'react';
-
 import { Box, Footer } from 'grommet';
-import { doc } from 'grommet/components/Footer/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(Footer).toJSON();
+import { ComponentDoc } from '../components/Doc';
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Footer"
-      desc={desc}
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Layout-Footer&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/footer&module=%2Fsrc%2FFooter.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="Footer for a document or section"
       code={`<Footer background="brand" pad="medium">
   <Text>Copyright</Text>
   <Anchor label="About" />
