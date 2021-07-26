@@ -163,7 +163,8 @@ export default () => (
     length: number | [number],
     fixed: "string",
     options: [string] | [number],
-    regexp: {}
+    regexp: {},
+    placeholder: "string:
   }
 ]
             `}
