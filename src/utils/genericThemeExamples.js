@@ -81,6 +81,70 @@ export const GlobalBorderSize = () => (
   </PropertyValue>
 );
 
+export const GlobalColors = () => (
+  <PropertyValue type="object">
+    <Example>
+      {`
+{
+  icon: { dark: '#f8f8f8', light: '#666666' },
+  active: 'rgba(221, 221, 221, 0.5)',
+  'background-back': { dark: '#33333308', light: '#EDEDED' },
+  'background-front': { dark: '#444444', light: '#FFFFFF' },
+  'background-contrast': { light: '#33333310', dark: '#FFFFFF18' },
+  'active-background': 'background-contrast',
+  'active-text': 'text-strong',
+  black: '#000000',
+  border: { dark: 'rgba(255, 255, 255, 0.33)', light: 'rgba(0, 0, 0, 0.33)' },
+  brand: '#7D4CDB',
+  control: { dark: 'accent-1', light: 'brand' },
+  focus: '#6FFFB0',
+  'graph-0': 'accent-1',
+  'graph-1': 'neutral-1',
+  'graph-2': 'neutral-2',
+  'graph-3': 'neutral-3',
+  'graph-4': 'neutral-4',
+  placeholder: '#AAAAAA',
+  selected: 'brand',
+  text: { dark: '#f8f8f8', light: '#444444' },
+  'text-strong': { dark: '#FFFFFF', light: '#000000' },
+  'text-weak': { dark: '#CCCCCC', light: '#555555' },
+  'text-xweak': { dark: '#BBBBBB', light: '#666666' },
+  'selected-background': 'brand',
+  'selected-text': 'text-strong',
+  white: '#FFFFFF',
+  'accent-1': '#6FFFB0',
+  'accent-2': '#FD6FFF',
+  'accent-3': '#81FCED',
+  'accent-4': '#FFCA58',
+  'dark-1': '#333333',
+  'dark-2': '#555555',
+  'dark-3': '#777777',
+  'dark-4': '#999999',
+  'dark-5': '#999999',
+  'dark-6': '#999999',
+  'light-1': '#F8F8F8',
+  'light-2': '#F2F2F2',
+  'light-3': '#EDEDED',
+  'light-4': '#DADADA',
+  'light-5': '#DADADA',
+  'light-6': '#DADADA',
+  'neutral-1': '#00873D',
+  'neutral-2': '#3D138D',
+  'neutral-3': '#00739D',
+  'neutral-4': '#A2423D',
+  'status-critical': '#FF4040',
+  'status-error': '#FF4040',
+  'status-warning': '#FFAA15',
+  'status-ok': '#00C781',
+  'status-unknown': '#CCCCCC',
+  'status-disabled': '#CCCCCC',
+  background: { light: '#ffffff', dark: '#000000' },
+}
+              `}
+    </Example>
+  </PropertyValue>
+);
+
 export const GlobalElevation = () => (
   <PropertyValue type="object">
     <Example>
