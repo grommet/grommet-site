@@ -160,7 +160,7 @@ export const GlobalHoverColor = () => (
   <>
     <PropertyValue type="string">
       <Description>A hex, name, or rgb value.</Description>
-      <Example>"brand"</Example>
+      <Example>"black"</Example>
     </PropertyValue>
     <PropertyValue type="object">
       <Description>
