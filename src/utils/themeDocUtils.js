@@ -212,15 +212,22 @@ export const InputStyle = () => (
           An object specifying padding for different sides of the component.
         </Description>
         <Example>
-          {`{ top: "string", bottom: "string", left: "string", right: 
-    "string", horizontal: "string", vertical: "string" }`}
+          {`
+{ 
+  top: "string", 
+  bottom: "string", 
+  left: "string", 
+  right: "string", 
+  horizontal: "string", 
+  vertical: "string" 
+}`}
         </Example>
       </PropertyValue>
     </Property>
   </>
 );
 
-export const placeholderStyle = () => (
+export const PlaceholderStyle = () => (
   <Property name="global.colors.placeholder">
     <Description>The placeholder color used for the component.</Description>
     <PropertyValue type="string">
