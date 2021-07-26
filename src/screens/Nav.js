@@ -1,25 +1,30 @@
 import React from 'react';
-
 import { Anchor, Nav } from 'grommet';
 import { FacebookOption, Twitter, Github, Linkedin } from 'grommet-icons';
-import { doc } from 'grommet/components/Nav/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(Nav).toJSON();
+import { ComponentDoc } from '../components/Doc';
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Nav"
-      desc={desc}
-      code={`<Nav direction="row" background="brand" pad="medium">
-    <Anchor icon={<Icons.Home />} hoverIndicator />
-    <Anchor icon={<Icons.Notification />} hoverIndicator />
-    <Anchor icon={<Icons.ChatOption />} hoverIndicator />
-</Nav>`}
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Controls-Nav&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/nav&module=%2Fsrc%2FNav.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="Is a Box container for navigation links"
       isA={{
         base: 'Box',
         path: '/box',
@@ -29,6 +34,11 @@ export default () => (
           gap: 'medium',
         },
       }}
+      code={`<Nav direction="row" background="brand" pad="medium">
+  <Anchor icon={<Icons.Home />} hoverIndicator />
+  <Anchor icon={<Icons.Notification />} hoverIndicator />
+  <Anchor icon={<Icons.ChatOption />} hoverIndicator />
+</Nav>`}
     />
   </Page>
 );
