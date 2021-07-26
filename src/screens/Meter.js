@@ -257,44 +257,6 @@ export default () => (
       </ThemeDoc>
     </ComponentDoc>
   </Page>
-  //   <Page>
-  //     <Doc
-  //       name="Meter"
-  //       desc={desc}
-  //       code={`<Meter
-  //   values={[{
-  //     value: 60,
-  //     label: 'sixty',
-  //     onClick: () => {}
-  //   }]}
-  //   aria-label="meter"
-  // />`}
-  //       syntaxes={{
-  //         ...genericSyntaxes,
-  //         backgroundColor: [
-  //           'light-2',
-  //           {
-  //             color: 'light-2',
-  //             opacity: 'medium',
-  //           },
-  //         ],
-  //         values: [
-  //           [{ value: 75 }],
-  //           [
-  //             {
-  //               value: 45,
-  //               color: 'graph-0',
-  //               highlight: false,
-  //               label: 'utilization',
-  //               onClick: '() => {}',
-  //               onHover: '(true) => {}',
-  //             },
-  //           ],
-  //         ],
-  //       }}
-  //       themeDoc={themeDoc}
-  //     />
-  //   </Page>
 );
 
 export const MeterItem = ({ name, path }) => (
