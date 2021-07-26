@@ -315,49 +315,6 @@ export default () => (
       </ThemeDoc>
     </ComponentDoc>
   </Page>
-  //   <Page>
-  //     <Doc
-  //       name="Layer"
-  //       desc={desc}
-  //       syntaxes={{
-  //         margin: [
-  //           'none',
-  //           'xsmall',
-  //           'small',
-  //           'medium',
-  //           'large',
-  //           'any CSS size',
-  //           {
-  //             vertical: '...',
-  //             horizontal: '...',
-  //             top: '...',
-  //             bottom: '...',
-  //             left: '...',
-  //             right: '...',
-  //           },
-  //         ],
-  //         onClickOutside: '() => {}',
-  //         onEsc: '() => {}',
-  //       }}
-  //       code={`function Example() {
-  //   const [show, setShow] = React.useState();
-  //   return (
-  //     <Box>
-  //       <Button label="show" onClick={() => setShow(true)} />
-  //       {show && (
-  //         <Layer
-  //           onEsc={() => setShow(false)}
-  //           onClickOutside={() => setShow(false)}
-  //         >
-  //           <Button label="close" onClick={() => setShow(false)} />
-  //         </Layer>
-  //       )}
-  //     </Box>
-  //   );
-  // }`}
-  //       themeDoc={themeDoc}
-  //     />
-  //   </Page>
 );
 
 export const LayerItem = ({ name, path }) => (
