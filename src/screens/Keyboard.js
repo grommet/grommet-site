@@ -1,25 +1,146 @@
 import React from 'react';
-
-import { Box, Keyboard } from 'grommet';
+import { Box } from 'grommet';
 import { Add } from 'grommet-icons';
-import { doc } from 'grommet/components/Keyboard/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
 import Key from './Components/Key';
-
-const desc = doc(Keyboard).toJSON();
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+} from '../components/Doc';
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Keyboard"
-      desc={desc}
+      description="A handler of keyboard key presses"
       code={`<Keyboard onEsc={() => {}}>
   <Box pad="large" background="light-4" />
 </Keyboard>`}
-    />
+    >
+      <Properties>
+        <Property name="target">
+          <Description>Where to listen for the keyboard presses.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"component"</Example>
+            <Example>"document"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onBackspace">
+          <Description>
+            Function that will be called when the user presses the backspace
+            key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onComma">
+          <Description>
+            Function that will be called when the user presses the comma key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onDown">
+          <Description>
+            Function that will be called when the user presses the down key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onEnter">
+          <Description>
+            Function that will be called when the user presses the enter key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onEsc">
+          <Description>
+            Function that will be called when the user presses the esc key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onKeyDown">
+          <Description>
+            Function that will be called when the user presses any key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onLeft">
+          <Description>
+            Function that will be called when the user presses the left key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onRight">
+          <Description>
+            Function that will be called when the user presses the right key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onShift">
+          <Description>
+            Function that will be called when the user presses the shift key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onSpace">
+          <Description>
+            Function that will be called when the user presses the space key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onTab">
+          <Description>
+            Function that will be called when the user presses the tab key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onUp">
+          <Description>
+            Function that will be called when the user presses the up key.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 
