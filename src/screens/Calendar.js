@@ -224,6 +224,23 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="messages">
+          <Description>
+            Custom messages for Calendar. Used for accessibility by screen
+            readers.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>
+              {`
+({
+  previous: "Moved to {date}",
+  next: "Moved to {date}",
+})
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="onReference">
           <Description>
             Called with an ISO8601 date when the user navigates to a different
