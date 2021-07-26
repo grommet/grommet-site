@@ -164,7 +164,7 @@ export default () => (
     fixed: "string",
     options: [string] | [number],
     regexp: {},
-    placeholder: "string:
+    placeholder: "string"
   }
 ]
             `}
