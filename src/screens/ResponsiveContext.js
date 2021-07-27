@@ -1,22 +1,39 @@
 import React from 'react';
-
 import { Box } from 'grommet';
-import { ResponsiveContext } from 'grommet/contexts';
-import { doc, themeDoc } from 'grommet/contexts/ResponsiveContext/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(ResponsiveContext.Consumer).toJSON();
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+  ThemeDoc,
+} from '../components/Doc';
+import { BreakpointStyle } from '../utils/themeDocUtils';
 
 export default () => (
   <Page>
-    <Doc
-      name="ResponsiveContext"
-      title="Responsive Context"
-      desc={desc}
-      themeDoc={themeDoc}
+    <ComponentDoc
+      name="Responsive Context"
+      availableAt={[
+        {
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+          url:
+            'https://storybook.grommet.io/?selectedKind=undefined-ResponsiveContext&full=0&stories=1&panelRight=0',
+        },
+        {
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/responsivecontext&module=%2Fsrc%2FResponsiveContext.js',
+        },
+      ]}
+      description="A means of providing different rendering behavior based on the
+ screen resolution"
       code={`function Example() {
   const size = React.useContext(ResponsiveContext);
   return (
@@ -25,7 +42,29 @@ export default () => (
     </Box>
   );
 }`}
-    />
+    >
+      <Properties>
+        <Property name="children">
+          <Description>
+            Render function that will be called with the current screen
+            resolution size (e.g our base theme of size 'small', 'medium',
+            'large'). The size value will be derived from global.breakpoints
+            entry in the theme object.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+
+      <ThemeDoc>
+        <BreakpointStyle
+          description="The possible breakpoints that could affect border, direction,
+gap, margin, pad, and round. The default values help to optimize content for
+mobile, tablet, and computer."
+        />
+      </ThemeDoc>
+    </ComponentDoc>
   </Page>
 );
 
