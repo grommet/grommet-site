@@ -236,7 +236,7 @@ export const PlaceholderStyle = () => (
   </Property>
 );
 
-export const responsiveBreakpoint = ({ description }) => (
+export const ResponsiveBreakpoint = ({ description }) => (
   <Property name="global.edgeSize.responsiveBreakpoint">
     <Description>{description}</Description>
     <PropertyValue type="string">
@@ -245,6 +245,6 @@ export const responsiveBreakpoint = ({ description }) => (
   </Property>
 );
 
-responsiveBreakpoint.propTypes = {
+ResponsiveBreakpoint.propTypes = {
   description: PropTypes.node.isRequired,
 };
