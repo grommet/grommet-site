@@ -16,6 +16,7 @@ export const ComponentDoc = ({
   intrinsicElement,
   isA, // used when component is a version of a html tag
   name,
+  pageTitle,
 }) => {
   const properties = [];
   const themeDoc = [];
@@ -43,7 +44,7 @@ export const ComponentDoc = ({
   return (
     <Box margin={{ bottom: 'large' }} width="xlarge" alignSelf="center">
       <Helmet>
-        <title>{name}</title>
+        <title>{pageTitle || name}</title>
         <meta name="description" content={description} />
       </Helmet>
       <Box align={align}>
@@ -146,6 +147,7 @@ ComponentDoc.propTypes = {
     path: PropTypes.string,
   }),
   name: PropTypes.string.isRequired,
+  pageTitle: PropTypes.string,
 };
 
 ComponentDoc.defaultProps = {
@@ -156,4 +158,5 @@ ComponentDoc.defaultProps = {
   description: undefined,
   intrinsicElement: undefined,
   isA: undefined,
+  pageTitle: undefined,
 };
