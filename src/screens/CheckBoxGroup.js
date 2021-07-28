@@ -73,7 +73,7 @@ export default () => (
           </Description>
           <PropertyValue type="function">
             <Description>
-              'option' and 'checked' can be passed as an argument that would
+              'option' and 'checked' can be passed as arguments that would
               then return a react element.
             </Description>
             <Example>{`(option, { checked }) => <Box ...>{...}</Box>`}</Example>
