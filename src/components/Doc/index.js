@@ -1,5 +1,3 @@
-export * from './Prop';
-export { default } from './Doc';
 export { ComponentDoc } from './ComponentDoc';
 export { Description } from './Description';
 export { Properties } from './Properties';
