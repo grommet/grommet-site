@@ -97,11 +97,7 @@ export default () => (
         </Property>
 
         <Property name="margin">
-          <Description>
-            The amount of margin around the component. An object can be
-            specified to distinguish horizontal margin, vertical margin, and
-            margin on a particular side.
-          </Description>
+          <Description>The amount of margin around the component.</Description>
           <GenericMargin />
         </Property>
 
@@ -152,9 +148,9 @@ export default () => (
             <Example>
               {`
 {
-  "color": "border",
-  "side": "horizontal",
-  "size": "small"
+  color: "border",
+  side: "horizontal",
+  size: "small"
 }
             `}
             </Example>

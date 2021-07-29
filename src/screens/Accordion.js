@@ -38,7 +38,7 @@ export default () => (
           label: 'CodeSandbox',
         },
       ]}
-      description="An accordion containing collapsible panels."
+      description="An accordion containing collapsible panels"
       intrinsicElement="div"
       code={`<Accordion>
   <AccordionPanel label="Panel 1">
