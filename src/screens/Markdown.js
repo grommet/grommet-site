@@ -33,7 +33,7 @@ export default () => (
           label: 'CodeSandbox',
         },
       ]}
-      description="Markdown formatting using Grommet components."
+      description="Markdown formatting using Grommet components"
       intrinsicElement="div"
       code={`<Markdown>${CONTENT}</Markdown>`}
     >

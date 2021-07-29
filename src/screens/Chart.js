@@ -83,11 +83,7 @@ export default () => (
         </Property>
 
         <Property name="margin">
-          <Description>
-            The amount of margin around the component. An object can be
-            specified to distinguish horizontal margin, vertical margin, and
-            margin on a particular side.
-          </Description>
+          <Description>The amount of margin around the component.</Description>
           <GenericMargin />
         </Property>
 
@@ -512,6 +508,7 @@ export default () => (
     <ComponentDoc
       name="calcs()"
       description="a function to help calculate values for bounds and axis"
+      pageTitle="Chart"
     >
       <code>
         {`const { axis, bounds, pad, thickness } = calcs(values, { coarseness, steps })`}

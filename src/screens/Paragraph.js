@@ -45,7 +45,7 @@ export default () => (
           label: 'CodeSandbox',
         },
       ]}
-      description="A paragraph of text."
+      description="A paragraph of text"
       intrinsicElement="p"
       code={`<Paragraph margin="none">
   Lorem ipsum dolor sit amet,
