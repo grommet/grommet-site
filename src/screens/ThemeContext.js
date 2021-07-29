@@ -1,27 +1,60 @@
 import React from 'react';
-
-import { ThemeContext } from 'grommet/contexts';
 import { Paint } from 'grommet-icons';
-import { doc } from 'grommet/contexts/ThemeContext/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(ThemeContext.Extend).toJSON();
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+} from '../components/Doc';
 
 export default () => (
   <Page>
-    <Doc
-      name="ThemeContext"
-      title="ThemeContext .Extend"
-      desc={desc}
+    <ComponentDoc
+      name="ThemeContext .Extend"
+      pageTitle="ThemeContext"
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=undefined-ThemeContext&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/themecontext&module=%2Fsrc%2FThemeContext.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="A means of tweaking the theme for contained components"
       code={`<ThemeContext.Extend
-  value={{ global: { colors: { doc: '#ff99cc' } } }}
+  value={
+    { 
+      global: { 
+        colors: { doc: '#ff99cc' } 
+      } 
+    }
+  }
 >
   <Box pad="large" background="doc" />
 </ThemeContext.Extend>`}
-    />
+    >
+      <Properties>
+        <Property name="value">
+          <Description>
+            Sparse theme object that will be merged with the current theme.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 
