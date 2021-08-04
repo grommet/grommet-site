@@ -6,7 +6,6 @@ import { Link as LinkIcon } from 'grommet-icons';
 export const DomProps = ({ name, intrinsicElement }) => {
   const Elements = [];
   if (typeof intrinsicElement === 'object') {
-    console.log(intrinsicElement.length);
     for (let i = 0; i < intrinsicElement.length; i += 1) {
       Elements.push(
         <IntrinsicDoc name={name} key={i} element={intrinsicElement[i]} />,

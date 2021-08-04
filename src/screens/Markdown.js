@@ -1,13 +1,14 @@
 import React from 'react';
-
-import { Markdown } from 'grommet';
-import { doc } from 'grommet/components/Markdown/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
-
-const desc = doc(Markdown).toJSON();
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+} from '../components/Doc';
 
 const CONTENT = `## Grommet **heart**s markdown
 
@@ -15,23 +16,65 @@ Favorite thing, [link](https://twitter.com/grommet_io)`;
 
 export default () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Markdown"
-      desc={desc}
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Type-Markdown&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/markdown&module=%2Fsrc%2FMarkdown.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+      ]}
+      description="Markdown formatting using Grommet components"
+      intrinsicElement="div"
       code={`<Markdown>${CONTENT}</Markdown>`}
-      syntaxes={{
-        components: [
-          {
-            p: {
-              component: 'Paragraph',
-              props: {
-                size: 'medium',
-              },
-            },
-          },
-        ],
-      }}
-    />
+    >
+      <Properties>
+        <Property name="components">
+          <Description>
+            Custom components and props to override html elements such as 'img'
+            or 'pre'. By default 'a', 'p', 'img', and table elements are
+            overridden with grommet components.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  a: { component: Anchor, props: {...} },
+  img: { component: Image },
+  p: { component: Paragraph },
+  table: { component: Table },
+  td: { component: TableCell },
+  tbody: { component: TableBody },
+  tfoot: { component: TableFooter },
+  th: { component: TableCell },
+  thead: { component: TableHeader },
+  tr: { component: TableRow }
+}
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="options">
+          <Description>
+            Used to tune the jsx compiler to specific properties, available
+            options on
+            [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx).
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ ... }`}</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 

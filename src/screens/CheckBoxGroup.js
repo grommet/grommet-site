@@ -130,11 +130,11 @@ export default () => (
               property, use CheckBoxGroup 'value' prop instead of 'checked'.
             </Description>
             <Example>
-              {`{[
+              {`[
   { label: 'Maui' },
   { label: 'Jerusalem' },
   { label: 'Wuhan' },
-]}`}
+]`}
             </Example>
           </PropertyValue>
         </Property>

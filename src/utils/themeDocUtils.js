@@ -15,37 +15,37 @@ export const BreakpointStyle = ({ description }) => (
       <Example defaultValue>
         {`
 {
-  "small": {
-    "value": 768,
-    "borderSize": {
-      "xsmall": "1px",
-      "small": "2px",
-      "medium": "4px",
-      "large": "6px",
-      "xlarge": "12px"
+  small: {
+    value: 768,
+    borderSize: {
+      xsmall: "1px",
+      small: "2px",
+      medium: "4px",
+      large: "6px",
+      xlarge: "12px"
     },
-    "edgeSize": {
-      "none": "0px",
-      "hair": "1px",
-      "xxsmall": "2px",
-      "xsmall": "3px",
-      "small": "6px",
-      "medium": "12px",
-      "large": "24px",
-      "xlarge": "48px"
+    edgeSize: {
+      none: "0px",
+      hair: "1px",
+      xxsmall: "2px",
+      xsmall: "3px",
+      small: "6px",
+      medium: "12px",
+      large: "24px",
+      xlarge: "48px"
     },
-    "size": {
-      "xxsmall": "24px",
-      "xsmall": "48px",
-      "small": "96px",
-      "medium": "192px",
-      "large": "384px",
-      "xlarge": "768px",
-      "full": "100%"
+    size: {
+      xxsmall: "24px",
+      xsmall: "48px",
+      small: "96px",
+      medium: "192px",
+      large: "384px",
+      xlarge: "768px",
+      full: "100%"
     }
   },
-  "medium": {"value": 1536},
-  "large": {}
+  medium: { value: 1536 },
+  large: {}
 }
         `}
       </Example>
@@ -170,7 +170,7 @@ export const InputStyle = () => (
     <Property name="global.input.font.height">
       <Description>The line-height of the text.</Description>
       <PropertyValue type="string">
-        <Example>string</Example>
+        <Example>"normal"</Example>
       </PropertyValue>
     </Property>
     <Property name="global.input.font.size">
@@ -212,15 +212,22 @@ export const InputStyle = () => (
           An object specifying padding for different sides of the component.
         </Description>
         <Example>
-          {`{ top: "string", bottom: "string", left: "string", right: 
-    "string", horizontal: "string", vertical: "string" }`}
+          {`
+{ 
+  top: "string", 
+  bottom: "string", 
+  left: "string", 
+  right: "string", 
+  horizontal: "string", 
+  vertical: "string" 
+}`}
         </Example>
       </PropertyValue>
     </Property>
   </>
 );
 
-export const placeholderStyle = () => (
+export const PlaceholderStyle = () => (
   <Property name="global.colors.placeholder">
     <Description>The placeholder color used for the component.</Description>
     <PropertyValue type="string">
@@ -229,7 +236,7 @@ export const placeholderStyle = () => (
   </Property>
 );
 
-export const responsiveBreakpoint = ({ description }) => (
+export const ResponsiveBreakpoint = ({ description }) => (
   <Property name="global.edgeSize.responsiveBreakpoint">
     <Description>{description}</Description>
     <PropertyValue type="string">
@@ -238,6 +245,6 @@ export const responsiveBreakpoint = ({ description }) => (
   </Property>
 );
 
-responsiveBreakpoint.propTypes = {
+ResponsiveBreakpoint.propTypes = {
   description: PropTypes.node.isRequired,
 };

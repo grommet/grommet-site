@@ -113,6 +113,7 @@ export default () => (
         base: 'Footer',
         path: '/footer',
       }}
+      pageTitle="Card"
     />
   </Page>
 );

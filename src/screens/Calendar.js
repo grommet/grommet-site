@@ -41,9 +41,7 @@ export default () => (
           label: 'CodeSandbox',
         },
       ]}
-      description="A calendar of days displayed by month.
- It can be used to select a single date, a range of dates, or multiple
- individual dates."
+      description="A calendar of days displayed by month"
       intrinsicElement="div"
       code={`<Calendar
   size="small"
@@ -76,11 +74,7 @@ export default () => (
         </Property>
 
         <Property name="margin">
-          <Description>
-            The amount of margin around the component. An object can be
-            specified to distinguish horizontal margin, vertical margin, and
-            margin on a particular side.
-          </Description>
+          <Description>The amount of margin around the component.</Description>
           <GenericMargin />
         </Property>
 
@@ -221,6 +215,23 @@ export default () => (
           <Description>The locale to use.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"en-US"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="messages">
+          <Description>
+            Custom messages for Calendar. Used for accessibility by screen
+            readers.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>
+              {`
+({
+  previous: "Moved to {date}",
+  next: "Moved to {date}",
+})
+            `}
+            </Example>
           </PropertyValue>
         </Property>
 
