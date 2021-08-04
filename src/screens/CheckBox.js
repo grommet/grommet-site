@@ -76,10 +76,10 @@ export default () => (
           </Description>
           <PropertyValue type="function">
             <Description>
-              'checked' can be passed as an argument that would then return a
-              react element.
+              'checked' and 'indeterminate' can be passed as arguments that
+              would then return a react element.
             </Description>
-            <Example>{`({ checked }) => <Box ...>{...}</Box>`}</Example>
+            <Example>{`({ checked, indeterminate }) => <Box ...>{...}</Box>`}</Example>
           </PropertyValue>
         </Property>
 

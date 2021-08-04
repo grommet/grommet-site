@@ -68,15 +68,16 @@ export default () => (
         <Property name="children">
           <Description>
             Function that will be called to render the visual representation. It
-            will be passed an object indicating whether the button is checked.
-            It should return a react element.
+            will be called for each option and passed the option, and an object
+            indicating whether the option is checked. It should return a react
+            element.
           </Description>
           <PropertyValue type="function">
             <Description>
-              'option' and 'checked' can be passed as arguments that would
-              then return a react element.
+              'option', 'checked' and 'indeterminate' can be passed as arguments
+              that would then return a react element.
             </Description>
-            <Example>{`(option, { checked }) => <Box ...>{...}</Box>`}</Example>
+            <Example>{`(option, { checked, indeterminate }) => <Box ...>{...}</Box>`}</Example>
           </PropertyValue>
         </Property>
 
