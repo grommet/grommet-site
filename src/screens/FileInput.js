@@ -87,7 +87,8 @@ export default () => (
   dropPromptMultiple: "Drop files here or", 
   files: "files", 
   remove: "remove", 
-  removeAll: "remove all"
+  removeAll: "remove all",
+  maxFile: "Attach a maximum of {max} files only."
 }
 `}
             </Example>
@@ -101,12 +102,16 @@ export default () => (
             <Description>
               If an object is supplied, 'aggregageThreshold' indicates the
               maximum number of individual files to show. Above this, only a
-              single message describing the number of files will be shown.
+              single message describing the number of files will be shown. If an
+              object is supplied, 'max' indicates the maximum number of files
+              that can be added. If the user has reached the max, no additional
+              files will be able to be added.
             </Description>
             <Example>
               {`
 {
-  aggregateThreshold: number
+  aggregateThreshold: number,
+  max: number
 }
             `}
             </Example>
