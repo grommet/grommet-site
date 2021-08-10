@@ -31,12 +31,6 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
-        {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js',
-          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
-          label: 'CodeSandbox',
-        },
       ]}
       description="A control that enables selection of a single page from a 
  range of pages"
