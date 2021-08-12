@@ -31,6 +31,12 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
+        {
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/skiplink&module=%2Fsrc%2FSkipLink.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
       ]}
       description="Describe a list of elements to skip to"
     >
