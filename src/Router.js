@@ -16,11 +16,6 @@ export const Router = ({ children, initialPath }) => {
       const { location } = document;
       setPath(location.pathname);
       setSearch(location.search);
-      // Any time the route updates the user will be scrolled to
-      // the hash. This is loose and may be problematic.
-      if (typeof window !== 'undefined' && location.hash) {
-        window.scrollTo(document.getElementById(location.hash));
-      }
     };
     window.addEventListener('popstate', onPopState);
     onPopState();
