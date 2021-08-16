@@ -172,6 +172,23 @@ export default () => (
             <Example>"string"</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="messages">
+          <Description>
+            Custom messages for DateInput. Used for accessibility by screen
+            readers.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+  "enterCalendar": "Calendar is open, press tab to enter the calendar",
+  "exitCalendar": "Exited calendar dialog"
+}
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
