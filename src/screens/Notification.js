@@ -173,7 +173,7 @@ export default () => (
           </PropertyValue>
         </Property>
 
-        <Property name="notification.button.icon">
+        <Property name="notification.close.icon">
           <Description>The default close button icon.</Description>
           <PropertyValue type="node">
             <Example defaultValue>{`<FormClose />`}</Example>
@@ -184,7 +184,7 @@ export default () => (
           </PropertyValue>
         </Property>
 
-        <Property name="notification.button.color">
+        <Property name="notification.close.color">
           <Description>The color of the close button icon.</Description>
           <PropertyValue type="object">
             <Description>
@@ -219,7 +219,7 @@ export default () => (
         </Property>
 
         <Property name="notification.unknown.color">
-          <Description>The color of the close button icon.</Description>
+          <Description>The color of the unknown status icon.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
             <Example defaultValue>"status-unknown"</Example>
@@ -246,7 +246,7 @@ export default () => (
         </Property>
 
         <Property name="notification.normal.color">
-          <Description>The color of the close button icon.</Description>
+          <Description>The color of the normal status icon.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
             <Example defaultValue>"status-ok"</Example>
@@ -273,7 +273,7 @@ export default () => (
         </Property>
 
         <Property name="notification.warning.color">
-          <Description>The color of the close button icon.</Description>
+          <Description>The color of the warning status icon.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
             <Example defaultValue>"status-warning"</Example>
@@ -300,7 +300,7 @@ export default () => (
         </Property>
 
         <Property name="notification.critical.color">
-          <Description>The color of the close button icon.</Description>
+          <Description>The color of the critical status icon.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
             <Example defaultValue>"status-critical"</Example>
