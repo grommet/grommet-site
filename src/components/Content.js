@@ -48,6 +48,7 @@ import MaskedInput from '../screens/MaskedInput';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
 import Nav from '../screens/Nav';
+import Notification from '../screens/Notification';
 import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
@@ -176,6 +177,7 @@ export default () => (
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
     <Route exact path="/nav" component={Nav} />
+    <Route exact path="/notification" component={Notification} />
     <Route exact path="/pagination" component={Pagination} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
