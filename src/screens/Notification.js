@@ -131,7 +131,7 @@ export default () => (
               {`
 {
     gap: 'medium'
-},
+}
                 `}
             </Example>
           </PropertyValue>
