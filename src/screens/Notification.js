@@ -2,7 +2,8 @@ import React from 'react';
 import { Button } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { GenericColor } from '../utils/genericThemeExamples';
+import { GenericBoolFalse } from '../utils/genericPropExamples';
+
 import {
   ComponentDoc,
   Properties,
@@ -29,7 +30,8 @@ export default () => (
           label: 'CodeSandbox',
         },
       ]}
-      description="A Notification"
+      description="deliver transparent clarity for task and
+      system statuses"
       code="// <Notification />"
     >
       <Properties>
@@ -69,10 +71,7 @@ export default () => (
             A boolean flag that indicates whether or not the Notification is a
             Toast Notification.
           </Description>
-          <PropertyValue type="boolean">
-            <Example defaultValue>"false"</Example>
-            <Example>"true"</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="onClose">
@@ -98,15 +97,15 @@ export default () => (
             </Description>
             <Example defaultValue>
               {`
-                    {
-                        elevation: 'medium',
-                        round: 'xsmall',
-                        width: 'medium',
-                        pad: { horizontal: 'small', vertical: 'xsmall' },
-                        background: {
-                            color: 'background-front',
-                        },
-                    }
+{
+    elevation: 'medium',
+    round: 'xsmall',
+    width: 'medium',
+    pad: { horizontal: 'small', vertical: 'xsmall' },
+    background: {
+        color: 'background-front',
+    }
+}
                 `}
             </Example>
           </PropertyValue>
@@ -117,9 +116,9 @@ export default () => (
           <PropertyValue type="object">
             <Example defaultValue>
               {`
-                    {
-                        pad: { right: 'small' },
-                    }
+{
+    pad: { right: 'small' },
+}
                 `}
             </Example>
           </PropertyValue>
@@ -130,9 +129,9 @@ export default () => (
           <PropertyValue type="object">
             <Example defaultValue>
               {`
-                    {
-                        gap: 'medium',
-                    },
+{
+    gap: 'medium'
+},
                 `}
             </Example>
           </PropertyValue>
@@ -147,13 +146,13 @@ export default () => (
             </Description>
             <Example defaultValue>
               {`
-                    {
-                        weight: 'bold',
-                        color: {
-                            light: 'black',
-                            dark: 'white',
-                        },
-                    },
+{
+    weight: 'bold',
+    color: {
+        light: 'black',
+        dark: 'white',
+    }
+}
                 `}
             </Example>
           </PropertyValue>
@@ -165,12 +164,10 @@ export default () => (
             <Description>'color' is used for the message color.</Description>
             <Example defaultValue>
               {`
-                    {
-                        color: {
-                            light: 'black',
-                            dark: 'white',
-                        },
-                    },
+{
+    light: 'black',
+    dark: 'white',
+}
                 `}
             </Example>
           </PropertyValue>
@@ -189,15 +186,22 @@ export default () => (
 
         <Property name="notification.button.color">
           <Description>The color of the close button icon.</Description>
-          <GenericColor />
-          <PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
             <Example defaultValue>
               {`
-                    color: {
-                        light: 'black',
-                        dark: 'white',
-                    },`}
+    {
+        light: 'black',
+        dark: 'white',
+    }
+                    `}
             </Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
           </PropertyValue>
         </Property>
 
@@ -216,13 +220,15 @@ export default () => (
 
         <Property name="notification.unknown.color">
           <Description>The color of the close button icon.</Description>
-          <GenericColor />
-          <PropertyValue>
-            <Example defaultValue>
-              {`
-                    "status-unknown"
-                `}
-            </Example>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"status-unknown"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -241,13 +247,15 @@ export default () => (
 
         <Property name="notification.normal.color">
           <Description>The color of the close button icon.</Description>
-          <GenericColor />
-          <PropertyValue>
-            <Example defaultValue>
-              {`
-                    "status-ok"
-                `}
-            </Example>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"status-ok"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -266,13 +274,15 @@ export default () => (
 
         <Property name="notification.warning.color">
           <Description>The color of the close button icon.</Description>
-          <GenericColor />
-          <PropertyValue>
-            <Example defaultValue>
-              {`
-                    "status-warning"
-                `}
-            </Example>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"status-warning"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -291,13 +301,15 @@ export default () => (
 
         <Property name="notification.critical.color">
           <Description>The color of the close button icon.</Description>
-          <GenericColor />
-          <PropertyValue>
-            <Example defaultValue>
-              {`
-                    "status-critical"
-                `}
-            </Example>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"status-critical"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
