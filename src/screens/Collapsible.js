@@ -19,6 +19,34 @@ export default () => (
     <ComponentDoc
       name="Collapsible"
       description="Expand or collapse animation"
+      availableAt={[
+        {
+          url:
+            'https://storybook.grommet.io/?selectedKind=Utilities-Collapsible&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        }
+      ]}
+      code={`() => {
+const [open, setOpen] = React.useState(false);
+return (
+  <Box align="start">
+    <Button primary onClick={() => setOpen(!open)} label="Toggle" />
+    <Collapsible open={open}>
+      <Box
+        background="light-2"
+        round="medium"
+        pad="medium"
+        align="center"
+        justify="center"
+      >
+        <Text>This is a box inside a Collapsible component</Text>
+      </Box>
+    </Collapsible>
+    <Text>This is other content outside the Collapsible box</Text>
+  </Box>
+)}`}
       intrinsicElement="div"
     >
       <Properties>
