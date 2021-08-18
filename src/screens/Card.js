@@ -25,12 +25,6 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
-        {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js',
-          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
-          label: 'CodeSandbox',
-        },
       ]}
       description="A Card is a container of information that provides access to more 
  details"

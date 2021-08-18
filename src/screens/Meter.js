@@ -155,6 +155,7 @@ export default () => (
             <Example defaultValue>"bar"</Example>
             <Example>"circle"</Example>
             <Example>"pie"</Example>
+            <Example>"semicircle"</Example>
           </PropertyValue>
         </Property>
 
