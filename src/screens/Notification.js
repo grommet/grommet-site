@@ -86,25 +86,41 @@ export default () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="notification.container">
+          <Description>
+            Any valid Box prop for the Notification container.
+          </Description>
+          <PropertyValue type="object">
+            <Description>
+              'background.color' is used for the container color.
+            </Description>
+            <Example defaultValue>
+              {`
+{
+    pad: { horizontal: 'small', vertical: 'xsmall' },
+    background: {
+        color: 'background-front',
+    }
+}
+                `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="notification.toast.container">
           <Description>
             Any valid Box prop for the Toast Notification container.
           </Description>
           <PropertyValue type="object">
             <Description>
-              'background.color' is used for the container color. 'width' is
-              used for the default width of a Toast Notification.
+              'width' is used for the default width of a Toast Notification.
             </Description>
             <Example defaultValue>
               {`
 {
     elevation: 'medium',
     round: 'xsmall',
-    width: 'medium',
-    pad: { horizontal: 'small', vertical: 'xsmall' },
-    background: {
-        color: 'background-front',
-    }
+    width: 'medium'
 }
                 `}
             </Example>
@@ -192,10 +208,10 @@ export default () => (
             </Description>
             <Example defaultValue>
               {`
-    {
-        light: 'black',
-        dark: 'white',
-    }
+{
+    light: 'black',
+    dark: 'white',
+}
                     `}
             </Example>
           </PropertyValue>
