@@ -528,6 +528,9 @@ export default () => (
           <PropertyValue type="string">
             <Example defaultValue>"No matches found"</Example>
           </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Text> No results found. <Text/>`}</Example>
+          </PropertyValue>
         </Property>
       </Properties>
 
