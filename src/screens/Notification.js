@@ -164,10 +164,7 @@ export default () => (
               {`
 {
     weight: 'bold',
-    color: {
-        light: 'black',
-        dark: 'white',
-    }
+    color: 'text'
 }
                 `}
             </Example>
@@ -178,14 +175,7 @@ export default () => (
           <Description>Any valid Text prop for the message text.</Description>
           <PropertyValue type="object">
             <Description>'color' is used for the message color.</Description>
-            <Example defaultValue>
-              {`
-{
-    light: 'black',
-    dark: 'white',
-}
-                `}
-            </Example>
+            <Example defaultValue>"text"</Example>
           </PropertyValue>
         </Property>
 
