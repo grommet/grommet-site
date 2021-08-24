@@ -164,7 +164,11 @@ export default () => (
           </Paragraph>
         </Box>
 
-        <Image src="/img/stak-hurrah.svg" a11yTitle="gremlin" />
+        <Image
+          src="/img/stak-hurrah.svg"
+          a11yTitle="gremlin"
+          alt="Grommet gremlin with one arm above head and other hand holding a wrench"
+        />
       </Box>
     </Section>
   </Box>

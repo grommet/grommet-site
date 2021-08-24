@@ -377,7 +377,10 @@ export default class Try extends Component {
                       messenger bag. Prism cred, poutine bespoke tumeric tofu
                       helvetica put a bird on it.
                     </Paragraph>
-                    <Image src="https://myjourneytosixmillion.files.wordpress.com/2018/01/park-dasol-146056.jpg?w=300" />
+                    <Image
+                      src="https://myjourneytosixmillion.files.wordpress.com/2018/01/park-dasol-146056.jpg?w=300"
+                      alt="Road with yellow dashed line surrrounded on both sides by row of red and yellow buildings"
+                    />
                   </Box>
                 </Box>
               </Box>

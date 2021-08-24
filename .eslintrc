@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "plugin:grommet/recommended"],
   "plugins": ["prettier"],
   "env": {
     "node": true,
