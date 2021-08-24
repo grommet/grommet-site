@@ -134,7 +134,11 @@ export default () => (
 
 export const ImageItem = ({ name, path }) => (
   <Item name={name} path={path}>
-    <Image src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" fit="cover" />
+    <Image
+      src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+      fit="cover"
+      alt="Ricky from Wilderpeople looking out from behind brow leaves in a forests"
+    />
   </Item>
 );
 

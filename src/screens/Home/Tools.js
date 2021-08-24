@@ -14,7 +14,7 @@ import { Next } from 'grommet-icons';
 import Header from '../../components/Header';
 import Section from './Section';
 
-const Tile = ({ desc, label, link, src }) => {
+const Tile = ({ alt, desc, label, link, src }) => {
   const size = useContext(ResponsiveContext);
   const imgWidth = size === 'medium' ? 365 : 482;
   return (
@@ -31,12 +31,13 @@ const Tile = ({ desc, label, link, src }) => {
         {desc}
       </Paragraph>
       <Box flex />
-      <Image width={imgWidth} src={src} a11yTitle={label} />
+      <Image width={imgWidth} src={src} a11yTitle={label} alt={alt} />
     </Box>
   );
 };
 
 Tile.propTypes = {
+  alt: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
@@ -63,6 +64,7 @@ export const Tools = () => {
             label="Grommet Designer (beta)"
             link="https://designer.grommet.io/"
             src="/img/tools/designer.png"
+            alt="Example of Grommet Designer project containing a dashboard card and avatar"
           />
           <Tile
             desc="want grommet to look like your brand? plug your details in and
@@ -70,6 +72,7 @@ export const Tools = () => {
             label="Grommet Themer (beta)"
             link="https://theme-designer.grommet.io/"
             src="/img/tools/themer.png"
+            alt="Example of Grommet Themer project with demo of grommet theme"
           />
         </Box>
       </Section>

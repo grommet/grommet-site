@@ -158,7 +158,12 @@ export default () => (
 
 export const SpinnerItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Spinner />
+    <Spinner
+      message={{
+        start: 'Data is loading',
+        end: 'Data has been successfully load',
+      }}
+    />
   </Item>
 );
 
