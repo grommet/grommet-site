@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'grommet';
+import { Box, Button, Paragraph, Heading } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { GenericBoolFalse } from '../utils/genericPropExamples';
@@ -32,8 +32,34 @@ export default () => (
       ]}
       description="deliver transparent clarity for task and
       system statuses"
-      code="// <Notification />"
     >
+      <Box
+        alignSelf="start"
+        margin={{ top: 'medium' }}
+        pad="medium"
+        round
+        background="light-3"
+      >
+        <Paragraph margin="none">
+          The Notification component is a work-in-progress. This page is focused
+          on the first iteration of Notifications, which is mainly the Toast
+          Notification. We are currently exploring and ideating on banners,
+          badging, bells, and inline, global and system notifications to include
+          in future versions.
+        </Paragraph>
+      </Box>
+      <Heading>Toast Notifications</Heading>
+      <Paragraph size="large">
+        Toast notifications are used to communicate low severity level
+        information to users in an unobtrusive way. They should be used
+        sparingly to display low attention messages and statuses that do not
+        require user action.
+      </Paragraph>
+      <Paragraph size="large">
+        If there are multiple toast notifications, you should deal with them by
+        having only one toast present at a time. Once the first toast is
+        dismissed or timed out, the next one should appear.
+      </Paragraph>
       <Properties>
         <Property name="title">
           <Description>
