@@ -153,6 +153,26 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="notification.toast.layer">
+          <Description>
+            Any valid Layer prop for the Toast Notification layer.
+          </Description>
+          <PropertyValue type="object">
+            <Description>
+              'position' is used for the default positioning of a Toast
+              Notification.
+            </Description>
+            <Example defaultValue>
+              {`
+{
+    position: 'top',
+    margin: 'medium',
+}
+                `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="notification.iconContainer">
           <Description>Any valid Box prop for the icon container.</Description>
           <PropertyValue type="object">
