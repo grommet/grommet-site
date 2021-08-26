@@ -133,6 +133,14 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="notification.toast.time">
+          <Description>The time duration of a Toast Notification.</Description>
+          <PropertyValue type="number">
+            <Description>The value is in milliseconds (ms).</Description>
+            <Example defaultValue>8000</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="notification.toast.container">
           <Description>
             Any valid Box prop for the Toast Notification container.
