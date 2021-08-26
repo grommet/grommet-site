@@ -58,6 +58,20 @@ export default () => (
           <GenericAlignSelf />
         </Property>
 
+        <Property name="gap">
+          <Description>
+            The amount of spacing between icon and label in the anchor.
+          </Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+            <Example>"string"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
