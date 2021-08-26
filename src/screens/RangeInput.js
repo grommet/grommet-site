@@ -59,6 +59,26 @@ export default () => (
           <GenericA11yTitle />
         </Property>
 
+        <Property name="color">
+          <Description>
+            The color of the track left of the thumb. Color may be a single
+            color or an array of colors based on the thumb value.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An array of object with a color, value and opacity based on thumb
+              value.
+            </Description>
+            <Example>
+              {`{ color: "string", value: number, opacity?: number }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="id">
           <Description>The id attribute of the range input.</Description>
           <PropertyValue type="string">
