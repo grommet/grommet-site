@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Button, Paragraph, Heading } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
+import { GenericColor } from '../utils/genericThemeExamples';
 import { GenericBoolFalse } from '../utils/genericPropExamples';
 
 import {
@@ -246,23 +247,7 @@ export default () => (
 
         <Property name="notification.close.color">
           <Description>The color of the close button icon.</Description>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example defaultValue>
-              {`
-{
-    light: 'black',
-    dark: 'white',
-}
-                    `}
-            </Example>
-          </PropertyValue>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example>"brand"</Example>
-          </PropertyValue>
+          <GenericColor />
         </Property>
 
         <Property name="notification.unknown.icon">
