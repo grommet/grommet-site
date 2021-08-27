@@ -24,12 +24,6 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
-        {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js',
-          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
-          label: 'CodeSandbox',
-        },
       ]}
       description="A group of CheckBoxes"
       intrinsicElement="div"
@@ -62,6 +56,22 @@ export default () => (
 ]
 `}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="children">
+          <Description>
+            Function that will be called to render the visual representation. It
+            will be called for each option and passed the option, and an object
+            indicating whether the option is checked. It should return a react
+            element.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              'option', 'checked' and 'indeterminate' can be passed as arguments
+              that would then return a react element.
+            </Description>
+            <Example>{`(option, { checked, indeterminate }) => <Box ...>{...}</Box>`}</Example>
           </PropertyValue>
         </Property>
 

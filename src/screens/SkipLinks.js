@@ -33,7 +33,7 @@ export default () => (
         },
         {
           url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/skiplinks&module=%2Fsrc%2FSkipLinks.js',
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/skiplink&module=%2Fsrc%2FSkipLink.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },

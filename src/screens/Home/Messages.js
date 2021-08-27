@@ -47,6 +47,7 @@ export default () => (
             @grommetux, the OSS UX framework http://bit.ly/1YWH7ea
           </span>
         }
+        alt="Man with glasses next to an orange person-like character"
       />
 
       <Message
@@ -61,6 +62,7 @@ export default () => (
             &nbsp; https://vimeo.com/187068246 great work @grommetux!
           </span>
         }
+        alt="Man with glasses next to an orange person-like character"
       />
 
       <Message
@@ -72,6 +74,7 @@ export default () => (
             is the best design tool I have ever used
           </span>
         }
+        alt="Man with hands in peace signs and cup in mouth at finish line of race"
       />
 
       <Message
@@ -83,6 +86,7 @@ export default () => (
             with great user experience
           </span>
         }
+        alt="Sketch of black rabbit head with big blue eyes"
       />
 
       <Message
@@ -94,6 +98,7 @@ export default () => (
             https://grommet.github.io @grommetux
           </span>
         }
+        alt="Ravish Tiwari"
       />
     </Box>
 

@@ -146,24 +146,6 @@ export default class Components extends Component {
     });
   }
 
-  componentDidMount() {
-    this.scrollToSection();
-  }
-
-  componentDidUpdate() {
-    this.scrollToSection();
-  }
-
-  scrollToSection = () => {
-    const name = window.location.hash.split('#')[1];
-    if (name && this.sectionRefs[name]) {
-      this.sectionRefs[name].current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
   render() {
     const desc =
       'These are the building blocks of the grommet library, master them, and become a l33t.';

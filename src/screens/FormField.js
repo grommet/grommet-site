@@ -154,6 +154,10 @@ export default () => (
             The name of the value data when in a Form and the name of the input
             field.
           </Description>
+          <Description>
+            **NOTE**: A name must be provided if using FormField's validate
+            prop.
+          </Description>
           <PropertyValue type="string">
             <Example>"name"</Example>
           </PropertyValue>
@@ -180,6 +184,10 @@ export default () => (
           <Description>
             Validation rule when used within a grommet Form. Provide an object
             with a regular expression, a function, or an array of these.
+          </Description>
+          <Description>
+            **NOTE**: In order to use validate, a name must first be provided to
+            the FormField.
           </Description>
           <PropertyValue type="object">
             <Example>
