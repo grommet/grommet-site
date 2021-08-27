@@ -1,7 +1,11 @@
 import React from 'react';
+
 import { Box, Button, Paragraph, Heading } from 'grommet';
+
 import Page from '../components/Page';
 import Item from './Components/Item';
+import { Code } from '../components/Doc/Code';
+
 import { GenericColor } from '../utils/genericThemeExamples';
 import { GenericBoolFalse } from '../utils/genericPropExamples';
 
@@ -21,16 +25,23 @@ export default () => (
       name="Notification"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io',
-          badge: 'https://cdn-images-1.medium.com/',
+          url:
+            'https://storybook.grommet.io/?path=/story/visualizations-notification-status--status',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
           url: 'https://codesandbox.io/s/github',
-          badge: 'https://codesandbox.io/',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
       ]}
+      code={`<Notification
+  title="Default Status Title"
+  message="This is an example of a notification message"
+  onClose={() => {}}
+/>`}
       description="deliver transparent clarity for task and
       system statuses"
     >
@@ -61,6 +72,33 @@ export default () => (
         having only one toast present at a time. Once the first toast is
         dismissed or timed out, the next one should appear.
       </Paragraph>
+      <Code
+        code={`function Example() {
+const [visible, setVisible] = React.useState();
+
+return (
+  <Box>
+    <Button 
+      label="Open Toast Notification" 
+      onClick={() => setVisible(true)} 
+    />
+    <Paragraph textAlign="center">
+      This notification will disappear after 8 seconds
+      if not dismissed via the close button.
+    </Paragraph>
+    {visible && (
+      <Notification
+        toast
+        title="Toast Notification"
+        message="This is an example of a toast notification"
+        onClose={() => setVisible(false)}
+      />
+    )}
+  </Box>
+);
+}`}
+        name="Toast Notification"
+      />
       <Properties>
         <Property name="title">
           <Description>
