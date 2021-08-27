@@ -147,7 +147,7 @@ return (
       </Properties>
 
       <ThemeDoc>
-      <Property name="notification.close.color">
+        <Property name="notification.close.color">
           <Description>The color of the close button icon.</Description>
           <GenericColor />
         </Property>
