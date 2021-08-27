@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Box, Button, Paragraph, Heading } from 'grommet';
+import { Notification } from 'grommet-icons';
+import { Box, Paragraph, Heading } from 'grommet';
 
 import Page from '../components/Page';
 import Item from './Components/Item';
@@ -30,11 +31,6 @@ export default () => (
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
-        },
-        {
-          url: 'https://codesandbox.io/s/github',
-          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
-          label: 'CodeSandbox',
         },
       ]}
       code={`<Notification
@@ -151,6 +147,22 @@ return (
       </Properties>
 
       <ThemeDoc>
+      <Property name="notification.close.color">
+          <Description>The color of the close button icon.</Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="notification.close.icon">
+          <Description>The default close button icon.</Description>
+          <PropertyValue type="node">
+            <Example defaultValue>{`<FormClose />`}</Example>
+            <Example>{`<Icon />`}</Example>
+          </PropertyValue>
+          <PropertyValue type="SVG">
+            <Example>{`<svg>...</svg>`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="notification.container">
           <Description>
             Any valid Box prop for the Notification container.
@@ -172,11 +184,109 @@ return (
           </PropertyValue>
         </Property>
 
-        <Property name="notification.toast.time">
-          <Description>The time duration of a Toast Notification.</Description>
-          <PropertyValue type="number">
-            <Description>The value is in milliseconds (ms).</Description>
-            <Example defaultValue>8000</Example>
+        <Property name="notification.critical.color">
+          <Description>The color of the critical status icon.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"status-critical"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.critical.icon">
+          <Description>
+            The default icon for a critical status Notification.
+          </Description>
+          <PropertyValue type="node">
+            <Example defaultValue>{`<StatusCriticalSmall />`}</Example>
+            <Example>{`<Icon />`}</Example>
+          </PropertyValue>
+          <PropertyValue type="SVG">
+            <Example>{`<svg>...</svg>`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.iconContainer">
+          <Description>Any valid Box prop for the icon container.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+    pad: { right: 'small' },
+}
+                `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.message">
+          <Description>Any valid Text prop for the message text.</Description>
+          <PropertyValue type="object">
+            <Description>'color' is used for the message color.</Description>
+            <Example defaultValue>"text"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.normal.color">
+          <Description>The color of the normal status icon.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"status-ok"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.normal.icon">
+          <Description>
+            The default icon for a normal status Notification.
+          </Description>
+          <PropertyValue type="node">
+            <Example defaultValue>{`<StatusGoodSmall />`}</Example>
+            <Example>{`<Icon />`}</Example>
+          </PropertyValue>
+          <PropertyValue type="SVG">
+            <Example>{`<svg>...</svg>`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.textContainer">
+          <Description>Any valid Box prop for the text container.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+    gap: 'medium'
+}
+                `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.title">
+          <Description>Any valid Text prop for the title text.</Description>
+          <PropertyValue type="object">
+            <Description>
+              'color' is used for the text color and 'weight' for the weight of
+              the title.
+            </Description>
+            <Example defaultValue>
+              {`
+{
+    weight: 'bold',
+    color: 'text'
+}
+                `}
+            </Example>
           </PropertyValue>
         </Property>
 
@@ -220,84 +330,11 @@ return (
           </PropertyValue>
         </Property>
 
-        <Property name="notification.iconContainer">
-          <Description>Any valid Box prop for the icon container.</Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`
-{
-    pad: { right: 'small' },
-}
-                `}
-            </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.textContainer">
-          <Description>Any valid Box prop for the text container.</Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`
-{
-    gap: 'medium'
-}
-                `}
-            </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.title">
-          <Description>Any valid Text prop for the title text.</Description>
-          <PropertyValue type="object">
-            <Description>
-              'color' is used for the text color and 'weight' for the weight of
-              the title.
-            </Description>
-            <Example defaultValue>
-              {`
-{
-    weight: 'bold',
-    color: 'text'
-}
-                `}
-            </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.message">
-          <Description>Any valid Text prop for the message text.</Description>
-          <PropertyValue type="object">
-            <Description>'color' is used for the message color.</Description>
-            <Example defaultValue>"text"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.close.icon">
-          <Description>The default close button icon.</Description>
-          <PropertyValue type="node">
-            <Example defaultValue>{`<FormClose />`}</Example>
-            <Example>{`<Icon />`}</Example>
-          </PropertyValue>
-          <PropertyValue type="SVG">
-            <Example>{`<svg>...</svg>`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.close.color">
-          <Description>The color of the close button icon.</Description>
-          <GenericColor />
-        </Property>
-
-        <Property name="notification.unknown.icon">
-          <Description>
-            The default icon for an unknown status Notification.
-          </Description>
-          <PropertyValue type="node">
-            <Example defaultValue>{`<StatusUnknownSmall />`}</Example>
-            <Example>{`<Icon />`}</Example>
-          </PropertyValue>
-          <PropertyValue type="SVG">
-            <Example>{`<svg>...</svg>`}</Example>
+        <Property name="notification.toast.time">
+          <Description>The time duration of a Toast Notification.</Description>
+          <PropertyValue type="number">
+            <Description>The value is in milliseconds (ms).</Description>
+            <Example defaultValue>8000</Example>
           </PropertyValue>
         </Property>
 
@@ -315,39 +352,12 @@ return (
           </PropertyValue>
         </Property>
 
-        <Property name="notification.normal.icon">
+        <Property name="notification.unknown.icon">
           <Description>
-            The default icon for a normal status Notification.
+            The default icon for an unknown status Notification.
           </Description>
           <PropertyValue type="node">
-            <Example defaultValue>{`<StatusGoodSmall />`}</Example>
-            <Example>{`<Icon />`}</Example>
-          </PropertyValue>
-          <PropertyValue type="SVG">
-            <Example>{`<svg>...</svg>`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.normal.color">
-          <Description>The color of the normal status icon.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-ok"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.warning.icon">
-          <Description>
-            The default icon for a warning status Notification.
-          </Description>
-          <PropertyValue type="node">
-            <Example defaultValue>{`<StatusWarningSmall />`}</Example>
+            <Example defaultValue>{`<StatusUnknownSmall />`}</Example>
             <Example>{`<Icon />`}</Example>
           </PropertyValue>
           <PropertyValue type="SVG">
@@ -369,30 +379,16 @@ return (
           </PropertyValue>
         </Property>
 
-        <Property name="notification.critical.icon">
+        <Property name="notification.warning.icon">
           <Description>
-            The default icon for a critical status Notification.
+            The default icon for a warning status Notification.
           </Description>
           <PropertyValue type="node">
-            <Example defaultValue>{`<StatusCriticalSmall />`}</Example>
+            <Example defaultValue>{`<StatusWarningSmall />`}</Example>
             <Example>{`<Icon />`}</Example>
           </PropertyValue>
           <PropertyValue type="SVG">
             <Example>{`<svg>...</svg>`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="notification.critical.color">
-          <Description>The color of the critical status icon.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
@@ -402,7 +398,7 @@ return (
 
 export const NotificationItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Button label="Button" />
+    <Notification size="large" />
   </Item>
 );
 
