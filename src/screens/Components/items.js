@@ -38,6 +38,7 @@ export { MaskedInputItem } from '../MaskedInput';
 export { MenuItem } from '../Menu';
 export { MeterItem } from '../Meter';
 export { NavItem } from '../Nav';
+export { NotificationItem } from '../Notification';
 export { PaginationItem } from '../Pagination';
 export { ParagraphItem } from '../Paragraph';
 export { RadioButtonItem } from '../RadioButton';
