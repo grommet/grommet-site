@@ -257,6 +257,13 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="rangeSelector.edge.zIndex">
+          <Description>The stack order of the EdgeControl.</Description>
+          <PropertyValue type="number">
+            <Example defaultValue>10</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="global.spacing">
           <Description>The size of the edge controls thumb.</Description>
           <PropertyValue type="string">
