@@ -258,7 +258,7 @@ export default () => (
         </Property>
 
         <Property name="rangeSelector.edge.zIndex">
-          <Description>The stack order of the EdgeControl.</Description>
+          <Description>The stack order of the edge controls.</Description>
           <PropertyValue type="number">
             <Example defaultValue>10</Example>
           </PropertyValue>
