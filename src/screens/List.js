@@ -197,15 +197,15 @@ export default () => (
         <Property name="onClickItem">
           <Description>
             When supplied, this function will be called with an event object
-            that include a 'item' property containing the data value associated
-            with the clicked item and an 'index' property containing the index
-            in 'data' of the clicked item. You should not include interactive
-            elements, like Anchor or Button inside 'primaryKey' or
+            which includes an 'item' property containing the data value
+            associated with the clicked item and an 'index' property containing
+            the index in 'data' of the clicked item. You should not include
+            interactive elements, like Anchor or Button inside 'primaryKey' or
             'secondaryKey' as that can cause confusion with overlapping
             interactive elements.
           </Description>
           <PropertyValue type="function">
-            <Example>{`({ datum, index }) => {}`}</Example>
+            <Example>{`({ item, index }) => {}`}</Example>
           </PropertyValue>
         </Property>
 
