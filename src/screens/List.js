@@ -63,6 +63,14 @@ export default () => (
           </Description>
           <GenericAlignSelf />
         </Property>
+        <Property name="defaultItemProps">
+          <Description>
+            To be able to style the List in which includes any Box props. The
+            alignment of the content and controls for example. It is good to
+            note that `itemProps` will take precedence.
+          </Description>
+          <Example>{`{{ background: ..., align: ... }}`}</Example>
+        </Property>
 
         <Property name="gridArea">
           <Description>
