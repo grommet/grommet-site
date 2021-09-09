@@ -3,15 +3,15 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestWebpackPlugin = require('webpack-manifest-plugin');
-const OfflinePlugin = require('offline-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const OfflinePlugin = require('@lcdp/offline-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'production';
 
 const baseConfig = {
   devServer: {
-    contentBase: path.resolve('./dist'),
+    static: './dist',
     historyApiFallback: true,
     port: 8567,
   },
@@ -27,9 +27,16 @@ const baseConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './public', ignore: ['*.html'] }]), // SSR will generate our html string.
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './public',
+          globOptions: { ignore: ['**/*.html'] },
+        },
+      ],
+    }), // SSR will generate our html string.
     new MonacoWebpackPlugin({ languages: ['javascript'] }),
-    new ManifestWebpackPlugin({ fileName: 'webpack-manifest.json' }),
+    new WebpackManifestPlugin({ fileName: 'webpack-manifest.json' }),
   ],
   module: {
     rules: [

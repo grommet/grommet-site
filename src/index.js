@@ -8,7 +8,7 @@ import 'core-js/features/string/ends-with'; // used by components/Doc/ThemeProps
 import App from './App';
 
 if (typeof window !== 'undefined') {
-  const OfflinePluginRuntime = require('offline-plugin/runtime'); // eslint-disable-line global-require
+  const OfflinePluginRuntime = require('@lcdp/offline-plugin/runtime'); // eslint-disable-line global-require
   OfflinePluginRuntime.install();
 }
 
