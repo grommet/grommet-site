@@ -65,9 +65,8 @@ export default () => (
         </Property>
         <Property name="defaultItemProps">
           <Description>
-            To be able to style the List in which includes any Box props. The
-            alignment of the content and controls for example. It is good to
-            note that `itemProps` will take precedence.
+            Styling applied to all list items. Object accepts any Box 
+            props. To style a specific list item, use `itemProps`.
           </Description>
           <Example>{`{{ background: ..., align: ... }}`}</Example>
         </Property>
