@@ -70,6 +70,12 @@ if (env === 'production') {
           priority: -10,
         },
       },
+      name: (module, chunks, cacheGroupKey) => {
+        const allChunksNames = chunks.map((chunk) => chunk.name).join('~');
+        const prefix =
+          cacheGroupKey === 'defaultVendors' ? 'vendors' : cacheGroupKey;
+        return `${prefix}~${allChunksNames}`;
+      },
     },
   };
 } else {

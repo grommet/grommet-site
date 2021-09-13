@@ -23,7 +23,8 @@
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "test": "eslint src",
-    "prettier": "pretty-quick --staged"
+    "prettier": "pretty-quick --staged",
+    "server": "http-server dist"
   },
   "dependencies": {
     "@lcdp/offline-plugin": "^5.1.0",
@@ -36,6 +37,7 @@
     "grommet-theme-dxc": "^0.1.2",
     "grommet-theme-hp": "^0.1.2",
     "grommet-theme-hpe": "^2.1.0",
+    "http-server": "^13.0.1",
     "json-stringify-pretty-compact": "^3.0.0",
     "lz-string": "^1.4.4",
     "prop-types": "^15.5.10",
