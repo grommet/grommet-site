@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const OfflinePlugin = require('@lcdp/offline-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'production';
@@ -59,7 +59,14 @@ const baseConfig = {
 };
 
 if (env === 'production') {
-  baseConfig.plugins.push(new OfflinePlugin());
+  baseConfig.plugins.push(
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
+  );
   baseConfig.optimization = {
     splitChunks: {
       chunks: 'all',

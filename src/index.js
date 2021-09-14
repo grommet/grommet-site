@@ -7,13 +7,24 @@ import 'core-js/features/string/ends-with'; // used by components/Doc/ThemeProps
 
 import App from './App';
 
-if (typeof window !== 'undefined') {
-  const OfflinePluginRuntime = require('@lcdp/offline-plugin/runtime'); // eslint-disable-line global-require
-  OfflinePluginRuntime.install();
+/* global navigator */
+
+const { NODE_ENV: env } = process.env;
+
+if (env === 'production' && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration);
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
 }
 
 const element = document.getElementById('content');
-const { NODE_ENV: env } = process.env;
 
 // ReactDOM's hydrate method is used when html is already present on the page.
 // https://reactjs.org/docs/react-dom.html#hydrate

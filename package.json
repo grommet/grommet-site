@@ -27,7 +27,6 @@
     "server": "http-server dist"
   },
   "dependencies": {
-    "@lcdp/offline-plugin": "^5.1.0",
     "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.17.3",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
@@ -37,7 +36,6 @@
     "grommet-theme-dxc": "^0.1.2",
     "grommet-theme-hp": "^0.1.2",
     "grommet-theme-hpe": "^2.1.0",
-    "http-server": "^13.0.1",
     "json-stringify-pretty-compact": "^3.0.0",
     "lz-string": "^1.4.4",
     "prop-types": "^15.5.10",
@@ -83,6 +81,7 @@
     "eslint-plugin-react": "^7.8.2",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
+    "http-server": "^13.0.1",
     "monaco-editor": "0.27.0",
     "monaco-editor-webpack-plugin": "4.1.2",
     "node-fetch": "^3.0.0",
@@ -97,7 +96,8 @@
     "style-loader": "^3.2.1",
     "webpack": "^5.52.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.2.0"
+    "webpack-dev-server": "^4.2.0",
+    "workbox-webpack-plugin": "^6.3.0"
   },
   "pre-commit": [
     "lint-fix",
