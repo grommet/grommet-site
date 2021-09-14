@@ -59,6 +59,15 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="maxSize">
+          <Description>
+            Specifies a file size limit in bytes for FileInput.
+          </Description>
+          <PropertyValue type="number">
+            <Example>5000</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="messages">
           <Description>
             Custom messages for FileInput. Used for accessibility by screen
