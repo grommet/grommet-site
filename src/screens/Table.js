@@ -41,6 +41,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Table',
+          label: 'Github',
+        },
       ]}
       description="A table of data organized in cells"
       intrinsicElement="table"

@@ -18,6 +18,13 @@ export default () => (
     <ComponentDoc
       name="Keyboard"
       description="A handler of keyboard key presses"
+      availableAt={[
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Keyboard',
+          label: 'Github',
+        },
+      ]}
       code={`<Keyboard onEsc={() => {}}>
   <Box pad="large" background="light-4" />
 </Keyboard>`}

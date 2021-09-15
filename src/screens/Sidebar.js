@@ -23,6 +23,11 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Sidebar',
+          label: 'Github',
+        },
       ]}
       description="A sidebar, typically used with Nav children"
       intrinsicElement="div"
