@@ -12,13 +12,14 @@ const env = process.env.NODE_ENV || 'production';
 const baseConfig = {
   devServer: {
     static: './dist',
+    hot: true,
     historyApiFallback: true,
     port: 8567,
   },
   entry: './src/index.js',
   output: {
     path: path.resolve('./dist'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[contenthash].js',
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/',
   },
@@ -86,7 +87,6 @@ if (env === 'production') {
     },
   };
 } else {
-  baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   baseConfig.plugins.push(
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
   );
