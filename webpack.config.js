@@ -3,22 +3,23 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestWebpackPlugin = require('webpack-manifest-plugin');
-const OfflinePlugin = require('offline-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'production';
 
 const baseConfig = {
   devServer: {
-    contentBase: path.resolve('./dist'),
+    static: './dist',
+    hot: true,
     historyApiFallback: true,
     port: 8567,
   },
   entry: './src/index.js',
   output: {
     path: path.resolve('./dist'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[contenthash].js',
     chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/',
   },
@@ -27,9 +28,16 @@ const baseConfig = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './public', ignore: ['*.html'] }]), // SSR will generate our html string.
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './public',
+          globOptions: { ignore: ['**/*.html'] },
+        },
+      ],
+    }), // SSR will generate our html string.
     new MonacoWebpackPlugin({ languages: ['javascript'] }),
-    new ManifestWebpackPlugin({ fileName: 'webpack-manifest.json' }),
+    new WebpackManifestPlugin({ fileName: 'webpack-manifest.json' }),
   ],
   module: {
     rules: [
@@ -52,7 +60,14 @@ const baseConfig = {
 };
 
 if (env === 'production') {
-  baseConfig.plugins.push(new OfflinePlugin());
+  baseConfig.plugins.push(
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
+  );
   baseConfig.optimization = {
     splitChunks: {
       chunks: 'all',
@@ -63,10 +78,15 @@ if (env === 'production') {
           priority: -10,
         },
       },
+      name: (module, chunks, cacheGroupKey) => {
+        const allChunksNames = chunks.map((chunk) => chunk.name).join('~');
+        const prefix =
+          cacheGroupKey === 'defaultVendors' ? 'vendors' : cacheGroupKey;
+        return `${prefix}~${allChunksNames}`;
+      },
     },
   };
 } else {
-  baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   baseConfig.plugins.push(
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
   );
