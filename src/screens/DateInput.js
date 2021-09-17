@@ -34,6 +34,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/DateInput',
+          label: 'Github',
+        },
       ]}
       description="A control to input a single date or a date range"
       intrinsicElement="div"

@@ -46,6 +46,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/MaskedInput',
+          label: 'Github',
+        },
       ]}
       description="An input field with formalized syntax"
       intrinsicElement="input"

@@ -41,6 +41,11 @@ export default () => (
           url:
             'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Heading',
+          label: 'Github',
+        },
       ]}
       description="Heading text structured in levels"
       intrinsicElement={['h1', 'h2', 'h3', 'h4']}

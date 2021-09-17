@@ -40,6 +40,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/DataTable',
+          label: 'Github',
+        },
       ]}
       description="A data driven table"
       intrinsicElement="table"

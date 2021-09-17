@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Anchor, Box, Paragraph, Text } from 'grommet';
+import { Github } from 'grommet-icons';
 import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
 import { Code } from './Code';
@@ -60,6 +61,7 @@ export const ComponentDoc = ({
                   <Anchor
                     key={at.url}
                     href={at.url}
+                    icon={at.label === 'Github' ? <Github /> : null}
                     target="_blank"
                     label={<Text size="large">{at.label}</Text>}
                   />

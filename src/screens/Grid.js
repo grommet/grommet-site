@@ -61,6 +61,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Grid',
+          label: 'Github',
+        },
       ]}
       description="A grid system for laying out content"
       intrinsicElement="div"
