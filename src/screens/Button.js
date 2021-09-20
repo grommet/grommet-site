@@ -41,21 +41,18 @@ export default () => (
       name="Button"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Button',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Button',
           label: 'Github',
         },
       ]}
@@ -391,6 +388,21 @@ export default () => (
           </Description>
           <PropertyValue type="element">
             <Example>{`<Add />`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="justify">
+          <Description>
+            How to align the contents within the button.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"around"</Example>
+            <Example defaultValue>"between"</Example>
+            <Example>"center"</Example>
+            <Example>"end"</Example>
+            <Example>"evenly"</Example>
+            <Example>"start"</Example>
+            <Example>"stretch"</Example>
           </PropertyValue>
         </Property>
 
