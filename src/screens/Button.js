@@ -393,7 +393,7 @@ export default () => (
 
         <Property name="justify">
           <Description>
-            How to align the contents along the main axis.
+            How to align the contents within the button.
           </Description>
           <PropertyValue type="string">
             <Example>"around"</Example>
