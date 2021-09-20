@@ -100,9 +100,8 @@ export default () => (
             <Description>
               If an object is supplied, 'aggregageThreshold' indicates the
               maximum number of individual files to show. Above this, only a
-              single message describing the number of files will be shown. If an
-              object is supplied, 'max' indicates the maximum number of files
-              that can be added.
+              single message describing the number of files will be shown. 'max' 
+              indicates the maximum number of files that can be added.
             </Description>
             <Example>
               {`
