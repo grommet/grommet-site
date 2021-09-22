@@ -197,8 +197,10 @@ export default () => (
         <Property name="weight">
           <Description>Font weight</Description>
           <PropertyValue type="string">
+            <Example>"lighter"</Example>
             <Example>"normal"</Example>
             <Example>"bold"</Example>
+            <Example>"bolder"</Example>
           </PropertyValue>
           <PropertyValue type="number">
             <Example>300</Example>
