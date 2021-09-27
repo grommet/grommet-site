@@ -68,6 +68,13 @@ export default () => (
           </Description>
           <GenericAlignSelf />
         </Property>
+        <Property name="defaultItemProps">
+          <Description>
+            Styling applied to all list items. Object accepts any Box 
+            props. To style a specific list item, use `itemProps`.
+          </Description>
+          <Example>{`{{ background: ..., align: ... }}`}</Example>
+        </Property>
 
         <Property name="gridArea">
           <Description>
