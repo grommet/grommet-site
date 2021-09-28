@@ -25,21 +25,18 @@ export default () => (
       name="RangeInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
           label: 'Github',
         },
       ]}
@@ -65,21 +62,21 @@ export default () => (
         </Property>
 
         <Property name="color">
-          <Description>
-            The color of the track left of the thumb. Color may be a single
-            color or an array of colors based on the thumb value.
-          </Description>
+          <Description>A hex, name, or rgb value.</Description>
           <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example>"brand"</Example>
+            <Example defaultValue>"accent-1"</Example>
           </PropertyValue>
           <PropertyValue type="object">
+            <Description>For 'dark' and 'light' modes.</Description>
+            <Example>{`{"light": "string", "dark": "string"}`}</Example>
+          </PropertyValue>
+          <PropertyValue type="array">
             <Description>
               An array of object with a color, value and opacity based on thumb
               value.
             </Description>
             <Example>
-              {`{ color: "string", value: number, opacity?: number }`}
+              {`[{ color: "string", value: number, opacity?: number }]`}
             </Example>
           </PropertyValue>
         </Property>
