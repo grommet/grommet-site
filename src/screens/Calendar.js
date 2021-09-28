@@ -40,6 +40,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Calendar',
+          label: 'Github',
+        },
       ]}
       description="A calendar of days displayed by month"
       intrinsicElement="div"

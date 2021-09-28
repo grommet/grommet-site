@@ -38,6 +38,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Anchor',
+          label: 'Github',
+        },
       ]}
       description="A text link"
       details="We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children."

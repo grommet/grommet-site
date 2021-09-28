@@ -37,6 +37,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
+          label: 'Github',
+        },
       ]}
       description="A slider control to input a value within a fixed range"
       intrinsicElement="input"

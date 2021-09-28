@@ -39,6 +39,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Video',
+          label: 'Github',
+        },
       ]}
       description="A video player"
       intrinsicElement="video"

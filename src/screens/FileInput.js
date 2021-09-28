@@ -27,11 +27,14 @@ export default () => (
       name="FileInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-FileInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-FileInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
+        },
+        {
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/FileInput',
+          label: 'Github',
         },
       ]}
       description="A control to input one or more files"
@@ -59,6 +62,15 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="maxSize">
+          <Description>
+            Specifies a file size limit in bytes for FileInput.
+          </Description>
+          <PropertyValue type="number">
+            <Example>5000</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="messages">
           <Description>
             Custom messages for FileInput. Used for accessibility by screen
@@ -73,7 +85,8 @@ export default () => (
   dropPromptMultiple: "Drop files here or", 
   files: "files", 
   remove: "remove", 
-  removeAll: "remove all"
+  removeAll: "remove all",
+  maxFile: "Attach a maximum of {max} files only."
 }
 `}
             </Example>
@@ -87,12 +100,14 @@ export default () => (
             <Description>
               If an object is supplied, 'aggregageThreshold' indicates the
               maximum number of individual files to show. Above this, only a
-              single message describing the number of files will be shown.
+              single message describing the number of files will be shown. 'max' 
+              indicates the maximum number of files that can be added.
             </Description>
             <Example>
               {`
 {
-  aggregateThreshold: number
+  aggregateThreshold: number,
+  max: number
 }
             `}
             </Example>

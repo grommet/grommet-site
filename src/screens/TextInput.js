@@ -42,6 +42,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/TextInput',
+          label: 'Github',
+        },
       ]}
       description="A control to input a single line of text, with optional suggestions"
       intrinsicElement="input"

@@ -38,6 +38,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Stack',
+          label: 'Github',
+        },
       ]}
       description="A container that stacks contents on top of each other"
       intrinsicElement="div"

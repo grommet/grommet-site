@@ -34,6 +34,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/DateInput',
+          label: 'Github',
+        },
       ]}
       description="A control to input a single date or a date range"
       intrinsicElement="div"
@@ -170,6 +175,23 @@ export default () => (
             <Example>"5xl"</Example>
             <Example>"6xl"</Example>
             <Example>"string"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="messages">
+          <Description>
+            Custom messages for DateInput. Used for accessibility by screen
+            readers.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+  "enterCalendar": "Calendar is open, press tab to enter the calendar",
+  "exitCalendar": "Exited calendar dialog"
+}
+            `}
+            </Example>
           </PropertyValue>
         </Property>
       </Properties>

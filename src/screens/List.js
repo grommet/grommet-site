@@ -33,6 +33,11 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/List',
+          label: 'Github',
+        },
       ]}
       description="An ordered list of items"
       intrinsicElement="ol"
@@ -62,6 +67,13 @@ export default () => (
             the column axis when contained in a Grid.
           </Description>
           <GenericAlignSelf />
+        </Property>
+        <Property name="defaultItemProps">
+          <Description>
+            Styling applied to all list items. Object accepts any Box 
+            props. To style a specific list item, use `itemProps`.
+          </Description>
+          <Example>{`{{ background: ..., align: ... }}`}</Example>
         </Property>
 
         <Property name="gridArea">
@@ -197,15 +209,15 @@ export default () => (
         <Property name="onClickItem">
           <Description>
             When supplied, this function will be called with an event object
-            that include a 'item' property containing the data value associated
-            with the clicked item and an 'index' property containing the index
-            in 'data' of the clicked item. You should not include interactive
-            elements, like Anchor or Button inside 'primaryKey' or
+            which includes an 'item' property containing the data value
+            associated with the clicked item and an 'index' property containing
+            the index in 'data' of the clicked item. You should not include
+            interactive elements, like Anchor or Button inside 'primaryKey' or
             'secondaryKey' as that can cause confusion with overlapping
             interactive elements.
           </Description>
           <PropertyValue type="function">
-            <Example>{`({ datum, index }) => {}`}</Example>
+            <Example>{`({ item, index }) => {}`}</Example>
           </PropertyValue>
         </Property>
 

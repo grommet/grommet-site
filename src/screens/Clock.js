@@ -38,6 +38,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Clock',
+          label: 'Github',
+        },
       ]}
       description="A clock with timezone awareness"
       intrinsicElement={['div', 'svg']}

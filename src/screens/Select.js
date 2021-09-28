@@ -41,6 +41,11 @@ export default () => (
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Select',
+          label: 'Github',
+        },
       ]}
       description="A control to select a value, with optional search"
       code={`function Example() {

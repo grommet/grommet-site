@@ -31,6 +31,11 @@ export default () => (
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
+        {
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/Pagination',
+          label: 'Github',
+        },
       ]}
       description="A control that enables selection of a single page from a 
  range of pages"
