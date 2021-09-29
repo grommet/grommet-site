@@ -72,11 +72,15 @@ export default () => (
           </PropertyValue>
           <PropertyValue type="array">
             <Description>
-              An array of object with a color, value and opacity based on thumb
+              An array of objects with a color, value and opacity based on thumb
               value.
             </Description>
             <Example>
-              {`[{ color: "string", value: number, opacity?: number }]`}
+              {`[
+  { value: 3, color: '#FF0000', opacity: 0.5 },
+  { value: 7, color: { light: 'accent-3', dark: 'brand' } },
+  { value: 10, color: '#00FF00' },
+]`}
             </Example>
           </PropertyValue>
         </Property>
