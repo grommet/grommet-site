@@ -67,8 +67,8 @@ export default () => (
             <Example defaultValue>"accent-1"</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Description>For 'dark' and 'light' modes.</Description>
-            <Example>{`{"light": "string", "dark": "string"}`}</Example>
+            <Description>An object with a color for dark and light modes.</Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="array">
             <Description>
