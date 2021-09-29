@@ -62,9 +62,12 @@ export default () => (
         </Property>
 
         <Property name="color">
-          <Description>A hex, name, or rgb value.</Description>
+          <Description>The color of the track.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>"accent-1"</Example>
+            <Description>
+              A hex, name, rgb value, or theme color name.
+            </Description>
+            <Example>"control"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>An object with a color for dark and light modes.</Description>
