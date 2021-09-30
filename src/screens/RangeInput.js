@@ -25,21 +25,18 @@ export default () => (
       name="RangeInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
           label: 'Github',
         },
       ]}
@@ -62,6 +59,33 @@ export default () => (
             aria-label will be added to the element.
           </Description>
           <GenericA11yTitle />
+        </Property>
+
+        <Property name="color">
+          <Description>The color of the track.</Description>
+          <PropertyValue type="string">
+            <Description>
+              A hex, name, rgb value, or theme color name.
+            </Description>
+            <Example>"control"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>An object with a color for dark and light modes.</Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="array">
+            <Description>
+              An array of objects with a color, value and opacity based on thumb
+              value.
+            </Description>
+            <Example>
+              {`[
+  { value: 3, color: '#FF0000', opacity: 0.5 },
+  { value: 7, color: { light: 'accent-3', dark: 'brand' } },
+  { value: 10, color: '#00FF00' },
+]`}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="id">
