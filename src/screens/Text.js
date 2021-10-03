@@ -27,21 +27,18 @@ export default () => (
       name="Text"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Text',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Text',
           label: 'Github',
         },
       ]}
@@ -193,7 +190,8 @@ export default () => (
           <PropertyValue type="string">
             <Description>
               If truncate = tip, the full text content will be placed in a Tip
-              that will appear on hover.
+              that will appear on hover. The alignment of tip can be done using
+              the `dropProps`.
             </Description>
             <Example>"tip"</Example>
           </PropertyValue>
