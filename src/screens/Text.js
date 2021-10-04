@@ -190,8 +190,7 @@ export default () => (
           <PropertyValue type="string">
             <Description>
               If truncate = tip, the full text content will be placed in a Tip
-              that will appear on hover. The alignment of tip can be done using
-              the `dropProps`.
+              that will appear on hover.
             </Description>
             <Example>"tip"</Example>
           </PropertyValue>
