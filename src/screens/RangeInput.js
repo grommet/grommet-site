@@ -2,7 +2,7 @@ import React from 'react';
 import { RangeInput } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { GenericA11yTitle } from '../utils/genericPropExamples';
+import { GenericA11yTitle, GenericPad } from '../utils/genericPropExamples';
 import {
   GenericExtend,
   GenericOpacity,
@@ -70,7 +70,9 @@ export default () => (
             <Example>"control"</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Description>An object with a color for dark and light modes.</Description>
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="array">
@@ -182,6 +184,11 @@ export default () => (
         <Property name="rangeInput.extend">
           <Description>Any additional style for the RangeInput.</Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="rangeInput.pad">
+          <Description>The pad around the RangeInput.</Description>
+          <GenericPad />
         </Property>
 
         <Property name="rangeInput.thumb.color">
