@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericBoolFalse,
+  GenericPad
 } from '../utils/genericPropExamples';
 import {
   GenericExtend,
@@ -218,6 +219,11 @@ export default () => (
         <Property name="rangeInput.extend">
           <Description>Any additional style for the RangeInput.</Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="rangeInput.pad">
+          <Description>The pad around the RangeInput.</Description>
+          <GenericPad />
         </Property>
 
         <Property name="rangeInput.thumb.color">
