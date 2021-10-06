@@ -28,21 +28,18 @@ export default () => (
       name="RangeInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
           label: 'Github',
         },
       ]}
@@ -97,7 +94,7 @@ export default () => (
         </Property>
 
         <Property name="disabled">
-          <Description disableMarkdown>
+          <Description>
             {`Same as React <input disabled={} />. Also adds a hidden input
             element with the same name so form submissions work.`}
           </Description>
