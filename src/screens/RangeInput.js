@@ -2,7 +2,10 @@ import React from 'react';
 import { RangeInput } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { GenericA11yTitle } from '../utils/genericPropExamples';
+import {
+  GenericA11yTitle,
+  GenericBoolFalse,
+} from '../utils/genericPropExamples';
 import {
   GenericExtend,
   GenericOpacity,
@@ -25,18 +28,21 @@ export default () => (
       name="RangeInput"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
+          url:
+            'https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
+          url:
+            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
+          url:
+            'https://github.com/grommet/grommet/tree/master/src/js/components/RangeInput',
           label: 'Github',
         },
       ]}
@@ -70,7 +76,9 @@ export default () => (
             <Example>"control"</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Description>An object with a color for dark and light modes.</Description>
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="array">
@@ -86,6 +94,14 @@ export default () => (
 ]`}
             </Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="disabled">
+          <Description disableMarkdown>
+            {`Same as React <input disabled={} />. Also adds a hidden input
+            element with the same name so form submissions work.`}
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="id">
@@ -177,6 +193,30 @@ export default () => (
           <PropertyValue type="string">
             <Example defaultValue>"24px"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="rangeInput.disabled.opacity">
+          <Description>
+            {' '}
+            The opacity when the RangeInput is disabled.
+          </Description>
+          <PropertyValue type="number">
+            <Example defaultValue>0.3</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="rangeInput.disabled.thumb.color">
+          <Description>
+            The color of the thumb on RangeInput when disabled.
+          </Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="rangeInput.disabled.track.color">
+          <Description>
+            The color of the track on RangeInput when disabled.
+          </Description>
+          <GenericColor />
         </Property>
 
         <Property name="rangeInput.extend">
