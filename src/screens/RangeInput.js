@@ -94,7 +94,7 @@ export default () => (
         </Property>
 
         <Property name="disabled">
-          <Description>
+          <Description disableMarkdown>
             {`Same as React <input disabled={} />. Also adds a hidden input
             element with the same name so form submissions work.`}
           </Description>
@@ -194,7 +194,6 @@ export default () => (
 
         <Property name="rangeInput.disabled.opacity">
           <Description>
-            {' '}
             The opacity when the RangeInput is disabled.
           </Description>
           <PropertyValue type="number">
