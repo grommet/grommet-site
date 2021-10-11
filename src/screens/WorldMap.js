@@ -27,21 +27,18 @@ const WorldMapDoc = () => (
       name="WorldMap"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-WorldMap&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-WorldMap&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/worldmap&module=%2Fsrc%2FWorldMap.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/worldmap&module=%2Fsrc%2FWorldMap.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/WorldMap',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/WorldMap',
           label: 'Github',
         },
       ]}
@@ -151,7 +148,10 @@ const WorldMapDoc = () => (
           <PropertyValue type="array">
             <Description>
               'location' is an array of two numeric values that indicates the
-              latitude and longitude of the specified location.
+              latitude and longitude of the specified location. It should be
+              given a 'name' for accessibility. 'onClick' and 'onHover' allow
+              user interaction with each place. 'content' and 'dropProps' allow
+              attaching additional content near each place.
             </Description>
             <Example>
               {`
@@ -159,6 +159,17 @@ const WorldMapDoc = () => (
   {
     color: "string" | 
       { dark: "string", light: "string" },
+    content: (
+      <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+        <Text>Sydney</Text>
+      </Box>
+    ),
+    dropProps: {
+      align: { left: 'right' },
+      background: { color: 'background-contrast' },
+      margin: { left: 'small' },
+      round: 'xsmall',
+    },
     name: "Sydney",
     location: [
       -33.8830555556, 
