@@ -31,21 +31,18 @@ export default () => (
       name="Carousel"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Media-Carousel&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Media-Carousel&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/carousel&module=%2Fsrc%2FCarousel.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/carousel&module=%2Fsrc%2FCarousel.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Carousel',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Carousel',
           label: 'Github',
         },
       ]}
@@ -96,6 +93,21 @@ export default () => (
           </Description>
           <PropertyValue type="number">
             <Example>1</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="children">
+          <Description>
+            Array of child nodes to use for slides of the Carousel.
+          </Description>
+          <PropertyValue type="array">
+            <Example>
+              {`
+                <Box>Slide One</Box>
+                <Box>Slide Two</Box>
+                <Box>Slide Three</Box>
+              `}
+            </Example>
           </PropertyValue>
         </Property>
 
