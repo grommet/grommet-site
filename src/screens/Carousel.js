@@ -103,9 +103,9 @@ export default () => (
           <PropertyValue type="array">
             <Example>
               {`
-                <Box>Slide One</Box>
-                <Box>Slide Two</Box>
-                <Box>Slide Three</Box>
+<Box>Slide One</Box>
+<Box>Slide Two</Box>
+<Box>Slide Three</Box>
               `}
             </Example>
           </PropertyValue>
