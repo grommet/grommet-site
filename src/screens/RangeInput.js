@@ -2,7 +2,11 @@ import React from 'react';
 import { RangeInput } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { GenericA11yTitle, GenericPad } from '../utils/genericPropExamples';
+import {
+  GenericA11yTitle,
+  GenericBoolFalse,
+  GenericPad
+} from '../utils/genericPropExamples';
 import {
   GenericExtend,
   GenericOpacity,
@@ -88,6 +92,14 @@ export default () => (
 ]`}
             </Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="disabled">
+          <Description disableMarkdown>
+            {`Same as React <input disabled={} />. Also adds a hidden input
+            element with the same name so form submissions work.`}
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="id">
@@ -179,6 +191,29 @@ export default () => (
           <PropertyValue type="string">
             <Example defaultValue>"24px"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="rangeInput.disabled.opacity">
+          <Description>
+            The opacity when the RangeInput is disabled.
+          </Description>
+          <PropertyValue type="number">
+            <Example defaultValue>0.3</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="rangeInput.disabled.thumb.color">
+          <Description>
+            The color of the thumb on RangeInput when disabled.
+          </Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="rangeInput.disabled.track.color">
+          <Description>
+            The color of the track on RangeInput when disabled.
+          </Description>
+          <GenericColor />
         </Property>
 
         <Property name="rangeInput.extend">
