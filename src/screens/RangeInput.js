@@ -5,7 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericBoolFalse,
-  GenericPad
+  GenericPad,
 } from '../utils/genericPropExamples';
 import {
   GenericExtend,
