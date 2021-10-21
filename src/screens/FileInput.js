@@ -50,6 +50,30 @@ export default () => (
 />`}
     >
       <Properties>
+        <Property name="confirmRemove">
+          <Description>
+            Provides custom rendering of a confirmation that appears when user
+            attempts to remove a file or files.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              The function will be passed an object containing 'onConfirm' and
+              'onCancel' callbacks. If 'onConfirm' is called, the file will be
+              removed. If 'onCancel' is called, the file will remain.
+            </Description>
+            <Example>{`({ onConfirm, onCancel }) => (
+  <Layer onClickOutside={onCancel} onEsc={onCancel}>
+      <Box>
+          Are you sure you want to delete this file?
+          <Box direction="row" gap="small">
+             <Button label="Cancel" onClick={onCancel} />
+             <Button label="Delete file" onClick={onConfirm} />
+          </Box>
+      </Box>
+  </Layer>
+)`}</Example>
+          </PropertyValue>
+        </Property>
         <Property name="disabled">
           <Description>Whether the control is disabled.</Description>
           <GenericBool />
@@ -100,7 +124,7 @@ export default () => (
             <Description>
               If an object is supplied, 'aggregageThreshold' indicates the
               maximum number of individual files to show. Above this, only a
-              single message describing the number of files will be shown. 'max' 
+              single message describing the number of files will be shown. 'max'
               indicates the maximum number of files that can be added.
             </Description>
             <Example>
