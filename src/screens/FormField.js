@@ -27,21 +27,18 @@ export default () => (
       name="FormField"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-FormField&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-FormField&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/formfield&module=%2Fsrc%2FFormField.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/formfield&module=%2Fsrc%2FFormField.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/FormField',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/FormField',
           label: 'Github',
         },
       ]}
@@ -181,8 +178,16 @@ export default () => (
         </Property>
 
         <Property name="required">
-          <Description>Whether the field is required.</Description>
-          <GenericBool />
+          <Description>
+            Whether the field is required. If the required indicator should be
+            shown if provided in theme.
+          </Description>
+          <PropertyValue type="boolean">
+            <GenericBool />
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`required={{ indicator: false }}`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="validate">
