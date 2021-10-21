@@ -179,7 +179,9 @@ export default () => (
 
         <Property name="required">
           <Description>
-            Whether the field is required. If `formField.requiredIndicator` =  true in your theme, passing { indicator: false } will not display the required indicator for the given field.
+            Whether the field is required. If `formField.requiredIndicator` =
+            true in your theme, passing {{ indicator: false }} will not display
+            the required indicator for the given field.
           </Description>
           <PropertyValue type="boolean">
             <GenericBool />
