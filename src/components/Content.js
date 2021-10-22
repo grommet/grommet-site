@@ -47,6 +47,7 @@ import Markdown from '../screens/Markdown';
 import MaskedInput from '../screens/MaskedInput';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
+import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
 import Notification from '../screens/Notification';
 import Pagination from '../screens/Pagination';
@@ -176,6 +177,7 @@ export default () => (
     <Route exact path="/maskedinput" component={MaskedInput} />
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
+    <Route exact path="/namevaluelist" component={NameValueList} />
     <Route exact path="/nav" component={Nav} />
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/pagination" component={Pagination} />
