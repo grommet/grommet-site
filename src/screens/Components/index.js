@@ -46,6 +46,7 @@ import {
   MaskedInputItem,
   MenuItem,
   MeterItem,
+  NameValueListItem,
   NavItem,
   NotificationItem,
   PaginationItem,
@@ -111,6 +112,7 @@ const Items = {
   MaskedInput: MaskedInputItem,
   Menu: MenuItem,
   Meter: MeterItem,
+  NameValueList: NameValueListItem,
   Nav: NavItem,
   Notification: NotificationItem,
   Pagination: PaginationItem,
@@ -167,7 +169,7 @@ export default class Components extends Component {
             {name === 'Color' ? (
               <Color index={index} />
             ) : (
-              components.map(component => {
+              components.map((component) => {
                 const Item = Items[component];
                 return (
                   <Item

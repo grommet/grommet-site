@@ -36,6 +36,7 @@ export { MainItem } from '../Main';
 export { MarkdownItem } from '../Markdown';
 export { MaskedInputItem } from '../MaskedInput';
 export { MenuItem } from '../Menu';
+export { NameValueListItem } from '../NameValueList';
 export { MeterItem } from '../Meter';
 export { NavItem } from '../Nav';
 export { NotificationItem } from '../Notification';
