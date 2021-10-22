@@ -115,20 +115,6 @@ export default () => (
             <Example>"small"</Example>
           </PropertyValue>
         </Property>
-
-        <Property name="nameValueList.name">
-          <Description>Any valid Text Props for the name.</Description>
-          <PropertyValue type="object">
-            <Example defaultValue>{`{ weight: 'bold' }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="nameValueList.value">
-          <Description>Any valid Text Props for the value.</Description>
-          <PropertyValue type="object">
-            <Example>{`{ color: 'text-strong' }`}</Example>
-          </PropertyValue>
-        </Property>
       </ThemeDoc>
     </ComponentDoc>
 
@@ -172,6 +158,21 @@ export default () => (
           </PropertyValue>
         </Property>
       </Properties>
+      <ThemeDoc>
+        <Property name="nameValuePair.name">
+          <Description>Any valid Text Props for the name.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{ weight: 'bold' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="nameValuePair.value">
+          <Description>Any valid Text Props for the value.</Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: 'text-strong' }`}</Example>
+          </PropertyValue>
+        </Property>
+      </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
