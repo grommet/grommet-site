@@ -2,7 +2,11 @@ import React from 'react';
 import { NameValueList, NameValuePair, Text } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { GenericAlignSelf, GenericMargin } from '../utils/genericPropExamples';
+import {
+  GenericAlign,
+  GenericAlignSelf,
+  GenericMargin,
+} from '../utils/genericPropExamples';
 import {
   ComponentDoc,
   Properties,
@@ -40,6 +44,15 @@ export default () => (
 </Box>`}
     >
       <Properties>
+        <Property name="align">
+          <Description>
+            How to align the contents along the cross axis. Any 'align-items'
+            valid CSS value is accepted, including composed ones such 'first
+            baseline' and 'unsafe start'.
+          </Description>
+          <GenericAlign />
+        </Property>
+
         <Property name="layout">
           <Description>
             The orientation to layout the NameValuePairs.
