@@ -163,7 +163,7 @@ export default () => (
         </Property>
 
         <Property name="name">
-          <Description>A name for the NameValuePair.</Description>
+          <Description>The name for the NameValuePair.</Description>
           <PropertyValue type="string">
             <Example>"Created on"</Example>
           </PropertyValue>
