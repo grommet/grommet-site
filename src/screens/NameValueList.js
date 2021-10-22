@@ -37,8 +37,11 @@ export default () => (
       intrinsicElement="div"
       code={`<Box width="medium">  
   <NameValueList>
-    <NameValuePair name='Last synced'>
-      <Text>3 hours ago</Text>
+    <NameValuePair name="Power">
+      <Text color="text-strong">Ok</Text>
+    </NameValuePair>
+    <NameValuePair name="Health">
+      <Text color="text-strong">Critical</Text>
     </NameValuePair>
   </NameValueList>
 </Box>`}
