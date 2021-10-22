@@ -52,7 +52,7 @@ export default () => (
       <Properties>
         <Property name="confirmRemove">
           <Description>
-            Provides custom rendering of a confirmation that appears when user
+            Provides custom rendering of a confirmation that appears when the user
             attempts to remove a file or files.
           </Description>
           <PropertyValue type="function">
