@@ -133,7 +133,7 @@ export default () => (
         </Property>
 
         <Property name="children">
-          <Description>The value of the name value pair.</Description>
+          <Description>The value of the NameValuePair.</Description>
           <PropertyValue type="node">
             <Example>{`<Anchor>jane.doe@email.com</Anchor>`}</Example>
           </PropertyValue>
@@ -149,7 +149,7 @@ export default () => (
         </Property>
 
         <Property name="name">
-          <Description>A name for the NameValuePair.</Description>
+          <Description>The name for the NameValuePair.</Description>
           <PropertyValue type="string">
             <Example>"Created on"</Example>
           </PropertyValue>
