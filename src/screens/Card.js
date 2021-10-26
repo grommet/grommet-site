@@ -12,6 +12,7 @@ import {
   Example,
   ThemeDoc,
 } from '../components/Doc';
+import { GenericExtend } from '../utils/genericThemeExamples';
 
 export default () => (
   <Page>
@@ -19,15 +20,13 @@ export default () => (
       name="Card"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Layout-Card&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Card&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Card',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Card',
           label: 'Github',
         },
       ]}
@@ -54,6 +53,22 @@ export default () => (
               {`{ round: "small", elevation: "small" }`}
             </Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="card.hover.container.elevation">
+          <Description>
+            The elevation to apply to a Card with 'onClick' when it is hovered.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="card.hover.container.extend">
+          <Description>
+            Any additional style for the card container.
+          </Description>
+          <GenericExtend />
         </Property>
 
         <Property name="card.header">
