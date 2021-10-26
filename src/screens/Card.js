@@ -46,12 +46,35 @@ export default () => (
 </Card>`}
     >
       <ThemeDoc>
+        <Property name="card.body">
+          <Description>Any valid Box prop for the CardBody.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="card.container">
           <Description>Any valid Box prop for the Card container.</Description>
           <PropertyValue type="object">
             <Example defaultValue>
               {`{ round: "small", elevation: "small" }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="card.footer">
+          <Description>Any valid Box prop for the CardFooter.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ background: "background-contrast" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="card.header">
+          <Description>Any valid Box prop for the CardHeader.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
           </PropertyValue>
         </Property>
 
@@ -69,29 +92,6 @@ export default () => (
             Any additional style for the card container.
           </Description>
           <GenericExtend />
-        </Property>
-
-        <Property name="card.header">
-          <Description>Any valid Box prop for the CardHeader.</Description>
-          <PropertyValue type="object">
-            <Example defaultValue> {`{}`} </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="card.body">
-          <Description>Any valid Box prop for the CardBody.</Description>
-          <PropertyValue type="object">
-            <Example defaultValue> {`{}`} </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="card.footer">
-          <Description>Any valid Box prop for the CardFooter.</Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`{ background: "background-contrast" }`}
-            </Example>
-          </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
