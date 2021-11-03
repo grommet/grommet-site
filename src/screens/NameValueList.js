@@ -109,7 +109,7 @@ export default () => (
           <PropertyValue type="object">
             <Example
               defaultValue
-            >{`{ column: 'large', row: 'medium' }`}</Example>
+            >{`{ column: 'large', row: 'small' }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
             <Example>"small"</Example>
