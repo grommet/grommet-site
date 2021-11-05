@@ -166,6 +166,13 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="nameValuePair.name.width">
+          <Description>The size of the bottom margin for name.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{ bottom: 'xxsmall' }`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="nameValuePair.value">
           <Description>Any valid Text Props for the value.</Description>
           <PropertyValue type="object">
