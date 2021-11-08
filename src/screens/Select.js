@@ -29,21 +29,18 @@ export default () => (
       name="Select"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Select',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Select',
           label: 'Github',
         },
       ]}
@@ -608,6 +605,32 @@ export default () => (
             <Example defaultValue>
               {`{ pad: "small", background: "light-2" }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="select.clear.hover.background">
+          <Description>A hex, name, or rgb value.</Description>
+          <PropertyValue type="string">
+            <Example>"background-contrast"</Example>
+          </PropertyValue>
+          <Description>
+            An object with a color for dark and light modes.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="select.clear.hover.color">
+          <Description>A hex, name, or rgb value.</Description>
+          <PropertyValue type="string">
+            <Example>"text-weak"</Example>
+          </PropertyValue>
+          <Description>
+            An object with a color for dark and light modes.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
