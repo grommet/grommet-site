@@ -609,28 +609,36 @@ export default () => (
         </Property>
 
         <Property name="select.clear.hover.background">
-          <Description>A hex, name, or rgb value.</Description>
+          <Description>
+            The background color of the clear button option in its hover state.
+          </Description>
           <PropertyValue type="string">
             <Example>"background-contrast"</Example>
+            <Description>A hex, name, or rgb value.</Description>
           </PropertyValue>
-          <Description>
-            An object with a color for dark and light modes.
-          </Description>
+
           <PropertyValue type="object">
             <Example>{`{ dark: "string", light: "string" }`}</Example>
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
           </PropertyValue>
         </Property>
 
         <Property name="select.clear.hover.color">
-          <Description>A hex, name, or rgb value.</Description>
+          <Description>
+            The text color of the clear button option in its hover state.
+          </Description>
           <PropertyValue type="string">
             <Example>"text-weak"</Example>
+            <Description>A hex, name, or rgb value.</Description>
           </PropertyValue>
-          <Description>
-            An object with a color for dark and light modes.
-          </Description>
+
           <PropertyValue type="object">
             <Example>{`{ dark: "string", light: "string" }`}</Example>
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
           </PropertyValue>
         </Property>
 
