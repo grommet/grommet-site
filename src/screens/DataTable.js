@@ -364,7 +364,7 @@ export default () => (
             <Description disableMarkdown>
               {`This function
             will be called with an array of primary key values, suitable to be
-            passed to the 'select' property and the data item that was changed.
+            passed to the 'select' property, along with the data item that was changed.
             If you are storing select state via
             a 'useState' hook, you can do something like: '
             <DataTable select={select} onSelect={setSelect} />'.`}
@@ -393,7 +393,7 @@ export default () => (
             to the end of existing data. `onUpdate` is also called when the sort
             changes or a group is expanded or collapsed by the user. It is
             passed information on the current sort settings and the maximum
-            number of items it needs to return. If the `groupBy` is specified,
+            number of items it needs to return. If `groupBy` is specified,
             `data` should include an item for each group also. This item should
             have its own unique value in the property specified as the
             `primaryKey` and this unique key value should be listed in
