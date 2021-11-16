@@ -52,8 +52,8 @@ export default () => (
       <Properties>
         <Property name="confirmRemove">
           <Description>
-            Provides custom rendering of a confirmation that appears when the user
-            attempts to remove a file or files.
+            Provides custom rendering of a confirmation that appears when the
+            user attempts to remove a file or files.
           </Description>
           <PropertyValue type="function">
             <Description>
@@ -88,7 +88,7 @@ export default () => (
 
         <Property name="maxSize">
           <Description>
-            Specifies a file size limit in bytes for FileInput.
+            Specifies a file size limit in bytes (binary) for FileInput.
           </Description>
           <PropertyValue type="number">
             <Example>5000</Example>
