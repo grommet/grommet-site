@@ -17,7 +17,7 @@ export const structure = {
     },
     {
       name: 'Type',
-      components: ['Heading', 'Markdown', 'Paragraph', 'Text'],
+      components: ['Heading', 'Markdown', 'Paragraph', 'Text', 'Tag'],
     },
     {
       name: 'Color',
