@@ -156,7 +156,7 @@ export default () => (
 
         <Property name="tag.name">
           <Description>
-            An object specifying the properties for the name Text
+            Any valid Text props for the name.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
