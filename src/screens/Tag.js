@@ -184,7 +184,7 @@ export default () => (
 
         <Property name="tag.remove">
           <Description>
-            The properties on the remove button
+            Any valid Button props for the remove button.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
