@@ -21,21 +21,18 @@ export default () => (
       name="Grommet"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Utilities-Grommet&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Utilities-Grommet&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grommet&module=%2Fsrc%2FGrommet.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grommet&module=%2Fsrc%2FGrommet.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Grommet',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Grommet',
           label: 'Github',
         },
       ]}
@@ -113,7 +110,10 @@ export default () => (
           <PropertyValue type="string">
             <Description>
               'min' indicates it should take at minimum the whole viewport,
-              allowing the viewport to control scrolling.
+              allowing the viewport to control scrolling. This should be used in
+              cases where there is a Box or Grid between a Header and Footer and
+              the desired behavior is for the scrollbar to scroll the entire
+              page.
             </Description>
             <Example>"min"</Example>
           </PropertyValue>
