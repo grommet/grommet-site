@@ -106,13 +106,21 @@ export default () => (
 
         <Property name="full">
           <Description>Whether to take the whole viewport.</Description>
-          <GenericBoolFalse />
+          <PropertyValue type="boolean">
+            <Description>
+              'true' should be used when the entire page layout will be
+              controlled by a child Box or Grid, typically with a fixed header,
+              footer, and/or sidebar, with scrolling being handled by the Main
+              content within.
+            </Description>
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
           <PropertyValue type="string">
             <Description>
               'min' indicates it should take at minimum the whole viewport,
-              allowing the viewport to control scrolling. This should be used in
-              cases where there is a Box or Grid between a Header and Footer and
-              the desired behavior is for the scrollbar to scroll the entire
+              allowing the viewport to control scrolling. This should be used
+              when the scrolling behavior includes all of the content on the
               page.
             </Description>
             <Example>"min"</Example>
