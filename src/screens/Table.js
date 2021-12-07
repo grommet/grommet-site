@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericAlignSelf,
+  GenericBool,
   GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
@@ -20,6 +21,7 @@ import {
   Description,
   Example,
   ThemeDoc,
+  PropOptions,
 } from '../components/Doc';
 import { ResponsiveBreakpoint } from '../utils/themeDocUtils';
 
@@ -29,21 +31,18 @@ export default () => (
       name="Table"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-Table&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Table&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/table&module=%2Fsrc%2FTable.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/table&module=%2Fsrc%2FTable.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Table',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Table',
           label: 'Github',
         },
       ]}
@@ -146,6 +145,82 @@ export default () => (
       intrinsicElement="td"
     >
       <Properties>
+        <Property name="border">
+          <Description>A border around the cell.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"top"</Example>
+            <Example>"left"</Example>
+            <Example>"bottom"</Example>
+            <Example>"right"</Example>
+            <Example>"start"</Example>
+            <Example>"end"</Example>
+            <Example>"horizontal"</Example>
+            <Example>"vertical"</Example>
+            <Example>"all"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  color: string | { dark: string, light: string },
+  size: "medium",
+  style: "dashed",
+  side: "all"
+}              
+              `}
+            </Example>
+          </PropertyValue>
+          <PropertyValue type="array">
+            <Description>
+              An array of objects defining the border for different sides of the
+              Box.
+            </Description>
+            <Example>
+              {`
+[
+  {
+    color: "black",
+    size: "small",
+    style: "solid",
+    side: "top"
+  },
+  {
+    color: "black",
+    size: "medium",
+    style: "dotted",
+    side: "bottom"
+  }
+]
+              `}
+            </Example>
+            <PropOptions prop="size">
+              <SizesXsmallXlarge />
+              <Example>"any CSS size"</Example>
+            </PropOptions>
+            <PropOptions prop="style">
+              <Example>"solid"</Example>
+              <Example>"dashed"</Example>
+              <Example>"dotted"</Example>
+              <Example>"double"</Example>
+              <Example>"groove"</Example>
+              <Example>"ridge"</Example>
+              <Example>"inset"</Example>
+              <Example>"outset"</Example>
+              <Example>"hidden"</Example>
+            </PropOptions>
+            <PropOptions prop="side">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"horizontal"</Example>
+              <Example>"vertical"</Example>
+              <Example>"all"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
         <Property name="plain">
           <Description>
             Whether default styling context should be removed.
@@ -366,9 +441,9 @@ export default () => (
 export const TableItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Box>
-      {[0, 1, 2, 4].map(row => (
+      {[0, 1, 2, 4].map((row) => (
         <Box key={row} direction="row">
-          {[0, 1, 2].map(col => (
+          {[0, 1, 2].map((col) => (
             <Box
               key={col}
               border={{ color: 'brand' }}
