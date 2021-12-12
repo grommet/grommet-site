@@ -33,7 +33,7 @@ export default () => (
         },
       ]}
       description="A means of providing different rendering behavior based on the
- viewport resolution"
+ viewport size"
       code={`function Example() {
   const size = React.useContext(ResponsiveContext);
   return (
