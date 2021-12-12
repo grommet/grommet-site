@@ -33,7 +33,7 @@ export default () => (
         },
       ]}
       description="A means of providing different rendering behavior based on the
- screen resolution"
+ viewport resolution"
       code={`function Example() {
   const size = React.useContext(ResponsiveContext);
   return (
@@ -46,9 +46,9 @@ export default () => (
       <Properties>
         <Property name="children">
           <Description>
-            Render function that will be called with the current screen
-            resolution size (e.g our base theme of size 'small', 'medium',
-            'large'). The size value will be derived from global.breakpoints
+            Render function that will be called with the current viewport
+            size (e.g our base theme of size 'small', 'medium', 'large').
+            The size value will be derived from global.breakpoints
             entry in the theme object.
           </Description>
           <PropertyValue type="function">
