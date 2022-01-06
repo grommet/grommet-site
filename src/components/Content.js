@@ -65,6 +65,7 @@ import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
+import Tag from '../screens/Tag';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
@@ -108,7 +109,7 @@ import Resources from '../screens/Docs/Resources';
 //   'Heading', 'Home', 'Image', 'InfiniteScroll', 'Keyboard', 'Layer',
 //   'Markdown', 'Menu', 'Meter', 'Paragraph', 'RadioButton',
 //   'RangeInput', 'RangeSelector', 'Responsive', 'Select', 'SkipLinks', 'Stack',
-//   'Tabs', 'Table', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
+//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
 //   'Video', 'WorldMap'].forEach((name) => {
 //   Screens[name] = props => (
 //     <DynamicImport load={() => import(`../screens/${name}`)}>
@@ -194,6 +195,7 @@ export default () => (
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
+    <Route exact path="/tag" component={Tag} />
     <Route exact path="/text" component={Text} />
     <Route exact path="/textarea" component={TextArea} />
     <Route exact path="/textinput" component={TextInput} />

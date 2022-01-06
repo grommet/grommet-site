@@ -100,8 +100,7 @@ export default () => (
       <ThemeDoc>
         <Property name="nameValueList.gap">
           <Description>
-            Gap affects the spacing between the name and value of a
-            NameValuePair as well as the spacing between NameValuePairs. If an
+            The gap to apply when pairProps.direction = row (default). If an
             object is provided, "column" affects the gap size between the name
             and value and "row" affects the gap size between NameValuePairs. If
             a string is provided, a uniform gap will be applied to both.
@@ -110,6 +109,23 @@ export default () => (
             <Example
               defaultValue
             >{`{ column: 'large', row: 'small' }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="nameValueList.pair.column.gap">
+          <Description>
+            The gap to apply when pairProps.direction = column. If an object is
+            provided, "column" affects the gap size between columns of
+            NameValuePairs (applicable when layout = grid) and "row" affects the
+            gap size between rows of NameValuePairs. If a string is provided, a
+            uniform gap will be applied to both.
+          </Description>
+          <PropertyValue type="object">
+            <Example
+              defaultValue
+            >{`{ column: 'large', row: 'medium' }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
             <Example>"small"</Example>

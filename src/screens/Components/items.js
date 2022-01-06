@@ -54,6 +54,7 @@ export { SpinnerItem } from '../Spinner';
 export { StackItem } from '../Stack';
 export { TableItem } from '../Table';
 export { TabsItem } from '../Tabs';
+export { TagItem } from '../Tag';
 export { TextItem } from '../Text';
 export { TextAreaItem } from '../TextArea';
 export { TextInputItem } from '../TextInput';
