@@ -175,10 +175,24 @@ export default () => (
         </Property>
       </Properties>
       <ThemeDoc>
+        <Property name="nameValueList.name.width">
+          <Description>The width of the name.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="nameValuePair.name">
           <Description>Any valid Text Props for the name.</Description>
           <PropertyValue type="object">
             <Example defaultValue>{`{ weight: 'bold' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="nameValueList.value.width">
+          <Description>The width of the value.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"medium"</Example>
           </PropertyValue>
         </Property>
 
