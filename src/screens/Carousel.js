@@ -9,9 +9,11 @@ import {
   GenericA11yTitle,
   GenericAlignSelf,
   GenericBoolTrue,
+  GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
   GenericBool,
+  SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
 import { GenericColor } from '../utils/genericThemeExamples';
 import {
@@ -137,6 +139,51 @@ export default () => (
           </Description>
           <PropertyValue type="number">
             <Example defaultValue>0</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="wrap">
+          <Description>
+            If specified, the Carousel children will slide in a connected
+            manner. On the last slide, the next icon is enabled, and will
+            transition into the first slide. On the first slide, the previous
+            icon is enabled and will transition into the last slide. Defaults to
+            false.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
+        <Property name="height">
+          <Description>A fixed height.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+            <SizesXsmallXlarge />
+            <Example>"xxlarge"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: "...", max: "..." }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="width">
+          <Description>A fixed width.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+            <SizesXsmallXlarge />
+            <Example>"xxlarge"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: "...", max: "..." }`}</Example>
           </PropertyValue>
         </Property>
 

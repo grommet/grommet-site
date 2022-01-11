@@ -55,7 +55,7 @@ export default () => (
           </Description>
           <GenericA11yTitle />
         </Property>
-        
+
         <Property name="alignSelf">
           <Description>
             How to align along the cross axis when contained in a Box or along
@@ -63,7 +63,7 @@ export default () => (
           </Description>
           <GenericAlignSelf />
         </Property>
-        
+
         <Property name="as">
           <Description>
             The DOM tag or react component to use for the element.
@@ -87,13 +87,13 @@ export default () => (
         <Property name="onClick">
           <Description>
             Click handler. If this property is specified the tag will be a
-            button.  This should not be used in conjunction with 'onRemove'.
+            button. This should not be used in conjunction with 'onRemove'.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
           </PropertyValue>
         </Property>
-        
+
         <Property name="onRemove">
           <Description>
             If specified, the tag will include a remove button. This function
@@ -104,7 +104,7 @@ export default () => (
             <Example>{`() => {}`}</Example>
           </PropertyValue>
         </Property>
-        
+
         <Property name="value">
           <Description>Value text to place in the tag.</Description>
           <PropertyValue type="string">
@@ -132,7 +132,7 @@ export default () => (
 
         <Property name="tag.round">
           <Description>How much to round the corners.</Description>
-          <GenericBool/>
+          <GenericBool />
           <PropertyValue type="string">
             <Example defaultValue>"large"</Example>
             <SizesXsmallXlarge />
@@ -155,16 +155,10 @@ export default () => (
         </Property>
 
         <Property name="tag.name">
-          <Description>
-            Any valid Text props for the name.
-          </Description>
+          <Description>Any valid Text props for the name.</Description>
           <PropertyValue type="object">
-            <Example defaultValue>
-              {`{}`}
-            </Example>
-            <Example>
-              {`{ weight: 600 }`}
-            </Example>
+            <Example defaultValue>{`{}`}</Example>
+            <Example>{`{ weight: 600 }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -207,13 +201,9 @@ export default () => (
         </Property>
 
         <Property name="tag.value">
-          <Description>
-            Any valid Text props for the value.
-          </Description>
+          <Description>Any valid Text props for the value.</Description>
           <PropertyValue type="object">
-            <Example defaultValue>
-              {`{ weight: 600 }`}
-            </Example>
+            <Example defaultValue>{`{ weight: 600 }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
