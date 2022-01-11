@@ -21,21 +21,18 @@ export default () => (
       name="Grommet"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Utilities-Grommet&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Utilities-Grommet&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grommet&module=%2Fsrc%2FGrommet.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grommet&module=%2Fsrc%2FGrommet.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Grommet',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Grommet',
           label: 'Github',
         },
       ]}
@@ -109,11 +106,22 @@ export default () => (
 
         <Property name="full">
           <Description>Whether to take the whole viewport.</Description>
-          <GenericBoolFalse />
+          <PropertyValue type="boolean">
+            <Description>
+              'true' should be used when the entire page layout will be
+              controlled by a child Box or Grid, typically with a fixed header,
+              footer, and/or sidebar, with scrolling being handled by the Main
+              content within.
+            </Description>
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
           <PropertyValue type="string">
             <Description>
               'min' indicates it should take at minimum the whole viewport,
-              allowing the viewport to control scrolling.
+              allowing the viewport to control scrolling. This should be used
+              when the scrolling behavior includes all of the content on the
+              page.
             </Description>
             <Example>"min"</Example>
           </PropertyValue>
