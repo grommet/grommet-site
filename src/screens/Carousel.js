@@ -142,7 +142,7 @@ export default () => (
           </PropertyValue>
         </Property>
 
-        <Property name="continuous">
+        <Property name="wrap">
           <Description>
             If specified, the Carousel children will slide in a connected
             manner. On the last slide, the next icon is enabled, and will
