@@ -156,7 +156,9 @@ export default () => (
               If a regexp is provided, it should allow both the final full
               string element as well as partial strings as the user types
               characters one by one. When using regexp to match number values
-              make sure that the option values are numbers as well.
+              make sure that the option values are numbers as well. If 'options'
+              is provided, it show options in a dropdown and avoid to continue
+              typing when matching one option unless 'ignoreOptions' is true.
             </Description>
             <Example>
               {`
