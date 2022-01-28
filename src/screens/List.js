@@ -182,7 +182,7 @@ export default () => (
 
         <Property name="itemKey">
           <Description>
-            The key you want to specify to the item of List component.
+            The key to apply to each item in the List.
           </Description>
           <PropertyValue type="string">
             <Description>The property name of a data object.</Description>
