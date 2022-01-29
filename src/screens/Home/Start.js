@@ -90,27 +90,31 @@ render(<App />);
         </Box>
 
         <Box alignSelf="center" width="large" margin={{ top: 'medium' }}>
-          <RoutedAnchor path="/play" target="_blank">
-            <Box
-              border
-              round={{ corner: 'top' }}
-              direction="row"
-              justify="between"
-              align="center"
-              pad="medium"
-            >
-              <Text color="brand">grommet playground</Text>
-              <Share />
-            </Box>
-          </RoutedAnchor>
+          <RoutedAnchor
+            path="/play"
+            target="_blank"
+            label={
+              <Box
+                border
+                round={{ corner: 'top' }}
+                direction="row"
+                justify="between"
+                align="center"
+                pad="medium"
+              >
+                <Text color="brand">grommet playground</Text>
+                <Share />
+              </Box>
+            }
+          />
           <Box border={{ side: 'vertical' }} height="medium">
             <MonacoEditor
               theme="vs-light"
               language="javascript"
               value={code}
               options={options}
-              onChange={newCode => setCode(newCode)}
-              editorDidMount={editor => {
+              onChange={(newCode) => setCode(newCode)}
+              editorDidMount={(editor) => {
                 editor.focus();
                 window.addEventListener('resize', () => editor.layout());
               }}
@@ -119,7 +123,7 @@ render(<App />);
         </Box>
       </Section>
 
-      <Section background="brand" pad="none">
+      <Section background={{ color: 'brand', opacity: 'weak' }} pad="none">
         <Box
           alignSelf="center"
           background="neutral-2"
@@ -173,7 +177,7 @@ render(<App />);
             <Dot color="#ffff00" />
             <Dot color="#00ff00" />
           </Box>
-          <Heading level={1} color="brand" margin="large">
+          <Heading level={1} margin="large">
             Hello World!
           </Heading>
         </Box>

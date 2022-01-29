@@ -23,9 +23,9 @@ export default () => {
       summary={
         <span>
           Support all the devices! use&nbsp;
-          <RoutedAnchor path="/box">Flexbox</RoutedAnchor> and&nbsp;
-          <RoutedAnchor path="/grid">CSS Grid</RoutedAnchor> to provide layouts
-          for all those new phones and widescreen displays.
+          <RoutedAnchor path="/box" label="Flexbox" /> and&nbsp;
+          <RoutedAnchor path="/grid" label="CSS Grid" /> to provide layouts for
+          all those new phones and widescreen displays.
         </span>
       }
       direction="row"
