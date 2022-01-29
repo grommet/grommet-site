@@ -27,15 +27,13 @@ export default () => (
       name="List"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-List&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-List&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/List',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/List',
           label: 'Github',
         },
       ]}
@@ -70,8 +68,8 @@ export default () => (
         </Property>
         <Property name="defaultItemProps">
           <Description>
-            Styling applied to all list items. Object accepts any Box 
-            props. To style a specific list item, use `itemProps`.
+            Styling applied to all list items. Object accepts any Box props. To
+            style a specific list item, use `itemProps`.
           </Description>
           <Example>{`{{ background: ..., align: ... }}`}</Example>
         </Property>
@@ -179,6 +177,17 @@ export default () => (
           </Description>
           <PropertyValue type="function">
             <Example>{`(item, index, { active }) => <Box>...</Box>`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="itemKey">
+          <Description>The key to apply to each item in the List.</Description>
+          <PropertyValue type="string">
+            <Description>The property name of a data object.</Description>
+            <Example>"id"</Example>
+          </PropertyValue>
+          <PropertyValue type="function">
+            <Example>{`(item) => key-{item.id}`}</Example>
           </PropertyValue>
         </Property>
 
