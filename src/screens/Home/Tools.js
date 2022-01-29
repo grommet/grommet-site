@@ -60,7 +60,7 @@ export const Tools = () => (
         <Tile
           desc="build experiences with grommet components; then publish and share
               your ideas with a simple wysiwg interface"
-          label="Grommet Designer (beta)"
+          label="Grommet Designer"
           link="https://designer.grommet.io/"
           src="/img/tools/designer.png"
           alt="Example of Grommet Designer project containing a dashboard card and avatar"
@@ -68,7 +68,7 @@ export const Tools = () => (
         <Tile
           desc="want grommet to look like your brand? plug your details in and
               share it or import it into to grommet designer"
-          label="Grommet Themer (beta)"
+          label="Grommet Themer"
           link="https://theme-designer.grommet.io/"
           src="/img/tools/themer.png"
           alt="Example of Grommet Themer project with demo of grommet theme"

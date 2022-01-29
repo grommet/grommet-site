@@ -51,21 +51,6 @@ export default () => (
       />
 
       <Message
-        imageSrc="/img/avatars/puppet_200x200.jpeg"
-        name="@nikmd23"
-        summary={
-          <span>
-            this accessibility demo is&nbsp;
-            <span role="img" aria-label="money">
-              💰💰💰
-            </span>
-            &nbsp; https://vimeo.com/187068246 great work @grommetux!
-          </span>
-        }
-        alt="Man with glasses next to an orange person-like character"
-      />
-
-      <Message
         imageSrc="/img/avatars/1nCCU4b3_200x200.jpg"
         name="@tomsthoughtfeed"
         summary={
@@ -116,7 +101,7 @@ export default () => (
       align="center"
       margin={{ top: 'large', bottom: 'xlarge' }}
     >
-      {COMPANIES.map(name => (
+      {COMPANIES.map((name) => (
         <Box
           key={name}
           basis="small"

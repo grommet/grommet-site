@@ -7,11 +7,10 @@ import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
 import * as Themes from 'grommet/themes';
 import { Anchor, Box, Heading, Text } from 'grommet';
-import { Next, Share } from 'grommet-icons';
+import { Next } from 'grommet-icons';
 /* eslint-enable import/no-duplicates */
 import MonacoEditor from '../../components/Doc/MonacoEditor';
 import Header from '../../components/Header';
-import RoutedAnchor from '../../components/RoutedAnchor';
 import Section from './Section';
 
 const scope = {
@@ -89,37 +88,26 @@ render(<App />);
           />
         </Box>
 
-        <Box alignSelf="center" width="large" margin={{ top: 'medium' }}>
-          <RoutedAnchor
-            path="/play"
-            target="_blank"
-            label={
-              <Box
-                border
-                round={{ corner: 'top' }}
-                direction="row"
-                justify="between"
-                align="center"
-                pad="medium"
-              >
-                <Text color="brand">grommet playground</Text>
-                <Share />
-              </Box>
-            }
+        <Box
+          alignSelf="center"
+          width="large"
+          height="medium"
+          margin={{ top: 'medium' }}
+          round={{ corner: 'top' }}
+          border={[{ side: 'top' }, { side: 'vertical' }]}
+          pad={{ top: 'medium' }}
+        >
+          <MonacoEditor
+            theme="vs-light"
+            language="javascript"
+            value={code}
+            options={options}
+            onChange={(newCode) => setCode(newCode)}
+            editorDidMount={(editor) => {
+              editor.focus();
+              window.addEventListener('resize', () => editor.layout());
+            }}
           />
-          <Box border={{ side: 'vertical' }} height="medium">
-            <MonacoEditor
-              theme="vs-light"
-              language="javascript"
-              value={code}
-              options={options}
-              onChange={(newCode) => setCode(newCode)}
-              editorDidMount={(editor) => {
-                editor.focus();
-                window.addEventListener('resize', () => editor.layout());
-              }}
-            />
-          </Box>
         </Box>
       </Section>
 
@@ -149,8 +137,8 @@ render(<App />);
           margin="medium"
         >
           <Anchor
-            href="//github.com/grommet/design-kit"
-            label={<Text size="large">Grommet Design Kit</Text>}
+            href="//designer.grommet.io"
+            label={<Text size="large">Grommet Designer</Text>}
             icon={<Next />}
             reverse
             target="_blank"
