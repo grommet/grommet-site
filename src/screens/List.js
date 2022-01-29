@@ -181,9 +181,7 @@ export default () => (
         </Property>
 
         <Property name="itemKey">
-          <Description>
-            The key to apply to each item in the List.
-          </Description>
+          <Description>The key to apply to each item in the List.</Description>
           <PropertyValue type="string">
             <Description>The property name of a data object.</Description>
             <Example>"id"</Example>
