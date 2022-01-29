@@ -2,7 +2,7 @@ import React from 'react';
 import { Anchor, Box, Stack, Text } from 'grommet';
 import Tile from './Tile';
 
-export default () => {
+const Accessible = () => {
   const [build, setBuild] = React.useState(true);
 
   React.useEffect(() => {
@@ -65,3 +65,5 @@ export default () => {
     </Tile>
   );
 };
+
+export default Accessible;

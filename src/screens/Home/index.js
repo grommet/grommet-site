@@ -15,7 +15,7 @@ import Messages from './Messages';
 import { Tools } from './Tools';
 import { nameToPath } from '../../structure';
 
-export default () => (
+const HomePage = () => (
   <Box>
     <Section>
       <Nav />
@@ -173,3 +173,5 @@ export default () => (
     </Section>
   </Box>
 );
+
+export default HomePage;

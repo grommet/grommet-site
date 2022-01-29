@@ -21,7 +21,7 @@ import {
 } from '../components/Doc';
 import { InputStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const FileInputPage = () => (
   <Page>
     <ComponentDoc
       name="FileInput"
@@ -372,6 +372,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default FileInputPage;
 
 export const FileInputItem = ({ name, path }) => (
   <Item name={name} path={path} center>

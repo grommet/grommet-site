@@ -2,7 +2,7 @@ import React from 'react';
 import { Ad } from 'grommet-icons';
 import { Builder, BuilderBox } from '../../components/Builder';
 
-export default () => (
+const Hero = () => (
   <Builder phases={3} interval={4800} wrap>
     <BuilderBox
       alignSelf="center"
@@ -192,3 +192,5 @@ export default () => (
     </BuilderBox>
   </Builder>
 );
+
+export default Hero;

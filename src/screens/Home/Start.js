@@ -39,7 +39,7 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-export default () => {
+const Start = () => {
   const [code, setCode] = React.useState(`const App = props => (
   <Grommet theme={grommet}>
     <Box align="center" background="neutral-2">
@@ -173,3 +173,5 @@ render(<App />);
     </LiveProvider>
   );
 };
+
+export default Start;

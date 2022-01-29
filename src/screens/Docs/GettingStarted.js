@@ -27,10 +27,12 @@ More questions? something is missing? hit us on the [#getstarted][slack] or [#ge
 [slack]: https://slack-invite.grommet.io
 `;
 
-export default () => (
+const GettingStarted = () => (
   <Page>
     <MarkdownTemplate name={name} desc={desc}>
       {children}
     </MarkdownTemplate>
   </Page>
 );
+
+export default GettingStarted;

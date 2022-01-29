@@ -23,7 +23,7 @@ import {
 } from '../components/Doc';
 import { EdgeStyle, BreakpointStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const HeadingPage = () => (
   <Page>
     <ComponentDoc
       name="Heading"
@@ -32,18 +32,15 @@ export default () => (
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
-          url:
-            'https://storybook.grommet.io/?selectedKind=Type-Heading&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Type-Heading&full=0&stories=1&panelRight=0',
         },
         {
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Heading',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Heading',
           label: 'Github',
         },
       ]}
@@ -369,6 +366,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default HeadingPage;
 
 export const HeadingItem = ({ name, path }) => (
   <Item name={name} path={path} center>

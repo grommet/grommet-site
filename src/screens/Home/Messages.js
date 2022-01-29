@@ -21,7 +21,7 @@ const COMPANIES = [
   'Aruba',
 ];
 
-export default () => (
+const Messages = () => (
   <Section background="light-1" pad={{ top: 'xlarge' }}>
     <Header
       level={2}
@@ -120,3 +120,5 @@ export default () => (
     </Box>
   </Section>
 );
+
+export default Messages;

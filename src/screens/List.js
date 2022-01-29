@@ -21,7 +21,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const ListPage = () => (
   <Page>
     <ComponentDoc
       name="List"
@@ -431,6 +431,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ListPage;
 
 export const ListItem = ({ name, path }) => (
   <Item name={name} path={path} center>

@@ -13,21 +13,19 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const Tip = () => (
   <Page>
     <ComponentDoc
       name="Tip"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Tip&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Tip&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Tip',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Tip',
           label: 'Github',
         },
       ]}
@@ -102,6 +100,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default Tip;
 
 export const TipItem = ({ name, path }) => (
   <Item name={name} path={path} center>

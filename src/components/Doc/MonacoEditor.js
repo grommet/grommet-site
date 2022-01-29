@@ -7,7 +7,7 @@ const ReactMonacoEditor = isWindow
   ? require('react-monaco-editor').default
   : undefined;
 
-const MonacoEditor = props =>
-  isWindow ? <ReactMonacoEditor {...props} /> : <></>; // eslint-disable-line react/jsx-props-no-spreading
+const MonacoEditor = (props) =>
+  isWindow ? <ReactMonacoEditor {...props} /> : null; // eslint-disable-line react/jsx-props-no-spreading
 
 export default MonacoEditor;

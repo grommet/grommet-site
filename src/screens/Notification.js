@@ -20,21 +20,19 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const NotificationPage = () => (
   <Page>
     <ComponentDoc
       name="Notification"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?path=/story/visualizations-notification-status--status',
+          url: 'https://storybook.grommet.io/?path=/story/visualizations-notification-status--status',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Notification',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Notification',
           label: 'Github',
         },
       ]}
@@ -400,6 +398,8 @@ return (
     </ComponentDoc>
   </Page>
 );
+
+export default NotificationPage;
 
 export const NotificationItem = ({ name, path }) => (
   <Item name={name} path={path} center>

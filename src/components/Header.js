@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Heading, Markdown, Paragraph } from 'grommet';
 
 const Header = ({ align = 'center', details, label, level, size, summary }) => {
-  const textAlign = align === 'center' ? align : undefined;
+  const textAlign = useMemo(
+    () => (align === 'center' ? align : undefined),
+    [align],
+  );
+  const paragraphComponent = useCallback(
+    () => <Paragraph textAlign={textAlign} />,
+    [textAlign],
+  );
   return (
     <Box align={align}>
       <Heading level={level} size={size} textAlign={textAlign} margin="none">
@@ -17,11 +24,8 @@ const Header = ({ align = 'center', details, label, level, size, summary }) => {
         )) ||
           summary)}
       {details && (
-        <Markdown components={{ p: () => <Paragraph textAlign={textAlign} /> }}>
-          {details
-            .replace('<', '&lt;')
-            .replace('>', '&gt;')
-            .trim()}
+        <Markdown components={{ p: paragraphComponent }}>
+          {details.replace('<', '&lt;').replace('>', '&gt;').trim()}
         </Markdown>
       )}
     </Box>

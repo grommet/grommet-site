@@ -22,7 +22,7 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const TagPage = () => (
   <Page>
     <ComponentDoc
       name="Tag"
@@ -464,6 +464,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default TagPage;
 
 export const TagItem = ({ name, path }) => (
   <Item name={name} path={path} center>

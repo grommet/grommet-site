@@ -124,7 +124,7 @@ import Resources from '../screens/Docs/Resources';
 //   );
 // });
 
-export default () => (
+const Content = () => (
   <Routes notFoundRedirect="/">
     <Route exact path="/" component={Home} />
 
@@ -213,3 +213,5 @@ export default () => (
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
   </Routes>
 );
+
+export default Content;

@@ -14,7 +14,7 @@ const content = `
   ### [browser support](${nameToPath('browsers')})
 `;
 
-export default () => (
+const Docs = () => (
   <Page>
     <MarkdownTemplate
       name="Docs"
@@ -24,3 +24,5 @@ export default () => (
     </MarkdownTemplate>
   </Page>
 );
+
+export default Docs;

@@ -13,15 +13,14 @@ import {
   Example,
 } from '../components/Doc';
 
-export default () => (
+const KeyboardPage = () => (
   <Page>
     <ComponentDoc
       name="Keyboard"
       description="A handler of keyboard key presses"
       availableAt={[
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Keyboard',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Keyboard',
           label: 'Github',
         },
       ]}
@@ -150,6 +149,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default KeyboardPage;
 
 export const KeyboardItem = ({ name, path }) => (
   <Item name={name} path={path} center>

@@ -3,7 +3,7 @@ import { Box } from 'grommet';
 import RoutedAnchor from '../../components/RoutedAnchor';
 import Tile from './Tile';
 
-export default () => {
+const Layouts = () => {
   const [build, setBuild] = React.useState(true);
   const [phase, setPhase] = React.useState(1);
 
@@ -105,3 +105,5 @@ export default () => {
     </Tile>
   );
 };
+
+export default Layouts;

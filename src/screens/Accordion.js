@@ -19,27 +19,24 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const AccordionPage = () => (
   <Page>
     <ComponentDoc
       name="Accordion"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Accordion&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Accordion&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Accordion',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Accordion',
           label: 'Github',
         },
       ]}
@@ -320,6 +317,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default AccordionPage;
 
 export const AccordionItem = ({ name, path }) => (
   <Item name={name} path={path} center>

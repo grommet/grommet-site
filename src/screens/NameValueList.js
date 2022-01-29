@@ -17,7 +17,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const NameValueListPage = () => (
   <Page>
     <ComponentDoc
       name="NameValueList"
@@ -206,6 +206,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default NameValueListPage;
 
 export const NameValueListItem = ({ name, path }) => (
   <Item name={name} path={path} center>
