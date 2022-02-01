@@ -141,7 +141,7 @@ return (
           </PropertyValue>
           <Description>
             When using Toast Notification a position is avalible to pass in as
-            in object which will then be the position of the toast content.
+            an object which will then be the position of the toast content.
           </Description>
         </Property>
         <Property name="onClose">
