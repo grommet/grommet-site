@@ -133,19 +133,16 @@ return (
         <Property name="toast">
           <Description>
             A boolean flag that indicates whether or not the Notification is a
-            Toast Notification. When using Toast Notification a position is
-            avalible to pass in for where the toast will show.
+            Toast Notification.
           </Description>
           <GenericBoolFalse />
           <PropertyValue type="object">
-            <Example>
-              {`
-{
-  toast: {{ position: 'bottom-right' }},
-}
-              `}
-            </Example>
+            <Example>{`{ toast: {{ position: 'bottom-right' }},}`}</Example>
           </PropertyValue>
+          <Description>
+            When using Toast Notification a position is avalible to pass in as
+            in object which will then be the position of the toast content.
+          </Description>
         </Property>
         <Property name="onClose">
           <Description>
