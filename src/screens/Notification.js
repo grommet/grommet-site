@@ -136,8 +136,14 @@ return (
             Toast Notification.
           </Description>
           <GenericBoolFalse />
+          <PropertyValue type="object">
+            <Example>{`{ toast: {{ position: 'bottom-right' }},}`}</Example>
+          </PropertyValue>
+          <Description>
+            When using Toast Notification a position is avalible to pass in as
+            an object which will then be the position of the toast content.
+          </Description>
         </Property>
-
         <Property name="onClose">
           <Description>
             Click handler. Not setting this property causes the Notification to
