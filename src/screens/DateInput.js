@@ -104,6 +104,17 @@ const DateInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="icon">
+          <Description>
+            An optional icon to show. This could be used to provide an
+            indication of what kind of input is expected, like an email icon, or
+            what the input will be used for, like a search icon.
+          </Description>
+          <PropertyValue type="element">
+            <Example>{`<Icon />`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="id">
           <Description>The id of the input.</Description>
           <PropertyValue type="string">
