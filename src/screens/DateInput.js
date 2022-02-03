@@ -111,7 +111,7 @@ const DateInputPage = () => (
             what the input will be used for, like a search icon.
           </Description>
           <PropertyValue type="element">
-            <Example>{`<Icon />`}</Example>
+            <Example defaultValue>{`<Calendar />`}</Example>
           </PropertyValue>
         </Property>
 
