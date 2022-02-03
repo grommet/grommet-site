@@ -104,6 +104,15 @@ const DateInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="icon">
+          <Description>
+            The icon to show to open the DateInput.
+          </Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<Calendar />`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="id">
           <Description>The id of the input.</Description>
           <PropertyValue type="string">

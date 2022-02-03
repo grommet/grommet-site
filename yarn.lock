@@ -1795,12 +1795,12 @@ babel-plugin-polyfill-corejs2@^0.3.0:
     semver "^6.1.1"
 
 babel-plugin-polyfill-corejs3@^0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs3/-/babel-plugin-polyfill-corejs3-0.5.1.tgz#d66183bf10976ea677f4149a7fcc4d8df43d4060"
-  integrity sha512-TihqEe4sQcb/QcPJvxe94/9RZuLQuF1+To4WqQcRvc+3J3gLCPIPgDKzGLG6zmQLfH3nn25heRuDNkS2KR4I8A==
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs3/-/babel-plugin-polyfill-corejs3-0.5.2.tgz#aabe4b2fa04a6e038b688c5e55d44e78cd3a5f72"
+  integrity sha512-G3uJih0XWiID451fpeFaYGVuxHEjzKTHtc9uGFEjR6hHrvNzeS/PX+LLLcetJcytsB5m4j+K3o/EpXJNb/5IEQ==
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.1"
-    core-js-compat "^3.20.0"
+    core-js-compat "^3.21.0"
 
 babel-plugin-polyfill-regenerator@^0.3.0:
   version "0.3.1"
@@ -2308,7 +2308,7 @@ copy-webpack-plugin@^10.2.2:
     schema-utils "^4.0.0"
     serialize-javascript "^6.0.0"
 
-core-js-compat@^3.20.0, core-js-compat@^3.20.2:
+core-js-compat@^3.20.2, core-js-compat@^3.21.0:
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.21.0.tgz#bcc86aa5a589cee358e7a7fa0a4979d5a76c3885"
   integrity sha512-OSXseNPSK2OPJa6GdtkMz/XxeXx8/CJvfhQWTqd6neuUraujcL4jVsjkLQz1OWnax8xVQJnRPe0V2jqNWORA+A==
@@ -2700,9 +2700,9 @@ ejs@^3.1.6:
     jake "^10.6.1"
 
 electron-to-chromium@^1.4.17:
-  version "1.4.59"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.59.tgz#657f2588c048fb95975779f8fea101fad854de89"
-  integrity sha512-AOJ3cAE0TWxz4fQ9zkND5hWrQg16nsZKVz9INOot1oV//u4wWu5xrj9CQMmPTYskkZRunSRc9sAnr4EkexXokg==
+  version "1.4.60"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.60.tgz#2b824d862f068a9794b2b75d66ad40ff44745f18"
+  integrity sha512-h53hbEiKC6hijelDgxgkgAUC3PKyR7TmIfvjHnBjUGPMg/3sBuTyG6eDormw+lY24uUJvHkUPzB8dpK8b2u3Sw==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -3717,7 +3717,7 @@ grommet-theme-hpe@^2.1.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.20.1"
-  resolved "https://github.com/grommet/grommet/tarball/stable#af9dba67a1a4f18184e57502523bd617ce9f9c45"
+  resolved "https://github.com/grommet/grommet/tarball/stable#d500f00543bc8db77bc7e475edceed3e20fbe233"
   dependencies:
     grommet-icons "^4.7.0"
     hoist-non-react-statics "^3.2.0"
