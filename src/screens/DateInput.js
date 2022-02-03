@@ -106,9 +106,7 @@ const DateInputPage = () => (
 
         <Property name="icon">
           <Description>
-            An optional icon to show. This could be used to provide an
-            indication of what kind of input is expected, like an email icon, or
-            what the input will be used for, like a search icon.
+            The icon to show to open the DateInput.
           </Description>
           <PropertyValue type="element">
             <Example defaultValue>{`<Calendar />`}</Example>
