@@ -305,6 +305,7 @@ const DataChartPage = () => (
             </PropOptions>
             <PropOptions prop="type">
               <Example>"bar"</Example>
+              <Example>"bars"</Example>
               <Example>"line"</Example>
               <Example>"area"</Example>
               <Example>"point"</Example>
