@@ -252,11 +252,11 @@ const DataChartPage = () => (
             <Description>
               'property' indicates which property of the data objects to use.
               When 'property' is an array, multiple properties are used for a
-              stacked bar chart. If 'property' is an object, it specifies a map
-              of properties to graphic aspects: x, y, color, thickness. If
-              'transform' is specified, it will be used to transform the data
-              value before using it. For example, to convert a data value to a
-              hex color string for the color.
+              stacked bars or areas chart. If 'property' is an object, it
+              specifies a map of properties to graphic aspects: x, y, color,
+              thickness. If 'transform' is specified, it will be used to
+              transform the data value before using it. For example, to convert
+              a data value to a hex color string for the color.
             </Description>
             <Example>
               {`
@@ -308,6 +308,7 @@ const DataChartPage = () => (
               <Example>"bars"</Example>
               <Example>"line"</Example>
               <Example>"area"</Example>
+              <Example>"areas"</Example>
               <Example>"point"</Example>
             </PropOptions>
           </PropertyValue>
