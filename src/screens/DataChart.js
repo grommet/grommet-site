@@ -405,6 +405,14 @@ const DataChartPage = () => (
           <GenericBool />
         </Property>
 
+        <Property name="offset">
+          <Description>
+            Whether to offset each chart by the thickness of the preceding
+            charts. This can be used to show adjacent bar charts.
+          </Description>
+          <GenericBool />
+        </Property>
+
         <Property name="pad">
           <Description>
             Spacing around the outer edge of the drawing coordinate area for the
