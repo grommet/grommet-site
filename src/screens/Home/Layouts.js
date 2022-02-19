@@ -54,13 +54,13 @@ const Layouts = () => {
           pad="xsmall"
           gap="small"
         >
-          <Box flex pad="large" background="neutral-1" round="small" />
+          <Box flex pad="large" background="graph-1" round="small" />
           {phase >= 3 && (
             <Box
               flex
               animation="fadeIn"
               pad="medium"
-              background="neutral-2"
+              background="graph-2"
               round="small"
             />
           )}

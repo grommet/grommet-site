@@ -22,7 +22,7 @@ const COMPANIES = [
 ];
 
 const Messages = () => (
-  <Section background="light-1" pad={{ top: 'xlarge' }}>
+  <Section background="background-front" pad={{ top: 'xlarge' }}>
     <Header
       level={2}
       label="don’t take our word for it"

@@ -6,6 +6,7 @@ import { LiveProvider, LivePreview } from 'react-live';
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
 import * as Themes from 'grommet/themes';
+import { hpe } from 'grommet-theme-hpe';
 import { Anchor, Box, Heading, Text } from 'grommet';
 import { Next } from 'grommet-icons';
 /* eslint-enable import/no-duplicates */
@@ -17,6 +18,7 @@ const scope = {
   ...Grommet,
   Icons,
   Themes,
+  hpe,
   styled,
   css,
 };
@@ -41,8 +43,8 @@ Dot.propTypes = {
 
 const Start = () => {
   const [code, setCode] = React.useState(`const App = props => (
-  <Grommet theme={grommet}>
-    <Box align="center" background="neutral-2">
+  <Grommet>
+    <Box align="center" background="graph-2" pad="medium">
       <Button
         label="hello world"
         primary 
@@ -114,11 +116,11 @@ render(<App />);
       <Section background={{ color: 'brand', opacity: 'weak' }} pad="none">
         <Box
           alignSelf="center"
-          background="neutral-2"
+          background="graph-2"
           width="large"
-          pad="medium"
           round={{ corner: 'bottom' }}
           margin={{ bottom: 'xlarge' }}
+          overflow="hidden"
         >
           <LivePreview />
         </Box>
@@ -157,7 +159,7 @@ render(<App />);
           width="large"
           height="small"
           round={{ corner: 'top' }}
-          background="neutral-2"
+          background="graph-2"
           margin={{ top: 'xlarge' }}
         >
           <Box alignSelf="start" direction="row" margin="medium" gap="small">

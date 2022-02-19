@@ -14,7 +14,7 @@ const Hero = () => (
           phase: 1,
           props: {
             pad: 'medium',
-            background: 'light-1',
+            background: 'background-back',
             width: 'large',
             elevation: 'small',
           },
@@ -23,7 +23,7 @@ const Hero = () => (
           phase: 2,
           props: {
             pad: 'medium',
-            background: 'light-2',
+            background: 'background-front',
             width: 'large',
             elevation: 'large',
             round: 'small',
@@ -45,7 +45,7 @@ const Hero = () => (
       <Builder phases={12} interval={400}>
         <BuilderBox
           basis="1/3"
-          background="neutral-2"
+          background="graph-2"
           pad="medium"
           gap="medium"
           phases={[
@@ -108,7 +108,7 @@ const Hero = () => (
         <BuilderBox
           basis="2/3"
           background="light-2"
-          border={{ side: 'top', size: 'large', color: 'neutral-2' }}
+          border={{ side: 'top', size: 'large', color: 'graph-2' }}
           pad="medium"
           gap="medium"
           phases={[

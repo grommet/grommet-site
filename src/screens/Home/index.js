@@ -58,7 +58,7 @@ const HomePage = () => (
       </Box>
     </Section>
 
-    <Section background="light-1" pad={{ top: 'xlarge' }} width="auto">
+    <Section background="background-back" pad={{ top: 'xlarge' }} width="auto">
       <Header
         level={2}
         label="part design system, part framework, and all awesome"

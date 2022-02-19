@@ -52,7 +52,7 @@ const Accessible = () => {
                 ? [{ type: 'fadeIn', duration: 4000 }]
                 : [{ type: 'fadeOut', duration: 4000 }]
             }
-            background={{ color: 'neutral-2', opacity: 'strong' }}
+            background={{ color: 'graph-2', opacity: 'strong' }}
             round="full"
             pad="large"
           >

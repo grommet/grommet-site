@@ -46,7 +46,7 @@ Tile.propTypes = {
 
 export const Tools = () => (
   <Box>
-    <Section pad={{ top: 'xlarge' }} background="neutral-2">
+    <Section pad={{ top: 'xlarge' }} background="graph-2">
       <Header
         label="but wait there's more"
         summary="we've been hard at work on making grommet even easier to learn and use"
