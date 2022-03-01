@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericAlignSelf,
+  GenericBool,
   GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
@@ -20,6 +21,7 @@ import {
   Description,
   Example,
   ThemeDoc,
+  PropOptions,
 } from '../components/Doc';
 import { ResponsiveBreakpoint } from '../utils/themeDocUtils';
 
@@ -143,6 +145,82 @@ const TablePage = () => (
       intrinsicElement="td"
     >
       <Properties>
+        <Property name="border">
+          <Description>A border around the cell.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"top"</Example>
+            <Example>"left"</Example>
+            <Example>"bottom"</Example>
+            <Example>"right"</Example>
+            <Example>"start"</Example>
+            <Example>"end"</Example>
+            <Example>"horizontal"</Example>
+            <Example>"vertical"</Example>
+            <Example>"all"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  color: string | { dark: string, light: string },
+  size: "medium",
+  style: "dashed",
+  side: "all"
+}              
+              `}
+            </Example>
+          </PropertyValue>
+          <PropertyValue type="array">
+            <Description>
+              An array of objects defining the border for different sides of the
+              Box.
+            </Description>
+            <Example>
+              {`
+[
+  {
+    color: "black",
+    size: "small",
+    style: "solid",
+    side: "top"
+  },
+  {
+    color: "black",
+    size: "medium",
+    style: "dotted",
+    side: "bottom"
+  }
+]
+              `}
+            </Example>
+            <PropOptions prop="size">
+              <SizesXsmallXlarge />
+              <Example>"any CSS size"</Example>
+            </PropOptions>
+            <PropOptions prop="style">
+              <Example>"solid"</Example>
+              <Example>"dashed"</Example>
+              <Example>"dotted"</Example>
+              <Example>"double"</Example>
+              <Example>"groove"</Example>
+              <Example>"ridge"</Example>
+              <Example>"inset"</Example>
+              <Example>"outset"</Example>
+              <Example>"hidden"</Example>
+            </PropOptions>
+            <PropOptions prop="side">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"horizontal"</Example>
+              <Example>"vertical"</Example>
+              <Example>"all"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
         <Property name="plain">
           <Description>
             Whether default styling context should be removed.
