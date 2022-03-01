@@ -21,8 +21,8 @@ const COMPANIES = [
   'Aruba',
 ];
 
-export default () => (
-  <Section background="light-1" pad={{ top: 'xlarge' }}>
+const Messages = () => (
+  <Section background="background-front" pad={{ top: 'xlarge' }}>
     <Header
       level={2}
       label="don’t take our word for it"
@@ -45,21 +45,6 @@ export default () => (
           <span>
             Does Material Design feel too &quot;Googly&quot; for you? Check out
             @grommetux, the OSS UX framework http://bit.ly/1YWH7ea
-          </span>
-        }
-        alt="Man with glasses next to an orange person-like character"
-      />
-
-      <Message
-        imageSrc="/img/avatars/puppet_200x200.jpeg"
-        name="@nikmd23"
-        summary={
-          <span>
-            this accessibility demo is&nbsp;
-            <span role="img" aria-label="money">
-              💰💰💰
-            </span>
-            &nbsp; https://vimeo.com/187068246 great work @grommetux!
           </span>
         }
         alt="Man with glasses next to an orange person-like character"
@@ -116,7 +101,7 @@ export default () => (
       align="center"
       margin={{ top: 'large', bottom: 'xlarge' }}
     >
-      {COMPANIES.map(name => (
+      {COMPANIES.map((name) => (
         <Box
           key={name}
           basis="small"
@@ -135,3 +120,5 @@ export default () => (
     </Box>
   </Section>
 );
+
+export default Messages;

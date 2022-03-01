@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Grommet } from 'grommet';
 import Tile from './Tile';
 
-export default () => {
+const Themeable = () => {
   const [build, setBuild] = React.useState(true);
   const [phase, setPhase] = React.useState(1);
   const [theme1, setTheme1] = React.useState();
@@ -129,3 +129,5 @@ export default () => {
     </Tile>
   );
 };
+
+export default Themeable;

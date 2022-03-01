@@ -29,10 +29,12 @@ Find us on [Twitter][twitter].
 [twitter]: https://twitter.com/grommet_io
 `;
 
-export default () => (
+const Resources = () => (
   <Page>
     <MarkdownTemplate name={name} desc={desc}>
       {children}
     </MarkdownTemplate>
   </Page>
 );
+
+export default Resources;

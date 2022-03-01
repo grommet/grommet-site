@@ -22,7 +22,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const TabsPage = () => (
   <Page>
     <ComponentDoc
       name="Tabs"
@@ -417,6 +417,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default TabsPage;
 
 export const TabsItem = ({ name, path }) => (
   <Item name={name} path={path} center justify="end" pad="none">

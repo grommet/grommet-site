@@ -5,7 +5,7 @@ import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
 import Search from './Search';
 
-export default () => {
+const Nav = () => {
   const size = React.useContext(ResponsiveContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
@@ -37,8 +37,10 @@ export default () => {
             )}
           </RoutedButton>
         )}
-        <Search open={searchOpen} setOpen={value => setSearchOpen(value)} />
+        <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />
       </Box>
     </Box>
   );
 };
+
+export default Nav;

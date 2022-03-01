@@ -6,9 +6,9 @@ const ACCENT_REGEXP = /^accent-/i;
 const NEUTRAL_REGEXP = /^neutral-/i;
 const STATUS_REGEXP = /^status-/i;
 
-export default () => (
+const Color = () => (
   <ThemeContext.Consumer>
-    {theme => (
+    {(theme) => (
       <>
         <Item name="Brand" path="/color">
           <Box flex direction="row" background="brand" />
@@ -16,8 +16,8 @@ export default () => (
         <Item name="Accents" path="/color">
           <Box flex direction="row">
             {Object.keys(theme.global.colors)
-              .filter(name => ACCENT_REGEXP.test(name))
-              .map(name => (
+              .filter((name) => ACCENT_REGEXP.test(name))
+              .map((name) => (
                 <Box key={name} flex background={name} />
               ))}
           </Box>
@@ -25,8 +25,8 @@ export default () => (
         <Item name="Neutrals" path="/color">
           <Box flex direction="row">
             {Object.keys(theme.global.colors)
-              .filter(name => NEUTRAL_REGEXP.test(name))
-              .map(name => (
+              .filter((name) => NEUTRAL_REGEXP.test(name))
+              .map((name) => (
                 <Box key={name} flex background={name} />
               ))}
           </Box>
@@ -34,8 +34,8 @@ export default () => (
         <Item name="Status" path="/color">
           <Box flex direction="row">
             {Object.keys(theme.global.colors)
-              .filter(name => STATUS_REGEXP.test(name))
-              .map(name => (
+              .filter((name) => STATUS_REGEXP.test(name))
+              .map((name) => (
                 <Box key={name} flex background={name} />
               ))}
           </Box>
@@ -44,3 +44,5 @@ export default () => (
     )}
   </ThemeContext.Consumer>
 );
+
+export default Color;

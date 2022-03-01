@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { BuilderContext } from './BuilderContext';
 
@@ -6,6 +6,11 @@ export const Builder = ({ children, interval, phases, wrap }) => {
   const [build, setBuild] = React.useState(true);
   const [phase, setPhase] = React.useState(1);
   const [animationDuration] = React.useState(interval * 0.75);
+
+  const contextValue = useMemo(
+    () => ({ animationDuration, build, phase }),
+    [animationDuration, build, phase],
+  );
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -22,7 +27,7 @@ export const Builder = ({ children, interval, phases, wrap }) => {
   }, [build, interval, phase, phases, wrap]);
 
   return (
-    <BuilderContext.Provider value={{ animationDuration, build, phase }}>
+    <BuilderContext.Provider value={contextValue}>
       {children}
     </BuilderContext.Provider>
   );

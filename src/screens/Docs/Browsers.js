@@ -21,10 +21,12 @@ const children = `
   Microsoft Internet Explorer Version 11, latest version
 `;
 
-export default () => (
+const Browsers = () => (
   <Page>
     <MarkdownTemplate name={name} desc={desc}>
       {children}
     </MarkdownTemplate>
   </Page>
 );
+
+export default Browsers;

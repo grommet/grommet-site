@@ -118,28 +118,25 @@ const Examples = () => (
   </Box>
 );
 
-export default () => (
+const DataChartPage = () => (
   <Page>
     <ComponentDoc
       name="DataChart"
       intrinsicElement="div"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-DataChart&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-DataChart&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/DataChart',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataChart',
           label: 'Github',
         },
       ]}
@@ -254,8 +251,8 @@ export default () => (
           <PropertyValue type="object">
             <Description>
               'property' indicates which property of the data objects to use.
-              When 'property' is an array, multiple properties are used for a
-              stacked bar chart. If 'property' is an object, it specifies a map
+              When 'type' is 'bars' or 'areas', 'property' is an array of
+              strings or objects. If 'property' is an object, it specifies a map
               of properties to graphic aspects: x, y, color, thickness. If
               'transform' is specified, it will be used to transform the data
               value before using it. For example, to convert a data value to a
@@ -268,6 +265,7 @@ export default () => (
   color: "...",
   dash: boolean,
   opacity: "...",
+  pattern: "...",
   point: "...",
   round: boolean,
   thickness: "...",
@@ -292,6 +290,14 @@ export default () => (
               <Example>number</Example>
               <Example>boolean</Example>
             </PropOptions>
+            <PropOptions prop="pattern">
+              <Example>"squares"</Example>
+              <Example>"circles"</Example>
+              <Example>"stripesHorizontal"</Example>
+              <Example>"stripesVertical"</Example>
+              <Example>"stripesDiagonalDown"</Example>
+              <Example>"stripesDiagonalUp"</Example>
+            </PropOptions>
             <PropOptions prop="point">
               <Example>"circle"</Example>
               <Example>"diamond"</Example>
@@ -308,8 +314,10 @@ export default () => (
             </PropOptions>
             <PropOptions prop="type">
               <Example>"bar"</Example>
+              <Example>"bars"</Example>
               <Example>"line"</Example>
               <Example>"area"</Example>
+              <Example>"areas"</Example>
               <Example>"point"</Example>
             </PropOptions>
           </PropertyValue>
@@ -397,6 +405,14 @@ export default () => (
           <GenericBool />
         </Property>
 
+        <Property name="offset">
+          <Description>
+            Whether to offset each chart by the thickness of the preceding
+            charts. This can be used to show adjacent bar charts.
+          </Description>
+          <GenericBool />
+        </Property>
+
         <Property name="pad">
           <Description>
             Spacing around the outer edge of the drawing coordinate area for the
@@ -470,6 +486,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DataChartPage;
 
 const DATA_CHART_DATA = [
   { date: '2020-01-15', amount: 33 },

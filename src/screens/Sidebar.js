@@ -11,21 +11,19 @@ import {
   Example,
 } from '../components/Doc';
 
-export default () => (
+const SidebarPage = () => (
   <Page>
     <ComponentDoc
       name="Sidebar"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Layout-Sidebar&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Sidebar&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Sidebar',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Sidebar',
           label: 'Github',
         },
       ]}
@@ -76,6 +74,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default SidebarPage;
 
 export const SidebarItem = ({ name, path }) => (
   <Item name={name} path={path} center align="start">

@@ -25,7 +25,7 @@ import {
 } from '../components/Doc';
 import { ResponsiveBreakpoint } from '../utils/themeDocUtils';
 
-export default () => (
+const TablePage = () => (
   <Page name="Table">
     <ComponentDoc
       name="Table"
@@ -437,6 +437,8 @@ export default () => (
     />
   </Page>
 );
+
+export default TablePage;
 
 export const TableItem = ({ name, path }) => (
   <Item name={name} path={path} center>

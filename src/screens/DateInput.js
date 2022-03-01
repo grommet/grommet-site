@@ -16,27 +16,24 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const DateInputPage = () => (
   <Page>
     <ComponentDoc
       name="DateInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-DateInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-DateInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dateinput&module=%2Fsrc%2FDateInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dateinput&module=%2Fsrc%2FDateInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/DateInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DateInput',
           label: 'Github',
         },
       ]}
@@ -104,6 +101,13 @@ export default () => (
               'm/d/yyyy'.
             </Description>
             <Example>"mm/dd/yyyy"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="icon">
+          <Description>The icon to show to open the DateInput.</Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<Calendar />`}</Example>
           </PropertyValue>
         </Property>
 
@@ -207,6 +211,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DateInputPage;
 
 export const DateInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
