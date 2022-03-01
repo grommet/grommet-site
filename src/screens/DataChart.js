@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Box, DataChart, Heading, Paragraph } from 'grommet';
+import { Box, DataChart, Heading, Paragraph } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { Code } from '../components/Doc/Code';
@@ -24,21 +24,6 @@ import {
 
 const Examples = () => (
   <Box>
-    <Box
-      alignSelf="start"
-      margin={{ top: 'medium' }}
-      pad="medium"
-      round
-      background="light-3"
-    >
-      <Paragraph margin="none">
-        In version 2.15.0, the API surface changed, see{' '}
-        <Anchor href="https://github.com/grommet/grommet/pull/4226#issue-439480100">
-          notes
-        </Anchor>
-        .
-      </Paragraph>
-    </Box>
     <Paragraph size="xlarge">
       DataChart takes an array of objects in <code>data</code> and provides
       various visualization capabilities on that data. It attempts to default as
