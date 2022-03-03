@@ -50,6 +50,7 @@ import Meter from '../screens/Meter';
 import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
 import Notification from '../screens/Notification';
+import Page from '../screens/Page';
 import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
@@ -181,6 +182,7 @@ const Content = () => (
     <Route exact path="/namevaluelist" component={NameValueList} />
     <Route exact path="/nav" component={Nav} />
     <Route exact path="/notification" component={Notification} />
+    <Route exact path="/page" component={Page} />
     <Route exact path="/pagination" component={Pagination} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />

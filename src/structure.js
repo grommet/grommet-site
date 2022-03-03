@@ -11,6 +11,7 @@ export const structure = {
         'Header',
         'Layer',
         'Main',
+        'Page',
         'Sidebar',
         'Stack',
       ],
