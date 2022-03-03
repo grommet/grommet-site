@@ -188,7 +188,7 @@ const PagePage = () => (
 
     <ComponentDoc
       name="PageContent"
-      description="An container for content within a Page"
+      description="A container for content within a Page"
       intrinsicElement="div"
       isA={{
         base: 'Box',
@@ -201,9 +201,9 @@ const PagePage = () => (
       <Properties>
         <Property name="background">
           <Description>
-            The background of the Page. Use `full: "horizontal"` to specify that
-            the background should ignore width restrictions and stretch across
-            the full width of the Page.
+            The background of the Page. Use `fill: "horizontal"` to specify that
+            the background should ignore width restrictions and fill the width
+            of the Page.
           </Description>
           <PropertyValue type="string">
             <Description>A color or image url.</Description>
@@ -221,7 +221,7 @@ const PagePage = () => (
   repeat: "no-repeat",
   size: "cover",
   image: "url(//my.com/assets/img.png)",
-  full: "horizontal
+  fill: "horizontal
 }
               `}
             </Example>
