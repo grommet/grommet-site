@@ -1,5 +1,5 @@
 import React from 'react';
-import { DateInput } from 'grommet';
+import { Box, DateInput } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -216,7 +216,9 @@ export default DateInputPage;
 
 export const DateInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
-    <DateInput format="mm/dd/yyyy" disabled />
+    <Box>
+      <DateInput format="mm/dd/yyyy" disabled />
+    </Box>
   </Item>
 );
 
