@@ -40,6 +40,7 @@ export { NameValueListItem } from '../NameValueList';
 export { MeterItem } from '../Meter';
 export { NavItem } from '../Nav';
 export { NotificationItem } from '../Notification';
+export { PageItem } from '../Page';
 export { PaginationItem } from '../Pagination';
 export { ParagraphItem } from '../Paragraph';
 export { RadioButtonItem } from '../RadioButton';
