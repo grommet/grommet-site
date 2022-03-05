@@ -219,6 +219,19 @@ const DataChartPage = () => (
           <PropertyValue type="string">
             <Example defaultValue>"align"</Example>
           </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              'y' indicates the bounds to use on the Y axis. This is useful to
+              maintain consistent Y axis labelling across different data sets.
+            </Description>
+            <Example>
+              {`
+{
+  y: [0, 100],
+}
+              `}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="chart">
@@ -401,6 +414,19 @@ const DataChartPage = () => (
             graphic elements to overflow into.
           </Description>
           <GenericPad />
+        </Property>
+
+        <Property name="placeholder">
+          <Description>
+            A text message or any content to place over the chart graphic. For
+            example, to say "loading ..." when waiting for data to arrive.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"loading..."</Example>
+          </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Box>...</Box>`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="series">
