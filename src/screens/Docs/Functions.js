@@ -37,7 +37,7 @@ const CustomPrimaryButton = () => (
 
 `;
 
-export default () => (
+const Functions = () => (
   <Page>
     <Box width="xlarge" alignSelf="center">
       <MarkdownTemplate name="Functions" desc="">
@@ -46,3 +46,5 @@ export default () => (
     </Box>
   </Page>
 );
+
+export default Functions;

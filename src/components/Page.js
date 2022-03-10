@@ -3,15 +3,7 @@ import { Box } from 'grommet';
 import Nav from './Nav';
 
 export default class Page extends Component {
-  componentDidMount() {
-    this.scrollToSection();
-  }
-
-  componentDidUpdate() {
-    this.scrollToSection();
-  }
-
-  scrollToSection = () => {
+  static scrollToSection = () => {
     const name = window.location.hash.split('#')[1];
     if (name) {
       document.getElementById(name).scrollIntoView({
@@ -20,6 +12,14 @@ export default class Page extends Component {
       });
     }
   };
+
+  componentDidMount() {
+    Page.scrollToSection();
+  }
+
+  componentDidUpdate() {
+    Page.scrollToSection();
+  }
 
   render() {
     const { background, children } = this.props;

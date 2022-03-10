@@ -12,7 +12,7 @@ import {
 } from '../components/Doc';
 import { GenericBoolFalse } from '../utils/genericPropExamples';
 
-export default () => (
+const InfiniteScrollPage = () => (
   <Page>
     <ComponentDoc
       name="InfiniteScroll"
@@ -135,6 +135,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default InfiniteScrollPage;
 
 export const InfiniteScrollItem = ({ name, path }) => (
   <Item name={name} path={path} center>

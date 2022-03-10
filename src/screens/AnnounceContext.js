@@ -11,21 +11,19 @@ import {
 } from '../components/Doc';
 import Item from './Components/Item';
 
-export default () => (
+const AnnounceContextPage = () => (
   <Page>
     <ComponentDoc
       name="Announce Context .Consumer"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Utilities-AnnounceContext&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Utilities-AnnounceContext&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/announcecontext&module=%2Fsrc%2FAnnounceContext.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/announcecontext&module=%2Fsrc%2FAnnounceContext.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
@@ -54,6 +52,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default AnnounceContextPage;
 
 export const AnnounceContextItem = ({ name, path }) => (
   <Item name={name} path={path} center>

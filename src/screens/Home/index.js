@@ -15,7 +15,7 @@ import Messages from './Messages';
 import { Tools } from './Tools';
 import { nameToPath } from '../../structure';
 
-export default () => (
+const HomePage = () => (
   <Box>
     <Section>
       <Nav />
@@ -58,7 +58,7 @@ export default () => (
       </Box>
     </Section>
 
-    <Section background="light-1" pad={{ top: 'xlarge' }} width="auto">
+    <Section background="background-back" pad={{ top: 'xlarge' }} width="auto">
       <Header
         level={2}
         label="part design system, part framework, and all awesome"
@@ -173,3 +173,5 @@ export default () => (
     </Section>
   </Box>
 );
+
+export default HomePage;

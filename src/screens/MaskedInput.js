@@ -28,7 +28,7 @@ import {
   PlaceholderStyle,
 } from '../utils/themeDocUtils';
 
-export default () => (
+const MaskedInputPage = () => (
   <Page>
     <ComponentDoc
       name="MaskedInput"
@@ -284,6 +284,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default MaskedInputPage;
 
 export const MaskedInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>

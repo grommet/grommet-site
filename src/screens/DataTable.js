@@ -22,7 +22,7 @@ import {
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericColor } from '../utils/genericThemeExamples';
 
-export default () => (
+const DataTablePage = () => (
   <Page>
     <ComponentDoc
       name="DataTable"
@@ -1074,6 +1074,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DataTablePage;
 
 export const DataTableItem = ({ name, path }) => (
   <Item name={name} path={path} center>

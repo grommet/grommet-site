@@ -14,22 +14,20 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const CollapsiblePage = () => (
   <Page>
     <ComponentDoc
       name="Collapsible"
       description="Expand or collapse animation"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Utilities-Collapsible&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Utilities-Collapsible&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Collapsible',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Collapsible',
           label: 'Github',
         },
       ]}
@@ -101,6 +99,8 @@ return (
     </ComponentDoc>
   </Page>
 );
+
+export default CollapsiblePage;
 
 export const CollapsibleItem = ({ name, path }) => (
   <Item name={name} path={path} center>

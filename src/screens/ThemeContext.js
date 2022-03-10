@@ -11,22 +11,20 @@ import {
   Example,
 } from '../components/Doc';
 
-export default () => (
+const ThemeContext = () => (
   <Page>
     <ComponentDoc
       name="ThemeContext .Extend"
       pageTitle="ThemeContext"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=undefined-ThemeContext&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=undefined-ThemeContext&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/themecontext&module=%2Fsrc%2FThemeContext.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/themecontext&module=%2Fsrc%2FThemeContext.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
@@ -57,6 +55,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ThemeContext;
 
 export const ThemeContextItem = ({ name, path }) => (
   <Item name={name} path={path} center>

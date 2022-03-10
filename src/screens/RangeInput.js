@@ -23,7 +23,7 @@ import {
 } from '../components/Doc';
 import { FocusStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const RangeInputPage = () => (
   <Page>
     <ComponentDoc
       name="RangeInput"
@@ -290,6 +290,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default RangeInputPage;
 
 export const RangeInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad="large">
