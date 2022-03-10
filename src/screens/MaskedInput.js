@@ -156,7 +156,9 @@ const MaskedInputPage = () => (
               If a regexp is provided, it should allow both the final full
               string element as well as partial strings as the user types
               characters one by one. When using regexp to match number values
-              make sure that the option values are numbers as well.
+              make sure that the option values are numbers as well. If the
+              `options` prop is specified `restrictToOptions` can be set to
+              false to allow input that differs from the items in `options`.
             </Description>
             <Example>
               {`
@@ -166,7 +168,8 @@ const MaskedInputPage = () => (
     fixed: "string",
     options: [string] | [number],
     regexp: {},
-    placeholder: "string"
+    placeholder: "string",
+    restrictToOptions: true
   }
 ]
             `}
