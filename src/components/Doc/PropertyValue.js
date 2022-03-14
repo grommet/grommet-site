@@ -6,7 +6,7 @@ export const PropertyValue = ({ children, type }) => {
   const Descriptions = [];
   const Examples = [];
 
-  React.Children.forEach(children, child => {
+  React.Children.forEach(children, (child) => {
     if (child.type.displayName === 'Description') {
       Descriptions.push(child);
     } else {

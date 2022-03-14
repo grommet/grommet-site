@@ -86,7 +86,7 @@ const colorsForMood = (color, mood) => {
     const accentSat = between(s + MOOD[mood].saturationBoost, 0.2, 0.8);
     const accentLum = between(1.0 - (l - MOOD[mood].luminenceBoost), 0.2, 0.8);
     result.global.colors.accent = accentHues.map(
-      ah => `#${toRGBString(hslToRgb(ah, accentSat, accentLum))}`,
+      (ah) => `#${toRGBString(hslToRgb(ah, accentSat, accentLum))}`,
     );
   }
   return result;
@@ -121,7 +121,7 @@ export default class Try extends Component {
     this.onChangeFont({ target: { value: font } });
   }
 
-  onChangeColor = event => {
+  onChangeColor = (event) => {
     const { errors, key, mood, theme } = this.state;
     const color = event.target.value;
     const colors = colorsForMood(color, mood);
@@ -140,7 +140,7 @@ export default class Try extends Component {
     }
   };
 
-  onFontLoaded = name => () => {
+  onFontLoaded = (name) => () => {
     const { key, loading, theme } = this.state;
     this.setState({
       key: key + 1,
@@ -165,9 +165,9 @@ export default class Try extends Component {
     });
   };
 
-  onChangeName = event => this.setState({ name: event.target.value });
+  onChangeName = (event) => this.setState({ name: event.target.value });
 
-  onChangeFont = event => {
+  onChangeFont = (event) => {
     const { errors, loading } = this.state;
     const name = event.target.value;
     // remove all previously loaded fonts
@@ -215,7 +215,7 @@ export default class Try extends Component {
     });
   };
 
-  onDownload = event => {
+  onDownload = (event) => {
     const { name, theme } = this.state;
     event.preventDefault();
     // extract font-face from link in header
@@ -223,8 +223,8 @@ export default class Try extends Component {
       'link[href*="fonts.googleapis.com"]',
     );
     fetch(fontLink.getAttribute('href'))
-      .then(response => response.text())
-      .then(face => {
+      .then((response) => response.text())
+      .then((face) => {
         const downloadTheme = mergeDeep(theme, { global: { font: { face } } });
         const jsonString = encodeURIComponent(JSON.stringify(downloadTheme));
         const data = `data:text/json;charset=utf-8,${jsonString}`;
@@ -237,17 +237,8 @@ export default class Try extends Component {
   };
 
   render() {
-    const {
-      color,
-      errors,
-      font,
-      key,
-      loading,
-      mood,
-      name,
-      sharpness,
-      theme,
-    } = this.state;
+    const { color, errors, font, key, loading, mood, name, sharpness, theme } =
+      this.state;
     return (
       <Page background={{ image: 'url("img/circles.svg")' }}>
         <Helmet>

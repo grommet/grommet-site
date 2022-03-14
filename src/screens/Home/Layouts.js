@@ -22,7 +22,7 @@ const Layouts = () => {
       name="layouts can be more flexible"
       summary={
         <span>
-          Support all the devices! use&nbsp;
+          support all the devices! use&nbsp;
           <RoutedAnchor path="/box" label="Flexbox" /> and&nbsp;
           <RoutedAnchor path="/grid" label="CSS Grid" /> to provide layouts for
           all those new phones and widescreen displays.
