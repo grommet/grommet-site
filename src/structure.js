@@ -5,18 +5,20 @@ export const structure = {
       name: 'Layout',
       components: [
         'Box',
+        'Card',
         'Footer',
         'Grid',
         'Header',
         'Layer',
         'Main',
+        'Page',
         'Sidebar',
         'Stack',
       ],
     },
     {
       name: 'Type',
-      components: ['Heading', 'Markdown', 'Paragraph', 'Text'],
+      components: ['Heading', 'Markdown', 'Paragraph', 'Text', 'Tag'],
     },
     {
       name: 'Color',
@@ -32,12 +34,16 @@ export const structure = {
         'Menu',
         'Nav',
         'Tabs',
+        'Tip',
       ],
     },
     {
       name: 'Input',
       components: [
         'CheckBox',
+        'CheckBoxGroup',
+        'DateInput',
+        'FileInput',
         'MaskedInput',
         'RadioButton',
         'RadioButtonGroup',
@@ -57,11 +63,16 @@ export const structure = {
         'Calendar',
         'Chart',
         'Clock',
+        'DataChart',
         'DataTable',
         'Diagram',
         'Distribution',
         'List',
         'Meter',
+        'NameValueList',
+        'Notification',
+        'Pagination',
+        'Spinner',
         'Table',
         'WorldMap',
       ],
@@ -86,19 +97,19 @@ export const structure = {
   ],
 };
 
-export const nameToPath = name => {
-  const section = structure.sections.filter(s => s.name === name)[0];
+export const nameToPath = (name) => {
+  const section = structure.sections.filter((s) => s.name === name)[0];
   if (section && name !== 'Color') {
     return `/components#${name}`;
   }
-  const external = structure.externals.filter(e => e.name === name)[0];
+  const external = structure.externals.filter((e) => e.name === name)[0];
   if (external) {
     return external.url;
   }
   return name ? `/${name.toLowerCase()}` : '/components';
 };
 
-export const nextComponent = name => {
+export const nextComponent = (name) => {
   const { sections } = structure;
   let result;
   sections.some((section, sectionIndex) => {
@@ -135,7 +146,7 @@ export const nextComponent = name => {
   return result;
 };
 
-export const previousComponent = name => {
+export const previousComponent = (name) => {
   const { sections } = structure;
   let result;
   sections.some((section, sectionIndex) => {

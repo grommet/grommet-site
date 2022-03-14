@@ -1,19 +1,26 @@
 import React from 'react';
-
 import { Box, Footer } from 'grommet';
-import { doc } from 'grommet/components/Footer/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
+import { ComponentDoc } from '../components/Doc';
 
-const desc = doc(Footer).toJSON();
-
-export default () => (
+const FooterPage = () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Footer"
-      desc={desc}
+      availableAt={[
+        {
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Footer&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Footer',
+          label: 'Github',
+        },
+      ]}
+      description="Footer for a document or section"
       code={`<Footer background="brand" pad="medium">
   <Text>Copyright</Text>
   <Anchor label="About" />
@@ -33,6 +40,8 @@ export default () => (
     />
   </Page>
 );
+
+export default FooterPage;
 
 export const FooterItem = ({ name, path }) => (
   <Item name={name} path={path}>

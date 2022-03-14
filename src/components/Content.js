@@ -11,19 +11,24 @@ import AnnounceContext from '../screens/AnnounceContext';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
+import Card from '../screens/Card';
 import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
+import CheckBoxGroup from '../screens/CheckBoxGroup';
 import Clock from '../screens/Clock';
 import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import DataChart from '../screens/DataChart';
 import DataTable from '../screens/DataTable';
+import DateInput from '../screens/DateInput';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
 import Docs from '../screens/Docs';
 import Drop from '../screens/Drop';
 import DropButton from '../screens/DropButton';
+import FileInput from '../screens/FileInput';
 import Footer from '../screens/Footer';
 import Form from '../screens/Form';
 import FormField from '../screens/FormField';
@@ -42,7 +47,11 @@ import Markdown from '../screens/Markdown';
 import MaskedInput from '../screens/MaskedInput';
 import Menu from '../screens/Menu';
 import Meter from '../screens/Meter';
+import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
+import Notification from '../screens/Notification';
+import Page from '../screens/Page';
+import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
@@ -53,13 +62,16 @@ import ResponsiveContext from '../screens/ResponsiveContext';
 import Select from '../screens/Select';
 import SkipLinks from '../screens/SkipLinks';
 import Sidebar from '../screens/Sidebar';
+import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
+import Tag from '../screens/Tag';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
+import Tip from '../screens/Tip';
 import Try from '../screens/Try';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
@@ -98,7 +110,7 @@ import Resources from '../screens/Docs/Resources';
 //   'Heading', 'Home', 'Image', 'InfiniteScroll', 'Keyboard', 'Layer',
 //   'Markdown', 'Menu', 'Meter', 'Paragraph', 'RadioButton',
 //   'RangeInput', 'RangeSelector', 'Responsive', 'Select', 'SkipLinks', 'Stack',
-//   'Tabs', 'Table', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
+//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
 //   'Video', 'WorldMap'].forEach((name) => {
 //   Screens[name] = props => (
 //     <DynamicImport load={() => import(`../screens/${name}`)}>
@@ -113,7 +125,7 @@ import Resources from '../screens/Docs/Resources';
 //   );
 // });
 
-export default () => (
+const Content = () => (
   <Routes notFoundRedirect="/">
     <Route exact path="/" component={Home} />
 
@@ -134,17 +146,22 @@ export default () => (
     <Route exact path="/box" component={Box} />
     <Route exact path="/button" component={Button} />
     <Route exact path="/calendar" component={Calendar} />
+    <Route exact path="/card" component={Card} />
     <Route exact path="/carousel" component={Carousel} />
     <Route exact path="/chart" component={Chart} />
     <Route exact path="/checkbox" component={CheckBox} />
+    <Route exact path="/checkboxgroup" component={CheckBoxGroup} />
     <Route exact path="/clock" component={Clock} />
     <Route exact path="/collapsible" component={Collapsible} />
     <Route exact path="/color" component={Color} />
+    <Route exact path="/datachart" component={DataChart} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/dateinput" component={DateInput} />
     <Route exact path="/diagram" component={Diagram} />
     <Route exact path="/distribution" component={Distribution} />
     <Route exact path="/drop" component={Drop} />
     <Route exact path="/dropbutton" component={DropButton} />
+    <Route exact path="/fileinput" component={FileInput} />
     <Route exact path="/footer" component={Footer} />
     <Route exact path="/form" component={Form} />
     <Route exact path="/formfield" component={FormField} />
@@ -162,23 +179,30 @@ export default () => (
     <Route exact path="/maskedinput" component={MaskedInput} />
     <Route exact path="/menu" component={Menu} />
     <Route exact path="/meter" component={Meter} />
+    <Route exact path="/namevaluelist" component={NameValueList} />
     <Route exact path="/nav" component={Nav} />
+    <Route exact path="/notification" component={Notification} />
+    <Route exact path="/page" component={Page} />
+    <Route exact path="/pagination" component={Pagination} />
+    <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
     <Route exact path="/radiobuttongroup" component={RadioButtonGroup} />
     <Route exact path="/rangeinput" component={RangeInput} />
     <Route exact path="/rangeselector" component={RangeSelector} />
     <Route exact path="/responsivecontext" component={ResponsiveContext} />
-    <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/select" component={Select} />
     <Route exact path="/sidebar" component={Sidebar} />
     <Route exact path="/skiplinks" component={SkipLinks} />
+    <Route exact path="/spinner" component={Spinner} />
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
+    <Route exact path="/tag" component={Tag} />
     <Route exact path="/text" component={Text} />
     <Route exact path="/textarea" component={TextArea} />
     <Route exact path="/textinput" component={TextInput} />
     <Route exact path="/themecontext" component={ThemeContext} />
+    <Route exact path="/tip" component={Tip} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
 
@@ -191,3 +215,5 @@ export default () => (
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
   </Routes>
 );
+
+export default Content;

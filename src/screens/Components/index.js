@@ -14,16 +14,21 @@ import {
   BoxItem,
   ButtonItem,
   CalendarItem,
+  CardItem,
   CarouselItem,
   ChartItem,
   CheckBoxItem,
+  CheckBoxGroupItem,
   ClockItem,
   CollapsibleItem,
+  DataChartItem,
   DataTableItem,
+  DateInputItem,
   DiagramItem,
   DistributionItem,
   DropItem,
   DropButtonItem,
+  FileInputItem,
   FooterItem,
   FormItem,
   FormFieldItem,
@@ -41,7 +46,11 @@ import {
   MaskedInputItem,
   MenuItem,
   MeterItem,
+  NameValueListItem,
   NavItem,
+  NotificationItem,
+  PageItem,
+  PaginationItem,
   ParagraphItem,
   RadioButtonItem,
   RadioButtonGroupItem,
@@ -51,13 +60,16 @@ import {
   SelectItem,
   SidebarItem,
   SkipLinksItem,
+  SpinnerItem,
   StackItem,
   TableItem,
   TabsItem,
+  TagItem,
   TextItem,
   TextAreaItem,
   TextInputItem,
   ThemeContextItem,
+  TipItem,
   VideoItem,
   WorldMapItem,
 } from './items';
@@ -70,16 +82,21 @@ const Items = {
   Box: BoxItem,
   Button: ButtonItem,
   Calendar: CalendarItem,
+  Card: CardItem,
   Carousel: CarouselItem,
   Chart: ChartItem,
   CheckBox: CheckBoxItem,
+  CheckBoxGroup: CheckBoxGroupItem,
   Clock: ClockItem,
   Collapsible: CollapsibleItem,
+  DataChart: DataChartItem,
   DataTable: DataTableItem,
+  DateInput: DateInputItem,
   Diagram: DiagramItem,
   Distribution: DistributionItem,
   Drop: DropItem,
   DropButton: DropButtonItem,
+  FileInput: FileInputItem,
   Footer: FooterItem,
   Form: FormItem,
   FormField: FormFieldItem,
@@ -97,7 +114,11 @@ const Items = {
   MaskedInput: MaskedInputItem,
   Menu: MenuItem,
   Meter: MeterItem,
+  NameValueList: NameValueListItem,
   Nav: NavItem,
+  Notification: NotificationItem,
+  Page: PageItem,
+  Pagination: PaginationItem,
   Paragraph: ParagraphItem,
   RadioButton: RadioButtonItem,
   RadioButtonGroup: RadioButtonGroupItem,
@@ -107,13 +128,16 @@ const Items = {
   Select: SelectItem,
   Sidebar: SidebarItem,
   SkipLinks: SkipLinksItem,
+  Spinner: SpinnerItem,
   Stack: StackItem,
   Table: TableItem,
   Tabs: TabsItem,
+  Tag: TagItem,
   Text: TextItem,
   TextArea: TextAreaItem,
   TextInput: TextInputItem,
   ThemeContext: ThemeContextItem,
+  Tip: TipItem,
   Video: VideoItem,
   WorldMap: WorldMapItem,
 };
@@ -127,24 +151,6 @@ export default class Components extends Component {
       this.sectionRefs[name] = React.createRef();
     });
   }
-
-  componentDidMount() {
-    this.scrollToSection();
-  }
-
-  componentDidUpdate() {
-    this.scrollToSection();
-  }
-
-  scrollToSection = () => {
-    const name = window.location.hash.split('#')[1];
-    if (name && this.sectionRefs[name]) {
-      this.sectionRefs[name].current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
 
   render() {
     const desc =
@@ -167,7 +173,7 @@ export default class Components extends Component {
             {name === 'Color' ? (
               <Color index={index} />
             ) : (
-              components.map(component => {
+              components.map((component) => {
                 const Item = Items[component];
                 return (
                   <Item

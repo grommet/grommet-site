@@ -16,14 +16,13 @@ const COMPANIES = [
   'Twilio',
   'DXC',
   'MicroFocus',
-  'Shopify',
   'Sony',
   'IBM',
   'Aruba',
 ];
 
-export default () => (
-  <Section background="light-1" pad={{ top: 'xlarge' }}>
+const Messages = () => (
+  <Section background="background-front" pad={{ top: 'xlarge' }}>
     <Header
       level={2}
       label="don’t take our word for it"
@@ -48,20 +47,7 @@ export default () => (
             @grommetux, the OSS UX framework http://bit.ly/1YWH7ea
           </span>
         }
-      />
-
-      <Message
-        imageSrc="/img/avatars/puppet_200x200.jpeg"
-        name="@nikmd23"
-        summary={
-          <span>
-            this accessibility demo is&nbsp;
-            <span role="img" aria-label="money">
-              💰💰💰
-            </span>
-            &nbsp; https://vimeo.com/187068246 great work @grommetux!
-          </span>
-        }
+        alt="Man with glasses next to an orange person-like character"
       />
 
       <Message
@@ -73,6 +59,7 @@ export default () => (
             is the best design tool I have ever used
           </span>
         }
+        alt="Man with hands in peace signs and cup in mouth at finish line of race"
       />
 
       <Message
@@ -84,6 +71,7 @@ export default () => (
             with great user experience
           </span>
         }
+        alt="Sketch of black rabbit head with big blue eyes"
       />
 
       <Message
@@ -95,6 +83,7 @@ export default () => (
             https://grommet.github.io @grommetux
           </span>
         }
+        alt="Ravish Tiwari"
       />
     </Box>
 
@@ -112,7 +101,7 @@ export default () => (
       align="center"
       margin={{ top: 'large', bottom: 'xlarge' }}
     >
-      {COMPANIES.map(name => (
+      {COMPANIES.map((name) => (
         <Box
           key={name}
           basis="small"
@@ -131,3 +120,5 @@ export default () => (
     </Box>
   </Section>
 );
+
+export default Messages;

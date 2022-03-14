@@ -14,13 +14,15 @@ const content = `
   ### [browser support](${nameToPath('browsers')})
 `;
 
-export default () => (
+const Docs = () => (
   <Page>
     <MarkdownTemplate
       name="Docs"
-      desc="you got questions, we got some answers. something missing? hit us up on [slack](https://slackin.grommet.io/), or open an [issue](https://github.com/grommet/grommet/issues)."
+      desc="you got questions, we got some answers. something missing? hit us up on [slack](https://slack-invite.grommet.io), or open an [issue](https://github.com/grommet/grommet/issues)."
     >
       {content}
     </MarkdownTemplate>
   </Page>
 );
+
+export default Docs;

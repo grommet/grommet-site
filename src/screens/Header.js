@@ -1,19 +1,26 @@
 import React from 'react';
-
 import { Header, Box } from 'grommet';
-import { doc } from 'grommet/components/Header/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
+import { ComponentDoc } from '../components/Doc';
 
-const desc = doc(Header).toJSON();
-
-export default () => (
+const HeaderPage = () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Header"
-      desc={desc}
+      availableAt={[
+        {
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Header',
+          label: 'Github',
+        },
+      ]}
+      description="Is a Box container for introductory content"
       code={`<Header background="brand">
   <Button icon={<Icons.Home />} hoverIndicator />
   <Menu label="account" items={[{ label: 'logout' }]} />
@@ -33,6 +40,8 @@ export default () => (
     />
   </Page>
 );
+
+export default HeaderPage;
 
 export const HeaderItem = ({ name, path }) => (
   <Item name={name} path={path}>

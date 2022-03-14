@@ -15,7 +15,7 @@ import Messages from './Messages';
 import { Tools } from './Tools';
 import { nameToPath } from '../../structure';
 
-export default () => (
+const HomePage = () => (
   <Box>
     <Section>
       <Nav />
@@ -51,20 +51,23 @@ export default () => (
         <Anchor
           target="_blank"
           a11yTitle="Chat with us on Slack"
-          href="https://slackin.grommet.io/"
+          href="https://slack-invite.grommet.io"
           icon={<Slack color="brand" size="large" />}
           label={<Text size="large">Chat with us on Slack</Text>}
         />
       </Box>
     </Section>
 
-    <Section background="light-1" pad={{ top: 'xlarge' }} width="auto">
+    <Section background="background-back" pad={{ top: 'xlarge' }} width="auto">
       <Header
         level={2}
         label="part design system, part framework, and all awesome"
         summary={
           <Paragraph size="xxlarge" textAlign="center">
-            grommet is a <Anchor href="https://reactjs.org">react</Anchor>
+            grommet is a{' '}
+            <Anchor href="https://reactjs.org" a11yTitle="reactjs">
+              react
+            </Anchor>
             -based framework that provides accessibility, modularity,
             responsiveness, and theming in a tidy package
           </Paragraph>
@@ -137,7 +140,7 @@ export default () => (
             <Anchor
               target="_blank"
               a11yTitle="Chat with us on Slack"
-              href="https://slackin.grommet.io/"
+              href="https://slack-invite.grommet.io"
               icon={<Slack color="brand" size="large" />}
             />
           </Box>
@@ -161,8 +164,14 @@ export default () => (
           </Paragraph>
         </Box>
 
-        <Image src="/img/stak-hurrah.svg" />
+        <Image
+          src="/img/stak-hurrah.svg"
+          a11yTitle="gremlin"
+          alt="Grommet gremlin with one arm above head and other hand holding a wrench"
+        />
       </Box>
     </Section>
   </Box>
 );
+
+export default HomePage;

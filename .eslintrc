@@ -1,6 +1,6 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
+  "parser": "@babel/eslint-parser",
+  "extends": ["airbnb", "prettier", "plugin:grommet/recommended"],
   "plugins": ["prettier"],
   "env": {
     "node": true,
@@ -26,6 +26,11 @@
     "react/jsx-filename-extension": 0,
     "react/jsx-wrap-multilines": 0,
     "react/jsx-one-expression-per-line": 0,
-    "import/prefer-default-export": 0
+    "react/no-unescaped-entities": "off",
+    "import/prefer-default-export": 0,
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ]
   }
 }

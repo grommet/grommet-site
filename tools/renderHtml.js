@@ -13,6 +13,17 @@ export default ({ body, styles, scripts, helmet }) => `<!DOCTYPE html>
       name="google-site-verification"
       content="shJGDc1jnWglPRw_VtQnMTqvcai0Br5JBFX1gVrQg-U"
     />
+    <meta name="og:type" content="website" />
+    <meta name="og:url" content="https://v2.grommet.io" />
+    <meta name="og:title" content="Grommet" />
+    <meta
+      name="og:description"
+      content="Build responsive and accessible mobile-first projects for the web with an easy to use component library."
+    />
+    <meta
+      name="og:image"
+      content="https://v2.grommet.io/img/mobile-app-icon.png"
+    />
     <link rel="shortcut icon" type="image/png" href="/img/shortcut-icon.png" />
     <link
       rel="apple-touch-icon"
@@ -35,8 +46,12 @@ export default ({ body, styles, scripts, helmet }) => `<!DOCTYPE html>
         can be done with Grommet. You must enable javascript to proceed.
       </p>
     </noscript>
-    ${scripts &&
+    ${
+      scripts &&
       scripts.length &&
-      scripts.map(scriptSrc => `<script src="${scriptSrc}"></script>`).join('')}
+      scripts
+        .map((scriptSrc) => `<script src="${scriptSrc}" async></script>`)
+        .join('')
+    }
   </body>
 </html>`;

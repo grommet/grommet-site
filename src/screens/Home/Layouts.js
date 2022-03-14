@@ -3,7 +3,7 @@ import { Box } from 'grommet';
 import RoutedAnchor from '../../components/RoutedAnchor';
 import Tile from './Tile';
 
-export default () => {
+const Layouts = () => {
   const [build, setBuild] = React.useState(true);
   const [phase, setPhase] = React.useState(1);
 
@@ -23,9 +23,9 @@ export default () => {
       summary={
         <span>
           support all the devices! use&nbsp;
-          <RoutedAnchor path="/box">Flexbox</RoutedAnchor> and&nbsp;
-          <RoutedAnchor path="/grid">CSS Grid</RoutedAnchor> to provide layouts
-          for all those new phones and widescreen displays.
+          <RoutedAnchor path="/box" label="Flexbox" /> and&nbsp;
+          <RoutedAnchor path="/grid" label="CSS Grid" /> to provide layouts for
+          all those new phones and widescreen displays.
         </span>
       }
       direction="row"
@@ -54,13 +54,13 @@ export default () => {
           pad="xsmall"
           gap="small"
         >
-          <Box flex pad="large" background="neutral-1" round="small" />
+          <Box flex pad="large" background="graph-1" round="small" />
           {phase >= 3 && (
             <Box
               flex
               animation="fadeIn"
               pad="medium"
-              background="neutral-2"
+              background="graph-2"
               round="small"
             />
           )}
@@ -105,3 +105,5 @@ export default () => {
     </Tile>
   );
 };
+
+export default Layouts;

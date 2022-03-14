@@ -1,25 +1,27 @@
 import React from 'react';
-
 import { Anchor, Nav } from 'grommet';
 import { FacebookOption, Twitter, Github, Linkedin } from 'grommet-icons';
-import { doc } from 'grommet/components/Nav/doc';
-
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import Item from './Components/Item';
+import { ComponentDoc } from '../components/Doc';
 
-const desc = doc(Nav).toJSON();
-
-export default () => (
+const NavPage = () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Nav"
-      desc={desc}
-      code={`<Nav direction="row" background="brand" pad="medium">
-    <Anchor icon={<Icons.Home />} hoverIndicator />
-    <Anchor icon={<Icons.Notification />} hoverIndicator />
-    <Anchor icon={<Icons.ChatOption />} hoverIndicator />
-</Nav>`}
+      availableAt={[
+        {
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Nav&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Nav',
+          label: 'Github',
+        },
+      ]}
+      description="Is a Box container for navigation links"
       isA={{
         base: 'Box',
         path: '/box',
@@ -29,17 +31,24 @@ export default () => (
           gap: 'medium',
         },
       }}
+      code={`<Nav direction="row" background="brand" pad="medium">
+  <Anchor icon={<Icons.Home />} hoverIndicator />
+  <Anchor icon={<Icons.Notification />} hoverIndicator />
+  <Anchor icon={<Icons.ChatOption />} hoverIndicator />
+</Nav>`}
     />
   </Page>
 );
 
+export default NavPage;
+
 export const NavItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Nav direction="row" align="end" background="brand" pad="medium">
-      <Anchor icon={<FacebookOption />} hoverIndicator />
-      <Anchor icon={<Twitter />} hoverIndicator />
-      <Anchor icon={<Github />} hoverIndicator />
-      <Anchor icon={<Linkedin />} hoverIndicator />
+      <Anchor as="span" icon={<FacebookOption />} hoverIndicator />
+      <Anchor as="span" icon={<Twitter />} hoverIndicator />
+      <Anchor as="span" icon={<Github />} hoverIndicator />
+      <Anchor as="span" icon={<Linkedin />} hoverIndicator />
     </Nav>
   </Item>
 );

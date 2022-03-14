@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   Anchor,
   Box,
@@ -9,18 +8,18 @@ import {
   Heading,
   Paragraph,
 } from 'grommet';
-import { doc } from 'grommet/components/Form/doc';
-
 import RoutedAnchor from '../components/RoutedAnchor';
 import Page from '../components/Page';
-import Doc from '../components/Doc';
 import { Code } from '../components/Doc/Code';
 import Item from './Components/Item';
-import { genericSyntaxes } from '../utils/props';
-
-const desc = doc(Form).toJSON();
-delete desc.availableAt;
-delete desc.description;
+import {
+  ComponentDoc,
+  Properties,
+  Property,
+  PropertyValue,
+  Description,
+  Example,
+} from '../components/Doc';
 
 const Examples = () => (
   <Box>
@@ -49,8 +48,8 @@ const Examples = () => (
       onReset={() => setValue({})}
       onSubmit={({ value }) => {}}
     >
-      <FormField name="name" label="Name">
-        <TextInput name="name" />
+      <FormField name="name" htmlFor="text-input-id" label="Name">
+        <TextInput id="text-input-id" name="name" />
       </FormField>
       <Box direction="row" gap="medium">
         <Button type="submit" primary label="Submit" />
@@ -75,8 +74,8 @@ const Examples = () => (
       code={`() => {
   return (
     <Form onSubmit={({ value }) => {}}>
-      <FormField name="name" label="Name">
-        <TextInput name="name" />
+      <FormField name="name" htmlFor="textinput-id" label="Name">
+        <TextInput id="textinput-id" name="name" />
       </FormField>
       <Box direction="row" gap="medium">
         <Button type="submit" primary label="Submit" />
@@ -90,38 +89,141 @@ const Examples = () => (
   </Box>
 );
 
-export default () => (
+const FormPage = () => (
   <Page>
-    <Doc
+    <ComponentDoc
       name="Form"
-      align="stretch"
-      desc={desc}
-      text=""
-      examples={<Examples />}
-      syntaxes={{
-        ...genericSyntaxes,
-        errors: [
-          {
-            name: ['message', '<Box>...</Box>'],
-          },
-        ],
-        infos: [
-          {
-            name: ['message', '<Box>...</Box>'],
-          },
-        ],
-        onChange: '(value) => {}',
-        onReset: '() => {}',
-        onSubmit: '({ value, touched }) => {}',
-        value: [
-          {
-            name: 'value',
-          },
-        ],
-      }}
-    />
+      intrinsicElement="form"
+      availableAt={[
+        {
+          url: 'https://storybook.grommet.io/?selectedKind=Input-Form&full=0&stories=1&panelRight=0',
+          badge:
+            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+          label: 'Storybook',
+        },
+        {
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/from&module=%2Fsrc%2FForm.js',
+          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
+          label: 'CodeSandbox',
+        },
+        {
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Form',
+          label: 'Github',
+        },
+      ]}
+    >
+      <Examples />
+      <Properties>
+        <Property name="errors">
+          <Description>
+            An object representing any errors in the data.
+          </Description>
+          <PropertyValue type="object">
+            <Description>
+              Their keys should match the keys in the value object.
+            </Description>
+            <Example>{`{ name: "string" }`}</Example>
+            <Example>{`{ name: "node" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="infos">
+          <Description>
+            An object representing any information details in the data.
+          </Description>
+          <PropertyValue type="object">
+            <Description>
+              Their keys should match the keys in the value object.
+            </Description>
+            <Example>{`{ name: "string" }`}</Example>
+            <Example>{`{ name: "node" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="messages">
+          <Description>Custom validation messages.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ invalid: "invalid", required: "required" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onChange">
+          <Description>
+            Function that will be called when any fields are updated.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              The fields must have a non-null 'name' property assigned.
+            </Description>
+            <Example>{`(value) => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onSubmit">
+          <Description>
+            Function that will be called when the form is submitted.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              The single argument is an event containing the latest value object
+              via 'event.value' and an object indicating which fields were
+              touched via 'event.touched'.
+            </Description>
+            <Example>{`({ value, touched }) => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onReset">
+          <Description>
+            Function that will be called when the form is reset.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              The single argument is the event provided by react.
+            </Description>
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onValidate">
+          <Description>
+            Function that will be called when the form is validated.
+          </Description>
+          <PropertyValue type="function">
+            <Description>
+              The single argument is an event containing the latest error object
+              via 'validationResults.errors', info object via
+              'validationResults.infos' and form's validity via 'valid'.
+            </Description>
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="validate">
+          <Description>When to perform validation</Description>
+          <PropertyValue type="string">
+            <Example>"blur"</Example>
+            <Example defaultValue>"submit"</Example>
+            <Example>"change"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="value">
+          <Description>
+            An object representing all of the data in the form.
+          </Description>
+          <PropertyValue type="object">
+            <Example> {`{ name: "value" }`} </Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
+
+export default FormPage;
 
 export const FormItem = ({ name, path }) => (
   <Item name={name} path={path} center>

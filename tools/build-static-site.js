@@ -23,14 +23,18 @@ const manifest = require(`${publicPath}/webpack-manifest.json`); // eslint-disab
 
 // Render a React output as string and dynamically inject
 // to an HTML string which a browser can consume.
-const renderHtmlString = pagePath => {
+const renderHtmlString = (pagePath) => {
   const sheet = new ServerStyleSheet();
   const body = renderToString(
     sheet.collectStyles(<App initialPath={pagePath} />),
   );
   const helmet = Helmet.renderStatic();
   const styles = `${sheet.getStyleTags()}<style>body { margin: 0; }</style>`;
-  const scripts = [manifest['main.js'], manifest['vendors~main.js']];
+  const scripts = [
+    manifest['main.js'],
+    manifest['grommet.js'],
+    manifest['vendors~main.js'],
+  ];
   const htmlString = html({ body, styles, scripts, helmet });
   return htmlString;
 };
@@ -42,13 +46,13 @@ const linksVisited = [];
 let isDone = false;
 
 // Check if the page crawler has already visited a page.
-const hasVisited = link => {
-  const linkVisited = linksVisited.find(item => item === link);
+const hasVisited = (link) => {
+  const linkVisited = linksVisited.find((item) => item === link);
   return typeof linkVisited === 'string';
 };
 
 // Remove hash links from URLs i.e. `/box#overflow` => `/box`
-const stripHash = link => {
+const stripHash = (link) => {
   const hashIndex = link.indexOf('#');
   if (hashIndex === -1) {
     return link;
@@ -85,7 +89,7 @@ function crawlForLinks(pagePath, done) {
     }
   });
 
-  linksToVisit.forEach(link => {
+  linksToVisit.forEach((link) => {
     if (!hasVisited(link)) {
       console.log('queueing', link);
       // Use recursion to dig deeper into the app.
@@ -103,7 +107,7 @@ const generateHtmlPages = () => {
   // Dedupe the array just in case.
   const siteLinks = [...new Set(linksVisited)];
 
-  siteLinks.forEach(page => {
+  siteLinks.forEach((page) => {
     const fileName = `${page.replace('/', '')}.html`;
     const filePath = path.resolve(
       publicPath,

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" role="main">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
@@ -12,6 +12,17 @@
     <meta
       name="google-site-verification"
       content="shJGDc1jnWglPRw_VtQnMTqvcai0Br5JBFX1gVrQg-U"
+    />
+    <meta name="og:type" content="website" />
+    <meta name="og:url" content="https://v2.grommet.io" />
+    <meta name="og:title" content="Grommet" />
+    <meta
+      name="og:description"
+      content="Build responsive and accessible mobile-first projects for the web with an easy to use component library."
+    />
+    <meta
+      name="og:image"
+      content="https://v2.grommet.io/img/mobile-app-icon.png"
     />
     <link rel="shortcut icon" type="image/png" href="/img/shortcut-icon.png" />
     <link
@@ -88,7 +99,7 @@
     </style>
   </head>
   <body class="loading">
-    <div id="content" tabindex="-1" style="outline: none;">
+    <div id="content" tabindex="-1" style="outline: none">
       <svg id="logo" viewBox="0 0 182 182" version="1.1" role="img">
         <path
           role="presentation"
@@ -109,7 +120,7 @@
         for (var i = 0; i < 100; i += 1) {
           c.insertAdjacentHTML('beforeend', '<div class="t off"></div>');
         }
-        var timer = setInterval(function() {
+        var timer = setInterval(function () {
           var again = false;
           if (document.body.classList.contains('loading')) {
             var ts = c.querySelectorAll('div.t.off');

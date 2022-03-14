@@ -4,7 +4,7 @@ import { Box, Text } from 'grommet';
 import { ThemeContext } from 'grommet/contexts';
 
 import Page from '../components/Page';
-import Doc from '../components/Doc';
+import { ComponentDoc } from '../components/Doc';
 
 const BRAND_REGEXP = /^brand/i;
 const ACCENT_REGEXP = /^accent-/i;
@@ -31,8 +31,8 @@ Cell.propTypes = {
 const Set = ({ regexp, colors }) => (
   <Box direction="row" wrap gap="medium">
     {Object.keys(colors)
-      .filter(name => regexp.test(name))
-      .map(name => (
+      .filter((name) => regexp.test(name))
+      .map((name) => (
         <Cell key={name} name={name} value={colors[name]} />
       ))}
   </Box>
@@ -45,9 +45,9 @@ Set.propTypes = {
 
 const Color = () => (
   <Page>
-    <Doc name="Color" text="The color palette.">
+    <ComponentDoc name="Color" description="The color palette">
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <Box gap="large" margin={{ vertical: 'large' }}>
             <Set regexp={BRAND_REGEXP} colors={theme.global.colors} />
             <Set regexp={ACCENT_REGEXP} colors={theme.global.colors} />
@@ -58,7 +58,7 @@ const Color = () => (
           </Box>
         )}
       </ThemeContext.Consumer>
-    </Doc>
+    </ComponentDoc>
   </Page>
 );
 
