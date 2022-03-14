@@ -112,7 +112,7 @@ const Themeable = () => {
       summary={
         <span>
           tailor the component library to align with your Color, Type, Layout
-          needs. You can even control component interaction.
+          needs. you can even control component interaction.
         </span>
       }
       gap="medium"
