@@ -20,7 +20,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const AnchorPage = () => (
   <Page>
     <ComponentDoc
       name="Anchor"
@@ -284,6 +284,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default AnchorPage;
 
 export const AnchorItem = ({ name, path }) => (
   <Item name={name} path={path} center>

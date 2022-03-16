@@ -20,21 +20,19 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const NotificationPage = () => (
   <Page>
     <ComponentDoc
       name="Notification"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?path=/story/visualizations-notification-status--status',
+          url: 'https://storybook.grommet.io/?path=/story/visualizations-notification-status--status',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Notification',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Notification',
           label: 'Github',
         },
       ]}
@@ -138,8 +136,14 @@ return (
             Toast Notification.
           </Description>
           <GenericBoolFalse />
+          <PropertyValue type="object">
+            <Example>{`{ toast: {{ position: 'bottom-right' }},}`}</Example>
+          </PropertyValue>
+          <Description>
+            When using Toast Notification a position is avalible to pass in as
+            an object which will then be the position of the toast content.
+          </Description>
         </Property>
-
         <Property name="onClose">
           <Description>
             Click handler. Not setting this property causes the Notification to
@@ -400,6 +404,8 @@ return (
     </ComponentDoc>
   </Page>
 );
+
+export default NotificationPage;
 
 export const NotificationItem = ({ name, path }) => (
   <Item name={name} path={path} center>

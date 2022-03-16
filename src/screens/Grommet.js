@@ -15,7 +15,7 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const GrommetPage = () => (
   <Page>
     <ComponentDoc
       name="Grommet"
@@ -302,6 +302,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default GrommetPage;
 
 export const GrommetItem = ({ name, path }) => (
   <Item name={name} path={path} center>

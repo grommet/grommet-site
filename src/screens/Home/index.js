@@ -15,7 +15,7 @@ import Messages from './Messages';
 import { Tools } from './Tools';
 import { nameToPath } from '../../structure';
 
-export default () => (
+const HomePage = () => (
   <Box>
     <Section>
       <Nav />
@@ -58,7 +58,7 @@ export default () => (
       </Box>
     </Section>
 
-    <Section background="light-1" pad={{ top: 'xlarge' }} width="auto">
+    <Section background="background-back" pad={{ top: 'xlarge' }} width="auto">
       <Header
         level={2}
         label="part design system, part framework, and all awesome"
@@ -155,7 +155,7 @@ export default () => (
             . Save it for offline reading.
           </Paragraph>
           <Paragraph>
-            Maintained by the core team and the help of our contributors. you
+            maintained by the core team with the help of our contributors. you
             can always kick it old school with&nbsp;
             <Anchor target="_blank" href="https://v1.grommet.io">
               Grommet v1
@@ -173,3 +173,5 @@ export default () => (
     </Section>
   </Box>
 );
+
+export default HomePage;

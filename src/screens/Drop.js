@@ -23,21 +23,19 @@ import {
 } from '../components/Doc';
 import { EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const DropPage = () => (
   <Page>
     <ComponentDoc
       name="Drop"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Drop&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Drop&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Drop',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Drop',
           label: 'Github',
         },
       ]}
@@ -330,6 +328,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DropPage;
 
 export const DropItem = ({ name, path }) => (
   <Item name={name} path={path} center>

@@ -22,7 +22,7 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const TagPage = () => (
   <Page>
     <ComponentDoc
       name="Tag"
@@ -55,7 +55,7 @@ export default () => (
           </Description>
           <GenericA11yTitle />
         </Property>
-        
+
         <Property name="alignSelf">
           <Description>
             How to align along the cross axis when contained in a Box or along
@@ -63,7 +63,7 @@ export default () => (
           </Description>
           <GenericAlignSelf />
         </Property>
-        
+
         <Property name="as">
           <Description>
             The DOM tag or react component to use for the element.
@@ -87,13 +87,13 @@ export default () => (
         <Property name="onClick">
           <Description>
             Click handler. If this property is specified the tag will be a
-            button.  This should not be used in conjunction with 'onRemove'.
+            button. This should not be used in conjunction with 'onRemove'.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
           </PropertyValue>
         </Property>
-        
+
         <Property name="onRemove">
           <Description>
             If specified, the tag will include a remove button. This function
@@ -104,7 +104,22 @@ export default () => (
             <Example>{`() => {}`}</Example>
           </PropertyValue>
         </Property>
-        
+
+        <Property name="size">
+          <Description>
+            The possible sizes of the Tag, that impacts the overall Tag padding,
+            border radius, text size and line height.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"xsmall"</Example>
+            <Example>"small"</Example>
+            <Example defaultValue>"medium"</Example>
+            <Example>"large"</Example>
+            <Example>"xlarge"</Example>
+            <Example>"string"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="value">
           <Description>Value text to place in the tag.</Description>
           <PropertyValue type="string">
@@ -131,8 +146,11 @@ export default () => (
         </Property>
 
         <Property name="tag.round">
-          <Description>How much to round the corners.</Description>
-          <GenericBool/>
+          <Description>
+            How much to round the corners. May be overridden by a size-specific
+            value below.
+          </Description>
+          <GenericBool />
           <PropertyValue type="string">
             <Example defaultValue>"large"</Example>
             <SizesXsmallXlarge />
@@ -155,22 +173,17 @@ export default () => (
         </Property>
 
         <Property name="tag.name">
-          <Description>
-            Any valid Text props for the name.
-          </Description>
+          <Description>Any valid Text props for the name.</Description>
           <PropertyValue type="object">
-            <Example defaultValue>
-              {`{}`}
-            </Example>
-            <Example>
-              {`{ weight: 600 }`}
-            </Example>
+            <Example defaultValue>{`{}`}</Example>
+            <Example>{`{ weight: 600 }`}</Example>
           </PropertyValue>
         </Property>
 
         <Property name="tag.pad">
           <Description>
-            The amount of padding around the Box contents.
+            The amount of padding around the Box contents. May be overidden by
+            size specific values below.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
@@ -179,6 +192,241 @@ export default () => (
   vertical: "xsmall",
 }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xsmall.pad">
+          <Description>The pad</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  horizontal: "8px",
+  vertical: "xxsmall",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xsmall.icon">
+          <Description>The remove icon properties</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  size: "18px",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xsmall.round">
+          <Description>How much to round the corners.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.small.pad">
+          <Description>The pad for size small.</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  horizontal: "10px",
+  vertical: "xxsmall",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.small.icon">
+          <Description>The remove icon properties</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  size: "18px",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.small.round">
+          <Description>How much to round the corners.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.medium.pad">
+          <Description>The pad</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  horizontal: "12px",
+  vertical: "xsmall",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.medium.icon">
+          <Description>The remove icon properties</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  size: "medium",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.medium.round">
+          <Description>How much to round the corners.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.large.pad">
+          <Description>The pad</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  horizontal: "16px",
+  vertical: "xsmall",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.large.icon">
+          <Description>The remove icon properties</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  size: "30px",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.large.round">
+          <Description>How much to round the corners.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xlarge.pad">
+          <Description>The pad</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  horizontal: "18px",
+  vertical: "xsmall",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xlarge.icon">
+          <Description>The remove icon properties</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  size: "36px",
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xlarge.round">
+          <Description>How much to round the corners.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
           </PropertyValue>
         </Property>
 
@@ -207,19 +455,17 @@ export default () => (
         </Property>
 
         <Property name="tag.value">
-          <Description>
-            Any valid Text props for the value.
-          </Description>
+          <Description>Any valid Text props for the value.</Description>
           <PropertyValue type="object">
-            <Example defaultValue>
-              {`{ weight: 600 }`}
-            </Example>
+            <Example defaultValue>{`{ weight: 600 }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
+
+export default TagPage;
 
 export const TagItem = ({ name, path }) => (
   <Item name={name} path={path} center>

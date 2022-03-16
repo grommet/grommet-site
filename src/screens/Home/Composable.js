@@ -3,7 +3,7 @@ import { Box, Text } from 'grommet';
 import { Action, Add, Edit, Trash } from 'grommet-icons';
 import Tile from './Tile';
 
-export default () => {
+const Composable = () => {
   const [build, setBuild] = React.useState(true);
   const [phase, setPhase] = React.useState(1);
 
@@ -98,3 +98,5 @@ export default () => {
     </Tile>
   );
 };
+
+export default Composable;

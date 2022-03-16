@@ -8,7 +8,7 @@ export const Property = ({ name, first, children }) => {
   const [over, setOver] = React.useState();
   const Description = [];
   const PropertyValues = [];
-  React.Children.forEach(children, child => {
+  React.Children.forEach(children, (child) => {
     if (child.type.displayName === 'Description') {
       Description.push(child);
     } else {

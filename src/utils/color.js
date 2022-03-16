@@ -1,15 +1,14 @@
-
-const COLOR_REGEXP = new RegExp('[A-Za-z0-9]{2}', 'g');
+const COLOR_REGEXP = /[A-Za-z0-9]{2}/g;
 
 export const parseRGBString = (str) => {
   const match = str.match(COLOR_REGEXP);
   if (match && match.length === 3) {
-    return match.map(v => parseInt(v, 16));
+    return match.map((v) => parseInt(v, 16));
   }
   return undefined;
 };
 
-export const toRGBString = array => array.map(v => v.toString(16)).join('');
+export const toRGBString = (array) => array.map((v) => v.toString(16)).join('');
 
 // From https://stackoverflow.com/a/9493060/8513067
 
@@ -17,9 +16,9 @@ const hue2rgb = (p, q, t) => {
   let nt = t;
   if (t < 0) nt += 1;
   if (t > 1) nt -= 1;
-  if (nt < 1 / 6) return p + ((q - p) * 6 * nt);
+  if (nt < 1 / 6) return p + (q - p) * 6 * nt;
   if (nt < 1 / 2) return q;
-  if (nt < 2 / 3) return p + ((q - p) * ((2 / 3) - nt) * 6);
+  if (nt < 2 / 3) return p + (q - p) * (2 / 3 - nt) * 6;
   return p;
 };
 
@@ -45,11 +44,11 @@ export const hslToRgb = (h, s, l) => {
     g = l;
     b = l;
   } else {
-    const q = l < 0.5 ? l * (1 + s) : (l + s) - (l * s);
-    const p = (2 * l) - q;
-    r = hue2rgb(p, q, h + (1 / 3));
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1 / 3);
     g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - (1 / 3));
+    b = hue2rgb(p, q, h - 1 / 3);
   }
 
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
@@ -84,10 +83,17 @@ export const rgbToHsl = (r, g, b) => {
     const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
     switch (max) {
-    case nr: h = ((ng - nb) / d) + (ng < nb ? 6 : 0); break;
-    case ng: h = ((nb - nr) / d) + 2; break;
-    case nb: h = ((nr - ng) / d) + 4; break;
-    default: console.error('Bug in rgbToHsl');
+      case nr:
+        h = (ng - nb) / d + (ng < nb ? 6 : 0);
+        break;
+      case ng:
+        h = (nb - nr) / d + 2;
+        break;
+      case nb:
+        h = (nr - ng) / d + 4;
+        break;
+      default:
+        console.error('Bug in rgbToHsl');
     }
     h /= 6;
   }

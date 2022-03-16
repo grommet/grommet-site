@@ -35,7 +35,7 @@ import {
 } from '../utils/genericThemeExamples';
 import { FocusStyle, DisabledStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const ButtonPage = () => (
   <Page>
     <ComponentDoc
       name="Button"
@@ -1255,6 +1255,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ButtonPage;
 
 export const ButtonItem = ({ name, path }) => (
   <Item name={name} path={path} center>

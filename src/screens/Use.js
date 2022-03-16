@@ -23,7 +23,7 @@ Item.propTypes = {
   snippet: PropTypes.node.isRequired,
 };
 
-export default () => (
+const Use = () => (
   <Page>
     <Header label="Start" />
     <Helmet>
@@ -65,3 +65,5 @@ export default () => (
     </Box>
   </Page>
 );
+
+export default Use;
