@@ -492,6 +492,12 @@ const SelectPage = () => (
           <PropertyValue type="node">
             <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
+          <PropertyValue type="function">
+            <Description>
+              A function that returns either a string or a React node.
+            </Description>
+            <Example>{`{(option) => {}}`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="valueKey">
@@ -506,20 +512,24 @@ const SelectPage = () => (
             </Description>
             <Example>"key"</Example>
           </PropertyValue>
-          <PropertyValue type="function">
+          <PropertyValue type="object">
             <Description>
-              If a function is provided, it is called with the option and should
-              return the value. If reduce is true, this value will be used for
-              the 'value' delivered via 'onChange'.
+              If reduce is true, this value will be used for the 'value'
+              delivered via 'onChange'.
             </Description>
-            <Example>
-              {`
+            <Example>{`
 {
   key: "string",
   reduce: boolean
 }
-            `}
-            </Example>
+            `}</Example>
+          </PropertyValue>
+          <PropertyValue type="function">
+            <Description>
+              If a function is provided, it is called with the option and should
+              return the value.
+            </Description>
+            <Example>{`(option) => { return "string" }`}</Example>
           </PropertyValue>
         </Property>
 
