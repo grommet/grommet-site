@@ -184,7 +184,10 @@ const DropPage = () => (
         </Property>
 
         <Property name="restrictFocus">
-          <Description>Whether the drop should control focus.</Description>
+          <Description>
+            Whether or not the drop should not be allowed to receive focus. When
+            'true', the drop isn't allowed to receive focus.
+          </Description>
           <GenericBoolFalse />
         </Property>
 
@@ -243,7 +246,10 @@ const DropPage = () => (
         </Property>
 
         <Property name="trapFocus">
-          <Description>Traps keyboard focus inside of drop.</Description>
+          <Description>
+            Traps keyboard focus inside of drop. When 'true', the focus is
+            restricted to the drop only.
+          </Description>
           <GenericBoolTrue />
         </Property>
       </Properties>
