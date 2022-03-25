@@ -43,12 +43,15 @@ const DropButtonPage = () => (
       description="A Button that controls a Drop"
       intrinsicElement="button"
       code={`function Example() {
-  const align = { top: "bottom", left: "right" };
-  const dropAlign = React.useMemo(() => align, [align]);
+  const align = React.useMemo(() => {
+    const alignProp = { top: "bottom", left: "right" };
+    return alignProp;
+  }, []);
+
   return (
     <DropButton
       label="Fancy Selector"
-      dropAlign={dropAlign}
+      dropAlign={align}
       dropContent={
         <Box pad="large" background="light-2" />
       }
