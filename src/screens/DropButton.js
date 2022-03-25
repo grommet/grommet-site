@@ -42,13 +42,20 @@ const DropButtonPage = () => (
       ]}
       description="A Button that controls a Drop"
       intrinsicElement="button"
-      code={`<DropButton
-  label="Fancy Selector"
-  dropAlign={{ top: 'bottom', right: 'right' }}
-  dropContent={
-    <Box pad="large" background="light-2" />
-  }
-/>`}
+      code={`function Example() {
+  const align = { top: "bottom", left: "right" };
+  const dropAlign = React.useMemo(() => align, [align]);
+  return (
+    <DropButton
+      label="Fancy Selector"
+      dropAlign={dropAlign}
+      dropContent={
+        <Box pad="large" background="light-2" />
+      }
+    />
+  );
+}
+`}
     >
       <Properties>
         <Property name="a11yTitle">
@@ -87,6 +94,10 @@ const DropButtonPage = () => (
         <Property name="dropAlign">
           <Description>
             How to align the drop with respect to the button.
+          </Description>
+          <Description>
+            The dropAlign property object should be memo-ized to maintain the
+            same instance when passed in to avoid re-rendering.
           </Description>
           <PropertyValue type="object">
             <Example>

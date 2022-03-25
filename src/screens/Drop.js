@@ -49,6 +49,10 @@ const DropPage = () => (
             specifying a vertical or horizontal alignment will cause it to be
             aligned in the center.
           </Description>
+          <Description>
+            The align property object should be memo-ized to maintain the same
+            instance when passed in to avoid re-rendering.
+          </Description>
           <PropertyValue type="object">
             <Example>
               {`
