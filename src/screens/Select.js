@@ -529,7 +529,7 @@ const SelectPage = () => (
               If a function is provided, it is called with the option and should
               return the value.
             </Description>
-            <Example>{`(option) => { return "string" }`}</Example>
+            <Example>{`(option) => {}`}</Example>
           </PropertyValue>
         </Property>
 
