@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button } from 'grommet';
+import { Anchor, Box, Button } from 'grommet';
 import { FormDown } from 'grommet-icons';
 import Page from '../components/Page';
 import Item from './Components/Item';
@@ -42,20 +42,12 @@ const DropButtonPage = () => (
       ]}
       description="A Button that controls a Drop"
       intrinsicElement="button"
-      code={`function Example() { 
-  const align = { top: "bottom", left: "right" };
-  
-  return (
-    <DropButton
-      label="Fancy Selector"
-      dropAlign={align}
-      dropContent={
-        <Box pad="large" background="light-2" />
-      }
-    />
-  );
-}
-`}
+      code={`<DropButton
+  label="Fancy Selector"
+  dropContent={
+    <Box pad="large" background="light-2" />
+  }
+/>`}
     >
       <Properties>
         <Property name="a11yTitle">
@@ -96,8 +88,20 @@ const DropButtonPage = () => (
             How to align the drop with respect to the button.
           </Description>
           <Description>
-            The dropAlign property object should be memo-ized to maintain the
-            same instance when passed in to avoid re-rendering.
+            To prevent creating a new object on each render, the align property
+            should be persistent, either as a static constant outide of the
+            render function or memo-ized using hooks.
+          </Description>
+          <Description disableMarkdown>
+            For more guidance on when and how to memoize,
+            <Anchor href="https://reactjs.org/docs/hooks-reference.html#usememo">
+              read the React documentation on the useMemo hook
+            </Anchor>
+            . For using a static constant, see our
+            <Anchor href="https://storybook.grommet.io/?path=/story/controls-drop-simple--simple">
+              Drop component Storybook examples
+            </Anchor>
+            .
           </Description>
           <PropertyValue type="object">
             <Example>
