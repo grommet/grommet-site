@@ -51,7 +51,7 @@ const DropPage = () => (
           </Description>
           <Description>
             To prevent creating a new object on each render, the align property
-            should be persistent, either as a static constant outide of the
+            should be persistent, either as a static constant outside of the
             render function or memo-ized using hooks.
           </Description>
           <Description disableMarkdown>
