@@ -17,8 +17,6 @@ const children = `
   Mozilla Firefox, latest version
   
   Microsoft Edge, latest version
-  
-  Microsoft Internet Explorer Version 11, latest version
 `;
 
 const Browsers = () => (
