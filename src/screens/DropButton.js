@@ -98,8 +98,8 @@ const DropButtonPage = () => (
               read the React documentation on the useMemo hook
             </Anchor>
             . For using a static constant, see our
-            <Anchor href="https://storybook.grommet.io/?path=/story/controls-drop-simple--simple">
-              Drop component Storybook examples
+            <Anchor href="https://storybook.grommet.io/?path=/story/controls-dropbutton-simple--simple">
+              DropButton component Storybook examples
             </Anchor>
             .
           </Description>
