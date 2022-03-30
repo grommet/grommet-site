@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from 'grommet';
+import { Anchor, Select } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -353,6 +353,19 @@ const SelectPage = () => (
 
         <Property name="options">
           <Description>The options to choose from.</Description>
+          <Description>
+            There are a number of ways to set and change the options based on
+            the 'onChange', 'onSelect', and 'onSearch' functions. As a general
+            rule of guidance, define an original list of options that is
+            separate from the currently stored options. Use this definition to
+            reset options to in functions.
+          </Description>
+          <Description disableMarkdown>
+            For examples of defining, setting, and changing options,
+            <Anchor href="https://storybook.grommet.io/?path=/story/input-select-search--search">
+              see our Storybook examples with Select.
+            </Anchor>
+          </Description>
           <PropertyValue type="array[string]">
             <Example>["option1", "option2"]</Example>
           </PropertyValue>
