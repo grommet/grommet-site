@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button } from 'grommet';
+import { Anchor, Box, Button } from 'grommet';
 import { FormDown } from 'grommet-icons';
 import Page from '../components/Page';
 import Item from './Components/Item';
@@ -44,7 +44,6 @@ const DropButtonPage = () => (
       intrinsicElement="button"
       code={`<DropButton
   label="Fancy Selector"
-  dropAlign={{ top: 'bottom', right: 'right' }}
   dropContent={
     <Box pad="large" background="light-2" />
   }
@@ -87,6 +86,22 @@ const DropButtonPage = () => (
         <Property name="dropAlign">
           <Description>
             How to align the drop with respect to the button.
+          </Description>
+          <Description>
+            To prevent creating a new object on each render, the align property
+            should be persistent, either as a static constant outside of the
+            render function or memo-ized using hooks.
+          </Description>
+          <Description disableMarkdown>
+            For more guidance on when and how to memoize,
+            <Anchor href="https://reactjs.org/docs/hooks-reference.html#usememo">
+              read the React documentation on the useMemo hook
+            </Anchor>
+            . For using a static constant, see our
+            <Anchor href="https://storybook.grommet.io/?path=/story/controls-dropbutton-simple--simple">
+              DropButton component Storybook examples
+            </Anchor>
+            .
           </Description>
           <PropertyValue type="object">
             <Example>

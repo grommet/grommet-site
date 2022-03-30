@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'grommet';
+import { Anchor, Box } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -48,6 +48,22 @@ const DropPage = () => (
             How to align the drop with respect to the target element. Not
             specifying a vertical or horizontal alignment will cause it to be
             aligned in the center.
+          </Description>
+          <Description>
+            To prevent creating a new object on each render, the align property
+            should be persistent, either as a static constant outside of the
+            render function or memo-ized using hooks.
+          </Description>
+          <Description disableMarkdown>
+            For more guidance on when and how to memoize,
+            <Anchor href="https://reactjs.org/docs/hooks-reference.html#usememo">
+              read the React documentation on the useMemo hook
+            </Anchor>
+            . For using a static constant, see our
+            <Anchor href="https://storybook.grommet.io/?path=/story/controls-drop-simple--simple">
+              Drop component Storybook examples
+            </Anchor>
+            .
           </Description>
           <PropertyValue type="object">
             <Example>
