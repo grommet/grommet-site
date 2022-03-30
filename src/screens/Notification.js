@@ -99,6 +99,23 @@ return (
         name="Toast Notification"
       />
       <Properties>
+        <Property name="actions">
+          <Description>
+            Anchors that appear to the right of the title and message. Value
+            should be provided as an array of objects, where the object accepts
+            any anchor properties.
+          </Description>
+          <PropertyValue type="array">
+            <Example>{`[{ label: 'Renew Subscription', href: '/renew'}]`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global">
+          <Description>
+            A boolean flag that indicates whether or not the Notification is a
+            Global Notification.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
         <Property name="title">
           <Description>
             A string that represents the title of a Notification.
