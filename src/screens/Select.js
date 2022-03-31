@@ -353,6 +353,18 @@ const SelectPage = () => (
 
         <Property name="options">
           <Description>The options to choose from.</Description>
+          <Description>
+            There are a number of ways to set and change the options based on
+            the 'onChange', 'onSelect', and 'onSearch' functions. As a general
+            rule of guidance when using 'onSearch', define an original list of
+            options that is separate from the currently stored options. Use this
+            definition to reset options to in functions.
+          </Description>
+          <Description>
+            For examples of defining, setting, and changing options, [see our
+            Storybook examples with
+            Select](https://storybook.grommet.io/?path=/story/input-select-search--search).
+          </Description>
           <PropertyValue type="array[string]">
             <Example>["option1", "option2"]</Example>
           </PropertyValue>
