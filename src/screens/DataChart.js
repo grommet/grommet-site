@@ -406,6 +406,19 @@ const DataChartPage = () => (
             charts. This can be used to show adjacent bar charts.
           </Description>
           <GenericBool />
+          <PropertyValue type="object">
+            <Description>
+              A gap can be specified using the same t-shirt sizes as thickness
+              to indicate the space between offset charts.
+            </Description>
+            <Example>
+              {`
+{
+  gap: "string"
+}
+            `}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="pad">
