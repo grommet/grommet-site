@@ -137,6 +137,16 @@ const DropPage = () => (
           <GenericElevation />
         </Property>
 
+        <Property name="inline">
+          <Description>
+            By default, Drop is rendered using a React Portal, which places it
+            outside the current DOM hierarchy as a child of the body. Sometimes,
+            this isn't desireable and specifying inline indicates that it should
+            be rendered directly as a child of its parent comoponent.
+          </Description>
+          <GenericBool />
+        </Property>
+
         <Property name="margin">
           <Description>The amount of margin around the component.</Description>
           <GenericMargin />
