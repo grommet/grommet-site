@@ -104,6 +104,9 @@ const Video = () => (
             <Example>"below"</Example>
           </PropertyValue>
           <PropertyValue type="object">
+            <Description>
+              Allows for users to order, pick, and customize the controls.
+            </Description>
             <Example>
               {`
 {
