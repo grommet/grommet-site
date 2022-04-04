@@ -103,6 +103,23 @@ const Video = () => (
             <Example defaultValue>"over"</Example>
             <Example>"below"</Example>
           </PropertyValue>
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  position: boolean | "over" | "below",
+  items: [
+    "captions" | "fullScreen" | "play" | "pause" | "volume",
+    {
+      icon: <Element />,
+      a11yTitle: string,
+      onClick: function,
+    }
+  ]
+}
+            `}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="fit">
