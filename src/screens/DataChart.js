@@ -203,7 +203,7 @@ const DataChartPage = () => (
             `}
             </Example>
             <PropOptions prop="granularity">
-              <Example>"course"</Example>
+              <Example>"coarse"</Example>
               <Example>"medium"</Example>
               <Example>"fine"</Example>
             </PropOptions>
