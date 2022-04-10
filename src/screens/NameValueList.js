@@ -34,7 +34,7 @@ const NameValueListPage = () => (
         },
       ]}
       description="A name-value list displays a group of name-value pairs"
-      intrinsicElement="div"
+      intrinsicElement="dd"
       code={`<Box width="medium">  
   <NameValueList>
     <NameValuePair name="Power">
@@ -46,6 +46,18 @@ const NameValueListPage = () => (
   </NameValueList>
 </Box>`}
     >
+      <Box
+        alignSelf="start"
+        margin={{ top: 'medium' }}
+        pad="medium"
+        round
+        background="light-3"
+      >
+        <Paragraph margin="none">
+          The NameValueList component can be customized with any of the properties
+          available in <RoutedAnchor path="/grid" label="Grid" />.
+        </Paragraph>
+      </Box>
       <Properties>
         <Property name="align">
           <Description>
