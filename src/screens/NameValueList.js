@@ -1,5 +1,12 @@
 import React from 'react';
-import { NameValueList, NameValuePair, Text } from 'grommet';
+import {
+  Box,
+  Paragraph,
+  RoutedAnchor,
+  NameValueList,
+  NameValuePair,
+  Text,
+} from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -34,8 +41,8 @@ const NameValueListPage = () => (
         },
       ]}
       description="A name-value list displays a group of name-value pairs"
-      intrinsicElement="dd"
-      code={`<Box width="medium">  
+      intrinsicElement="dl"
+      code={`<Box width="medium">
   <NameValueList>
     <NameValuePair name="Power">
       <Text color="text-strong">Ok</Text>
@@ -54,8 +61,8 @@ const NameValueListPage = () => (
         background="light-3"
       >
         <Paragraph margin="none">
-          The NameValueList component can be customized with any of the properties
-          available in <RoutedAnchor path="/grid" label="Grid" />.
+          The NameValueList component can be customized with any of the
+          properties available in <RoutedAnchor path="/grid" label="Grid" />.
         </Paragraph>
       </Box>
       <Properties>
