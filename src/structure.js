@@ -11,13 +11,14 @@ export const structure = {
         'Header',
         'Layer',
         'Main',
+        'Page',
         'Sidebar',
         'Stack',
       ],
     },
     {
       name: 'Type',
-      components: ['Heading', 'Markdown', 'Paragraph', 'Text'],
+      components: ['Heading', 'Markdown', 'Paragraph', 'Text', 'Tag'],
     },
     {
       name: 'Color',

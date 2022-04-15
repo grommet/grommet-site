@@ -17,7 +17,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const NameValueListPage = () => (
   <Page>
     <ComponentDoc
       name="NameValueList"
@@ -100,11 +100,27 @@ export default () => (
       <ThemeDoc>
         <Property name="nameValueList.gap">
           <Description>
-            Gap affects the spacing between the name and value of a
-            NameValuePair as well as the spacing between NameValuePairs. If an
+            The gap to apply when pairProps.direction = row (default). If an
             object is provided, "column" affects the gap size between the name
             and value and "row" affects the gap size between NameValuePairs. If
             a string is provided, a uniform gap will be applied to both.
+          </Description>
+          <PropertyValue type="object">
+            <Example
+              defaultValue
+            >{`{ column: 'large', row: 'small' }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="nameValueList.pair.column.gap">
+          <Description>
+            The gap to apply when pairProps.direction = column. If an object is
+            provided, "column" affects the gap size between columns of
+            NameValuePairs (applicable when layout = grid) and "row" affects the
+            gap size between rows of NameValuePairs. If a string is provided, a
+            uniform gap will be applied to both.
           </Description>
           <PropertyValue type="object">
             <Example
@@ -159,10 +175,24 @@ export default () => (
         </Property>
       </Properties>
       <ThemeDoc>
+        <Property name="nameValueList.name.width">
+          <Description>The width of the name.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="nameValuePair.name">
           <Description>Any valid Text Props for the name.</Description>
           <PropertyValue type="object">
             <Example defaultValue>{`{ weight: 'bold' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="nameValueList.value.width">
+          <Description>The width of the value.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"medium"</Example>
           </PropertyValue>
         </Property>
 
@@ -176,6 +206,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default NameValueListPage;
 
 export const NameValueListItem = ({ name, path }) => (
   <Item name={name} path={path} center>

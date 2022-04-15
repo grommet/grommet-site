@@ -6,18 +6,19 @@ import { LiveProvider, LivePreview } from 'react-live';
 import * as Icons from 'grommet-icons';
 import * as Grommet from 'grommet';
 import * as Themes from 'grommet/themes';
+import { hpe } from 'grommet-theme-hpe';
 import { Anchor, Box, Heading, Text } from 'grommet';
-import { Next, Share } from 'grommet-icons';
+import { Next } from 'grommet-icons';
 /* eslint-enable import/no-duplicates */
 import MonacoEditor from '../../components/Doc/MonacoEditor';
 import Header from '../../components/Header';
-import RoutedAnchor from '../../components/RoutedAnchor';
 import Section from './Section';
 
 const scope = {
   ...Grommet,
   Icons,
   Themes,
+  hpe,
   styled,
   css,
 };
@@ -40,10 +41,10 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-export default () => {
+const Start = () => {
   const [code, setCode] = React.useState(`const App = props => (
-  <Grommet theme={grommet}>
-    <Box align="center" background="neutral-2">
+  <Grommet>
+    <Box align="center" background="graph-2" pad="medium">
       <Button
         label="hello world"
         primary 
@@ -89,44 +90,37 @@ render(<App />);
           />
         </Box>
 
-        <Box alignSelf="center" width="large" margin={{ top: 'medium' }}>
-          <RoutedAnchor path="/play" target="_blank">
-            <Box
-              border
-              round={{ corner: 'top' }}
-              direction="row"
-              justify="between"
-              align="center"
-              pad="medium"
-            >
-              <Text color="brand">grommet playground</Text>
-              <Share />
-            </Box>
-          </RoutedAnchor>
-          <Box border={{ side: 'vertical' }} height="medium">
-            <MonacoEditor
-              theme="vs-light"
-              language="javascript"
-              value={code}
-              options={options}
-              onChange={newCode => setCode(newCode)}
-              editorDidMount={editor => {
-                editor.focus();
-                window.addEventListener('resize', () => editor.layout());
-              }}
-            />
-          </Box>
+        <Box
+          alignSelf="center"
+          width="large"
+          height="medium"
+          margin={{ top: 'medium' }}
+          round={{ corner: 'top' }}
+          border={[{ side: 'top' }, { side: 'vertical' }]}
+          pad={{ top: 'medium' }}
+        >
+          <MonacoEditor
+            theme="vs-light"
+            language="javascript"
+            value={code}
+            options={options}
+            onChange={(newCode) => setCode(newCode)}
+            editorDidMount={(editor) => {
+              editor.focus();
+              window.addEventListener('resize', () => editor.layout());
+            }}
+          />
         </Box>
       </Section>
 
-      <Section background="brand" pad="none">
+      <Section background={{ color: 'brand', opacity: 'weak' }} pad="none">
         <Box
           alignSelf="center"
-          background="neutral-2"
+          background="graph-2"
           width="large"
-          pad="medium"
           round={{ corner: 'bottom' }}
           margin={{ bottom: 'xlarge' }}
+          overflow="hidden"
         >
           <LivePreview />
         </Box>
@@ -145,8 +139,8 @@ render(<App />);
           margin="medium"
         >
           <Anchor
-            href="//github.com/grommet/design-kit"
-            label={<Text size="large">Grommet Design Kit</Text>}
+            href="//designer.grommet.io"
+            label={<Text size="large">Grommet Designer</Text>}
             icon={<Next />}
             reverse
             target="_blank"
@@ -165,7 +159,7 @@ render(<App />);
           width="large"
           height="small"
           round={{ corner: 'top' }}
-          background="neutral-2"
+          background="graph-2"
           margin={{ top: 'xlarge' }}
         >
           <Box alignSelf="start" direction="row" margin="medium" gap="small">
@@ -173,7 +167,7 @@ render(<App />);
             <Dot color="#ffff00" />
             <Dot color="#00ff00" />
           </Box>
-          <Heading level={1} color="brand" margin="large">
+          <Heading level={1} margin="large">
             Hello World!
           </Heading>
         </Box>
@@ -181,3 +175,5 @@ render(<App />);
     </LiveProvider>
   );
 };
+
+export default Start;

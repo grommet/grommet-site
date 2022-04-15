@@ -12,27 +12,24 @@ import {
 } from '../components/Doc';
 import { GenericBoolFalse } from '../utils/genericPropExamples';
 
-export default () => (
+const InfiniteScrollPage = () => (
   <Page>
     <ComponentDoc
       name="InfiniteScroll"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Utilities-InfiniteScroll&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Utilities-InfiniteScroll&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/infinitescroll&module=%2Fsrc%2FInfiniteScroll.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/infinitescroll&module=%2Fsrc%2FInfiniteScroll.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/InfiniteScroll',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/InfiniteScroll',
           label: 'Github',
         },
       ]}
@@ -119,24 +116,6 @@ export default () => (
           <GenericBoolFalse />
         </Property>
 
-        <Property name="scrollableAncestor">
-          <Description>
-            A custom ancestor to determine if the marker is visible in it. This
-            is useful in cases where you do not want the immediate scrollable
-            ancestor to be the container. For example, when your marker is in a
-            div that has overflow auto but you are detecting visibility based on
-            the window. This should typically be a reference to a DOM node, but
-            it will also work to pass it the string "window" if you are using
-            server rendering.
-          </Description>
-          <PropertyValue type="node">
-            <Example>DOM node</Example>
-          </PropertyValue>
-          <PropertyValue type="string">
-            <Example>"window"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="show">
           <Description>
             Ensure that the item at this index is visible initially.
@@ -156,6 +135,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default InfiniteScrollPage;
 
 export const InfiniteScrollItem = ({ name, path }) => (
   <Item name={name} path={path} center>

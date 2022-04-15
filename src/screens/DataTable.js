@@ -22,27 +22,24 @@ import {
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericColor } from '../utils/genericThemeExamples';
 
-export default () => (
+const DataTablePage = () => (
   <Page>
     <ComponentDoc
       name="DataTable"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-DataTable&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-DataTable&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/DataTable',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataTable',
           label: 'Github',
         },
       ]}
@@ -275,7 +272,12 @@ export default () => (
               If object is specified 'property' is used to group data by,
               'expand' accepts array of group keys that sets expanded groups and
               'onExpand' is a function that will be called after expand button
-              is clicked with an array of keys of expanded groups.
+              is clicked with an array of keys of expanded groups. If 'onUpdate'
+              is being used to lazy load group items, 'expandable' can be used
+              to specify which items in the data are group header items and
+              'select' and 'onSelect' can be specified in 'groupBy' to help
+              specify the selection state of the groups and handle changes in
+              group selection state.
             </Description>
             <Example>
               {`
@@ -283,6 +285,17 @@ export default () => (
   "property": "location",
   "expand": ["Paris", "Los Angeles"],
   "onExpand": "(key) => {...}"
+}
+            `}
+            </Example>
+            <Example>
+              {`
+{
+  "property": "location",
+  "expand": ["Paris", "Los Angeles"],
+  "expandable": ["Paris", "Los Angeles", "Fort Collins", "San Jose"],
+  "select": { "": "some", "Paris": "all", "Los Angeles": "some"}
+  "onSelect": (selected, datum, groupBySelected) => {...}
 }
             `}
             </Example>
@@ -351,11 +364,12 @@ export default () => (
             <Description disableMarkdown>
               {`This function
             will be called with an array of primary key values, suitable to be
-            passed to the 'select' property. If you are storing select state via
+            passed to the 'select' property, along with the data item that was changed.
+            If you are storing select state via
             a 'useState' hook, you can do something like: '
             <DataTable select={select} onSelect={setSelect} />'.`}
             </Description>
-            <Example>{`() => {}`}</Example>
+            <Example>{`(selected, datum) => {}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -370,6 +384,33 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="onUpdate">
+          <Description disableMarkdown>
+            This function provides a way to lazy-load data. It is similar to
+            `onMore` except it also allows for lazily providing expanded group
+            data and assumes the `data` is already in sorted order. Like
+            `onMore`, DataTable will call `onUpdate` when the user has scrolled
+            to the end of existing data. `onUpdate` is also called when the sort
+            changes or a group is expanded or collapsed by the user. It is
+            passed information on the current sort settings and the maximum
+            number of items it needs to return. If `groupBy` is specified,
+            `data` should include an item for each group also. This item should
+            have its own unique value in the property specified as the
+            `primaryKey` and this unique key value should be listed in
+            `groupBy.expandable` so the DataTable can tell it is a group header.
+            `onUpdate` will be passed an array of group keys for groups that are
+            currently expanded so it can decide whether to include items for a
+            group's members. If the table also has `select` or `onSelect`
+            specified, `groupBy` should also include an `onSelect` callback and
+            a separate `select` to define the overall selection state of the
+            groups. Since DataTable may not have all the items, it is up to the
+            onSelect callbacks and onUpdate to determine if groups are fully or
+            partially selected and set that in `groupBy.select`.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`({ expanded, sort, show, count }) => {}`}</Example>
+          </PropertyValue>
+        </Property>
         <Property name="pad">
           <Description>Cell padding.</Description>
           <PropertyValue type="string">
@@ -1034,13 +1075,15 @@ export default () => (
   </Page>
 );
 
+export default DataTablePage;
+
 export const DataTableItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Box gap="xsmall">
       <Box background="brand" />
-      {[0, 1, 2, 3].map(row => (
+      {[0, 1, 2, 3].map((row) => (
         <Box key={row * 100} direction="row" gap="xsmall">
-          {[0, 1, 2].map(col => (
+          {[0, 1, 2].map((col) => (
             <Box
               key={col * 100 + row * 10}
               background={

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Box, DataChart, Heading, Paragraph } from 'grommet';
+import { Box, DataChart, Heading, Paragraph } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { Code } from '../components/Doc/Code';
@@ -24,24 +24,6 @@ import {
 
 const Examples = () => (
   <Box>
-    <Box
-      alignSelf="start"
-      margin={{ top: 'medium' }}
-      pad="medium"
-      round
-      background="light-3"
-    >
-      <Paragraph margin="none">
-        DataChart is in beta mode. We anticipate making API surface changes
-        without changing the grommet major version number. This is to allow
-        broader usage and feedback gathering. In version 2.15.0, the API surface
-        changed, see{' '}
-        <Anchor href="https://github.com/grommet/grommet/pull/4226#issue-439480100">
-          notes
-        </Anchor>
-        .
-      </Paragraph>
-    </Box>
     <Paragraph size="xlarge">
       DataChart takes an array of objects in <code>data</code> and provides
       various visualization capabilities on that data. It attempts to default as
@@ -118,28 +100,25 @@ const Examples = () => (
   </Box>
 );
 
-export default () => (
+const DataChartPage = () => (
   <Page>
     <ComponentDoc
       name="DataChart"
       intrinsicElement="div"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-DataChart&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-DataChart&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/DataChart',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataChart',
           label: 'Github',
         },
       ]}
@@ -224,7 +203,7 @@ export default () => (
             `}
             </Example>
             <PropOptions prop="granularity">
-              <Example>"course"</Example>
+              <Example>"coarse"</Example>
               <Example>"medium"</Example>
               <Example>"fine"</Example>
             </PropOptions>
@@ -240,6 +219,19 @@ export default () => (
           <PropertyValue type="string">
             <Example defaultValue>"align"</Example>
           </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              'y' indicates the bounds to use on the Y axis. This is useful to
+              maintain consistent Y axis labelling across different data sets.
+            </Description>
+            <Example>
+              {`
+{
+  y: [0, 100],
+}
+              `}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="chart">
@@ -254,8 +246,8 @@ export default () => (
           <PropertyValue type="object">
             <Description>
               'property' indicates which property of the data objects to use.
-              When 'property' is an array, multiple properties are used for a
-              stacked bar chart. If 'property' is an object, it specifies a map
+              When 'type' is 'bars' or 'areas', 'property' is an array of
+              strings or objects. If 'property' is an object, it specifies a map
               of properties to graphic aspects: x, y, color, thickness. If
               'transform' is specified, it will be used to transform the data
               value before using it. For example, to convert a data value to a
@@ -268,6 +260,7 @@ export default () => (
   color: "...",
   dash: boolean,
   opacity: "...",
+  pattern: "...",
   point: "...",
   round: boolean,
   thickness: "...",
@@ -292,6 +285,14 @@ export default () => (
               <Example>number</Example>
               <Example>boolean</Example>
             </PropOptions>
+            <PropOptions prop="pattern">
+              <Example>"squares"</Example>
+              <Example>"circles"</Example>
+              <Example>"stripesHorizontal"</Example>
+              <Example>"stripesVertical"</Example>
+              <Example>"stripesDiagonalDown"</Example>
+              <Example>"stripesDiagonalUp"</Example>
+            </PropOptions>
             <PropOptions prop="point">
               <Example>"circle"</Example>
               <Example>"diamond"</Example>
@@ -308,8 +309,10 @@ export default () => (
             </PropOptions>
             <PropOptions prop="type">
               <Example>"bar"</Example>
+              <Example>"bars"</Example>
               <Example>"line"</Example>
               <Example>"area"</Example>
+              <Example>"areas"</Example>
               <Example>"point"</Example>
             </PropOptions>
           </PropertyValue>
@@ -397,12 +400,46 @@ export default () => (
           <GenericBool />
         </Property>
 
+        <Property name="offset">
+          <Description>
+            Whether to offset each chart by the thickness of the preceding
+            charts. This can be used to show adjacent bar charts.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="object">
+            <Description>
+              A gap can be specified using the same t-shirt sizes as thickness
+              to indicate the space between offset charts.
+            </Description>
+            <Example>
+              {`
+{
+  gap: "string"
+}
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="pad">
           <Description>
             Spacing around the outer edge of the drawing coordinate area for the
             graphic elements to overflow into.
           </Description>
           <GenericPad />
+        </Property>
+
+        <Property name="placeholder">
+          <Description>
+            A text message or any content to place over the chart graphic. For
+            example, to say "loading ..." when waiting for data to arrive.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"loading..."</Example>
+          </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Box>...</Box>`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="series">
@@ -470,6 +507,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DataChartPage;
 
 const DATA_CHART_DATA = [
   { date: '2020-01-15', amount: 33 },

@@ -2,7 +2,7 @@ import React from 'react';
 import { Anchor, Box, Stack, Text } from 'grommet';
 import Tile from './Tile';
 
-export default () => {
+const Accessible = () => {
   const [build, setBuild] = React.useState(true);
 
   React.useEffect(() => {
@@ -52,7 +52,7 @@ export default () => {
                 ? [{ type: 'fadeIn', duration: 4000 }]
                 : [{ type: 'fadeOut', duration: 4000 }]
             }
-            background={{ color: 'neutral-2', opacity: 'strong' }}
+            background={{ color: 'graph-2', opacity: 'strong' }}
             round="full"
             pad="large"
           >
@@ -65,3 +65,5 @@ export default () => {
     </Tile>
   );
 };
+
+export default Accessible;

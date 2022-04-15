@@ -21,7 +21,7 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const FormFieldPage = () => (
   <Page>
     <ComponentDoc
       name="FormField"
@@ -686,6 +686,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default FormFieldPage;
 
 export const FormFieldItem = ({ name, path }) => (
   <Item name={name} path={path} center>

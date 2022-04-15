@@ -23,27 +23,24 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const SelectPage = () => (
   <Page>
     <ComponentDoc
       name="Select"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Select',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Select',
           label: 'Github',
         },
       ]}
@@ -356,6 +353,18 @@ export default () => (
 
         <Property name="options">
           <Description>The options to choose from.</Description>
+          <Description>
+            There are a number of ways to set and change the options based on
+            the 'onChange', 'onSelect', and 'onSearch' functions. As a general
+            rule of guidance when using 'onSearch', define an original list of
+            options that is separate from the currently stored options. Use this
+            definition to reset options to in functions.
+          </Description>
+          <Description>
+            For examples of defining, setting, and changing options, [see our
+            Storybook examples with
+            Select](https://storybook.grommet.io/?path=/story/input-select-search--search).
+          </Description>
           <PropertyValue type="array[string]">
             <Example>["option1", "option2"]</Example>
           </PropertyValue>
@@ -495,6 +504,12 @@ export default () => (
           <PropertyValue type="node">
             <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
+          <PropertyValue type="function">
+            <Description>
+              A function that returns either a string or a React node.
+            </Description>
+            <Example>{`{(option) => {}}`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="valueKey">
@@ -509,20 +524,24 @@ export default () => (
             </Description>
             <Example>"key"</Example>
           </PropertyValue>
-          <PropertyValue type="function">
+          <PropertyValue type="object">
             <Description>
-              If a function is provided, it is called with the option and should
-              return the value. If reduce is true, this value will be used for
-              the 'value' delivered via 'onChange'.
+              If reduce is true, this value will be used for the 'value'
+              delivered via 'onChange'.
             </Description>
-            <Example>
-              {`
+            <Example>{`
 {
   key: "string",
   reduce: boolean
 }
-            `}
-            </Example>
+            `}</Example>
+          </PropertyValue>
+          <PropertyValue type="function">
+            <Description>
+              If a function is provided, it is called with the option and should
+              return the value.
+            </Description>
+            <Example>{`(option) => {}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -685,6 +704,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default SelectPage;
 
 export const SelectItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'large' }}>

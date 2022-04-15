@@ -21,27 +21,24 @@ import {
 } from '../utils/genericPropExamples';
 import { GenericExtend } from '../utils/genericThemeExamples';
 
-export default () => (
+const ImagePage = () => (
   <Page>
     <ComponentDoc
       name="Image"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Media-Image&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Media-Image&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/image&module=%2Fsrc%2FImage.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/image&module=%2Fsrc%2FImage.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Image',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Image',
           label: 'Github',
         },
       ]}
@@ -136,6 +133,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ImagePage;
 
 export const ImageItem = ({ name, path }) => (
   <Item name={name} path={path}>

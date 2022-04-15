@@ -57,7 +57,7 @@ export const ComponentDoc = ({
           <Box margin={{ vertical: 'medium' }}>
             {Array.isArray(availableAt) ? (
               <Box alignSelf="center" direction="row-responsive" gap="large">
-                {availableAt.map(at => (
+                {availableAt.map((at) => (
                   <Anchor
                     key={at.url}
                     href={at.url}
@@ -92,7 +92,7 @@ export const ComponentDoc = ({
           </Paragraph>
           <Box as="ul" alignSelf="start">
             {isA.defaultProps &&
-              Object.keys(isA.defaultProps).map(key => (
+              Object.keys(isA.defaultProps).map((key) => (
                 <Box
                   key={key}
                   as="li"

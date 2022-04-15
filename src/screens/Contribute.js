@@ -2,16 +2,16 @@ import React from 'react';
 import { Box, Heading, Paragraph } from 'grommet';
 import Nav from '../components/Nav';
 
-export default () => (
+const ContributePage = () => (
   <Box>
-    <Box pad='large'>
+    <Box pad="large">
       <Nav />
-      <Box direction='row'>
-        <Box margin={{ vertical: 'large' }} basis='medium'>
+      <Box direction="row">
+        <Box margin={{ vertical: 'large' }} basis="medium">
           <Heading level={1}>
             <strong>Contribute</strong>
           </Heading>
-          <Paragraph size='large'>
+          <Paragraph size="large">
             <strong>TBD</strong>
           </Paragraph>
         </Box>
@@ -19,3 +19,5 @@ export default () => (
     </Box>
   </Box>
 );
+
+export default ContributePage;

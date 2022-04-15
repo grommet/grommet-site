@@ -21,7 +21,7 @@ import {
 } from '../components/Doc';
 import { InputStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const FileInputPage = () => (
   <Page>
     <ComponentDoc
       name="FileInput"
@@ -52,8 +52,8 @@ export default () => (
       <Properties>
         <Property name="confirmRemove">
           <Description>
-            Provides custom rendering of a confirmation that appears when the user
-            attempts to remove a file or files.
+            Provides custom rendering of a confirmation that appears when the
+            user attempts to remove a file or files.
           </Description>
           <PropertyValue type="function">
             <Description>
@@ -88,7 +88,7 @@ export default () => (
 
         <Property name="maxSize">
           <Description>
-            Specifies a file size limit in bytes for FileInput.
+            Specifies a file size limit in bytes (binary) for FileInput.
           </Description>
           <PropertyValue type="number">
             <Example>5000</Example>
@@ -372,6 +372,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default FileInputPage;
 
 export const FileInputItem = ({ name, path }) => (
   <Item name={name} path={path} center>

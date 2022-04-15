@@ -50,6 +50,7 @@ import Meter from '../screens/Meter';
 import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
 import Notification from '../screens/Notification';
+import Page from '../screens/Page';
 import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
 import Play from '../screens/Play';
@@ -65,6 +66,7 @@ import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
+import Tag from '../screens/Tag';
 import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
@@ -108,7 +110,7 @@ import Resources from '../screens/Docs/Resources';
 //   'Heading', 'Home', 'Image', 'InfiniteScroll', 'Keyboard', 'Layer',
 //   'Markdown', 'Menu', 'Meter', 'Paragraph', 'RadioButton',
 //   'RangeInput', 'RangeSelector', 'Responsive', 'Select', 'SkipLinks', 'Stack',
-//   'Tabs', 'Table', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
+//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
 //   'Video', 'WorldMap'].forEach((name) => {
 //   Screens[name] = props => (
 //     <DynamicImport load={() => import(`../screens/${name}`)}>
@@ -123,7 +125,7 @@ import Resources from '../screens/Docs/Resources';
 //   );
 // });
 
-export default () => (
+const Content = () => (
   <Routes notFoundRedirect="/">
     <Route exact path="/" component={Home} />
 
@@ -180,6 +182,7 @@ export default () => (
     <Route exact path="/namevaluelist" component={NameValueList} />
     <Route exact path="/nav" component={Nav} />
     <Route exact path="/notification" component={Notification} />
+    <Route exact path="/page" component={Page} />
     <Route exact path="/pagination" component={Pagination} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
@@ -194,6 +197,7 @@ export default () => (
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
+    <Route exact path="/tag" component={Tag} />
     <Route exact path="/text" component={Text} />
     <Route exact path="/textarea" component={TextArea} />
     <Route exact path="/textinput" component={TextInput} />
@@ -211,3 +215,5 @@ export default () => (
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
   </Routes>
 );
+
+export default Content;

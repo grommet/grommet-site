@@ -13,7 +13,7 @@ import {
 } from '../components/Doc';
 import { BreakpointStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const ResponsiveContextPage = () => (
   <Page>
     <ComponentDoc
       name="Responsive Context"
@@ -22,18 +22,16 @@ export default () => (
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
-          url:
-            'https://storybook.grommet.io/?selectedKind=undefined-ResponsiveContext&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=undefined-ResponsiveContext&full=0&stories=1&panelRight=0',
         },
         {
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/responsivecontext&module=%2Fsrc%2FResponsiveContext.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/responsivecontext&module=%2Fsrc%2FResponsiveContext.js',
         },
       ]}
       description="A means of providing different rendering behavior based on the
- screen resolution"
+ viewport size"
       code={`function Example() {
   const size = React.useContext(ResponsiveContext);
   return (
@@ -46,9 +44,9 @@ export default () => (
       <Properties>
         <Property name="children">
           <Description>
-            Render function that will be called with the current screen
-            resolution size (e.g our base theme of size 'small', 'medium',
-            'large'). The size value will be derived from global.breakpoints
+            Render function that will be called with the current viewport
+            size (e.g our base theme of size 'small', 'medium', 'large').
+            The size value will be derived from global.breakpoints
             entry in the theme object.
           </Description>
           <PropertyValue type="function">
@@ -67,6 +65,8 @@ mobile, tablet, and computer."
     </ComponentDoc>
   </Page>
 );
+
+export default ResponsiveContextPage;
 
 export const ResponsiveContextItem = ({ name, path }) => (
   <Item name={name} path={path} center>
