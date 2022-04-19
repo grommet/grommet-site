@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import path from 'path';
 import cheerio from 'cheerio';
 import fs from 'fs';
-import { renderToString } from 'react-dom/server';
+import { renderToPipeableStream } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 import App from '../src/App';
 import html from './renderHtml';
@@ -25,7 +25,7 @@ const manifest = require(`${publicPath}/webpack-manifest.json`); // eslint-disab
 // to an HTML string which a browser can consume.
 const renderHtmlString = (pagePath) => {
   const sheet = new ServerStyleSheet();
-  const body = renderToString(
+  const body = renderToPipeableStream(
     sheet.collectStyles(<App initialPath={pagePath} />),
   );
   const helmet = Helmet.renderStatic();
