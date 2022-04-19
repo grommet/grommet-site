@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 
 // the following polyfills are included for IE11 compatibility
 import 'core-js/features/string/starts-with'; // used by react-router
@@ -25,13 +25,12 @@ if (env === 'production' && 'serviceWorker' in navigator) {
 }
 
 const element = document.getElementById('content');
+const root = createRoot(element);
 
-// ReactDOM's hydrate method is used when html is already present on the page.
-// https://reactjs.org/docs/react-dom.html#hydrate
 if (env === 'production') {
-  ReactDOM.hydrate(<App />, element);
+  hydrateRoot(element, <App />);
 } else {
-  ReactDOM.render(<App />, element);
+  root.render(<App />);
 }
 
 document.body.classList.remove('loading');
