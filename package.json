@@ -12,7 +12,7 @@
   "license": "Apache-2.0",
   "engine-strict": true,
   "engines": {
-    "node": ">= 10"
+    "node": ">= 14"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
