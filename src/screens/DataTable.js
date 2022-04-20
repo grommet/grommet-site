@@ -255,6 +255,19 @@ const DataTablePage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="disabled">
+          <Description>
+            When supplied, disables 'onClickRow' and 'onSelect' interaction for
+            the indicated rows. The values in this array should match the
+            'primaryKey' or 'columns[].primary' keyed value for the row's data
+            object.
+          </Description>
+          <PropertyValue type="array">
+            <Example>["string"]</Example>
+            <Example>[number]</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="fill">
           <Description>
             Whether the width and/or height should fill the container.
