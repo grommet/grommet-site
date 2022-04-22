@@ -2,7 +2,14 @@ import React from 'react';
 import { Header, Box } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { ComponentDoc } from '../components/Doc';
+import {
+  ComponentDoc,
+  Property,
+  PropertyValue,
+  Example,
+  Description,
+  Properties,
+} from '../components/Doc';
 
 const HeaderPage = () => (
   <Page>
@@ -37,7 +44,19 @@ const HeaderPage = () => (
           justify: 'between',
         },
       }}
-    />
+    >
+    <Properties>
+      <Property name="sticky">
+        <Description>
+          Whether the Header should hide when the user is scrolling down and
+          appear once the user scrolls back up.
+        </Description>
+        <PropertyValue type="string">
+          <Example>`sticky= "scrollUp"`</Example>
+        </PropertyValue>
+      </Property>
+    </Properties>
+    </ComponentDoc>
   </Page>
 );
 
