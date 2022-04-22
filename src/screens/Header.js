@@ -56,6 +56,7 @@ const HeaderPage = () => (
         </PropertyValue>
       </Property>
     </Properties>
+    </ComponentDoc>
   </Page>
 );
 
