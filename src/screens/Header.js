@@ -44,7 +44,7 @@ const HeaderPage = () => (
           justify: 'between',
         },
       }}
-    />
+    >
     <Properties>
       <Property name="sticky">
         <Description>
