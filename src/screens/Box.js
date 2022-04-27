@@ -565,6 +565,9 @@ const BoxPage = () => (
             The DOM tag or react component to use for the element.
           </Description>
           <GenericAs />
+          <PropertyValue type="element">
+            <Example>{`<span />`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="width">
