@@ -192,8 +192,7 @@ const DataTablePage = () => (
               first column will be used. 'pin' indicates that this column should
               not scroll out of view to the left when the table is scrolled
               horizontally. 'plain' = true indicates that the body cells in the
-              column will not apply pad. Setting `verticalAlign` within columns
-              is deprecated, the `verticalAlign` prop should be used instead.
+              column will not apply pad.
             </Description>
             <Example>
               {`
