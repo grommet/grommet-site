@@ -636,6 +636,26 @@ const DataTablePage = () => (
             <Example defaultValue>50</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="verticalAlign">
+          <Description>How to vertically align items.</Description>
+          <PropertyValue type="string">
+            <Example>"bottom"</Example>
+            <Example>"middle"</Example>
+            <Example>"top"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  header: "string",
+  body: "string",
+  footer: "string"
+}
+              `}
+            </Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
