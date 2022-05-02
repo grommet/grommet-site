@@ -202,6 +202,16 @@ const ListPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="onActive">
+          <Description>
+            When provided, this is called with the index of the item that the
+            user has either moused over or navigated to with their keyboard.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`(index) => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="onMore">
           <Description>
             Use this to indicate that 'data' doesn't contain all that it could.
