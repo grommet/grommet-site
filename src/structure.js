@@ -12,6 +12,7 @@ export const structure = {
         'Layer',
         'Main',
         'Page',
+        'PageHeader',
         'Sidebar',
         'Stack',
       ],

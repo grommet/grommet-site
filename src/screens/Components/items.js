@@ -41,6 +41,7 @@ export { MeterItem } from '../Meter';
 export { NavItem } from '../Nav';
 export { NotificationItem } from '../Notification';
 export { PageItem } from '../Page';
+export { PageHeaderItem } from '../PageHeader';
 export { PaginationItem } from '../Pagination';
 export { ParagraphItem } from '../Paragraph';
 export { RadioButtonItem } from '../RadioButton';
