@@ -224,6 +224,14 @@ const AnchorPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="anchor.gap">
+          <Description>The gap between the label and icon.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+            <Example>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="anchor.textDecoration">
           <Description>
             The text decoration of the label. Refer to
