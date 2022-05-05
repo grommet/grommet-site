@@ -26,17 +26,6 @@ const Nav = () => {
       <Box direction="row" gap="small">
         {!searchOpen && (
           <Box direction="row" gap="small">
-            <RoutedButton path="/components" plain>
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'medium' }}
-                  round="xlarge"
-                  background={hover ? 'active' : 'control'}
-                >
-                  <Text>components</Text>
-                </Box>
-              )}
-            </RoutedButton>
             <RoutedButton path="/docs" plain>
               {({ hover }) => (
                 <Box
@@ -45,6 +34,17 @@ const Nav = () => {
                   background={hover ? 'active' : 'accent-4'}
                 >
                   <Text>docs</Text>
+                </Box>
+              )}
+            </RoutedButton>
+            <RoutedButton path="/components" plain>
+              {({ hover }) => (
+                <Box
+                  pad={{ vertical: 'small', horizontal: 'medium' }}
+                  round="xlarge"
+                  background={hover ? 'active' : 'control'}
+                >
+                  <Text>components</Text>
                 </Box>
               )}
             </RoutedButton>
