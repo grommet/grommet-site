@@ -189,8 +189,8 @@ margin: 'none'
           <PropertyValue type="object">
             <Example defaultValue>
               {`{
-fill: true,
-margin: 'none',
+  fill: true,
+  margin: 'none',
 }`}
             </Example>
           </PropertyValue>
