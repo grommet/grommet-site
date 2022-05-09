@@ -46,11 +46,11 @@ const PageHeaderPage = () => (
       description="A paragraph of text"
       intrinsicElement="p"
       code={`<PageHeader
-      title="Page Title"
-      subtitle="A subtitle for the page."
-      parent={<Anchor label="Parent Page" />}
-      actions={<Button label="Edit" primary />}
-    />`}
+    title="Page Title"
+    subtitle="A subtitle for the page."
+    parent={<Anchor label="Parent Page" />}
+    actions={<Button label="Edit" primary />}
+/>`}
     >
       <Properties>
         <Property name="a11yTitle">
