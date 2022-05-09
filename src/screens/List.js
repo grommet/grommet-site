@@ -74,13 +74,6 @@ const ListPage = () => (
           <Example>{`{{ background: ..., align: ... }}`}</Example>
         </Property>
 
-        <Property name="gridArea">
-          <Description>
-            The name of the area to place this inside a parent Grid.
-          </Description>
-          <GenericGridArea />
-        </Property>
-
         <Property name="margin">
           <Description>The amount of margin around the component.</Description>
           <GenericMargin />
@@ -153,6 +146,18 @@ const ListPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="children">
+          <Description>
+            Function that will be called when each data item is rendered. It
+            will be passed three arguments, the individual data item, its index,
+            and an object indicating the state of the item, if any. It should
+            return a react element.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`(item, index, { active }) => <Box>...</Box>`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="data">
           <Description>Array of data objects.</Description>
           <PropertyValue type="array[string]">
@@ -168,16 +173,25 @@ const ListPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="children">
+        <Property name="disabled">
           <Description>
-            Function that will be called when each data item is rendered. It
-            will be passed three arguments, the individual data item, its index,
-            and an object indicating the state of the item, if any. It should
-            return a react element.
+            Specified items will be styled as disabled. When combined with
+            `onClickItem`, the onClick event is also disabled.
           </Description>
-          <PropertyValue type="function">
-            <Example>{`(item, index, { active }) => <Box>...</Box>`}</Example>
+          <PropertyValue type="array">
+            <Description>
+              An array of strings. When `data` is an array of objects, the
+              string is the value of the object's key specified by `itemKey`.
+            </Description>
+            <Example>["item1", "item2"]</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="gridArea">
+          <Description>
+            The name of the area to place this inside a parent Grid.
+          </Description>
+          <GenericGridArea />
         </Property>
 
         <Property name="itemKey">
@@ -417,6 +431,23 @@ const ListPage = () => (
 }
             `}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="list.item.disabled.color">
+          <Description>Font color when disabled.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"status-disabled"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="list.item.disabled.cursor">
+          <Description>CSS cursor type when disabled.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"default"</Example>
           </PropertyValue>
         </Property>
 
