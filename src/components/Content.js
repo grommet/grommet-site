@@ -51,6 +51,7 @@ import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
 import Notification from '../screens/Notification';
 import Page from '../screens/Page';
+import PageHeader from '../screens/PageHeader';
 import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
 import RadioButton from '../screens/RadioButton';
@@ -178,6 +179,7 @@ const Content = () => (
     <Route exact path="/nav" component={Nav} />
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/page" component={Page} />
+    <Route exact path="/pageheader" component={PageHeader} />
     <Route exact path="/pagination" component={Pagination} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
