@@ -75,8 +75,12 @@ const PageHeaderPage = () => (
           </Description>
           <PropertyValue type="element">
             <Example>{`<NameValueList>
-    <NameValuePair name="Created On">Jan 10, 2022</NameValuePair>
-    <NameValuePair name="Last Edited">August 12, 2022</NameValuePair>
+    <NameValuePair name="Created On">
+        Jan 10, 2022
+    </NameValuePair>
+    <NameValuePair name="Last Edited">
+        August 12, 2022
+    </NameValuePair>
 </NameValueList>`}</Example>
           </PropertyValue>
         </Property>
