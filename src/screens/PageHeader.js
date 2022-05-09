@@ -1,7 +1,6 @@
 import React from 'react';
 import { Anchor, Button, PageHeader } from 'grommet';
 import Page from '../components/Page';
-import { genericSyntaxes } from '../utils/props';
 import Item from './Components/Item';
 import {
   GenericA11yTitle,
@@ -19,32 +18,24 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-const extendedGenericSyntaxes = JSON.parse(JSON.stringify(genericSyntaxes));
-extendedGenericSyntaxes.margin.unshift('none');
-
 const PageHeaderPage = () => (
   <Page>
     <ComponentDoc
       name="PageHeader"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Type-Paragraph&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-PageHeader&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/paragraph&module=%2Fsrc%2FParagraph.js',
-          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
-          label: 'CodeSandbox',
-        },
-        {
-          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Paragraph',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/PageHeader',
           label: 'Github',
         },
       ]}
-      description="A paragraph of text"
-      intrinsicElement="p"
+      description="A layout component to display page title, subtitle, parent, and page-level actions"
+      intrinsicElement="header"
       code={`<PageHeader
     title="Page Title"
     subtitle="A subtitle for the page."
