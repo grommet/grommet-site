@@ -213,7 +213,7 @@ small: {
     columns: [['small', 'flex'], 'auto'],
     rows: ['auto', 'auto', 'auto'],
     gap: { row: 'xsmall', column: 'large' },
-  },
+},
 `}
             </Example>
           </PropertyValue>
