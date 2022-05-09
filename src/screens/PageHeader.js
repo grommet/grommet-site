@@ -259,7 +259,7 @@ large: {
     columns: [['medium', 'large'], 'auto'],
     rows: ['auto', 'auto', 'auto'],
     gap: { row: 'xsmall', column: 'large' },
-  },
+},
 `}
             </Example>
           </PropertyValue>
