@@ -236,7 +236,7 @@ medium: {
     columns: [['medium', 'large'], 'auto'],
     rows: ['auto', 'auto', 'auto'],
     gap: { row: 'xsmall', column: 'medium' },
-  },
+},
 `}
             </Example>
           </PropertyValue>
