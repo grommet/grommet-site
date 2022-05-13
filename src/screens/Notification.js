@@ -107,7 +107,10 @@ return (
           </Description>
           <PropertyValue type="array">
             <Example>{`[{ label: 'Renew Subscription', href: '/renew'}]`}</Example>
-            <Example>{`[{ label: 'Renew Subscription', href: '/renew'}, { label: 'View Details', href:'/details' }]`}</Example>
+            <Example>{`[
+  { label: 'Renew Subscription', href: '/renew'},
+  { label: 'View Details', href:'/details' }
+]`}</Example>
           </PropertyValue>
         </Property>
         <Property name="global">
@@ -214,6 +217,16 @@ return (
           </PropertyValue>
         </Property>
 
+        <Property name="notification.direction">
+          <Description>
+            The layout direction for the title and message.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"column"</Example>
+            <Example>"row"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="notification.global.container">
           <Description>
             Any valid Box prop for the Global Notification container.
@@ -230,38 +243,22 @@ return (
             </Example>
           </PropertyValue>
         </Property>
-        <Property name="notification.direction">
-          <Description>
-            The layout direction of the title and message.
-          </Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`
-  {
-  pad: {
-    horizontal: 'large',
-    vertical: 'xsmall',
-  },
-                `}
-            </Example>
-          </PropertyValue>
-        </Property>
         <Property name="notification.global.direction">
           <Description>
-            The layout direction of the title and message for a global
+            The layout direction for the title and message of a global
             notification.
           </Description>
-          <PropertyValue type="object">
-            <Example defaultValue>"column"</Example>
-            <Example>"row"</Example>
+          <PropertyValue type="string">
+            <Example defaultValue>"row"</Example>
+            <Example>"column"</Example>
           </PropertyValue>
         </Property>
         <Property name="notification.toast.direction">
           <Description>
-            The layout direction of the title and message for a toast
+            The layout direction for the title and message of a toast
             notification.
           </Description>
-          <PropertyValue type="object">
+          <PropertyValue type="string">
             <Example>"column"</Example>
             <Example>"row"</Example>
           </PropertyValue>
