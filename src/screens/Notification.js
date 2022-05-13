@@ -99,6 +99,27 @@ return (
         name="Toast Notification"
       />
       <Properties>
+        <Property name="actions">
+          <Description>
+            Anchors that appear to the right of the title and message. Value
+            should be provided as an array of objects, where the object accepts
+            any anchor properties.
+          </Description>
+          <PropertyValue type="array">
+            <Example>{`[{ label: 'Renew Subscription', href: '/renew'}]`}</Example>
+            <Example>{`[{ label: 'Renew Subscription', href: '/renew'}, { label: 'View Details', href:'/details' }]`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global">
+          <Description>
+            A boolean flag that indicates whether or not the Notification is a
+            Global Notification. Global notifications are displayed directly
+            beneath an application header as opposed to a notification within an
+            individual page. Global Banner notifications can receive their own
+            theming.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
         <Property name="title">
           <Description>
             A string that represents the title of a Notification.
@@ -193,6 +214,58 @@ return (
           </PropertyValue>
         </Property>
 
+        <Property name="notification.global.container">
+          <Description>
+            Any valid Box prop for the Global Notification container.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+  {
+  pad: {
+    horizontal: 'large',
+    vertical: 'xsmall',
+  },
+                `}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.direction">
+          <Description>
+            The layout direction of the title and message.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+  {
+  pad: {
+    horizontal: 'large',
+    vertical: 'xsmall',
+  },
+                `}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.global.direction">
+          <Description>
+            The layout direction of the title and message for a global
+            notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>"column"</Example>
+            <Example>"row"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.toast.direction">
+          <Description>
+            The layout direction of the title and message for a toast
+            notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>"column"</Example>
+            <Example>"row"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="notification.critical.color">
           <Description>The color of the critical status icon.</Description>
           <PropertyValue type="string">
@@ -219,7 +292,58 @@ return (
             <Example>{`<svg>...</svg>`}</Example>
           </PropertyValue>
         </Property>
-
+        <Property name="notification.critical.background">
+          <Description>The background of a critical Notification.</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'background-front',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.critical.global.background">
+          <Description>
+            The background of a critical global Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+background: {
+  color: 'status-warning',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.critical.toast.background">
+          <Description>
+            The background of a critical toast Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-warning',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="notification.iconContainer">
           <Description>Any valid Box prop for the icon container.</Description>
           <PropertyValue type="object">
@@ -233,6 +357,87 @@ return (
           </PropertyValue>
         </Property>
 
+        <Property name="notification.info.color">
+          <Description>The color of the info status icon.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"text-strong"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="notification.info.icon">
+          <Description>
+            The default icon for an info status Notification.
+          </Description>
+          <PropertyValue type="node">
+            <Example defaultValue>{`<CircleInformation />`}</Example>
+            <Example>{`<Icon />`}</Example>
+          </PropertyValue>
+          <PropertyValue type="SVG">
+            <Example>{`<svg>...</svg>`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.info.background">
+          <Description>The background of an info Notification.</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'background-back',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.info.global.background">
+          <Description>
+            The background of an info global Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'background-back',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.info.toast.background">
+          <Description>
+            The background of an info toast Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'background-back',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="notification.message">
           <Description>Any valid Text prop for the message text.</Description>
           <PropertyValue type="object">
@@ -267,7 +472,61 @@ return (
             <Example>{`<svg>...</svg>`}</Example>
           </PropertyValue>
         </Property>
-
+        <Property name="notification.normal.background">
+          <Description>The background of a normal Notification.</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-ok',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.normal.global.background">
+          <Description>
+            The background of a normal global Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+background: {
+  color: 'status-ok',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.normal.toast.background">
+          <Description>
+            The background of a normal toast Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-ok',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="notification.textContainer">
           <Description>Any valid Box prop for the text container.</Description>
           <PropertyValue type="object">
@@ -373,7 +632,118 @@ return (
             <Example>{`<svg>...</svg>`}</Example>
           </PropertyValue>
         </Property>
-
+        <Property name="notification.unknown.background">
+          <Description>The background of an unknown Notification.</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-unknown',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.unknown.global.background">
+          <Description>
+            The background of an unknown global Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+background: {
+  color: 'status-unknown',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.unknown.toast.background">
+          <Description>
+            The background of an unknown toast Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-unknown',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.undefined.background">
+          <Description>
+            The background of a Notification with no status defined.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-unknown',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.undefined.global.background">
+          <Description>
+            The background of a Notification with no status defined.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+background: {
+  color: 'status-unknown',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.undefined.toast.background">
+          <Description>
+            The background of a Notification with no status defined.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-unknown',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="notification.warning.color">
           <Description>The color of the warning status icon.</Description>
           <PropertyValue type="string">
@@ -398,6 +768,61 @@ return (
           </PropertyValue>
           <PropertyValue type="SVG">
             <Example>{`<svg>...</svg>`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.warning.background">
+          <Description>The background of a warning Notification.</Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-warning',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.warning.global.background">
+          <Description>
+            The background of a warning global Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+background: {
+  color: 'status-warning',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="notification.warning.toast.background">
+          <Description>
+            The background of a warning toast Notification.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+background: {
+  color: 'status-warning',
+  opacity: 'weak',
+},
+            `}
+            </Example>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"brand"</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
