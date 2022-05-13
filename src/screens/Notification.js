@@ -112,7 +112,7 @@ return (
         </Property>
         <Property name="global">
           <Description>
-            A boolean flag that indicates whether or not the Notification is a
+            A boolean flag indicating whether or not the Notification is a
             Global Notification. Global notifications are displayed directly
             beneath an application header as opposed to a notification within an
             individual page. Global Banner notifications can receive their own
