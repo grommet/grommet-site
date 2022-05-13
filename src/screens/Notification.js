@@ -103,7 +103,7 @@ return (
           <Description>
             Anchors that appear to the right of the title and message. Value
             should be provided as an array of objects, where the object accepts
-            any anchor properties.
+            any Anchor properties.
           </Description>
           <PropertyValue type="array">
             <Example>{`[{ label: 'Renew Subscription', href: '/renew'}]`}</Example>
