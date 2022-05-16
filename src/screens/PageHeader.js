@@ -168,7 +168,6 @@ const PageHeaderPage = () => (
           <PropertyValue type="object">
             <Example defaultValue>
               {`{
-  fill: true,
   margin: 'none'
 }`}
             </Example>
@@ -197,7 +196,7 @@ const PageHeaderPage = () => (
               {`
 small: {
     areas: [
-      ['parent', 'null'],
+      ['parent', 'parent'],
       ['title', 'actions'],
       ['subtitle', 'actions'],
     ],
@@ -220,11 +219,11 @@ small: {
               {`
 medium: {
     areas: [
-      ['parent', 'null'],
+      ['parent', 'parent'],
       ['title', 'actions'],
       ['subtitle', 'actions'],
     ],
-    columns: [['medium', 'large'], 'auto'],
+    columns: [['medium', 'flex'], 'auto'],
     rows: ['auto', 'auto', 'auto'],
     gap: { row: 'xsmall', column: 'medium' },
 },
@@ -243,11 +242,11 @@ medium: {
               {`
 large: {
     areas: [
-      ['parent', 'null'],
+      ['parent', 'parent'],
       ['title', 'actions'],
       ['subtitle', 'actions'],
     ],
-    columns: [['medium', 'large'], 'auto'],
+    columns: [['medium', 'flex'], 'auto'],
     rows: ['auto', 'auto', 'auto'],
     gap: { row: 'xsmall', column: 'large' },
 },
