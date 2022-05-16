@@ -253,16 +253,6 @@ return (
             <Example>"column"</Example>
           </PropertyValue>
         </Property>
-        <Property name="notification.toast.direction">
-          <Description>
-            The layout direction for the title and message of a toast
-            notification.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"column"</Example>
-            <Example>"row"</Example>
-          </PropertyValue>
-        </Property>
         <Property name="notification.critical.color">
           <Description>The color of the critical status icon.</Description>
           <PropertyValue type="string">
@@ -574,7 +564,16 @@ background: {
             </Example>
           </PropertyValue>
         </Property>
-
+        <Property name="notification.toast.direction">
+          <Description>
+            The layout direction for the title and message of a toast
+            notification.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"column"</Example>
+            <Example>"row"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="notification.toast.layer">
           <Description>
             Any valid Layer prop for the Toast Notification layer.
