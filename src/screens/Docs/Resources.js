@@ -14,15 +14,9 @@ const children = `
 End-to-end project examples on the [#i-made-this][slack] channel on [slack][slack].
 
 Browse grommet component library on [Storybook][storybook].
- 
-Basic [codesandbox][playground] for each component.
-
-Read more from the Grommet team on [Medium][medium].
 
 Find us on [Twitter][twitter].
 
-[medium]: https://medium.com/grommet-io
-[playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
 [slack]: https://slack-invite.grommet.io
 [storybook]: https://storybook.grommet.io
