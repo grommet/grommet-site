@@ -163,7 +163,10 @@ const PageHeaderPage = () => (
             <Example>{`'large'`}</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Example>{`{ vertical: 'large' }`}</Example>
+            <Example defaultValue>{`{ 
+  top: 'large', 
+  bottom: 'medium 
+}`}</Example>
           </PropertyValue>
         </Property>
 
