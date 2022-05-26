@@ -132,7 +132,10 @@ const PageHeaderPage = () => (
             <Example>"PageHeader Documentation"</Example>
           </PropertyValue>
           <PropertyValue type="element">
-            <Example>{`<Heading size="xxlarge">PageHeader Documentation</Heading>`}</Example>
+            <Example>{`
+<Heading size="xxlarge">
+    PageHeader Documentation
+</Heading>`}</Example>
           </PropertyValue>
         </Property>
 
@@ -151,6 +154,16 @@ const PageHeaderPage = () => (
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>{`{ align: 'end' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.pad">
+          <Description>Padding applied to PageHeader.</Description>
+          <PropertyValue type="string">
+            <Example>{`'large'`}</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ vertical: 'large' }`}</Example>
           </PropertyValue>
         </Property>
 
