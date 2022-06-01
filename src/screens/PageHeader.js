@@ -60,22 +60,6 @@ const PageHeaderPage = () => (
           <GenericAlignSelf />
         </Property>
 
-        <Property name="children">
-          <Description>
-            Any content to be rendered directly beneath the PageHeader.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<NameValueList>
-    <NameValuePair name="Created On">
-        Jan 10, 2022
-    </NameValuePair>
-    <NameValuePair name="Last Edited">
-        August 12, 2022
-    </NameValuePair>
-</NameValueList>`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
