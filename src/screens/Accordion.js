@@ -180,6 +180,39 @@ const AccordionPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="accordion.hover.background">
+          <Description>
+            The background of the accordion panel when hovered.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"background-contrast"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>Any supported Box background.</Description>
+            <Example>
+              {`
+{
+  color: "neutral-1",
+  dark: true,
+  opacity: true,
+  position: "bottom",
+  repeat: "no-repeat",
+  size: "cover",
+  image: "url(//my.com/assets/img.png)"
+}
+              `}
+            </Example>
+          </PropertyValue>
+        </Property>
         <Property name="accordion.hover.heading.color">
           <Description>
             The text color of the heading when hovered. Backward compatible with
