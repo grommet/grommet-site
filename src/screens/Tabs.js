@@ -249,6 +249,24 @@ const TabsPage = () => (
           <Description>Any additional style for Tabs panel.</Description>
           <GenericExtend />
         </Property>
+
+        <Property name="tabs.step">
+          <Description>
+            The number of tabs to advance or move back by when the left and
+            right arrows are visible and there is not enough room to display all
+            of the tabs on the screen. The sizes correspond to the responsive
+            breakpoint screen sizes.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`
+step: {
+  small: 1;
+  medium: 3;
+  large: 3;
+};
+            `}</Example>
+          </PropertyValue>
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
 
