@@ -48,6 +48,10 @@ const DropButtonPage = () => (
     <Box pad="large" background="light-2" />
   }
 />`}
+      isA={{
+        base: 'Button',
+        path: '/button',
+      }}
     >
       <Properties>
         <Property name="a11yTitle">
