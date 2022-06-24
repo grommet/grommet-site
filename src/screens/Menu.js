@@ -362,7 +362,7 @@ const MenuPage = () => (
 
         <Property name="menu.group.separator.pad">
           <Description>
-            The thickness of the separator line between grouped items.
+            The padding around the separator line between grouped items.
           </Description>
           <PropertyValue type="string">
             <Example>"small"</Example>
