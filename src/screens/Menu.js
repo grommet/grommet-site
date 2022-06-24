@@ -204,14 +204,35 @@ const MenuPage = () => (
             be any Button prop, for example: `label`, `onClick`, and `href`.
           </Description>
           <PropertyValue type="array[object]">
-            <Example> {`[{}, {}]`} </Example>
+            <Example>
+              {`[
+  {
+    label: 'Item 1',
+    onClick: () => {},
+  }, 
+  {
+    label: <Box alignSelf="center">Github</Box>,
+    icon: (<Github />),
+  }
+]`}
+            </Example>
           </PropertyValue>
           <PropertyValue type="array[array[object]]">
             <Description>
               Items can be defined as an array of arrays of objects to create
               groups of Menu items.
             </Description>
-            <Example> {`[[{}], [{}]]`} </Example>
+            <Example>
+              {`[
+  [
+    { label: 'Item 1' },
+    { label: 'Item 2' },
+  ], 
+  [
+    { label: 'Item 3' },
+  ]
+]`}
+            </Example>
           </PropertyValue>
         </Property>
 
