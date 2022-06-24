@@ -206,6 +206,13 @@ const MenuPage = () => (
           <PropertyValue type="array[object]">
             <Example> {`[{}, {}]`} </Example>
           </PropertyValue>
+          <PropertyValue type="array[array[object]]">
+            <Description>
+              Items can be defined as an array of arrays of objects to create
+              groups of menu items.
+            </Description>
+            <Example> {`[[{}], [{}]]`} </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="label">
@@ -313,9 +320,66 @@ const MenuPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="menu.group.container">
+          <Description>
+            Any valid Box props for the container around grouped items.
+          </Description>
+          <PropertyValue defaultValue type="object">
+            <Example>
+              {`{
+  pad: {
+    vertical: 'xsmall',
+  }
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.group.separator.color">
+          <Description>
+            The color of the separator line between grouped items.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"border"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "light-4", light: "dark-3" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.group.separator.size">
+          <Description>
+            The thickness of the separator line between grouped items.
+          </Description>
+          <PropertyValue defaultValue type="string">
+            <Example>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.group.separator.pad">
+          <Description>
+            The thickness of the separator line between grouped items.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+          <PropertyValue type="object" defaultValue>
+            <Example>
+              {`{
+  horizontal: 'small',
+  vertical: 'none'
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="menu.icons.down">
           <Description>
-            The icon to show to the right of the label when menu is closed.
+            The icon to show to the right of the label when Menu is closed.
           </Description>
           <PropertyValue type="element">
             <Example defaultValue>{`<FormDown />`}</Example>
@@ -324,7 +388,7 @@ const MenuPage = () => (
 
         <Property name="menu.icons.up">
           <Description>
-            The icon to show to the right of the label when menu is opened.
+            The icon to show to the right of the label when Menu is opened.
           </Description>
           <PropertyValue type="element">
             <Example>{`<FormUp />`}</Example>
