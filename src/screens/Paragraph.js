@@ -99,6 +99,17 @@ const ParagraphPage = () => (
           <GenericBool />
         </Property>
 
+        <Property name="maxLines">
+          <Description>
+            Restrict the text to this number of lines and truncate with ellipsis
+            if it is too long to fit. For the text to get truncated, the
+            Paragraph needs to be contained within a layout component such as a
+            Box or generic div.
+          </Description>
+          <PropertyValue type="number">
+            <Example>3</Example>
+          </PropertyValue>
+        </Property>
         <Property name="responsive">
           <Description>
             Whether margin should be scaled for mobile environments.
