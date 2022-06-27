@@ -62,6 +62,13 @@ const CardPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="card.container.extend">
+          <Description>
+            Any additional style for the card container.
+          </Description>
+          <GenericExtend />
+        </Property>
+
         <Property name="card.footer">
           <Description>Any valid Box prop for the CardFooter.</Description>
           <PropertyValue type="object">
@@ -85,13 +92,6 @@ const CardPage = () => (
           <PropertyValue type="string">
             <Example>"small"</Example>
           </PropertyValue>
-        </Property>
-
-        <Property name="card.hover.container.extend">
-          <Description>
-            Any additional style for the card container.
-          </Description>
-          <GenericExtend />
         </Property>
       </ThemeDoc>
     </ComponentDoc>
