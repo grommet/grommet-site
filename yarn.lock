@@ -5366,9 +5366,9 @@ regexpu-core@^4.2.0:
     unicode-match-property-value-ecmascript "^2.0.0"
 
 regexpu-core@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-5.0.1.tgz#c531122a7840de743dcf9c83e923b5560323ced3"
-  integrity sha512-CriEZlrKK9VJw/xQGJpQM5rY88BtuL8DM+AEwvcThHilbxiTAy8vq4iJnd2tqq8wLmjbGZzP7ZcKFjbGkmEFrw==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/regexpu-core/-/regexpu-core-5.1.0.tgz#2f8504c3fd0ebe11215783a41541e21c79942c6d"
+  integrity sha512-bb6hk+xWd2PEOkj5It46A16zFMs2mv86Iwpdu94la4S3sJ7C973h2dHpYKwIBGaWSO7cIRJ+UX0IeMaWcO4qwA==
   dependencies:
     regenerate "^1.4.2"
     regenerate-unicode-properties "^10.0.1"
