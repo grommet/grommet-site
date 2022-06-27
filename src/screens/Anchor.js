@@ -224,6 +224,23 @@ const AnchorPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="anchor.gap">
+          <Description>The gap between the label and icon.</Description>
+          <PropertyValue type="string">
+            <Description>
+                T-shirt sizing based off the theme or a specific size in px, em,
+                etc.
+            </Description>
+            <Example>"none"</Example>
+            <Example>"xsmall"</Example>
+            <Example defaultValue>"small"</Example>
+            <Example>"medium"</Example>
+            <Example>"large"</Example>
+            <Example>"xlarge"</Example>
+            <Example>"20 px"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="anchor.textDecoration">
           <Description>
             The text decoration of the label. Refer to

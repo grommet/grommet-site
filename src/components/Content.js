@@ -51,9 +51,9 @@ import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
 import Notification from '../screens/Notification';
 import Page from '../screens/Page';
+import PageHeader from '../screens/PageHeader';
 import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
-import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
 import RadioButtonGroup from '../screens/RadioButtonGroup';
 import RangeInput from '../screens/RangeInput';
@@ -72,7 +72,6 @@ import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
 import Tip from '../screens/Tip';
-import Try from '../screens/Try';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
@@ -110,7 +109,7 @@ import Resources from '../screens/Docs/Resources';
 //   'Heading', 'Home', 'Image', 'InfiniteScroll', 'Keyboard', 'Layer',
 //   'Markdown', 'Menu', 'Meter', 'Paragraph', 'RadioButton',
 //   'RangeInput', 'RangeSelector', 'Responsive', 'Select', 'SkipLinks', 'Stack',
-//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
+//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Use',
 //   'Video', 'WorldMap'].forEach((name) => {
 //   Screens[name] = props => (
 //     <DynamicImport load={() => import(`../screens/${name}`)}>
@@ -129,9 +128,6 @@ const Content = () => (
   <Routes notFoundRedirect="/">
     <Route exact path="/" component={Home} />
 
-    <Route exact path="/play" component={Play} />
-    <Route exact path="/theme" component={Try} />
-    <Route exact path="/try" component={Try} />
     <Route exact path="/start" component={Use} />
     <Route exact path="/use" component={Use} />
     <Route exact path="/components" component={Components} />
@@ -183,6 +179,7 @@ const Content = () => (
     <Route exact path="/nav" component={Nav} />
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/page" component={Page} />
+    <Route exact path="/pageheader" component={PageHeader} />
     <Route exact path="/pagination" component={Pagination} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
