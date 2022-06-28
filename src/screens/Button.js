@@ -155,7 +155,7 @@ const ButtonPage = () => (
           </Description>
           <GenericAs />
           <PropertyValue type="element">
-            <Example>{`<a />`}</Example>
+            <Example>{`Link`}</Example>
           </PropertyValue>
         </Property>
 
