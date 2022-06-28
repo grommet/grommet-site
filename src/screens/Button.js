@@ -154,6 +154,9 @@ const ButtonPage = () => (
             The DOM tag or react component to use for the element.
           </Description>
           <GenericAs />
+          <PropertyValue type="element">
+            <Example>{`<a />`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="badge">
