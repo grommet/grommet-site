@@ -150,6 +150,7 @@ return (
             <Example defaultValue>"unknown"</Example>
             <Example>"normal"</Example>
             <Example>"warning"</Example>
+            <Example>"info"</Example>
             <Example>"critical"</Example>
           </PropertyValue>
         </Property>
