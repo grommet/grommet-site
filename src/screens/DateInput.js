@@ -146,6 +146,14 @@ const DateInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="reverse">
+          <Description>
+            Whether the icon should be reversed so that the icon is at the
+            beginning of the input.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="onChange">
           <Description>
             Function that will be called when the user types or selects a date.

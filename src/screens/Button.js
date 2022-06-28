@@ -154,6 +154,10 @@ const ButtonPage = () => (
             The DOM tag or react component to use for the element.
           </Description>
           <GenericAs />
+          <PropertyValue type="element">
+             <Description>A specific element to use, such as a router element like Link from react-router-dom.</Description>
+            <Example>{`Link`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="badge">
