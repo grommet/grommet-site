@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, ResponsiveContext, Button } from 'grommet';
+import { Box, Text, ResponsiveContext, Menu } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
@@ -8,7 +8,7 @@ import { ThemeSwitchContext } from './ThemeSwitchContext';
 
 const Nav = () => {
   const size = React.useContext(ResponsiveContext);
-  const { themeName, setThemeName } = React.useContext(ThemeSwitchContext);
+  const { setThemeName } = React.useContext(ThemeSwitchContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -50,27 +50,23 @@ const Nav = () => {
                 </Box>
               )}
             </RoutedButton>
-            <Button
-              alignSelf="start"
-              plain
-              onClick={() => {
-                if (themeName === 'hpe') {
-                  setThemeName('grommet');
-                } else {
-                  setThemeName('hpe');
-                }
-              }}
-            >
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'small' }}
-                  round="xlarge"
-                  background={hover ? 'active' : undefined}
-                >
-                  {themeName === 'hpe' ? 'Use for Grommet' : 'Use for HPE'}
-                </Box>
-              )}
-            </Button>
+            <Menu
+              label="Select Theme"
+              items={[
+                {
+                  label: 'Grommet',
+                  onClick: () => {
+                    setThemeName('grommet');
+                  },
+                },
+                {
+                  label: 'HPE',
+                  onClick: () => {
+                    setThemeName('hpe');
+                  },
+                },
+              ]}
+            />
           </Box>
         )}
         <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />
