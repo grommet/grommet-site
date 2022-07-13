@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, ResponsiveContext, Button } from 'grommet';
+import { Box, Text, ResponsiveContext, CheckBox } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
@@ -9,6 +9,7 @@ import { ThemeSwitchContext } from './ThemeSwitchContext';
 const Nav = () => {
   const size = React.useContext(ResponsiveContext);
   const { themeName, setThemeName } = React.useContext(ThemeSwitchContext);
+  const [checked, setChecked] = React.useState(themeName === 'hpe');
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -50,27 +51,19 @@ const Nav = () => {
                 </Box>
               )}
             </RoutedButton>
-            <Button
-              alignSelf="start"
-              plain
-              onClick={() => {
+            <CheckBox
+              checked={checked}
+              label={themeName === 'hpe' ? 'Use for Grommet' : 'Use for HPE'}
+              onChange={(event) => {
                 if (themeName === 'hpe') {
                   setThemeName('grommet');
                 } else {
                   setThemeName('hpe');
                 }
+                setChecked(event.target.checked);
               }}
-            >
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'small' }}
-                  round="xlarge"
-                  background={hover ? 'active' : undefined}
-                >
-                  {themeName === 'hpe' ? 'Use for Grommet' : 'Use for HPE'}
-                </Box>
-              )}
-            </Button>
+              toggle="true"
+            />
           </Box>
         )}
         <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />
