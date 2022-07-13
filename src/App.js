@@ -11,6 +11,7 @@ import { dxc } from 'grommet-theme-dxc';
 import { Router } from './Router';
 import Analytics from './components/Analytics';
 import Content from './components/Content';
+import { ThemeSwitchContext } from './components/ThemeSwitchContext';
 
 const THEMES = {
   grommet,
@@ -36,6 +37,11 @@ const App = ({ initialPath }) => {
     }
   }, []);
 
+  const themeSwitchContextValue = React.useMemo(() => {
+    const nextValue = { themeName, setThemeName };
+    return nextValue;
+  }, [themeName]);
+
   return (
     <Router initialPath={initialPath} search={search}>
       <Helmet titleTemplate="%s - Grommet" defaultTitle="Grommet">
@@ -46,9 +52,11 @@ const App = ({ initialPath }) => {
         />
       </Helmet>
       <Analytics>
-        <Grommet theme={THEMES[themeName || 'grommet']}>
-          <Content />
-        </Grommet>
+        <ThemeSwitchContext.Provider value={themeSwitchContextValue}>
+          <Grommet theme={THEMES[themeName || 'grommet']}>
+            <Content />
+          </Grommet>
+        </ThemeSwitchContext.Provider>
       </Analytics>
     </Router>
   );
