@@ -67,7 +67,7 @@ const Nav = () => {
                   round="xlarge"
                   background={hover ? 'active' : undefined}
                 >
-                  {themeName === 'hpe' ? 'Use for Grommet' : 'Use for HPE'}
+                  {themeName === 'hpe' ? 'Use for Open Source' : 'Use for HPE'}
                 </Box>
               )}
             </Button>
