@@ -8,7 +8,7 @@ import { ThemeSwitchContext } from './ThemeSwitchContext';
 
 const Nav = () => {
   const size = React.useContext(ResponsiveContext);
-  const { setThemeName } = React.useContext(ThemeSwitchContext);
+  const { themeName, setThemeName } = React.useContext(ThemeSwitchContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -51,21 +51,26 @@ const Nav = () => {
               )}
             </RoutedButton>
             <Menu
-              label="Select Theme"
-              items={[
-                {
-                  label: 'Grommet',
-                  onClick: () => {
-                    setThemeName('grommet');
-                  },
-                },
-                {
-                  label: 'HPE',
-                  onClick: () => {
-                    setThemeName('hpe');
-                  },
-                },
-              ]}
+              label={`${themeName} theme`}
+              items={
+                themeName === 'hpe'
+                  ? [
+                      {
+                        label: 'grommet theme',
+                        onClick: () => {
+                          setThemeName('grommet');
+                        },
+                      },
+                    ]
+                  : [
+                      {
+                        label: 'hpe theme',
+                        onClick: () => {
+                          setThemeName('hpe');
+                        },
+                      },
+                    ]
+              }
             />
           </Box>
         )}
