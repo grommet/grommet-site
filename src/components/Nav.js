@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text, ResponsiveContext, Button } from 'grommet';
-import { Grommet as GrommetIcon } from 'grommet-icons';
+import { Grommet as GrommetIcon, Hpe as HpeIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
 import Search from './Search';
@@ -20,14 +20,54 @@ const Nav = () => {
       alignSelf="center"
       gap="medium"
     >
-      <RoutedAnchor
-        path="/"
-        icon={<GrommetIcon size="large" />}
-        label={size !== 'small' && <Text size="xlarge">grommet</Text>}
-      />
+      <Box
+        direction="column"
+        justify="between"
+        align="start"
+        alignSelf="center"
+        width="medium"
+      >
+        <RoutedAnchor
+          path="/"
+          icon={<GrommetIcon size="large" />}
+          label={size !== 'small' && <Text size="xlarge">grommet</Text>}
+        />
+        {themeName === 'grommet' && <Text size="small">for open source</Text>}
+        {themeName === 'hpe' && <Text size="small">for HPE</Text>}
+      </Box>
+
       <Box direction="row" gap="small">
         {!searchOpen && (
           <Box direction="row" gap="small">
+            <Button
+              plain
+              onClick={() => {
+                if (themeName === 'hpe') {
+                  setThemeName('grommet');
+                } else {
+                  setThemeName('hpe');
+                }
+              }}
+            >
+              {({ hover }) => (
+                <Box
+                  pad={{ vertical: 'small', horizontal: 'small' }}
+                  round="xlarge"
+                  background={hover ? 'active' : undefined}
+                  direction="row"
+                  gap="xsmall"
+                >
+                  <Text>
+                    {themeName === 'hpe'
+                      ? 'use for open source'
+                      : 'use for HPE'}
+                  </Text>
+                  {themeName === 'grommet' && (
+                    <HpeIcon color="#01A982" size="medium" />
+                  )}
+                </Box>
+              )}
+            </Button>
             <RoutedButton path="/docs" plain>
               {({ hover }) => (
                 <Box
@@ -50,27 +90,6 @@ const Nav = () => {
                 </Box>
               )}
             </RoutedButton>
-            <Button
-              alignSelf="start"
-              plain
-              onClick={() => {
-                if (themeName === 'hpe') {
-                  setThemeName('grommet');
-                } else {
-                  setThemeName('hpe');
-                }
-              }}
-            >
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'small' }}
-                  round="xlarge"
-                  background={hover ? 'active' : undefined}
-                >
-                  {themeName === 'hpe' ? 'Use for Open Source' : 'Use for HPE'}
-                </Box>
-              )}
-            </Button>
           </Box>
         )}
         <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />

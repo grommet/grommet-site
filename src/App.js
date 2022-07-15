@@ -24,14 +24,13 @@ const THEMES = {
 
 const App = ({ initialPath }) => {
   const [themeName, setThemeName] = React.useState(() => {
-    // get stored value from local storage, grommet as default
+    // Get stored value from local storage, 'grommet' as default
     const storedTheme = JSON.parse(window.localStorage.getItem('theme-name'));
     return storedTheme || 'grommet';
   });
   const [search, setSearch] = React.useState();
 
   React.useEffect(() => {
-    // note: json.stringify is optional when working with actual string (like theme name)
     if (window.location.search) {
       const {
         location: { search: nextSearch },
@@ -39,7 +38,7 @@ const App = ({ initialPath }) => {
       const params = new URLSearchParams(nextSearch);
       setSearch(nextSearch);
       const paramsTheme = params.get('theme');
-      // QUESTION: CURRENT IMPLEMENTATION = re-skin, but with theme in params, when reload, what happens?
+      // Note: URL and retrieve theme behavior still TBD
       if (paramsTheme) {
         setThemeName(paramsTheme);
       } else {
@@ -48,7 +47,6 @@ const App = ({ initialPath }) => {
     }
   }, []);
 
-  // use effect hook AFTER setting theme, if can retrieve. optimize performance?
   React.useEffect(() => {
     window.localStorage.setItem('theme-name', JSON.stringify(themeName));
   }, [themeName]);
