@@ -11,9 +11,7 @@ const Item = ({ align, center, justify, name, pad, path, children }) => (
       </Heading>
       <Box
         flex
-        background={
-          center ? { color: 'neutral-2', opacity: 'weak' } : undefined
-        }
+        background={center ? { color: 'brand', opacity: 'weak' } : undefined}
         justify={justify || (center ? 'center' : undefined)}
         align={align || (center ? 'center' : undefined)}
         pad={pad || (center ? 'small' : undefined)}

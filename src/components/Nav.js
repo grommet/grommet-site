@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Box, Text, ResponsiveContext } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
@@ -6,7 +7,8 @@ import RoutedButton from './RoutedButton';
 import Search from './Search';
 
 const Nav = () => {
-  const size = React.useContext(ResponsiveContext);
+  const size = useContext(ResponsiveContext);
+  const theme = useContext(ThemeContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -20,7 +22,7 @@ const Nav = () => {
     >
       <RoutedAnchor
         path="/"
-        icon={<GrommetIcon size="large" />}
+        icon={<GrommetIcon size="large" color="plain" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
       <Box direction="row" gap="small">
@@ -31,7 +33,12 @@ const Nav = () => {
                 <Box
                   pad={{ vertical: 'small', horizontal: 'medium' }}
                   round="xlarge"
-                  background={hover ? 'active' : 'accent-4'}
+                  background={
+                    hover
+                      ? 'active'
+                      : theme.global.colors['accent-4'] ||
+                        theme.global.colors['yellow!']
+                  }
                 >
                   <Text>docs</Text>
                 </Box>
