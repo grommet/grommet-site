@@ -25,8 +25,11 @@ const THEMES = {
 const App = ({ initialPath }) => {
   const [themeName, setThemeName] = React.useState(() => {
     // Get stored value from local storage, 'grommet' as default
-    const storedTheme = JSON.parse(window.localStorage.getItem('theme-name'));
-    return storedTheme || 'grommet';
+    if (typeof window !== 'undefined') {
+      const storedTheme = JSON.parse(window.localStorage.getItem('theme-name'));
+      return storedTheme;
+    }
+    return 'grommet';
   });
   const [search, setSearch] = React.useState();
 
@@ -48,7 +51,9 @@ const App = ({ initialPath }) => {
   }, []);
 
   React.useEffect(() => {
-    window.localStorage.setItem('theme-name', JSON.stringify(themeName));
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('theme-name', JSON.stringify(themeName));
+    }
   }, [themeName]);
 
   const themeSwitchContextValue = React.useMemo(() => {
