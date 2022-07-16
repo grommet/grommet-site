@@ -1,6 +1,10 @@
 import React from 'react';
-import { Box, Text, ResponsiveContext, Button } from 'grommet';
-import { Grommet as GrommetIcon, Hpe as HpeIcon } from 'grommet-icons';
+import { Box, Text, ResponsiveContext, Button, Menu } from 'grommet';
+import {
+  Grommet as GrommetIcon,
+  Hpe as HpeIcon,
+  More as MoreIcon,
+} from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
 import Search from './Search';
@@ -15,59 +19,71 @@ const Nav = () => {
     <Box
       direction="row"
       justify="between"
-      align="center"
+      align={['xsmall', 'small'].includes(size) ? 'center' : 'start'}
       width="xlarge"
       alignSelf="center"
       gap="medium"
     >
-      <Box
-        direction="column"
-        justify="between"
-        align="start"
-        alignSelf="center"
-        width="medium"
-      >
+      <Box justify="between" align="start" alignSelf="center">
         <RoutedAnchor
           path="/"
           icon={<GrommetIcon size="large" />}
-          label={size !== 'small' && <Text size="xlarge">grommet</Text>}
+          label={
+            !['xsmall', 'small'].includes(size) && (
+              <Text size="xlarge">grommet</Text>
+            )
+          }
         />
-        {themeName === 'grommet' && <Text size="small">for open source</Text>}
-        {themeName === 'hpe' && <Text size="small">for HPE</Text>}
+        {!['xsmall', 'small'].includes(size) && (
+          <Text>for {themeName === 'hpe' ? 'HPE' : 'open source'}</Text>
+        )}
       </Box>
 
       <Box direction="row" gap="small">
         {!searchOpen && (
           <Box direction="row" gap="small">
-            <Button
-              plain
-              onClick={() => {
-                if (themeName === 'hpe') {
-                  setThemeName('grommet');
-                } else {
-                  setThemeName('hpe');
-                }
-              }}
-            >
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'small' }}
-                  round="xlarge"
-                  background={hover ? 'active' : undefined}
-                  direction="row"
-                  gap="xsmall"
-                >
-                  <Text>
-                    {themeName === 'hpe'
-                      ? 'use for open source'
-                      : 'use for HPE'}
-                  </Text>
-                  {themeName === 'grommet' && (
-                    <HpeIcon color="#01A982" size="medium" />
-                  )}
-                </Box>
-              )}
-            </Button>
+            {!['xsmall', 'small'].includes(size) && (
+              <Button
+                plain
+                onClick={() => {
+                  setThemeName(`${themeName === 'hpe' ? 'grommet' : 'hpe'}`);
+                }}
+              >
+                {({ hover }) => (
+                  <Box
+                    pad={{ vertical: 'small', horizontal: 'small' }}
+                    round="xlarge"
+                    background={hover ? 'active' : undefined}
+                    direction="row"
+                    gap="xsmall"
+                  >
+                    <Text>
+                      use for {themeName === 'hpe' ? 'open source' : 'HPE'}
+                    </Text>
+                    {themeName === 'grommet' && (
+                      <HpeIcon color="#01A982" size="medium" />
+                    )}
+                  </Box>
+                )}
+              </Button>
+            )}
+            {['xsmall', 'small'].includes(size) && (
+              <Menu
+                icon={<MoreIcon size="medium" />}
+                items={[
+                  {
+                    label: `use for ${
+                      themeName === 'hpe' ? 'open source' : 'HPE'
+                    }`,
+                    onClick: () => {
+                      setThemeName(
+                        `${themeName === 'hpe' ? 'grommet' : 'hpe'}`,
+                      );
+                    },
+                  },
+                ]}
+              />
+            )}
             <RoutedButton path="/docs" plain>
               {({ hover }) => (
                 <Box

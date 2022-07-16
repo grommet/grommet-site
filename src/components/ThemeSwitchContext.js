@@ -1,7 +1,3 @@
 import React from 'react';
-
-// Theme switch context should be 'grommet' theme by default
-export const ThemeSwitchContext = React.createContext({
-  themeName: 'grommet',
-  setThemeName: () => {},
-});
+// Create context in separate file to prevent cyclic dependency
+export const ThemeSwitchContext = React.createContext({});

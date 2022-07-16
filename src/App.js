@@ -24,12 +24,12 @@ const THEMES = {
 
 const App = ({ initialPath }) => {
   const [themeName, setThemeName] = React.useState(() => {
-    // Get stored value from local storage, 'grommet' as default
+    // Get stored value from local storage, set to 'grommet' as default
+    let storedTheme;
     if (typeof window !== 'undefined') {
-      const storedTheme = JSON.parse(window.localStorage.getItem('theme-name'));
-      return storedTheme;
+      storedTheme = JSON.parse(window.localStorage.getItem('theme-name'));
     }
-    return 'grommet';
+    return storedTheme || 'grommet';
   });
   const [search, setSearch] = React.useState();
 
@@ -72,7 +72,7 @@ const App = ({ initialPath }) => {
       </Helmet>
       <Analytics>
         <ThemeSwitchContext.Provider value={themeSwitchContextValue}>
-          <Grommet theme={THEMES[themeName || 'grommet']}>
+          <Grommet theme={THEMES[themeName]}>
             <Content />
           </Grommet>
         </ThemeSwitchContext.Provider>
