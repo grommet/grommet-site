@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Box, Text, ResponsiveContext, Button, Menu } from 'grommet';
 import {
   Grommet as GrommetIcon,
@@ -11,8 +12,10 @@ import Search from './Search';
 import { ThemeSwitchContext } from './ThemeSwitchContext';
 
 const Nav = () => {
-  const size = React.useContext(ResponsiveContext);
+  // themename vs theme - make sure to pick
   const { themeName, setThemeName } = React.useContext(ThemeSwitchContext);
+  const size = useContext(ResponsiveContext);
+  const theme = useContext(ThemeContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -27,7 +30,7 @@ const Nav = () => {
       <Box justify="between" align="start" alignSelf="center">
         <RoutedAnchor
           path="/"
-          icon={<GrommetIcon size="large" />}
+          icon={<GrommetIcon size="large" color="plain" />}
           label={
             !['xsmall', 'small'].includes(size) && (
               <Text size="xlarge">grommet</Text>
@@ -38,7 +41,6 @@ const Nav = () => {
           <Text>for {themeName === 'hpe' ? 'HPE' : 'open source'}</Text>
         )}
       </Box>
-
       <Box direction="row" gap="small">
         {!searchOpen && (
           <Box direction="row" gap="small">
@@ -89,7 +91,12 @@ const Nav = () => {
                 <Box
                   pad={{ vertical: 'small', horizontal: 'medium' }}
                   round="xlarge"
-                  background={hover ? 'active' : 'accent-4'}
+                  background={
+                    hover
+                      ? 'active'
+                      : theme.global.colors['accent-4'] ||
+                        theme.global.colors['yellow!']
+                  }
                 >
                   <Text>docs</Text>
                 </Box>
