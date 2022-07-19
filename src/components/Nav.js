@@ -12,11 +12,11 @@ import Search from './Search';
 import { ThemeSwitchContext } from './ThemeSwitchContext';
 
 const Nav = () => {
-  // themename vs theme - make sure to pick
   const { themeName, setThemeName } = React.useContext(ThemeSwitchContext);
+  const [searchOpen, setSearchOpen] = React.useState(false);
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
-  const [searchOpen, setSearchOpen] = React.useState(false);
+  const buttonLabel = `Use for ${themeName === 'hpe' ? 'open source' : 'HPE'}`;
 
   return (
     <Box
@@ -59,24 +59,18 @@ const Nav = () => {
                     direction="row"
                     gap="xsmall"
                   >
-                    <Text>
-                      use for {themeName === 'hpe' ? 'open source' : 'HPE'}
-                    </Text>
-                    {themeName === 'grommet' && (
-                      <HpeIcon color="#01A982" size="medium" />
-                    )}
+                    <Text>{buttonLabel}</Text>
+                    {themeName === 'grommet' && <HpeIcon color="#01A982" />}
                   </Box>
                 )}
               </Button>
             )}
             {['xsmall', 'small'].includes(size) && (
               <Menu
-                icon={<MoreIcon size="medium" />}
+                icon={<MoreIcon />}
                 items={[
                   {
-                    label: `use for ${
-                      themeName === 'hpe' ? 'open source' : 'HPE'
-                    }`,
+                    label: buttonLabel,
                     onClick: () => {
                       setThemeName(
                         `${themeName === 'hpe' ? 'grommet' : 'hpe'}`,
