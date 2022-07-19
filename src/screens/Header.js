@@ -17,6 +17,11 @@ const HeaderPage = () => (
       name="Header"
       availableAt={[
         {
+          url: 'https://design-system.hpe.design/components/header',
+          label: 'Design System Guidance',
+          onlyShowOnHPE: true,
+        },
+        {
           url: 'https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
@@ -45,17 +50,17 @@ const HeaderPage = () => (
         },
       }}
     >
-    <Properties>
-      <Property name="sticky">
-        <Description>
-          Whether the Header should hide when the user is scrolling down and
-          appear once the user scrolls back up.
-        </Description>
-        <PropertyValue type="string">
-          <Example>`sticky= "scrollUp"`</Example>
-        </PropertyValue>
-      </Property>
-    </Properties>
+      <Properties>
+        <Property name="sticky">
+          <Description>
+            Whether the Header should hide when the user is scrolling down and
+            appear once the user scrolls back up.
+          </Description>
+          <PropertyValue type="string">
+            <Example>`sticky= "scrollUp"`</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
     </ComponentDoc>
   </Page>
 );

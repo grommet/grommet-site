@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Anchor, Box, Paragraph, Text } from 'grommet';
@@ -7,6 +7,7 @@ import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
 import { Code } from './Code';
 import { DomProps } from './DomProps';
+import { ThemeSwitchContext } from '../ThemeSwitchContext';
 
 export const ComponentDoc = ({
   align = 'center',
@@ -22,6 +23,7 @@ export const ComponentDoc = ({
   const properties = [];
   const themeDoc = [];
   const additionalChildren = [];
+  const { themeName } = useContext(ThemeSwitchContext);
   if (children && children.length) {
     for (let i = 0; i < children.length; i += 1) {
       if (children[i].type.displayName === 'Properties') {
@@ -57,15 +59,18 @@ export const ComponentDoc = ({
           <Box margin={{ vertical: 'medium' }}>
             {Array.isArray(availableAt) ? (
               <Box alignSelf="center" direction="row-responsive" gap="large">
-                {availableAt.map((at) => (
-                  <Anchor
-                    key={at.url}
-                    href={at.url}
-                    icon={at.label === 'Github' ? <Github /> : null}
-                    target="_blank"
-                    label={<Text size="large">{at.label}</Text>}
-                  />
-                ))}
+                {availableAt.map(
+                  (at) =>
+                    (!at.onlyShowOnHPE || themeName === 'hpe') && (
+                      <Anchor
+                        key={at.url}
+                        href={at.url}
+                        icon={at.label === 'Github' ? <Github /> : null}
+                        target="_blank"
+                        label={<Text size="large">{at.label}</Text>}
+                      />
+                    ),
+                )}
               </Box>
             ) : (
               <Anchor
