@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Anchor, Box, Paragraph, Text } from 'grommet';
+import { Anchor, Box, Button, Paragraph, Text } from 'grommet';
 import { Github } from 'grommet-icons';
 import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
@@ -77,6 +77,23 @@ export const ComponentDoc = ({
             )}
           </Box>
         )}
+      </Box>
+
+      <Box
+        direction="row"
+        gap="small"
+        background="light-1"
+        pad="small"
+        round="small"
+      >
+        <Text>Using Grommet for HPE?</Text>
+        <Button
+          href={`https://design-system.hpe.design/components/${name.toLowerCase()}`}
+        >
+          <Text color="black" weight="bold">
+            See {name} for examples and guidance.
+          </Text>
+        </Button>
       </Box>
 
       {isA && (
