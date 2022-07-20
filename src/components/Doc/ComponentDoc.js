@@ -90,7 +90,13 @@ export const ComponentDoc = ({
         <Button
           href={`https://design-system.hpe.design/components/${name.toLowerCase()}`}
         >
-          <Text color="black" weight="bold">
+          <Text
+            style={{
+              textDecorationLine: 'underline',
+            }}
+            color="black"
+            weight="bold"
+          >
             See {name} for examples and guidance.
           </Text>
         </Button>
