@@ -110,12 +110,8 @@ export const ComponentDoc = ({
             status="info"
             actions={[
               {
-                label: `See ${name} for examples and guidance.`,
+                label: `See ${name} examples and guidance.`,
                 href: designSystemLink,
-                color: 'text-strong',
-                style: {
-                  textDecorationLine: 'underline',
-                },
               },
             ]}
           />

@@ -43,7 +43,6 @@ const CalendarPage = () => (
           label: 'Github',
         },
       ]}
-      designSystemLink="https://design-system.hpe.design/components/calendar"
       description="A calendar of days displayed by month"
       intrinsicElement="div"
       code={`<Calendar
