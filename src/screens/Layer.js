@@ -43,6 +43,7 @@ const LayerPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/layer"
       description="An overlay"
       intrinsicElement="div"
       code={`function Example() {

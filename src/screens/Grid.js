@@ -64,6 +64,7 @@ const GridPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/grid"
       description="A grid system for laying out content"
       intrinsicElement="div"
       code={code}

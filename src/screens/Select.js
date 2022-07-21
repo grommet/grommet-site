@@ -44,6 +44,7 @@ const SelectPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/select"
       description="A control to select a value, with optional search"
       code={`function Example() {
   const [value, setValue] = React.useState('medium');

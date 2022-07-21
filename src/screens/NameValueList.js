@@ -40,6 +40,7 @@ const NameValueListPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/namevaluelist"
       description="A name-value list displays a group of name-value pairs"
       intrinsicElement="dl"
       code={`<Box width="medium">

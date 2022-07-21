@@ -29,6 +29,7 @@ const Tip = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/tip"
       description="Tooltip or a hint when hovering over an element"
       code={`<Grommet theme={grommet}>
   <Box pad="medium">

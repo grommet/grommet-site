@@ -28,6 +28,7 @@ const CheckBoxGroupPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/checkboxgroup"
       description="A group of CheckBoxes"
       intrinsicElement="div"
       isA={{

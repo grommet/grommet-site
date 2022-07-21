@@ -34,6 +34,7 @@ const PageHeaderPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/pageheader"
       description="A layout component to display page title, subtitle, parent, and page-level actions"
       intrinsicElement="header"
       code={`<PageHeader

@@ -44,6 +44,7 @@ const HeadingPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/foundation/typography#heading"
       description="Heading text structured in levels"
       intrinsicElement={['h1', 'h2', 'h3', 'h4']}
       code={`<Heading margin="none">Chapter 1</Heading>`}

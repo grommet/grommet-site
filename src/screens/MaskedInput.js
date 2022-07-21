@@ -49,6 +49,7 @@ const MaskedInputPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/maskedinput"
       description="An input field with formalized syntax"
       intrinsicElement="input"
       code={`<MaskedInput

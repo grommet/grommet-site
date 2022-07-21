@@ -20,6 +20,7 @@ const FooterPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/footer"
       description="Footer for a document or section"
       code={`<Footer background="brand" pad="medium">
   <Text>Copyright</Text>

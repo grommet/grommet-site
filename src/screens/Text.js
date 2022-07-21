@@ -42,6 +42,7 @@ const TextPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/foundation/typography#text"
       description="Arbitrary text"
       intrinsicElement="span"
       code="<Text>simple text</Text>"

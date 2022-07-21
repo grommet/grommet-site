@@ -58,6 +58,7 @@ const ButtonPage = () => (
       ]}
       intrinsicElement="button"
       code={`<Button primary label="label" />`}
+      designSystemLink="https://design-system.hpe.design/components/button"
     >
       <Box>
         <Paragraph size="large">

@@ -43,6 +43,7 @@ const MenuPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/menu"
       description="A control that opens a Drop containing plain Buttons"
       intrinsicElement="button"
       code={`<Menu

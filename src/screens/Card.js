@@ -30,6 +30,7 @@ const CardPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/card"
       description="A Card is a container of information that provides access to more 
  details"
       intrinsicElement="div"

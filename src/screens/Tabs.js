@@ -43,6 +43,7 @@ const TabsPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/tabs"
       description="A container with controls to show one Tab at a time"
       intrinsicElement="div"
       code={`<Tabs>

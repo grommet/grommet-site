@@ -1,7 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Anchor, Box, Button, Paragraph, Text } from 'grommet';
+import {
+  Anchor,
+  Box,
+  Notification,
+  Paragraph,
+  Text,
+  ThemeContext,
+} from 'grommet';
 import { Github } from 'grommet-icons';
 import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
@@ -18,6 +25,7 @@ export const ComponentDoc = ({
   isA, // used when component is a version of a html tag
   name,
   pageTitle,
+  designSystemLink,
 }) => {
   const properties = [];
   const themeDoc = [];
@@ -79,28 +87,40 @@ export const ComponentDoc = ({
         )}
       </Box>
 
-      <Box
-        direction="row"
-        gap="small"
-        background="light-1"
-        pad="small"
-        round="small"
-      >
-        <Text>Using Grommet for HPE?</Text>
-        <Button
-          href={`https://design-system.hpe.design/components/${name.toLowerCase()}`}
+      {designSystemLink && (
+        <ThemeContext.Extend
+          value={{
+            notification: {
+              container: {
+                background: {
+                  color: 'background-contrast',
+                },
+                round: 'small',
+                pad: 'small',
+              },
+              direction: 'row',
+              message: {
+                color: 'text-strong',
+              },
+            },
+          }}
         >
-          <Text
-            style={{
-              textDecorationLine: 'underline',
-            }}
-            color="black"
-            weight="bold"
-          >
-            See {name} for examples and guidance.
-          </Text>
-        </Button>
-      </Box>
+          <Notification
+            message="Using Grommet for HPE?"
+            status="info"
+            actions={[
+              {
+                label: `See ${name} for examples and guidance.`,
+                href: designSystemLink,
+                color: 'text-strong',
+                style: {
+                  textDecorationLine: 'underline',
+                },
+              },
+            ]}
+          />
+        </ThemeContext.Extend>
+      )}
 
       {isA && (
         <Box
@@ -131,15 +151,11 @@ export const ComponentDoc = ({
           </Box>
         </Box>
       )}
-
       {additionalChildren}
-
       {properties}
-
       {intrinsicElement && (
         <DomProps name={name} intrinsicElement={intrinsicElement} />
       )}
-
       {themeDoc}
     </Box>
   );
@@ -173,6 +189,7 @@ ComponentDoc.propTypes = {
   }),
   name: PropTypes.string.isRequired,
   pageTitle: PropTypes.string,
+  designSystemLink: PropTypes.string,
 };
 
 ComponentDoc.defaultProps = {
@@ -184,4 +201,5 @@ ComponentDoc.defaultProps = {
   intrinsicElement: undefined,
   isA: undefined,
   pageTitle: undefined,
+  designSystemLink: undefined,
 };

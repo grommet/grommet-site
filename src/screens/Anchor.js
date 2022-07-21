@@ -41,6 +41,7 @@ const AnchorPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/anchor"
       description="A text link"
       details="We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children."
       intrinsicElement="a"
@@ -228,8 +229,8 @@ const AnchorPage = () => (
           <Description>The gap between the label and icon.</Description>
           <PropertyValue type="string">
             <Description>
-                T-shirt sizing based off the theme or a specific size in px, em,
-                etc.
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
             </Description>
             <Example>"none"</Example>
             <Example>"xsmall"</Example>
