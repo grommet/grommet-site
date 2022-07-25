@@ -44,6 +44,7 @@ const RangeInputPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/rangeinput"
       description="A slider control to input a value within a fixed range"
       intrinsicElement="input"
       code={`function Example() {

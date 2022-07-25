@@ -36,6 +36,7 @@ const NotificationPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/notification"
       code={`<Notification
   title="Default Status Title"
   message="This is an example of a notification message"

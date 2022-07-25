@@ -43,6 +43,7 @@ const TagPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/tag"
       description="A component to represent a textual tag"
       intrinsicElement="div"
       code={`<Tag name="name" value="value" />`}

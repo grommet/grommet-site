@@ -20,6 +20,7 @@ const MainPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/main"
       description="main content of a document"
       isA={{
         base: 'Box',

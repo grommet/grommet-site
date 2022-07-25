@@ -37,6 +37,7 @@ const DateInputPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/dateinput"
       description="A control to input a single date or a date range"
       intrinsicElement="div"
       code={`<DateInput

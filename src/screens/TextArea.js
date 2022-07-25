@@ -47,6 +47,7 @@ const TextAreaPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/textarea"
       description="A control to input multiple lines of text"
       intrinsicElement="textarea"
       code={`function Example() {

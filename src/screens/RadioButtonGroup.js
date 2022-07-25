@@ -29,6 +29,7 @@ const RadioButtonGroupPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/radiobuttongroup"
       description="A group of radio buttons"
       intrinsicElement="div"
       code={`function Example() {

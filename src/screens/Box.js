@@ -62,6 +62,7 @@ const BoxPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/box"
       description="A container that lays out its contents in one direction"
       intrinsicElement="div"
       code={`<Box

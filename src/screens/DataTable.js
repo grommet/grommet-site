@@ -43,6 +43,7 @@ const DataTablePage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/datatable"
       description="A data driven table"
       intrinsicElement="table"
       code={`<DataTable
@@ -321,8 +322,9 @@ const DataTablePage = () => (
             that include a 'datum' property containing the data value associated
             with the clicked row. You should not include interactive elements,
             like Anchor or Button inside table cells as that can cause confusion
-            with overlapping interactive elements. If onSelect is being used you have 
-            the option to make the whole row clickable by passing in `select` to onClickRow.
+            with overlapping interactive elements. If onSelect is being used you
+            have the option to make the whole row clickable by passing in
+            `select` to onClickRow.
           </Description>
           <PropertyValue type="function">
             <Example>{`({ datum }) => {...}`}</Example>

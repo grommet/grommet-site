@@ -37,6 +37,7 @@ const FileInputPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/fileinput"
       description="A control to input one or more files"
       intrinsicElement="input"
       code={`<FileInput

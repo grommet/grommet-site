@@ -34,6 +34,7 @@ const SpinnerPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/spinner"
       description="A Spinner"
       code="<Spinner />"
     >

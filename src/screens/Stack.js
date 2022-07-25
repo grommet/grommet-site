@@ -41,6 +41,7 @@ const StackPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/stack"
       description="A container that stacks contents on top of each other"
       intrinsicElement="div"
       code={`<Stack anchor="top-right">

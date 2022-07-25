@@ -30,6 +30,7 @@ const PagePage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/page"
       description="A container to provide context for how content should be laid out on a page"
       intrinsicElement="div"
       code={`<Page kind="narrow">

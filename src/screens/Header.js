@@ -27,6 +27,7 @@ const HeaderPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/header"
       description="Is a Box container for introductory content"
       code={`<Header background="brand">
   <Button icon={<Icons.Home />} hoverIndicator />
@@ -45,17 +46,17 @@ const HeaderPage = () => (
         },
       }}
     >
-    <Properties>
-      <Property name="sticky">
-        <Description>
-          Whether the Header should hide when the user is scrolling down and
-          appear once the user scrolls back up.
-        </Description>
-        <PropertyValue type="string">
-          <Example>`sticky= "scrollUp"`</Example>
-        </PropertyValue>
-      </Property>
-    </Properties>
+      <Properties>
+        <Property name="sticky">
+          <Description>
+            Whether the Header should hide when the user is scrolling down and
+            appear once the user scrolls back up.
+          </Description>
+          <PropertyValue type="string">
+            <Example>`sticky= "scrollUp"`</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
     </ComponentDoc>
   </Page>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Anchor, Box, Paragraph, Text } from 'grommet';
+import { Anchor, Box, Notification, Paragraph, Text } from 'grommet';
 import { Github } from 'grommet-icons';
 import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
@@ -18,6 +18,7 @@ export const ComponentDoc = ({
   isA, // used when component is a version of a html tag
   name,
   pageTitle,
+  designSystemLink,
 }) => {
   const properties = [];
   const themeDoc = [];
@@ -79,6 +80,20 @@ export const ComponentDoc = ({
         )}
       </Box>
 
+      {designSystemLink && (
+        <Notification
+          message="Using Grommet for HPE?"
+          status="info"
+          actions={[
+            {
+              label: `See ${name} examples and guidance.`,
+              href: designSystemLink,
+              target: '_blank',
+            },
+          ]}
+        />
+      )}
+
       {isA && (
         <Box
           margin={{ top: 'large' }}
@@ -108,15 +123,11 @@ export const ComponentDoc = ({
           </Box>
         </Box>
       )}
-
       {additionalChildren}
-
       {properties}
-
       {intrinsicElement && (
         <DomProps name={name} intrinsicElement={intrinsicElement} />
       )}
-
       {themeDoc}
     </Box>
   );
@@ -150,6 +161,7 @@ ComponentDoc.propTypes = {
   }),
   name: PropTypes.string.isRequired,
   pageTitle: PropTypes.string,
+  designSystemLink: PropTypes.string,
 };
 
 ComponentDoc.defaultProps = {
@@ -161,4 +173,5 @@ ComponentDoc.defaultProps = {
   intrinsicElement: undefined,
   isA: undefined,
   pageTitle: undefined,
+  designSystemLink: undefined,
 };

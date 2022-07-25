@@ -41,6 +41,7 @@ const CheckBoxPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/checkbox"
       description="A checkbox toggle control"
       intrinsicElement="input"
       code={`function Example() {

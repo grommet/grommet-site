@@ -45,6 +45,7 @@ const TextInputPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/textinput"
       description="A control to input a single line of text, with optional suggestions"
       intrinsicElement="input"
       code={`function Example() {

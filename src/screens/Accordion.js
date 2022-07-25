@@ -40,6 +40,7 @@ const AccordionPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/accordion"
       description="An accordion containing collapsible panels"
       intrinsicElement="div"
       code={`<Accordion>

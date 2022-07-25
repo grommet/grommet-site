@@ -35,6 +35,7 @@ const PaginationPage = () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/pagination"
       description="A control that enables selection of a single page from a 
  range of pages"
       intrinsicElement="nav"
