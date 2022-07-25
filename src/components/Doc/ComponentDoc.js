@@ -1,14 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import {
-  Anchor,
-  Box,
-  Notification,
-  Paragraph,
-  Text,
-  ThemeContext,
-} from 'grommet';
+import { Anchor, Box, Notification, Paragraph, Text } from 'grommet';
 import { Github } from 'grommet-icons';
 import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
@@ -88,36 +81,18 @@ export const ComponentDoc = ({
       </Box>
 
       {designSystemLink && (
-        <ThemeContext.Extend
-          value={{
-            notification: {
-              container: {
-                background: {
-                  color: 'background-contrast',
-                },
-                round: 'small',
-                pad: 'small',
-              },
-              direction: 'row',
-              message: {
-                color: 'text-strong',
-              },
+        <Notification
+          message="Using Grommet for HPE?"
+          status="info"
+          actions={[
+            {
+              label: `See ${name} examples and guidance.`,
+              href: designSystemLink,
+              target: '_blank',
+              rel: 'noreferrer',
             },
-          }}
-        >
-          <Notification
-            message="Using Grommet for HPE?"
-            status="info"
-            actions={[
-              {
-                label: `See ${name} examples and guidance.`,
-                href: designSystemLink,
-                target: '_blank',
-                rel: 'noreferrer',
-              },
-            ]}
-          />
-        </ThemeContext.Extend>
+          ]}
+        />
       )}
 
       {isA && (
