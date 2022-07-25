@@ -89,7 +89,6 @@ export const ComponentDoc = ({
               label: `See ${name} examples and guidance.`,
               href: designSystemLink,
               target: '_blank',
-              rel: 'noreferrer',
             },
           ]}
         />
