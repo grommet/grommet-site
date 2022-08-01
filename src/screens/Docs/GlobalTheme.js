@@ -1,4 +1,5 @@
 import React from 'react';
+import { Paragraph, Markdown } from 'grommet';
 import Page from '../../components/Page';
 import {
   ComponentDoc,
@@ -20,7 +21,6 @@ import {
   GenericBool,
   GenericMargin,
 } from '../../utils/genericPropExamples';
-import { Paragraph, Markdown } from 'grommet';
 
 const GlobalTheme = () => (
   <Page>
