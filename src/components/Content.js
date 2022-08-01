@@ -79,6 +79,7 @@ import WorldMap from '../screens/WorldMap';
 import Browsers from '../screens/Docs/Browsers';
 import Functions from '../screens/Docs/Functions';
 import GettingStarted from '../screens/Docs/GettingStarted';
+import GlobalTheme from '../screens/Docs/GlobalTheme';
 import Resources from '../screens/Docs/Resources';
 
 // NOTE: This commented out code illustrates how to code-split per-screen
@@ -206,6 +207,7 @@ const Content = () => (
     <Route exact path="/browsers" component={Browsers} />
     <Route exact path="/functions" component={Functions} />
     <Route exact path="/starter" component={GettingStarted} />
+    <Route exact path="/globaltheme" component={GlobalTheme} />
     <Route exact path="/resources" component={Resources} />
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
