@@ -12,6 +12,7 @@ const content = `
   ### [functions](${nameToPath('functions')})
   ### [resources](${nameToPath('resources')})
   ### [browser support](${nameToPath('browsers')})
+  ### [theming](${nameToPath('globaltheme')})
 `;
 
 const Docs = () => (
