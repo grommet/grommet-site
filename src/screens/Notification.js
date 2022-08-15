@@ -163,12 +163,18 @@ return (
           </Description>
           <GenericBoolFalse />
           <PropertyValue type="object">
-            <Example>{`{ toast: {{ position: 'bottom-right' }},}`}</Example>
+            <Description>
+              When using Toast Notification a position is available to pass in
+              as an object which will then be the position of the toast content.
+              autoClose can be set to false to prevent the notification from
+              closing after a period of time defined by
+              `notification.toast.time`.
+            </Description>
+            <Example>{`{ 
+  autoClose: boolean,
+  position: 'bottom-right',
+}`}</Example>
           </PropertyValue>
-          <Description>
-            When using Toast Notification a position is avalible to pass in as
-            an object which will then be the position of the toast content.
-          </Description>
         </Property>
         <Property name="onClose">
           <Description>
