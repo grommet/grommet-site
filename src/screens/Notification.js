@@ -166,7 +166,7 @@ return (
             <Description>
               When using Toast Notification a position is available to pass in
               as an object which will then be the position of the toast content.
-              autoClose can be set to false to prevent the notification from
+              `autoClose` can be set to false to prevent the notification from
               closing after a period of time defined by
               `notification.toast.time`.
             </Description>
