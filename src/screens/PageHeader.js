@@ -100,9 +100,9 @@ const PageHeaderPage = () => (
             sizing.
           </Description>
           <PropertyValue type="string">
-            <Example>small</Example>
-            <Example>medium</Example>
-            <Example>large</Example>
+            <Example>"small"</Example>
+            <Example>"medium"</Example>
+            <Example>"large"</Example>
           </PropertyValue>
         </Property>
 
