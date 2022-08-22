@@ -93,6 +93,19 @@ const PageHeaderPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="size">
+          <Description>
+            The possible sizes of PageHeader, which impacts the padding, title
+            sizing, and subtitle sizing. 'size' will not impact parent or action
+            sizing.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+            <Example>"medium"</Example>
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="subtitle">
           <Description>
             Additional description about a page's purpose. When provided as a
@@ -182,6 +195,120 @@ const PageHeaderPage = () => (
               {`{
   fill: true,
   margin: 'none',
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.small.pad">
+          <Description>
+            Amount of pad when PageHeader size = 'small'.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  top: 'medium',
+  bottom: 'small'
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.small.subtitle">
+          <Description>
+            Any valid Paragraph props for the subtitle when PageHeader size =
+            'small'.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  size: 'small',
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.small.title">
+          <Description>
+            Any valid Heading props for the title when PageHeader size =
+            'small'.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  size: 'small',
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.medium.pad">
+          <Description>
+            Amount of pad when PageHeader size = 'medium'. If not specified,
+            will default to pageHeader.pad.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.medium.subtitle">
+          <Description>
+            Any valid Paragraph props for the subtitle when PageHeader size =
+            'medium'. If not specified, will default to pageHeader.subtitle.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.medium.title">
+          <Description>
+            Any valid Heading props for the title when PageHeader size =
+            'medium'. If not specified, will default to pageHeader.title.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.large.pad">
+          <Description>
+            Amount of pad when PageHeader size = 'large'.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  top: 'xlarge',
+  bottom: 'large'
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.large.subtitle">
+          <Description>
+            Any valid Paragraph props for the subtitle when PageHeader size =
+            'large'.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  size: 'large',
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pageHeader.size.large.title">
+          <Description>
+            Any valid Heading props for the title when PageHeader size =
+            'large'.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  size: 'large',
 }`}
             </Example>
           </PropertyValue>
