@@ -17,8 +17,7 @@ const Accessible = () => {
         <span>
           keyboard navigation, screen reader tags, and more. grommet provides
           support for W3c’s&nbsp;
-          <Anchor href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 spec</Anchor>
-          &nbsp; out of the box.
+          <Anchor href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 spec</Anchor>.
         </span>
       }
     >
