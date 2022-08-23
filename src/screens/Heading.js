@@ -123,6 +123,17 @@ const HeadingPage = () => (
           <GenericBoolTrue />
         </Property>
 
+        <Property name="overflowWrap">
+          <Description>
+            Specifies whether line breaks should be inserted within an otherwise
+            unbreakable string to prevent text from overflowing.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"break-word"</Example>
+            <Example>any CSS for overflow-wrap</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="size">
           <Description>
             The font size is primarily driven by the chosen tag. But, it can be
@@ -155,6 +166,20 @@ const HeadingPage = () => (
             is too long to all fit.
           </Description>
           <GenericBoolFalse />
+        </Property>
+
+        <Property name="weight">
+          <Description>Specifies the font weight.</Description>
+          <PropertyValue type="string">
+            <Example>"normal"</Example>
+            <Example>"bold"</Example>
+            <Example>any CSS for font-weight</Example>
+          </PropertyValue>
+          <PropertyValue type="number">
+            <Example>400</Example>
+            <Example>600</Example>
+            <Example>700</Example>
+          </PropertyValue>
         </Property>
       </Properties>
 
