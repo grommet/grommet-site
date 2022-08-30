@@ -680,7 +680,7 @@ const ButtonPage = () => (
             Any valid Button props.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{ default: {
+            <Example>{`{
          background: string | object,
          border: string | object | array,
          color:  string | object,
@@ -694,7 +694,7 @@ const ButtonPage = () => (
          },
          reverse: boolean,
          extend: any css,
-       },}`}</Example>
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -705,7 +705,7 @@ const ButtonPage = () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{ primary: {
+            <Example>{`{
          background: string | object,
          border: string | object | array,
          color:  string | object,
@@ -719,7 +719,7 @@ const ButtonPage = () => (
          },
          reverse: boolean,
          extend: any css,
-       },}`}</Example>
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -730,7 +730,7 @@ const ButtonPage = () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{ secondary: {
+            <Example>{`{
          background: string | object,
          border: string | object | array,
          color:  string | object,
@@ -744,7 +744,7 @@ const ButtonPage = () => (
          },
          reverse: boolean,
          extend: any css,
-       },}`}</Example>
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -890,15 +890,6 @@ const ButtonPage = () => (
           <GenericExtend />
         </Property>
 
-        <Property name="button.default.icon">
-          <Description>
-            Any specific icon in a button default Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.default.padding.horizontal">
           <Description>
             The horizontal padding for a default button.
@@ -955,15 +946,6 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.disabled.default.icon">
-          <Description>
-            Any specific icon in a disabled default Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.disabled.primary">
           <Description>
             Adjustments to the primary Button style when the Button is disabled.
@@ -975,15 +957,6 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.disabled.primary.icon">
-          <Description>
-            Any specific icon in a disabled primary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.disabled.secondary">
           <Description>
             Adjustments to the secondary Button style when the Button is
@@ -992,15 +965,6 @@ const ButtonPage = () => (
           </Description>
           <PropertyValue type="object">
             <Example>{`{}`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.disabled.secondary.icon">
-          <Description>
-            Any specific icon in a disabled secondary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
           </PropertyValue>
         </Property>
 
@@ -1037,15 +1001,6 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.hover.default.icon">
-          <Description>
-            Any specific icon in a hover default Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.hover.primary">
           <Description>
             Adjustments to the primary Button style when the Button is hovered.
@@ -1057,15 +1012,6 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.hover.primary.icon">
-          <Description>
-            Any specific icon in a hover primary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.hover.secondary">
           <Description>
             Adjustments to the secondary Button style when the Button is
@@ -1074,15 +1020,6 @@ const ButtonPage = () => (
           </Description>
           <PropertyValue type="object">
             <Example>{`{}`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.hover.secondary.icon">
-          <Description>
-            Any specific icon in a hover secondary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
           </PropertyValue>
         </Property>
 
@@ -1127,15 +1064,6 @@ const ButtonPage = () => (
         <Property name="button.primary.color">
           <Description>The color of the label for primary buttons.</Description>
           <GenericColor />
-        </Property>
-
-        <Property name="button.primary.icon">
-          <Description>
-            Any specific icon in a button primary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
         </Property>
 
         <Property name="button.primary.font.weight">
@@ -1196,15 +1124,6 @@ const ButtonPage = () => (
             themes that have defined a value for button.default.
           </Description>
           <GenericColor />
-        </Property>
-
-        <Property name="button.secondary.icon">
-          <Description>
-            Any specific icon in a button secondary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
-          </PropertyValue>
         </Property>
 
         <Property name="button.secondary.font.weight">
