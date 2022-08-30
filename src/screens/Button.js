@@ -677,18 +677,24 @@ const ButtonPage = () => (
         <Property name="button.active.default">
           <Description>
             Adjustments to the default Button style when the Button is active.
+            Any valid Button props.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.active.default.icon">
-          <Description>
-            Any specific icon in a active default Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
+            <Example>{`{ default: {
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       },}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -699,16 +705,21 @@ const ButtonPage = () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.active.primary.icon">
-          <Description>
-            Any specific icon in a active primary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
+            <Example>{`{ primary: {
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       },}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -719,16 +730,21 @@ const ButtonPage = () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.active.secondary.icon">
-          <Description>
-            Any specific icon in a active secondary Button.
-          </Description>
-          <PropertyValue type="element">
-            <Example>{`<Add />`}</Example>
+            <Example>{`{ secondary: {
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       },}`}</Example>
           </PropertyValue>
         </Property>
 
