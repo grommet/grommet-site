@@ -679,7 +679,21 @@ const ButtonPage = () => (
             Adjustments to the default Button style when the Button is active.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -690,7 +704,21 @@ const ButtonPage = () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -701,7 +729,21 @@ const ButtonPage = () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       }`}</Example>
           </PropertyValue>
         </Property>
 

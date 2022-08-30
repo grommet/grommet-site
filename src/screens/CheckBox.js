@@ -353,6 +353,11 @@ const CheckBoxPage = () => (
             <Example defaultValue>"48px"</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="formField.checkBox.pad">
+          <Description>The CheckBox pad when wrapped in FormField.</Description>
+          <GenericPad />
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
