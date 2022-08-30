@@ -160,7 +160,7 @@ const HeadingPage = () => (
         <Property name="weight">
           <Description>Font weight</Description>
           <PropertyValue type="string">
-            <Example>"normal"</Example>
+            <Example defaultValue>"normal"</Example>
             <Example>"bold"</Example>
             <Example>"lighter"</Example>
             <Example>"bolder"</Example>
