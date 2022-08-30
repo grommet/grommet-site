@@ -677,7 +677,6 @@ const ButtonPage = () => (
         <Property name="button.active.default">
           <Description>
             Adjustments to the default Button style when the Button is active.
-            Any valid Button props.
           </Description>
           <PropertyValue type="object">
             <Example>{`{
