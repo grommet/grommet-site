@@ -376,6 +376,15 @@ const MenuPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="menu.group.separator.size">
+          <Description>
+            The thickness of the separator line between grouped items.
+          </Description>
+          <PropertyValue defaultValue type="string">
+            <Example>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="menu.icons.color">
           <Description>The color to use for the icon.</Description>
           <PropertyValue type="string">
