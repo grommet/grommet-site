@@ -156,6 +156,19 @@ const HeadingPage = () => (
           </Description>
           <GenericBoolFalse />
         </Property>
+
+        <Property name="weight">
+          <Description>Font weight</Description>
+          <PropertyValue type="string">
+            <Example>"normal"</Example>
+            <Example>"bold"</Example>
+            <Example>"lighter"</Example>
+            <Example>"bolder"</Example>
+          </PropertyValue>
+          <PropertyValue type="number">
+            <Example>300</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>

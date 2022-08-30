@@ -302,20 +302,6 @@ const MenuPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="menu.icons.color">
-          <Description>The color to use for the icon.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"control"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="menu.background">
           <Description>
             The color for the background of the menu Drop when it is open.
@@ -373,15 +359,6 @@ const MenuPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="menu.group.separator.size">
-          <Description>
-            The thickness of the separator line between grouped items.
-          </Description>
-          <PropertyValue defaultValue type="string">
-            <Example>"xsmall"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="menu.group.separator.pad">
           <Description>
             The padding around the separator line between grouped items.
@@ -396,6 +373,20 @@ const MenuPage = () => (
   vertical: 'none'
 }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.icons.color">
+          <Description>The color to use for the icon.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"control"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -414,6 +405,39 @@ const MenuPage = () => (
           </Description>
           <PropertyValue type="element">
             <Example>{`<FormUp />`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item">
+          <Description>Any valid Button props for the menu items.</Description>
+          <PropertyValue type="object">
+            <Example>{`{ align: 'start' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item.gap">
+          <Description>The gap between the label and icon.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item.justify">
+          <Description>
+            How to align the contents within the button.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"around"</Example>
+            <Example>"between"</Example>
+            <Example>"center"</Example>
+            <Example>"end"</Example>
+            <Example>"evenly"</Example>
+            <Example>"start"</Example>
+            <Example>"stretch"</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
