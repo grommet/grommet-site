@@ -50,6 +50,7 @@ export { RangeInputItem } from '../RangeInput';
 export { RangeSelectorItem } from '../RangeSelector';
 export { ResponsiveContextItem } from '../ResponsiveContext';
 export { SelectItem } from '../Select';
+export { SelectMultipleItem } from '../SelectMultiple';
 export { SidebarItem } from '../Sidebar';
 export { SkipLinksItem } from '../SkipLinks';
 export { SpinnerItem } from '../Spinner';
