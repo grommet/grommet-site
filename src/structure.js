@@ -51,6 +51,7 @@ export const structure = {
         'RangeInput',
         'RangeSelector',
         'Select',
+        'SelectMultiple',
         'TextArea',
         'TextInput',
         'FormField',
