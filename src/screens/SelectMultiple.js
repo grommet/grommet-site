@@ -42,12 +42,10 @@ const SelectMultiplePage = () => (
       designSystemLink="https://design-system.hpe.design/components/selectmultiple"
       description="A control to select multiple values, with optional inline display"
       code={`function Example() {
-  const [value, setValue] = React.useState('medium');
   return (
     <SelectMultiple
+      placeholder="Select"
       options={['small', 'medium', 'large']}
-      value={value}
-      onChange={({ option }) => setValue(option)}
     />
   );
 }`}
@@ -98,9 +96,7 @@ const SelectMultiplePage = () => (
         </Property>
 
         <Property name="defaultValue">
-          <Description>
-            Initially selected value. This can be an array when multiple.
-          </Description>
+          <Description>Initially selected value.</Description>
           <PropertyValue type="array">
             <Description>An array of strings, objects, or numbers.</Description>
             <Example>["string", ...]</Example>
@@ -233,20 +229,6 @@ const SelectMultiplePage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="icon">
-          <Description>
-            A custom icon to be used when rendering the select. You can use
-            false to not render an icon at all.
-          </Description>
-          <GenericBool />
-          <PropertyValue type="function">
-            <Example>{`() => {}`}</Example>
-          </PropertyValue>
-          <PropertyValue type="node">
-            <Example>{`<Icon />`}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="messages">
           <Description>Custom messages.</Description>
           <PropertyValue type="object">
@@ -274,7 +256,7 @@ const SelectMultiplePage = () => (
 
         <Property name="onClose">
           <Description>
-            Function that will be called when the Select drop closes.
+            Function that will be called when the SelectMultiple drop closes.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
@@ -283,7 +265,7 @@ const SelectMultiplePage = () => (
 
         <Property name="onOpen">
           <Description>
-            Function that will be called when the Select drop opens.
+            Function that will be called when the SelectMultiple drop opens.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
@@ -424,7 +406,9 @@ const SelectMultiplePage = () => (
         <Property name="sortSelectedOnClose">
           <Description>
             Weather selections should be sorted with selected items displayed at
-            the top of the list after closing and reopening the drop.
+            the top of the list after closing and reopening the drop. Note: code
+            that relies on indexes of the options shouldn't be used when
+            sortSelectedOnClose is true.
           </Description>
           <GenericBoolTrue />
         </Property>
