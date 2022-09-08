@@ -81,6 +81,7 @@ import Functions from '../screens/Docs/Functions';
 import GettingStarted from '../screens/Docs/GettingStarted';
 import GlobalTheme from '../screens/Docs/GlobalTheme';
 import Resources from '../screens/Docs/Resources';
+import StableBranch from '../screens/Docs/Stable';
 
 // NOTE: This commented out code illustrates how to code-split per-screen
 // class DynamicImport extends Component {
@@ -209,6 +210,7 @@ const Content = () => (
     <Route exact path="/starter" component={GettingStarted} />
     <Route exact path="/globaltheme" component={GlobalTheme} />
     <Route exact path="/resources" component={Resources} />
+    <Route exact path="/stablebranch" component={StableBranch} />
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
