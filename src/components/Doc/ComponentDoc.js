@@ -19,6 +19,7 @@ export const ComponentDoc = ({
   name,
   pageTitle,
   designSystemLink,
+  stable,
 }) => {
   const properties = [];
   const themeDoc = [];
@@ -49,6 +50,22 @@ export const ComponentDoc = ({
         <title>{pageTitle || name}</title>
         <meta name="description" content={description} />
       </Helmet>
+      {stable && (
+        <Box pad={{ bottom: 'medium' }}>
+          <Box
+            alignContent="center"
+            direction="row"
+            background="light-3"
+            pad="xsmall"
+            round="xsmall"
+          >
+            <Text alignSelf="center">
+              <b>New!</b> This component is available on the{' '}
+              <Anchor href="/stable">stable branch</Anchor>
+            </Text>
+          </Box>
+        </Box>
+      )}
       <Box align={align}>
         <Header align={align} label={name} summary={description} details="" />
 
@@ -162,6 +179,7 @@ ComponentDoc.propTypes = {
   name: PropTypes.string.isRequired,
   pageTitle: PropTypes.string,
   designSystemLink: PropTypes.string,
+  stable: PropTypes.bool,
 };
 
 ComponentDoc.defaultProps = {
@@ -174,4 +192,5 @@ ComponentDoc.defaultProps = {
   isA: undefined,
   pageTitle: undefined,
   designSystemLink: undefined,
+  stable: false,
 };
