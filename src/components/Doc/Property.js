@@ -41,7 +41,10 @@ export const Property = ({ stable, name, first, children }) => {
             >
               <CircleInformation />
               <Text alignSelf="center" size="small">
-                New! available on <Anchor href="/stable">stable branch</Anchor>
+                New! Available on{' '}
+                <Anchor href="/stablebranch" target="_blank">
+                  stable branch
+                </Anchor>
               </Text>
             </Box>
           )}
