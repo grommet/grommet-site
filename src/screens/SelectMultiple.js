@@ -52,7 +52,7 @@ const SelectMultiplePage = () => (
       stable
     >
       <Properties>
-        <Property name="a11yTitle" stable>
+        <Property name="a11yTitle">
           <Description>
             Custom label to be used by screen readers. When provided, an
             aria-label will be added to the element.

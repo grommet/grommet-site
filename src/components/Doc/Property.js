@@ -27,7 +27,7 @@ export const Property = ({ stable, name, first, children }) => {
       onBlur={() => setOver(false)}
     >
       <Box direction="row" justify="between" align="center">
-        <Box direction="row" gap="small">
+        <Box direction="row-responsive" gap="small">
           <Heading level={3} margin="none">
             {name}
           </Heading>
@@ -41,10 +41,11 @@ export const Property = ({ stable, name, first, children }) => {
             >
               <CircleInformation />
               <Text alignSelf="center" size="small">
-                New! Available on{' '}
+                New! Available on the{' '}
                 <Anchor href="/stablebranch" target="_blank">
                   stable branch
                 </Anchor>
+                .
               </Text>
             </Box>
           )}
