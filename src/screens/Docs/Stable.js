@@ -25,7 +25,7 @@ To access the stable release you need to update your 'package.json' dependency t
   }
 \`\`\`
 
-For npm users use the following script to remove node modules and reinstall npm again.
+For npm users use the following script to remove node modules and reinstall npm again:
 
 \`\`\`
 
