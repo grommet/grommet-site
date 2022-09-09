@@ -6,7 +6,7 @@ import Page from '../../components/Page';
 const name = 'Stable Branch';
 
 const desc =
-  'Want to use the latest features and enhancments learn how to connect your project to the grommet stable.';
+  'Want to use the latest features and enhancements? Learn how to connect your project to the grommet stable branch.';
 
 const children = ` 
 
