@@ -51,19 +51,21 @@ export const ComponentDoc = ({
         <meta name="description" content={description} />
       </Helmet>
       {stable && (
-        <Notification
-          background="light-3"
-          status="info"
-          global
-          actions={[
-            {
-              label: 'stable branch.',
-              href: '/stablebranch',
-              target: '_blank',
-            },
-          ]}
-          message={`New! ${name} is in beta, test it out and let us know what you think. This component is available on the`}
-        />
+        <Box pad={{ bottom: 'medium' }}>
+          <Notification
+            background="light-3"
+            status="info"
+            global
+            actions={[
+              {
+                label: 'stable branch.',
+                href: '/stablebranch',
+                target: '_blank',
+              },
+            ]}
+            message={`New! ${name} is in beta, test it out and let us know what you think. This component is available on the`}
+          />
+        </Box>
       )}
       <Box align={align}>
         <Header align={align} label={name} summary={description} details="" />
