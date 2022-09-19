@@ -55,7 +55,6 @@ export const ComponentDoc = ({
           <Notification
             background="light-3"
             status="info"
-            global
             actions={[
               {
                 label: 'stable branch.',
