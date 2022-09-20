@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Anchor, Heading } from 'grommet';
-import { Link as LinkIcon } from 'grommet-icons';
+import { Box, Anchor, Heading, Text } from 'grommet';
+import { Link as LinkIcon, CircleInformation } from 'grommet-icons';
 import { PropertyValue } from './PropertyValue';
 
-export const Property = ({ name, first, children }) => {
+export const Property = ({ stable, name, first, children }) => {
   const [over, setOver] = React.useState();
   const Description = [];
   const PropertyValues = [];
@@ -27,9 +27,29 @@ export const Property = ({ name, first, children }) => {
       onBlur={() => setOver(false)}
     >
       <Box direction="row" justify="between" align="center">
-        <Heading level={3} margin="none">
-          {name}
-        </Heading>
+        <Box direction="row-responsive" gap="small">
+          <Heading level={3} margin="none">
+            {name}
+          </Heading>
+          {stable && (
+            <Box
+              direction="row"
+              gap="xsmall"
+              background="light-2"
+              round="medium"
+              pad={{ vertical: 'xsmall', horizontal: 'small' }}
+            >
+              <CircleInformation />
+              <Text alignSelf="center" size="small">
+                New! Available on the{' '}
+                <Anchor href="/stablebranch" target="_blank">
+                  stable branch
+                </Anchor>
+                .
+              </Text>
+            </Box>
+          )}
+        </Box>
         <Anchor
           href={`#${name}`}
           icon={<LinkIcon color={over ? 'light-4' : 'white'} />}
@@ -48,9 +68,11 @@ Property.propTypes = {
   children: PropTypes.node,
   first: PropTypes.bool,
   name: PropTypes.string.isRequired,
+  stable: PropTypes.bool,
 };
 
 Property.defaultProps = {
   children: undefined,
   first: undefined,
+  stable: false,
 };

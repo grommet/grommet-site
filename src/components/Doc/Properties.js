@@ -43,6 +43,7 @@ export const Properties = ({ children }) => {
               name={property.props.name}
               first={!index}
               key={property.props.name}
+              stable={property.props.stable}
             >
               {property.props.children}
             </Property>

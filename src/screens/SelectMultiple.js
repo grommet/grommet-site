@@ -49,6 +49,7 @@ const SelectMultiplePage = () => (
     />
   );
 }`}
+      stable
     >
       <Properties>
         <Property name="a11yTitle">
