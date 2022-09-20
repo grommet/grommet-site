@@ -126,11 +126,28 @@ const HeadingPage = () => (
         <Property name="overflowWrap">
           <Description>
             Specifies whether line breaks should be inserted within an otherwise
-            unbreakable string to prevent text from overflowing.
+            unbreakable string, such as long word or URL, to prevent text from
+            overflowing its container.
           </Description>
           <PropertyValue type="string">
+            <Description>
+              "normal" specifies that line breaks may only occur at normal
+              string breakpoints, such as a space or hyphen.
+            </Description>
+            <Description>
+              "anywhere" and "break-word" both prevent text from overflowing by
+              allowing strings to break at any point.
+            </Description>
+            <Description>
+              They differ in how their min-content widths are calculated,
+              affecting how they are treated in flex layouts such a Box and
+              Grid. "anywhere" is the most flexible, its min-content width is
+              equal to width longest word in the string. "break-word" prefers to
+              occupy the intrinsic width of the string.
+            </Description>
+            <Example>"normal"</Example>
+            <Example>"anywhere"</Example>
             <Example defaultValue>"break-word"</Example>
-            <Example>any CSS for overflow-wrap</Example>
           </PropertyValue>
         </Property>
 
