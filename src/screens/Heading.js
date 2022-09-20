@@ -129,7 +129,7 @@ const HeadingPage = () => (
             unbreakable string to prevent text from overflowing.
           </Description>
           <PropertyValue type="string">
-            <Example>"break-word"</Example>
+            <Example defaultValue>"break-word"</Example>
             <Example>any CSS for overflow-wrap</Example>
           </PropertyValue>
         </Property>
@@ -169,16 +169,15 @@ const HeadingPage = () => (
         </Property>
 
         <Property name="weight">
-          <Description>Specifies the font weight.</Description>
+          <Description>Font weight</Description>
           <PropertyValue type="string">
-            <Example>"normal"</Example>
+            <Example defaultValue>"normal"</Example>
             <Example>"bold"</Example>
-            <Example>any CSS for font-weight</Example>
+            <Example>"lighter"</Example>
+            <Example>"bolder"</Example>
           </PropertyValue>
           <PropertyValue type="number">
-            <Example>400</Example>
-            <Example>600</Example>
-            <Example>700</Example>
+            <Example>300</Example>
           </PropertyValue>
         </Property>
       </Properties>
