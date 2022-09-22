@@ -9,6 +9,7 @@ import {
   Example,
   ThemeDoc,
 } from '../../components/Doc';
+import RoutedAnchor from '../../components/RoutedAnchor';
 import {
   GenericExtend,
   GlobalBorderSize,
@@ -85,6 +86,41 @@ const GlobalTheme = () => (
 }
 `}
             </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.backgrounds">
+          <Description>Backgrounds to use accross the application.</Description>
+          <Description>
+            The background's name is provided as a value a component's
+            `background` prop such as Box, Header, Page, and more.
+          </Description>
+          <PropertyValue type="object">
+            <Description disableMarkdown>
+              {`A background of one of the following types \`string\`,
+             \`{ dark: string, light: string }\` object, 
+             or `}
+              <RoutedAnchor
+                path="/box#background"
+                label="background type object"
+              />
+              .
+            </Description>
+            <Description>
+              The background may be used throughout the application by referring
+              to its name.
+            </Description>
+            <Example>{`{
+  'hero-image-3': 'url(//my.com/assets/img.png)',
+  'ambient-1': {
+    dark: 'linear-gradient()',
+    light: 'linear-gradient()'
+  },
+  'seasonal-promotion': {
+    color: 'neutral-1',
+    image: 'url(//my.com/assets/img.png)',
+    opacity: 'medium'
+  },
+}`}</Example>
           </PropertyValue>
         </Property>
         <Property name="global.borderSize">

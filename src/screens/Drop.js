@@ -101,7 +101,9 @@ const DropPage = () => (
   opacity: true,
   repeat: "no-repeat",
   size: "cover",
-  light: "string"
+  light: "string",
+  clip: "text",
+  rotate: 45
 }
               `}
             </Example>
@@ -125,6 +127,12 @@ const DropPage = () => (
               <Example>"cover"</Example>
               <Example>"contain"</Example>
               <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
             </PropOptions>
           </PropertyValue>
         </Property>

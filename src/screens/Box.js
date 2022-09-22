@@ -186,7 +186,9 @@ const BoxPage = () => (
   position: "bottom",
   repeat: "no-repeat",
   size: "cover",
-  image: "url(//my.com/assets/img.png)"
+  image: "url(//my.com/assets/img.png)",
+  clip: "text",
+  rotate: 45
 }
               `}
             </Example>
@@ -209,6 +211,12 @@ const BoxPage = () => (
               <Example>"cover"</Example>
               <Example>"contain"</Example>
               <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
             </PropOptions>
           </PropertyValue>
         </Property>

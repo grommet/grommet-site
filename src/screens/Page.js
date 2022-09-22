@@ -222,7 +222,9 @@ const PagePage = () => (
   repeat: "no-repeat",
   size: "cover",
   image: "url(//my.com/assets/img.png)",
-  fill: "horizontal
+  fill: "horizontal,
+  clip: "text",
+  rotate: 45
 }
               `}
             </Example>
@@ -245,6 +247,12 @@ const PagePage = () => (
               <Example>"cover"</Example>
               <Example>"contain"</Example>
               <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
             </PropOptions>
           </PropertyValue>
         </Property>
