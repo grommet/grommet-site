@@ -84,6 +84,15 @@ const CheckBoxGroupPage = () => (
           <GenericBool />
         </Property>
 
+        <Property name="defaultValue">
+          <Description>Initially selected option(s).</Description>
+          <PropertyValue type="array">
+            <Description>An array of numbers or strings.</Description>
+            <Example>[1, 2]</Example>
+            <Example>['option 1']</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="labelKey">
           <Description>
             When the options array contains objects, this property indicates how

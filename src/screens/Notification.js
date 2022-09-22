@@ -215,6 +215,7 @@ return (
             <Example defaultValue>
               {`
 {
+    round: 'xsmall',
     pad: { horizontal: 'small', vertical: 'xsmall' },
     background: {
         color: 'background-front',
@@ -242,11 +243,12 @@ return (
           <PropertyValue type="object">
             <Example defaultValue>
               {`
-  {
+{
+  round: 'none',
   pad: {
     horizontal: 'large',
     vertical: 'xsmall',
-  },
+},
                 `}
             </Example>
           </PropertyValue>
@@ -290,10 +292,10 @@ return (
         <Property name="notification.critical.background">
           <Description>The background of a critical Notification.</Description>
           <PropertyValue type="object">
-            <Example>
+            <Example defaultValue>
               {`
 background: {
-  color: 'background-front',
+  color: 'status-critical',
   opacity: 'weak',
 },
             `}
@@ -306,10 +308,10 @@ background: {
             The background of a critical global Notification.
           </Description>
           <PropertyValue type="object">
-            <Example defaultValue>
+            <Example>
               {`
 background: {
-  color: 'status-warning',
+  color: 'status-critical',
   opacity: 'weak',
 },
             `}
@@ -336,7 +338,7 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
-            <Example>"brand"</Example>
+            <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
         <Property name="notification.iconContainer">
@@ -381,10 +383,10 @@ background: {
         <Property name="notification.info.background">
           <Description>The background of an info Notification.</Description>
           <PropertyValue type="object">
-            <Example>
+            <Example defaultValue>
               {`
 background: {
-  color: 'background-back',
+  color: 'background-contrast',
   opacity: 'weak',
 },
             `}
@@ -430,7 +432,7 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
-            <Example>"brand"</Example>
+            <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
         <Property name="notification.message">
@@ -470,7 +472,7 @@ background: {
         <Property name="notification.normal.background">
           <Description>The background of a normal Notification.</Description>
           <PropertyValue type="object">
-            <Example>
+            <Example defaultValue>
               {`
 background: {
   color: 'status-ok',
@@ -489,7 +491,7 @@ background: {
             The background of a normal global Notification.
           </Description>
           <PropertyValue type="object">
-            <Example defaultValue>
+            <Example>
               {`
 background: {
   color: 'status-ok',
@@ -519,7 +521,7 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
-            <Example>"brand"</Example>
+            <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
         <Property name="notification.textContainer">
@@ -565,7 +567,6 @@ background: {
               {`
 {
     elevation: 'medium',
-    round: 'xsmall',
     width: 'medium'
 }
                 `}
@@ -639,7 +640,7 @@ background: {
         <Property name="notification.unknown.background">
           <Description>The background of an unknown Notification.</Description>
           <PropertyValue type="object">
-            <Example>
+            <Example defaultValue>
               {`
 background: {
   color: 'status-unknown',
@@ -658,7 +659,7 @@ background: {
             The background of an unknown global Notification.
           </Description>
           <PropertyValue type="object">
-            <Example defaultValue>
+            <Example>
               {`
 background: {
   color: 'status-unknown',
@@ -688,7 +689,7 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
-            <Example>"brand"</Example>
+            <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
         <Property name="notification.undefined.background">
@@ -777,7 +778,7 @@ background: {
         <Property name="notification.warning.background">
           <Description>The background of a warning Notification.</Description>
           <PropertyValue type="object">
-            <Example>
+            <Example defaultValue>
               {`
 background: {
   color: 'status-warning',
@@ -796,7 +797,7 @@ background: {
             The background of a warning global Notification.
           </Description>
           <PropertyValue type="object">
-            <Example defaultValue>
+            <Example>
               {`
 background: {
   color: 'status-warning',
@@ -826,7 +827,7 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <PropertyValue type="string">
-            <Example>"brand"</Example>
+            <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
