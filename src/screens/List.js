@@ -285,6 +285,22 @@ const ListPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="pinned">
+          <Description>
+            Can be used with `onOrder` to specify items that should not change
+            position in the List.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="array">
+            <Description>
+              An array of numbers or strings that correspond to items in the
+              List.
+            </Description>
+            <Example>[1, 5]</Example>
+            <Example>['item 2']</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="primaryKey">
           <Description>
             When a string is supplied, it indicates the property in a data item
