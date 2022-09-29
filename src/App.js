@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import URLSearchParams from 'url-search-params';
 import Helmet from 'react-helmet';
 import { Grommet } from 'grommet';
-import { grommet, dark } from 'grommet/themes';
+import { grommet, dark, hacktoberfest2022 } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
@@ -14,6 +14,7 @@ import Content from './components/Content';
 
 const THEMES = {
   grommet,
+  hacktoberfest2022,
   dark,
   hpe,
   aruba,
@@ -46,7 +47,7 @@ const App = ({ initialPath }) => {
         />
       </Helmet>
       <Analytics>
-        <Grommet theme={THEMES[themeName || 'grommet']}>
+        <Grommet theme={THEMES[themeName || 'grommet'] || grommet}>
           <Content />
         </Grommet>
       </Analytics>
