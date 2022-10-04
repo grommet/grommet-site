@@ -6,12 +6,20 @@ import { ThemeContext } from 'grommet/contexts';
 import Page from '../components/Page';
 import { ComponentDoc } from '../components/Doc';
 
-const BRAND_REGEXP = /^brand/i;
-const ACCENT_REGEXP = /^accent-/i;
-const NEUTRAL_REGEXP = /^neutral-/i;
-const STATUS_REGEXP = /^status-/i;
-const LIGHT_REGEXP = /^light-/i;
-const DARK_REGEXP = /^dark-/i;
+const SETS = {
+  brand: /^brand/,
+  background: /^background/,
+  text: /^text/,
+  state: /control|focus|border|placeholder|icon/,
+  active: /active/,
+  selected: /selected/,
+  status: /^status-/,
+  graph: /^graph-/,
+  accent: /^accent-/,
+  neutral: /^neutral-/,
+  light: /^light-/,
+  dark: /^dark-/,
+};
 
 const Cell = ({ name, value }) => (
   <Box basis="small" margin={{ bottom: 'medium' }}>
@@ -19,44 +27,66 @@ const Cell = ({ name, value }) => (
     <Text>
       <strong>{name}</strong>
     </Text>
-    <Text>{value}</Text>
+    {typeof value === 'object' ? (
+      <Box>
+        <Text>{value.light}</Text>
+        <Text>{value.dark}</Text>
+      </Box>
+    ) : (
+      <Text>{value}</Text>
+    )}
   </Box>
 );
 
 Cell.propTypes = {
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})])
+    .isRequired,
 };
 
-const Set = ({ regexp, colors }) => (
-  <Box direction="row" wrap gap="medium">
-    {Object.keys(colors)
-      .filter((name) => regexp.test(name))
-      .map((name) => (
-        <Cell key={name} name={name} value={colors[name]} />
-      ))}
-  </Box>
+const Set = ({ names }) => (
+  <ThemeContext.Consumer>
+    {(theme) => (
+      <Box direction="row" wrap gap="medium">
+        {names.map((name) => (
+          <Cell key={name} name={name} value={theme.global.colors[name]} />
+        ))}
+      </Box>
+    )}
+  </ThemeContext.Consumer>
 );
 
 Set.propTypes = {
-  regexp: PropTypes.instanceOf(RegExp).isRequired,
-  colors: PropTypes.shape({}).isRequired,
+  names: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const Color = () => (
   <Page>
     <ComponentDoc name="Color" description="The color palette">
       <ThemeContext.Consumer>
-        {(theme) => (
-          <Box gap="large" margin={{ vertical: 'large' }}>
-            <Set regexp={BRAND_REGEXP} colors={theme.global.colors} />
-            <Set regexp={ACCENT_REGEXP} colors={theme.global.colors} />
-            <Set regexp={NEUTRAL_REGEXP} colors={theme.global.colors} />
-            <Set regexp={STATUS_REGEXP} colors={theme.global.colors} />
-            <Set regexp={LIGHT_REGEXP} colors={theme.global.colors} />
-            <Set regexp={DARK_REGEXP} colors={theme.global.colors} />
-          </Box>
-        )}
+        {(theme) => {
+          const all = Object.keys(theme.global.colors).filter(
+            (name) => theme.global.colors[name],
+          );
+          // map expression to color names
+          const sets = {};
+          Object.keys(SETS).forEach((set) => {
+            const names = all.filter((name) => SETS[set].test(name));
+            if (names.length) sets[set] = names;
+          });
+          const core = Object.values(sets).flat();
+          // find other colors not in sets
+          const other = all.filter((name) => !core.includes(name));
+
+          return (
+            <Box gap="large" margin={{ vertical: 'large' }}>
+              {Object.values(sets).map(
+                (names) => names[0] && <Set key={names[0]} names={names} />,
+              )}
+              <Set names={other} />
+            </Box>
+          );
+        }}
       </ThemeContext.Consumer>
     </ComponentDoc>
   </Page>

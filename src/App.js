@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import URLSearchParams from 'url-search-params';
 import Helmet from 'react-helmet';
-import { Grommet, RadioButtonGroup } from 'grommet';
+import { Grommet, Box, RadioButtonGroup } from 'grommet';
 import { grommet, dark, hacktoberfest2022 } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
@@ -64,13 +64,15 @@ const App = ({ initialPath }) => {
           themeMode={themeMode}
         >
           {quickThemeSelector && (
-            <RadioButtonGroup
-              name="theme"
-              direction="row"
-              options={Object.keys(THEMES)}
-              value={themeName}
-              onChange={({ target: { value } }) => setThemeName(value)}
-            />
+            <Box align="center">
+              <RadioButtonGroup
+                name="theme"
+                direction="row"
+                options={Object.keys(THEMES)}
+                value={themeName}
+                onChange={({ target: { value } }) => setThemeName(value)}
+              />
+            </Box>
           )}
           <Content />
         </Grommet>
