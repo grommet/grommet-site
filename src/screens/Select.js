@@ -121,7 +121,7 @@ const SelectPage = () => (
 
         <Property name="closeOnChange">
           <Description>
-            Wether to close the drop when a selection is made.
+            Whether to close the drop when a selection is made.
           </Description>
           <GenericBoolTrue />
         </Property>
