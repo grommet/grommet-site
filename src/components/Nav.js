@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box, Text, ResponsiveContext } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import RoutedAnchor from './RoutedAnchor';
@@ -8,7 +7,6 @@ import Search from './Search';
 
 const Nav = () => {
   const size = useContext(ResponsiveContext);
-  const theme = useContext(ThemeContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -25,36 +23,16 @@ const Nav = () => {
         icon={<GrommetIcon size="large" color="plain" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
-      <Box direction="row" gap="small">
+      <Box direction="row" gap="small" align="center">
         {!searchOpen && (
-          <Box direction="row" gap="small">
-            <RoutedButton path="/docs" plain>
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'medium' }}
-                  round="xlarge"
-                  background={
-                    hover
-                      ? 'active'
-                      : theme.global.colors['accent-4'] ||
-                        theme.global.colors['yellow!']
-                  }
-                >
-                  <Text>docs</Text>
-                </Box>
-              )}
-            </RoutedButton>
-            <RoutedButton path="/components" plain>
-              {({ hover }) => (
-                <Box
-                  pad={{ vertical: 'small', horizontal: 'medium' }}
-                  round="xlarge"
-                  background={hover ? 'active' : 'control'}
-                >
-                  <Text>components</Text>
-                </Box>
-              )}
-            </RoutedButton>
+          <Box direction="row" gap="small" align="center">
+            <RoutedButton path="/docs" label="docs" hoverIndicator />
+            <RoutedButton
+              path="/components"
+              label="components"
+              primary
+              hoverIndicator
+            />
           </Box>
         )}
         <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />
