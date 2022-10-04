@@ -8,6 +8,7 @@ import About from '../screens/About';
 import Anchor from '../screens/Anchor';
 import Avatar from '../screens/Avatar';
 import AnnounceContext from '../screens/AnnounceContext';
+import Background from '../screens/Background';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
@@ -142,6 +143,7 @@ const Content = () => (
     <Route exact path="/anchor" component={Anchor} />
     <Route exact path="/avatar" component={Avatar} />
     <Route exact path="/announcecontext" component={AnnounceContext} />
+    <Route exact path="/background" component={Background} />
     <Route exact path="/box" component={Box} />
     <Route exact path="/button" component={Button} />
     <Route exact path="/calendar" component={Calendar} />

@@ -4,7 +4,6 @@ import { structure, nameToPath } from '../../structure';
 import Page from '../../components/Page';
 import Header from '../../components/Header';
 import Section from './Section';
-import Color from './Color';
 
 import {
   AccordionItem,
@@ -167,17 +166,16 @@ export default class Components extends Component {
         </Helmet>
         <Header label="Components" summary={desc} />
 
-        {structure.sections.map(({ name, components }, index) => (
-          <Section
-            ref={this.sectionRefs[name]}
-            key={name}
-            name={name}
-            index={index}
-          >
-            {name === 'Color' ? (
-              <Color index={index} />
-            ) : (
-              components.map((component) => {
+        {structure.sections
+          .filter(({ name }) => name !== 'Color' && name !== 'Background')
+          .map(({ name, components }, index) => (
+            <Section
+              ref={this.sectionRefs[name]}
+              key={name}
+              name={name}
+              index={index}
+            >
+              {components.map((component) => {
                 const Item = Items[component];
                 return (
                   <Item
@@ -186,10 +184,9 @@ export default class Components extends Component {
                     path={nameToPath(component)}
                   />
                 );
-              })
-            )}
-          </Section>
-        ))}
+              })}
+            </Section>
+          ))}
       </Page>
     );
   }
