@@ -141,6 +141,9 @@ return (
           <PropertyValue type="string">
             <Example>"You were signed out due to inactivity."</Example>
           </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Text size='large'>...</Text>`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="status">
