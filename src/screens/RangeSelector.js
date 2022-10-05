@@ -223,7 +223,7 @@ const RangeSelectorPage = () => (
               An object with a color for dark and light modes.
             </Description>
             <Example defaultValue>
-              {`{dark: "accent-1", light: "brand" }`}
+              {`{dark: "graph-0", light: "brand" }`}
             </Example>
           </PropertyValue>
         </Property>
@@ -231,7 +231,7 @@ const RangeSelectorPage = () => (
         <Property name="global.colors.focus">
           <Description>The color of the focus.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"focus"</Example>
           </PropertyValue>
         </Property>
 

@@ -249,7 +249,7 @@ const MeterPage = () => (
         <Property name="meter.color">
           <Description>The color used for the Meter.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
         </Property>
 

@@ -227,9 +227,7 @@ const ClockPage = () => (
         <Property name="clock.analog.second.color">
           <Description>The color of the seconds hand</Description>
           <PropertyValue type="string | { dark: string, light: string }">
-            <Example defaultValue>
-              {`{ dark: accent-1, light: accent-1}`}
-            </Example>
+            <Example defaultValue>{`{ dark: white, light: brand}`}</Example>
           </PropertyValue>
         </Property>
 

@@ -88,7 +88,7 @@ const RangeInputPage = () => (
             <Example>
               {`[
   { value: 3, color: '#FF0000', opacity: 0.5 },
-  { value: 7, color: { light: 'accent-3', dark: 'brand' } },
+  { value: 7, color: { light: 'control', dark: 'brand' } },
   { value: 10, color: '#00FF00' },
 ]`}
             </Example>

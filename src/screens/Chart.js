@@ -114,7 +114,7 @@ const ChartPage = () => (
             A color identifier to use for the graphic color.
           </Description>
           <PropertyValue type="string">
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
@@ -386,7 +386,7 @@ const ChartPage = () => (
           <Description>Color of the Chart.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
@@ -417,7 +417,7 @@ const ChartPage = () => (
   "black": "#000000",
   "border": { "dark": "rgba(255, 255, 255, 0.33)", "light": "rgba(0, 0, 0, 0.33)" },
   "brand": "#7D4CDB",
-  "control": { "dark": "accent-1", "light": "brand" },
+  "control": { "dark": "graph-0", "light": "brand" },
   "focus": "#6FFFB0",
   "graph-0": "accent-1",
   "graph-1": "neutral-1",

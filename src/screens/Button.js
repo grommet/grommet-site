@@ -605,14 +605,14 @@ const ButtonPage = () => (
           <Description>The color of the border.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
-            <Example>"accent-1"</Example>
+            <Example>"brand"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
               An object with a color for dark and light modes.
             </Description>
             <Example defaultValue>
-              {`{ dark: "accent-1", light: "brand" }`}
+              {`{ dark: "white", light: "brand" }`}
             </Example>
           </PropertyValue>
         </Property>

@@ -213,7 +213,7 @@ const AnchorPage = () => (
               An object with a color for dark and light mode.
             </Description>
             <Example defaultValue>
-              <Markdown>{`{"dark": "accent-1", "light": "brand"}`}</Markdown>
+              <Markdown>{`{"dark": "black", "light": "brand"}`}</Markdown>
             </Example>
           </PropertyValue>
         </Property>

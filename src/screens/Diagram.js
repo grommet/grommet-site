@@ -56,13 +56,13 @@ const DiagramPage = () => (
         fromTarget: '1',
         toTarget: '2',
         thickness: 'xsmall',
-        color: 'accent-2',
+        color: 'graph-0',
       },
       {
         fromTarget: '1',
         toTarget: '4',
         thickness: 'xsmall',
-        color: 'accent-2',
+        color: 'graph-1',
         type: 'rectilinear',
       },
     ]}
@@ -190,7 +190,7 @@ const DiagramPage = () => (
           <Description>The color of the connection line.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>

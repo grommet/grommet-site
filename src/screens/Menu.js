@@ -297,7 +297,7 @@ const MenuPage = () => (
               An object with a color for dark and light modes.
             </Description>
             <Example defaultValue>
-              {`{ dark: "accent-1", light: "brand" }`}
+              {`{ dark: "graph-0", light: "brand" }`}
             </Example>
           </PropertyValue>
         </Property>
