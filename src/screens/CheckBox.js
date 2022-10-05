@@ -258,6 +258,11 @@ const CheckBoxPage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="checkBox.hover.extend">
+          <Description>Any additional style for CheckBox hover.</Description>
+          <GenericExtend />
+        </Property>
+
         <Property name="checkBox.icon.size">
           <Description>The size of the checked icon.</Description>
           <PropertyValue type="string">

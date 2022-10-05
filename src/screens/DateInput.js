@@ -210,6 +210,13 @@ const DateInputPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="dateInput.container.round">
+          <Description>How much to round the corners for DateInput</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"xxsmall"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="dateInput.icon.size">
           <Description>The size of the Calendar icon</Description>
           <PropertyValue type="string">

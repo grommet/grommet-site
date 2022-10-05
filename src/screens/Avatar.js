@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
+import { GenericA11yTitle } from '../utils/genericPropExamples';
 import {
   ComponentDoc,
   Properties,
@@ -49,6 +50,13 @@ const AvatarPage = () => (
       }}
     >
       <Properties>
+        <Property name="a11yTitle">
+          <Description>
+            Custom label to be used by screen readers. When provided, an
+            aria-label will be added to the element.
+          </Description>
+          <GenericA11yTitle />
+        </Property>
         <Property name="size">
           <Description>A fixed size.</Description>
           <PropertyValue type="string">
