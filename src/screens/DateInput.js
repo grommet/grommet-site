@@ -211,7 +211,7 @@ const DateInputPage = () => (
 
       <ThemeDoc>
         <Property name="dateInput.container.round">
-          <Description>How much to round the corners for DateInput</Description>
+          <Description>How much to round the corners.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"xxsmall"</Example>
           </PropertyValue>
