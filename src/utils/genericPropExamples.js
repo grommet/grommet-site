@@ -28,6 +28,7 @@ export const GenericAlignSelf = () => (
     <Example>"center"</Example>
     <Example>"end"</Example>
     <Example>"stretch"</Example>
+    <Example>"baseline"</Example>
   </PropertyValue>
 );
 
