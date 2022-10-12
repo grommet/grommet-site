@@ -187,11 +187,12 @@ const GrommetPage = () => (
         <Property name="themeMode">
           <Description>
             Dark vs. light theme variation. Default is unspecified and left to
-            theme.
+            theme. Auto sets system preferred theme.
           </Description>
           <PropertyValue type="string">
             <Example>"dark"</Example>
             <Example>"light"</Example>
+            <Example>"auto"</Example>
           </PropertyValue>
         </Property>
 
