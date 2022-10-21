@@ -44,10 +44,10 @@ const ResponsiveContextPage = () => (
       <Properties>
         <Property name="children">
           <Description>
-            Render function that will be called with the current viewport
-            size (e.g our base theme of size 'small', 'medium', 'large').
-            The size value will be derived from global.breakpoints
-            entry in the theme object.
+            Render function that will be called with the current viewport size
+            (e.g our base theme of size 'small', 'medium', 'large'). The size
+            value will be derived from global.breakpoints entry in the theme
+            object.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
