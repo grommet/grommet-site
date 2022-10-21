@@ -12,9 +12,11 @@ const content = `
   ### [functions](${nameToPath('functions')})
   ### [resources](${nameToPath('resources')})
   ### [browser support](${nameToPath('browsers')})
+  ### [theming](${nameToPath('globaltheme')})
+  ### [stable branch](${nameToPath('stablebranch')})
 `;
 
-export default () => (
+const Docs = () => (
   <Page>
     <MarkdownTemplate
       name="Docs"
@@ -24,3 +26,5 @@ export default () => (
     </MarkdownTemplate>
   </Page>
 );
+
+export default Docs;

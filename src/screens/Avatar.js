@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
+import { GenericA11yTitle } from '../utils/genericPropExamples';
 import {
   ComponentDoc,
   Properties,
@@ -13,21 +14,19 @@ import {
 } from '../components/Doc';
 import { GenericExtend } from '../utils/genericThemeExamples';
 
-export default () => (
+const AvatarPage = () => (
   <Page>
     <ComponentDoc
       name="Avatar"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-Avatar&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Avatar&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Avatar',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Avatar',
           label: 'Github',
         },
       ]}
@@ -35,8 +34,8 @@ export default () => (
       intrinsicElement="div"
       code={`<Box direction="row"  gap="small">
   <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />   
-  <Avatar background="accent-2">
-    <Icons.UserFemale color="accent-1" />
+  <Avatar background="brand">
+    <Icons.UserFemale color="text-strong" />
   </Avatar>
 </Box>`}
       isA={{
@@ -51,6 +50,13 @@ export default () => (
       }}
     >
       <Properties>
+        <Property name="a11yTitle">
+          <Description>
+            Custom label to be used by screen readers. When provided, an
+            aria-label will be added to the element.
+          </Description>
+          <GenericA11yTitle />
+        </Property>
         <Property name="size">
           <Description>A fixed size.</Description>
           <PropertyValue type="string">
@@ -249,6 +255,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default AvatarPage;
 
 export const AvatarItem = ({ name, path }) => (
   <Item name={name} path={path} center>

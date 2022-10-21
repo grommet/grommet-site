@@ -22,7 +22,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const TabsPage = () => (
   <Page>
     <ComponentDoc
       name="Tabs"
@@ -43,6 +43,7 @@ export default () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/tabs"
       description="A container with controls to show one Tab at a time"
       intrinsicElement="div"
       code={`<Tabs>
@@ -249,6 +250,24 @@ export default () => (
           <Description>Any additional style for Tabs panel.</Description>
           <GenericExtend />
         </Property>
+
+        <Property name="tabs.step">
+          <Description>
+            The number of tabs to advance or move back by when the left and
+            right arrows are visible and there is not enough room to display all
+            of the tabs on the screen. The sizes correspond to the responsive
+            breakpoint screen sizes.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`
+step: {
+  small: 1;
+  medium: 3;
+  large: 3;
+};
+            `}</Example>
+          </PropertyValue>
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
 
@@ -417,6 +436,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default TabsPage;
 
 export const TabsItem = ({ name, path }) => (
   <Item name={name} path={path} center justify="end" pad="none">

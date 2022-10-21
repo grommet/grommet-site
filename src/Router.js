@@ -2,7 +2,7 @@
 // to avoid dependencies on react-router, which doesn't appear to
 // be keeping up with React changes.
 
-import React, { Children } from 'react';
+import React, { Children, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 export const RouterContext = React.createContext({});
@@ -40,8 +40,13 @@ export const Router = ({ children, initialPath }) => {
     }
   };
 
+  const contextValue = useMemo(
+    () => ({ path, search, go }),
+    [path, search, go],
+  );
+
   return (
-    <RouterContext.Provider value={{ path, search, go }}>
+    <RouterContext.Provider value={contextValue}>
       {children}
     </RouterContext.Provider>
   );
@@ -59,7 +64,7 @@ Router.defaultProps = {
 export const Routes = ({ children, notFoundRedirect }) => {
   const { path: currentPath } = React.useContext(RouterContext);
   let found;
-  Children.forEach(children, child => {
+  Children.forEach(children, (child) => {
     if (
       !found &&
       currentPath &&

@@ -21,7 +21,7 @@ import {
 } from '../components/Doc';
 import { InputStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const FileInputPage = () => (
   <Page>
     <ComponentDoc
       name="FileInput"
@@ -37,6 +37,7 @@ export default () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/fileinput"
       description="A control to input one or more files"
       intrinsicElement="input"
       code={`<FileInput
@@ -372,6 +373,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default FileInputPage;
 
 export const FileInputItem = ({ name, path }) => (
   <Item name={name} path={path} center>

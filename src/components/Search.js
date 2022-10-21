@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button, Keyboard, TextInput } from 'grommet';
+import { Button, Keyboard, TextInput } from 'grommet';
 import { Search as SearchIcon } from 'grommet-icons';
 import { structure, nameToPath } from '../structure';
 import { RouterContext } from '../Router';
 
 const allSuggestions = structure.sections
-  .map(section => (section.components || []).concat(section.name))
-  .concat(structure.externals.map(e => e.name))
+  .map((section) => (section.components || []).concat(section.name))
+  .concat(structure.externals.map((e) => e.name))
   .reduce((acc, val) => acc.concat(val), [])
   .sort();
 
@@ -23,14 +23,14 @@ const Search = ({ open, setOpen }) => {
     }
   }, [open]);
 
-  const onChange = event => {
+  const onChange = (event) => {
     const {
       target: { value: nextValue },
     } = event;
     let nextSuggestions;
     if (nextValue) {
       const regexp = new RegExp(nextValue, 'i');
-      nextSuggestions = allSuggestions.filter(c => regexp.test(c));
+      nextSuggestions = allSuggestions.filter((c) => regexp.test(c));
     } else {
       nextSuggestions = allSuggestions;
     }
@@ -47,7 +47,7 @@ const Search = ({ open, setOpen }) => {
         go(nameToPath(suggestions[0]));
       } else {
         const matches = allSuggestions.filter(
-          c => c.toLowerCase() === value.toLowerCase(),
+          (c) => c.toLowerCase() === value.toLowerCase(),
         );
         if (matches.length === 1) {
           go(nameToPath(matches[0]));
@@ -56,7 +56,7 @@ const Search = ({ open, setOpen }) => {
     }
   };
 
-  const onSelect = event => {
+  const onSelect = (event) => {
     go(nameToPath(event.suggestion));
   };
 
@@ -90,21 +90,12 @@ const Search = ({ open, setOpen }) => {
 
   return (
     <Button
-      plain
+      icon={<SearchIcon />}
+      hoverIndicator
       onClick={() => {
         setOpen(true);
       }}
-    >
-      {({ hover }) => (
-        <Box
-          round="xlarge"
-          pad="small"
-          background={hover ? 'active' : undefined}
-        >
-          <SearchIcon />
-        </Box>
-      )}
-    </Button>
+    />
   );
 };
 

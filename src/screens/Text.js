@@ -21,30 +21,28 @@ import {
 } from '../components/Doc';
 import { EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const TextPage = () => (
   <Page>
     <ComponentDoc
       name="Text"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Text',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Text',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/foundation/typography#text"
       description="Arbitrary text"
       intrinsicElement="span"
       code="<Text>simple text</Text>"
@@ -300,6 +298,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default TextPage;
 
 export const TextItem = ({ name, path }) => (
   <Item name={name} path={path} center>

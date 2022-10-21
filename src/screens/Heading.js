@@ -23,7 +23,7 @@ import {
 } from '../components/Doc';
 import { EdgeStyle, BreakpointStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const HeadingPage = () => (
   <Page>
     <ComponentDoc
       name="Heading"
@@ -32,21 +32,19 @@ export default () => (
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
-          url:
-            'https://storybook.grommet.io/?selectedKind=Type-Heading&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Type-Heading&full=0&stories=1&panelRight=0',
         },
         {
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Heading',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Heading',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/foundation/typography#heading"
       description="Heading text structured in levels"
       intrinsicElement={['h1', 'h2', 'h3', 'h4']}
       code={`<Heading margin="none">Chapter 1</Heading>`}
@@ -125,6 +123,34 @@ export default () => (
           <GenericBoolTrue />
         </Property>
 
+        <Property name="overflowWrap">
+          <Description>
+            Specifies whether line breaks should be inserted within an otherwise
+            unbreakable string, such as long word or URL, to prevent text from
+            overflowing its container.
+          </Description>
+          <PropertyValue type="string">
+            <Description>
+              "normal" specifies that line breaks may only occur at normal
+              string breakpoints, such as a space or hyphen.
+            </Description>
+            <Description>
+              "anywhere" and "break-word" both prevent text from overflowing by
+              allowing strings to break at any point.
+            </Description>
+            <Description>
+              They differ in how their min-content widths are calculated,
+              affecting how they are treated in flex layouts such a Box and
+              Grid. "anywhere" is the most flexible, its min-content width is
+              equal to width longest word in the string. "break-word" prefers to
+              occupy the intrinsic width of the string.
+            </Description>
+            <Example>"normal"</Example>
+            <Example>"anywhere"</Example>
+            <Example defaultValue>"break-word"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="size">
           <Description>
             The font size is primarily driven by the chosen tag. But, it can be
@@ -157,6 +183,19 @@ export default () => (
             is too long to all fit.
           </Description>
           <GenericBoolFalse />
+        </Property>
+
+        <Property name="weight">
+          <Description>Font weight</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"normal"</Example>
+            <Example>"bold"</Example>
+            <Example>"lighter"</Example>
+            <Example>"bolder"</Example>
+          </PropertyValue>
+          <PropertyValue type="number">
+            <Example>300</Example>
+          </PropertyValue>
         </Property>
       </Properties>
 
@@ -369,6 +408,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default HeadingPage;
 
 export const HeadingItem = ({ name, path }) => (
   <Item name={name} path={path} center>

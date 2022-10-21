@@ -19,30 +19,28 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const AccordionPage = () => (
   <Page>
     <ComponentDoc
       name="Accordion"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Accordion&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Accordion&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Accordion',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Accordion',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/accordion"
       description="An accordion containing collapsible panels"
       intrinsicElement="div"
       code={`<Accordion>
@@ -183,6 +181,39 @@ export default () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="accordion.hover.background">
+          <Description>
+            The background of the accordion panel when hovered.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"background-contrast"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>Any supported Box background.</Description>
+            <Example>
+              {`
+{
+  color: "neutral-1",
+  dark: true,
+  opacity: true,
+  position: "bottom",
+  repeat: "no-repeat",
+  size: "cover",
+  image: "url(//my.com/assets/img.png)"
+}
+              `}
+            </Example>
+          </PropertyValue>
+        </Property>
         <Property name="accordion.hover.heading.color">
           <Description>
             The text color of the heading when hovered. Backward compatible with
@@ -320,6 +351,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default AccordionPage;
 
 export const AccordionItem = ({ name, path }) => (
   <Item name={name} path={path} center>

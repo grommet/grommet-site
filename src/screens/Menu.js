@@ -22,30 +22,28 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const MenuPage = () => (
   <Page>
     <ComponentDoc
       name="Menu"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Menu&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Menu&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Menu',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Menu',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/menu"
       description="A control that opens a Drop containing plain Buttons"
       intrinsicElement="button"
       code={`<Menu
@@ -207,7 +205,35 @@ export default () => (
             be any Button prop, for example: `label`, `onClick`, and `href`.
           </Description>
           <PropertyValue type="array[object]">
-            <Example> {`[{}, {}]`} </Example>
+            <Example>
+              {`[
+  {
+    label: 'Item 1',
+    onClick: () => {},
+  }, 
+  {
+    label: <Box alignSelf="center">Github</Box>,
+    icon: (<Github />),
+  }
+]`}
+            </Example>
+          </PropertyValue>
+          <PropertyValue type="array[array[object]]">
+            <Description>
+              Items can be defined as an array of arrays of objects to create
+              groups of Menu items.
+            </Description>
+            <Example>
+              {`[
+  [
+    { label: 'Item 1' },
+    { label: 'Item 2' },
+  ], 
+  [
+    { label: 'Item 3' },
+  ]
+]`}
+            </Example>
           </PropertyValue>
         </Property>
 
@@ -271,22 +297,8 @@ export default () => (
               An object with a color for dark and light modes.
             </Description>
             <Example defaultValue>
-              {`{ dark: "accent-1", light: "brand" }`}
+              {`{ dark: "graph-0", light: "brand" }`}
             </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="menu.icons.color">
-          <Description>The color to use for the icon.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"control"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -316,9 +328,80 @@ export default () => (
           <GenericExtend />
         </Property>
 
+        <Property name="menu.group.container">
+          <Description>
+            Any valid Box props for the container around grouped items.
+          </Description>
+          <PropertyValue defaultValue type="object">
+            <Example>
+              {`{
+  pad: {
+    vertical: 'xsmall',
+  }
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.group.separator.color">
+          <Description>
+            The color of the separator line between grouped items.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"border"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "light-4", light: "dark-3" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.group.separator.pad">
+          <Description>
+            The padding around the separator line between grouped items.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+          <PropertyValue type="object" defaultValue>
+            <Example>
+              {`{
+  horizontal: 'small',
+  vertical: 'none'
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.group.separator.size">
+          <Description>
+            The thickness of the separator line between grouped items.
+          </Description>
+          <PropertyValue defaultValue type="string">
+            <Example>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.icons.color">
+          <Description>The color to use for the icon.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example defaultValue>"control"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="menu.icons.down">
           <Description>
-            The icon to show to the right of the label when menu is closed.
+            The icon to show to the right of the label when Menu is closed.
           </Description>
           <PropertyValue type="element">
             <Example defaultValue>{`<FormDown />`}</Example>
@@ -327,16 +410,51 @@ export default () => (
 
         <Property name="menu.icons.up">
           <Description>
-            The icon to show to the right of the label when menu is opened.
+            The icon to show to the right of the label when Menu is opened.
           </Description>
           <PropertyValue type="element">
             <Example>{`<FormUp />`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item">
+          <Description>Any valid Button props for the menu items.</Description>
+          <PropertyValue type="object">
+            <Example>{`{ align: 'start' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item.gap">
+          <Description>The gap between the label and icon.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item.justify">
+          <Description>
+            How to align the contents within the button.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"around"</Example>
+            <Example>"between"</Example>
+            <Example>"center"</Example>
+            <Example>"end"</Example>
+            <Example>"evenly"</Example>
+            <Example>"start"</Example>
+            <Example>"stretch"</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
+
+export default MenuPage;
 
 export const MenuItem = ({ name, path }) => (
   <Item name={name} path={path} center>

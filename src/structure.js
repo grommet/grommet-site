@@ -11,6 +11,8 @@ export const structure = {
         'Header',
         'Layer',
         'Main',
+        'Page',
+        'PageHeader',
         'Sidebar',
         'Stack',
       ],
@@ -21,6 +23,9 @@ export const structure = {
     },
     {
       name: 'Color',
+    },
+    {
+      name: 'Background',
     },
     {
       name: 'Controls',
@@ -49,6 +54,7 @@ export const structure = {
         'RangeInput',
         'RangeSelector',
         'Select',
+        'SelectMultiple',
         'TextArea',
         'TextInput',
         'FormField',
@@ -98,7 +104,7 @@ export const structure = {
 
 export const nameToPath = (name) => {
   const section = structure.sections.filter((s) => s.name === name)[0];
-  if (section && name !== 'Color') {
+  if (section && name !== 'Color' && name !== 'Background') {
     return `/components#${name}`;
   }
   const external = structure.externals.filter((e) => e.name === name)[0];

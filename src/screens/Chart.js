@@ -23,27 +23,24 @@ import {
 } from '../components/Doc';
 import { EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const ChartPage = () => (
   <Page>
     <ComponentDoc
       name="Chart"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-Chart&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Chart&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/chart&module=%2Fsrc%2FChart.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/chart&module=%2Fsrc%2FChart.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Chart',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Chart',
           label: 'Github',
         },
       ]}
@@ -117,7 +114,7 @@ export default () => (
             A color identifier to use for the graphic color.
           </Description>
           <PropertyValue type="string">
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
@@ -389,7 +386,7 @@ export default () => (
           <Description>Color of the Chart.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
@@ -420,7 +417,7 @@ export default () => (
   "black": "#000000",
   "border": { "dark": "rgba(255, 255, 255, 0.33)", "light": "rgba(0, 0, 0, 0.33)" },
   "brand": "#7D4CDB",
-  "control": { "dark": "accent-1", "light": "brand" },
+  "control": { "dark": "graph-0", "light": "brand" },
   "focus": "#6FFFB0",
   "graph-0": "accent-1",
   "graph-1": "neutral-1",
@@ -592,6 +589,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ChartPage;
 
 const CHART_VALUES = [
   { value: [4, 5], label: '4' },

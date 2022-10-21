@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button } from 'grommet';
+import { Anchor, Box, Button } from 'grommet';
 import { FormDown } from 'grommet-icons';
 import Page from '../components/Page';
 import Item from './Components/Item';
@@ -19,27 +19,24 @@ import {
   GenericBoolFalse,
 } from '../utils/genericPropExamples';
 
-export default () => (
+const DropButtonPage = () => (
   <Page>
     <ComponentDoc
       name="DropButton"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-DropButton&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-DropButton&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dropbutton&module=%2Fsrc%2FDropButton.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dropbutton&module=%2Fsrc%2FDropButton.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/DropButton',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DropButton',
           label: 'Github',
         },
       ]}
@@ -47,11 +44,14 @@ export default () => (
       intrinsicElement="button"
       code={`<DropButton
   label="Fancy Selector"
-  dropAlign={{ top: 'bottom', right: 'right' }}
   dropContent={
     <Box pad="large" background="light-2" />
   }
 />`}
+      isA={{
+        base: 'Button',
+        path: '/button',
+      }}
     >
       <Properties>
         <Property name="a11yTitle">
@@ -90,6 +90,22 @@ export default () => (
         <Property name="dropAlign">
           <Description>
             How to align the drop with respect to the button.
+          </Description>
+          <Description>
+            To prevent creating a new object on each render, the align property
+            should be persistent, either as a static constant outside of the
+            render function or memo-ized using hooks.
+          </Description>
+          <Description disableMarkdown>
+            For more guidance on when and how to memoize,
+            <Anchor href="https://reactjs.org/docs/hooks-reference.html#usememo">
+              read the React documentation on the useMemo hook
+            </Anchor>
+            . For using a static constant, see our
+            <Anchor href="https://storybook.grommet.io/?path=/story/controls-dropbutton-simple--simple">
+              DropButton component Storybook examples
+            </Anchor>
+            .
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -155,6 +171,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DropButtonPage;
 
 export const DropButtonItem = ({ name, path }) => (
   <Item name={name} path={path} center>

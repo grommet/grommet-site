@@ -22,27 +22,24 @@ import {
 } from '../components/Doc';
 import { IconColor, EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const CalendarPage = () => (
   <Page>
     <ComponentDoc
       name="Calendar"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-Calendar&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Calendar&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/calendar&module=%2Fsrc%2FCalendar.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/calendar&module=%2Fsrc%2FCalendar.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Calendar',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Calendar',
           label: 'Github',
         },
       ]}
@@ -495,12 +492,14 @@ export default () => (
   </Page>
 );
 
+export default CalendarPage;
+
 export const CalendarItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Box flex={false} gap="xsmall">
-      {[0, 1, 2, 3, 4].map(week => (
+      {[0, 1, 2, 3, 4].map((week) => (
         <Box key={week * 100} flex direction="row" gap="xsmall">
-          {[0, 1, 2, 3, 4, 5, 6].map(day => (
+          {[0, 1, 2, 3, 4, 5, 6].map((day) => (
             <Box
               key={week * 100 + day * 10}
               flex={false}

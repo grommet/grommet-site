@@ -23,7 +23,7 @@ import {
 } from '../components/Doc';
 import { FocusStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const RangeInputPage = () => (
   <Page>
     <ComponentDoc
       name="RangeInput"
@@ -44,6 +44,7 @@ export default () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/rangeinput"
       description="A slider control to input a value within a fixed range"
       intrinsicElement="input"
       code={`function Example() {
@@ -87,7 +88,7 @@ export default () => (
             <Example>
               {`[
   { value: 3, color: '#FF0000', opacity: 0.5 },
-  { value: 7, color: { light: 'accent-3', dark: 'brand' } },
+  { value: 7, color: { light: 'control', dark: 'brand' } },
   { value: 10, color: '#00FF00' },
 ]`}
             </Example>
@@ -290,6 +291,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default RangeInputPage;
 
 export const RangeInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad="large">

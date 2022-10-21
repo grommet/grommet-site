@@ -27,7 +27,7 @@ import {
 } from '../components/Doc';
 import { EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const CarouselPage = () => (
   <Page>
     <ComponentDoc
       name="Carousel"
@@ -277,6 +277,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default CarouselPage;
 
 export const CarouselItem = ({ name, path }) => (
   <Item name={name} path={path} center pad="none">

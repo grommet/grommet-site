@@ -28,30 +28,28 @@ import {
   PlaceholderStyle,
 } from '../utils/themeDocUtils';
 
-export default () => (
+const MaskedInputPage = () => (
   <Page>
     <ComponentDoc
       name="MaskedInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-MaskedInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-MaskedInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/maskedinput&module=%2Fsrc%2FMaskedInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/maskedinput&module=%2Fsrc%2FMaskedInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/MaskedInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/MaskedInput',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/maskedinput"
       description="An input field with formalized syntax"
       intrinsicElement="input"
       code={`<MaskedInput
@@ -159,7 +157,9 @@ export default () => (
               If a regexp is provided, it should allow both the final full
               string element as well as partial strings as the user types
               characters one by one. When using regexp to match number values
-              make sure that the option values are numbers as well.
+              make sure that the option values are numbers as well. If the
+              `options` prop is specified `restrictToOptions` can be set to
+              false to allow input that differs from the items in `options`.
             </Description>
             <Example>
               {`
@@ -169,7 +169,8 @@ export default () => (
     fixed: "string",
     options: [string] | [number],
     regexp: {},
-    placeholder: "string"
+    placeholder: "string",
+    restrictToOptions: true
   }
 ]
             `}
@@ -284,6 +285,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default MaskedInputPage;
 
 export const MaskedInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>

@@ -67,7 +67,7 @@ export const GlobalAnimation = () => (
 
 export const GlobalBorderSize = () => (
   <PropertyValue type="object">
-    <Example>
+    <Example defaultValue>
       {`
 {
   xsmall: '1px',

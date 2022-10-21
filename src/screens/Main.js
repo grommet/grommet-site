@@ -4,24 +4,23 @@ import Page from '../components/Page';
 import Item from './Components/Item';
 import { ComponentDoc } from '../components/Doc';
 
-export default () => (
+const MainPage = () => (
   <Page>
     <ComponentDoc
       name="Main"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Layout-Main&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Main&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Main',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Main',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/main"
       description="main content of a document"
       isA={{
         base: 'Box',
@@ -40,6 +39,8 @@ export default () => (
     />
   </Page>
 );
+
+export default MainPage;
 
 export const MainItem = ({ name, path }) => (
   <Item name={name} path={path}>

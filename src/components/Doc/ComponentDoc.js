@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Anchor, Box, Paragraph, Text } from 'grommet';
+import { Anchor, Box, Notification, Paragraph, Text } from 'grommet';
 import { Github } from 'grommet-icons';
 import Header from '../Header';
 import RoutedAnchor from '../RoutedAnchor';
@@ -18,6 +18,8 @@ export const ComponentDoc = ({
   isA, // used when component is a version of a html tag
   name,
   pageTitle,
+  designSystemLink,
+  stable,
 }) => {
   const properties = [];
   const themeDoc = [];
@@ -48,6 +50,22 @@ export const ComponentDoc = ({
         <title>{pageTitle || name}</title>
         <meta name="description" content={description} />
       </Helmet>
+      {stable && (
+        <Box pad={{ bottom: 'medium' }}>
+          <Notification
+            background="light-3"
+            status="info"
+            actions={[
+              {
+                label: 'stable branch.',
+                href: '/stablebranch',
+                target: '_blank',
+              },
+            ]}
+            message={`New! ${name} is in beta, test it out and let us know what you think. This component is available on the`}
+          />
+        </Box>
+      )}
       <Box align={align}>
         <Header align={align} label={name} summary={description} details="" />
 
@@ -57,7 +75,7 @@ export const ComponentDoc = ({
           <Box margin={{ vertical: 'medium' }}>
             {Array.isArray(availableAt) ? (
               <Box alignSelf="center" direction="row-responsive" gap="large">
-                {availableAt.map(at => (
+                {availableAt.map((at) => (
                   <Anchor
                     key={at.url}
                     href={at.url}
@@ -79,6 +97,20 @@ export const ComponentDoc = ({
         )}
       </Box>
 
+      {designSystemLink && (
+        <Notification
+          message="Using Grommet for HPE?"
+          status="info"
+          actions={[
+            {
+              label: `See ${name} examples and guidance.`,
+              href: designSystemLink,
+              target: '_blank',
+            },
+          ]}
+        />
+      )}
+
       {isA && (
         <Box
           margin={{ top: 'large' }}
@@ -92,7 +124,7 @@ export const ComponentDoc = ({
           </Paragraph>
           <Box as="ul" alignSelf="start">
             {isA.defaultProps &&
-              Object.keys(isA.defaultProps).map(key => (
+              Object.keys(isA.defaultProps).map((key) => (
                 <Box
                   key={key}
                   as="li"
@@ -108,15 +140,11 @@ export const ComponentDoc = ({
           </Box>
         </Box>
       )}
-
       {additionalChildren}
-
       {properties}
-
       {intrinsicElement && (
         <DomProps name={name} intrinsicElement={intrinsicElement} />
       )}
-
       {themeDoc}
     </Box>
   );
@@ -150,6 +178,8 @@ ComponentDoc.propTypes = {
   }),
   name: PropTypes.string.isRequired,
   pageTitle: PropTypes.string,
+  designSystemLink: PropTypes.string,
+  stable: PropTypes.bool,
 };
 
 ComponentDoc.defaultProps = {
@@ -161,4 +191,6 @@ ComponentDoc.defaultProps = {
   intrinsicElement: undefined,
   isA: undefined,
   pageTitle: undefined,
+  designSystemLink: undefined,
+  stable: false,
 };

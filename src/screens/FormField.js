@@ -7,6 +7,7 @@ import {
   GenericA11yTitle,
   GenericBool,
   GenericMargin,
+  GenericPad,
   SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
 
@@ -21,7 +22,7 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const FormFieldPage = () => (
   <Page>
     <ComponentDoc
       name="FormField"
@@ -284,6 +285,11 @@ export default () => (
           <PropertyValue type="string">
             <Example defaultValue>"bottom"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="formField.checkBox.pad">
+          <Description>The CheckBox pad when wrapped in FormField.</Description>
+          <GenericPad />
         </Property>
 
         <Property name="formField.content.margin">
@@ -686,6 +692,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default FormFieldPage;
 
 export const FormFieldItem = ({ name, path }) => (
   <Item name={name} path={path} center>

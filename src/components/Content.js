@@ -8,6 +8,7 @@ import About from '../screens/About';
 import Anchor from '../screens/Anchor';
 import Avatar from '../screens/Avatar';
 import AnnounceContext from '../screens/AnnounceContext';
+import Background from '../screens/Background';
 import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
@@ -50,15 +51,17 @@ import Meter from '../screens/Meter';
 import NameValueList from '../screens/NameValueList';
 import Nav from '../screens/Nav';
 import Notification from '../screens/Notification';
+import Page from '../screens/Page';
+import PageHeader from '../screens/PageHeader';
 import Pagination from '../screens/Pagination';
 import Paragraph from '../screens/Paragraph';
-import Play from '../screens/Play';
 import RadioButton from '../screens/RadioButton';
 import RadioButtonGroup from '../screens/RadioButtonGroup';
 import RangeInput from '../screens/RangeInput';
 import RangeSelector from '../screens/RangeSelector';
 import ResponsiveContext from '../screens/ResponsiveContext';
 import Select from '../screens/Select';
+import SelectMultiple from '../screens/SelectMultiple';
 import SkipLinks from '../screens/SkipLinks';
 import Sidebar from '../screens/Sidebar';
 import Spinner from '../screens/Spinner';
@@ -71,7 +74,6 @@ import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
 import Tip from '../screens/Tip';
-import Try from '../screens/Try';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
@@ -79,7 +81,9 @@ import WorldMap from '../screens/WorldMap';
 import Browsers from '../screens/Docs/Browsers';
 import Functions from '../screens/Docs/Functions';
 import GettingStarted from '../screens/Docs/GettingStarted';
+import GlobalTheme from '../screens/Docs/GlobalTheme';
 import Resources from '../screens/Docs/Resources';
+import StableBranch from '../screens/Docs/Stable';
 
 // NOTE: This commented out code illustrates how to code-split per-screen
 // class DynamicImport extends Component {
@@ -109,7 +113,7 @@ import Resources from '../screens/Docs/Resources';
 //   'Heading', 'Home', 'Image', 'InfiniteScroll', 'Keyboard', 'Layer',
 //   'Markdown', 'Menu', 'Meter', 'Paragraph', 'RadioButton',
 //   'RangeInput', 'RangeSelector', 'Responsive', 'Select', 'SkipLinks', 'Stack',
-//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Try', 'Use',
+//   'Tabs', 'Table', 'Tag', 'Text', 'TextArea', 'TextInput', 'Use',
 //   'Video', 'WorldMap'].forEach((name) => {
 //   Screens[name] = props => (
 //     <DynamicImport load={() => import(`../screens/${name}`)}>
@@ -124,13 +128,10 @@ import Resources from '../screens/Docs/Resources';
 //   );
 // });
 
-export default () => (
+const Content = () => (
   <Routes notFoundRedirect="/">
     <Route exact path="/" component={Home} />
 
-    <Route exact path="/play" component={Play} />
-    <Route exact path="/theme" component={Try} />
-    <Route exact path="/try" component={Try} />
     <Route exact path="/start" component={Use} />
     <Route exact path="/use" component={Use} />
     <Route exact path="/components" component={Components} />
@@ -142,6 +143,7 @@ export default () => (
     <Route exact path="/anchor" component={Anchor} />
     <Route exact path="/avatar" component={Avatar} />
     <Route exact path="/announcecontext" component={AnnounceContext} />
+    <Route exact path="/background" component={Background} />
     <Route exact path="/box" component={Box} />
     <Route exact path="/button" component={Button} />
     <Route exact path="/calendar" component={Calendar} />
@@ -181,6 +183,8 @@ export default () => (
     <Route exact path="/namevaluelist" component={NameValueList} />
     <Route exact path="/nav" component={Nav} />
     <Route exact path="/notification" component={Notification} />
+    <Route exact path="/page" component={Page} />
+    <Route exact path="/pageheader" component={PageHeader} />
     <Route exact path="/pagination" component={Pagination} />
     <Route exact path="/paragraph" component={Paragraph} />
     <Route exact path="/radiobutton" component={RadioButton} />
@@ -189,6 +193,7 @@ export default () => (
     <Route exact path="/rangeselector" component={RangeSelector} />
     <Route exact path="/responsivecontext" component={ResponsiveContext} />
     <Route exact path="/select" component={Select} />
+    <Route exact path="/selectmultiple" component={SelectMultiple} />
     <Route exact path="/sidebar" component={Sidebar} />
     <Route exact path="/skiplinks" component={SkipLinks} />
     <Route exact path="/spinner" component={Spinner} />
@@ -207,9 +212,13 @@ export default () => (
     <Route exact path="/browsers" component={Browsers} />
     <Route exact path="/functions" component={Functions} />
     <Route exact path="/starter" component={GettingStarted} />
+    <Route exact path="/globaltheme" component={GlobalTheme} />
     <Route exact path="/resources" component={Resources} />
+    <Route exact path="/stablebranch" component={StableBranch} />
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
   </Routes>
 );
+
+export default Content;

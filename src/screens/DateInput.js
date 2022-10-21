@@ -1,5 +1,5 @@
 import React from 'react';
-import { DateInput } from 'grommet';
+import { Box, DateInput } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -16,30 +16,28 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const DateInputPage = () => (
   <Page>
     <ComponentDoc
       name="DateInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-DateInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-DateInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dateinput&module=%2Fsrc%2FDateInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dateinput&module=%2Fsrc%2FDateInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/DateInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DateInput',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/dateinput"
       description="A control to input a single date or a date range"
       intrinsicElement="div"
       code={`<DateInput
@@ -107,6 +105,13 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="icon">
+          <Description>The icon to show to open the DateInput.</Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<Calendar />`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="id">
           <Description>The id of the input.</Description>
           <PropertyValue type="string">
@@ -140,6 +145,14 @@ export default () => (
           <PropertyValue type="string">
             <Example>"name"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="reverse">
+          <Description>
+            Whether the icon should be reversed so that the icon is at the
+            beginning of the input.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="onChange">
@@ -197,6 +210,13 @@ export default () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="dateInput.container.round">
+          <Description>How much to round the corners.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"xxsmall"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="dateInput.icon.size">
           <Description>The size of the Calendar icon</Description>
           <PropertyValue type="string">
@@ -208,9 +228,13 @@ export default () => (
   </Page>
 );
 
+export default DateInputPage;
+
 export const DateInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
-    <DateInput format="mm/dd/yyyy" disabled />
+    <Box>
+      <DateInput format="mm/dd/yyyy" disabled />
+    </Box>
   </Item>
 );
 

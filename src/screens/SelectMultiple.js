@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from 'grommet';
+import { SelectMultiple } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -23,36 +23,29 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-const SelectPage = () => (
+const SelectMultiplePage = () => (
   <Page>
     <ComponentDoc
-      name="Select"
+      name="SelectMultiple"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-SelecMultiplet&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js',
-          badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
-          label: 'CodeSandbox',
-        },
-        {
-          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Select',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/SelectMultiple',
           label: 'Github',
         },
       ]}
-      designSystemLink="https://design-system.hpe.design/components/select"
-      description="A control to select a value, with optional search"
+      designSystemLink="https://design-system.hpe.design/components/selectmultiple"
+      description="A control to select multiple values, with optional inline display"
       code={`function Example() {
-  const [value, setValue] = React.useState('medium');
   return (
-    <Select
+    <SelectMultiple
+      placeholder="Select"
       options={['small', 'medium', 'large']}
-      value={value}
-      onChange={({ option }) => setValue(option)}
     />
   );
 }`}
@@ -102,43 +95,8 @@ const SelectPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="clear">
-          <Description>
-            Whether to provide a button option to clear selections.
-          </Description>
-          <GenericBoolFalse />
-          <PropertyValue type="object">
-            <Example>
-              {`
-{
-  position: "top" | "bottom",
-  label: "string"
-}
-            `}
-            </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="closeOnChange">
-          <Description>
-            Whether to close the drop when a selection is made.
-          </Description>
-          <GenericBoolTrue />
-        </Property>
-
         <Property name="defaultValue">
-          <Description>
-            Initially selected value. This can be an array when multiple.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"value1"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{}`}</Example>
-          </PropertyValue>
-          <PropertyValue type="number">
-            <Example>1</Example>
-          </PropertyValue>
+          <Description>Initially selected value.</Description>
           <PropertyValue type="array">
             <Description>An array of strings, objects, or numbers.</Description>
             <Example>["string", ...]</Example>
@@ -215,7 +173,7 @@ const SelectPage = () => (
           <Description>
             Target where the options drop will be aligned to. This should be a
             React reference. Typically, this is not required as the drop will be
-            aligned to the Select itself by default.
+            aligned to the SelectMultiple itself by default.
           </Description>
           <PropertyValue type="object">
             <Example>ref.current</Example>
@@ -236,6 +194,18 @@ const SelectPage = () => (
           <GenericBool />
         </Property>
 
+        <Property name="help">
+          <Description>
+            Optional help text to display above the options in the drop.
+          </Description>
+          <PropertyValue type="string">
+            <Example>help text</Example>
+          </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Box background='gray'> help text </Box>`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="icon">
           <Description>
             A custom icon to be used when rendering the select. You can use
@@ -250,26 +220,12 @@ const SelectPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="labelKey">
+        <Property name="limit">
           <Description>
-            When the options array contains objects, this property indicates how
-            to retrieve the label for each option. The label is what is
-            displayed to the user in the options list drop down and for the
-            selected option itself.
+            The maximum number of options that can be selected.
           </Description>
-          <PropertyValue type="string">
-            <Description>
-              If a string is provided, it is used as the key to retrieve a
-              property of an option object, which should be a string.
-            </Description>
-            <Example>"key"</Example>
-          </PropertyValue>
-          <PropertyValue type="function">
-            <Description>
-              If a function is provided, it is called with the option and should
-              return a string or a React node.
-            </Description>
-            <Example>{`() => {}`}</Example>
+          <PropertyValue type="number">
+            <Example>5</Example>
           </PropertyValue>
         </Property>
 
@@ -278,15 +234,6 @@ const SelectPage = () => (
           <PropertyValue type="object">
             <Example>{`{ multiple: "string" }`}</Example>
           </PropertyValue>
-        </Property>
-
-        <Property name="multiple">
-          <Description>
-            Whether to allow multiple options to be selected. When multiple is
-            true, 'value' should be an array of selected options and 'options'
-            should be an array of possible options.
-          </Description>
-          <GenericBool />
         </Property>
 
         <Property name="name">
@@ -309,7 +256,7 @@ const SelectPage = () => (
 
         <Property name="onClose">
           <Description>
-            Function that will be called when the Select drop closes.
+            Function that will be called when the SelectMultiple drop closes.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
@@ -318,7 +265,7 @@ const SelectPage = () => (
 
         <Property name="onOpen">
           <Description>
-            Function that will be called when the Select drop opens.
+            Function that will be called when the SelectMultiple drop opens.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
@@ -411,7 +358,8 @@ const SelectPage = () => (
 
         <Property name="plain">
           <Description>
-            Whether this is a plain Select input with no border or padding.
+            Whether this is a plain SelectMultiple input with no border or
+            padding.
           </Description>
           <GenericBool />
         </Property>
@@ -436,18 +384,12 @@ const SelectPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="selected">
+        <Property name="showSelectedInline">
           <Description>
-            Index of the currently selected option. When multiple, the set of
-            options selected. NOTE: This is deprecated in favor of indicating
-            the selected values via the 'value' property.
+            Whether selections should be displayed at the input level of the
+            component.
           </Description>
-          <PropertyValue type="number">
-            <Example>1</Example>
-          </PropertyValue>
-          <PropertyValue type="array[number]">
-            <Example>[1, 2]</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="size">
@@ -461,31 +403,23 @@ const SelectPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="sortSelectedOnClose">
+          <Description>
+            Weather selections should be sorted with selected items displayed at
+            the top of the list after closing and reopening the drop. Note: code
+            that relies on indexes of the options shouldn't be used when
+            sortSelectedOnClose is true.
+          </Description>
+          <GenericBoolTrue />
+        </Property>
+
         <Property name="value">
           <Description>
             The currently selected value. When 'valueKey' sets 'reduce', the
             value(s) here should match what the 'valueKey' would return for the
             corresponding selected option object. Otherwise, the value should be
-            one (or multiple, when multiple = true) of the options from the
-            options array.
+            one or more of the options from the options array.
           </Description>
-          <PropertyValue type="string">
-            <Example>"option1"</Example>
-          </PropertyValue>
-          <PropertyValue type="element">
-            <Description>
-              Passing an element allows the caller to control how the value is
-              rendered. Passing an element is deprecated. Instead, use the
-              'valueLabel' property.
-            </Description>
-            <Example>{`<Element />`}</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{}`}</Example>
-          </PropertyValue>
-          <PropertyValue type="number">
-            <Example>1</Example>
-          </PropertyValue>
           <PropertyValue type="array[string]">
             <Example>["option1", "option2"]</Example>
           </PropertyValue>
@@ -585,6 +519,16 @@ const SelectPage = () => (
             <Example defaultValue>
               {`{ dark: "white", light: "black" }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="selectMultiple.maxInline">
+          <Description>
+            The maximum number of items to display at the input level when
+            showSelectedInline is true.
+          </Description>
+          <PropertyValue type="number">
+            <Example defaultValue>5</Example>
           </PropertyValue>
         </Property>
 
@@ -706,12 +650,12 @@ const SelectPage = () => (
   </Page>
 );
 
-export default SelectPage;
+export default SelectMultiplePage;
 
-export const SelectItem = ({ name, path }) => (
+export const SelectMultipleItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'large' }}>
-    <Select options={[]} placeholder="Choices" tabIndex="-1" />
+    <SelectMultiple options={[]} placeholder="Choices" tabIndex="-1" />
   </Item>
 );
 
-SelectItem.propTypes = Item.propTypes;
+SelectMultipleItem.propTypes = Item.propTypes;

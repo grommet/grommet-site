@@ -15,7 +15,7 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const GrommetPage = () => (
   <Page>
     <ComponentDoc
       name="Grommet"
@@ -70,7 +70,9 @@ export default () => (
   repeat: "no-repeat",
   size: "cover",
   image: "url(//my.com/assets/img.png)",
-  light: "string"
+  light: "string",
+  clip: "text",
+  rotate: 45
 }
               `}
             </Example>
@@ -93,6 +95,12 @@ export default () => (
               <Example>"cover"</Example>
               <Example>"contain"</Example>
               <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
             </PropOptions>
           </PropertyValue>
         </Property>
@@ -176,14 +184,15 @@ export default () => (
           </PropertyValue>
         </Property>
 
-        <Property name="themeMode">
+        <Property stable name="themeMode">
           <Description>
             Dark vs. light theme variation. Default is unspecified and left to
-            theme.
+            theme. Auto defaults to the system preferred theme mode.
           </Description>
           <PropertyValue type="string">
             <Example>"dark"</Example>
             <Example>"light"</Example>
+            <Example>"auto"</Example>
           </PropertyValue>
         </Property>
 
@@ -302,6 +311,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default GrommetPage;
 
 export const GrommetItem = ({ name, path }) => (
   <Item name={name} path={path} center>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Ad } from 'grommet-icons';
 import { Builder, BuilderBox } from '../../components/Builder';
 
-export default () => (
+const Hero = () => (
   <Builder phases={3} interval={4800} wrap>
     <BuilderBox
       alignSelf="center"
@@ -14,7 +14,7 @@ export default () => (
           phase: 1,
           props: {
             pad: 'medium',
-            background: 'light-1',
+            background: 'background-back',
             width: 'large',
             elevation: 'small',
           },
@@ -23,7 +23,7 @@ export default () => (
           phase: 2,
           props: {
             pad: 'medium',
-            background: 'light-2',
+            background: 'background-front',
             width: 'large',
             elevation: 'large',
             round: 'small',
@@ -45,7 +45,7 @@ export default () => (
       <Builder phases={12} interval={400}>
         <BuilderBox
           basis="1/3"
-          background="neutral-2"
+          background="graph-2"
           pad="medium"
           gap="medium"
           phases={[
@@ -108,7 +108,7 @@ export default () => (
         <BuilderBox
           basis="2/3"
           background="light-2"
-          border={{ side: 'top', size: 'large', color: 'neutral-2' }}
+          border={{ side: 'top', size: 'large', color: 'graph-2' }}
           pad="medium"
           gap="medium"
           phases={[
@@ -192,3 +192,5 @@ export default () => (
     </BuilderBox>
   </Builder>
 );
+
+export default Hero;

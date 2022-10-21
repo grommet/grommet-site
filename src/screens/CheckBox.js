@@ -20,30 +20,28 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const CheckBoxPage = () => (
   <Page>
     <ComponentDoc
       name="CheckBox"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-CheckBox&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-CheckBox&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkbox&module=%2Fsrc%2FCheckBox.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkbox&module=%2Fsrc%2FCheckBox.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/CheckBox',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/CheckBox',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/checkbox"
       description="A checkbox toggle control"
       intrinsicElement="input"
       code={`function Example() {
@@ -260,6 +258,11 @@ export default () => (
           <GenericColor />
         </Property>
 
+        <Property name="checkBox.hover.extend">
+          <Description>Any additional style for CheckBox hover.</Description>
+          <GenericExtend />
+        </Property>
+
         <Property name="checkBox.icon.size">
           <Description>The size of the checked icon.</Description>
           <PropertyValue type="string">
@@ -355,10 +358,17 @@ export default () => (
             <Example defaultValue>"48px"</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="formField.checkBox.pad">
+          <Description>The CheckBox pad when wrapped in FormField.</Description>
+          <GenericPad />
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
+
+export default CheckBoxPage;
 
 export const CheckBoxItem = ({ name, path }) => (
   <Item name={name} path={path} center>

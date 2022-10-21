@@ -4,7 +4,6 @@ import { structure, nameToPath } from '../../structure';
 import Page from '../../components/Page';
 import Header from '../../components/Header';
 import Section from './Section';
-import Color from './Color';
 
 import {
   AccordionItem,
@@ -49,6 +48,8 @@ import {
   NameValueListItem,
   NavItem,
   NotificationItem,
+  PageItem,
+  PageHeaderItem,
   PaginationItem,
   ParagraphItem,
   RadioButtonItem,
@@ -57,6 +58,7 @@ import {
   RangeSelectorItem,
   ResponsiveContextItem,
   SelectItem,
+  SelectMultipleItem,
   SidebarItem,
   SkipLinksItem,
   SpinnerItem,
@@ -116,6 +118,8 @@ const Items = {
   NameValueList: NameValueListItem,
   Nav: NavItem,
   Notification: NotificationItem,
+  Page: PageItem,
+  PageHeader: PageHeaderItem,
   Pagination: PaginationItem,
   Paragraph: ParagraphItem,
   RadioButton: RadioButtonItem,
@@ -124,6 +128,7 @@ const Items = {
   RangeSelector: RangeSelectorItem,
   ResponsiveContext: ResponsiveContextItem,
   Select: SelectItem,
+  SelectMultiple: SelectMultipleItem,
   Sidebar: SidebarItem,
   SkipLinks: SkipLinksItem,
   Spinner: SpinnerItem,
@@ -161,17 +166,16 @@ export default class Components extends Component {
         </Helmet>
         <Header label="Components" summary={desc} />
 
-        {structure.sections.map(({ name, components }, index) => (
-          <Section
-            ref={this.sectionRefs[name]}
-            key={name}
-            name={name}
-            index={index}
-          >
-            {name === 'Color' ? (
-              <Color index={index} />
-            ) : (
-              components.map((component) => {
+        {structure.sections
+          .filter(({ name }) => name !== 'Color' && name !== 'Background')
+          .map(({ name, components }, index) => (
+            <Section
+              ref={this.sectionRefs[name]}
+              key={name}
+              name={name}
+              index={index}
+            >
+              {components.map((component) => {
                 const Item = Items[component];
                 return (
                   <Item
@@ -180,10 +184,9 @@ export default class Components extends Component {
                     path={nameToPath(component)}
                   />
                 );
-              })
-            )}
-          </Section>
-        ))}
+              })}
+            </Section>
+          ))}
       </Page>
     );
   }

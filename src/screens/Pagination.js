@@ -19,24 +19,23 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const PaginationPage = () => (
   <Page>
     <ComponentDoc
       name="Pagination"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Pagination&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Pagination&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Pagination',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Pagination',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/pagination"
       description="A control that enables selection of a single page from a 
  range of pages"
       intrinsicElement="nav"
@@ -287,6 +286,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default PaginationPage;
 
 export const PaginationItem = ({ name, path }) => (
   <Item name={name} path={path} center>

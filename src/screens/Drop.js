@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'grommet';
+import { Anchor, Box } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -23,21 +23,19 @@ import {
 } from '../components/Doc';
 import { EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const DropPage = () => (
   <Page>
     <ComponentDoc
       name="Drop"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Controls-Drop&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Controls-Drop&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Drop',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Drop',
           label: 'Github',
         },
       ]}
@@ -50,6 +48,22 @@ export default () => (
             How to align the drop with respect to the target element. Not
             specifying a vertical or horizontal alignment will cause it to be
             aligned in the center.
+          </Description>
+          <Description>
+            To prevent creating a new object on each render, the align property
+            should be persistent, either as a static constant outside of the
+            render function or memo-ized using hooks.
+          </Description>
+          <Description disableMarkdown>
+            For more guidance on when and how to memoize,
+            <Anchor href="https://reactjs.org/docs/hooks-reference.html#usememo">
+              read the React documentation on the useMemo hook
+            </Anchor>
+            . For using a static constant, see our
+            <Anchor href="https://storybook.grommet.io/?path=/story/controls-drop-simple--simple">
+              Drop component Storybook examples
+            </Anchor>
+            .
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -87,7 +101,9 @@ export default () => (
   opacity: true,
   repeat: "no-repeat",
   size: "cover",
-  light: "string"
+  light: "string",
+  clip: "text",
+  rotate: 45
 }
               `}
             </Example>
@@ -112,6 +128,12 @@ export default () => (
               <Example>"contain"</Example>
               <Example>"string"</Example>
             </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
+            </PropOptions>
           </PropertyValue>
         </Property>
 
@@ -121,6 +143,16 @@ export default () => (
             applicable if the Drop isn't plain.
           </Description>
           <GenericElevation />
+        </Property>
+
+        <Property name="inline">
+          <Description>
+            By default, Drop is rendered using a React Portal, which places it
+            outside the current DOM hierarchy as a child of the body. Sometimes,
+            this isn't desireable and specifying inline indicates that it should
+            be rendered directly as a child of its parent comoponent.
+          </Description>
+          <GenericBool />
         </Property>
 
         <Property name="margin">
@@ -330,6 +362,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DropPage;
 
 export const DropItem = ({ name, path }) => (
   <Item name={name} path={path} center>

@@ -21,21 +21,19 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const ListPage = () => (
   <Page>
     <ComponentDoc
       name="List"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-List&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-List&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/List',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/List',
           label: 'Github',
         },
       ]}
@@ -70,17 +68,10 @@ export default () => (
         </Property>
         <Property name="defaultItemProps">
           <Description>
-            Styling applied to all list items. Object accepts any Box 
-            props. To style a specific list item, use `itemProps`.
+            Styling applied to all list items. Object accepts any Box props. To
+            style a specific list item, use `itemProps`.
           </Description>
           <Example>{`{{ background: ..., align: ... }}`}</Example>
-        </Property>
-
-        <Property name="gridArea">
-          <Description>
-            The name of the area to place this inside a parent Grid.
-          </Description>
-          <GenericGridArea />
         </Property>
 
         <Property name="margin">
@@ -155,6 +146,18 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="children">
+          <Description>
+            Function that will be called when each data item is rendered. It
+            will be passed three arguments, the individual data item, its index,
+            and an object indicating the state of the item, if any. It should
+            return a react element.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`(item, index, { active }) => <Box>...</Box>`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="data">
           <Description>Array of data objects.</Description>
           <PropertyValue type="array[string]">
@@ -170,15 +173,35 @@ export default () => (
           </PropertyValue>
         </Property>
 
-        <Property name="children">
+        <Property name="disabled">
           <Description>
-            Function that will be called when each data item is rendered. It
-            will be passed three arguments, the individual data item, its index,
-            and an object indicating the state of the item, if any. It should
-            return a react element.
+            Specified items will be styled as disabled. When combined with
+            `onClickItem`, the onClick event is also disabled.
           </Description>
+          <PropertyValue type="array">
+            <Description>
+              An array of strings. When `data` is an array of objects, the
+              string is the value of the object's key specified by `itemKey`.
+            </Description>
+            <Example>["item1", "item2"]</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="gridArea">
+          <Description>
+            The name of the area to place this inside a parent Grid.
+          </Description>
+          <GenericGridArea />
+        </Property>
+
+        <Property name="itemKey">
+          <Description>The key to apply to each item in the List.</Description>
+          <PropertyValue type="string">
+            <Description>The property name of a data object.</Description>
+            <Example>"id"</Example>
+          </PropertyValue>
           <PropertyValue type="function">
-            <Example>{`(item, index, { active }) => <Box>...</Box>`}</Example>
+            <Example>{`(item) => key-{item.id}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -190,6 +213,16 @@ export default () => (
           </Description>
           <PropertyValue type="object">
             <Example>{`{ 27: { background: ..., border: ..., pad: ... }}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onActive">
+          <Description>
+            When provided, this is called with the index of the item that the
+            user has either moused over or navigated to with their keyboard.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`(index) => {}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -249,6 +282,22 @@ export default () => (
               component.
             </Description>
             <Example>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="pinned">
+          <Description>
+            Can be used with `onOrder` to specify items that should not change
+            position in the List.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="array">
+            <Description>
+              An array of numbers or strings that correspond to items in the
+              List.
+            </Description>
+            <Example>[1, 5]</Example>
+            <Example>['item 2']</Example>
           </PropertyValue>
         </Property>
 
@@ -401,6 +450,23 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="list.item.disabled.color">
+          <Description>Font color when disabled.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"status-disabled"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="list.item.disabled.cursor">
+          <Description>CSS cursor type when disabled.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"default"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="list.item.pad">
           <Description>Pad for list items.</Description>
           <GenericBool />
@@ -422,6 +488,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ListPage;
 
 export const ListItem = ({ name, path }) => (
   <Item name={name} path={path} center>

@@ -14,7 +14,7 @@ import {
 } from '../components/Doc';
 import { GenericExtend } from '../utils/genericThemeExamples';
 
-export default () => (
+const CardPage = () => (
   <Page>
     <ComponentDoc
       name="Card"
@@ -30,6 +30,7 @@ export default () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/card"
       description="A Card is a container of information that provides access to more 
  details"
       intrinsicElement="div"
@@ -131,6 +132,8 @@ export default () => (
     />
   </Page>
 );
+
+export default CardPage;
 
 export const CardItem = ({ name, path }) => (
   <Item name={name} path={path} center pad="none">

@@ -26,27 +26,24 @@ import {
 } from '../components/Doc';
 import { EdgeStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const MeterPage = () => (
   <Page>
     <ComponentDoc
       name="Meter"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Visualizations-Meter&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Meter&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/meter&module=%2Fsrc%2FMeter.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/meter&module=%2Fsrc%2FMeter.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Meter',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Meter',
           label: 'Github',
         },
       ]}
@@ -252,7 +249,7 @@ export default () => (
         <Property name="meter.color">
           <Description>The color used for the Meter.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>"accent-1"</Example>
+            <Example defaultValue>"graph-0"</Example>
           </PropertyValue>
         </Property>
 
@@ -264,6 +261,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default MeterPage;
 
 export const MeterItem = ({ name, path }) => (
   <Item name={name} path={path} center>

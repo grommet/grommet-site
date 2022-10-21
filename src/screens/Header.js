@@ -2,26 +2,32 @@ import React from 'react';
 import { Header, Box } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { ComponentDoc } from '../components/Doc';
+import {
+  ComponentDoc,
+  Property,
+  PropertyValue,
+  Example,
+  Description,
+  Properties,
+} from '../components/Doc';
 
-export default () => (
+const HeaderPage = () => (
   <Page>
     <ComponentDoc
       name="Header"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Header&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Header',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Header',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/header"
       description="Is a Box container for introductory content"
       code={`<Header background="brand">
   <Button icon={<Icons.Home />} hoverIndicator />
@@ -39,9 +45,23 @@ export default () => (
           justify: 'between',
         },
       }}
-    />
+    >
+      <Properties>
+        <Property name="sticky">
+          <Description>
+            Whether the Header should hide when the user is scrolling down and
+            appear once the user scrolls back up.
+          </Description>
+          <PropertyValue type="string">
+            <Example>`sticky= "scrollUp"`</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
+
+export default HeaderPage;
 
 export const HeaderItem = ({ name, path }) => (
   <Item name={name} path={path}>

@@ -35,7 +35,7 @@ import {
 } from '../utils/genericThemeExamples';
 import { FocusStyle, DisabledStyle } from '../utils/themeDocUtils';
 
-export default () => (
+const ButtonPage = () => (
   <Page>
     <ComponentDoc
       name="Button"
@@ -58,6 +58,7 @@ export default () => (
       ]}
       intrinsicElement="button"
       code={`<Button primary label="label" />`}
+      designSystemLink="https://design-system.hpe.design/components/button"
     >
       <Box>
         <Paragraph size="large">
@@ -154,6 +155,13 @@ export default () => (
             The DOM tag or react component to use for the element.
           </Description>
           <GenericAs />
+          <PropertyValue type="element">
+            <Description>
+              A specific element to use, such as a router element like Link from
+              react-router-dom.
+            </Description>
+            <Example>Link</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="badge">
@@ -429,10 +437,9 @@ export default () => (
         <Property name="plain">
           <Description>
             Whether this is a plain button with no border or pad. Non plain
-            button will show both pad and border. The plain button has no border
-            and unless the icon prop exist it has no pad as well. When using the
-            kind button (i.e. button.default on the theme), the usage of plain
-            is deprecated.
+            button will show both pad and border. When using the kind button
+            (i.e. button.default on the theme), the usage of plain is
+            deprecated.
           </Description>
           <GenericBoolFalse />
         </Property>
@@ -598,14 +605,14 @@ export default () => (
           <Description>The color of the border.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
-            <Example>"accent-1"</Example>
+            <Example>"brand"</Example>
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
               An object with a color for dark and light modes.
             </Description>
             <Example defaultValue>
-              {`{ dark: "accent-1", light: "brand" }`}
+              {`{ dark: "white", light: "brand" }`}
             </Example>
           </PropertyValue>
         </Property>
@@ -672,7 +679,21 @@ export default () => (
             Adjustments to the default Button style when the Button is active.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -683,7 +704,21 @@ export default () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -694,7 +729,21 @@ export default () => (
             button.default.
           </Description>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{
+         background: string | object,
+         border: string | object | array,
+         color:  string | object,
+         font: {
+           weight: string | number,
+         },
+         icon: element,
+         padding: {
+           vertical: string,
+           horizontal: string,
+         },
+         reverse: boolean,
+         extend: any css,
+       }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -1255,6 +1304,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default ButtonPage;
 
 export const ButtonItem = ({ name, path }) => (
   <Item name={name} path={path} center>

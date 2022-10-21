@@ -22,7 +22,7 @@ import {
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericColor } from '../utils/genericThemeExamples';
 
-export default () => (
+const DataTablePage = () => (
   <Page>
     <ComponentDoc
       name="DataTable"
@@ -43,6 +43,7 @@ export default () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/datatable"
       description="A data driven table"
       intrinsicElement="table"
       code={`<DataTable
@@ -255,6 +256,19 @@ export default () => (
           </PropertyValue>
         </Property>
 
+        <Property name="disabled">
+          <Description>
+            When supplied, disables 'onClickRow' and 'onSelect' interaction for
+            the indicated rows. The values in this array should match the
+            'primaryKey' or 'columns[].primary' keyed value for the row's data
+            object.
+          </Description>
+          <PropertyValue type="array">
+            <Example>["string"]</Example>
+            <Example>[number]</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="fill">
           <Description>
             Whether the width and/or height should fill the container.
@@ -308,10 +322,15 @@ export default () => (
             that include a 'datum' property containing the data value associated
             with the clicked row. You should not include interactive elements,
             like Anchor or Button inside table cells as that can cause confusion
-            with overlapping interactive elements.
+            with overlapping interactive elements. If onSelect is being used you
+            have the option to make the whole row clickable by passing in
+            `select` to onClickRow.
           </Description>
           <PropertyValue type="function">
             <Example>{`({ datum }) => {...}`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>'select'</Example>
           </PropertyValue>
         </Property>
 
@@ -617,6 +636,26 @@ export default () => (
           <Description>How many items to render at a time.</Description>
           <PropertyValue type="number">
             <Example defaultValue>50</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="verticalAlign">
+          <Description>How to vertically align items.</Description>
+          <PropertyValue type="string">
+            <Example>"bottom"</Example>
+            <Example>"middle"</Example>
+            <Example>"top"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  header: "string",
+  body: "string",
+  footer: "string"
+}
+              `}
+            </Example>
           </PropertyValue>
         </Property>
       </Properties>
@@ -1074,6 +1113,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default DataTablePage;
 
 export const DataTableItem = ({ name, path }) => (
   <Item name={name} path={path} center>

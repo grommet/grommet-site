@@ -45,11 +45,11 @@ const WorldMapDoc = () => (
       description="A map of the world, or a continent"
       intrinsicElement="svg"
       code={`<WorldMap
-  color="neutral-1"
+  color="graph-0"
   continents={[
     {
       name: 'Africa',
-      color: 'light-5',
+      color: 'graph-1',
       onClick: (name) => {},
     },
   ]}
@@ -58,11 +58,11 @@ const WorldMapDoc = () => (
     {
       name: 'Sydney',
       location: [-33.8830555556, 151.216666667],
-      color: 'accent-2',
+      color: 'graph-2',
       onClick: (name) => {},
     },
   ]}
-  selectColor="accent-2"
+  selectColor="brand"
 />`}
     >
       <Properties>

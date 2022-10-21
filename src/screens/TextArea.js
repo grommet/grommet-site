@@ -26,30 +26,28 @@ import {
   PlaceholderStyle,
 } from '../utils/themeDocUtils';
 
-export default () => (
+const TextAreaPage = () => (
   <Page>
     <ComponentDoc
       name="TextArea"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-TextArea&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-TextArea&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textarea&module=%2Fsrc%2FTextArea.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textarea&module=%2Fsrc%2FTextArea.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/TextArea',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/TextArea',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/textarea"
       description="A control to input multiple lines of text"
       intrinsicElement="textarea"
       code={`function Example() {
@@ -223,6 +221,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default TextAreaPage;
 
 export const TextAreaItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>

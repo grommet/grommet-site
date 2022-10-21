@@ -20,7 +20,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-export default () => (
+const AnchorPage = () => (
   <Page>
     <ComponentDoc
       name="Anchor"
@@ -41,6 +41,7 @@ export default () => (
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/anchor"
       description="A text link"
       details="We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children."
       intrinsicElement="a"
@@ -212,7 +213,7 @@ export default () => (
               An object with a color for dark and light mode.
             </Description>
             <Example defaultValue>
-              <Markdown>{`{"dark": "accent-1", "light": "brand"}`}</Markdown>
+              <Markdown>{`{"dark": "black", "light": "brand"}`}</Markdown>
             </Example>
           </PropertyValue>
         </Property>
@@ -221,6 +222,23 @@ export default () => (
           <Description>The font weight of the label.</Description>
           <PropertyValue type="number">
             <Example defaultValue>600</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="anchor.gap">
+          <Description>The gap between the label and icon.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"none"</Example>
+            <Example>"xsmall"</Example>
+            <Example defaultValue>"small"</Example>
+            <Example>"medium"</Example>
+            <Example>"large"</Example>
+            <Example>"xlarge"</Example>
+            <Example>"20 px"</Example>
           </PropertyValue>
         </Property>
 
@@ -284,6 +302,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default AnchorPage;
 
 export const AnchorItem = ({ name, path }) => (
   <Item name={name} path={path} center>

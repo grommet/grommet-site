@@ -41,30 +41,28 @@ import {
   PropOptions,
 } from '../components/Doc';
 
-export default () => (
+const BoxPage = () => (
   <Page>
     <ComponentDoc
       name="Box"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Layout-Box&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Layout-Box&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/box&module=%2Fsrc%2FBox.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/box&module=%2Fsrc%2FBox.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/Box',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Box',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/box"
       description="A container that lays out its contents in one direction"
       intrinsicElement="div"
       code={`<Box
@@ -188,7 +186,9 @@ export default () => (
   position: "bottom",
   repeat: "no-repeat",
   size: "cover",
-  image: "url(//my.com/assets/img.png)"
+  image: "url(//my.com/assets/img.png)",
+  clip: "text",
+  rotate: 45
 }
               `}
             </Example>
@@ -211,6 +211,12 @@ export default () => (
               <Example>"cover"</Example>
               <Example>"contain"</Example>
               <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
             </PropOptions>
           </PropertyValue>
         </Property>
@@ -568,6 +574,9 @@ export default () => (
             The DOM tag or react component to use for the element.
           </Description>
           <GenericAs />
+          <PropertyValue type="element">
+            <Example>{`<span />`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="width">
@@ -704,6 +713,8 @@ export default () => (
     </ComponentDoc>
   </Page>
 );
+
+export default BoxPage;
 
 export const BoxItem = ({ name, path }) => (
   <Item name={name} path={path}>

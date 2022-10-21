@@ -24,30 +24,28 @@ import {
   PlaceholderStyle,
 } from '../utils/themeDocUtils';
 
-export default () => (
+const TextInputPage = () => (
   <Page>
     <ComponentDoc
       name="TextInput"
       availableAt={[
         {
-          url:
-            'https://storybook.grommet.io/?selectedKind=Input-TextInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?selectedKind=Input-TextInput&full=0&stories=1&panelRight=0',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
         },
         {
-          url:
-            'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textinput&module=%2Fsrc%2FTextInput.js',
+          url: 'https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textinput&module=%2Fsrc%2FTextInput.js',
           badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
           label: 'CodeSandbox',
         },
         {
-          url:
-            'https://github.com/grommet/grommet/tree/master/src/js/components/TextInput',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/TextInput',
           label: 'Github',
         },
       ]}
+      designSystemLink="https://design-system.hpe.design/components/textinput"
       description="A control to input a single line of text, with optional suggestions"
       intrinsicElement="input"
       code={`function Example() {
@@ -475,6 +473,8 @@ export default () => (
     </Box>
   </Page>
 );
+
+export default TextInputPage;
 
 export const TextInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>

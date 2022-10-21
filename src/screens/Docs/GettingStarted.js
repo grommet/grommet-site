@@ -13,8 +13,6 @@ Check out the getting started [tutorial](https://github.com/grommet/grommet-star
 
 New to Front-End development? Check out [Slides](https://slides.grommet.io/?id=grommet-training-eric-soderberg-hpe-com) to learn the essential development tools for grommet
 
-Learn how to work with the grommet [theme](https://github.com/grommet/grommet/wiki/Grommet-v2-theming-documentation).
-
 Explore how to incorporate [colors](https://github.com/grommet/grommet/wiki/Color-Properties) into themes & components within your application.
 
 Grommet out of the box [patterns, and starters][sandboxes].
@@ -27,10 +25,12 @@ More questions? something is missing? hit us on the [#getstarted][slack] or [#ge
 [slack]: https://slack-invite.grommet.io
 `;
 
-export default () => (
+const GettingStarted = () => (
   <Page>
     <MarkdownTemplate name={name} desc={desc}>
       {children}
     </MarkdownTemplate>
   </Page>
 );
+
+export default GettingStarted;
