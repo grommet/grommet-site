@@ -221,7 +221,10 @@ const MenuPage = () => (
           <PropertyValue type="array[array[object]]">
             <Description>
               Items can be defined as an array of arrays of objects to create
-              groups of Menu items.
+              groups of Menu items. If a menu group will only have a single
+              item, that item must still be placed within an array. There should
+              not be a mixture of arrays and objects as indexes of the outer
+              array.
             </Description>
             <Example>
               {`[
