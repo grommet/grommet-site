@@ -14,6 +14,8 @@ const content = `
   ### [browser support](${nameToPath('browsers')})
   ### [theming](${nameToPath('globaltheme')})
   ### [stable branch](${nameToPath('stablebranch')})
+  ### [colors](${nameToPath('color')})
+  ### [backgrounds](${nameToPath('background')})
 `;
 
 const Docs = () => (
