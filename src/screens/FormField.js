@@ -554,7 +554,7 @@ const FormFieldPage = () => (
             <Example>"small"</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Example defaultValue>{`{ left: "small" }`}</Example>
+            <Example defaultValue>{`{ start: "small" }`}</Example>
           </PropertyValue>
         </Property>
 
