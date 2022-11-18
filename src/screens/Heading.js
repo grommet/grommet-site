@@ -395,6 +395,16 @@ const HeadingPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="heading.skeleton">
+          <Description>
+            Any Skeleton properties which will be applied to the Heading when in
+            skeleton mode.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{ width: { min: '200px' }}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="heading.responsiveBreakpoint">
           <Description>
             The breakpoint to trigger changes in the Heading layout. The actual

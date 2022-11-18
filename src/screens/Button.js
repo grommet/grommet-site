@@ -1300,6 +1300,16 @@ const ButtonPage = () => (
 
         <FocusStyle />
         <DisabledStyle />
+
+        <Property name="button.skeleton">
+          <Description>
+            Any Skeleton properties which will be applied to the Button when in
+            skeleton mode.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>{`{ width: { min: '100px' }}`}</Example>
+          </PropertyValue>
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>

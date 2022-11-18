@@ -561,6 +561,42 @@ const BoxPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="skeleton">
+          <Description>
+            Make the contents of the box 'skeletonized'. When this property is
+            supplied, any components within the Box that are skeleton-aware will
+            appear as gray boxes instead of their usual text or contents. This
+            is intended as a placeholder representation instead of the real
+            contents when it is still being loaded asynchronously. Some
+            skeleton-aware components are Box (when a border or background is
+            supplied), Text, Heading and Paragraph.
+          </Description>
+          <GenericBoolFalse />
+          <PropertyValue type="object">
+            <Example>
+              {`{ animation: 'fadeIn', message: { start: 'Loading', end: 'Loading complete' }}`}
+            </Example>
+            <PropOptions prop="animation">
+              <Example>same options as the Box animation property</Example>
+            </PropOptions>
+            <PropOptions prop="colors">
+              <Example>{`{
+  dark: ['background', 'background-front'],
+  light: ['background', 'background-back']
+}`}</Example>
+            </PropOptions>
+            <PropOptions prop="depth">
+              <Example>{2}</Example>
+            </PropOptions>
+            <PropOptions prop="message">
+              <Example>{`"Loading"`}</Example>
+              <Example>
+                {`{ start: 'Loading', end: 'Loading complete' }`}
+              </Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
         <Property name="tag">
           <Description>
             The DOM tag to use for the element. NOTE: This is deprecated in
@@ -708,6 +744,24 @@ const BoxPage = () => (
             margin, pad, and round.
           </Description>
           <GlobalBreakpoints />
+        </Property>
+
+        <Property name="skeleton">
+          <Description>
+            Any Box properties or Skeleton properties which will be applied to
+            the Box when in skeleton mode.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  border: false,
+  colors: {
+    dark: ['background', 'background-front'],
+    light: ['background', 'background-back'],
+  },
+}`}
+            </Example>
+          </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
