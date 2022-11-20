@@ -64,6 +64,7 @@ import Select from '../screens/Select';
 import SelectMultiple from '../screens/SelectMultiple';
 import SkipLinks from '../screens/SkipLinks';
 import Sidebar from '../screens/Sidebar';
+import Skeleton from '../screens/Skeleton';
 import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
 import Tabs from '../screens/Tabs';
@@ -195,6 +196,7 @@ const Content = () => (
     <Route exact path="/select" component={Select} />
     <Route exact path="/selectmultiple" component={SelectMultiple} />
     <Route exact path="/sidebar" component={Sidebar} />
+    <Route exact path="/skeleton" component={Skeleton} />
     <Route exact path="/skiplinks" component={SkipLinks} />
     <Route exact path="/spinner" component={Spinner} />
     <Route exact path="/stack" component={Stack} />
