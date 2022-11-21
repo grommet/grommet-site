@@ -133,6 +133,13 @@ return (
           </PropertyValue>
         </Property>
 
+        <Property name="icon">
+          <Description>Icon to use for the Notification.</Description>
+          <PropertyValue type="element">
+            <Example>{`<Add />`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="message">
           <Description>
             A custom message displayed under the title. Provides more
@@ -179,6 +186,16 @@ return (
 }`}</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="time">
+          <Description>
+            The amount of time a toast Notification should stay open.
+          </Description>
+          <PropertyValue type="number">
+            <Example>{`4000`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="onClose">
           <Description>
             Click handler. Not setting this property causes the Notification to
