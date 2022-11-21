@@ -398,7 +398,8 @@ const HeadingPage = () => (
         <Property name="heading.skeleton">
           <Description>
             Any Skeleton properties which will be applied to the Heading when in
-            skeleton mode.
+            skeleton mode. For the Heading to be in skeleton mode, use the
+            'skeleton' property on a parent Box.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>{`{ width: { min: '200px' }}`}</Example>
