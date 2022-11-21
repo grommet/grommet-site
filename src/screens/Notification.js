@@ -192,7 +192,7 @@ return (
             The amount of time a toast Notification should stay open.
           </Description>
           <PropertyValue type="number">
-            <Example>{`4000`}</Example>
+            <Example>4000</Example>
           </PropertyValue>
         </Property>
 
