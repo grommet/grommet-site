@@ -52,6 +52,7 @@ export { ResponsiveContextItem } from '../ResponsiveContext';
 export { SelectItem } from '../Select';
 export { SelectMultipleItem } from '../SelectMultiple';
 export { SidebarItem } from '../Sidebar';
+export { SkeletonItem } from '../Skeleton';
 export { SkipLinksItem } from '../SkipLinks';
 export { SpinnerItem } from '../Spinner';
 export { StackItem } from '../Stack';

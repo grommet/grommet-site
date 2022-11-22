@@ -132,6 +132,17 @@ const TextPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="skeleton">
+          <Description>
+            Any Skeleton properties which will be applied to the Text when in
+            skeleton mode. For the Text to be in skeleton mode, use the
+            'skeleton' property on a parent Box.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ width: { min: '200px' }}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="tag">
           <Description>
             The DOM tag to use for the element. NOTE: This is deprecated in
@@ -291,6 +302,25 @@ const TextPage = () => (
         <Property name="text.extend">
           <Description>Any additional style for Text.</Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="text.skeleton">
+          <Description>
+            Any Skeleton properties which will be applied to the Text when in
+            skeleton mode.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  width: { width: '100px', min: '100px' },
+  margin: { vertical: 'xsmall' },
+  colors: {
+    dark: ['border', 'border'],
+    light: ['background-front', 'background-back'],
+  }
+}`}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <EdgeStyle description="The possible sizes for margin." />

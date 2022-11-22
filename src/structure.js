@@ -76,6 +76,7 @@ export const structure = {
         'Meter',
         'NameValueList',
         'Notification',
+        'Skeleton',
         'Pagination',
         'Spinner',
         'Table',
