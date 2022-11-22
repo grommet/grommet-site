@@ -3575,8 +3575,8 @@ grommet-theme-hpe@^4.0.0:
   integrity sha512-V4DFr3KGC3AiKXLfXYSwDKwXJ9ub5Ji4LXtftHZQKbzpB/3yP6cJTCQxzUV+E4bjxnZ+Z+xjHa9SkO7cwUp/vQ==
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
-  version "2.27.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#d7b8474135030e2fe94787a5f944bb5cb95c7719"
+  version "2.28.0"
+  resolved "https://github.com/grommet/grommet/tarball/stable#28543a15ec0f5fce768520f098c30c04b5fc554e"
   dependencies:
     grommet-icons "^4.8.0"
     hoist-non-react-statics "^3.2.0"
