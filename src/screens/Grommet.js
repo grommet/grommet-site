@@ -184,7 +184,7 @@ const GrommetPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property stable name="themeMode">
+        <Property name="themeMode">
           <Description>
             Dark vs. light theme variation. Default is unspecified and left to
             theme. Auto defaults to the system preferred theme mode.
