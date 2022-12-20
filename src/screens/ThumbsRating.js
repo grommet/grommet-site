@@ -57,8 +57,8 @@ const ThumbsRatingPage = () => (
             <Description>
               An object with a color for dark and light mode.
             </Description>
-            <Example defaultValue>
-              <Markdown>{`{"dark": "black", "light": "brand"}`}</Markdown>
+            <Example>
+              {`{dark: "black", light: "brand"}`}
             </Example>
           </PropertyValue>
         </Property>
