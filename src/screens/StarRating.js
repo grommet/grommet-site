@@ -27,7 +27,6 @@ const StarRatingPage = () => (
           label: 'Github',
         },
       ]}
-      designSystemLink="https://design-system.hpe.design/components/spinner"
       description="A Star Rating"
       code="<StarRating />"
     >
