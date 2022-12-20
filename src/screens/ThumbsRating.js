@@ -23,7 +23,7 @@ const ThumbsRatingPage = () => (
           label: 'Storybook',
         },
         {
-          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Spinner',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/ThumbsRating',
           label: 'Github',
         },
       ]}
