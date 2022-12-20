@@ -566,13 +566,13 @@ const FormFieldPage = () => (
           <PropertyValue type="object">
             <Example>
               {`
-              {
-                size: 'large',
-                color: 'black',
-                margin: {
-                  vertical: "xsmall",
-                }
-              }
+{
+  size: 'large',
+  color: 'black',
+  margin: {
+    vertical: "xsmall",
+  }
+}
             `}
             </Example>
           </PropertyValue>
