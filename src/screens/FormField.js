@@ -558,6 +558,26 @@ const FormFieldPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="formField.kind.label">
+          <Description>
+            Any props of Text that will be applied on the FormField `kind`
+            label.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`
+              {
+                size: 'large',
+                color: 'black',
+                margin: {
+                  vertical: "xsmall",
+                }
+              }
+            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="formField.info.color">
           <Description>The color of the FormField info.</Description>
           <PropertyValue type="string">
