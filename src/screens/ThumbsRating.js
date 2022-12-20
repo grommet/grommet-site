@@ -27,7 +27,6 @@ const ThumbsRatingPage = () => (
           label: 'Github',
         },
       ]}
-      designSystemLink="https://design-system.hpe.design/components/spinner"
       description="A Thumbs Rating"
       code="<ThumbsRating />"
     >
