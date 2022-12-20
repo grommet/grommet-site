@@ -147,7 +147,7 @@ const FormPage = () => (
             can be used.
           </Description>
           <PropertyValue type="string">
-            <Example>{`kind= "string"`}</Example>
+            <Example>"survey"</Example>
           </PropertyValue>
         </Property>
 
