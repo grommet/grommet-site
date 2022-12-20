@@ -1,5 +1,5 @@
 import React from 'react';
-import { Markdown, ThumbsRating } from 'grommet';
+import { ThumbsRating } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -17,7 +17,7 @@ const ThumbsRatingPage = () => (
       name="ThumbsRating"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Spinner&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/input-form-unsolicited-feedback--un-solicited-feedback',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -41,9 +41,7 @@ const ThumbsRatingPage = () => (
             <Description>
               An object with a color for dark and light mode.
             </Description>
-            <Example>
-              {`{dark: "black", light: "brand"}`}
-            </Example>
+            <Example>{`{dark: "black", light: "brand"}`}</Example>
           </PropertyValue>
         </Property>
         <Property name="thumbsRating.like.color">
@@ -56,9 +54,7 @@ const ThumbsRatingPage = () => (
             <Description>
               An object with a color for dark and light mode.
             </Description>
-            <Example>
-              {`{dark: "black", light: "brand"}`}
-            </Example>
+            <Example>{`{dark: "black", light: "brand"}`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
