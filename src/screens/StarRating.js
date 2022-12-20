@@ -23,7 +23,7 @@ const StarRatingPage = () => (
           label: 'Storybook',
         },
         {
-          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Spinner',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/StarRating',
           label: 'Github',
         },
       ]}
