@@ -67,6 +67,7 @@ import Sidebar from '../screens/Sidebar';
 import Skeleton from '../screens/Skeleton';
 import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
+import StarRatingPage from '../screens/StarRating';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
 import Tag from '../screens/Tag';
@@ -74,6 +75,7 @@ import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
+import ThumbsRatingPage from '../screens/ThumbsRating';
 import Tip from '../screens/Tip';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
@@ -200,6 +202,7 @@ const Content = () => (
     <Route exact path="/skiplinks" component={SkipLinks} />
     <Route exact path="/spinner" component={Spinner} />
     <Route exact path="/stack" component={Stack} />
+    <Route exact path="/starrating" component={StarRatingPage} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
     <Route exact path="/tag" component={Tag} />
@@ -207,6 +210,7 @@ const Content = () => (
     <Route exact path="/textarea" component={TextArea} />
     <Route exact path="/textinput" component={TextInput} />
     <Route exact path="/themecontext" component={ThemeContext} />
+    <Route exact path="/thumbsrating" component={ThumbsRatingPage} />
     <Route exact path="/tip" component={Tip} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />

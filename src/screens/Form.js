@@ -140,6 +140,17 @@ const FormPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="kind">
+          <Description>
+            A string that can be passsed to Form to indicate if a user wants
+            seperate styling for formfield label in which `formField.kind.label`
+            can be used.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"survey"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="messages">
           <Description>Custom validation messages.</Description>
           <PropertyValue type="object">
