@@ -87,6 +87,19 @@ const RangeSelectorPage = () => (
           <GenericBool />
         </Property>
 
+        <Property name="label">
+          <Description>
+            Whether to show text labels indicating the selected values.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="function">
+            <Description>
+              A function that returns either a string or a React node.
+            </Description>
+            <Example>{`(number) => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="max">
           <Description>The maximum value permitted.</Description>
           <PropertyValue type="number">
