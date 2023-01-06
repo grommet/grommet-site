@@ -28,6 +28,7 @@ const ThumbsRatingPage = () => (
         },
       ]}
       description="A Thumbs Rating"
+      intrinsicElement="div"
       code="<ThumbsRating />"
     >
       <ThemeDoc>

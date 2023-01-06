@@ -28,6 +28,7 @@ const StarRatingPage = () => (
         },
       ]}
       description="A Star Rating"
+      intrinsicElement="div"
       code="<StarRating />"
     >
       <ThemeDoc>
