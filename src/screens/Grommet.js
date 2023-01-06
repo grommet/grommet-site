@@ -137,19 +137,19 @@ const GrommetPage = () => (
 
         <Property name="options">
           <Description>
-            Provides a way to assign a unique id to a single DOM node.
-            Currently, this is only supported for Layer. This prop was created
-            to preserve backwards compatibility with existing behavior by
-            allowing users to opt-in to newer behavior.
+            This prop was created to preserve backwards compatibility with
+            existing behavior by allowing users to opt-in to newer behavior. Box
+            cssGap, lets users opt into using the css gap property for Box gap
+            instead of inserting an extra node into the dom to simulate a gap.
+            Layer singleId provides a way to assign a unique id to a single DOM
+            node. Currently, this is only supported for Layer.
           </Description>
           <PropertyValue type="object">
             <Example>
               {`
 {
-  layer: 
-  {
-    singleId: boolean
-  }
+  box: { cssGap: true },
+  layer: { singleId: boolean }
 }
             `}
             </Example>
