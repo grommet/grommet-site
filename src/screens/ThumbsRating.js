@@ -67,7 +67,7 @@ export default ThumbsRatingPage;
 
 export const ThumbsRatingItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <ThumbsRating />
+    <ThumbsRating name={name} />
   </Item>
 );
 

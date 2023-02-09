@@ -56,7 +56,7 @@ export default StarRatingPage;
 
 export const StarRatingItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <StarRating />
+    <StarRating name={name} />
   </Item>
 );
 
