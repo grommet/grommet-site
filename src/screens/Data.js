@@ -193,7 +193,7 @@ const DataPage = () => (
 
         <Property name="properties">
           <Description>
-            This describes the objects found in 'data', sort of a schema.
+            This describes the objects found in 'data', sort of a schema. Using this property overrides the default filters. It allows caller to specify how property label renders and which properties should be filterable.
           </Description>
           <PropertyValue type="object">
             <Example>{propertiesObjectExample}</Example>
