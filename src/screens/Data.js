@@ -123,7 +123,7 @@ const DataPage = () => (
           label: 'Github',
         },
       ]}
-      description="Container and context for data driven content"
+      description="Container and context provider for data driven content"
       intrinsicElement="div"
       code={`<Data
   data={[{ name: 'Scott' }, { name: 'Zelda' }]}
