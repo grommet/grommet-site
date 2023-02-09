@@ -21,8 +21,16 @@ import Clock from '../screens/Clock';
 import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import Data from '../screens/Data';
 import DataChart from '../screens/DataChart';
+import DataFilter from '../screens/DataFilter';
+import DataFilters from '../screens/DataFilters';
+import DataSearch from '../screens/DataSearch';
+import DataSort from '../screens/DataSort';
+import DataSummary from '../screens/DataSummary';
 import DataTable from '../screens/DataTable';
+import DataTableColumns from '../screens/DataTableColumns';
+import DataView from '../screens/DataView';
 import DateInput from '../screens/DateInput';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
@@ -158,8 +166,16 @@ const Content = () => (
     <Route exact path="/clock" component={Clock} />
     <Route exact path="/collapsible" component={Collapsible} />
     <Route exact path="/color" component={Color} />
+    <Route exact path="/data" component={Data} />
     <Route exact path="/datachart" component={DataChart} />
+    <Route exact path="/datafilter" component={DataFilter} />
+    <Route exact path="/datafilters" component={DataFilters} />
+    <Route exact path="/datasearch" component={DataSearch} />
+    <Route exact path="/datasort" component={DataSort} />
+    <Route exact path="/datasummary" component={DataSummary} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/datatablecolumns" component={DataTableColumns} />
+    <Route exact path="/dataview" component={DataView} />
     <Route exact path="/dateinput" component={DateInput} />
     <Route exact path="/diagram" component={Diagram} />
     <Route exact path="/distribution" component={Distribution} />

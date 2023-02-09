@@ -394,7 +394,7 @@ export const PageHeaderItem = ({ name, path }) => (
     <PageHeader
       title="Page Title"
       subtitle="A subtitle for the page."
-      parent={<Anchor label="Parent Page" />}
+      parent={<Anchor as="span" label="Parent Page" />}
       actions={<Button label="Edit" primary />}
     />
   </Item>
