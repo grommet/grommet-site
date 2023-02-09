@@ -21,6 +21,7 @@ export { DataSortItem } from '../DataSort';
 export { DataSummaryItem } from '../DataSummary';
 export { DataTableItem } from '../DataTable';
 export { DataTableColumnsItem } from '../DataTableColumns';
+export { DataViewItem } from '../DataView';
 export { DateInputItem } from '../DateInput';
 export { DiagramItem } from '../Diagram';
 export { DistributionItem } from '../Distribution';
