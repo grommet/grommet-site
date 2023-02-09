@@ -136,7 +136,10 @@ const DataPage = () => (
         <Property name="data">
           <Description>Array of data objects.</Description>
           <PropertyValue type="array">
-            <Example>{`[{}]`}</Example>
+            <Example>{`[
+  { id: 1, name: 'Scott', age: 12 },
+  { id: 2, name: 'Zelsa', age: 91 },
+]`}</Example>
           </PropertyValue>
         </Property>
 
@@ -193,7 +196,10 @@ const DataPage = () => (
 
         <Property name="properties">
           <Description>
-            This describes the objects found in 'data', sort of a schema. Using this property overrides the default filters. It allows caller to specify how property label renders and which properties should be filterable.
+            This describes the objects found in 'data', sort of a schema. Using
+            this property overrides the default filters. It allows caller to
+            specify how property label renders and which properties should be
+            filterable.
           </Description>
           <PropertyValue type="object">
             <Example>{propertiesObjectExample}</Example>
