@@ -162,7 +162,7 @@ const DataPage = () => (
         <Property name="id">
           <Description>
             A unique identifier for the Data. This is required if more than one
-            Data is rendered.
+            Data is rendered on the page.
           </Description>
           <PropertyValue type="string">
             <Example>"data_1"</Example>
