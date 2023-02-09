@@ -183,7 +183,7 @@ const DataPage = () => (
             Function that will be called when the user changes the view. This
             includes, searching, filtering, sorting, and paging. It will be
             called with an object describing the current view. See the 'view'
-            property for an example of the object. Callers can combing 'view'
+            property for an example of the object. Callers can combine 'view'
             and 'onView' to use Data as a controlled component.
           </Description>
           <PropertyValue type="function">
