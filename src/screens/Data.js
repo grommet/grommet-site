@@ -152,10 +152,10 @@ const DataPage = () => (
 
         <Property name="filteredTotal">
           <Description>
-            The total number of objects that exist in the filtered data set.
-            This should be used when retrieving data from a paged API where the
-            number of objects in 'data' is only one page and the filtered set of
-            data is larger than a page.
+            The total number of objects that exist in the data set AFTER any
+            filtering has been applied. This should be used when retrieving data
+            from a paged API where the number of objects in 'data' is only one
+            page and the filtered set of data is larger than a page.
           </Description>
           <PropertyValue type="number">
             <Example>270</Example>
@@ -225,10 +225,12 @@ const DataPage = () => (
 
         <Property name="total">
           <Description>
-            The total number of objects that exist in the data set. This should
-            be used when retrieving data from a paged API where the number of
-            objects in 'data' is only one page and the entire set of data is
-            larger than a page.
+            The total number of objects that exist in the data set BEFORE any
+            filtering is applied. This should be used when retrieving data from
+            a paged API where the number of objects in 'data' is only one page
+            and the entire set of data is larger than a page or when the caller
+            is managing filtering to indicate how large the data set is without
+            any filters applied.
           </Description>
           <PropertyValue type="number">
             <Example>2700</Example>
