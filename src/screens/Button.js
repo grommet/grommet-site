@@ -1042,6 +1042,13 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.[kind].font.size">
+          <Description>The size of the font for button kind.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.padding.horizontal">
           <Description>The horizontal padding.</Description>
           <PropertyValue type="string">
