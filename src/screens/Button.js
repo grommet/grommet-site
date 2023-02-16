@@ -1022,6 +1022,28 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.icon.size">
+          <Description>
+            Adjustments to the icon size on different screen sizes.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`icon: {
+              size: {
+                small: '12px',
+                medium: '18px',
+                large: '28px',
+              },
+            },`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.[kind].direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>row</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.padding.horizontal">
           <Description>The horizontal padding.</Description>
           <PropertyValue type="string">
@@ -1182,6 +1204,18 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.size.small.iconOnly.pad">
+          <Description>
+            Specify pad for iconOnly Buttons across button sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.size.medium.border.radius">
           <Description>The border corner radius.</Description>
           <PropertyValue type="string">
@@ -1203,6 +1237,18 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.size.medium.iconOnly.pad">
+          <Description>
+            Specify pad for iconOnly Buttons across button sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.size.large.border.radius">
           <Description>The border corner radius.</Description>
           <PropertyValue type="string">
@@ -1221,6 +1267,18 @@ const ButtonPage = () => (
           <Description>The pad</Description>
           <PropertyValue type="string">
             <Example defaultValue>"8px"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.size.large.iconOnly.pad">
+          <Description>
+            Specify pad for iconOnly Buttons across button sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{}`}</Example>
           </PropertyValue>
         </Property>
 
