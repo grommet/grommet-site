@@ -1210,7 +1210,7 @@ const ButtonPage = () => (
             <Example>"4px"</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Example>{`{}`}</Example>
+            <Example>{`{ horizontal: string; vertical: string }`}</Example>
           </PropertyValue>
         </Property>
 
