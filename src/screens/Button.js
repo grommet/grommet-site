@@ -1038,7 +1038,7 @@ const ButtonPage = () => (
         <Property name="button.[kind].direction">
           <Description>The direction of the icon + label.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>row</Example>
+            <Example defaultValue>'row'</Example>
           </PropertyValue>
         </Property>
 
