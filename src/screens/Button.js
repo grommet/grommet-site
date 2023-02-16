@@ -1027,13 +1027,11 @@ const ButtonPage = () => (
             Adjustments to the icon size on different screen sizes.
           </Description>
           <PropertyValue type="object">
-            <Example>{`icon: {
-              size: {
-                small: '12px',
-                medium: '18px',
-                large: '28px',
-              },
-            },`}</Example>
+            <Example>{`{
+              small: '12px',
+              medium: '18px',
+              large: '28px',
+            }`}</Example>
           </PropertyValue>
         </Property>
 
