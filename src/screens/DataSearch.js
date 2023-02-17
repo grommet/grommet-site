@@ -43,7 +43,7 @@ const DataSearchPage = () => (
 
     <Properties>
       <Property name="responsive">
-        <Description>Whether the serach is responsive.</Description>
+        <Description>Whether the search is responsive.</Description>
         <PropertyValue type="boolean">
           <Example>true</Example>
         </PropertyValue>
