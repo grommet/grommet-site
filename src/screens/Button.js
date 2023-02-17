@@ -1044,10 +1044,11 @@ const ButtonPage = () => (
           </Description>
           <PropertyValue type="object">
             <Example>{`{
-              small: '12px',
-              medium: '18px',
-              large: '28px',
-            }`}</Example>
+  small: '12px',
+  medium: '18px',
+  large: '28px',
+}
+            `}</Example>
           </PropertyValue>
         </Property>
 

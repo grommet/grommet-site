@@ -297,7 +297,7 @@ const LayerPage = () => (
 
         <Property name="layer.overlay.backdopFilter">
           <Description>
-            The backdrop-filter which takes any CSS supporrtted string value.
+            The backdrop-filter which takes any CSS supported string value.
           </Description>
           <PropertyValue type="string">
             <Example>"blur(12px)"</Example>
