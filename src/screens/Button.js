@@ -877,6 +877,22 @@ const ButtonPage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="button.default.direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'row'</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.default.font.size">
+          <Description>
+            The size of the text label for default buttons.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.default.font.weight">
           <Description>
             The weight of the text label for default buttons.
@@ -1035,20 +1051,6 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.[kind].direction">
-          <Description>The direction of the icon + label.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>'row'</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.[kind].font.size">
-          <Description>The size of the font for button kind.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>'small'</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.padding.horizontal">
           <Description>The horizontal padding.</Description>
           <PropertyValue type="string">
@@ -1090,6 +1092,22 @@ const ButtonPage = () => (
         <Property name="button.primary.color">
           <Description>The color of the label for primary buttons.</Description>
           <GenericColor />
+        </Property>
+
+        <Property name="button.primary.direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'row'</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.primary.font.size">
+          <Description>
+            The size of the text label for primary buttons.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="button.primary.font.weight">
@@ -1150,6 +1168,22 @@ const ButtonPage = () => (
             themes that have defined a value for button.default.
           </Description>
           <GenericColor />
+        </Property>
+
+        <Property name="button.secondary.direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'row'</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.secondary.font.size">
+          <Description>
+            The size of the text label for secondary buttons.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="button.secondary.font.weight">
