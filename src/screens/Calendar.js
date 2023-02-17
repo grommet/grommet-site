@@ -328,7 +328,10 @@ const CalendarPage = () => (
         </Property>
 
         <Property name="calendar.heading.level">
-          <Description>The heading level used for the calendar.</Description>
+          <Description>
+            The alendar[size].title should be used in place of this heading
+            level used for the calendar.
+          </Description>
           <PropertyValue type="number">
             <Example defaultValue>4</Example>
           </PropertyValue>
