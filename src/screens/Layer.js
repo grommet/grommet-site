@@ -295,6 +295,15 @@ const LayerPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="layer.overlay.backdopFilter">
+          <Description>
+            The backdrop-filter which takes any CSS supported string value.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"blur(12px)"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="layer.overlay.background">
           <Description>The background of the Layer overlay.</Description>
           <PropertyValue type="string">

@@ -314,6 +314,23 @@ const TextInputPage = () => (
             <Example>0</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="width">
+          <Description>A fixed width.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+            <SizesXsmallXlarge />
+            <Example>"xxlarge"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: "...", max: "..." }`}</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
