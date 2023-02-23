@@ -315,8 +315,8 @@ const AnchorPage = () => (
         <Property name="anchor.size.[size].textDecoration">
           <Description>
             {' '}
-            The text decoration of the label when hovering on Anchor [size]
-            which is the text size of Anchor. Refer to
+            The text decoration of the label when hovering on different Anchor sizes.
+            [size] refers to the text size of Anchor. Refer to
             [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
             for possible values.
           </Description>
