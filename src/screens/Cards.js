@@ -82,15 +82,15 @@ const CardsPage = () => (
           </Description>
           <PropertyValue type="function">
             <Example>{`{(datum) => (
-17        <Card key={datum.city} as="li">
-18          <CardBody>
-19            <Heading level={2} size="small" margin="none">
-20              {datum.city}
-21            </Heading>
-22          </CardBody>
-23          <CardFooter>{datum.state}</CardFooter>
-24        </Card>
-25      )}`}</Example>
+  <Card key={datum.city} as="li">
+    <CardBody>
+      <Heading level={2} size="small" margin="none">
+        {datum.city}
+      </Heading>
+    </CardBody>
+    <CardFooter>{datum.state}</CardFooter>
+  </Card>
+)}`}</Example>
           </PropertyValue>
         </Property>
 
