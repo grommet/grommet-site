@@ -210,6 +210,13 @@ const TabsPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="tabs.header.alignSelf">
+          <Description>
+            How to align the Tabs header along the axis.
+          </Description>
+          <GenericAlignSelf />
+        </Property>
+
         <Property name="tabs.header.background">
           <Description>The background styles of Tabs header.</Description>
           <GenericColor />
