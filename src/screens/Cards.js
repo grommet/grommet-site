@@ -192,7 +192,9 @@ const CardsPage = () => (
       <ThemeDoc>
         <Property name="cards.container">
           <Description>Any Box properties.</Description>
-          <Example defaultValue> {`{}`} </Example>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
+          </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
