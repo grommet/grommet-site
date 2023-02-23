@@ -87,7 +87,16 @@ const CardsPage = () => (
             Function that will be called when each value is rendered.
           </Description>
           <PropertyValue type="function">
-            <Example>{`({ value: 60 }) => {}`}</Example>
+            <Example>{`{(datum) => (
+17        <Card key={datum.city} as="li">
+18          <CardBody>
+19            <Heading level={2} size="small" margin="none">
+20              {datum.city}
+21            </Heading>
+22          </CardBody>
+23          <CardFooter>{datum.state}</CardFooter>
+24        </Card>
+25      )}`}</Example>
           </PropertyValue>
         </Property>
 
