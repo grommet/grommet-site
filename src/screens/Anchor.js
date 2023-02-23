@@ -283,6 +283,48 @@ const AnchorPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="anchor.size.[size].color">
+          <Description>
+            The color of the label text and icon strokes on different Anchor
+            sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light mode.
+            </Description>
+            <Example defaultValue>
+              <Markdown>{`{"dark": "black", "light": "brand"}`}</Markdown>
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="anchor.size.[size].font-weight">
+          <Description>
+            The font weight of the label on different Anchor sizes when
+            hovering.
+          </Description>
+          <PropertyValue type="number">
+            <Example>300</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="anchor.size.[size].textDecoration">
+          <Description>
+            {' '}
+            The text decoration of the label when hovering on different Anchor
+            sizes. Refer to
+            [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+            for possible values.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"underline"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="text.medium.size">
           <Description>The font size of the text label.</Description>
           <PropertyValue type="string">
