@@ -66,7 +66,7 @@ export const structure = {
     {
       name: 'Data',
       components: [
-        // 'Cards',
+        'Cards',
         'Data',
         'DataFilter',
         'DataFilters',
