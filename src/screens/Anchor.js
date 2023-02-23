@@ -304,7 +304,7 @@ const AnchorPage = () => (
 
         <Property name="anchor.size.[size].font-weight">
           <Description>
-            The font weight of the label on different Anchor sizes. size refers
+            The font weight of the label on different Anchor sizes. Size refers
             to the text size of Anchor.
           </Description>
           <PropertyValue type="number">
