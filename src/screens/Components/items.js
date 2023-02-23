@@ -6,6 +6,7 @@ export { BoxItem } from '../Box';
 export { ButtonItem } from '../Button';
 export { CalendarItem } from '../Calendar';
 export { CardItem } from '../Card';
+export { CardsItem } from '../Cards';
 export { CarouselItem } from '../Carousel';
 export { ChartItem } from '../Chart';
 export { CheckBoxItem } from '../CheckBox';
