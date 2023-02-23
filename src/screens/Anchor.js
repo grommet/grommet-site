@@ -286,7 +286,7 @@ const AnchorPage = () => (
         <Property name="anchor.size.[size].color">
           <Description>
             The color of the label text and icon strokes on different Anchor
-            sizes.
+            [size] which is the text size of Anchor. sizes.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
@@ -304,8 +304,8 @@ const AnchorPage = () => (
 
         <Property name="anchor.size.[size].font-weight">
           <Description>
-            The font weight of the label on different Anchor sizes when
-            hovering.
+            The font weight of the label on different Anchor [size] which is the
+            text size of Anchor.
           </Description>
           <PropertyValue type="number">
             <Example>300</Example>
@@ -315,8 +315,8 @@ const AnchorPage = () => (
         <Property name="anchor.size.[size].textDecoration">
           <Description>
             {' '}
-            The text decoration of the label when hovering on different Anchor
-            sizes. Refer to
+            The text decoration of the label when hovering on Anchor [size]
+            which is the text size of Anchor. Refer to
             [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
             for possible values.
           </Description>
