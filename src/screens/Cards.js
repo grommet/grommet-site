@@ -140,11 +140,11 @@ const CardsPage = () => (
           </Description>
           <PropertyValue type="function">
             <Description>
-              It will be called when the entire list of items has been rendered.
-              This might be used when the total number of items that could be
-              retrieved is more than you'd want to load into the browser.
-              'onMore' allows you to lazily fetch more from the server only when
-              needed.
+              It will be called when the entire cards of items has been
+              rendered. This might be used when the total number of cards that
+              could be retrieved is more than you'd want to load into the
+              browser. 'onMore' allows you to lazily fetch more from the server
+              only when needed.
             </Description>
             <Example>{`() => {}`}</Example>
           </PropertyValue>
