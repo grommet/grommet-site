@@ -6,10 +6,9 @@ import {
   ComponentDoc,
   Properties,
   Property,
-  PropertyValue,
   Description,
-  Example,
 } from '../components/Doc';
+import { GenericBool } from '../utils/genericPropExamples';
 
 const DataSearchPage = () => (
   <Page>
@@ -30,25 +29,20 @@ const DataSearchPage = () => (
   <Toolbar><DataSearch /></Toolbar>
   <DataTable />
 </Data>`}
-    />
-
-    <Properties>
-      <Property name="drop">
-        <Description>Whether to show the search via a DropButton.</Description>
-        <PropertyValue type="boolean">
-          <Example>true</Example>
-        </PropertyValue>
-      </Property>
-    </Properties>
-
-    <Properties>
-      <Property name="responsive">
-        <Description>Whether the search is responsive.</Description>
-        <PropertyValue type="boolean">
-          <Example>true</Example>
-        </PropertyValue>
-      </Property>
-    </Properties>
+    >
+      <Properties>
+        <Property name="drop">
+          <Description>
+            Whether to show the search via a DropButton.
+          </Description>
+          <GenericBool />
+        </Property>
+        <Property name="responsive">
+          <Description>Whether the search is responsive.</Description>
+          <GenericBool />
+        </Property>
+      </Properties>
+    </ComponentDoc>
   </Page>
 );
 
