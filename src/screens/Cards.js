@@ -36,12 +36,6 @@ const CardsPage = () => (
           label: 'Storybook',
         },
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Layout-Card&full=0&stories=1&panelRight=0',
-          badge:
-            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
-          label: 'Storybook',
-        },
-        {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/Cards',
           label: 'Github',
         },
