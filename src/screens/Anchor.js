@@ -286,7 +286,7 @@ const AnchorPage = () => (
         <Property name="anchor.size.[size].color">
           <Description>
             The color of the label text and icon strokes on different Anchor
-            sizes. size refers to the text size of the Anchor.
+            sizes. Size refers to the text size of the Anchor.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
