@@ -315,7 +315,7 @@ const AnchorPage = () => (
         <Property name="anchor.size.[size].textDecoration">
           <Description>
             The text decoration of the label when hovering on different Anchor
-            sizes. size refers to the text size of Anchor.
+            sizes. Size refers to the text size of Anchor.
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"underline"</Example>
