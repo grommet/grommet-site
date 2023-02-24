@@ -1038,20 +1038,6 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.icon.size">
-          <Description>
-            Adjustments to the icon size on different screen sizes.
-          </Description>
-          <PropertyValue type="object">
-            <Example>{`{
-  small: '12px',
-  medium: '18px',
-  large: '28px',
-}
-            `}</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="button.padding.horizontal">
           <Description>The horizontal padding.</Description>
           <PropertyValue type="string">
