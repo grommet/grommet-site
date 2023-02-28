@@ -232,7 +232,7 @@ const SelectMultiplePage = () => (
         <Property name="messages">
           <Description>Custom messages.</Description>
           <PropertyValue type="object">
-            <Example>{`{ multiple: "string" }`}</Example>
+            <Example>{`{ multiple: "string", clearAll: "string", selectAll: "string", selectedMultipleNonTotal: "string", selectedMultiple: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
