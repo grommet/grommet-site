@@ -20,6 +20,14 @@ const propertiesObjectExample = `{
     label: 'Country',
     options: ['US', 'UK', 'FR'],
   },
+  status: {
+    label: 'Status',
+    options: [ 
+      {label: 'Visited', value: true}, 
+      {label: 'Not visited', value: false}, 
+      {label: 'Visited', value: true}, 
+    ]
+  },
   age: {
     label: 'Age',
     range: {
