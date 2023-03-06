@@ -3668,7 +3668,7 @@ grommet-theme-hpe@^4.0.0:
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.30.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#8bd6b27407e7915edb2716949ecfc6443cdb00ed"
+  resolved "https://github.com/grommet/grommet/tarball/stable#bf61b97415f37c303bbdafbfc77cfa993a51de25"
   dependencies:
     grommet-icons "^4.8.0"
     hoist-non-react-statics "^3.2.0"

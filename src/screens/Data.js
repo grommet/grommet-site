@@ -25,7 +25,6 @@ const propertiesObjectExample = `{
     options: [ 
       {label: 'Visited', value: true}, 
       {label: 'Not visited', value: false}, 
-      {label: 'Visited', value: true}, 
     ]
   },
   age: {
