@@ -94,6 +94,7 @@ import Browsers from '../screens/Docs/Browsers';
 import Functions from '../screens/Docs/Functions';
 import GettingStarted from '../screens/Docs/GettingStarted';
 import GlobalTheme from '../screens/Docs/GlobalTheme';
+import Icons from '../screens/Docs/Icons';
 import Resources from '../screens/Docs/Resources';
 import StableBranch from '../screens/Docs/Stable';
 
@@ -237,6 +238,7 @@ const Content = () => (
     <Route exact path="/functions" component={Functions} />
     <Route exact path="/starter" component={GettingStarted} />
     <Route exact path="/globaltheme" component={GlobalTheme} />
+    <Route exact path="/icons" component={Icons} />
     <Route exact path="/resources" component={Resources} />
     <Route exact path="/stablebranch" component={StableBranch} />
 
