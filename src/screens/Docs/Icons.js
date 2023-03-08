@@ -53,19 +53,14 @@ const Icons = () => (
 
         <Property name="height">
           <Description>
-            The amount of spacing between icon and label in the anchor.
+            A text t-shirt size to align the height of an icon with the text
+            line-height. This is useful when an icon's dimensions is smaller
+            than the text line-height and the icon is presented in a row with
+            align="start". The size of the icon will not be changed, but top and
+            bottom padding will be added to align the icon with the text.
           </Description>
           <PropertyValue type="string">
-            <Example>"24px"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="width">
-          <Description>
-            The name of the area to place this inside a parent Grid.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"24px"</Example>
+            <Example>"medium"</Example>
           </PropertyValue>
         </Property>
       </Properties>
@@ -77,9 +72,7 @@ const Icons = () => (
         </Property>
 
         <Property name="icon.size">
-          <Description>
-            The text color used to style active elements.
-          </Description>
+          <Description>The height and width of the icon.</Description>
           <PropertyValue type="object">
             <Example>{`{ 
     small: string;
@@ -92,7 +85,7 @@ const Icons = () => (
 
         <Property name="icon.disableScaleDown">
           <Description>
-            When set to true `vector-effect="non-scaling-stroke"` is added to
+            When set to true, `vector-effect="non-scaling-stroke"` is added to
             simple icons. Currently this affects Add, Checkmark, Close, Down,
             LinkDown, LinkNext, LinkUp, Next, Previous, Search, and Up.
           </Description>
@@ -101,7 +94,7 @@ const Icons = () => (
 
         <Property name="icon.matchSize">
           <Description>
-            When true Grommet components that have a size prop and an icon will
+            When true, Grommet components that have a size prop and an icon will
             pass the component size to the icon.
           </Description>
           <GenericBoolFalse />

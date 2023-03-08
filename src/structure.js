@@ -1,5 +1,5 @@
 export const structure = {
-  externals: [{ name: 'Icons', url: 'https://icons.grommet.io//' }],
+  externals: [{ name: 'Icons', url: '/icons' }],
   sections: [
     {
       name: 'Layout',
