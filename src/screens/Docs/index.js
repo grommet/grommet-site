@@ -16,6 +16,7 @@ const content = `
   ### [stable branch](${nameToPath('stablebranch')})
   ### [colors](${nameToPath('color')})
   ### [backgrounds](${nameToPath('background')})
+  ### [icons](${nameToPath('icons')})
 `;
 
 const Docs = () => (
