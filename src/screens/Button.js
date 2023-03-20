@@ -21,6 +21,7 @@ import {
   GenericBool,
   GenericGridArea,
   GenericMargin,
+  GenericPad,
   GenericBoolFalse,
   GenericBoolTrue,
   SizesXsmallXlarge,
@@ -432,6 +433,13 @@ const ButtonPage = () => (
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="pad">
+          <Description>
+            The amount of padding around the Button contents.
+          </Description>
+          <GenericPad />
         </Property>
 
         <Property name="plain">
