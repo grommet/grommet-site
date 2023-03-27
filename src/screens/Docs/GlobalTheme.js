@@ -54,7 +54,7 @@ const GlobalTheme = () => (
     color: 'active',
     opacity: 'medium',
 }
-              
+
               `}
             </Example>
             <Example>{`{ dark: 'black', light: 'white' }`}</Example>
@@ -89,7 +89,7 @@ const GlobalTheme = () => (
           </PropertyValue>
         </Property>
         <Property name="global.backgrounds">
-          <Description>Backgrounds to use accross the application.</Description>
+          <Description>Backgrounds to use across the application.</Description>
           <Description>
             The background's name is provided as a value a component's
             `background` prop such as Box, Header, Page, and more.
@@ -97,7 +97,7 @@ const GlobalTheme = () => (
           <PropertyValue type="object">
             <Description disableMarkdown>
               {`A background of one of the following types \`string\`,
-             \`{ dark: string, light: string }\` object, 
+             \`{ dark: string, light: string }\` object,
              or `}
               <RoutedAnchor
                 path="/box#background"
@@ -143,7 +143,7 @@ const GlobalTheme = () => (
               {`{
   phone: 'small',
   tablet: 'medium',
-  computer: 'large',           
+  computer: 'large',
 }`}
             </Example>
           </PropertyValue>
@@ -452,7 +452,7 @@ const GlobalTheme = () => (
           <GenericColor />
         </Property>
         <Property name="global.input.extend">
-          <Description>Any additional styles fot input components.</Description>
+          <Description>Any additional styles for input components.</Description>
           <GenericExtend />
         </Property>
         <Property name="global.input.padding">

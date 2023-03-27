@@ -7,9 +7,9 @@ import Page from '../../components/Page';
 const children = `
 
 ### deepMerge
-A function that recieves two theme objects and returns a theme object that includes
-          both theme values. 
-In case different styling are found for the same components on the two themes, the second argument theme will determine the styling. 
+A function that receives two theme objects and returns a theme object that includes
+          both theme values.
+In case different styling are found for the same components on the two themes, the second argument theme will determine the styling.
 
 \`\`\`
 import { deepMerge } from 'grommet/utils';
