@@ -5,7 +5,7 @@ import { nameToPath } from '../../structure';
 
 import Page from '../../components/Page';
 
-// Enhancment context = grommet principles, best practices, accessibilty support
+// Enhancement context = grommet principles, best practices, accessibility support
 
 const content = `
   ### [getting started with grommet](${nameToPath('starter')})
