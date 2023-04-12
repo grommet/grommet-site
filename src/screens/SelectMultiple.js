@@ -220,6 +220,29 @@ const SelectMultiplePage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="labelKey">
+          <Description>
+            When the options array contains objects, this property indicates how
+            to retrieve the label for each option. The label is what is
+            displayed to the user in the options list drop down and for the
+            selected option itself.
+          </Description>
+          <PropertyValue type="string">
+            <Description>
+              If a string is provided, it is used as the key to retrieve a
+              property of an option object, which should be a string.
+            </Description>
+            <Example>"key"</Example>
+          </PropertyValue>
+          <PropertyValue type="function">
+            <Description>
+              If a function is provided, it is called with the option and should
+              return a string or a React node.
+            </Description>
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="limit">
           <Description>
             The maximum number of options that can be selected.
