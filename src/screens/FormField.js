@@ -237,6 +237,15 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="validateOn">
+          <Description>When to perform validation</Description>
+          <PropertyValue type="string">
+            <Example>"blur"</Example>
+            <Example>"submit"</Example>
+            <Example>"change"</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>

@@ -116,6 +116,14 @@ const ButtonPage = () => (
           <GenericAlignSelf />
         </Property>
 
+        <Property name="busy">
+          <Description>
+            Whether the button is in a busy state and should display an
+            animation to indicate this.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
@@ -425,6 +433,21 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="messages">
+          <Description>
+            Messages for a screenreader to announce when the button `busy` or
+            `success` state changes.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  "busy": "button is in a busy state",
+  "success": "button action succeeded"
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="onClick">
           <Description>
             Click handler. Not setting this property and not specifying a href
@@ -484,6 +507,14 @@ const ButtonPage = () => (
             <Example>"medium"</Example>
             <Example>"large"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="success">
+          <Description>
+            Whether the button is in a success state and should display an
+            animation to indicate this.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="target">
