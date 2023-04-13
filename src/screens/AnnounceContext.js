@@ -17,7 +17,7 @@ const AnnounceContextPage = () => (
       name="Announce Context .Consumer"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Utilities-AnnounceContext&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Utilities-AnnounceContext',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
