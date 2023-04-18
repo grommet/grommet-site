@@ -75,6 +75,7 @@ export const structure = {
         'DataSummary',
         'DataTable',
         'DataTableColumns',
+        'DataTableGroupBy',
         'DataView',
         'List',
         'NameValueList',
