@@ -21,6 +21,7 @@ export { DataSearchItem } from '../DataSearch';
 export { DataSortItem } from '../DataSort';
 export { DataSummaryItem } from '../DataSummary';
 export { DataTableItem } from '../DataTable';
+export { DataTableGroupByItem } from '../DataTableGroupBy';
 export { DataTableColumnsItem } from '../DataTableColumns';
 export { DataViewItem } from '../DataView';
 export { DateInputItem } from '../DateInput';

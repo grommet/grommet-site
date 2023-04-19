@@ -30,6 +30,7 @@ import DataSearch from '../screens/DataSearch';
 import DataSort from '../screens/DataSort';
 import DataSummary from '../screens/DataSummary';
 import DataTable from '../screens/DataTable';
+import DataTableGroupBy from '../screens/DataTableGroupBy';
 import DataTableColumns from '../screens/DataTableColumns';
 import DataView from '../screens/DataView';
 import DateInput from '../screens/DateInput';
@@ -177,6 +178,7 @@ const Content = () => (
     <Route exact path="/datasort" component={DataSort} />
     <Route exact path="/datasummary" component={DataSummary} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/datatablegroupby" component={DataTableGroupBy} />
     <Route exact path="/datatablecolumns" component={DataTableColumns} />
     <Route exact path="/dataview" component={DataView} />
     <Route exact path="/dateinput" component={DateInput} />
