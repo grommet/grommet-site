@@ -29,6 +29,7 @@ const dataExample = `[
     siblings: ['Zack', 'Zoe', 'Zelda', 'Zed', 'Ziggy'],
     contact: {
       company: 'Retired',
+    },
   },
 ]`;
 
