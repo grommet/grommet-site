@@ -96,7 +96,7 @@ const FormPage = () => (
       intrinsicElement="form"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Input-Form&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Input-Form',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -137,6 +137,17 @@ const FormPage = () => (
             </Description>
             <Example>{`{ name: "string" }`}</Example>
             <Example>{`{ name: "node" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="kind">
+          <Description>
+            A string that can be passsed to Form to indicate if a user wants
+            seperate styling for formfield label in which `formField.kind.label`
+            can be used.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"survey"</Example>
           </PropertyValue>
         </Property>
 

@@ -30,7 +30,7 @@ const TextInputPage = () => (
       name="TextInput"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Input-TextInput&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Input-TextInput',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -312,6 +312,23 @@ const TextInputPage = () => (
           </PropertyValue>
           <PropertyValue type="number">
             <Example>0</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="width">
+          <Description>A fixed width.</Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"xxsmall"</Example>
+            <SizesXsmallXlarge />
+            <Example>"xxlarge"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: "...", max: "..." }`}</Example>
           </PropertyValue>
         </Property>
       </Properties>

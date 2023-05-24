@@ -28,7 +28,7 @@ const CalendarPage = () => (
       name="Calendar"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Visualizations-Calendar&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Visualizations-Calendar',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -328,7 +328,10 @@ const CalendarPage = () => (
         </Property>
 
         <Property name="calendar.heading.level">
-          <Description>The heading level used for the calendar.</Description>
+          <Description>
+            The `calendar[size].title` should be used in place of this heading
+            level used for the calendar.
+          </Description>
           <PropertyValue type="number">
             <Example defaultValue>4</Example>
           </PropertyValue>
@@ -401,6 +404,15 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.large.title">
+          <Description>
+            Any valid Text prop for the calendar text heading when large.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="calendar.medium.daySize">
           <Description>The size of a day when medium.</Description>
           <PropertyValue type="string">
@@ -433,6 +445,15 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.medium.title">
+          <Description>
+            Any valid Text prop for the calendar text heading when medium.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="calendar.small.daySize">
           <Description>The size of a day when small.</Description>
           <PropertyValue type="string">
@@ -460,6 +481,15 @@ const CalendarPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"0.2s"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.small.title">
+          <Description>
+            Any valid Text prop for the calendar text heading when small.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{}`} </Example>
           </PropertyValue>
         </Property>
 

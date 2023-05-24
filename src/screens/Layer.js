@@ -28,7 +28,7 @@ const LayerPage = () => (
       name="Layer"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Layout-Layer&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Layout-Layer',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -293,6 +293,15 @@ const LayerPage = () => (
         <Property name="layer.container.extend">
           <Description>Any additional style for Layer Container.</Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="layer.overlay.backdopFilter">
+          <Description>
+            The backdrop-filter which takes any CSS supported string value.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"blur(12px)"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="layer.overlay.background">

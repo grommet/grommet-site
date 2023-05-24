@@ -24,7 +24,7 @@ const PageHeaderPage = () => (
       name="PageHeader"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Layout-PageHeader&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Layout-PageHeader',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -394,7 +394,7 @@ export const PageHeaderItem = ({ name, path }) => (
     <PageHeader
       title="Page Title"
       subtitle="A subtitle for the page."
-      parent={<Anchor label="Parent Page" />}
+      parent={<Anchor as="span" label="Parent Page" />}
       actions={<Button label="Edit" primary />}
     />
   </Item>

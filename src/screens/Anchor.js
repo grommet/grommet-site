@@ -26,7 +26,7 @@ const AnchorPage = () => (
       name="Anchor"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Controls-Anchor',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -281,6 +281,45 @@ const AnchorPage = () => (
         <Property name="anchor.extend">
           <Description>Any additional style for the Anchor.</Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="anchor.size.[size].color">
+          <Description>
+            The color of the label text and icon strokes on different Anchor
+            sizes. Size refers to the text size of the Anchor.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light mode.
+            </Description>
+            <Example defaultValue>
+              <Markdown>{`{"dark": "black", "light": "brand"}`}</Markdown>
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="anchor.size.[size].fontWeight">
+          <Description>
+            The font weight of the label on different Anchor sizes. Size refers
+            to the text size of Anchor.
+          </Description>
+          <PropertyValue type="number">
+            <Example>300</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="anchor.size.[size].textDecoration">
+          <Description>
+            The text decoration of the label when hovering on different Anchor
+            sizes. Size refers to the text size of Anchor.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"underline"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="text.medium.size">

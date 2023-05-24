@@ -13,6 +13,7 @@ import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
 import Card from '../screens/Card';
+import Cards from '../screens/Cards';
 import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
@@ -21,8 +22,17 @@ import Clock from '../screens/Clock';
 import Collapsible from '../screens/Collapsible';
 import Color from '../screens/Color';
 import Components from '../screens/Components';
+import Data from '../screens/Data';
 import DataChart from '../screens/DataChart';
+import DataFilter from '../screens/DataFilter';
+import DataFilters from '../screens/DataFilters';
+import DataSearch from '../screens/DataSearch';
+import DataSort from '../screens/DataSort';
+import DataSummary from '../screens/DataSummary';
 import DataTable from '../screens/DataTable';
+import DataTableGroupBy from '../screens/DataTableGroupBy';
+import DataTableColumns from '../screens/DataTableColumns';
+import DataView from '../screens/DataView';
 import DateInput from '../screens/DateInput';
 import Diagram from '../screens/Diagram';
 import Distribution from '../screens/Distribution';
@@ -67,6 +77,7 @@ import Sidebar from '../screens/Sidebar';
 import Skeleton from '../screens/Skeleton';
 import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
+import StarRatingPage from '../screens/StarRating';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
 import Tag from '../screens/Tag';
@@ -74,6 +85,7 @@ import Text from '../screens/Text';
 import TextArea from '../screens/TextArea';
 import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
+import ThumbsRatingPage from '../screens/ThumbsRating';
 import Tip from '../screens/Tip';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
@@ -83,6 +95,7 @@ import Browsers from '../screens/Docs/Browsers';
 import Functions from '../screens/Docs/Functions';
 import GettingStarted from '../screens/Docs/GettingStarted';
 import GlobalTheme from '../screens/Docs/GlobalTheme';
+import Icons from '../screens/Docs/Icons';
 import Resources from '../screens/Docs/Resources';
 import StableBranch from '../screens/Docs/Stable';
 
@@ -149,6 +162,7 @@ const Content = () => (
     <Route exact path="/button" component={Button} />
     <Route exact path="/calendar" component={Calendar} />
     <Route exact path="/card" component={Card} />
+    <Route exact path="/cards" component={Cards} />
     <Route exact path="/carousel" component={Carousel} />
     <Route exact path="/chart" component={Chart} />
     <Route exact path="/checkbox" component={CheckBox} />
@@ -156,8 +170,17 @@ const Content = () => (
     <Route exact path="/clock" component={Clock} />
     <Route exact path="/collapsible" component={Collapsible} />
     <Route exact path="/color" component={Color} />
+    <Route exact path="/data" component={Data} />
     <Route exact path="/datachart" component={DataChart} />
+    <Route exact path="/datafilter" component={DataFilter} />
+    <Route exact path="/datafilters" component={DataFilters} />
+    <Route exact path="/datasearch" component={DataSearch} />
+    <Route exact path="/datasort" component={DataSort} />
+    <Route exact path="/datasummary" component={DataSummary} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/datatablegroupby" component={DataTableGroupBy} />
+    <Route exact path="/datatablecolumns" component={DataTableColumns} />
+    <Route exact path="/dataview" component={DataView} />
     <Route exact path="/dateinput" component={DateInput} />
     <Route exact path="/diagram" component={Diagram} />
     <Route exact path="/distribution" component={Distribution} />
@@ -200,6 +223,7 @@ const Content = () => (
     <Route exact path="/skiplinks" component={SkipLinks} />
     <Route exact path="/spinner" component={Spinner} />
     <Route exact path="/stack" component={Stack} />
+    <Route exact path="/starrating" component={StarRatingPage} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
     <Route exact path="/tag" component={Tag} />
@@ -207,6 +231,7 @@ const Content = () => (
     <Route exact path="/textarea" component={TextArea} />
     <Route exact path="/textinput" component={TextInput} />
     <Route exact path="/themecontext" component={ThemeContext} />
+    <Route exact path="/thumbsrating" component={ThumbsRatingPage} />
     <Route exact path="/tip" component={Tip} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
@@ -215,6 +240,7 @@ const Content = () => (
     <Route exact path="/functions" component={Functions} />
     <Route exact path="/starter" component={GettingStarted} />
     <Route exact path="/globaltheme" component={GlobalTheme} />
+    <Route exact path="/icons" component={Icons} />
     <Route exact path="/resources" component={Resources} />
     <Route exact path="/stablebranch" component={StableBranch} />
 

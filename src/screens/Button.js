@@ -21,6 +21,7 @@ import {
   GenericBool,
   GenericGridArea,
   GenericMargin,
+  GenericPad,
   GenericBoolFalse,
   GenericBoolTrue,
   SizesXsmallXlarge,
@@ -41,7 +42,7 @@ const ButtonPage = () => (
       name="Button"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Controls-Button',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -113,6 +114,14 @@ const ButtonPage = () => (
             the column axis when contained in a Grid.
           </Description>
           <GenericAlignSelf />
+        </Property>
+
+        <Property name="busy">
+          <Description>
+            Whether the button is in a busy state and should display an
+            animation to indicate this.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="gridArea">
@@ -424,6 +433,21 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="messages">
+          <Description>
+            Messages for a screenreader to announce when the button `busy` or
+            `success` state changes.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  "busy": "button is in a busy state",
+  "success": "button action succeeded"
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="onClick">
           <Description>
             Click handler. Not setting this property and not specifying a href
@@ -432,6 +456,13 @@ const ButtonPage = () => (
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="pad">
+          <Description>
+            The amount of padding around the Button contents.
+          </Description>
+          <GenericPad />
         </Property>
 
         <Property name="plain">
@@ -476,6 +507,14 @@ const ButtonPage = () => (
             <Example>"medium"</Example>
             <Example>"large"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="success">
+          <Description>
+            Whether the button is in a success state and should display an
+            animation to indicate this.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="target">
@@ -877,6 +916,22 @@ const ButtonPage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="button.default.direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'row'</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.default.font.size">
+          <Description>
+            The size of the text label for default buttons.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.default.font.weight">
           <Description>
             The weight of the text label for default buttons.
@@ -1065,6 +1120,22 @@ const ButtonPage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="button.primary.direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'row'</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.primary.font.size">
+          <Description>
+            The size of the text label for primary buttons.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.primary.font.weight">
           <Description>
             The weight of the text label for primary buttons.
@@ -1125,6 +1196,22 @@ const ButtonPage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="button.secondary.direction">
+          <Description>The direction of the icon + label.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'row'</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.secondary.font.size">
+          <Description>
+            The size of the text label for secondary buttons.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>'small'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.secondary.font.weight">
           <Description>
             The weight of the text label for secondary buttons. Only relevant
@@ -1182,6 +1269,18 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.size.small.iconOnly.pad">
+          <Description>
+            Specify pad for iconOnly Buttons across button sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ horizontal: string; vertical: string }`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.size.medium.border.radius">
           <Description>The border corner radius.</Description>
           <PropertyValue type="string">
@@ -1203,6 +1302,18 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.size.medium.iconOnly.pad">
+          <Description>
+            Specify pad for iconOnly Buttons across button sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ horizontal: string; vertical: string }`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.size.large.border.radius">
           <Description>The border corner radius.</Description>
           <PropertyValue type="string">
@@ -1221,6 +1332,18 @@ const ButtonPage = () => (
           <Description>The pad</Description>
           <PropertyValue type="string">
             <Example defaultValue>"8px"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="button.size.large.iconOnly.pad">
+          <Description>
+            Specify pad for iconOnly Buttons across button sizes.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ horizontal: string; vertical: string }`}</Example>
           </PropertyValue>
         </Property>
 
