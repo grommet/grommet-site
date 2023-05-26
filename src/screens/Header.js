@@ -53,7 +53,7 @@ const HeaderPage = () => (
             appear once the user scrolls back up.
           </Description>
           <PropertyValue type="string">
-            <Example>`sticky= "scrollUp"`</Example>
+            <Example>"scrollup"</Example>
           </PropertyValue>
         </Property>
       </Properties>
