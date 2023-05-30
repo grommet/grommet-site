@@ -1,9 +1,9 @@
 import React from 'react';
 import { Toolbar, Button } from 'grommet';
+import { Search, Filter } from 'grommet-icons';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { ComponentDoc } from '../components/Doc';
-import { Search, Filter } from 'grommet-icons';
 
 const ToolbarPage = () => (
   <Page>
