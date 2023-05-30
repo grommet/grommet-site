@@ -79,6 +79,7 @@ export const structure = {
         'DataView',
         'List',
         'NameValueList',
+        'Toolbar',
       ],
     },
     {

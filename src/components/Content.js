@@ -87,6 +87,7 @@ import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
 import ThumbsRatingPage from '../screens/ThumbsRating';
 import Tip from '../screens/Tip';
+import Toolbar from '../screens/Toolbar';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
@@ -233,6 +234,7 @@ const Content = () => (
     <Route exact path="/themecontext" component={ThemeContext} />
     <Route exact path="/thumbsrating" component={ThumbsRatingPage} />
     <Route exact path="/tip" component={Tip} />
+    <Route exact path="/toolbar" component={Toolbar} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
 
