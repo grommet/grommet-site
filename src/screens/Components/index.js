@@ -84,6 +84,7 @@ import {
   ThemeContextItem,
   ThumbsRatingItem,
   TipItem,
+  ToolbarItem,
   VideoItem,
   WorldMapItem,
 } from './items';
@@ -167,6 +168,7 @@ const Items = {
   ThemeContext: ThemeContextItem,
   ThumbsRating: ThumbsRatingItem,
   Tip: TipItem,
+  Toolbar: ToolbarItem,
   Video: VideoItem,
   WorldMap: WorldMapItem,
 };
