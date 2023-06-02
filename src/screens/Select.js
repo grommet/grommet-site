@@ -674,7 +674,7 @@ const SelectPage = () => (
 
         <Property name="select.emptySearchMessage.text">
           <Description>
-            Any valid Text prop for text used to display the emptySearchMessage.
+            Any valid Text props for the emptySearchMessage text.
           </Description>
           <PropertyValue type="object">
             <Example>{`{ color: "text" }`}</Example>
