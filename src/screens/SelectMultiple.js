@@ -405,6 +405,9 @@ const SelectMultiplePage = () => (
           <PropertyValue type="string">
             <Example>"search..."</Example>
           </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Text>Enter search term</Text>`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="showSelectedInline">
@@ -625,6 +628,24 @@ const SelectMultiplePage = () => (
             Any additional style for the control of the Select component.
           </Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="select.emptySearchMessage.container">
+          <Description>
+            Any valid Box prop for the emptySearchMessage container.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ pad: "small"}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="select.emptySearchMessage.text">
+          <Description>
+            Any valid Text prop for text used to display the emptySearchMessage.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: "text" }`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="select.icons.margin">
