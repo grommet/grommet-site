@@ -665,7 +665,7 @@ const SelectPage = () => (
 
         <Property name="select.emptySearchMessage.container">
           <Description>
-            Any valid Box prop for the emptySearchMessage container.
+            Any valid Box props for the emptySearchMessage container.
           </Description>
           <PropertyValue type="object">
             <Example>{`{ pad: "small"}`}</Example>
