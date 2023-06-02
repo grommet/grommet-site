@@ -632,7 +632,7 @@ const SelectMultiplePage = () => (
 
         <Property name="select.emptySearchMessage.container">
           <Description>
-            Any valid Box prop for the emptySearchMessage container.
+            Any valid Box props for the emptySearchMessage container.
           </Description>
           <PropertyValue type="object">
             <Example>{`{ pad: "small"}`}</Example>
@@ -641,7 +641,8 @@ const SelectMultiplePage = () => (
 
         <Property name="select.emptySearchMessage.text">
           <Description>
-            Any valid Text prop for text used to display the emptySearchMessage.
+            Any valid Text props for text used to display the
+            emptySearchMessage.
           </Description>
           <PropertyValue type="object">
             <Example>{`{ color: "text" }`}</Example>
