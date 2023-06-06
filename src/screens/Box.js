@@ -377,9 +377,10 @@ const BoxPage = () => (
             {`The amount of spacing between child elements. This should not be
             used in conjunction with 'wrap' as the gap elements will not wrap
             gracefully. If a child is a Fragment, Box will not add a gap between
-            the children of the Fragment. To change the behavior of gap to align
-            with the CSS gap attribute, set options={{ box: { cssGap: true } }} 
-            on the Grommet container.`}
+            the children of the Fragment. To use the CSS gap attribute to add 
+            space between children of the Box (including children of a Fragment 
+            child of the Box), set options={{ box: { cssGap: true } }} on the 
+            nearest Grommet parent component.`}
           </Description>
           <PropertyValue type="string">
             <Description>
