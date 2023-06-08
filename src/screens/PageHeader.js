@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericAlignSelf,
+  GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
 } from '../utils/genericPropExamples';
@@ -91,6 +92,13 @@ const PageHeaderPage = () => (
           <PropertyValue type="element">
             <Example>{`<Anchor label="Parent Page" icon={<FormPrevious />} />`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="responsive">
+          <Description>
+            Whether the layout should be adjusted for mobile environments.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="size">
