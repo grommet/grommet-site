@@ -47,7 +47,7 @@ const BoxPage = () => (
       name="Box"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Layout-Box&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Layout-Box',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -374,10 +374,13 @@ const BoxPage = () => (
 
         <Property name="gap">
           <Description>
-            The amount of spacing between child elements. This should not be
+            {`The amount of spacing between child elements. This should not be
             used in conjunction with 'wrap' as the gap elements will not wrap
             gracefully. If a child is a Fragment, Box will not add a gap between
-            the children of the Fragment.
+            the children of the Fragment. To use the CSS gap attribute to add 
+            space between children of the Box (including children of a Fragment 
+            child of the Box), set options={{ box: { cssGap: true } }} on the 
+            nearest Grommet parent component.`}
           </Description>
           <PropertyValue type="string">
             <Description>

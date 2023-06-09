@@ -1,5 +1,5 @@
 export const structure = {
-  externals: [{ name: 'Icons', url: 'https://icons.grommet.io//' }],
+  externals: [{ name: 'Icons', url: '/icons' }],
   sections: [
     {
       name: 'Layout',
@@ -66,7 +66,7 @@ export const structure = {
     {
       name: 'Data',
       components: [
-        // 'Cards',
+        'Cards',
         'Data',
         'DataFilter',
         'DataFilters',
@@ -75,9 +75,11 @@ export const structure = {
         'DataSummary',
         'DataTable',
         'DataTableColumns',
+        'DataTableGroupBy',
         'DataView',
         'List',
         'NameValueList',
+        'Toolbar',
       ],
     },
     {

@@ -35,7 +35,7 @@
     "grommet-theme-aruba": "^0.1.2",
     "grommet-theme-dxc": "^0.1.2",
     "grommet-theme-hp": "^0.1.2",
-    "grommet-theme-hpe": "^4.0.0",
+    "grommet-theme-hpe": "^5.0.1",
     "lz-string": "^1.4.4",
     "prop-types": "^15.5.10",
     "react": "^18.0.0",

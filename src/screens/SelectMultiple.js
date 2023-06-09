@@ -29,7 +29,7 @@ const SelectMultiplePage = () => (
       name="SelectMultiple"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Input-SelectMultiple&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Input-SelectMultiple',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -220,6 +220,29 @@ const SelectMultiplePage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="labelKey">
+          <Description>
+            When the options array contains objects, this property indicates how
+            to retrieve the label for each option. The label is what is
+            displayed to the user in the options list drop down and for the
+            selected option itself.
+          </Description>
+          <PropertyValue type="string">
+            <Description>
+              If a string is provided, it is used as the key to retrieve a
+              property of an option object, which should be a string.
+            </Description>
+            <Example>"key"</Example>
+          </PropertyValue>
+          <PropertyValue type="function">
+            <Description>
+              If a function is provided, it is called with the option and should
+              return a string or a React node.
+            </Description>
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="limit">
           <Description>
             The maximum number of options that can be selected.
@@ -381,6 +404,9 @@ const SelectMultiplePage = () => (
           </Description>
           <PropertyValue type="string">
             <Example>"search..."</Example>
+          </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Text>Enter search term</Text>`}</Example>
           </PropertyValue>
         </Property>
 
@@ -602,6 +628,24 @@ const SelectMultiplePage = () => (
             Any additional style for the control of the Select component.
           </Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="select.emptySearchMessage.container">
+          <Description>
+            Any valid Box props for the emptySearchMessage container.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ pad: "small"}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="select.emptySearchMessage.text">
+          <Description>
+            Any valid Text props for the emptySearchMessage text.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: "text" }`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="select.icons.margin">

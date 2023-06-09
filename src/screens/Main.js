@@ -10,7 +10,7 @@ const MainPage = () => (
       name="Main"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Layout-Main&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Layout-Main',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',

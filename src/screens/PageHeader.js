@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericAlignSelf,
+  GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
 } from '../utils/genericPropExamples';
@@ -24,7 +25,7 @@ const PageHeaderPage = () => (
       name="PageHeader"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Layout-PageHeader&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Layout-PageHeader',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -91,6 +92,13 @@ const PageHeaderPage = () => (
           <PropertyValue type="element">
             <Example>{`<Anchor label="Parent Page" icon={<FormPrevious />} />`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="responsive">
+          <Description>
+            Whether the layout should be adjusted for mobile environments.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="size">

@@ -28,7 +28,7 @@ const FormFieldPage = () => (
       name="FormField"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Input-FormField&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Input-FormField',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -235,6 +235,15 @@ const FormFieldPage = () => (
 ]
             `}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="validateOn">
+          <Description>When to perform validation</Description>
+          <PropertyValue type="string">
+            <Example>"blur"</Example>
+            <Example>"submit"</Example>
+            <Example>"change"</Example>
           </PropertyValue>
         </Property>
       </Properties>

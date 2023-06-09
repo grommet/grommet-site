@@ -13,6 +13,7 @@ import Box from '../screens/Box';
 import Button from '../screens/Button';
 import Calendar from '../screens/Calendar';
 import Card from '../screens/Card';
+import Cards from '../screens/Cards';
 import Carousel from '../screens/Carousel';
 import Chart from '../screens/Chart';
 import CheckBox from '../screens/CheckBox';
@@ -29,6 +30,7 @@ import DataSearch from '../screens/DataSearch';
 import DataSort from '../screens/DataSort';
 import DataSummary from '../screens/DataSummary';
 import DataTable from '../screens/DataTable';
+import DataTableGroupBy from '../screens/DataTableGroupBy';
 import DataTableColumns from '../screens/DataTableColumns';
 import DataView from '../screens/DataView';
 import DateInput from '../screens/DateInput';
@@ -85,6 +87,7 @@ import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
 import ThumbsRatingPage from '../screens/ThumbsRating';
 import Tip from '../screens/Tip';
+import Toolbar from '../screens/Toolbar';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
 import WorldMap from '../screens/WorldMap';
@@ -93,6 +96,7 @@ import Browsers from '../screens/Docs/Browsers';
 import Functions from '../screens/Docs/Functions';
 import GettingStarted from '../screens/Docs/GettingStarted';
 import GlobalTheme from '../screens/Docs/GlobalTheme';
+import Icons from '../screens/Docs/Icons';
 import Resources from '../screens/Docs/Resources';
 import StableBranch from '../screens/Docs/Stable';
 
@@ -159,6 +163,7 @@ const Content = () => (
     <Route exact path="/button" component={Button} />
     <Route exact path="/calendar" component={Calendar} />
     <Route exact path="/card" component={Card} />
+    <Route exact path="/cards" component={Cards} />
     <Route exact path="/carousel" component={Carousel} />
     <Route exact path="/chart" component={Chart} />
     <Route exact path="/checkbox" component={CheckBox} />
@@ -174,6 +179,7 @@ const Content = () => (
     <Route exact path="/datasort" component={DataSort} />
     <Route exact path="/datasummary" component={DataSummary} />
     <Route exact path="/datatable" component={DataTable} />
+    <Route exact path="/datatablegroupby" component={DataTableGroupBy} />
     <Route exact path="/datatablecolumns" component={DataTableColumns} />
     <Route exact path="/dataview" component={DataView} />
     <Route exact path="/dateinput" component={DateInput} />
@@ -228,6 +234,7 @@ const Content = () => (
     <Route exact path="/themecontext" component={ThemeContext} />
     <Route exact path="/thumbsrating" component={ThumbsRatingPage} />
     <Route exact path="/tip" component={Tip} />
+    <Route exact path="/toolbar" component={Toolbar} />
     <Route exact path="/video" component={Video} />
     <Route exact path="/worldmap" component={WorldMap} />
 
@@ -235,6 +242,7 @@ const Content = () => (
     <Route exact path="/functions" component={Functions} />
     <Route exact path="/starter" component={GettingStarted} />
     <Route exact path="/globaltheme" component={GlobalTheme} />
+    <Route exact path="/icons" component={Icons} />
     <Route exact path="/resources" component={Resources} />
     <Route exact path="/stablebranch" component={StableBranch} />
 

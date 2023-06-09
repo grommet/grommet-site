@@ -21,6 +21,7 @@ import {
   GenericBool,
   GenericGridArea,
   GenericMargin,
+  GenericPad,
   GenericBoolFalse,
   GenericBoolTrue,
   SizesXsmallXlarge,
@@ -41,7 +42,7 @@ const ButtonPage = () => (
       name="Button"
       availableAt={[
         {
-          url: 'https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0',
+          url: 'https://storybook.grommet.io/?path=/story/Controls-Button',
           badge:
             'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
           label: 'Storybook',
@@ -113,6 +114,14 @@ const ButtonPage = () => (
             the column axis when contained in a Grid.
           </Description>
           <GenericAlignSelf />
+        </Property>
+
+        <Property name="busy">
+          <Description>
+            Whether the button is in a busy state and should display an
+            animation to indicate this.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="gridArea">
@@ -424,6 +433,21 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="messages">
+          <Description>
+            Messages for a screenreader to announce when the button `busy` or
+            `success` state changes.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  "busy": "button is in a busy state",
+  "success": "button action succeeded"
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="onClick">
           <Description>
             Click handler. Not setting this property and not specifying a href
@@ -432,6 +456,13 @@ const ButtonPage = () => (
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="pad">
+          <Description>
+            The amount of padding around the Button contents.
+          </Description>
+          <GenericPad />
         </Property>
 
         <Property name="plain">
@@ -476,6 +507,14 @@ const ButtonPage = () => (
             <Example>"medium"</Example>
             <Example>"large"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="success">
+          <Description>
+            Whether the button is in a success state and should display an
+            animation to indicate this.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="target">
@@ -1035,20 +1074,6 @@ const ButtonPage = () => (
           </Description>
           <PropertyValue type="object">
             <Example>{`{}`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="button.icon.size">
-          <Description>
-            Adjustments to the icon size on different screen sizes.
-          </Description>
-          <PropertyValue type="object">
-            <Example>{`{
-  small: '12px',
-  medium: '18px',
-  large: '28px',
-}
-            `}</Example>
           </PropertyValue>
         </Property>
 
