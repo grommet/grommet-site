@@ -434,7 +434,7 @@ const MenuPage = () => (
             baseline' and 'unsafe start'.
           </Description>
           <PropertyValue type="string">
-            <Example>{`{ align: 'start' }`}</Example>
+            <Example>'start'</Example>
           </PropertyValue>
         </Property>
 
