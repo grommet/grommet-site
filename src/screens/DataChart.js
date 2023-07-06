@@ -355,7 +355,7 @@ const DataChartPage = () => (
           <Description>The orientation of the data.</Description>
           <PropertyValue type="string">
             <Example>"horizontal"</Example>
-            <Example>"vertical"</Example>
+            <Example defaultValue>"vertical"</Example>
           </PropertyValue>
         </Property>
 
