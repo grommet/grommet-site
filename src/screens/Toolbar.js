@@ -47,8 +47,8 @@ export default ToolbarPage;
 export const ToolbarItem = ({ name, path }) => (
   <Item name={name} path={path} center pad="medium">
     <Toolbar>
-      <Button icon={<Search />} />
-      <Button kind="toolbar" icon={<Filter />} />
+      <Button a11yTitle="Toolbar search" icon={<Search />} />
+      <Button a11yTitle="Toolbar filter" kind="toolbar" icon={<Filter />} />
       <Button label="Action" />
     </Toolbar>
   </Item>

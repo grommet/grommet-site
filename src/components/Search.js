@@ -90,6 +90,7 @@ const Search = ({ open, setOpen }) => {
 
   return (
     <Button
+      a11yTitle="Search"
       icon={<SearchIcon />}
       hoverIndicator
       onClick={() => {
