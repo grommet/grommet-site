@@ -241,7 +241,7 @@ export const FormItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Form>
       <FormField htmlFor="name" name="name" label="Name">
-        <TextInput id="name" />
+        <TextInput id="name" name="name" />
       </FormField>
       <Button type="submit" primary label="Submit" />
     </Form>
