@@ -107,6 +107,12 @@ const ChartPage = () => (
             </Description>
             <Example>[[0, 10], [0, 100]]</Example>
           </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ 
+  x: { min: number, max: number },
+  y: { min: number, max: number } 
+}`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="color">
