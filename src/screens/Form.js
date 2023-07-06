@@ -7,6 +7,7 @@ import {
   FormField,
   Heading,
   Paragraph,
+  TextInput,
 } from 'grommet';
 import RoutedAnchor from '../components/RoutedAnchor';
 import Page from '../components/Page';
@@ -239,7 +240,9 @@ export default FormPage;
 export const FormItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Form>
-      <FormField name="name" label="Name" />
+      <FormField htmlFor="name" name="name" label="Name">
+        <TextInput id="name" />
+      </FormField>
       <Button type="submit" primary label="Submit" />
     </Form>
   </Item>

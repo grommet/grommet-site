@@ -726,8 +726,8 @@ export default FormFieldPage;
 
 export const FormFieldItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <FormField label="Label">
-      <TextInput placeholder="value" />
+    <FormField htmlFor="label" name="label" label="Label">
+      <TextInput id="label" placeholder="value" />
     </FormField>
   </Item>
 );
