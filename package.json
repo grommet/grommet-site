@@ -31,7 +31,6 @@
     "core-js": "^3.32.1",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "^4.11.0",
-    "grommet-styles": "^0.2.0",
     "grommet-theme-aruba": "^0.1.2",
     "grommet-theme-dxc": "^0.1.2",
     "grommet-theme-hp": "^0.1.2",
