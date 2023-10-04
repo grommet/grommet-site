@@ -10,9 +10,11 @@ import {
   Example,
 } from '../components/Doc';
 
-const CONTENT = `## Grommet **heart**s markdown
-
-Favorite thing, [link](https://twitter.com/grommet_io)`;
+const CONTENT = `{\`
+ ## Grommet **heart**s markdown
+ 
+ Favorite thing, [link](https://twitter.com/grommet_io)
+\`}`;
 const MarkdownPage = () => (
   <Page>
     <ComponentDoc
