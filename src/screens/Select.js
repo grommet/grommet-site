@@ -338,7 +338,8 @@ const SelectPage = () => (
 
         <Property name="onMore">
           <Description>
-            Use this to indicate that 'items' doesn't contain all that it could.
+            Use this to indicate that 'options' doesn't contain all that it
+            could.
           </Description>
           <PropertyValue type="function">
             <Description>
@@ -359,7 +360,7 @@ const SelectPage = () => (
             the 'onChange', 'onSelect', and 'onSearch' functions. As a general
             rule of guidance when using 'onSearch', define an original list of
             options that is separate from the currently stored options. Use this
-            definition to reset options to in functions.
+            definition to reset options in functions.
           </Description>
           <Description>
             For examples of defining, setting, and changing options, [see our
