@@ -308,7 +308,8 @@ const SelectMultiplePage = () => (
 
         <Property name="onMore">
           <Description>
-            Use this to indicate that 'items' doesn't contain all that it could.
+            Use this to indicate that 'options' doesn't contain all that it
+            could.
           </Description>
           <PropertyValue type="function">
             <Description>
@@ -329,7 +330,7 @@ const SelectMultiplePage = () => (
             the 'onChange', 'onSelect', and 'onSearch' functions. As a general
             rule of guidance when using 'onSearch', define an original list of
             options that is separate from the currently stored options. Use this
-            definition to reset options to in functions.
+            definition to reset options in functions.
           </Description>
           <Description>
             For examples of defining, setting, and changing options, [see our
@@ -431,7 +432,7 @@ const SelectMultiplePage = () => (
 
         <Property name="sortSelectedOnClose">
           <Description>
-            Weather selections should be sorted with selected items displayed at
+            Whether selections should be sorted with selected items displayed at
             the top of the list after closing and reopening the drop. Note: code
             that relies on indexes of the options shouldn't be used when
             sortSelectedOnClose is true.
