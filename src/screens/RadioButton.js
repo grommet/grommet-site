@@ -174,7 +174,7 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.background.color">
           <Description>
-            The background color of the checked RadioButton.
+            The background color of the RadioButton.
           </Description>
           <GenericColor />
         </Property>
