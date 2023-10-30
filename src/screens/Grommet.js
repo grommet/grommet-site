@@ -341,8 +341,8 @@ const GrommetPage = () => (
       upper: "string"
     },
     select: { 
-    multiple: "string",
-    selected: "string",
+      multiple: "string",
+      selected: "string",
     },
     skipLinks: { skipTo: "string" },
     tabs: { tabContents: "string" },
