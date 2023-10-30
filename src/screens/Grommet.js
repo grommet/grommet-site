@@ -112,14 +112,6 @@ const GrommetPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="drop">
-          <Description>
-            When using `ContainerTargetContext` drop will be positioned
-            correctly next to target.{' '}
-          </Description>
-          <GenericBoolFalse />
-        </Property>
-
         <Property name="full">
           <Description>Whether to take the whole viewport.</Description>
           <PropertyValue type="boolean">
@@ -150,14 +142,20 @@ const GrommetPage = () => (
             cssGap, lets users opt into using the css gap property for Box gap
             instead of inserting an extra node into the dom to simulate a gap.
             Layer singleId provides a way to assign a unique id to a single DOM
-            node. Currently, this is only supported for Layer.
+            node. Currently, this is only supported for Layer. When enabled
+            additional checks will be performed on the target of the Drop to
+            more accurately determine its position. This is helpful in
+            situations where the target is within a containing block that has a
+            transform, perspective or filter css property applied. of the drop
+            will be calculated before determining the Drop position.
           </Description>
           <PropertyValue type="object">
             <Example>
               {`
 {
   box: { cssGap: true },
-  layer: { singleId: boolean }
+  layer: { singleId: boolean ,
+  drop: { checkContainingBlock: true } 
 }
             `}
             </Example>

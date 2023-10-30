@@ -176,8 +176,8 @@ const TagPage = () => (
         <Property name="tag.icons.remove">
           <Description>The remove icon in the Tag.</Description>
           <PropertyValue type="object">
-            <Example defaultValue>{`FormClose`}</Example>
-            <Example>{`Trash`}</Example>
+            <Example defaultValue>FormClose</Example>
+            <Example>Trash</Example>
           </PropertyValue>
         </Property>
 
