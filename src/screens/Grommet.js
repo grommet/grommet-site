@@ -155,7 +155,7 @@ const GrommetPage = () => (
               {`
 {
   box: { cssGap: true },
-  layer: { singleId: boolean ,
+  layer: { singleId: boolean },
   drop: { checkContainingBlock: true } 
 }
             `}
