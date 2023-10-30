@@ -138,14 +138,24 @@ const GrommetPage = () => (
         <Property name="options">
           <Description>
             This prop was created to preserve backwards compatibility with
-            existing behavior by allowing users to opt-in to newer behavior. Box
-            cssGap, lets users opt into using the css gap property for Box gap
-            instead of inserting an extra node into the dom to simulate a gap.
+            existing behavior by allowing users to opt-in to newer behavior.
+          </Description>
+          <Description>
+            {' '}
+            Box cssGap, lets users opt into using the css gap property for Box
+            gap instead of inserting an extra node into the dom to simulate a
+            gap.
+          </Description>
+          <Description>
+            {' '}
             Layer singleId provides a way to assign a unique id to a single DOM
-            node. Currently, this is only supported for Layer. Drop
-            checkContainingBlock will enable additional checks to be performed
-            on the target of the Drop to more accurately determine its position.
-            This is helpful in situations where the target is within a
+            node.
+          </Description>
+          <Description>
+            {' '}
+            Drop checkContainingBlock will enable additional checks to be
+            performed on the target of the Drop to more accurately determine its
+            position. This is helpful in situations where the target is within a
             containing block that has a transform, perspective or filter css
             property applied.
           </Description>
