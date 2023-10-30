@@ -92,6 +92,15 @@ const DataTablePage = () => (
           <GenericAlignSelf />
         </Property>
 
+        <Property name="allowSelectAll">
+          <Description>
+            To have the option of the select all in the DataTable header.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>allowSelectAll={false}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
