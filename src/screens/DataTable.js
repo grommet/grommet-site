@@ -94,11 +94,9 @@ const DataTablePage = () => (
 
         <Property name="allowSelectAll">
           <Description>
-            To have the option of the select all in the DataTable header.
+            Whether or not to show the select all CheckBox in the DataTable header when `onSelect` is defined.
           </Description>
-          <PropertyValue type="boolean">
-            <Example>allowSelectAll={false}</Example>
-          </PropertyValue>
+          <GenericBoolTrue />
         </Property>
 
         <Property name="gridArea">
