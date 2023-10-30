@@ -117,9 +117,7 @@ const GrommetPage = () => (
             When using `ContainerTargetContext` drop will be positioned
             correctly next to target.{' '}
           </Description>
-          <PropertyValue type="boolean">
-            <Example>"true"</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="full">
