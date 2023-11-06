@@ -253,9 +253,28 @@ const SelectMultiplePage = () => (
         </Property>
 
         <Property name="messages">
-          <Description>Custom messages.</Description>
+          <Description>Custom messages for the internationalization of the individual buttons and advertisements as well as for accessibility.</Description>
           <PropertyValue type="object">
-            <Example>{`{ multiple: "string" }`}</Example>
+          <Example>
+              {`
+{
+	  multiple: "string";
+    clearAllTitle: "string";
+    selectAllTitle: "string";
+    selectedMultipleNonTotal: "string";
+    selectedMultiple: "string";
+    onMore: "string";
+    clearAll: "string";
+    selectAll: "string";
+    selectDropDown: "string";
+    dropDown: "string";
+    searchFilter: "string";
+    optionSelected: "string";
+    optionNotSelected: "string";
+    selectedOptions: "string";
+}
+            `}
+            </Example>
           </PropertyValue>
         </Property>
 
