@@ -29,6 +29,10 @@ const DataSearchPage = () => (
   <Toolbar><DataSearch /></Toolbar>
   <DataTable />
 </Data>`}
+      isA={{
+        base: 'TextInput',
+        path: '/textinput',
+      }}
     >
       <Properties>
         <Property name="drop">
