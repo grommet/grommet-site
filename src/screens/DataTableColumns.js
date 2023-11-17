@@ -47,13 +47,14 @@ const DataTableColumnsPage = () => (
           </PropertyValue>
           <PropertyValue type="array of objects">
             <Description>
-              An array of objects of CheckBox props excluding the 'checked'
-              property, use 'property' prop instead of 'checked'.
+              An array of objects that can include a `label`, `property` in
+              which is the value as well as any of CheckBox props excluding the
+              'checked' property, use 'property' prop instead of 'checked'.
             </Description>
             <Example>{`[
-  { label: 'Id', value: 'id', disabled: true },
-  { label: 'Name', value: 'name' },
-  { label: 'Age', value: 'age' },
+  { label: 'Id', property: 'id', disabled: true },
+  { label: 'Name', property: 'name' },
+  { label: 'Age', property: 'age' },
 ]`}</Example>
           </PropertyValue>
         </Property>
