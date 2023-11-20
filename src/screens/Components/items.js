@@ -15,6 +15,7 @@ export { ClockItem } from '../Clock';
 export { CollapsibleItem } from '../Collapsible';
 export { DataItem } from '../Data';
 export { DataChartItem } from '../DataChart';
+export { DataClearFiltersItem } from '../DataClearFilters';
 export { DataFilterItem } from '../DataFilter';
 export { DataFiltersItem } from '../DataFilters';
 export { DataSearchItem } from '../DataSearch';

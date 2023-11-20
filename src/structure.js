@@ -69,6 +69,7 @@ export const structure = {
         'Cards',
         'Data',
         'DataFilter',
+        'DataClearFilters',
         'DataFilters',
         'DataSearch',
         'DataSort',

@@ -88,6 +88,7 @@ import {
   VideoItem,
   WorldMapItem,
 } from './items';
+import { DataClearFiltersItem } from '../DataClearFilters';
 
 const Items = {
   Accordion: AccordionItem,
@@ -107,6 +108,7 @@ const Items = {
   Collapsible: CollapsibleItem,
   Data: DataItem,
   DataChart: DataChartItem,
+  DataClearFilters: DataClearFiltersItem,
   DataFilter: DataFilterItem,
   DataFilters: DataFiltersItem,
   DataSearch: DataSearchItem,
