@@ -57,7 +57,7 @@ const DataFilterPage = () => (
         <Property name="range">
           <Description>
             The range of numeric values. Should not be used with 'options'. If
-            not specified, the default step is 20.
+            not specified, the default step will be calculated as (max - min) / 20.
           </Description>
           <PropertyValue type="object">
             <Example>{`{ min: 1, max: 100, step: 5 }`}</Example>
