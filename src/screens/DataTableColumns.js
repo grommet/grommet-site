@@ -47,9 +47,10 @@ const DataTableColumnsPage = () => (
           </PropertyValue>
           <PropertyValue type="array of objects">
             <Description>
-              An array of objects that can include a `label`, `property` in
-              which is the value as well as any of CheckBox props excluding the
-              'checked' property, use 'property' prop instead of 'checked'.
+              An array of objects that can include a `label` which will render
+              as the option label, `property` which should be a data property,
+              and `disabled` which will determine if the option can be
+              checked/unchecked.
             </Description>
             <Example>{`[
   { label: 'Id', property: 'id', disabled: true },
