@@ -121,7 +121,22 @@ export const structure = {
   ],
 };
 
-export const nameToPath = (name) => {
+const pathMap = {};
+
+structure.sections.forEach((s) => {
+  s.components?.forEach((c) => {
+    pathMap[c] = `/${c.toLowerCase()}`;
+  });
+  if (!pathMap[s.name] && s.name !== 'Color' && s.name !== 'Background') {
+    pathMap[s.name] = `/components#${s.name}`;
+  }
+});
+
+console.log('PATHMAP', pathMap);
+export const nameToPath = (name) =>
+  pathMap[name] || (name ? `/${name.toLowerCase()}` : '/components');
+
+export const nameToPath1 = (name) => {
   const section = structure.sections.filter((s) => s.name === name)[0];
   if (section && name !== 'Color' && name !== 'Background') {
     return `/components#${name}`;
