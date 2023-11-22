@@ -132,21 +132,8 @@ structure.sections.forEach((s) => {
   }
 });
 
-console.log('PATHMAP', pathMap);
 export const nameToPath = (name) =>
   pathMap[name] || (name ? `/${name.toLowerCase()}` : '/components');
-
-export const nameToPath1 = (name) => {
-  const section = structure.sections.filter((s) => s.name === name)[0];
-  if (section && name !== 'Color' && name !== 'Background') {
-    return `/components#${name}`;
-  }
-  const external = structure.externals.filter((e) => e.name === name)[0];
-  if (external) {
-    return external.url;
-  }
-  return name ? `/${name.toLowerCase()}` : '/components';
-};
 
 export const nextComponent = (name) => {
   const { sections } = structure;
