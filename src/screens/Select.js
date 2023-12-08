@@ -338,7 +338,8 @@ const SelectPage = () => (
 
         <Property name="onMore">
           <Description>
-            Use this to indicate that 'items' doesn't contain all that it could.
+            Use this to indicate that 'options' doesn't contain all that it
+            could.
           </Description>
           <PropertyValue type="function">
             <Description>
@@ -359,7 +360,7 @@ const SelectPage = () => (
             the 'onChange', 'onSelect', and 'onSearch' functions. As a general
             rule of guidance when using 'onSearch', define an original list of
             options that is separate from the currently stored options. Use this
-            definition to reset options to in functions.
+            definition to reset options in functions.
           </Description>
           <Description>
             For examples of defining, setting, and changing options, [see our
@@ -433,6 +434,9 @@ const SelectPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example>"search..."</Example>
+          </PropertyValue>
+          <PropertyValue type="node">
+            <Example>{`<Text>Enter search term</Text>`}</Example>
           </PropertyValue>
         </Property>
 
@@ -658,6 +662,24 @@ const SelectPage = () => (
             Any additional style for the control of the Select component.
           </Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="select.emptySearchMessage.container">
+          <Description>
+            Any valid Box props for the emptySearchMessage container.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ pad: "small"}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="select.emptySearchMessage.text">
+          <Description>
+            Any valid Text props for the emptySearchMessage text.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: "text" }`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="select.icons.margin">

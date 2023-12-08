@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericAlignSelf,
+  GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
 } from '../utils/genericPropExamples';
@@ -68,6 +69,30 @@ const PageHeaderPage = () => (
           <GenericGridArea />
         </Property>
 
+        <Property name="level">
+          <Description>
+            The heading level. It corresponds to the number after the 'H' for
+            the DOM tag. Set the level for semantic accuracy and accessibility.
+            The sizing can be further adjusted using the size property.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"1"</Example>
+            <Example>"2"</Example>
+            <Example>"3"</Example>
+            <Example>"4"</Example>
+            <Example>"5"</Example>
+            <Example>"6"</Example>
+          </PropertyValue>
+          <PropertyValue type="number">
+            <Example defaultValue>1</Example>
+            <Example>2</Example>
+            <Example>3</Example>
+            <Example>4</Example>
+            <Example>5</Example>
+            <Example>6</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="margin">
           <Description>The amount of margin around the component.</Description>
           <GenericMargin />
@@ -91,6 +116,13 @@ const PageHeaderPage = () => (
           <PropertyValue type="element">
             <Example>{`<Anchor label="Parent Page" icon={<FormPrevious />} />`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="responsive">
+          <Description>
+            Whether the layout should be adjusted for mobile environments.
+          </Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="size">

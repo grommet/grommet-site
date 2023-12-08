@@ -16,6 +16,7 @@ import {
   GenericA11yTitle,
   GenericAlignSelf,
   GenericBool,
+  GenericBoolTrue,
   GenericGridArea,
   GenericMargin,
   GenericFill,
@@ -90,6 +91,14 @@ const DataTablePage = () => (
             the column axis when contained in a Grid.
           </Description>
           <GenericAlignSelf />
+        </Property>
+
+        <Property name="allowSelectAll">
+          <Description>
+            Whether or not to show the select all CheckBox in the DataTable
+            header when `onSelect` is defined.
+          </Description>
+          <GenericBoolTrue />
         </Property>
 
         <Property name="gridArea">

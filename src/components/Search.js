@@ -9,6 +9,7 @@ const allSuggestions = structure.sections
   .map((section) => (section.components || []).concat(section.name))
   .concat(structure.externals.map((e) => e.name))
   .reduce((acc, val) => acc.concat(val), [])
+  .filter((val, index, array) => array.indexOf(val) === index)
   .sort();
 
 const Search = ({ open, setOpen }) => {
@@ -90,6 +91,7 @@ const Search = ({ open, setOpen }) => {
 
   return (
     <Button
+      a11yTitle="Search"
       icon={<SearchIcon />}
       hoverIndicator
       onClick={() => {

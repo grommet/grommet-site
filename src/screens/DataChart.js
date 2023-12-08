@@ -221,12 +221,13 @@ const DataChartPage = () => (
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
-              'y' indicates the bounds to use on the Y axis. This is useful to
-              maintain consistent Y axis labelling across different data sets.
+              The bounds to use on the X/Y axis. This is useful to maintain
+              consistent X/Y axis labelling across different data sets.
             </Description>
             <Example>
               {`
 {
+  x: [0, 100],
   y: [0, 100],
 }
               `}
@@ -348,6 +349,14 @@ const DataChartPage = () => (
             therein.
           </Description>
           <GenericBool />
+        </Property>
+
+        <Property name="direction">
+          <Description>The orientation of the data.</Description>
+          <PropertyValue type="string">
+            <Example>"horizontal"</Example>
+            <Example defaultValue>"vertical"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="gap">

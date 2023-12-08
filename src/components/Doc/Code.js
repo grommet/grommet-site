@@ -27,7 +27,7 @@ const options = {
   },
 };
 
-const editorDidMount = editor => {
+const editorDidMount = (editor) => {
   // editor.focus();
   window.addEventListener('resize', () => editor.layout());
 };
@@ -41,7 +41,7 @@ export const Code = ({ basis = ['1/2', '1/2'], code: propsCode, name }) => {
     document.location.search
       .slice(1)
       .split('&')
-      .forEach(p => {
+      .forEach((p) => {
         const [k, v] = p.split('=');
         params[k] = v;
       });
@@ -52,7 +52,7 @@ export const Code = ({ basis = ['1/2', '1/2'], code: propsCode, name }) => {
     }
   }, []);
 
-  const onChange = nextCode => {
+  const onChange = (nextCode) => {
     setCode(nextCode);
     if (propsCode !== nextCode) {
       const encodedCode = LZString.compressToEncodedURIComponent(nextCode);
@@ -106,6 +106,7 @@ export const Code = ({ basis = ['1/2', '1/2'], code: propsCode, name }) => {
               </Box>
               {editing && code !== propsCode && (
                 <Button
+                  a11yTitle="Revert code changes"
                   icon={<Refresh />}
                   onClick={() => onChange(propsCode)}
                 />

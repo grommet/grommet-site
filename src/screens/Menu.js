@@ -423,7 +423,18 @@ const MenuPage = () => (
         <Property name="menu.item">
           <Description>Any valid Button props for the menu items.</Description>
           <PropertyValue type="object">
-            <Example>{`{ align: 'start' }`}</Example>
+            <Example>{`{ alignSelf: 'start' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="menu.item.align">
+          <Description>
+            How to align the contents along the cross axis. Any 'align-items'
+            valid CSS value is accepted, including composed ones such 'first
+            baseline' and 'unsafe start'.
+          </Description>
+          <PropertyValue type="string">
+            <Example>'start'</Example>
           </PropertyValue>
         </Property>
 

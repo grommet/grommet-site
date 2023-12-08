@@ -126,6 +126,13 @@ const MeterPage = () => (
           <GenericBoolFalse />
         </Property>
 
+        <Property name="reverse">
+          <Description>
+            Whether the direction of the Meter should be reversed.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="size">
           <Description>The size of the Meter.</Description>
           <PropertyValue type="string">

@@ -54,6 +54,7 @@ const propertiesObjectExample = `{
     range: {
       min: 1,
       max: 120,
+      step: 5
     },
   },
 }`;
@@ -226,6 +227,10 @@ const DataPage = () => (
             this property overrides the default filters. It allows caller to
             specify how property label renders and which properties should be
             filterable.
+          </Description>
+          <Description>
+            For numeric data, a 'min', 'max', and 'step' can be specified for
+            the range.
           </Description>
           <PropertyValue type="object">
             <Example>{propertiesObjectExample}</Example>
