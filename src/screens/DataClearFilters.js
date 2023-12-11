@@ -37,7 +37,7 @@ export default DataClearFilters;
 
 export const DataClearFiltersItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Data data={[]}>{/* <DataClearFilters /> */}</Data>
+    <Data data={[]}><DataClearFilters /></Data>
   </Item>
 );
 
