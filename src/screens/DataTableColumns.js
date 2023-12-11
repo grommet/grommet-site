@@ -46,10 +46,16 @@ const DataTableColumnsPage = () => (
             <Example>{`['id', 'name', 'age']`}</Example>
           </PropertyValue>
           <PropertyValue type="array of objects">
+            <Description>
+              An array of objects that can include a `label` which will render
+              as the option label, `property` which should be a data property,
+              and `disabled` which will determine if the option can be
+              checked/unchecked.
+            </Description>
             <Example>{`[
-  { label: 'Id', value: 'id' },
-  { label: 'Name', value: 'name' },
-  { label: 'Age', value: 'age' },
+  { label: 'Id', property: 'id', disabled: true },
+  { label: 'Name', property: 'name' },
+  { label: 'Age', property: 'age' },
 ]`}</Example>
           </PropertyValue>
         </Property>
