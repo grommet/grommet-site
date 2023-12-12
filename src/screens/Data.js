@@ -37,18 +37,20 @@ const dataExample = `[
 const propertiesObjectExample = `{
   name: {
     label: 'Name',
-    search: true,
+    search: false,
   },
   country: {
     label: 'Country',
     options: ['US', 'UK', 'FR'],
+    sort: false,
   },
   status: {
     label: 'Status',
     options: [ 
       {label: 'Visited', value: true}, 
       {label: 'Not visited', value: false}, 
-    ]
+    ],
+    filter: false,
   },
   age: {
     label: 'Age',
@@ -225,9 +227,10 @@ const DataPage = () => (
         <Property name="properties">
           <Description>
             This describes the objects found in 'data', sort of a schema. Using
-            this property overrides the default filters. It allows caller to
-            specify how property label renders and which properties should be
-            filterable.
+            this property allows the caller to specify how the label renders and
+            which properties should be filterable, searchable, and sortable. By
+            default properties will be filterable, searchable, and sortable
+            unless specified otherwise.
           </Description>
           <Description>
             For numeric data, a 'min', 'max', and 'step' can be specified for
