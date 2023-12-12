@@ -245,7 +245,7 @@ const DataPage = () => (
           <PropertyValue type="boolean">
             <Description>
               Setting it to 'true' will include a Toolbar containing both
-              DataSearch and DataFilters within a 'layer'.
+              DataSearch and DataFilters with `layer` prop.
             </Description>
             <Example>true</Example>
           </PropertyValue>
