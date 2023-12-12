@@ -31,6 +31,18 @@ const DataFiltersPage = () => (
 </Data>`}
     >
       <Properties>
+        <Property name="clearFilters">
+          <Description>
+            Whether DataFilters should display a "Clear filters" button when
+            filters have been applied. If using DataClearFilters component
+            directly, this can be set to false.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example defaultValue>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="drop">
           <Description>
             Whether to show the controls via a DropButton.
@@ -53,6 +65,17 @@ const DataFiltersPage = () => (
           <Description>Whether to show the controls via a Layer.</Description>
           <PropertyValue type="boolean">
             <Example>true</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="updateOn">
+          <Description>
+            Whether to change the view on each filter input change or to gather
+            multiple changes up into a single submit.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"change"</Example>
+            <Example defaultValue>"submit"</Example>
           </PropertyValue>
         </Property>
       </Properties>
