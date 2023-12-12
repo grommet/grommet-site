@@ -7,6 +7,7 @@ import {
   Properties,
   Property,
   PropertyValue,
+  ThemeDoc,
   Description,
   Example,
 } from '../components/Doc';
@@ -268,17 +269,6 @@ const DataPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="updateOn">
-          <Description>
-            Whether to change the view on each filter input change or to gather
-            multiple changes up into a single submit.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"change"</Example>
-            <Example defaultValue>"submit"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="view">
           <Description>The current view of the data.</Description>
           <PropertyValue type="string">
@@ -298,6 +288,18 @@ const DataPage = () => (
           </PropertyValue>
         </Property>
       </Properties>
+      <ThemeDoc>
+        <Property name="data.button.kind">
+          <Description>
+            The kind of button to render for DataClearFilters, DataFilters,
+            DataSearch, DataSort, and DataTableColumns. This can reference any
+            button kinds defined in your button theme.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"toolbar"</Example>
+          </PropertyValue>
+        </Property>
+      </ThemeDoc>
     </ComponentDoc>
   </Page>
 );

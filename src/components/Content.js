@@ -24,6 +24,7 @@ import Color from '../screens/Color';
 import Components from '../screens/Components';
 import Data from '../screens/Data';
 import DataChart from '../screens/DataChart';
+import DataClearFilters from '../screens/DataClearFilters';
 import DataFilter from '../screens/DataFilter';
 import DataFilters from '../screens/DataFilters';
 import DataSearch from '../screens/DataSearch';
@@ -173,6 +174,7 @@ const Content = () => (
     <Route exact path="/color" component={Color} />
     <Route exact path="/data" component={Data} />
     <Route exact path="/datachart" component={DataChart} />
+    <Route exact path="/dataclearfilters" component={DataClearFilters} />
     <Route exact path="/datafilter" component={DataFilter} />
     <Route exact path="/datafilters" component={DataFilters} />
     <Route exact path="/datasearch" component={DataSearch} />
