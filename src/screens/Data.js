@@ -228,8 +228,8 @@ const DataPage = () => (
           <Description>
             This describes the objects found in 'data', sort of a schema. Using
             this property allows the caller to specify how the label renders and
-            which properties should be filtered, searched, and sorted. By
-            default properties will will be filterable, searchable, and sortable
+            which properties should be filterable, searchable, and sortable. By
+            default properties will be filterable, searchable, and sortable
             unless specified otherwise.
           </Description>
           <Description>
