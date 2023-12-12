@@ -23,6 +23,7 @@ import {
   CollapsibleItem,
   DataItem,
   DataChartItem,
+  DataClearFiltersItem,
   DataFilterItem,
   DataFiltersItem,
   DataSearchItem,
@@ -88,7 +89,6 @@ import {
   VideoItem,
   WorldMapItem,
 } from './items';
-import { DataClearFiltersItem } from '../DataClearFilters';
 
 const Items = {
   Accordion: AccordionItem,

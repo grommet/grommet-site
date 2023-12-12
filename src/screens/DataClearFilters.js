@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-  Data,
-  // DataClearFilters
-} from 'grommet';
+import { Data, DataClearFilters } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { ComponentDoc } from '../components/Doc';
 
-const DataClearFilters = () => (
+const DataClearFiltersPage = () => (
   <Page>
     <ComponentDoc
       name="DataClearFilters"
@@ -22,7 +19,10 @@ const DataClearFilters = () => (
       code={`<Data
   data={[{ name: 'Scott' }, { name: 'Zelda' }]}
 >
-  <Toolbar><DataClearFilters /></Toolbar>
+  <Toolbar align="center">
+    <DataFilters clearFilters={false} drop />
+    <DataClearFilters />
+  </Toolbar>
   <DataTable />
 </Data>`}
       isA={{
@@ -33,11 +33,13 @@ const DataClearFilters = () => (
   </Page>
 );
 
-export default DataClearFilters;
+export default DataClearFiltersPage;
 
 export const DataClearFiltersItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Data data={[]}>{/* <DataClearFilters /> */}</Data>
+    <Data data={[]}>
+      <DataClearFilters tabIndex={-1} />
+    </Data>
   </Item>
 );
 

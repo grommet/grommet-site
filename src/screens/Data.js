@@ -249,17 +249,6 @@ const DataPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="updateOn">
-          <Description>
-            Whether to change the view on each filter input change or to gather
-            multiple changes up into a single submit.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"change"</Example>
-            <Example defaultValue>"submit"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="view">
           <Description>The current view of the data.</Description>
           <PropertyValue type="string">
