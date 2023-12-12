@@ -12,6 +12,28 @@ import {
   Example,
 } from '../components/Doc';
 
+const dataExample = `[
+  {
+    id: 1, 
+    name: 'Scott', 
+    age: 24,
+    siblings: ['Scarlet', 'Scout'],
+    contact: {
+      company: 'Acme, Inc.',
+      social: '@scotty',
+    },
+  },
+  {
+    id: 2, 
+    name: 'Zelsa', 
+    age: 91,
+    siblings: ['Zack', 'Zoe', 'Zelda', 'Zed', 'Ziggy'],
+    contact: {
+      company: 'Retired',
+    },
+  },
+]`;
+
 const propertiesObjectExample = `{
   name: {
     label: 'Name',
@@ -145,10 +167,7 @@ const DataPage = () => (
         <Property name="data">
           <Description>Array of data objects.</Description>
           <PropertyValue type="array">
-            <Example>{`[
-  { id: 1, name: 'Scott', age: 12 },
-  { id: 2, name: 'Zelsa', age: 91 },
-]`}</Example>
+            <Example>{dataExample}</Example>
           </PropertyValue>
         </Property>
 
