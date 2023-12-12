@@ -11,6 +11,10 @@ const DataClearFiltersPage = () => (
       stable
       availableAt={[
         {
+          url: 'https://storybook.grommet.io/?path=/story/data-dataclearfilters-simple--simple',
+          label: 'Storybook',
+        },
+        {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataClearFilters',
           label: 'Github',
         },

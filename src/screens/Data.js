@@ -288,19 +288,19 @@ const DataPage = () => (
           </PropertyValue>
         </Property>
       </Properties>
+      <ThemeDoc>
+        <Property name="data.button.kind">
+          <Description>
+            The kind of button to render for DataClearFilters, DataFilters,
+            DataSearch, DataSort, and DataTableColumns. This can reference any
+            button kinds defined in your button theme.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"toolbar"</Example>
+          </PropertyValue>
+        </Property>
+      </ThemeDoc>
     </ComponentDoc>
-    <ThemeDoc>
-      <Property name="data.button.kind">
-        <Description>
-          The kind of button to render for DataClearFilters, DataFilters,
-          DataSearch, DataSort, and DataTableColumns. This can reference any
-          button kinds defined in your button theme.
-        </Description>
-        <PropertyValue type="string">
-          <Example>"toolbar"</Example>
-        </PropertyValue>
-      </Property>
-    </ThemeDoc>
   </Page>
 );
 
