@@ -1,5 +1,5 @@
 import React from 'react';
-import { Data, DataFilters, Toolbar } from 'grommet';
+import { Box, Data, DataFilters, Heading, Paragraph, Toolbar } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -10,6 +10,7 @@ import {
   Description,
   Example,
 } from '../components/Doc';
+import RoutedAnchor from '../components/RoutedAnchor';
 
 const DataFiltersPage = () => (
   <Page>
@@ -30,6 +31,13 @@ const DataFiltersPage = () => (
   <DataTable />
 </Data>`}
     >
+      <Box>
+        <Heading level={2}>Default filter types</Heading>
+        <Paragraph size="large">
+          For details, see{' '}
+          <RoutedAnchor path="/data" label="Data default filter types" />.
+        </Paragraph>
+      </Box>
       <Properties>
         <Property name="clearFilters">
           <Description>

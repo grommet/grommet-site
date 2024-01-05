@@ -1,5 +1,5 @@
 import React from 'react';
-import { Data } from 'grommet';
+import { Box, Heading, Data, Paragraph } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -165,6 +165,36 @@ const DataPage = () => (
   <DataTable />
 </Data>`}
     >
+      <Box>
+        <Heading level={2}>Default filter types</Heading>
+        <Paragraph size="large">
+          By default, filter types will be based on the type of the data and the
+          number of unique options for the property.
+        </Paragraph>
+        <Paragraph size="large">
+          If the data for a property is a string and there are less than 5
+          options, the default filter is CheckBoxGroup.
+        </Paragraph>
+        <Paragraph size="large">
+          If the data is a string and there are 5 or more options, the default
+          filter is SelectMultiple.
+        </Paragraph>
+        <Paragraph size="large">
+          If the data is a number, the default filter is RangeSelector.
+        </Paragraph>
+        <Heading level={2}>Custom filter types</Heading>
+        <Paragraph size="large">
+          If a custom filter type is desired, this can be done using a
+          compositional approach.
+        </Paragraph>
+        <Example>{`<Data>
+  <DataFilters>
+    <DataFilter property="a">
+      <MyCustomFilter />
+    </DataFilter>
+ </DataFilters>
+</Data>`}</Example>
+      </Box>
       <Properties>
         <Property name="data">
           <Description>Array of data objects.</Description>
