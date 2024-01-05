@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Data, Paragraph } from 'grommet';
+import { Box, Data, DataTable, Paragraph } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -166,26 +166,57 @@ const DataPage = () => (
 </Data>`}
     >
       <Box>
-        <Heading level={2}>Default filter types</Heading>
         <Paragraph size="large">
-          By default, filter types will be based on the type of the data and the
-          number of unique options for the property.
+          Data simplifies the process of managing and presenting data driven
+          content. It establishes a context that tracks which filters, search,
+          and sort controls have been applied. Using that, it determines what
+          subset of the data should be rendered.
         </Paragraph>
-        <Paragraph size="large">
-          If the data for a property is a string and there are less than 5
-          options, the default filter is CheckBoxGroup.
+
+        <Paragraph id="default-filter-types" size="large">
+          Data provides smart defaults for what kind of filter to render for a
+          property based on the type of data and number of unique options.
         </Paragraph>
-        <Paragraph size="large">
-          If the data is a string and there are 5 or more options, the default
-          filter is SelectMultiple.
-        </Paragraph>
-        <Paragraph size="large">
-          If the data is a number, the default filter is RangeSelector.
-        </Paragraph>
-        <Heading level={2}>Custom filter types</Heading>
+        <DataTable
+          aria-describedby="#default-filter-types"
+          alignSelf="start"
+          columns={[
+            {
+              property: 'type',
+              header: 'Type',
+            },
+            {
+              property: 'amount',
+              header: 'Number of options',
+            },
+            {
+              property: 'filter',
+              header: 'Default filter',
+            },
+          ]}
+          data={[
+            {
+              type: 'string',
+              amount: `Less than 5`,
+              filter: 'CheckBoxGroup',
+            },
+            {
+              type: 'string',
+              amount: `5 or more`,
+              filter: 'SelectMultiple',
+            },
+            {
+              type: 'number',
+              amount: '--',
+              filter: 'RangeSelector',
+            },
+          ]}
+        />
+
         <Paragraph size="large">
           If a custom filter type is desired, this can be done using a
-          compositional approach.
+          compositional approach, where you provide your own component as a
+          child to DataFilter.
         </Paragraph>
         <Example>{`<Data>
   <DataFilters>
