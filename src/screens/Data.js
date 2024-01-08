@@ -1,5 +1,5 @@
 import React from 'react';
-import { Data } from 'grommet';
+import { Box, Data, DataTable, Paragraph } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -165,6 +165,67 @@ const DataPage = () => (
   <DataTable />
 </Data>`}
     >
+      <Box>
+        <Paragraph size="large">
+          Data simplifies the process of managing and presenting data driven
+          content. It establishes a context that tracks which filters, search,
+          and sort controls have been applied. Using that, it determines what
+          subset of the data should be rendered.
+        </Paragraph>
+
+        <Paragraph id="default-filter-types" size="large">
+          Data provides smart defaults for what kind of filter to render for a
+          property based on the type of data and number of unique options.
+        </Paragraph>
+        <DataTable
+          aria-describedby="#default-filter-types"
+          alignSelf="start"
+          columns={[
+            {
+              property: 'type',
+              header: 'Type',
+            },
+            {
+              property: 'amount',
+              header: 'Number of options',
+            },
+            {
+              property: 'filter',
+              header: 'Default filter',
+            },
+          ]}
+          data={[
+            {
+              type: 'string',
+              amount: `Less than 5`,
+              filter: 'CheckBoxGroup',
+            },
+            {
+              type: 'string',
+              amount: `5 or more`,
+              filter: 'SelectMultiple',
+            },
+            {
+              type: 'number',
+              amount: '--',
+              filter: 'RangeSelector',
+            },
+          ]}
+        />
+
+        <Paragraph size="large">
+          If a custom filter type is desired, this can be done using a
+          compositional approach, where you provide your own component as a
+          child to DataFilter.
+        </Paragraph>
+        <Example>{`<Data>
+  <DataFilters>
+    <DataFilter property="a">
+      <MyCustomFilter />
+    </DataFilter>
+ </DataFilters>
+</Data>`}</Example>
+      </Box>
       <Properties>
         <Property name="data">
           <Description>Array of data objects.</Description>
