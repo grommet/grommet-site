@@ -8,7 +8,6 @@ const DataClearFiltersPage = () => (
   <Page>
     <ComponentDoc
       name="DataClearFilters"
-      stable
       availableAt={[
         {
           url: 'https://storybook.grommet.io/?path=/story/data-dataclearfilters-simple--simple',

@@ -15,7 +15,6 @@ const DataTableGroupByPage = () => (
   <Page>
     <ComponentDoc
       name="DataTableGroupBy"
-      stable
       availableAt={[
         {
           url: 'https://storybook.grommet.io/?path=/story/Data-DataTableGroupBy',
