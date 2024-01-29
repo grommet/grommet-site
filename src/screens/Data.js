@@ -53,7 +53,7 @@ const propertiesObjectExample = `{
     filter: false,
   },
   age: {
-    label: 'Age',
+    { label: 'Age', badge: false },
     range: {
       min: 1,
       max: 120,
@@ -296,6 +296,10 @@ const DataPage = () => (
           <Description>
             For numeric data, a 'min', 'max', and 'step' can be specified for
             the range.
+          </Description>
+          <Description>
+            Users can configure if a property should be included in the badge
+            count.
           </Description>
           <PropertyValue type="object">
             <Example>{propertiesObjectExample}</Example>
