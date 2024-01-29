@@ -47,6 +47,13 @@ const TagPage = () => (
       description="A component to represent a textual tag"
       intrinsicElement="div"
       code={`<Tag name="name" value="value" />`}
+      isA={{
+        base: 'Box',
+        path: '/box',
+        defaultProps: {
+          align: 'center',
+        },
+      }}
     >
       <Properties>
         <Property name="a11yTitle">
@@ -128,8 +135,17 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
       </Properties>
-
       <ThemeDoc>
+        <Property name="tag.background">
+          <Description>The background of the Tag.</Description>
+          <PropertyValue type="string">
+            <Example>"red"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{dark: "light-2", light: "dark-2"}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="tag.border">
           <Description>Any box border settings.</Description>
           <GenericBoolTrue />
@@ -143,33 +159,6 @@ const TagPage = () => (
   xlarge: "24px",
 }`}
             </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="tag.round">
-          <Description>
-            How much to round the corners. May be overridden by a size-specific
-            value below.
-          </Description>
-          <GenericBool />
-          <PropertyValue type="string">
-            <Example defaultValue>"large"</Example>
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
           </PropertyValue>
         </Property>
 
@@ -201,6 +190,33 @@ const TagPage = () => (
   vertical: "xsmall",
 }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.round">
+          <Description>
+            How much to round the corners. May be overridden by a size-specific
+            value below.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example defaultValue>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
           </PropertyValue>
         </Property>
 
