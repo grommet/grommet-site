@@ -4,8 +4,10 @@ import Page from '../components/Page';
 import Item from './Components/Item';
 import {
   ComponentDoc,
+  Example,
   Properties,
   Property,
+  PropertyValue,
   Description,
 } from '../components/Doc';
 import { GenericBool } from '../utils/genericPropExamples';
@@ -40,6 +42,17 @@ const DataSearchPage = () => (
             Whether to show the search via a DropButton.
           </Description>
           <GenericBool />
+        </Property>
+        <Property name="updateOn">
+          <Description>
+            Whether to change the view on each search input change or to gather
+            multiple changes up into a single submit when the Enter key is
+            pressed.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"change"</Example>
+            <Example>"submit"</Example>
+          </PropertyValue>
         </Property>
         <Property name="responsive">
           <Description>Whether the search is responsive.</Description>
