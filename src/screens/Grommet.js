@@ -344,20 +344,20 @@ const GrommetPage = () => (
       selected: "string",
     },
     selectMultiple: {
-      clearAll: "string";
-      clearAllA11y: "string";
-      open: "string";
-      optionNotSelected: "string";
-      optionSelected: "string";
-      search: "string";
-      selectAll: "string";
-      selectAllA11y: "string";
-      selectDrop: "string";
-      selected: "string";
-      selectedOfTotal: "string";
-      selectedOptions: "string";
-      showMore: "string";
-      summarizedValue: "string";
+      clearAll: "string",
+      clearAllA11y: "string",
+      open: "string",
+      optionNotSelected: "string",
+      optionSelected: "string",
+      search: "string",
+      selectAll: "string",
+      selectAllA11y: "string",
+      selectDrop: "string",
+      selected: "string",
+      selectedOfTotal: "string",
+      selectedOptions: "string",
+      showMore: "string",
+      summarizedValue: "string",
     }
     skipLinks: { skipTo: "string" },
     tabs: { tabContents: "string" },
