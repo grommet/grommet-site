@@ -143,7 +143,6 @@ const DataPage = () => (
   <Page>
     <ComponentDoc
       name="Data"
-      stable
       availableAt={[
         {
           url: 'https://storybook.grommet.io/?path=/story/Layout-Footer',
