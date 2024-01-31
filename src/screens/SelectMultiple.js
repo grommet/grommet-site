@@ -254,6 +254,10 @@ const SelectMultiplePage = () => (
 
         <Property name="messages">
           <Description>Custom messages.</Description>
+          <Description>
+            To affect all SelectMultiple instances, use messages prop on Grommet
+            tag.
+          </Description>
           <PropertyValue type="object">
             <Example>{`{ multiple: "string" }`}</Example>
           </PropertyValue>
