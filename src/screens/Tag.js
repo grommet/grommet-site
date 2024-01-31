@@ -47,13 +47,6 @@ const TagPage = () => (
       description="A component to represent a textual tag"
       intrinsicElement="div"
       code={`<Tag name="name" value="value" />`}
-      isA={{
-        base: 'Box',
-        path: '/box',
-        defaultProps: {
-          align: 'center',
-        },
-      }}
     >
       <Properties>
         <Property name="a11yTitle">
