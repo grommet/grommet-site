@@ -257,7 +257,7 @@ const SelectMultiplePage = () => (
           <Description>Custom messages.</Description>
           <Paragraph>
             To affect all SelectMultiple instances, use{' '}
-            <RoutedAnchor path="/grommet#messages" label="messages prop" />, on
+            <RoutedAnchor path="/grommet#messages" label="messages prop" />{' '}on
             Grommet.
           </Paragraph>
           <PropertyValue type="object">
