@@ -72,6 +72,62 @@ const TagPage = () => (
           <GenericAs />
         </Property>
 
+        <Property name="background">
+          <Description>
+            The background of the tag. Either a color identifier to use for the
+            background color. For example: 'neutral-1'. Or, a 'url()' for an
+            image. Dark is not needed if color is provided.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A color or image url.</Description>
+            <Example>"neutral-1"</Example>
+            <Example>"url(//my.com/assets/img.png)"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>
+              {`
+{
+  color: "neutral-1",
+  dark: true,
+  opacity: true,
+  position: "bottom",
+  repeat: "no-repeat",
+  size: "cover",
+  image: "url(//my.com/assets/img.png)",
+  clip: "text",
+  rotate: 45
+}
+              `}
+            </Example>
+            <Example>{`{ dark: "light-2", light: "dark-2" }`}</Example>
+            <PropOptions prop="opacity">
+              <Example>"weak"</Example>
+              <Example>"medium"</Example>
+              <Example>"strong"</Example>
+              <Example>true</Example>
+            </PropOptions>
+            <PropOptions prop="position">
+              <Example>any CSS for background-position</Example>
+            </PropOptions>
+            <PropOptions prop="repeat">
+              <Example>"no-repeat"</Example>
+              <Example>"repeat"</Example>
+              <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="size">
+              <Example>"cover"</Example>
+              <Example>"contain"</Example>
+              <Example>"string"</Example>
+            </PropOptions>
+            <PropOptions prop="clip">
+              <Example>"text"</Example>
+              <Example>"border-box"</Example>
+              <Example>"padding-box"</Example>
+              <Example>"content-box"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
@@ -128,8 +184,17 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
       </Properties>
-
       <ThemeDoc>
+        <Property name="tag.background">
+          <Description>The background of the Tag.</Description>
+          <PropertyValue type="string">
+            <Example>"red"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{dark: "light-2", light: "dark-2"}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="tag.border">
           <Description>Any box border settings.</Description>
           <GenericBoolTrue />
@@ -143,33 +208,6 @@ const TagPage = () => (
   xlarge: "24px",
 }`}
             </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="tag.round">
-          <Description>
-            How much to round the corners. May be overridden by a size-specific
-            value below.
-          </Description>
-          <GenericBool />
-          <PropertyValue type="string">
-            <Example defaultValue>"large"</Example>
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
           </PropertyValue>
         </Property>
 
@@ -201,6 +239,33 @@ const TagPage = () => (
   vertical: "xsmall",
 }`}
             </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.round">
+          <Description>
+            How much to round the corners. May be overridden by a size-specific
+            value below.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example defaultValue>"large"</Example>
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
           </PropertyValue>
         </Property>
 
