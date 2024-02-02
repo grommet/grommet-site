@@ -41,6 +41,7 @@ const DataSummaryPage = () => (
     "filteredSingle": "{filteredTotal} result of {total} {items}",
     "items": "items",
     "itemsSingle": "item",
+    "selected": "{selected} selected",
     "total": "{total} {items}",
     "totalSingle": "{total} {items}"`}</Example>
           </PropertyValue>
