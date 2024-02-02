@@ -112,30 +112,46 @@ const messagesObjectExample = `{
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
-    "open": "Open filters"
+    "open": "Open filters",
+    "openSet": {
+      "singular": "Open filters, {number} filter applied",
+      "plural": "Open filters, {number} filters applied"
+    }
   },
   "dataForm": {
-    "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data"
+    "label": "Search",
+    "open": "Open search"
   },
   "dataSort": {
     "ascending": "Ascending",
     "by": "Sort by",
     "descending": "Descending",
-    "direction": "Sort direction"
+    "direction": "Sort direction",
+    "open": "Open sort"
   },
   "dataSummary": {
-    "filtered": "{filteredTotal} results of {total} items",
-    "filteredSingle": "{filteredTotal} result of {total} items",
-    "total": "{total} items"
+    "filtered": "{filteredTotal} results of {total} {items}",
+    "filteredSingle": "{filteredTotal} result of {total} {items}",
+    "items": "items",
+    "itemsSingle": "item",
+    "total": "{total} {items}",
+    "totalSingle": "{total} {items}"
   },
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
-    "select": "Select columns"
+    "select": "Select columns",
+    "tip": "Manage columns"
+  },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
+  "dataView": {
+    "label": "View"
   },
 }`;
 
@@ -316,6 +332,7 @@ const DataPage = () => (
           <PropertyValue type="string">
             <Example>"search"</Example>
             <Example>"filters"</Example>
+            <Example>"view"</Example>
           </PropertyValue>
         </Property>
 
