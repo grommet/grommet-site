@@ -53,7 +53,7 @@ const propertiesObjectExample = `{
     filter: false,
   },
   age: {
-    label: 'Age',
+    { label: 'Age', badge: false },
     range: {
       min: 1,
       max: 120,
@@ -160,7 +160,6 @@ const DataPage = () => (
   <Page>
     <ComponentDoc
       name="Data"
-      stable
       availableAt={[
         {
           url: 'https://storybook.grommet.io/?path=/story/Layout-Footer',
@@ -306,8 +305,9 @@ const DataPage = () => (
           <Description>
             This describes the objects found in 'data', sort of a schema. Using
             this property allows the caller to specify how the label renders and
-            which properties should be filterable, searchable, and sortable. By
-            default properties will be filterable, searchable, and sortable
+            which properties should be filterable, searchable, sortable, and
+            badgeable (included in DataFilters badge count). By default
+            properties will be filterable, searchable, sortable, and badgeable
             unless specified otherwise.
           </Description>
           <Description>

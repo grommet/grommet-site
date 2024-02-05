@@ -15,7 +15,6 @@ const DataSummaryPage = () => (
   <Page>
     <ComponentDoc
       name="DataSummary"
-      stable
       availableAt={[
         {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataSummary',
@@ -29,6 +28,13 @@ const DataSummaryPage = () => (
   <DataSummary />
   <DataTable />
 </Data>`}
+      isA={{
+        base: 'Text',
+        path: '/text',
+        defaultProps: {
+          margin: `{{ vertical: 'xsmall' }}`,
+        },
+      }}
     >
       <Properties>
         <Property name="messages">

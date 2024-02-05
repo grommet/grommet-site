@@ -16,7 +16,6 @@ const DataFilterPage = () => (
   <Page>
     <ComponentDoc
       name="DataFilter"
-      stable
       availableAt={[
         {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataFilter',
