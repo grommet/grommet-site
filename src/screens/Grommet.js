@@ -277,14 +277,13 @@ const GrommetPage = () => (
       open: "string",
       openSet: {
         singular: "string",
-        plural: "string",
-      },
+        plural: "string"
+      }
     },
     dataForm: {
-      reset: "string",
       submit: "string"
     },
-    dataSearch: 
+    dataSearch: {
       label: "string",
       open: "string"
     },
@@ -298,20 +297,24 @@ const GrommetPage = () => (
     dataSummary: {
       filtered: "string",
       filteredSingle: "string",
-      total: "string"
+      items: "string",
+      itemsSingle: "string",
+      selected: "string",
+      total: "string",
+      totalSingle: "string"
     },
     dataTableColumns: {
       open: "string",
       order: "string",
       select: "string",
-      tip: "string",
+      tip: "string"
     },
     dataTableGroupBy: {
       clear: "string",
-      label: "string",
+      label: "string"
     },
     dataView: {
-      label: "string",
+      label: "string"
     },
     fileInput: {
       browse: "string",
