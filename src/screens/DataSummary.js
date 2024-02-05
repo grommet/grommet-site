@@ -37,9 +37,13 @@ const DataSummaryPage = () => (
             'messages'.
           </Description>
           <PropertyValue type="object">
-            <Example>{`"filtered": "{filteredTotal} results of {total} items",
-"filteredSingle": "{filteredTotal} result of {total} items",
-"total": "{total} items"`}</Example>
+            <Example>{`"filtered": "{filteredTotal} results of {total} {items}",
+    "filteredSingle": "{filteredTotal} result of {total} {items}",
+    "items": "items",
+    "itemsSingle": "item",
+    "selected": "{selected} selected",
+    "total": "{total} {items}",
+    "totalSingle": "{total} {items}"`}</Example>
           </PropertyValue>
         </Property>
       </Properties>
