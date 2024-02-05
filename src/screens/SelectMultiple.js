@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectMultiple } from 'grommet';
+import { Paragraph, SelectMultiple } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -12,6 +12,7 @@ import {
   GenericMargin,
   SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
+import RoutedAnchor from '../components/RoutedAnchor';
 import { GenericExtend, GenericColor } from '../utils/genericThemeExamples';
 import {
   ComponentDoc,
@@ -254,6 +255,11 @@ const SelectMultiplePage = () => (
 
         <Property name="messages">
           <Description>Custom messages.</Description>
+          <Paragraph>
+            To affect all SelectMultiple instances, use{' '}
+            <RoutedAnchor path="/grommet#messages" label="messages prop" />{' '}on
+            Grommet.
+          </Paragraph>
           <PropertyValue type="object">
             <Example>{`{ multiple: "string" }`}</Example>
           </PropertyValue>
