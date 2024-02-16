@@ -484,6 +484,10 @@ const ListPage = () => (
           <Description>Any additional style for the list items.</Description>
           <GenericExtend />
         </Property>
+        <Property name="list.primaryKey">
+          <Description>Primary key styling accepts any Text props.</Description>
+          <Example>{`{{ color: ..., weight: ... }}`}</Example>
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
