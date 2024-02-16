@@ -305,8 +305,9 @@ const SelectMultiplePage = () => (
           <Description>
             Function that will be called when the user types in the search
             input. If this property is not provided, no search field will be
-            rendered. New options can be added to 'options' based on a search
-            term query within this function.
+            rendered. If the 'onMore' prop is being used and the 'options' prop
+            doesn't reflect all the potential options, the 'onSearch' function
+            supports modifying the 'options' based on a search term.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
