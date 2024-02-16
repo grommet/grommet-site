@@ -489,8 +489,7 @@ const ListPage = () => (
             <Description>
               Primary key styling accepts any Text props.
             </Description>
-            <Example defaultValue>{`weight: 'bold'`}</Example>
-            <Example>{`{{ color: ..., weight: ... }}`}</Example>
+            <Example defaultValue>{`{ weight: 'bold' }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
