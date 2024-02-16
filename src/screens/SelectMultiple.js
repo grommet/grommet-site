@@ -257,7 +257,7 @@ const SelectMultiplePage = () => (
           <Description>Custom messages.</Description>
           <Paragraph>
             To affect all SelectMultiple instances, use{' '}
-            <RoutedAnchor path="/grommet#messages" label="messages prop" />{' '}on
+            <RoutedAnchor path="/grommet#messages" label="messages prop" /> on
             Grommet.
           </Paragraph>
           <PropertyValue type="object">
@@ -305,7 +305,9 @@ const SelectMultiplePage = () => (
           <Description>
             Function that will be called when the user types in the search
             input. If this property is not provided, no search field will be
-            rendered.
+            rendered. If the 'onMore' prop is being used and the 'options' prop
+            doesn't reflect all the potential options, the 'onSearch' function
+            supports modifying the 'options' based on a search term.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
@@ -323,7 +325,8 @@ const SelectMultiplePage = () => (
               rendered. This might be used when the total number of items that
               could be retrieved is more than you'd want to load into the
               browser. 'onMore' allows you to lazily fetch more from the server
-              only when needed.
+              only when needed. When 'onMore' is defined the 'Select All' button
+              is removed from the SelectMultiple.
             </Description>
             <Example>{`() => {}`}</Example>
           </PropertyValue>
