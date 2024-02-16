@@ -485,8 +485,13 @@ const ListPage = () => (
           <GenericExtend />
         </Property>
         <Property name="list.primaryKey">
-          <Description>Primary key styling accepts any Text props.</Description>
-          <Example>{`{{ color: ..., weight: ... }}`}</Example>
+          <PropertyValue type="object">
+            <Description>
+              Primary key styling accepts any Text props.
+            </Description>
+            <Example defaultValue>{`weight: 'bold'`}</Example>
+            <Example>{`{{ color: ..., weight: ... }}`}</Example>
+          </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
