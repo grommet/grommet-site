@@ -326,7 +326,7 @@ const BoxPage = () => (
             Lets users opt into using the css gap property for Box gap instead
             of inserting an extra node into the dom to simulate a gap.
           </Description>
-          <PropertyValue type="boolean"></PropertyValue>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="direction">
