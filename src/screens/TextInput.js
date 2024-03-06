@@ -4,7 +4,9 @@ import Page from '../components/Page';
 import Item from './Components/Item';
 import {
   GenericA11yTitle,
+  GenericBackground,
   GenericBool,
+  GenericBoolFalse,
   SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericOpacity } from '../utils/genericThemeExamples';
@@ -252,6 +254,13 @@ const TextInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="readOnlyCopy">
+          <Description>
+            Makes the TextInput readOnly and adds a copy to clipboard button.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="reverse">
           <Description>
             Whether an icon should be reversed so that the icon is at the end of
@@ -368,6 +377,18 @@ const TextInputPage = () => (
           <Description>The border width.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"1px"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="global.input.readOnly.background">
+          <Description>Background style for readOnly inputs.</Description>
+          <GenericBackground />
+        </Property>
+
+        <Property name="global.input.readOnly.border.color">
+          <Description>Border color for readOnly inputs.</Description>
+          <PropertyValue type="string">
+            <Example>"grey"</Example>
           </PropertyValue>
         </Property>
 

@@ -5,6 +5,7 @@ import Item from './Components/Item';
 import {
   GenericA11yTitle,
   GenericBoolFalse,
+  GenericBoolTrue,
   GenericPad,
 } from '../utils/genericPropExamples';
 import {
@@ -286,6 +287,14 @@ const RangeInputPage = () => (
           <PropertyValue type="string">
             <Example defaultValue>"4px"</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="rangeInput.wheel">
+          <Description>
+            Whether the RangeInput should support interaction via the mouse
+            wheel to change the value.
+          </Description>
+          <GenericBoolTrue />
         </Property>
       </ThemeDoc>
     </ComponentDoc>
