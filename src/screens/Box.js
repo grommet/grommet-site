@@ -402,10 +402,10 @@ const BoxPage = () => (
           </PropertyValue>
           <PropertyValue type="object">
             <Description>
-              Passing an object to gap will automatially use the cssGap behavior
-              with using 'rowGap' and 'columnGap'. If using 'wrap' it is
-              recommended you use 'Row' and 'Column'. You can pass any t-shirt
-              sizes or a specific size in px, em, etc.
+              Passing an object to gap will automatically use the cssGap
+              behavior. This is recommended when using wrap to avoid extra DOM
+              nodes. Any t-shirt size or specific size in px, em, etc. is
+              supported.
             </Description>
             <Example>{`{row: 'xlarge', column: '30px' }`}</Example>
           </PropertyValue>
