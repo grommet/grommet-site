@@ -334,6 +334,12 @@ const GrommetPage = () => (
       invalid: "string",
       required: "string"
     },
+    input: {
+      readOnlyCopy: {
+        prompt: "string",
+        validation: "string"
+      }
+    },
     menu: {
       openMenu: "string",
       closeMenu: "string"
