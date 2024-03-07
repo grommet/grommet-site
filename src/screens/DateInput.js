@@ -3,6 +3,7 @@ import { Box, DateInput } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
+  GenericBackground,
   GenericBoolFalse,
   SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
@@ -147,6 +148,15 @@ const DateInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="readOnlyCopy">
+          <Description>
+            Makes the DateInput readOnly and adds a copy to clipboard button.
+            Setting this to true will automatically set the readOnly prop to
+            true.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="reverse">
           <Description>
             Whether the icon should be reversed so that the icon is at the
@@ -210,6 +220,18 @@ const DateInputPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="global.input.readOnly.background">
+          <Description>Background style for readOnly inputs.</Description>
+          <GenericBackground />
+        </Property>
+
+        <Property name="global.input.readOnly.border.color">
+          <Description>Border color for readOnly inputs.</Description>
+          <PropertyValue type="string">
+            <Example>"grey"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="dateInput.container.round">
           <Description>How much to round the corners.</Description>
           <PropertyValue type="string">
