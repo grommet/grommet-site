@@ -202,12 +202,24 @@ const FormFieldPage = () => (
             the FormField.
           </Description>
           <PropertyValue type="object">
+            <Description>
+              {`An object with max and (optionally) threshold can be used to 
+              implement a character counter.`}
+            </Description>
             <Example>
               {`
 {
   regexp: regular expression,
   message: "string" | node,
   status: "error" | "info"
+}
+            `}
+            </Example>
+            <Example>
+              {`
+{
+  max: number,
+  threshold: number,
 }
             `}
             </Example>
