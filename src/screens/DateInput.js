@@ -150,7 +150,7 @@ const DateInputPage = () => (
 
         <Property name="readOnlyCopy">
           <Description>
-            Makes the TextInput readOnly and adds a copy to clipboard button.
+            Makes the DateInput readOnly and adds a copy to clipboard button.
             Setting this to true will automatically set the readOnly prop to
             true.
           </Description>
