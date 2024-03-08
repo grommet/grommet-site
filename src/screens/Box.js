@@ -321,6 +321,14 @@ const BoxPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="cssGap">
+          <Description>
+            Lets users opt into using the css gap property for Box gap instead
+            of inserting an extra node into the dom to simulate a gap.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="direction">
           <Description>
             The orientation to layout the child components in.
@@ -379,7 +387,8 @@ const BoxPage = () => (
             gracefully. If a child is a Fragment, Box will not add a gap between
             the children of the Fragment. To use the CSS gap attribute to add 
             space between children of the Box (including children of a Fragment 
-            child of the Box), set options={{ box: { cssGap: true } }} on the 
+            child of the Box), set cssGap to true on the Box or set 
+            options={{ box: { cssGap: true } }} on the 
             nearest Grommet parent component.`}
           </Description>
           <PropertyValue type="string">
@@ -390,6 +399,15 @@ const BoxPage = () => (
             <Example>"none"</Example>
             <SizesXsmallXlarge />
             <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              Passing an object to gap will automatically use the cssGap
+              behavior. This is recommended when using wrap to avoid extra DOM
+              nodes. Any t-shirt size or specific size in px, em, etc. is
+              supported.
+            </Description>
+            <Example>{`{row: 'xlarge', column: '30px' }`}</Example>
           </PropertyValue>
         </Property>
 
