@@ -184,9 +184,7 @@ const FormFieldPage = () => (
             true in your theme, passing `indicator: false` will not display the
             required indicator for the given field.
           </Description>
-          <PropertyValue type="boolean">
-            <GenericBool />
-          </PropertyValue>
+          <GenericBool />
           <PropertyValue type="object">
             <Example>{`required={{ indicator: false }}`}</Example>
           </PropertyValue>
