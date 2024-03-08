@@ -184,9 +184,7 @@ const FormFieldPage = () => (
             true in your theme, passing `indicator: false` will not display the
             required indicator for the given field.
           </Description>
-          <PropertyValue type="boolean">
-            <GenericBool />
-          </PropertyValue>
+          <GenericBool />
           <PropertyValue type="object">
             <Example>{`required={{ indicator: false }}`}</Example>
           </PropertyValue>
@@ -202,12 +200,24 @@ const FormFieldPage = () => (
             the FormField.
           </Description>
           <PropertyValue type="object">
+            <Description>
+              {`An object with max and (optionally) threshold can be used to 
+              implement a character counter.`}
+            </Description>
             <Example>
               {`
 {
   regexp: regular expression,
   message: "string" | node,
   status: "error" | "info"
+}
+            `}
+            </Example>
+            <Example>
+              {`
+{
+  max: number,
+  threshold: number,
 }
             `}
             </Example>

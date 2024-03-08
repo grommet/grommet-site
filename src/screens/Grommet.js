@@ -334,6 +334,18 @@ const GrommetPage = () => (
       invalid: "string",
       required: "string"
     },
+    formField: {
+      maxCharacters: {
+        remaining: {
+          singular: "string",
+          plural: "string",
+        },
+        overLimit: {
+          singular: "string",
+          plural: "string",
+        },
+      }),
+    }),
     input: {
       readOnlyCopy: {
         prompt: "string",
