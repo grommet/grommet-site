@@ -139,6 +139,33 @@ const PaginationPage = () => (
             <Example defaultValue> 10 </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="stepOptions">
+          <Description>
+            The option for a user to select the number of items per page that
+            they would like to view.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example defaultValue> {`{10, 25, 50, 100}`} </Example>
+            <Example>{`{20, 30, 40, 50}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="summary">
+          <Description>
+            When viewing a collection of items, the summary will include current
+            page number, total number of pages, and the total number of items in
+            the collection.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
