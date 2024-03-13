@@ -148,7 +148,6 @@ const PaginationPage = () => (
           <GenericBoolFalse />
           <PropertyValue type="object">
             <Example defaultValue> {`{10, 25, 50, 100}`} </Example>
-            <Example>{`{20, 30, 40, 50}`}</Example>
           </PropertyValue>
         </Property>
 
