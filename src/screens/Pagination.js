@@ -158,10 +158,7 @@ const PaginationPage = () => (
             page number, total number of pages, and the total number of items in
             the collection.
           </Description>
-          <PropertyValue type="boolean">
-            <Example>true</Example>
-            <Example defaultValue>false</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
         </Property>
       </Properties>
 
