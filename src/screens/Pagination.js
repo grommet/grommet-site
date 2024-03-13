@@ -7,6 +7,7 @@ import {
   GenericAlignSelf,
   GenericGridArea,
   GenericMargin,
+  GenericBoolFalse,
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericColor } from '../utils/genericThemeExamples';
 import {
@@ -138,6 +139,26 @@ const PaginationPage = () => (
           <PropertyValue type="number">
             <Example defaultValue> 10 </Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="stepOptions">
+          <Description>
+            Display a Select component where the user can choose the number of
+            items per page that they would like to view.
+          </Description>
+          <GenericBoolFalse />
+          <PropertyValue type="object">
+            <Example defaultValue> {`{10, 25, 50, 100}`} </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="summary">
+          <Description>
+            When viewing a collection of items, the summary will include current
+            page number, total number of pages, and the total number of items in
+            the collection.
+          </Description>
+          <GenericBoolFalse />
         </Property>
       </Properties>
 
