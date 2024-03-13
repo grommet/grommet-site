@@ -145,10 +145,7 @@ const PaginationPage = () => (
             Display a Select component where the user can choose the number 
             of items per page that they would like to view.
           </Description>
-          <PropertyValue type="boolean">
-            <Example>true</Example>
-            <Example defaultValue>false</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
           <PropertyValue type="object">
             <Example defaultValue> {`{10, 25, 50, 100}`} </Example>
             <Example>{`{20, 30, 40, 50}`}</Example>
