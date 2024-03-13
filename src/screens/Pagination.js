@@ -7,6 +7,7 @@ import {
   GenericAlignSelf,
   GenericGridArea,
   GenericMargin,
+  GenericBoolFalse,
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericColor } from '../utils/genericThemeExamples';
 import {
@@ -142,8 +143,8 @@ const PaginationPage = () => (
 
         <Property name="stepOptions">
           <Description>
-            Display a Select component where the user can choose the number 
-            of items per page that they would like to view.
+            Display a Select component where the user can choose the number of
+            items per page that they would like to view.
           </Description>
           <GenericBoolFalse />
           <PropertyValue type="object">
