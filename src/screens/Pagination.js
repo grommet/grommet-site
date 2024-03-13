@@ -142,8 +142,8 @@ const PaginationPage = () => (
 
         <Property name="stepOptions">
           <Description>
-            The option for a user to select the number of items per page that
-            they would like to view.
+            Display a Select component where the user can choose the number 
+            of items per page that they would like to view.
           </Description>
           <PropertyValue type="boolean">
             <Example>true</Example>
