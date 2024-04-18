@@ -12,7 +12,7 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 import { GenericColor } from '../utils/genericThemeExamples';
-import { GenericPad } from '../utils/genericPropExamples';
+import { GenericPad, GenericBoolFalse } from '../utils/genericPropExamples';
 
 const ToggleGroup = () => (
   <Page>
@@ -30,7 +30,7 @@ const ToggleGroup = () => (
           label: 'Github',
         },
       ]}
-      description="A collection of binary buttons capable of being switched between two states: activated or deactivated."
+      description="A collection of binary buttons capable of being switched between two states: on or off."
       code={`<Grommet theme={grommet}>
   <Box pad="medium">
   </Box>
@@ -42,7 +42,7 @@ const ToggleGroup = () => (
             This will allow more than one of the buttons within ToggleGroup to
             be selected.
           </Description>
-          <PropertyValue type="boolean" />
+          <GenericBoolFalse />
         </Property>
 
         <Property name="onToggle">
