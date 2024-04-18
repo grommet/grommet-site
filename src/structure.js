@@ -39,6 +39,7 @@ export const structure = {
         'Nav',
         'Tabs',
         'Tip',
+        'ToggleGroup',
       ],
     },
     {

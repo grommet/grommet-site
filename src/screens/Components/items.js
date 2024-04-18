@@ -77,6 +77,7 @@ export { TextInputItem } from '../TextInput';
 export { ThemeContextItem } from '../ThemeContext';
 export { ThumbsRatingItem } from '../ThumbsRating';
 export { TipItem } from '../Tip';
+export { ToggleGroupItem } from '../ToggleGroup';
 export { ToolbarItem } from '../Toolbar';
 export { VideoItem } from '../Video';
 export { WorldMapItem } from '../WorldMap';
