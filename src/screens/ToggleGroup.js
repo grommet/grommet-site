@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'grommet';
+import { ToggleGroup } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -11,10 +11,9 @@ import {
   Example,
   ThemeDoc,
 } from '../components/Doc';
-import { GenericColor } from '../utils/genericThemeExamples';
 import { GenericPad, GenericBoolFalse } from '../utils/genericPropExamples';
 
-const ToggleGroup = () => (
+const ToggleGroupPage = () => (
   <Page>
     <ComponentDoc
       name=""
@@ -22,19 +21,19 @@ const ToggleGroup = () => (
         {
           url: '',
           badge:
-            'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+            'https://storybook.grommet.io/?path=/story/controls-togglegroup-simple--simple',
           label: 'Storybook',
         },
         {
-          url: '',
+          url: 'https://github.com/grommet/grommet/tree/master/src/js/components/ToggleGroup',
           label: 'Github',
         },
       ]}
       description="A collection of binary buttons capable of being switched between two states: on or off."
-      code={`<Grommet theme={grommet}>
-  <Box pad="medium">
-  </Box>
-</Grommet>`}
+      code={`<ToggleGroup
+  a11yTitle="Choose option"
+  options={['Option 1', 'Option 2', 'Option 3']}
+/>`}
     >
       <Properties>
         <Property name="multiple">
@@ -86,15 +85,18 @@ const ToggleGroup = () => (
       </Properties>
 
       <ThemeDoc>
-        <Property name="toggleGroup.button.color">
-          <Description>The color of the text label.</Description>
-          <GenericColor />
-        </Property>
         <Property name="toggleGroup.button.pad">
           <Description>
             The amount of padding around the Box contents.
           </Description>
-          <GenericPad />
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  horizontal: "11px",
+  vertical: "11px",
+}`}
+            </Example>
+          </PropertyValue>
         </Property>
         <Property name="toggleGroup.button.iconOnly.pad">
           <Description>
@@ -110,10 +112,8 @@ const ToggleGroup = () => (
           <PropertyValue type="object">
             <Example defaultValue>
               {`{
-  align: { top: "bottom" }, 
-  background: "none",
-  elevation: "none",
-  margin: "none"
+  round: 'xsmall', 
+  border: true,
 }`}
             </Example>
           </PropertyValue>
@@ -122,21 +122,25 @@ const ToggleGroup = () => (
           <Description>
             The color of the divider between the Buttons.
           </Description>
-          <Example>"neutral-1"</Example>
+          <PropertyValue type="sting">
+            <Example defaultValue>border</Example>
+          </PropertyValue>
         </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
 
-export default ToggleGroup;
+export default ToggleGroupPage;
 
 export const ToggleGroupItem = ({ name, path }) => (
   <Item name={name} path={path} center>
-    <Box
-      border={{ color: 'brand', size: 'medium' }}
-      round="medium"
-      margin="small"
+    <ToggleGroup
+      alignSelf="center"
+      name="group"
+      options={['one', 'two', 'three']}
+      value="one"
+      onChange={() => {}}
     />
   </Item>
 );
