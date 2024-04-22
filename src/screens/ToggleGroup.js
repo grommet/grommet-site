@@ -29,7 +29,7 @@ const ToggleGroupPage = () => (
           label: 'Github',
         },
       ]}
-      description="A collection of binary buttons capable of being switched between two states: on or off."
+      description="A collection of toggle buttons capable of being switched between two states: on or off."
       code={`<ToggleGroup
   a11yTitle="Choose option"
   options={['Option 1', 'Option 2', 'Option 3']}
