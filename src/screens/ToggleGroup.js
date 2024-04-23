@@ -77,7 +77,7 @@ const ToggleGroupPage = () => (
           </PropertyValue>
         </Property>
         <Property name="value">
-          <Description>Currently selected option value.</Description>
+          <Description>The currently selected value. When `multiple` is true, value should be an array.</Description>
           <PropertyValue type="string">
             <Example>"option1"</Example>
           </PropertyValue>
