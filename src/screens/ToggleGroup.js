@@ -38,16 +38,15 @@ const ToggleGroupPage = () => (
       <Properties>
         <Property name="multiple">
           <Description>
-            This will allow more than one of the buttons within ToggleGroup to
-            be selected.
+            Whether to allow multiple options to be selected. When multiple is
+            true, 'value' should be an array of selected options.
           </Description>
           <GenericBoolFalse />
         </Property>
 
         <Property name="onToggle">
           <Description>
-            Function that will be called when the user selects an
-            option.
+            Function that will be called when the user selects an option.
           </Description>
           <PropertyValue type="function">
             <Example>{`({ value: nextValue }) => setValue(nextValue)`}</Example>
@@ -67,9 +66,9 @@ const ToggleGroupPage = () => (
               {`
 [
   {
-    icon: element,
-    label:  "string" | element,
-    value: "string"
+    icon: <Bold />,
+    label:  "Bold"
+    value: "bold"
   }
 ]
             `}
@@ -77,7 +76,10 @@ const ToggleGroupPage = () => (
           </PropertyValue>
         </Property>
         <Property name="value">
-          <Description>The currently selected value. When `multiple` is true, value should be an array.</Description>
+          <Description>
+            The currently selected value. When `multiple` is true, value should
+            be an array.
+          </Description>
           <PropertyValue type="string">
             <Example>"option1"</Example>
           </PropertyValue>
