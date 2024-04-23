@@ -47,7 +47,7 @@ const ToggleGroupPage = () => (
         <Property name="onToggle">
           <Description>
             Function that will be called when the user selects an
-            option in toggleGroup.
+            option.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
