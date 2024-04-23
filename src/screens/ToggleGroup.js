@@ -50,7 +50,7 @@ const ToggleGroupPage = () => (
             option.
           </Description>
           <PropertyValue type="function">
-            <Example>{`() => {}`}</Example>
+            <Example>{`({ value: nextValue }) => setValue(nextValue)`}</Example>
           </PropertyValue>
         </Property>
 
