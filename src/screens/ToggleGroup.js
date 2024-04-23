@@ -89,7 +89,7 @@ const ToggleGroupPage = () => (
       <ThemeDoc>
         <Property name="toggleGroup.button.pad">
           <Description>
-            The amount of padding around the Box contents.
+            The amount of padding on the buttons.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
