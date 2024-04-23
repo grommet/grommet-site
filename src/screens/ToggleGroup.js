@@ -122,7 +122,7 @@ const ToggleGroupPage = () => (
         </Property>
         <Property name="toggleGroup.divider.color">
           <Description>
-            The color of the divider between the Buttons.
+            The color of the divider between the buttons.
           </Description>
           <PropertyValue type="sting">
             <Example defaultValue>border</Example>
