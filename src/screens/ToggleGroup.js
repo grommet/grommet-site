@@ -46,7 +46,7 @@ const ToggleGroupPage = () => (
 
         <Property name="onToggle">
           <Description>
-            Function that will be called when the user types or selects an
+            Function that will be called when the user selects an
             option in toggleGroup.
           </Description>
           <PropertyValue type="function">
