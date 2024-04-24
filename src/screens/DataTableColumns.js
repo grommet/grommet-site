@@ -49,7 +49,7 @@ const DataTableColumnsPage = () => (
               An array of objects that can include a `label` which will render
               as the option label, `property` which should be a data property,
                `disabled` which will determine if the option can be
-              checked/unchecked. `pinned` which can be used to specify items
+              checked/unchecked, and `pinned` which can be used to specify items
               that should not change position in the List.
             </Description>
             <Example>{`[
