@@ -294,10 +294,20 @@ const ListPage = () => (
           <PropertyValue type="array">
             <Description>
               An array of numbers or strings that correspond to items in the
-              List.
+              List. Alternately, an object, where 'items' is an array that
+              corresponds to items in the List, 'icon' is the icon to be
+              rendered instead of Pin, 'color' is the color to be applied to the
+              item text and icon, and 'background' which is the background color
+              for the pinned items.
             </Description>
             <Example>[1, 5]</Example>
             <Example>['item 2']</Example>
+            <Example>{`{
+   background: 'none',
+   color: 'text-weak',
+   icon: <Lock />,
+   items: ['item 2', 'item 3']
+}`}</Example>
           </PropertyValue>
         </Property>
 
