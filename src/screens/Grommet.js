@@ -277,14 +277,13 @@ const GrommetPage = () => (
       open: "string",
       openSet: {
         singular: "string",
-        plural: "string",
-      },
+        plural: "string"
+      }
     },
     dataForm: {
-      reset: "string",
       submit: "string"
     },
-    dataSearch: 
+    dataSearch: {
       label: "string",
       open: "string"
     },
@@ -298,20 +297,24 @@ const GrommetPage = () => (
     dataSummary: {
       filtered: "string",
       filteredSingle: "string",
-      total: "string"
+      items: "string",
+      itemsSingle: "string",
+      selected: "string",
+      total: "string",
+      totalSingle: "string"
     },
     dataTableColumns: {
       open: "string",
       order: "string",
       select: "string",
-      tip: "string",
+      tip: "string"
     },
     dataTableGroupBy: {
       clear: "string",
-      label: "string",
+      label: "string"
     },
     dataView: {
-      label: "string",
+      label: "string"
     },
     fileInput: {
       browse: "string",
@@ -331,6 +334,24 @@ const GrommetPage = () => (
       invalid: "string",
       required: "string"
     },
+    formField: {
+      maxCharacters: {
+        remaining: {
+          singular: "string",
+          plural: "string",
+        },
+        overLimit: {
+          singular: "string",
+          plural: "string",
+        },
+      }),
+    }),
+    input: {
+      readOnlyCopy: {
+        prompt: "string",
+        validation: "string"
+      }
+    },
     menu: {
       openMenu: "string",
       closeMenu: "string"
@@ -343,6 +364,22 @@ const GrommetPage = () => (
       multiple: "string",
       selected: "string",
     },
+    selectMultiple: {
+      clearAll: "string",
+      clearAllA11y: "string",
+      open: "string",
+      optionNotSelected: "string",
+      optionSelected: "string",
+      search: "string",
+      selectAll: "string",
+      selectAllA11y: "string",
+      selectDrop: "string",
+      selected: "string",
+      selectedOfTotal: "string",
+      selectedOptions: "string",
+      showMore: "string",
+      summarizedValue: "string",
+    }
     skipLinks: { skipTo: "string" },
     tabs: { tabContents: "string" },
     textInput: {

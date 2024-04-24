@@ -16,7 +16,6 @@ const DataSearchPage = () => (
   <Page>
     <ComponentDoc
       name="DataSearch"
-      stable
       availableAt={[
         {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataSearch',

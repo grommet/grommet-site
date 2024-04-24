@@ -27,7 +27,6 @@ const CardsPage = () => (
   <Page>
     <ComponentDoc
       name="Cards"
-      stable
       availableAt={[
         {
           url: 'https://storybook.grommet.io/?path=/story/visualizations-cards-simple--simple',

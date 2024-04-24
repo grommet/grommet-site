@@ -53,7 +53,7 @@ const propertiesObjectExample = `{
     filter: false,
   },
   age: {
-    label: 'Age',
+    { label: 'Age', badge: false },
     range: {
       min: 1,
       max: 120,
@@ -112,30 +112,47 @@ const messagesObjectExample = `{
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
-    "open": "Open filters"
+    "open": "Open filters",
+    "openSet": {
+      "singular": "Open filters, {number} filter applied",
+      "plural": "Open filters, {number} filters applied"
+    }
   },
   "dataForm": {
-    "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data"
+    "label": "Search",
+    "open": "Open search"
   },
   "dataSort": {
     "ascending": "Ascending",
     "by": "Sort by",
     "descending": "Descending",
-    "direction": "Sort direction"
+    "direction": "Sort direction",
+    "open": "Open sort"
   },
   "dataSummary": {
-    "filtered": "{filteredTotal} results of {total} items",
-    "filteredSingle": "{filteredTotal} result of {total} items",
-    "total": "{total} items"
+    "filtered": "{filteredTotal} results of {total} {items}",
+    "filteredSingle": "{filteredTotal} result of {total} {items}",
+    "items": "items",
+    "itemsSingle": "item",
+    "selected": "{selected} selected",
+    "total": "{total} {items}",
+    "totalSingle": "{total} {items}"
   },
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
-    "select": "Select columns"
+    "select": "Select columns",
+    "tip": "Manage columns"
+  },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
+  "dataView": {
+    "label": "View"
   },
 }`;
 
@@ -143,7 +160,6 @@ const DataPage = () => (
   <Page>
     <ComponentDoc
       name="Data"
-      stable
       availableAt={[
         {
           url: 'https://storybook.grommet.io/?path=/story/Layout-Footer',
@@ -289,8 +305,9 @@ const DataPage = () => (
           <Description>
             This describes the objects found in 'data', sort of a schema. Using
             this property allows the caller to specify how the label renders and
-            which properties should be filterable, searchable, and sortable. By
-            default properties will be filterable, searchable, and sortable
+            which properties should be filterable, searchable, sortable, and
+            badgeable (included in DataFilters badge count). By default
+            properties will be filterable, searchable, sortable, and badgeable
             unless specified otherwise.
           </Description>
           <Description>
@@ -316,6 +333,7 @@ const DataPage = () => (
           <PropertyValue type="string">
             <Example>"search"</Example>
             <Example>"filters"</Example>
+            <Example>"view"</Example>
           </PropertyValue>
         </Property>
 

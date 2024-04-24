@@ -10,13 +10,13 @@ import {
   Description,
   Example,
 } from '../components/Doc';
+import { GenericBoolFalse } from '../utils/genericPropExamples';
 import RoutedAnchor from '../components/RoutedAnchor';
 
 const DataFiltersPage = () => (
   <Page>
     <ComponentDoc
       name="DataFilters"
-      stable
       availableAt={[
         {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataFilters',
@@ -27,7 +27,7 @@ const DataFiltersPage = () => (
       code={`<Data
   data={[{ name: 'Scott' }, { name: 'Zelda' }]}
 >
-  <Toolbar><DataFilters drop /></Toolbar>
+  <Toolbar><DataFilters /></Toolbar>
   <DataTable />
 </Data>`}
     >
@@ -55,9 +55,7 @@ const DataFiltersPage = () => (
           <Description>
             Whether to show the controls via a DropButton.
           </Description>
-          <PropertyValue type="boolean">
-            <Example>true</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="heading">
@@ -71,9 +69,7 @@ const DataFiltersPage = () => (
 
         <Property name="layer">
           <Description>Whether to show the controls via a Layer.</Description>
-          <PropertyValue type="boolean">
-            <Example>true</Example>
-          </PropertyValue>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="updateOn">

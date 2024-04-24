@@ -8,7 +8,6 @@ const DataViewPage = () => (
   <Page>
     <ComponentDoc
       name="DataView"
-      stable
       availableAt={[
         {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/DataView',
