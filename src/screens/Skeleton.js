@@ -11,6 +11,7 @@ import {
   GenericPad,
   SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
+import { GenericExtend } from '../utils/genericThemeExamples';
 import {
   ComponentDoc,
   Property,
@@ -19,6 +20,7 @@ import {
   Description,
   Properties,
   PropOptions,
+  ThemeDoc,
 } from '../components/Doc';
 
 const SkeletonPage = () => (
@@ -150,6 +152,12 @@ const SkeletonPage = () => (
           </PropertyValue>
         </Property>
       </Properties>
+      <ThemeDoc>
+        <Property name="skeleton.extend">
+          <Description>Any additional style for the Skeleton.</Description>
+          <GenericExtend />
+        </Property>
+      </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
