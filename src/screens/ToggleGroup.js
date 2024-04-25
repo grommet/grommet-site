@@ -1,5 +1,6 @@
 import React from 'react';
 import { ToggleGroup } from 'grommet';
+import { Bold, Italic, Underline } from 'grommet-icons';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import {
@@ -16,7 +17,7 @@ import { GenericPad, GenericBoolFalse } from '../utils/genericPropExamples';
 const ToggleGroupPage = () => (
   <Page>
     <ComponentDoc
-      name=""
+      name="ToggleGroup"
       availableAt={[
         {
           url: '',
@@ -32,10 +33,26 @@ const ToggleGroupPage = () => (
       description="A collection of toggle buttons capable of being switched between two states: on or off."
       code={`<ToggleGroup
   a11yTitle="Choose option"
-  options={['Option 1', 'Option 2', 'Option 3']}
+  options={[
+    {icon: <Icons.Bold />, value: 'bold'},
+    {icon: <Icons.Italic />, value: 'italic'},
+    {icon: <Icons.Underline />, value: 'underline'}
+  ]}
 />`}
     >
       <Properties>
+        <Property name="defaultValue">
+          <Description>
+            The default selected value. When `multiple` is true, value should be
+            an array.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"option1"</Example>
+          </PropertyValue>
+          <PropertyValue type="array[strings]">
+            <Example>["option1", "option2"]</Example>
+          </PropertyValue>
+        </Property>
         <Property name="multiple">
           <Description>
             Whether to allow multiple options to be selected. When multiple is
@@ -82,6 +99,9 @@ const ToggleGroupPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example>"option1"</Example>
+          </PropertyValue>
+          <PropertyValue type="array[strings]">
+            <Example>["option1", "option2"]</Example>
           </PropertyValue>
         </Property>
       </Properties>
@@ -140,7 +160,11 @@ export const ToggleGroupItem = ({ name, path }) => (
     <ToggleGroup
       alignSelf="center"
       name="group"
-      options={['one', 'two', 'three']}
+      options={[
+        { icon: <Bold />, value: 'bold' },
+        { icon: <Italic />, value: 'italic' },
+        { icon: <Underline />, value: 'underline' },
+      ]}
       value="one"
       onChange={() => {}}
     />
