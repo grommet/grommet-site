@@ -49,7 +49,7 @@ const ToggleGroupPage = () => (
           <PropertyValue type="string">
             <Example>"option1"</Example>
           </PropertyValue>
-          <PropertyValue type="array[strings]">
+          <PropertyValue type="array[string]">
             <Example>["option1", "option2"]</Example>
           </PropertyValue>
         </Property>
@@ -100,7 +100,7 @@ const ToggleGroupPage = () => (
           <PropertyValue type="string">
             <Example>"option1"</Example>
           </PropertyValue>
-          <PropertyValue type="array[strings]">
+          <PropertyValue type="array[string]">
             <Example>["option1", "option2"]</Example>
           </PropertyValue>
         </Property>
