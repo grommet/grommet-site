@@ -108,17 +108,51 @@ const ToggleGroupPage = () => (
 
       <ThemeDoc>
         <Property name="toggleGroup.button.pad">
-          <Description>
-            The amount of padding on the buttons.
-          </Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`{
-  horizontal: "11px",
+          <Description>The amount of padding on the buttons.</Description>
+          <>
+            <PropertyValue type="string">
+              <Description>
+                T-shirt sizing based off the theme or a specific size in px, em,
+                etc.
+              </Description>
+              <Example>"none"</Example>
+              <Example>"xxsmall"</Example>
+              <Example>"xsmall"</Example>
+              <Example>"small"</Example>
+              <Example>"medium"</Example>
+              <Example>"large"</Example>
+              <Example>"xlarge"</Example>
+              <Example>"any CSS size"</Example>
+            </PropertyValue>
+            <PropertyValue type="object">
+              <Description>
+                An object can be specified to distinguish horizontal padding,
+                vertical padding, and padding on a particular side.
+              </Description>
+              <Example defaultValue>
+                {`
+{
   vertical: "11px",
-}`}
-            </Example>
-          </PropertyValue>
+  horizontal: "11px",
+}
+        `}
+              </Example>
+              <Example>
+                {`
+{
+  vertical: "...",
+  horizontal: "...",
+  top: "...",
+  bottom: "...",
+  left: "...",
+  right: "...",
+  start: "...",
+  end: "..."
+}
+        `}
+              </Example>
+            </PropertyValue>
+          </>
         </Property>
         <Property name="toggleGroup.button.iconOnly.pad">
           <Description>
