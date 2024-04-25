@@ -89,6 +89,7 @@ import {
   VideoItem,
   WorldMapItem,
 } from './items';
+import { ToggleGroupItem } from '../ToggleGroup';
 
 const Items = {
   Accordion: AccordionItem,
@@ -171,6 +172,7 @@ const Items = {
   ThumbsRating: ThumbsRatingItem,
   Tip: TipItem,
   Toolbar: ToolbarItem,
+  ToggleGroup: ToggleGroupItem,
   Video: VideoItem,
   WorldMap: WorldMapItem,
 };
