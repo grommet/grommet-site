@@ -553,8 +553,8 @@ const BoxPage = () => (
 
         <Property name="responsive">
           <Description>
-            Whether margin, pad, and border sizes should be scaled for mobile
-            environments.
+            Whether margin, pad, round, and border sizes should be scaled for
+            mobile environments.
           </Description>
           <GenericBoolTrue />
         </Property>
