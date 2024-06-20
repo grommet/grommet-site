@@ -345,12 +345,31 @@ const DataTablePage = () => (
 
         <Property name="rowDetails">
           <Description>
-            When supplied, this function will be called with row data. Function
-            can return a React Element which will be rendered on expanding the
-            row.
+            Function rendering the row details or an object to manage row
+            details controlled.
           </Description>
           <PropertyValue type="function">
-            <Example>{`() => {}`}</Example>
+            <Example>{`(row) => { return <span>Row Details</span>}`}</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              You can enable controlled row details by providing an object with
+              the properties `render` (function rendering row details),
+              `expanded` (function returning `true` if the row should be
+              expanded.), `expandable` (function returning `true` if the row is
+              expandable), and `onClickExpand` (when supplied, this function
+              will be called when user clicks expand button. Clicked `row`
+              object is provided as argument).
+            </Description>
+            <Example>
+              {`
+{
+  render: (row) => {...} // return React Element
+  expanded: (row) => {...} // return boolean
+  expandable: (row) => {...} // return boolean
+  onClickExpand: (row) => {...} // void
+}`}
+            </Example>
           </PropertyValue>
         </Property>
 
@@ -813,7 +832,7 @@ const DataTablePage = () => (
   opacity: bool | string,
   repeat: no-repeat | repeat,
   size: cover | contain | string
-}            
+}
             `}
             </Example>
           </PropertyValue>
@@ -832,7 +851,7 @@ const DataTablePage = () => (
   size: "medium",
   style: "dashed",
   side: "all"
-}              
+}
               `}
             </Example>
           </PropertyValue>
@@ -891,7 +910,7 @@ const DataTablePage = () => (
   opacity: bool | string,
   repeat: no-repeat | repeat,
   size: cover | contain | string
-}            
+}
             `}
             </Example>
           </PropertyValue>
@@ -1004,7 +1023,7 @@ const DataTablePage = () => (
   opacity: bool | string,
   repeat: no-repeat | repeat,
   size: cover | contain | string
-}            
+}
             `}
             </Example>
           </PropertyValue>
@@ -1034,7 +1053,7 @@ const DataTablePage = () => (
   opacity: bool | string,
   repeat: no-repeat | repeat,
   size: cover | contain | string
-}            
+}
             `}
             </Example>
           </PropertyValue>
@@ -1064,7 +1083,7 @@ const DataTablePage = () => (
   opacity: bool | string,
   repeat: no-repeat | repeat,
   size: cover | contain | string
-}            
+}
             `}
             </Example>
           </PropertyValue>
