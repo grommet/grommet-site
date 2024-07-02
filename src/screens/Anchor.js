@@ -242,6 +242,11 @@ const AnchorPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="anchor.icon.color">
+          <Description>The color of the icon.</Description>
+          <GenericColor />
+        </Property>
+
         <Property name="anchor.textDecoration">
           <Description>
             The text decoration of the label. Refer to
