@@ -83,13 +83,15 @@ const ToggleGroupPage = () => (
   {
     icon: <Bold />,
     label:  "Bold"
-    value: "bold"
+    value: "bold",
+    tip: "bold"
   }
 ]
             `}
             </Example>
           </PropertyValue>
         </Property>
+
         <Property name="value">
           <Description>
             The currently selected value. When `multiple` is true, value should
@@ -161,7 +163,7 @@ const ToggleGroupPage = () => (
 
         <Property name="toggleGroup.container">
           <Description>
-            Any valid Box property for the Tip container.
+            Any valid Box property for the ToggleGroup container.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
