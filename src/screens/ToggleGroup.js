@@ -20,9 +20,7 @@ const ToggleGroupPage = () => (
       name="ToggleGroup"
       availableAt={[
         {
-          url: '',
-          badge:
-            'https://storybook.grommet.io/?path=/story/controls-togglegroup-simple--simple',
+          url: 'https://storybook.grommet.io/?path=/story/controls-togglegroup-simple--simple',
           label: 'Storybook',
         },
         {
