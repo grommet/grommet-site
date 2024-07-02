@@ -71,7 +71,8 @@ const ToggleGroupPage = () => (
         <Property name="options">
           <Description>
             Options can be either an array of type string, or object. Each
-            option is rendered as a single Button within ToggleGroup.
+            option is rendered as a single Button within ToggleGroup. The
+            options that can be passed in can be icon, label, value, tip
           </Description>
           <PropertyValue type="string">
             <Example>["option1", "option2"]</Example>
