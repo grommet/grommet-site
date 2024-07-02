@@ -278,6 +278,22 @@ const AnchorPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="anchor.icon.color">
+          <Description>The color of the icon.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light mode.
+            </Description>
+            <Example defaultValue>
+              <Markdown>{`{"dark": "black", "light": "brand"}`}</Markdown>
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="anchor.extend">
           <Description>Any additional style for the Anchor.</Description>
           <GenericExtend />
