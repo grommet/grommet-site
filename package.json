@@ -27,7 +27,7 @@
     "server": "http-server dist"
   },
   "dependencies": {
-    "cheerio": "^1.0.0",
+    "cheerio": "1.0.0-rc.12",
     "core-js": "^3.38.0",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "^4.12.1",
