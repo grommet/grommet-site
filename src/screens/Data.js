@@ -76,7 +76,8 @@ const viewObjectExample = `{
     direction: 'desc',
   },
   page: 1,
-  step: 50
+  step: 50,
+  columns: ['country']
 }`;
 
 const viewsObjectExample = `[
