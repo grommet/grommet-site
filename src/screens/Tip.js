@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
-import { GenericBool } from '../utils/genericPropExamples';
+import { GenericBool, GenericBoolFalse } from '../utils/genericPropExamples';
 import {
   ComponentDoc,
   Properties,
@@ -46,6 +46,11 @@ const Tip = () => (
             <Example>"Additional info"</Example>
             <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="defaultVisible">
+          <Description>Whether to display the tooltip initially.</Description>
+          <GenericBoolFalse />
         </Property>
 
         <Property name="dropProps">

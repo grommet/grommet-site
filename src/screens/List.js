@@ -6,6 +6,7 @@ import {
   GenericA11yTitle,
   GenericAlignSelf,
   GenericBool,
+  GenericBoolTrue,
   GenericGridArea,
   GenericMargin,
   GenericPad,
@@ -357,6 +358,13 @@ const ListPage = () => (
             </Description>
             <Example>{`{ page: 2 }`}</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="showIndex">
+          <Description>
+            Whether to display the index number when using `onOrder`.
+          </Description>
+          <GenericBoolTrue />
         </Property>
 
         <Property name="step">
