@@ -41,9 +41,16 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-const isDarkMode =
+const isDarkMode =false;
+
+if (
+  themeMode === 'auto' &&
+  typeof window !== 'undefined' &&
   window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches;
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+){
+  isDarkMode=true;
+}
 
 const Start = () => {
   const [code, setCode] = React.useState(`const App = props => (
