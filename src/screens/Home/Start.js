@@ -41,6 +41,10 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
+const isDarkMode =
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 const Start = () => {
   const [code, setCode] = React.useState(`const App = props => (
   <Grommet>
@@ -98,9 +102,10 @@ render(<App />);
           round={{ corner: 'top' }}
           border={[{ side: 'top' }, { side: 'vertical' }]}
           pad={{ top: 'medium' }}
+          background={{ color: isDarkMode ? '#121212' : '#FFFFFF' }}
         >
           <MonacoEditor
-            theme="vs-light"
+            theme={isDarkMode ? 'vs-dark' : 'vs-light'}
             language="javascript"
             value={code}
             options={options}
