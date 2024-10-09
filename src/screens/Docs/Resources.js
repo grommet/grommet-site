@@ -24,7 +24,7 @@ Find us on [Twitter][twitter].
 `;
 
 const Resources = () => (
-  <div style={{ height: '100vh' }}>
+  <div style={{ minHeight: '100vh' }}>
     <Page>
       <MarkdownTemplate name={name} desc={desc}>
         {children}

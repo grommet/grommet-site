@@ -20,7 +20,7 @@ const children = `
 `;
 
 const Browsers = () => (
-  <div style={{ height: '100vh' }}>
+  <div style={{ minHeight: '100vh' }}>
     <Page>
       <MarkdownTemplate name={name} desc={desc}>
         {children}

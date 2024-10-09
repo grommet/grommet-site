@@ -41,15 +41,14 @@ Dot.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
-const isDarkMode =false;
+let isDarkMode = false;
 
 if (
-  themeMode === 'auto' &&
   typeof window !== 'undefined' &&
   window.matchMedia &&
   window.matchMedia('(prefers-color-scheme: dark)').matches
-){
-  isDarkMode=true;
+) {
+  isDarkMode = true;
 }
 
 const Start = () => {
