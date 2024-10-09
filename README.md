@@ -15,6 +15,7 @@ $ yarn install
 2. Start the front-end dev server:
 
 ```
+
 $ yarn start
 ```
 

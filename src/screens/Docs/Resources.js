@@ -24,11 +24,13 @@ Find us on [Twitter][twitter].
 `;
 
 const Resources = () => (
-  <Page>
-    <MarkdownTemplate name={name} desc={desc}>
-      {children}
-    </MarkdownTemplate>
-  </Page>
+  <div style={{ minHeight: '100vh' }}>
+    <Page>
+      <MarkdownTemplate name={name} desc={desc}>
+        {children}
+      </MarkdownTemplate>
+    </Page>
+  </div>
 );
 
 export default Resources;
