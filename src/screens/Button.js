@@ -1066,18 +1066,14 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="button.intelligentPad">
+        <Property name="button.hover.secondary">
           <Description>
-            This provides the ability to opt-out of the intelligent padding that
-            automaticlly subtracts border width from button padding.
+            Adjustments to the secondary Button style when the Button is
+            hovered. Only relevant for themes that have defined a value for
+            button.default.
           </Description>
-          <GenericBoolTrue />
-        </Property>
-
-        <Property name="button.padding.horizontal">
-          <Description>The horizontal padding.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"22px"</Example>
+          <PropertyValue type="object">
+            <Example>{`{}`}</Example>
           </PropertyValue>
         </Property>
 
@@ -1381,6 +1377,14 @@ const ButtonPage = () => (
           <PropertyValue type="string">
             <Example defaultValue>ease-in-out</Example>
           </PropertyValue>
+        </Property>
+
+        <Property name="button.intelligentPad">
+          <Description>
+            This provides the ability to opt-out of the intelligent padding that
+            automaticlly subtracts border width from button padding.
+          </Description>
+          <GenericBoolTrue />
         </Property>
 
         <Property name="button.extend">
