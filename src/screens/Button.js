@@ -1379,6 +1379,14 @@ const ButtonPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="button.intelligentPad">
+          <Description>
+            This provides the ability to opt-out of the intelligent padding that
+            automaticlly subtracts border width from button padding.
+          </Description>
+          <GenericBoolTrue />
+        </Property>
+
         <Property name="button.extend">
           <Description>Any additional style for the Button.</Description>
           <GenericExtend />

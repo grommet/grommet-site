@@ -218,7 +218,10 @@ const DropPage = () => (
         </Property>
 
         <Property name="restrictFocus">
-          <Description>Whether the drop should control focus.</Description>
+          <Description>
+            Whether focus should be moved to the Drop container if no element
+            within the Drop had autoFocus placed on it.
+          </Description>
           <GenericBoolFalse />
         </Property>
 
