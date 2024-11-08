@@ -9,8 +9,10 @@ import {
   GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
+  SizesXsmallXlarge,
+  GenericBool,
 } from '../utils/genericPropExamples';
-import { GenericExtend } from '../utils/genericThemeExamples';
+import { GenericExtend, GenericWeight } from '../utils/genericThemeExamples';
 import {
   ComponentDoc,
   Properties,
@@ -19,6 +21,7 @@ import {
   Description,
   Example,
   ThemeDoc,
+  PropOptions,
 } from '../components/Doc';
 import { IconColor, EdgeStyle } from '../utils/themeDocUtils';
 
@@ -315,6 +318,95 @@ const CalendarPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="calendar.day.hover">
+          <Description>
+            Any additional background and color style for the day of Calendar
+            hover.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.selected">
+          <Description>
+            Any additional background and color style for the day selected in
+            Calendar.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.selected.font.weight">
+          <Description>Font weight for the selected date.</Description>
+          <GenericWeight defaultValue="bold" />
+        </Property>
+        <Property name="calendar.day.selected.hover">
+          <Description>
+            Any additional background and color style for the day selected in
+            Calendar on hover.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.inRange.color">
+          <Description>
+            Any additional color style for the day in range of Calendar.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.inRange.font.weight">
+          <Description>Font weight for the dates in range.</Description>
+          <GenericWeight defaultValue="bold" />
+        </Property>
+        <Property name="calendar.day.inRange.hover">
+          <Description>
+            Any additional background and color style for the days in range in
+            Calendar on hover.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
         <Property name="calendar.day.extend">
           <Description>
             Any additional style for the day of Calendar.
@@ -454,6 +546,106 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.small.day.round">
+          <Description>
+            The amount to round the corner day when small.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.small.range.round">
+          <Description>
+            The amount to round the corner days in range when small.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.small.range.round.start">
+          <Description>
+            The amount to round the corner days in range when small.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.small.range.round.end">
+          <Description>
+            The amount to round the corner days in range when small.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
         <Property name="calendar.small.daySize">
           <Description>The size of a day when small.</Description>
           <PropertyValue type="string">
@@ -507,6 +699,106 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.medium.day.round">
+          <Description>
+            The amount to round the corner day when medium.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.medium.range.round">
+          <Description>
+            The amount to round the corner days in range when medium.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.medium.range.round.start">
+          <Description>
+            The amount to round the corner days in range when medium.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.medium.range.round.end">
+          <Description>
+            The amount to round the corner days in range when medium.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
         <Property name="global.size.large">
           <Description>The width of the calendar when large.</Description>
           <PropertyValue type="string">
@@ -514,6 +806,105 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.large.day.round">
+          <Description>
+            The amount to round the corner day when large.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.large.range.round">
+          <Description>
+            The amount to round the corner days in range when large.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.large.range.round.start">
+          <Description>
+            The amount to round the corner days in range when large.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="calendar.large.range.round.end">
+          <Description>
+            The amount to round the corner days in range when large.
+          </Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <SizesXsmallXlarge />
+            <Example>"full"</Example>
+            <Example>"any CSS size"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: "...", corner: "..." }`}</Example>
+            <PropOptions prop="corner">
+              <Example>"top"</Example>
+              <Example>"left"</Example>
+              <Example>"bottom"</Example>
+              <Example>"right"</Example>
+              <Example>"top-left"</Example>
+              <Example>"top-right"</Example>
+              <Example>"bottom-left"</Example>
+              <Example>"bottom-right"</Example>
+            </PropOptions>
+          </PropertyValue>
+        </Property>
         <IconColor />
 
         <EdgeStyle description="The possible sizes for margin." />

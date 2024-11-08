@@ -361,6 +361,22 @@ background: {
             <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
+        <Property name="notification.critical.message.color">
+          <Description>The color of the message.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.critical.title.color">
+          <Description>The color of the title.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.critical.toast.message.color">
+          <Description>The color of the message.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.critical.toast.title.color">
+          <Description>The color of the title.</Description>
+          <GenericColor />
+        </Property>
         <Property name="notification.iconContainer">
           <Description>Any valid Box prop for the icon container.</Description>
           <PropertyValue type="object">
@@ -544,6 +560,22 @@ background: {
             <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
+        <Property name="notification.normal.message.color">
+          <Description>The color of the message.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.normal.title.color">
+          <Description>The color of the title.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.normal.toast.message.color">
+          <Description>The color of the message.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.normal.toast.title.color">
+          <Description>The color of the title.</Description>
+          <GenericColor />
+        </Property>
         <Property name="notification.textContainer">
           <Description>Any valid Box prop for the text container.</Description>
           <PropertyValue type="object">
@@ -674,6 +706,22 @@ background: {
             <Example>"brand"</Example>
           </PropertyValue>
         </Property>
+        <Property name="notification.unknown.message.color">
+          <Description>The color of the message.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.unknown.title.color">
+          <Description>The color of the title.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.unknown.toast.message.color">
+          <Description>The color of the message.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.unknown.toast.title.color">
+          <Description>The color of the title.</Description>
+          <GenericColor />
+        </Property>
         <Property name="notification.unknown.global.background">
           <Description>
             The background of an unknown global Notification.
@@ -746,6 +794,14 @@ background: {
             </Example>
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
+          <Property name="notification.undefined.message.color">
+            <Description>The color of the message.</Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.undefined.title.color">
+            <Description>The color of the title.</Description>
+            <GenericColor />
+          </Property>
           <PropertyValue type="string">
             <Example>"brand"</Example>
           </PropertyValue>
@@ -846,6 +902,22 @@ background: {
             </Example>
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
+          <Property name="notification.warning.message.color">
+            <Description>The color of the message.</Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.warning.title.color">
+            <Description>The color of the title.</Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.warning.toast.message.color">
+            <Description>The color of the message.</Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.warning.toast.title.color">
+            <Description>The color of the title.</Description>
+            <GenericColor />
+          </Property>
           <PropertyValue type="string">
             <Example defaultValue>"background-front"</Example>
           </PropertyValue>

@@ -12,7 +12,11 @@ import {
   Example,
   ThemeDoc,
 } from '../components/Doc';
-import { GenericPad, GenericBoolFalse } from '../utils/genericPropExamples';
+import {
+  GenericPad,
+  GenericBoolFalse,
+  GenericBool,
+} from '../utils/genericPropExamples';
 
 const ToggleGroupPage = () => (
   <Page>
@@ -162,6 +166,13 @@ const ToggleGroupPage = () => (
           <GenericPad />
         </Property>
 
+        <Property name="toggleGroup.border.radius">
+          <Description>The border radius used for buttons.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"24px"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="toggleGroup.container">
           <Description>
             Any valid Box property for the ToggleGroup container.
@@ -175,12 +186,28 @@ const ToggleGroupPage = () => (
             </Example>
           </PropertyValue>
         </Property>
+        <Property name="toggleGroup.divider">
+          <Description>
+            Weather to have the divider between the buttons.
+          </Description>
+          <GenericBool />
+        </Property>
+
         <Property name="toggleGroup.divider.color">
           <Description>
             The color of the divider between the buttons.
           </Description>
           <PropertyValue type="sting">
             <Example defaultValue>border</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="toggleGroup.kind">
+          <Description>
+            Any pre-defined kind from theme.button.kind.
+          </Description>
+          <PropertyValue type="sting">
+            <Example>'toolbar'</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>

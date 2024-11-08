@@ -635,6 +635,17 @@ const SelectPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="select.clear.container.hover">
+          <Description>
+            Any valid Box prop for the clear button container hover.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ pad: "small", background: "light-2" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="select.clear.text">
           <Description>
             Any valid Text prop for text used inside the clear button container.

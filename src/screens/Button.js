@@ -1387,6 +1387,15 @@ const ButtonPage = () => (
           <GenericBoolTrue />
         </Property>
 
+        <Property name="button.elevation">
+          <Description>
+            Any additional style for the Button elevation.
+          </Description>
+          <PropertyValue type="string">
+            <Example>'inset 3px 0 red'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.extend">
           <Description>Any additional style for the Button.</Description>
           <GenericExtend />
