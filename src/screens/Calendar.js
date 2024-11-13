@@ -339,7 +339,6 @@ const CalendarPage = () => (
         <Property name="calendar.day.selected">
           <Description>
             Any additional background and color style for the day selected in
-            Calendar.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
