@@ -391,7 +391,7 @@ const CalendarPage = () => (
         </Property>
         <Property name="calendar.day.inRange.hover">
           <Description>
-            Any additional background and color style for the days in range in
+            Any additional background and color hover style for the days in range.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
