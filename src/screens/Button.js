@@ -1392,7 +1392,7 @@ const ButtonPage = () => (
             Any additional style for the Button elevation.
           </Description>
           <PropertyValue type="string">
-            <Example>'inset 3px 0 red'</Example>
+            <Example>'medium'</Example>
           </PropertyValue>
         </Property>
 
