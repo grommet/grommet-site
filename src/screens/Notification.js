@@ -373,6 +373,18 @@ background: {
           </Description>
           <GenericColor />
         </Property>
+        <Property name="notification.critical.global.message.color">
+          <Description>
+            The color of the message text for critical global status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.critical.global.title.color">
+          <Description>
+            The color of the title text for critical global status.
+          </Description>
+          <GenericColor />
+        </Property>
         <Property name="notification.critical.toast.message.color">
           <Description>
             The color of the message text for critical toast status.
@@ -479,6 +491,30 @@ background: {
             <Example defaultValue>"background-front"</Example>
           </PropertyValue>
         </Property>
+        <Property name="notification.info.message.color">
+          <Description>
+            The color of the message text for info status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.info.title.color">
+          <Description>
+            The color of the title text for info status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.info.global.message.color">
+          <Description>
+            The color of the message text for info global status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.info.global.title.color">
+          <Description>
+            The color of the title text for info global status.
+          </Description>
+          <GenericColor />
+        </Property>
         <Property name="notification.message">
           <Description>Any valid Text prop for the message text.</Description>
           <PropertyValue type="object">
@@ -577,6 +613,18 @@ background: {
         <Property name="notification.normal.title.color">
           <Description>
             The color of the title text for normal status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.normal.global.message.color">
+          <Description>
+            The color of the message text for normal global status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.normal.global.title.color">
+          <Description>
+            The color of the title text for normal global status.
           </Description>
           <GenericColor />
         </Property>
@@ -734,6 +782,18 @@ background: {
           </Description>
           <GenericColor />
         </Property>
+        <Property name="notification.unknown.global.message.color">
+          <Description>
+            The color of the message text for unknown global status.
+          </Description>
+          <GenericColor />
+        </Property>
+        <Property name="notification.unknown.global.title.color">
+          <Description>
+            The color of the title text for unknown global status.
+          </Description>
+          <GenericColor />
+        </Property>
         <Property name="notification.unknown.toast.message.color">
           <Description>
             The color of the message text for unknown toast status.
@@ -827,6 +887,18 @@ background: {
           <Property name="notification.undefined.title.color">
             <Description>
               The color of the title text for undefined status.
+            </Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.undefined.global.message.color">
+            <Description>
+              The color of the message text for undefined global status.
+            </Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.undefined.global.title.color">
+            <Description>
+              The color of the title text for undefined global status.
             </Description>
             <GenericColor />
           </Property>
@@ -939,6 +1011,18 @@ background: {
           <Property name="notification.warning.title.color">
             <Description>
               The color of the title text for warning status.
+            </Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.warning.global.message.color">
+            <Description>
+              The color of the message text for warning global status.
+            </Description>
+            <GenericColor />
+          </Property>
+          <Property name="notification.warning.global.title.color">
+            <Description>
+              The color of the title text for warning global status.
             </Description>
             <GenericColor />
           </Property>

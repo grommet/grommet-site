@@ -9,8 +9,8 @@ import {
   GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
-  SizesXsmallXlarge,
   GenericBool,
+  GenericRound,
 } from '../utils/genericPropExamples';
 import { GenericExtend, GenericWeight } from '../utils/genericThemeExamples';
 import {
@@ -21,7 +21,6 @@ import {
   Description,
   Example,
   ThemeDoc,
-  PropOptions,
 } from '../components/Doc';
 import { IconColor, EdgeStyle } from '../utils/themeDocUtils';
 
@@ -551,24 +550,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day when small.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.small.range.round">
@@ -576,24 +558,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when small.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.small.range.round.start">
@@ -601,24 +566,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when small.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.small.range.round.end">
@@ -626,24 +574,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when small.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.small.daySize">
@@ -704,24 +635,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day when medium.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.medium.range.round">
@@ -729,24 +643,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when medium.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.medium.range.round.start">
@@ -754,24 +651,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when medium.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.medium.range.round.end">
@@ -779,24 +659,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when medium.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="global.size.large">
@@ -811,24 +674,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day when large.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.large.range.round">
@@ -836,24 +682,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when large.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.large.range.round.start">
@@ -861,24 +690,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when large.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
 
         <Property name="calendar.large.range.round.end">
@@ -886,24 +698,7 @@ const CalendarPage = () => (
             The amount to round the corner of a day in range when large.
           </Description>
           <GenericBool />
-          <PropertyValue type="string">
-            <SizesXsmallXlarge />
-            <Example>"full"</Example>
-            <Example>"any CSS size"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example>{`{ size: "...", corner: "..." }`}</Example>
-            <PropOptions prop="corner">
-              <Example>"top"</Example>
-              <Example>"left"</Example>
-              <Example>"bottom"</Example>
-              <Example>"right"</Example>
-              <Example>"top-left"</Example>
-              <Example>"top-right"</Example>
-              <Example>"bottom-left"</Example>
-              <Example>"bottom-right"</Example>
-            </PropOptions>
-          </PropertyValue>
+          <GenericRound />
         </Property>
         <IconColor />
 
