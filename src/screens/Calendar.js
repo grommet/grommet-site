@@ -360,7 +360,7 @@ const CalendarPage = () => (
         </Property>
         <Property name="calendar.day.selected.hover">
           <Description>
-            Any additional background and color style for the day selected in
+            Any additional background and color hover style for the selected Calendar day.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
