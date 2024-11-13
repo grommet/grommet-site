@@ -320,7 +320,8 @@ const CalendarPage = () => (
       <ThemeDoc>
         <Property name="calendar.day.hover">
           <Description>
-            Any additional background and color hover style for the Calendar day.
+            Any additional background and color hover style for the Calendar
+            day.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
@@ -337,7 +338,8 @@ const CalendarPage = () => (
         </Property>
         <Property name="calendar.day.selected">
           <Description>
-            Any additional background and color selected style for the Calendar day.
+            Any additional background and color selected style for the Calendar
+            day.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
@@ -358,7 +360,8 @@ const CalendarPage = () => (
         </Property>
         <Property name="calendar.day.selected.hover">
           <Description>
-            Any additional background and color hover style for the selected Calendar day.
+            Any additional background and color hover style for the selected
+            Calendar day.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
@@ -388,7 +391,8 @@ const CalendarPage = () => (
         </Property>
         <Property name="calendar.day.inRange.hover">
           <Description>
-            Any additional background and color hover style for the days in range.
+            Any additional background and color hover style for the days in
+            range.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
@@ -569,7 +573,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.small.range.round">
           <Description>
-            The amount to round the corner days in range when small.
+            The amount to round the corner of a day in range when small.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -594,7 +598,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.small.range.round.start">
           <Description>
-            The amount to round the corner days in range when small.
+            The amount to round the corner of a day in range when small.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -619,7 +623,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.small.range.round.end">
           <Description>
-            The amount to round the corner days in range when small.
+            The amount to round the corner of a day in range when small.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -697,7 +701,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.medium.day.round">
           <Description>
-            The amount to round the corner day when medium.
+            The amount to round the corner of a day when medium.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -722,7 +726,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.medium.range.round">
           <Description>
-            The amount to round the corner days in range when medium.
+            The amount to round the corner of a day in range when medium.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -747,7 +751,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.medium.range.round.start">
           <Description>
-            The amount to round the corner days in range when medium.
+            The amount to round the corner of a day in range when medium.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -772,7 +776,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.medium.range.round.end">
           <Description>
-            The amount to round the corner days in range when medium.
+            The amount to round the corner of a day in range when medium.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -804,7 +808,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.large.day.round">
           <Description>
-            The amount to round the corner day when large.
+            The amount to round the corner of a day when large.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -829,7 +833,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.large.range.round">
           <Description>
-            The amount to round the corner days in range when large.
+            The amount to round the corner of a day in range when large.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -854,7 +858,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.large.range.round.start">
           <Description>
-            The amount to round the corner days in range when large.
+            The amount to round the corner of a day in range when large.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
@@ -879,7 +883,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.large.range.round.end">
           <Description>
-            The amount to round the corner days in range when large.
+            The amount to round the corner of a day in range when large.
           </Description>
           <GenericBool />
           <PropertyValue type="string">

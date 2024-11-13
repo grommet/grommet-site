@@ -362,19 +362,28 @@ background: {
           </PropertyValue>
         </Property>
         <Property name="notification.critical.message.color">
-          <Description>The color of the message.</Description>
+          <Description>
+            {' '}
+            The color of the message text for critical status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.critical.title.color">
-          <Description>The color of the title.</Description>
+          <Description>
+            The color of the title text for critical status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.critical.toast.message.color">
-          <Description>The color of the message.</Description>
+          <Description>
+            The color of the message text for critical toast status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.critical.toast.title.color">
-          <Description>The color of the title.</Description>
+          <Description>
+            The color of the title text for critical toast status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.iconContainer">
@@ -561,19 +570,27 @@ background: {
           </PropertyValue>
         </Property>
         <Property name="notification.normal.message.color">
-          <Description>The color of the message.</Description>
+          <Description>
+            The color of the message text for normal status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.normal.title.color">
-          <Description>The color of the title.</Description>
+          <Description>
+            The color of the title text for normal status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.normal.toast.message.color">
-          <Description>The color of the message.</Description>
+          <Description>
+            The color of the message text for normal toast status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.normal.toast.title.color">
-          <Description>The color of the title.</Description>
+          <Description>
+            The color of the title text for normal toast status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.textContainer">
@@ -707,19 +724,27 @@ background: {
           </PropertyValue>
         </Property>
         <Property name="notification.unknown.message.color">
-          <Description>The color of the message.</Description>
+          <Description>
+            The color of the message text for unknown status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.unknown.title.color">
-          <Description>The color of the title.</Description>
+          <Description>
+            The color of the title text for unknown status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.unknown.toast.message.color">
-          <Description>The color of the message.</Description>
+          <Description>
+            The color of the message text for unknown toast status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.unknown.toast.title.color">
-          <Description>The color of the title.</Description>
+          <Description>
+            The color of the title text for unknown toast status.
+          </Description>
           <GenericColor />
         </Property>
         <Property name="notification.unknown.global.background">
@@ -795,11 +820,15 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <Property name="notification.undefined.message.color">
-            <Description>The color of the message.</Description>
+            <Description>
+              The color of the message text for undefined status.
+            </Description>
             <GenericColor />
           </Property>
           <Property name="notification.undefined.title.color">
-            <Description>The color of the title.</Description>
+            <Description>
+              The color of the title text for undefined status.
+            </Description>
             <GenericColor />
           </Property>
           <PropertyValue type="string">
@@ -903,19 +932,27 @@ background: {
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
           <Property name="notification.warning.message.color">
-            <Description>The color of the message.</Description>
+            <Description>
+              The color of the message text for warning status.
+            </Description>
             <GenericColor />
           </Property>
           <Property name="notification.warning.title.color">
-            <Description>The color of the title.</Description>
+            <Description>
+              The color of the title text for warning status.
+            </Description>
             <GenericColor />
           </Property>
           <Property name="notification.warning.toast.message.color">
-            <Description>The color of the message.</Description>
+            <Description>
+              The color of the message text for warning toast status.
+            </Description>
             <GenericColor />
           </Property>
           <Property name="notification.warning.toast.title.color">
-            <Description>The color of the title.</Description>
+            <Description>
+              The color of the title text for warning toast status.
+            </Description>
             <GenericColor />
           </Property>
           <PropertyValue type="string">
