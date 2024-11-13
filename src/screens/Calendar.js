@@ -548,7 +548,7 @@ const CalendarPage = () => (
 
         <Property name="calendar.small.day.round">
           <Description>
-            The amount to round the corner day when small.
+            The amount to round the corner of a day when small.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
