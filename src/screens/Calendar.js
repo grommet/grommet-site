@@ -386,7 +386,7 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
         <Property name="calendar.day.inRange.font.weight">
-          <Description>Font weight for the dates in range.</Description>
+          <Description>Font weight for the days in range.</Description>
           <GenericWeight defaultValue="bold" />
         </Property>
         <Property name="calendar.day.inRange.hover">
