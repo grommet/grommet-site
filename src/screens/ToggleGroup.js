@@ -204,7 +204,7 @@ const ToggleGroupPage = () => (
 
         <Property name="toggleGroup.kind">
           <Description>
-            Any pre-defined kind from theme.button.kind.
+            The button `kind` for buttons in a ToggleGroup. Any pre-defined kind from theme.button.kind.
           </Description>
           <PropertyValue type="sting">
             <Example>'toolbar'</Example>
