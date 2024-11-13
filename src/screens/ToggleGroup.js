@@ -188,7 +188,7 @@ const ToggleGroupPage = () => (
         </Property>
         <Property name="toggleGroup.divider">
           <Description>
-            Weather to have the divider between the buttons.
+            Whether to have the divider between the buttons.
           </Description>
           <GenericBool />
         </Property>
