@@ -363,7 +363,6 @@ background: {
         </Property>
         <Property name="notification.critical.message.color">
           <Description>
-            {' '}
             The color of the message text for critical status.
           </Description>
           <GenericColor />
