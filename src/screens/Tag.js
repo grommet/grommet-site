@@ -9,6 +9,7 @@ import {
   GenericBool,
   GenericBoolTrue,
   GenericGridArea,
+  GenericMargin,
   SizesXsmallXlarge,
 } from '../utils/genericPropExamples';
 import {
@@ -292,6 +293,20 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="tag.size.xsmall.remove.size">
+          <Description>The size of the remove button.</Description>
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xsmall.remove.margin">
+          <Description>How much margin around the remove button.</Description>
+          <PropertyValue type="string">
+            <GenericMargin />
+          </PropertyValue>
+        </Property>
+
         <Property name="tag.size.xsmall.round">
           <Description>How much to round the corners.</Description>
           <GenericBool />
@@ -363,6 +378,20 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="tag.size.small.remove.size">
+          <Description>The size of the remove button.</Description>
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.small.remove.margin">
+          <Description>How much margin around the remove button.</Description>
+          <PropertyValue type="string">
+            <GenericMargin />
+          </PropertyValue>
+        </Property>
+
         <Property name="tag.size.medium.pad">
           <Description>The pad</Description>
           <PropertyValue type="object">
@@ -407,6 +436,20 @@ const TagPage = () => (
               <Example>"bottom-left"</Example>
               <Example>"bottom-right"</Example>
             </PropOptions>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.medium.remove.size">
+          <Description>The size of the remove button.</Description>
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.medium.remove.margin">
+          <Description>How much margin around the remove button.</Description>
+          <PropertyValue type="string">
+            <GenericMargin />
           </PropertyValue>
         </Property>
 
@@ -457,6 +500,20 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="tag.size.large.remove.size">
+          <Description>The size of the remove button.</Description>
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.large.remove.margin">
+          <Description>How much margin around the remove button.</Description>
+          <PropertyValue type="string">
+            <GenericMargin />
+          </PropertyValue>
+        </Property>
+
         <Property name="tag.size.xlarge.pad">
           <Description>The pad</Description>
           <PropertyValue type="object">
@@ -504,6 +561,20 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="tag.size.xlarge.remove.size">
+          <Description>The size of the remove button.</Description>
+          <PropertyValue type="string">
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="tag.size.xlarge.remove.margin">
+          <Description>How much margin around the remove button.</Description>
+          <PropertyValue type="string">
+            <GenericMargin />
+          </PropertyValue>
+        </Property>
+
         <Property name="tag.remove">
           <Description>
             Any valid Button props for the remove button.
@@ -514,6 +585,11 @@ const TagPage = () => (
   margin: {
     right: "xsmall"
   }
+}`}
+            </Example>
+            <Example>
+              {`{
+  kind: 'default',
 }`}
             </Example>
           </PropertyValue>

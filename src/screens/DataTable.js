@@ -708,6 +708,14 @@ const DataTablePage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="dataTable.body.selected">
+          <PropertyValue type="object">
+            <Description>
+              Any additional style for an DataTable selected body.
+            </Description>
+          </PropertyValue>
+        </Property>
+
         <Property name="dataTable.container">
           <Description>
             When using paginate, any valid Box props for the container

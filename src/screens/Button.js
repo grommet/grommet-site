@@ -1387,6 +1387,15 @@ const ButtonPage = () => (
           <GenericBoolTrue />
         </Property>
 
+        <Property name="button.elevation">
+          <Description>
+            The elevation for a given button. Should reference an elevation namespace from `theme.global.elevation`.
+          </Description>
+          <PropertyValue type="string">
+            <Example>'medium'</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="button.extend">
           <Description>Any additional style for the Button.</Description>
           <GenericExtend />

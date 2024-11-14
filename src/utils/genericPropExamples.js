@@ -218,3 +218,26 @@ export const SizesXsmallXlarge = () => (
     <Example>"xlarge"</Example>
   </>
 );
+
+export const GenericRound = () => (
+  <>
+    <PropertyValue type="string">
+      <SizesXsmallXlarge />
+      <Example>"full"</Example>
+      <Example>"any CSS size"</Example>
+    </PropertyValue>
+    <PropertyValue type="object">
+      <Example>{`{ size: "...", corner: "..." }`}</Example>
+      <PropOptions prop="corner">
+        <Example>"top"</Example>
+        <Example>"left"</Example>
+        <Example>"bottom"</Example>
+        <Example>"right"</Example>
+        <Example>"top-left"</Example>
+        <Example>"top-right"</Example>
+        <Example>"bottom-left"</Example>
+        <Example>"bottom-right"</Example>
+      </PropOptions>
+    </PropertyValue>
+  </>
+);

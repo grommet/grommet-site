@@ -9,8 +9,10 @@ import {
   GenericBoolFalse,
   GenericGridArea,
   GenericMargin,
+  GenericBool,
+  GenericRound,
 } from '../utils/genericPropExamples';
-import { GenericExtend } from '../utils/genericThemeExamples';
+import { GenericExtend, GenericWeight } from '../utils/genericThemeExamples';
 import {
   ComponentDoc,
   Properties,
@@ -315,6 +317,95 @@ const CalendarPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="calendar.day.hover">
+          <Description>
+            Any additional background and color hover style for the Calendar
+            day.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.selected">
+          <Description>
+            Any additional background and color selected style for the Calendar
+            day.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.selected.font.weight">
+          <Description>Font weight for the selected date.</Description>
+          <GenericWeight defaultValue="bold" />
+        </Property>
+        <Property name="calendar.day.selected.hover">
+          <Description>
+            Any additional background and color hover style for the selected
+            Calendar day.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.inRange.color">
+          <Description>
+            Any additional color style for the day in range of Calendar.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="calendar.day.inRange.font.weight">
+          <Description>Font weight for the days in range.</Description>
+          <GenericWeight defaultValue="bold" />
+        </Property>
+        <Property name="calendar.day.inRange.hover">
+          <Description>
+            Any additional background and color hover style for the days in
+            range.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
         <Property name="calendar.day.extend">
           <Description>
             Any additional style for the day of Calendar.
@@ -454,6 +545,38 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.small.day.round">
+          <Description>
+            The amount to round the corner of a day when small.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.small.range.round">
+          <Description>
+            The amount to round the corner of a day in range when small.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.small.range.round.start">
+          <Description>
+            The amount to round the corner of a day in range when small.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.small.range.round.end">
+          <Description>
+            The amount to round the corner of a day in range when small.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
         <Property name="calendar.small.daySize">
           <Description>The size of a day when small.</Description>
           <PropertyValue type="string">
@@ -507,6 +630,38 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.medium.day.round">
+          <Description>
+            The amount to round the corner of a day when medium.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.medium.range.round">
+          <Description>
+            The amount to round the corner of a day in range when medium.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.medium.range.round.start">
+          <Description>
+            The amount to round the corner of a day in range when medium.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.medium.range.round.end">
+          <Description>
+            The amount to round the corner of a day in range when medium.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
         <Property name="global.size.large">
           <Description>The width of the calendar when large.</Description>
           <PropertyValue type="string">
@@ -514,6 +669,37 @@ const CalendarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="calendar.large.day.round">
+          <Description>
+            The amount to round the corner of a day when large.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.large.range.round">
+          <Description>
+            The amount to round the corner of a day in range when large.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.large.range.round.start">
+          <Description>
+            The amount to round the corner of a day in range when large.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
+
+        <Property name="calendar.large.range.round.end">
+          <Description>
+            The amount to round the corner of a day in range when large.
+          </Description>
+          <GenericBool />
+          <GenericRound />
+        </Property>
         <IconColor />
 
         <EdgeStyle description="The possible sizes for margin." />
