@@ -356,6 +356,24 @@ const GrommetPage = () => (
       openMenu: "string",
       closeMenu: "string"
     },
+    meter: {
+      bar: {
+        singular: "string",
+        plural: "string",
+      },
+      circle: {
+        singular: "string",
+        plural: "string",
+      },
+      pie: {
+        singular: "string",
+        plural: "string",
+      },
+      semicircle: {
+        singular: "string",
+        plural: "string",
+      },
+    },
     rangeSelector: {
       lower: "string",
       upper: "string"
