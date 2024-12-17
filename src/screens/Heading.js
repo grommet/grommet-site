@@ -227,7 +227,7 @@ const HeadingPage = () => (
             adjustment is intended to aid readability on smaller screens but
             will not semantically affect your application structure. If you do
             not want this responsive styling to occur, you can set
-            header.responsiveBreakpoint to undefined.
+            heading.responsiveBreakpoint to undefined.
           </Description>
           <PropertyValue type="object">
             <Example>
