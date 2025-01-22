@@ -85,7 +85,6 @@ const CalendarPage = () => (
             <Example>"6"</Example>
           </PropertyValue>
           <PropertyValue type="number">
-            <Example defaultValue>1</Example>
             <Example>2</Example>
             <Example>3</Example>
             <Example>4</Example>
