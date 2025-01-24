@@ -341,6 +341,24 @@ const CalendarPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="calendar.day.adjacent.color">
+          <Description>
+            The text color to use for dates that are outside of the current
+            month.
+          </Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"text-xweak"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "light-4", light: "dark-3" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
         <Property name="calendar.day.hover">
           <Description>
             Any additional background and color hover style for the Calendar
