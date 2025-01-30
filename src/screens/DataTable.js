@@ -708,6 +708,13 @@ const DataTablePage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="dataTable.body.row.extend">
+          <Description>
+            Any additional style for the rows in the DataTable body.
+          </Description>
+          <GenericExtend />
+        </Property>
+
         <Property name="dataTable.body.selected">
           <PropertyValue type="object">
             <Description>

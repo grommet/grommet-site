@@ -388,6 +388,20 @@ const FormFieldPage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="formField.disabled.help">
+          <Description>
+            The color of the FormField help label when it is disabled.
+          </Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="formField.disabled.info">
+          <Description>
+            The color of the FormField info label when it is disabled.
+          </Description>
+          <GenericColor />
+        </Property>
+
         <Property name="formField.error.background.color">
           <Description>
             The color of the FormField background when there is an error.

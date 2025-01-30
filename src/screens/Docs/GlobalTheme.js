@@ -307,6 +307,48 @@ const GlobalTheme = () => (
             <Example defaultValue>"20"</Example>
           </PropertyValue>
         </Property>
+        <Property name="global.focus.border">
+          <Description>
+            {' '}
+            The border style to use for the focus state.
+          </Description>
+          <Example>{`{
+      border: {
+        color: 'blue',
+      },
+}`}</Example>
+        </Property>
+        <Property name="global.focus.outline">
+          <Description>
+            The outline style to use for the focus state. This includes color,
+            size and offset.
+          </Description>
+          <Example>{`{
+    outline: 
+    { color: 'purple',
+      size: '2px',
+      offset: '2px'
+     },
+}`}</Example>
+        </Property>
+        <Property name="global.focus.shadow">
+          <Description>
+            The shadow style to use for the focus state. This includes color,
+            size, blur and inset.
+          </Description>
+          <Example>{`{
+   shadow: {
+        color: 'red',
+        size: '2px',
+        blur: '0px',
+        inset: true,
+      },
+}`}</Example>
+        </Property>
+        <Property name="global.focus.twoColor">
+          <Description>Enable a two-color focus effect.</Description>
+          <PropertyValue type="boolean" />
+        </Property>
         <Property name="global.edgeSize">
           <Description>
             The possible sizes for any of gap, margin, and pad.
