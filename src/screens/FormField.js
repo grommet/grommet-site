@@ -272,7 +272,6 @@ const FormFieldPage = () => (
             <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.border.error.color">
           <Description>
             The border color of the error. Deprecated, use error.border.color
@@ -291,31 +290,26 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.border.position">
           <Description>The border position.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"inner"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.border.side">
           <Description>The border side of the FormField.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"bottom"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.checkBox.pad">
           <Description>The CheckBox pad when wrapped in FormField.</Description>
           <GenericPad />
         </Property>
-
         <Property name="formField.content.margin">
           <Description>The margin of the FormField content.</Description>
           <GenericMargin />
         </Property>
-
         <Property name="formField.content.pad">
           <Description>The pad of the FormField content.</Description>
           <PropertyValue type="string">
@@ -353,14 +347,12 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.disabled.background.color">
           <Description>
             The color of the FormField background when it is disabled.
           </Description>
           <GenericColor />
         </Property>
-
         <Property name="formField.disabled.background.opacity">
           <Description>
             The opacity of the FormField background when it is disabled.
@@ -373,28 +365,24 @@ const FormFieldPage = () => (
             <Example>0.5</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.disabled.border.color">
           <Description>
             The color of the FormField border when it is disabled.
           </Description>
           <GenericColor />
         </Property>
-
         <Property name="formField.disabled.label.color">
           <Description>
             The color of the FormField label when it is disabled.
           </Description>
           <GenericColor />
         </Property>
-
         <Property name="formField.error.background.color">
           <Description>
             The color of the FormField background when there is an error.
           </Description>
           <GenericColor />
         </Property>
-
         <Property name="formField.error.background.opacity">
           <Description>
             The opacity of the FormField background when there is an error.
@@ -407,7 +395,6 @@ const FormFieldPage = () => (
             <Example>0.5</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.border.color">
           <Description>The border color of the error.</Description>
           <PropertyValue type="string">
@@ -423,7 +410,6 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.color">
           <Description>The color of the FormField error.</Description>
           <PropertyValue type="string">
@@ -437,7 +423,6 @@ const FormFieldPage = () => (
             <Example>{`{ dark: "string", light: "string" },`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.container">
           <Description>
             Any valid Box props for the container surrounding the error message
@@ -447,7 +432,6 @@ const FormFieldPage = () => (
             <Example>{`{}`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.icon">
           <Description>
             An icon placed in a row with the error message.
@@ -456,7 +440,6 @@ const FormFieldPage = () => (
             <Example>{`<Icon />`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.size">
           <Description>
             The size of the error message to be displayed.
@@ -465,42 +448,36 @@ const FormFieldPage = () => (
             <Example defaultValue>"medium"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.size.xsmall">
           <Description>The size of a 'xsmall' error message.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"12px"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.size.small">
           <Description>The size of a 'small' error message.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"14px"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.size.medium">
           <Description>The size of a 'medium' error message.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"18px"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.size.large">
           <Description>The size of a 'large' error message.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"22px"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.size.xlarge">
           <Description>The size of a 'xlarge' error message.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"26px"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.info.container">
           <Description>
             Any valid Box props for the container surrounding the info message
@@ -510,7 +487,6 @@ const FormFieldPage = () => (
             <Example>{`{}`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.info.icon">
           <Description>
             An icon placed in a row with the info message.
@@ -519,7 +495,6 @@ const FormFieldPage = () => (
             <Example>{`<Icon />`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.error.margin">
           <Description>The margin used for the FormField error.</Description>
           <PropertyValue type="string">
@@ -531,23 +506,28 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.focus.background.color">
           <Description>
             The color of the FormField background when it is in focus.
           </Description>
           <GenericColor />
         </Property>
-
         <Property name="formField.focus.border.color">
           <Description>
             The color of the FormField border when it is in focus.
           </Description>
           <GenericColor />
         </Property>
-
         <Property name="formField.extend">
           <Description>Any additional style for FormField.</Description>
+          <GenericExtend />
+        </Property>
+
+        <Property name="formField.[inputname].extend">
+          <Description>
+            Any additional style for FormField container to style differently
+            based on the type of child element (e.g., TextInput, TextArea, etc.)
+          </Description>
           <GenericExtend />
         </Property>
 
@@ -566,7 +546,6 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.help.margin">
           <Description>The margin for the FormField help.</Description>
           <PropertyValue type="string">
@@ -576,7 +555,6 @@ const FormFieldPage = () => (
             <Example defaultValue>{`{ start: "small" }`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.kind.label">
           <Description>
             Any props of Text that will be applied on the FormField `kind`
@@ -596,7 +574,6 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.info.color">
           <Description>The color of the FormField info.</Description>
           <PropertyValue type="string">
@@ -610,7 +587,6 @@ const FormFieldPage = () => (
             <Example>{`{ dark: "string", light: "string" },`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.info.margin">
           <Description>The margin used for the FormField info.</Description>
           <PropertyValue type="string">
@@ -622,7 +598,6 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.label">
           <Description>
             Any props of Text that will be applied on the FormField label.
@@ -640,7 +615,6 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.label.margin">
           <Description>The margin for the FormField label.</Description>
           <PropertyValue type="string">
@@ -652,7 +626,6 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.label.requiredIndicator">
           <Description>
             Whether an asterisk (*) indicating that an input is required should
@@ -677,7 +650,6 @@ const FormFieldPage = () => (
             <Example>"required"</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.margin">
           <Description>The margin of FormField.</Description>
           <PropertyValue type="string">
@@ -687,7 +659,6 @@ const FormFieldPage = () => (
             <Example defaultValue>{`{ bottom: "small" }`}</Example>
           </PropertyValue>
         </Property>
-
         <Property name="formField.round">
           <Description>The rounding of the FormField.</Description>
           <GenericBool />
@@ -710,7 +681,6 @@ const FormFieldPage = () => (
             </PropOptions>
           </PropertyValue>
         </Property>
-
         <Property name="global.borderSize">
           <Description>The possible border sizes for FormField.</Description>
           <PropertyValue type="object">
