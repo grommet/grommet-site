@@ -574,6 +574,14 @@ const FormFieldPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="formField.[inputname].extend">
+          <Description>
+            Any additional style for FormField container to style differently
+            based on the type of child element (e.g., TextInput, TextArea, etc.)
+          </Description>
+          <GenericExtend />
+        </Property>
+
         <Property name="formField.help.color">
           <Description>The color of the FormField help.</Description>
           <PropertyValue type="string">
