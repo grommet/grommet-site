@@ -133,6 +133,12 @@ const GlobalTheme = () => (
           </Description>
           <GlobalBreakpoints />
         </Property>
+        <Property name="global.breakpoint[size].radius">
+          <Description>The border radius for the given size.</Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
+        </Property>
         <Property name="global.deviceBreakpoints">
           <Description>
             Breakpoints used at Server Side Rendering for the initial rendering.
@@ -598,6 +604,12 @@ const GlobalTheme = () => (
           </Description>
           <PropertyValue type="number">
             <Example defaultValue>0.1</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.radius">
+          <Description>The border radius.</Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
           </PropertyValue>
         </Property>
         <Property name="global.selected.background">
