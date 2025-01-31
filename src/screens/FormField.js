@@ -6,6 +6,7 @@ import { GenericColor, GenericExtend } from '../utils/genericThemeExamples';
 import {
   GenericA11yTitle,
   GenericBool,
+  GenericBoolTrue,
   GenericMargin,
   GenericPad,
   SizesXsmallXlarge,
@@ -558,6 +559,14 @@ const FormFieldPage = () => (
             The color of the FormField border when it is in focus.
           </Description>
           <GenericColor />
+        </Property>
+
+        <Property name="formField.focus.containerFocus">
+          <Description>
+            Weather the FormField container should be focused or the input
+            should be focused.
+          </Description>
+          <GenericBoolTrue />
         </Property>
 
         <Property name="formField.extend">
