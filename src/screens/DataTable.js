@@ -710,7 +710,7 @@ const DataTablePage = () => (
 
         <Property name="dataTable.body.row.extend">
           <Description>
-            Any additional style for the rows in the DataTable body.
+            Any additional CSS for the rows in the DataTable body.
           </Description>
           <GenericExtend />
         </Property>
