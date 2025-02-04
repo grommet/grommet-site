@@ -315,7 +315,6 @@ const GlobalTheme = () => (
         </Property>
         <Property name="global.focus.border">
           <Description>
-            {' '}
             The border style to use for the focus state.
           </Description>
           <Example>{`{
