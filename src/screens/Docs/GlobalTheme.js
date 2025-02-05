@@ -20,6 +20,7 @@ import {
 import {
   GenericBackground,
   GenericBool,
+  GenericBoolFalse,
   GenericMargin,
 } from '../../utils/genericPropExamples';
 
@@ -317,31 +318,36 @@ const GlobalTheme = () => (
           <Description>
             The border style to use for the focus state.
           </Description>
-          <Example>{`{
+          <PropertyValue type="object">
+            <Example>{`{
       border: {
         color: 'blue',
       },
 }`}</Example>
+          </PropertyValue>
         </Property>
         <Property name="global.focus.outline">
           <Description>
             The outline style to use for the focus state. This includes color,
             size and offset.
           </Description>
-          <Example>{`{
+          <PropertyValue type="object">
+            <Example>{`{
     outline: 
     { color: 'purple',
       size: '2px',
       offset: '2px'
      },
 }`}</Example>
+          </PropertyValue>
         </Property>
         <Property name="global.focus.shadow">
           <Description>
             The shadow style to use for the focus state. This includes color,
             size, blur and inset.
           </Description>
-          <Example>{`{
+          <PropertyValue type="object">
+            <Example>{`{
    shadow: {
         color: 'red',
         size: '2px',
@@ -349,10 +355,12 @@ const GlobalTheme = () => (
         inset: true,
       },
 }`}</Example>
+          </PropertyValue>
         </Property>
         <Property name="global.focus.twoColor">
           <Description>Enable a two-color focus effect.</Description>
           <PropertyValue type="boolean" />
+          <GenericBoolFalse />
         </Property>
         <Property name="global.edgeSize">
           <Description>
