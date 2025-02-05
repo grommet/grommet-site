@@ -314,6 +314,22 @@ const MenuPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="menu.container">
+          <Description>
+            Any valid Box props for the container around the menu items.
+          </Description>
+          <PropertyValue defaultValue type="object">
+            <Example>
+              {`{
+  container: {
+    pad: 'xsmall',
+    gap: 'xsmall',
+  },
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="menu.drop">
           <Description>Any valid Drop props for the Menu drop.</Description>
           <PropertyValue type="object">

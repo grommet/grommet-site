@@ -323,6 +323,26 @@ const AnchorPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="anchor.size.[size].gap">
+          <Description>
+            The gap between the label text and the icon on different Anchor
+            sizes. Size refers to the text size of the Anchor.
+          </Description>
+          <PropertyValue type="string">
+            <Description>
+              T-shirt sizing based off the theme or a specific size in px, em,
+              etc.
+            </Description>
+            <Example>"none"</Example>
+            <Example>"xsmall"</Example>
+            <Example defaultValue>"small"</Example>
+            <Example>"medium"</Example>
+            <Example>"large"</Example>
+            <Example>"xlarge"</Example>
+            <Example>"20 px"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="anchor.size.[size].fontWeight">
           <Description>
             The font weight of the label on different Anchor sizes. Size refers

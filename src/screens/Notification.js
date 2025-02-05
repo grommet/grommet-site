@@ -523,6 +523,16 @@ background: {
           </PropertyValue>
         </Property>
 
+        <Property name="notification.message.fill">
+          <Description>
+            Controls the fill prop for the Paragraph component when the
+            direction is set to column.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example defaultValue>false</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="notification.normal.color">
           <Description>The color of the normal status icon.</Description>
           <PropertyValue type="string">
