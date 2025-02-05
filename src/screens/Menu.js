@@ -321,11 +321,11 @@ const MenuPage = () => (
           <PropertyValue defaultValue type="object">
             <Example>
               {`{
-        container: {
-          pad: 'xsmall',
-          gap: 'xsmall',
-        },
-      }`}
+  container: {
+    pad: 'xsmall',
+    gap: 'xsmall',
+  },
+}`}
             </Example>
           </PropertyValue>
         </Property>
