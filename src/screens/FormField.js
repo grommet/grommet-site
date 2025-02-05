@@ -563,8 +563,9 @@ const FormFieldPage = () => (
 
         <Property name="formField.focus.containerFocus">
           <Description>
-            Weather the FormField container should be focused or the input
-            should be focused.
+            Whether the focus should be on the FormField container or the Input.
+            When true, the FormField container will receive focus; when false,
+            the Input field will receive focus.
           </Description>
           <GenericBoolTrue />
         </Property>
