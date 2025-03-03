@@ -1,6 +1,6 @@
 import React from 'react';
 import { Anchor, Box, Image, Paragraph, Text } from 'grommet';
-import { Github, Slack, Twitter } from 'grommet-icons';
+import { Github, Slack, X } from 'grommet-icons';
 import Nav from '../../components/Nav';
 import Header from '../../components/Header';
 import RoutedButton from '../../components/RoutedButton';
@@ -36,10 +36,10 @@ const HomePage = () => (
       >
         <Anchor
           target="_blank"
-          a11yTitle="Follow us on Twitter"
-          href="https://twitter.com/grommet_io"
-          icon={<Twitter color="brand" size="large" />}
-          label={<Text size="large">Follow us on Twitter</Text>}
+          a11yTitle="Follow us on X (Twitter)"
+          href="https://x.com/grommet_io"
+          icon={<X color="brand" size="large" />}
+          label={<Text size="large">Follow us on X (Twitter)</Text>}
         />
         <Anchor
           target="_blank"
@@ -127,9 +127,9 @@ const HomePage = () => (
           <Box direction="row" gap="small">
             <Anchor
               target="_blank"
-              a11yTitle="Follow us on Twitter"
-              href="https://twitter.com/grommet_io"
-              icon={<Twitter color="brand" size="large" />}
+              a11yTitle="Follow us on X (Twitter)"
+              href="https://x.com/grommet_io"
+              icon={<X color="brand" size="large" />}
             />
             <Anchor
               target="_blank"

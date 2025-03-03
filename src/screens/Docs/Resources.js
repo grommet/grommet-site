@@ -15,12 +15,12 @@ End-to-end project examples on the [#i-made-this][slack] channel on [slack][slac
 
 Browse grommet component library on [Storybook][storybook].
 
-Find us on [Twitter][twitter].
+Find us on [X (Twitter)][X (Twitter)].
 
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
 [slack]: https://slack-invite.grommet.io
 [storybook]: https://storybook.grommet.io
-[twitter]: https://twitter.com/grommet_io
+[x]: https://x.com/grommet_io
 `;
 
 const Resources = () => (

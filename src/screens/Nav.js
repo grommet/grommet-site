@@ -1,6 +1,6 @@
 import React from 'react';
 import { Anchor, Nav } from 'grommet';
-import { FacebookOption, Twitter, Github, Linkedin } from 'grommet-icons';
+import { FacebookOption, X, Github, Linkedin } from 'grommet-icons';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { ComponentDoc } from '../components/Doc';
@@ -46,7 +46,7 @@ export const NavItem = ({ name, path }) => (
   <Item name={name} path={path} center>
     <Nav direction="row" align="end" background="brand" pad="medium">
       <Anchor as="span" icon={<FacebookOption />} hoverIndicator />
-      <Anchor as="span" icon={<Twitter />} hoverIndicator />
+      <Anchor as="span" icon={<X />} hoverIndicator />
       <Anchor as="span" icon={<Github />} hoverIndicator />
       <Anchor as="span" icon={<Linkedin />} hoverIndicator />
     </Nav>
