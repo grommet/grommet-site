@@ -6,6 +6,7 @@ import { GenericColor, GenericExtend } from '../utils/genericThemeExamples';
 import {
   GenericA11yTitle,
   GenericBool,
+  GenericBoolTrue,
   GenericMargin,
   GenericPad,
   SizesXsmallXlarge,
@@ -377,6 +378,21 @@ const FormFieldPage = () => (
           </Description>
           <GenericColor />
         </Property>
+
+        <Property name="formField.disabled.help">
+          <Description>
+            The color of the FormField help label when it is disabled.
+          </Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="formField.disabled.info">
+          <Description>
+            The color of the FormField info label when it is disabled.
+          </Description>
+          <GenericColor />
+        </Property>
+
         <Property name="formField.error.background.color">
           <Description>
             The color of the FormField background when there is an error.
@@ -518,6 +534,16 @@ const FormFieldPage = () => (
           </Description>
           <GenericColor />
         </Property>
+
+        <Property name="formField.focus.containerFocus">
+          <Description>
+            Whether the focus should be on the FormField container or the Input.
+            When true, the FormField container will receive focus; when false,
+            the Input field will receive focus.
+          </Description>
+          <GenericBoolTrue />
+        </Property>
+
         <Property name="formField.extend">
           <Description>Any additional style for FormField.</Description>
           <GenericExtend />

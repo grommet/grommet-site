@@ -624,6 +624,14 @@ const SelectPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="select.listbox.extend">
+          <Description>
+            Any additional style for the container surrounding the options of
+            the Select component.
+          </Description>
+          <GenericExtend />
+        </Property>
+
         <Property name="select.clear.container">
           <Description>
             Any valid Box prop for the clear button container.

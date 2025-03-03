@@ -20,6 +20,7 @@ import {
 import {
   GenericBackground,
   GenericBool,
+  GenericBoolFalse,
   GenericMargin,
 } from '../../utils/genericPropExamples';
 
@@ -132,6 +133,12 @@ const GlobalTheme = () => (
             The possible breakpoints to define window sizes.
           </Description>
           <GlobalBreakpoints />
+        </Property>
+        <Property name="global.breakpoint[size].radius">
+          <Description>The border radius for the given size.</Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
+          </PropertyValue>
         </Property>
         <Property name="global.deviceBreakpoints">
           <Description>
@@ -306,6 +313,54 @@ const GlobalTheme = () => (
           <PropertyValue type="string">
             <Example defaultValue>"20"</Example>
           </PropertyValue>
+        </Property>
+        <Property name="global.focus.border">
+          <Description>
+            The border style to use for the focus state.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{
+      border: {
+        color: 'blue',
+      },
+}`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.focus.outline">
+          <Description>
+            The outline style to use for the focus state. This includes color,
+            size and offset.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{
+    outline: 
+    { color: 'purple',
+      size: '2px',
+      offset: '2px'
+     },
+}`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.focus.shadow">
+          <Description>
+            The shadow style to use for the focus state. This includes color,
+            size, blur and inset.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{
+   shadow: {
+        color: 'red',
+        size: '2px',
+        blur: '0px',
+        inset: true,
+      },
+}`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.focus.twoColor">
+          <Description>Enable a two-color focus effect.</Description>
+          <PropertyValue type="boolean" />
+          <GenericBoolFalse />
         </Property>
         <Property name="global.edgeSize">
           <Description>
@@ -556,6 +611,12 @@ const GlobalTheme = () => (
           </Description>
           <PropertyValue type="number">
             <Example defaultValue>0.1</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.radius">
+          <Description>The border radius.</Description>
+          <PropertyValue type="string">
+            <Example>"4px"</Example>
           </PropertyValue>
         </Property>
         <Property name="global.selected.background">

@@ -17,6 +17,7 @@ import {
   GenericBoolFalse,
   GenericBool,
 } from '../utils/genericPropExamples';
+import { GenericExtend } from '../utils/genericThemeExamples';
 
 const ToggleGroupPage = () => (
   <Page>
@@ -186,6 +187,10 @@ const ToggleGroupPage = () => (
             </Example>
           </PropertyValue>
         </Property>
+        <Property name="toggleGroup.container.extend">
+          <Description>Any additional style for the ToggleGroup.</Description>
+          <GenericExtend />
+        </Property>
         <Property name="toggleGroup.divider">
           <Description>
             Whether to have the divider between the buttons.
@@ -204,7 +209,8 @@ const ToggleGroupPage = () => (
 
         <Property name="toggleGroup.kind">
           <Description>
-            The button `kind` for buttons in a ToggleGroup. Any pre-defined kind from theme.button.kind.
+            The button `kind` for buttons in a ToggleGroup. Any pre-defined kind
+            from theme.button.kind.
           </Description>
           <PropertyValue type="sting">
             <Example>'toolbar'</Example>
