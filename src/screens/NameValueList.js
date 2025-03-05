@@ -95,6 +95,7 @@ const NameValueListPage = () => (
           <Description>The alignment and width of the name.</Description>
           <PropertyValue type="object">
             <Example>{`{ width: "xsmall", align: "end" }`}</Example>
+            <Example>{`{ width: { min: "...", max: "..." } }`}</Example>
           </PropertyValue>
         </Property>
 
@@ -113,6 +114,7 @@ const NameValueListPage = () => (
           <Description>The alignment and width of the value.</Description>
           <PropertyValue type="object">
             <Example>{`{ width: "large", align: "end" }`}</Example>
+            <Example>{`{ width: { min: "...", max: "..." } }`}</Example>
           </PropertyValue>
         </Property>
       </Properties>
