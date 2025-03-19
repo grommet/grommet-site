@@ -554,9 +554,14 @@ const BoxPage = () => (
         <Property name="responsive">
           <Description>
             Whether margin, pad, round, and border sizes should be scaled for
-            mobile environments.
+            mobile environments. Additionally, you can set this property to
+            'responsive="container"' to make the breakpoints relative to the
+            width of a specific container, rather than the entire window.
           </Description>
           <GenericBoolTrue />
+          <PropertyValue type="string">
+            <Example>"container"</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="round">
