@@ -199,10 +199,12 @@ const DataTablePage = () => (
               property should be used as the unique identifier, which gives the
               cell 'row' scope for accessibility. If 'primary' is not used for
               any column, and 'primaryKey' isn't specified either, then the
-              first column will be used. 'pin' indicates that this column should
-              not scroll out of view to the left when the table is scrolled
-              horizontally. 'plain' = true indicates that the body cells in the
-              column will not apply pad.
+              first column will be used. If it's possible the primary column may
+              be removed from the UI (i.e., when hidden using DataTableColumns),
+              use 'primaryKey' instead to ensure data renders correctly. 'pin'
+              indicates that this column should not scroll out of view to the
+              left when the table is scrolled horizontally. 'plain' = true
+              indicates that the body cells in the column will not apply pad.
             </Description>
             <Example>
               {`
@@ -531,9 +533,11 @@ const DataTablePage = () => (
           <Description>
             When supplied, indicates the property for a data object to use to
             get a unique identifier. See also the 'columns.primary' description.
-            Use this property when the columns approach will not work for your
-            data set. Setting primaryKey to false indicates there should be no
-            unique identifier, avoid this as it's less accessible.
+            It is recommended to use this property if it's possible that the
+            primary column may be removed from the UI (i.e., hidden when using
+            DataTableColumns). This will ensure data renders correctly. Setting
+            primaryKey to false indicates there should be no unique identifier,
+            avoid this as it's less accessible.
           </Description>
           <GenericBool />
           <PropertyValue type="string">
