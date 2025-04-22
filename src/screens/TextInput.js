@@ -69,6 +69,10 @@ const TextInputPage = () => (
 
         <Property name="defaultSuggestion">
           <Description>
+            Note: This prop may trigger unexpected context changes for screen
+            readers (e.g. VoiceOver), potentially violating WCAG 3.2.1.
+          </Description>
+          <Description>
             Default suggestion to highlight, as an index into the suggestions
             array.
           </Description>
