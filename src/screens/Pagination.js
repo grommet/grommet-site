@@ -37,7 +37,7 @@ const PaginationPage = () => (
         },
       ]}
       designSystemLink="https://design-system.hpe.design/components/pagination"
-      description="A control that enables selection of a single page from a 
+      description="A control that enables selection of a single page from a
  range of pages"
       intrinsicElement="nav"
       code="<Pagination numberItems={237} />"
@@ -69,6 +69,24 @@ const PaginationPage = () => (
         <Property name="margin">
           <Description>The amount of margin around the component.</Description>
           <GenericMargin />
+        </Property>
+
+        <Property name="messages">
+          <Description>
+            Custom messages for Pagination. Used for accessibility by screen
+            readers.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+                {
+                  stepLabel: "Items per page",
+                  summary": "Showing {start}-{end} of {total}",
+                  summaryNoItems: "0 items"
+                }
+              `}
+            </Example>
+          </PropertyValue>
         </Property>
 
         <Property name="numberEdgePages">
