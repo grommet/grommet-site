@@ -39,8 +39,8 @@ const GrommetPage = () => (
       description="The top level Grommet container"
       intrinsicElement="div"
       code={`<Grommet
-  theme={{ global: { 
-      colors: { doc: '#ff99cc' } 
+  theme={{ global: {
+      colors: { doc: '#ff99cc' }
       }
     }}
   >
@@ -156,7 +156,7 @@ const GrommetPage = () => (
 {
   box: { cssGap: true },
   layer: { singleId: boolean },
-  drop: { checkContainingBlock: true } 
+  drop: { checkContainingBlock: true }
 }
             `}
             </Example>
@@ -374,11 +374,16 @@ const GrommetPage = () => (
         plural: "string",
       },
     },
+    pagination: {
+      stepLabel: string,
+      summary: string,
+      summaryNoItems: string,
+    },
     rangeSelector: {
       lower: "string",
       upper: "string"
     },
-    select: { 
+    select: {
       multiple: "string",
       selected: "string",
     },
