@@ -408,7 +408,7 @@ const GrommetPage = () => (
     tag: {
       removeLabel: {
         nameAndValue: "string",
-        ValueOnly: "string",
+        valueOnly: "string",
       }
     },
     textInput: {
