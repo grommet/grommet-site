@@ -76,7 +76,7 @@ const PaginationPage = () => (
             Custom messages for Pagination. Used for internationalization and
             customization of default strings and accessibility announcements.
           </Description>
-          <PropertyValue type="string">
+          <PropertyValue type="object">
             <Example defaultValue>
               {`
               "stepLabel": "Items per page",
