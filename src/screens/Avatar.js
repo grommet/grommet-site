@@ -77,6 +77,16 @@ const AvatarPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="imageProps">
+          <Description>
+            Additional properties to pass to the internal Image component when
+            rendering an avatar.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ alt: "User Avatar", fit: "cover" }`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="src">
           <Description>A URL for an avatar image.</Description>
           <PropertyValue type="string">

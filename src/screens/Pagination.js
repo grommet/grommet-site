@@ -71,6 +71,22 @@ const PaginationPage = () => (
           <GenericMargin />
         </Property>
 
+        <Property name="messages">
+          <Description>
+            Custom messages for Pagination. Used for accessibility by screen
+            readers.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>
+              {`
+              "stepLabel": "Items per page",
+              "summary": "Showing {start}-{end} of {total}",
+              "summaryNoItems": "0 items"
+                            `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="numberEdgePages">
           <Description>
             The number of pagination buttons visible at the start and end of
