@@ -378,7 +378,7 @@ const GrommetPage = () => (
         stepLabel: "string",
         summary: "string",
         summaryNoItems: "string",
-      };
+      },
     rangeSelector: {
       lower: "string",
       upper: "string"
