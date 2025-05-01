@@ -248,7 +248,8 @@ const CalendarPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for Calendar. Used for accessibility by screen
+            Custom messages for Calendar. Used for internationalization and
+            customization of default strings and accessibility announcements.
             readers.
           </Description>
           <PropertyValue type="string">

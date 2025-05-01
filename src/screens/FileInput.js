@@ -98,7 +98,8 @@ const FileInputPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for FileInput. Used for accessibility by screen
+            Custom messages for FileInput. Used for internationalization and
+            customization of default strings and accessibility announcements.
             readers.
           </Description>
           <PropertyValue type="object">

@@ -136,7 +136,8 @@ const TabsPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for Tabs. Used for accessibility by screen readers.
+            Custom messages for Tabs. Used for internationalization and
+            customization of default strings and accessibility announcements.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>{`{ tabContents: "Tab Contents" }`}</Example>

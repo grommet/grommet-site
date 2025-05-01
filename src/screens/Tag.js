@@ -138,8 +138,9 @@ const TagPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for remove button on Tag. Used for accessibility by
-            screen readers.
+            Custom messages for remove button on Tag. Used for
+            internationalization and customization of default strings and
+            accessibility announcements.
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>
