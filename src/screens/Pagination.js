@@ -79,9 +79,11 @@ const PaginationPage = () => (
           <PropertyValue type="object">
             <Example defaultValue>
               {`
-              "stepLabel": "Items per page",
-              "summary": "Showing {start}-{end} of {total}",
-              "summaryNoItems": "0 items"
+{
+    "stepLabel": "Items per page",
+    "summary": "Showing {start}-{end} of {total}",
+    "summaryNoItems": "0 items"
+}
                             `}
             </Example>
           </PropertyValue>
