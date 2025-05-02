@@ -145,10 +145,12 @@ const TagPage = () => (
           <PropertyValue type="object">
             <Example defaultValue>
               {`
+{
     "removeLabel": {
       "nameAndValue": "Remove {name}: {value}",
       "valueOnly": "Remove {value}"
     }
+}
                     `}
             </Example>
           </PropertyValue>
