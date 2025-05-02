@@ -374,11 +374,11 @@ const GrommetPage = () => (
         plural: "string",
       },
     },
-     pagination: {
-        stepLabel: "string",
-        summary: "string",
-        summaryNoItems: "string",
-      },
+    pagination: {
+      stepLabel: "string",
+      summary: "string",
+      summaryNoItems: "string",
+    },
     rangeSelector: {
       lower: "string",
       upper: "string"
