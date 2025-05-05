@@ -142,13 +142,15 @@ const TagPage = () => (
             internationalization and customization of default strings and
             accessibility announcements.
           </Description>
-          <PropertyValue type="string">
+          <PropertyValue type="object">
             <Example defaultValue>
               {`
+{
     "removeLabel": {
       "nameAndValue": "Remove {name}: {value}",
       "valueOnly": "Remove {value}"
     }
+}
                     `}
             </Example>
           </PropertyValue>
