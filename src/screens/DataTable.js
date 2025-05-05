@@ -349,10 +349,23 @@ const DataTablePage = () => (
           <Description>
             When supplied, this function will be called with row data. Function
             can return a React Element which will be rendered on expanding the
-            row.
+            row. Alternatively, an object can be supplied to control row
+            expansion. This object must include a render function (same as
+            above), and can optionally include: expand: an array of row keys
+            (strings or numbers) that are currently expanded. onExpand: a
+            callback function called with the next expanded row keys when a user
+            expands or collapses a row.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`
+            rowDetails={{
+            render: (row) => <div>Details for {row.name}</div>,
+            expand: [1, 3], // Row keys that are currently expanded
+            onExpand: () => (),
+        }}`}</Example>
           </PropertyValue>
         </Property>
 
