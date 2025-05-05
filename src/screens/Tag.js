@@ -136,6 +136,26 @@ const TagPage = () => (
           <GenericGridArea />
         </Property>
 
+        <Property name="messages">
+          <Description>
+            Custom messages for remove button on Tag. Used for
+            internationalization and customization of default strings and
+            accessibility announcements.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+    "removeLabel": {
+      "nameAndValue": "Remove {name}: {value}",
+      "valueOnly": "Remove {value}"
+    }
+}
+                    `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="name">
           <Description>Name text to place in the tag.</Description>
           <PropertyValue type="string">

@@ -374,6 +374,11 @@ const GrommetPage = () => (
         plural: "string",
       },
     },
+    pagination: {
+      stepLabel: "string",
+      summary: "string",
+      summaryNoItems: "string",
+    },
     rangeSelector: {
       lower: "string",
       upper: "string"
@@ -400,6 +405,12 @@ const GrommetPage = () => (
     }
     skipLinks: { skipTo: "string" },
     tabs: { tabContents: "string" },
+    tag: {
+      removeLabel: {
+        nameAndValue: "string",
+        valueOnly: "string",
+      }
+    },
     textInput: {
       enterSelect: "string",
       suggestionsCount: "string",

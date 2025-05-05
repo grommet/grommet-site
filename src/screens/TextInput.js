@@ -158,8 +158,8 @@ const TextInputPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for TextInput. Used for accessibility by screen
-            readers.
+            Custom messages for TextInput. Used for internationalization and
+            customization of default strings and accessibility announcements.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>

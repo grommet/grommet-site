@@ -282,7 +282,9 @@ const DataPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for Data related components.
+            Custom messages for Data related components. Used for
+            internationalization and customization of default strings and
+            accessibility announcements.
           </Description>
           <PropertyValue type="object">
             <Example>{messagesObjectExample}</Example>

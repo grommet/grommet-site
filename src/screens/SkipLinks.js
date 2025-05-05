@@ -77,8 +77,8 @@ const SkipLinksPage = () => (
 
         <Property name="messages">
           <Description>
-            Custom messages for SkipLinks. Used for accessibility by screen
-            readers.
+            Custom messages for SkipLinks. Used for internationalization and
+            customization of default strings and accessibility announcements.
           </Description>
           <PropertyValue type="object">
             <Example>{`{ skipTo: "string" }`}</Example>
