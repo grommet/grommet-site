@@ -360,12 +360,11 @@ const DataTablePage = () => (
             <Example>{`() => {}`}</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Example>{`
-            rowDetails={{
-            render: (row) => <div>Details for {row.name}</div>,
-            expand: [1, 3], // Row keys that are currently expanded
-            onExpand: () => (),
-        }}`}</Example>
+            <Example>{`{
+  render: (row) => <div>Details for {row.name}</div>,
+  expand: [1, 3], // Row keys that are currently expanded
+  onExpand: () => (),
+}`}</Example>
           </PropertyValue>
         </Property>
 
