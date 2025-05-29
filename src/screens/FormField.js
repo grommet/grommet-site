@@ -121,10 +121,14 @@ const FormFieldPage = () => (
 
         <Property name="htmlFor">
           <Description>
-            The id of the input element contained in this field.
+            The id of the input element contained in this field. If the input
+            element is Select or SelectMultiple, append "__input" to the id.
           </Description>
           <PropertyValue type="string">
             <Example>"input-id"</Example>
+            <Example>
+              If input is Select or SelectMultiple: "input-id__input"
+            </Example>
           </PropertyValue>
         </Property>
 
