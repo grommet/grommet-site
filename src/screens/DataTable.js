@@ -320,7 +320,7 @@ const DataTablePage = () => (
 {
   "property": "location",
   "expand": ["Paris", "Los Angeles"],
-  "expandLabel": (row) => \`Show details for \${row.name}\`,
+  "expandLabel": (row) => \`details for \${row.name}\`,
   "expandable": ["Paris", "Los Angeles", "Fort Collins", "San Jose"],
   "select": { "": "some", "Paris": "all", "Los Angeles": "some"}
   "onSelect": (selected, datum, groupBySelected) => {...}
