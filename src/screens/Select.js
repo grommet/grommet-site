@@ -634,7 +634,7 @@ const SelectPage = () => (
 
         <Property name="select.clear.button">
           <Description>
-            Any valid Button prop, for the clear button.
+            Any valid Button theme object, for the clear button.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
