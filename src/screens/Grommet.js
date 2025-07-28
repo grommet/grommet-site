@@ -303,9 +303,28 @@ const GrommetPage = () => (
       total: "string",
       totalSingle: "string"
     },
+    dataTable: {
+      ascending: "string",
+      collapse: "string",
+      collapseAll: "string",
+      decrease: "string",
+      descending: "string",
+      expand: "string",
+      expandAll: "string",
+      resizerAria: "string",
+      rows: "string",
+      rowsChanged: "string",
+      rowsSingle: "string",
+      searchBy: "string",
+      total: "string",
+      totalSingle: "string"
+    },
     dataTableColumns: {
       open: "string",
       order: "string",
+      pinned: "string",
+      orderAria: "string",
+      selectAria: "string",
       select: "string",
       tip: "string"
     },
@@ -373,6 +392,9 @@ const GrommetPage = () => (
         singular: "string",
         plural: "string",
       },
+    },
+    notifications: {
+      close: "string",
     },
     pagination: {
       stepLabel: "string",

@@ -632,9 +632,25 @@ const SelectPage = () => (
           <GenericExtend />
         </Property>
 
+        <Property name="select.clear.button">
+          <Description>
+            Any valid Button prop, for the clear button.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{  
+            color: 'red',
+            border: {
+              radius: '10px',
+            },
+          }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="select.clear.container">
           <Description>
-            Any valid Box prop for the clear button container.
+            Any valid Box prop, for the clear button container.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
