@@ -112,7 +112,7 @@ export const FocusStyle = () => (
     </Property>
     <Property name="global.focus.inset">
       <Description>
-        The inset of the border around the component when in focus.
+        Focus styles for cases where focus indicator should be inset in the container.
       </Description>
       <PropertyValue type="object">
         <Description>
