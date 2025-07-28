@@ -302,7 +302,7 @@ const DataTablePage = () => (
               to specify which items in the data are group header items and
               'select' and 'onSelect' can be specified in 'groupBy' to help
               specify the selection state of the groups and handle changes in
-              group selection state. ExpandLabel can be used to specify a
+              group selection state. `expandLabel` can be used to specify an
               aria-label for the expand button.
             </Description>
             <Example>
