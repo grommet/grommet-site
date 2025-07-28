@@ -311,7 +311,7 @@ const DataTablePage = () => (
   "property": "location",
   "expand": ["Paris", "Los Angeles"],
   "onExpand": "(key) => {...}"
-  "expandLabel": (row) => \`Show details for \${row.name}\`,
+  "expandLabel": (row) => \`details for \${row.name}\`,
 }
             `}
             </Example>
