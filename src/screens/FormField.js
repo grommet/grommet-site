@@ -123,7 +123,7 @@ const FormFieldPage = () => (
           <Description>
             The id of the input element contained in this field. If the input
             element is Select or SelectMultiple, Grommet will automatically
-            append "__input" to the id of the input element.
+            append "__input" to the id of the input element to ensure it's properly associated for assistive technologies.
           </Description>
           <PropertyValue type="string">
             <Example>"input-id"</Example>
