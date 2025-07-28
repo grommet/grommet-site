@@ -357,7 +357,7 @@ const DataTablePage = () => (
             above), and can optionally include: expand: an array of row keys
             (strings or numbers) that are currently expanded. onExpand: a
             callback function called with the next expanded row keys when a user
-            expands or collapses a row. ExpandLabel can be used to specify a
+            expands or collapses a row. `expandLabel` can be used to specify an
             aria-label for the expand button.
           </Description>
           <PropertyValue type="function">
