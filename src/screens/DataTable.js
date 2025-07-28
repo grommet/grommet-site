@@ -367,7 +367,7 @@ const DataTablePage = () => (
             <Example>{`{
   render: (row) => <div>Details for {row.name}</div>,
   expand: [1, 3], // Row keys that are currently expanded
-  expandLabel: (row) => \`Show details for \${row.name}\`,
+  expandLabel: (row) => \`details for \${row.name}\`,
   onExpand: () => (),
 }`}</Example>
           </PropertyValue>
