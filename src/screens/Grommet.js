@@ -336,6 +336,10 @@ const GrommetPage = () => (
       label: "string"
     },
     fileInput: {
+      alert: {
+        maxFile: "Error, {fileName} exceeds {maxFile} files limit.",
+        maxSize: "Error, {fileName} exceeds {maxSize} limit."
+      },
       browse: "string",
       dropPrompt: "string",
       dropPromptMultiple: "string",

@@ -637,7 +637,7 @@ const SelectPage = () => (
             Any valid Button theme object, for the clear button.
           </Description>
           <PropertyValue type="object">
-            <Example defaultValue>
+            <Example>
               {`{  
             color: 'red',
             border: {

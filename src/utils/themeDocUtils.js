@@ -112,11 +112,14 @@ export const FocusStyle = () => (
     </Property>
     <Property name="global.focus.inset">
       <Description>
-        Focus styles for cases where focus indicator should be inset in the container.
+        Focus styles for cases where focus indicator should be inset in the
+        container.
       </Description>
       <PropertyValue type="object">
         <Description>
-          An object can contain a border, outline, shadow, and twoColor.
+          An object can contain a border, outline, shadow, and twoColor. The
+          twoColor option enables a dual-color focus effect, usually rendered as
+          layered outlines or shadows for enhanced contrast.
         </Description>
         <Example>
           {`{    
