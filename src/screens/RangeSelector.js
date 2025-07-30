@@ -272,6 +272,15 @@ const RangeSelectorPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="rangeSelector.edge.size">
+          <Description>The edge control size.</Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+            <Example>"medium"</Example>
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="global.spacing">
           <Description>The size of the edge controls thumb.</Description>
           <PropertyValue type="string">

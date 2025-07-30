@@ -110,6 +110,31 @@ export const FocusStyle = () => (
         <Example>{`{ dark: "string", light: "string" }`}</Example>
       </PropertyValue>
     </Property>
+    <Property name="global.focus.inset">
+      <Description>
+        Focus styles for cases where focus indicator should be inset in the
+        container.
+      </Description>
+      <PropertyValue type="object">
+        <Description>
+          An object can contain a border, outline, shadow, and twoColor. The
+          twoColor option enables a dual-color focus effect, usually rendered as
+          layered outlines or shadows for enhanced contrast.
+        </Description>
+        <Example>
+          {`{    
+        inset: {
+          border: {
+            color: 'focus',
+          },
+          outline: { color: 'focus', size: '2px', offset: '-2px' },
+          shadow: undefined,
+          twoColor: undefined,
+        },}`}
+        </Example>
+      </PropertyValue>
+    </Property>
+
     <Property name="global.focus.outline.color">
       <Description>
         The outline color around the component when in focus.
