@@ -264,6 +264,16 @@ const MeterPage = () => (
           <Description>Any additional style for Meter.</Description>
           <GenericExtend />
         </Property>
+        <Property name="meter.gap">
+          <Description>
+            The gap between segments on the Meter. This gap increases visible
+            differentiation between the colored segments to help with
+            accessibility.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
