@@ -302,7 +302,8 @@ const DataTablePage = () => (
               to specify which items in the data are group header items and
               'select' and 'onSelect' can be specified in 'groupBy' to help
               specify the selection state of the groups and handle changes in
-              group selection state.
+              group selection state. `expandLabel` can be used to specify an
+              aria-label for the expand button.
             </Description>
             <Example>
               {`
@@ -310,6 +311,7 @@ const DataTablePage = () => (
   "property": "location",
   "expand": ["Paris", "Los Angeles"],
   "onExpand": "(key) => {...}"
+  "expandLabel": (row) => \`details for \${row.name}\`,
 }
             `}
             </Example>
@@ -318,6 +320,7 @@ const DataTablePage = () => (
 {
   "property": "location",
   "expand": ["Paris", "Los Angeles"],
+  "expandLabel": (row) => \`details for \${row.name}\`,
   "expandable": ["Paris", "Los Angeles", "Fort Collins", "San Jose"],
   "select": { "": "some", "Paris": "all", "Los Angeles": "some"}
   "onSelect": (selected, datum, groupBySelected) => {...}
@@ -354,7 +357,8 @@ const DataTablePage = () => (
             above), and can optionally include: expand: an array of row keys
             (strings or numbers) that are currently expanded. onExpand: a
             callback function called with the next expanded row keys when a user
-            expands or collapses a row.
+            expands or collapses a row. `expandLabel` can be used to specify an
+            aria-label for the expand button.
           </Description>
           <PropertyValue type="function">
             <Example>{`() => {}`}</Example>
@@ -363,6 +367,7 @@ const DataTablePage = () => (
             <Example>{`{
   render: (row) => <div>Details for {row.name}</div>,
   expand: [1, 3], // Row keys that are currently expanded
+  expandLabel: (row) => \`details for \${row.name}\`,
   onExpand: () => (),
 }`}</Example>
           </PropertyValue>

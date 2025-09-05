@@ -374,7 +374,7 @@ const CalendarPage = () => (
               An object with a color for dark and light modes.
             </Description>
             <Example defaultValue>
-              {`{ dark: "light-4", light: "dark-3" }`}
+              {`{ background: "active-background"}`}
             </Example>
           </PropertyValue>
         </Property>

@@ -106,11 +106,15 @@ const FileInputPage = () => (
             <Example defaultValue>
               {`
 {
-  browse: "browse", 
-  dropPrompt: "Drop file here or", 
-  dropPromptMultiple: "Drop files here or", 
-  files: "files", 
-  remove: "remove", 
+  alert: {
+    maxFile: "Error, {fileName} exceeds {maxFile} files limit.",
+    maxSize: "Error, {fileName} exceeds {maxSize} limit."
+  },
+  browse: "browse",
+  dropPrompt: "Drop file here or",
+  dropPromptMultiple: "Drop files here or",
+  files: "files",
+  remove: "remove {fileName}",
   removeAll: "remove all",
   maxFile: "Attach a maximum of {max} files only."
 }
