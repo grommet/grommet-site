@@ -686,6 +686,13 @@ const SelectMultiplePage = () => (
           <GenericColor />
         </Property>
 
+        <Property name="select.icons.search">
+          <Description>The icon to use within the search input.</Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<Search />`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="select.icons.down">
           <Description>
             The down icon to use for opening the Select.

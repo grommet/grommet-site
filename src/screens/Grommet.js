@@ -410,7 +410,9 @@ const GrommetPage = () => (
       upper: "string"
     },
     select: { 
+      optionsA11y: "string",
       multiple: "string",
+      searchA11y: "string",
       selected: "string",
     },
     selectMultiple: {
@@ -419,6 +421,7 @@ const GrommetPage = () => (
       open: "string",
       optionNotSelected: "string",
       optionSelected: "string",
+      optionsA11y: "string",
       search: "string",
       selectAll: "string",
       selectAllA11y: "string",
