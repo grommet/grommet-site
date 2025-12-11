@@ -266,9 +266,9 @@ const GlobalTheme = () => (
         </Property>
         <Property name="global.deprecated">
           <Description>
-            Allows specifying certain colors, backgrounds, or button kinds as
+            Allows specifying colors, backgrounds, or button kinds as
             deprecated. When a deprecated property is used, a warning will be
-            shown in the console during development mode.
+            shown in the console while running in development mode.
           </Description>
           <PropertyValue type="object">
             <Description>
