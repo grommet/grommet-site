@@ -253,6 +253,20 @@ const MeterPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="meter.background">
+          <Description>
+            The background color used for the unfilled portion of the Meter.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"background='light-2'"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ color: 'light-2', opacity: 'medium' }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="meter.color">
           <Description>The color used for the Meter.</Description>
           <PropertyValue type="string">
