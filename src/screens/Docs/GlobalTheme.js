@@ -264,6 +264,49 @@ const GlobalTheme = () => (
             <Example defaultValue>500</Example>
           </PropertyValue>
         </Property>
+        <Property name="global.deprecated">
+          <Description>
+            Allows specifying colors, backgrounds, or button kinds as
+            deprecated. When a deprecated property is used, a warning will be
+            shown in the console while running in development mode.
+          </Description>
+          <PropertyValue type="object">
+            <Description>
+              An object containing arrays of deprecated properties with their
+              names and warning messages.
+            </Description>
+            <Example>
+              {`
+{
+  colors: [
+    {
+      name: 'accent-1',
+      message: 'accent-1 is deprecated, use brand instead',
+    },
+    {
+      name: 'accent-2',
+      message: 'accent-2 is no longer supported, use blue instead',
+    },
+  ],
+  backgrounds: [
+    {
+      name: 'background-1',
+      message: 'background-1 is deprecated, use background-contrast instead',
+    },
+  ],
+  button: {
+    kind: [
+      {
+        name: 'old-style',
+        message: 'old-style button is deprecated, use primary instead',
+      },
+    ],
+  },
+}
+              `}
+            </Example>
+          </PropertyValue>
+        </Property>
         <Property name="global.drop.background">
           <Description>
             The default background color to use for Drop.
