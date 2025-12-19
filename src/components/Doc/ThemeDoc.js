@@ -25,7 +25,7 @@ export const ThemeDoc = ({ children }) => {
         <Heading level={2} margin="none">
           Theme
         </Heading>
-        <Anchor href="#theme" icon={<LinkIcon color="light-4" />} />
+        <Anchor href="#theme" icon={<LinkIcon />} />
       </Box>
       {children}
     </Box>

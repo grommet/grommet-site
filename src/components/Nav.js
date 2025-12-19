@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import { Box, Text, ResponsiveContext } from 'grommet';
+import { Anchor, Box, Button, Text, ResponsiveContext } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
-import RoutedAnchor from './RoutedAnchor';
-import RoutedButton from './RoutedButton';
 import Search from './Search';
 
 const Nav = () => {
@@ -18,21 +16,16 @@ const Nav = () => {
       alignSelf="center"
       gap="medium"
     >
-      <RoutedAnchor
-        path="/"
+      <Anchor
+        href="/"
         icon={<GrommetIcon size="large" color="plain" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
       <Box direction="row" gap="small" align="center">
         {!searchOpen && (
           <Box direction="row" gap="small" align="center">
-            <RoutedButton path="/docs" label="docs" hoverIndicator />
-            <RoutedButton
-              path="/components"
-              label="components"
-              primary
-              hoverIndicator
-            />
+            <Button label="docs" as="a" href="/docs" />
+            <Button label="components" as="a" href="/components" primary />
           </Box>
         )}
         <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />

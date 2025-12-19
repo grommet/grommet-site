@@ -27,6 +27,7 @@
     "server": "http-server dist"
   },
   "dependencies": {
+    "@hpe-design/icons-grommet": "^1.1.0",
     "cheerio": "1.0.0-rc.12",
     "core-js": "^3.47.0",
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
@@ -34,7 +35,7 @@
     "grommet-theme-aruba": "^0.1.2",
     "grommet-theme-dxc": "^0.1.2",
     "grommet-theme-hp": "^0.1.2",
-    "grommet-theme-hpe": "^5.5.0",
+    "grommet-theme-hpe": "^8.1.0",
     "lz-string": "^1.5.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",

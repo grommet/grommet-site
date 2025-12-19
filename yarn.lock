@@ -969,6 +969,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
+"@hpe-design/icons-grommet@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@hpe-design/icons-grommet/-/icons-grommet-1.1.0.tgz#6f96cb7bf8244188fffa1a7e92f20c2bc51123e7"
+  integrity sha512-Mk+n0EXkJ32m6z91ZTrXiI1PCxHm4OjxNePt7dgJEMcE044qikhY8u8tGY4igdq0Des5J3DOqbE3YJvPg6U6oA==
+
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.13.0.tgz#fb907624df3256d04b9aa2df50d7aa97ec648748"
@@ -3790,10 +3795,12 @@ grommet-theme-hp@^0.1.2:
   resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.2.tgz#52eac70d7cce2136b9ca6d7f6bf37649a40208a8"
   integrity sha512-pRJxgzJ6oWKNg4hq8csi7hEgH0qeMyP3m/cjQVTk473lH1OdgzqNfjyjQXJf80Fnp6Azm+ovwuNNGCKWCZxcvg==
 
-grommet-theme-hpe@^5.5.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-5.8.0.tgz#689fafe3c055fd5021f9475afdbfb258de658b60"
-  integrity sha512-YmKmE7WI3fSimoovD5NogIy1Pag0c4lqyDHH076fEl3lhEpNZ4cgJtcLk+TxhHM5cq9AEfA8ebioNTkoEpYEhQ==
+grommet-theme-hpe@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-8.1.0.tgz#fed28bc735c81a3c22cbdef00e3cd7aa80e6728f"
+  integrity sha512-fqVgjdmDMt45g+IOjGfdjHfx5ejLbD815OEU9WxkKPKh9/kP3VeTk1Fn6xkid+xvucZypMo+lfF03HG0LB0xkw==
+  dependencies:
+    hpe-design-tokens "^2.2.0"
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
   version "2.52.0"
@@ -3878,6 +3885,11 @@ hpack.js@^2.1.6:
     obuf "^1.0.0"
     readable-stream "^2.0.1"
     wbuf "^1.1.0"
+
+hpe-design-tokens@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/hpe-design-tokens/-/hpe-design-tokens-2.2.0.tgz#62d747e4a55c7c8c89ecb99ce4b4137e223cc6ee"
+  integrity sha512-Jr5FuNWvCo7GNM3vrAoAfC9AtadJs4hYdFIt7S5c9iNdQz8jV7Q5RAbylqaqlhlqJSUrlykh4t5Q81Cte3axog==
 
 html-encoding-sniffer@^3.0.0:
   version "3.0.0"

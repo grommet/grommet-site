@@ -1,9 +1,8 @@
 import React from 'react';
-import { Anchor, Box, Image, Paragraph, Text } from 'grommet';
+import { Anchor, Box, Button, Image, Paragraph, Text } from 'grommet';
 import { Github, Slack, Twitter } from 'grommet-icons';
 import Nav from '../../components/Nav';
 import Header from '../../components/Header';
-import RoutedButton from '../../components/RoutedButton';
 import Section from './Section';
 import Hero from './Hero';
 import Composable from './Composable';
@@ -13,7 +12,6 @@ import Layouts from './Layouts';
 import Start from './Start';
 import Messages from './Messages';
 import { Tools } from './Tools';
-import { nameToPath } from '../../structure';
 
 const HomePage = () => (
   <Box>
@@ -102,24 +100,8 @@ const HomePage = () => (
       />
 
       <Box direction="row" gap="medium" alignSelf="center">
-        <RoutedButton alignSelf="center" path="/components" plain>
-          <Box
-            pad={{ vertical: 'small', horizontal: 'medium' }}
-            round="xlarge"
-            background="control"
-          >
-            <Text size="large">components</Text>
-          </Box>
-        </RoutedButton>
-        <RoutedButton alignSelf="center" path={nameToPath('docs')} plain>
-          <Box
-            pad={{ vertical: 'small', horizontal: 'large' }}
-            round="xlarge"
-            background="accent-4"
-          >
-            <Text size="large">docs</Text>
-          </Box>
-        </RoutedButton>
+        <Button primary label="components" as="a" href="/components" />
+        <Button secondary label="docs" as="a" href="/docs" />
       </Box>
 
       <Box direction="row-responsive" justify="between" align="end">

@@ -28,7 +28,7 @@ export const Properties = ({ children }) => {
         <Heading level={2} margin="none">
           Props
         </Heading>
-        <Anchor href="#props" icon={<LinkIcon color="light-4" />} />
+        <Anchor href="#props" icon={<LinkIcon />} />
       </Box>
 
       {propsArray ? (
@@ -49,7 +49,7 @@ export const Properties = ({ children }) => {
             </Property>
           ))
       ) : (
-        <Text color="light-5">No properties</Text>
+        <Text>No properties</Text>
       )}
     </Box>
   );
