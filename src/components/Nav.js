@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Box, Text, ResponsiveContext } from 'grommet';
+import { Anchor, Box, Button, Text, ResponsiveContext } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
-import RoutedAnchor from './RoutedAnchor';
-import RoutedButton from './RoutedButton';
 import Search from './Search';
+import { RouterContext } from '../Router';
 
 const Nav = () => {
   const size = useContext(ResponsiveContext);
+  const { go } = React.useContext(RouterContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -18,20 +18,31 @@ const Nav = () => {
       alignSelf="center"
       gap="medium"
     >
-      <RoutedAnchor
-        path="/"
+      <Anchor
+        onClick={(e) => {
+          e.preventDefault();
+          go('/');
+        }}
         icon={<GrommetIcon size="large" color="plain" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
       <Box direction="row" gap="small" align="center">
         {!searchOpen && (
           <Box direction="row" gap="small" align="center">
-            <RoutedButton path="/docs" label="docs" hoverIndicator />
-            <RoutedButton
-              path="/components"
+            <Button
+              label="docs"
+              onClick={(e) => {
+                e.preventDefault();
+                go('/docs');
+              }}
+            />
+            <Button
               label="components"
               primary
-              hoverIndicator
+              onClick={(e) => {
+                e.preventDefault();
+                go('/components');
+              }}
             />
           </Box>
         )}
