@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Anchor, Box, Button, Text, ResponsiveContext } from 'grommet';
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import Search from './Search';
+import { RouterContext } from '../Router';
 
 const Nav = () => {
   const size = useContext(ResponsiveContext);
+  const { go } = React.useContext(RouterContext);
   const [searchOpen, setSearchOpen] = React.useState(false);
 
   return (
@@ -17,15 +19,31 @@ const Nav = () => {
       gap="medium"
     >
       <Anchor
-        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          go('/');
+        }}
         icon={<GrommetIcon size="large" color="plain" />}
         label={size !== 'small' && <Text size="xlarge">grommet</Text>}
       />
       <Box direction="row" gap="small" align="center">
         {!searchOpen && (
           <Box direction="row" gap="small" align="center">
-            <Button label="docs" as="a" href="/docs" />
-            <Button label="components" as="a" href="/components" primary />
+            <Button
+              label="docs"
+              onClick={(e) => {
+                e.preventDefault();
+                go('/docs');
+              }}
+            />
+            <Button
+              label="components"
+              primary
+              onClick={(e) => {
+                e.preventDefault();
+                go('/components');
+              }}
+            />
           </Box>
         )}
         <Search open={searchOpen} setOpen={(value) => setSearchOpen(value)} />
