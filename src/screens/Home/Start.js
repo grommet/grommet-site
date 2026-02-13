@@ -106,7 +106,6 @@ render(<App />);
             options={options}
             onChange={(newCode) => setCode(newCode)}
             editorDidMount={(editor) => {
-              editor.focus();
               window.addEventListener('resize', () => editor.layout());
             }}
           />
