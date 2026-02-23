@@ -517,8 +517,7 @@ const DataChartPage = () => (
       <ThemeDoc>
         <Property name="dataChart.colors">
           <Description>
-            Adds theme.dataChart.colors to enable specification of colors that
-            that should be used for DataChart via the theme.
+            Enables specification of colors used by the DataChart.
           </Description>
           <PropertyValue type="string[]">
             <Example>{`['brand', 'accent-1', 'accent-2', 'accent-3']`}</Example>
