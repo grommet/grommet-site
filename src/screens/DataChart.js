@@ -18,6 +18,7 @@ import {
   Property,
   PropertyValue,
   Description,
+  ThemeDoc,
   Example,
   PropOptions,
 } from '../components/Doc';
@@ -513,6 +514,16 @@ const DataChartPage = () => (
           </PropertyValue>
         </Property>
       </Properties>
+      <ThemeDoc>
+        <Property name="dataChart.colors">
+          <Description>
+            Enables specification of colors used by the DataChart.
+          </Description>
+          <PropertyValue type="string[]">
+            <Example>{`['brand', 'accent-1', 'accent-2', 'accent-3']`}</Example>
+          </PropertyValue>
+        </Property>
+      </ThemeDoc>
     </ComponentDoc>
   </Page>
 );
