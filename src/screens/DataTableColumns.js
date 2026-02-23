@@ -32,8 +32,7 @@ const DataTableColumnsPage = () => (
       <Properties>
         <Property name="activePanel">
           <Description>
-            Added activePanel prop to DataTableColumns component to enable only
-            showing either the order columns or select columns panel.
+            Whether to show only the order columns or select columns panel.
           </Description>
           <PropertyValue type="string">
             <Example>"orderColumns"</Example>
