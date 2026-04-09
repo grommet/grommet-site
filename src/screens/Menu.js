@@ -330,6 +330,22 @@ const MenuPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="menu.disabled.icons.color">
+          <Description>The color for the menu icon when it is disabled.</Description>
+          <PropertyValue type="string">
+            <Description>A hex, name, or rgb value.</Description>
+            <Example>"brand"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example defaultValue>
+              {`{ dark: "graph-0", light: "brand" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="menu.drop">
           <Description>Any valid Drop props for the Menu drop.</Description>
           <PropertyValue type="object">
