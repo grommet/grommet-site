@@ -193,11 +193,13 @@ const CardsPage = () => (
 
         <Property name="sizeKey">
           <Description>
-            The key of a property in each data item whose value will be used as
-            the size of that card's column in the grid.
+            The name of the member in the item object for a particular data item
+            that will end up containing the row and/or column span for the child
+            in the grid. This member should be an object of the form
+            {`{ rows: <number>, columns: <number> }`}.
           </Description>
           <PropertyValue type="string">
-            <Example>"small"</Example>
+            <Example>"size"</Example>
           </PropertyValue>
         </Property>
 
