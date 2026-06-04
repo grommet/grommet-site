@@ -129,6 +129,16 @@ const TagPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="children">
+          <Description>
+            Custom content to render inside the tag, replacing the default
+            name/value layout.
+          </Description>
+          <PropertyValue type="React.node">
+            <Example>{`<Box direction="row" gap="xsmall"><Text>label</Text></Box>`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="gridArea">
           <Description>
             The name of the area to place this inside a parent Grid.
@@ -160,6 +170,12 @@ const TagPage = () => (
           <Description>Name text to place in the tag.</Description>
           <PropertyValue type="string">
             <Example>"name"</Example>
+          </PropertyValue>
+          <PropertyValue type="React.node">
+            <Description>
+              A React element to use as the name content of the tag.
+            </Description>
+            <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
         </Property>
         <Property name="onClick">
@@ -202,6 +218,12 @@ const TagPage = () => (
           <Description>Value text to place in the tag.</Description>
           <PropertyValue type="string">
             <Example>"value"</Example>
+          </PropertyValue>
+          <PropertyValue type="React.node">
+            <Description>
+              A React element to use as the value content of the tag.
+            </Description>
+            <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
         </Property>
       </Properties>

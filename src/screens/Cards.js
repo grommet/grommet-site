@@ -143,6 +143,16 @@ const CardsPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="onOrder">
+          <Description>
+            Called with the reordered data array when the user changes the order
+            of the cards via drag and drop.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`(reorderedData) => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="pad">
           <Description>
             The amount of padding around the Box contents.
@@ -178,6 +188,17 @@ const CardsPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="sizeKey">
+          <Description>
+            When specified, the value of this data key will be used to set the
+            size of individual cards in the grid. The data value should
+            correspond to one of the size values supported by the 'size' prop.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"cardSize"</Example>
           </PropertyValue>
         </Property>
 

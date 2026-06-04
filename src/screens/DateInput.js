@@ -211,7 +211,8 @@ const DateInputPage = () => (
               {`
 {
   "enterCalendar": "Calendar is open, press tab to enter the calendar",
-  "exitCalendar": "Exited calendar dialog"
+  "exitCalendar": "Exited calendar dialog",
+  "outOfBounds": "Date is out of bounds"
 }
             `}
             </Example>
@@ -243,6 +244,18 @@ const DateInputPage = () => (
           <Description>The size of the Calendar icon</Description>
           <PropertyValue type="string">
             <Example defaultValue>"24px"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="dateInput.outOfBounds">
+          <Description>
+            Any valid Text props for the out-of-bounds message displayed when a
+            user enters a date that falls outside the allowed bounds.
+          </Description>
+          <PropertyValue type="object">
+            <Example
+              defaultValue
+            >{`{ color: 'status-critical', size: 'small' }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>
