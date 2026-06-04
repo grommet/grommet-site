@@ -173,7 +173,7 @@ const TagPage = () => (
           </PropertyValue>
           <PropertyValue type="node">
             <Description>
-              A React element to use as the name content of the tag.
+              An element to use as the name content of the tag.
             </Description>
             <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
@@ -221,7 +221,7 @@ const TagPage = () => (
           </PropertyValue>
           <PropertyValue type="node">
             <Description>
-              A React element to use as the value content of the tag.
+              An element to use as the value content of the tag.
             </Description>
             <Example>{`<Box>...</Box>`}</Example>
           </PropertyValue>
