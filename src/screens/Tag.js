@@ -134,7 +134,7 @@ const TagPage = () => (
             Custom content to render inside the tag, replacing the default
             name/value layout.
           </Description>
-          <PropertyValue type="React.node">
+          <PropertyValue type="node">
             <Example>{`<Box direction="row" gap="xsmall"><Text>label</Text></Box>`}</Example>
           </PropertyValue>
         </Property>
@@ -171,7 +171,7 @@ const TagPage = () => (
           <PropertyValue type="string">
             <Example>"name"</Example>
           </PropertyValue>
-          <PropertyValue type="React.node">
+          <PropertyValue type="node">
             <Description>
               A React element to use as the name content of the tag.
             </Description>
@@ -219,7 +219,7 @@ const TagPage = () => (
           <PropertyValue type="string">
             <Example>"value"</Example>
           </PropertyValue>
-          <PropertyValue type="React.node">
+          <PropertyValue type="node">
             <Description>
               A React element to use as the value content of the tag.
             </Description>

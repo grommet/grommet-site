@@ -193,12 +193,11 @@ const CardsPage = () => (
 
         <Property name="sizeKey">
           <Description>
-            When specified, the value of this data key will be used to set the
-            size of individual cards in the grid. The data value should
-            correspond to one of the size values supported by the 'size' prop.
+            The key of a property in each data item whose value will be used as
+            the size of that card's column in the grid.
           </Description>
           <PropertyValue type="string">
-            <Example>"cardSize"</Example>
+            <Example>"small"</Example>
           </PropertyValue>
         </Property>
 
