@@ -193,10 +193,10 @@ const CardsPage = () => (
 
         <Property name="sizeKey">
           <Description>
-            The name of the member in the item object for a particular data item
+            {`The name of the member in the item object for a particular data item
             that will end up containing the row and/or column span for the child
             in the grid. This member should be an object of the form
-            {`{ rows: <number>, columns: <number> }`}.
+            { rows: <number>, columns: <number> }.`}
           </Description>
           <PropertyValue type="string">
             <Example>"size"</Example>
