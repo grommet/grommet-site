@@ -143,6 +143,16 @@ const CardsPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="onOrder">
+          <Description>
+            Called with the reordered data array when the user changes the order
+            of the cards via drag and drop.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`(reorderedData) => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="pad">
           <Description>
             The amount of padding around the Box contents.
@@ -178,6 +188,18 @@ const CardsPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="sizeKey">
+          <Description>
+            {`The name of the member in the item object for a particular data item
+            that will end up containing the row and/or column span for the child
+            in the grid. This member should be an object of the form
+            { rows: <number>, columns: <number> }.`}
+          </Description>
+          <PropertyValue type="string">
+            <Example>"size"</Example>
           </PropertyValue>
         </Property>
 
