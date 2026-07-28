@@ -279,10 +279,13 @@ const CalendarPage = () => (
             Called with an ISO8601 date when the user selects a day. For single
             select, make this the subsequent 'date' property value. For multiple
             select or ranges, toggle values in 'dates'. Not specifying this
-            property makes the component read only.
+            property makes the component read only. When using range selection,
+            a second argument is provided with an `activeDate` property
+            indicating which end of the range is currently being selected,
+            either `start` or `end`.
           </Description>
           <PropertyValue type="function">
-            <Example>{`('2018-10-22T12:22:00Z') => {}`}</Example>
+            <Example>{`('2018-10-22T12:22:00Z', { activeDate: 'start' }) => {}`}</Example>
           </PropertyValue>
         </Property>
 
