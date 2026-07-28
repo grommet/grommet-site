@@ -99,6 +99,7 @@ export const structure = {
         'Skeleton',
         'Pagination',
         'Spinner',
+        'Stepper',
         'Table',
         'WorldMap',
       ],

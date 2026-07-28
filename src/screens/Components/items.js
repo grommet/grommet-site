@@ -68,6 +68,7 @@ export { SkipLinksItem } from '../SkipLinks';
 export { SpinnerItem } from '../Spinner';
 export { StackItem } from '../Stack';
 export { StarRatingItem } from '../StarRating';
+export { StepperItem } from '../Stepper';
 export { TableItem } from '../Table';
 export { TabsItem } from '../Tabs';
 export { TagItem } from '../Tag';
