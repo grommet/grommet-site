@@ -139,33 +139,39 @@ const StepperPage = () => (
       </Properties>
 
       <ThemeDoc>
-        <Property name="stepper.indicator.size">
-          <Description>The size of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Example>"small"</Example>
-            <Example defaultValue>"medium"</Example>
-            <Example>"large"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.indicator.border.width">
-          <Description>The border width of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"2px"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.label.size">
-          <Description>The text size of a step's title.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"medium"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.label.substep.size">
-          <Description>The text size of a sub-step's title.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
+        <Property name="stepper.completed">
+          <Description>
+            Theme styling applied to a step with a "completed" status.
+            'indicator.icon' and 'indicator.iconSize' set the icon shown in the
+            indicator. 'indicator.background', 'indicator.color', and
+            'indicator.border' style the indicator's fill, icon/text color, and
+            border color. 'indicator.substep.iconSize' controls the icon size
+            used within a sub-step's indicator. 'indicator.hover' styles the
+            indicator when hovered. 'label.color' styles the step title and
+            'connector.color' styles the line connecting to the next step.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+  indicator: {
+    icon: <FormCheckmark />,
+    iconSize: "medium",
+    background: "background-front",
+    color: "brand",
+    border: "brand",
+    substep: {
+      iconSize: "small",
+    },
+    hover: {
+      background: "background-front",
+    },
+  },
+  label: { color: "text-weak" },
+  connector: { color: "brand" },
+}
+              `}
+            </Example>
           </PropertyValue>
         </Property>
 
@@ -175,67 +181,6 @@ const StepperPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"2px"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.description.size">
-          <Description>The text size of a step's description.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.description.color">
-          <Description>The color of a step's description.</Description>
-          <GenericColor />
-        </Property>
-
-        <Property name="stepper.helperText.size">
-          <Description>
-            The text size of a step's helper text, shown for a step in the
-            "error" status.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"xsmall"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.helperText.color">
-          <Description>The color of a step's helper text.</Description>
-          <GenericColor />
-        </Property>
-
-        <Property name="stepper.pending">
-          <Description>
-            Theme styling applied to a step with a "pending" status.
-            'indicator.background', 'indicator.color', and 'indicator.border'
-            style the step indicator's fill, icon/text color, and border color.
-            'indicator.substep.iconSize' controls the icon size used within a
-            sub-step's indicator. 'indicator.hover' styles the indicator when
-            hovered. 'label.color' styles the step title and 'connector.color'
-            styles the line connecting to the next step.
-          </Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`
-{
-  indicator: {
-    background: "background-front",
-    color: "text-strong",
-    border: "text-xweak",
-    substep: {
-      iconSize: "small",
-    },
-    hover: {
-      background: "background-front",
-      border: "text-strong",
-    },
-  },
-  label: { color: "text" },
-  connector: { color: "border" },
-}
-              `}
-            </Example>
           </PropertyValue>
         </Property>
 
@@ -314,15 +259,60 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.completed">
+        <Property name="stepper.currentError">
           <Description>
-            Theme styling applied to a step with a "completed" status.
-            'indicator.icon' and 'indicator.iconSize' set the icon shown in the
-            indicator. 'indicator.background', 'indicator.color', and
-            'indicator.border' style the indicator's fill, icon/text color, and
-            border color. 'indicator.substep.iconSize' controls the icon size
-            used within a sub-step's indicator. 'indicator.hover' styles the
-            indicator when hovered. 'label.color' styles the step title and
+            Theme styling applied to the active step when it also has an "error"
+            status. 'indicator.icon' sets the icon shown in the indicator.
+            'indicator.background', 'indicator.color', and 'indicator.border'
+            style the indicator's fill, icon/text color, and border color.
+            'indicator.substep.iconSize' controls the icon size used within a
+            sub-step's indicator. 'indicator.hover' styles the indicator when
+            hovered. 'label.color' styles the step title.
+          </Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`
+{
+  indicator: {
+    icon: <StatusCriticalSmall />,
+    background: "status-critical",
+    color: "white",
+    border: "status-critical",
+    substep: {
+      iconSize: "small",
+    },
+    hover: {
+      color: "white",
+    },
+  },
+  label: {
+    color: "status-critical",
+  },
+}
+              `}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.description.color">
+          <Description>The color of a step's description.</Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="stepper.description.size">
+          <Description>The text size of a step's description.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.disabled">
+          <Description>
+            Theme styling applied to a step with a "disabled" status.
+            'indicator.background', 'indicator.color', and 'indicator.border'
+            style the indicator's fill, icon/text color, and border color.
+            'indicator.substep.iconSize' controls the icon size used within a
+            sub-step's indicator. 'label.color' styles the step title and
             'connector.color' styles the line connecting to the next step.
           </Description>
           <PropertyValue type="object">
@@ -330,20 +320,15 @@ const StepperPage = () => (
               {`
 {
   indicator: {
-    icon: <FormCheckmark />,
-    iconSize: "medium",
-    background: "background-front",
-    color: "brand",
-    border: "brand",
+    background: "background-contrast",
+    color: "text-weak",
+    border: "border",
     substep: {
       iconSize: "small",
     },
-    hover: {
-      background: "background-front",
-    },
   },
   label: { color: "text-weak" },
-  connector: { color: "brand" },
+  connector: { color: "border" },
 }
               `}
             </Example>
@@ -387,63 +372,78 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentError">
+        <Property name="stepper.helperText.color">
+          <Description>The color of a step's helper text.</Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="stepper.helperText.size">
           <Description>
-            Theme styling applied to the active step when it also has an "error"
-            status. 'indicator.icon' sets the icon shown in the indicator.
+            The text size of a step's helper text, shown for a step in the
+            "error" status.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.indicator.border.width">
+          <Description>The border width of the step indicator.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"2px"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.indicator.size">
+          <Description>The size of the step indicator.</Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+            <Example defaultValue>"medium"</Example>
+            <Example>"large"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.label.size">
+          <Description>The text size of a step's title.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"medium"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.label.substep.size">
+          <Description>The text size of a sub-step's title.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.pending">
+          <Description>
+            Theme styling applied to a step with a "pending" status.
             'indicator.background', 'indicator.color', and 'indicator.border'
-            style the indicator's fill, icon/text color, and border color.
+            style the step indicator's fill, icon/text color, and border color.
             'indicator.substep.iconSize' controls the icon size used within a
             sub-step's indicator. 'indicator.hover' styles the indicator when
-            hovered. 'label.color' styles the step title.
+            hovered. 'label.color' styles the step title and 'connector.color'
+            styles the line connecting to the next step.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
               {`
 {
   indicator: {
-    icon: <StatusCriticalSmall />,
-    background: "status-critical",
-    color: "white",
-    border: "status-critical",
+    background: "background-front",
+    color: "text-strong",
+    border: "text-xweak",
     substep: {
       iconSize: "small",
     },
     hover: {
-      color: "white",
+      background: "background-front",
+      border: "text-strong",
     },
   },
-  label: {
-    color: "status-critical",
-  },
-}
-              `}
-            </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.disabled">
-          <Description>
-            Theme styling applied to a step with a "disabled" status.
-            'indicator.background', 'indicator.color', and 'indicator.border'
-            style the indicator's fill, icon/text color, and border color.
-            'indicator.substep.iconSize' controls the icon size used within a
-            sub-step's indicator. 'label.color' styles the step title and
-            'connector.color' styles the line connecting to the next step.
-          </Description>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`
-{
-  indicator: {
-    background: "background-contrast",
-    color: "text-weak",
-    border: "border",
-    substep: {
-      iconSize: "small",
-    },
-  },
-  label: { color: "text-weak" },
+  label: { color: "text" },
   connector: { color: "border" },
 }
               `}
