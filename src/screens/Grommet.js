@@ -261,6 +261,11 @@ const GrommetPage = () => (
       nextMove: "string",
       next: "string"
     },
+    cards: {
+      moved: "string",
+      reorderHint: "string",
+      description: "string"
+    },
     carousel: {
       previous: "string",
       next: "string",
@@ -269,7 +274,8 @@ const GrommetPage = () => (
     dateInput: {
       openCalendar: "string",
       enterCalendar: "string",
-      exitCalendar: "string"
+      exitCalendar: "string",
+      outOfBounds: "string"
     },
     dataFilters: {
       clear: "string",

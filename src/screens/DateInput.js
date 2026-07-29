@@ -211,7 +211,8 @@ const DateInputPage = () => (
               {`
 {
   "enterCalendar": "Calendar is open, press tab to enter the calendar",
-  "exitCalendar": "Exited calendar dialog"
+  "exitCalendar": "Exited calendar dialog",
+  "outOfBounds": "Date is out of bounds"
 }
             `}
             </Example>
