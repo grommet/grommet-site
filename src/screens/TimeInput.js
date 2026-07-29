@@ -153,6 +153,9 @@ const TimeInputPage = () => (
           <Description>
             The color of the active section's indicator bar.
           </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"white"</Example>
+          </PropertyValue>
           <PropertyValue type="object">
             <Example defaultValue>
               {`{ dark: "white", light: "black" }`}
@@ -225,6 +228,12 @@ const TimeInputPage = () => (
           <Description>The text color of the selected option.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"white"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Description>
+              An object with a color for dark and light modes.
+            </Description>
+            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
