@@ -266,7 +266,7 @@ export default TimeInputPage;
 export const TimeInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
     <Box>
-      <TimeInput format="12" value="14:30:00" disabled />
+      <TimeInput format="24" value="14:30" disabled />
     </Box>
   </Item>
 );

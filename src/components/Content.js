@@ -78,6 +78,7 @@ import Sidebar from '../screens/Sidebar';
 import Skeleton from '../screens/Skeleton';
 import Spinner from '../screens/Spinner';
 import Stack from '../screens/Stack';
+import Stepper from '../screens/Stepper';
 import StarRatingPage from '../screens/StarRating';
 import Tabs from '../screens/Tabs';
 import Table from '../screens/Table';
@@ -229,6 +230,7 @@ const Content = () => (
     <Route exact path="/spinner" component={Spinner} />
     <Route exact path="/stack" component={Stack} />
     <Route exact path="/starrating" component={StarRatingPage} />
+    <Route exact path="/stepper" component={Stepper} />
     <Route exact path="/table" component={Table} />
     <Route exact path="/tabs" component={Tabs} />
     <Route exact path="/tag" component={Tag} />
