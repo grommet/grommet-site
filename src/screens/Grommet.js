@@ -439,6 +439,10 @@ const GrommetPage = () => (
       summarizedValue: "string",
     }
     skipLinks: { skipTo: "string" },
+    stepper: {
+      progress: "string",
+      step: "string",
+    },
     tabs: { tabContents: "string" },
     tag: {
       removeLabel: {
