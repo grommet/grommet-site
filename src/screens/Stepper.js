@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Text } from 'grommet';
+import React, { useState } from 'react';
+import { Box, Stepper } from 'grommet';
 import Page from '../components/Page';
 import Item from './Components/Item';
 import { GenericColor } from '../utils/genericThemeExamples';
@@ -14,16 +14,20 @@ import {
   ThemeDoc,
 } from '../components/Doc';
 
-// TODO: Stepper is not yet available in the grommet package. Once it is
-// released, import it from 'grommet', add a live `code` example to
-// <ComponentDoc>, and replace the placeholder preview in StepperItem below.
-
 const StepperPage = () => (
   <Page>
     <ComponentDoc
       name="Stepper"
       description="Guides users through the steps of a multi-step process, showing progress and the status of each step."
       stable
+      code={`<Stepper
+  steps={[
+    { id: 'a', title: 'A', status: 'completed' },
+    { id: 'b', title: 'B', status: 'pending' },
+    { id: 'c', title: 'C', status: 'pending' }
+  ]}
+  currentStep="b"
+/>`}
     >
       <Properties>
         <Property name="children">
@@ -933,12 +937,26 @@ const StepperPage = () => (
 
 export default StepperPage;
 
-export const StepperItem = ({ name, path }) => (
-  <Item name={name} path={path} center>
-    <Box pad="small" align="center" justify="center">
-      <Text>Stepper</Text>
-    </Box>
-  </Item>
-);
+export const StepperItem = ({ name, path }) => {
+  const [currentStep, setCurrentStep] = useState('profile');
+  const steps = [
+    { id: 'account', title: 'User', status: 'completed' },
+    { id: 'info', title: 'Info', status: 'pending' },
+    { id: 'done', title: 'Done', status: 'pending' },
+  ];
+
+  return (
+    <Item name={name} path={path} center>
+      <Box pad="small" align="center" justify="center">
+        <Stepper
+          steps={steps}
+          currentStep={currentStep}
+          direction="horizontal"
+          onStepClick={(id) => setCurrentStep(id)}
+        />
+      </Box>
+    </Item>
+  );
+};
 
 StepperItem.propTypes = Item.propTypes;
