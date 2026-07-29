@@ -60,6 +60,7 @@ export const structure = {
         'TextArea',
         'TextInput',
         'ThumbsRating',
+        'TimeInput',
         'FormField',
         'Form',
       ],

@@ -456,6 +456,20 @@ const GrommetPage = () => (
       suggestionsExist: "string",
       suggestionIsOpen: "string"
     },
+    timeInput: {
+      activePeriodValue: "string",
+      activeSection: "string",
+      activeSectionValue: "string",
+      chooseTime: "string",
+      currentValue: "string",
+      inputLabel: "string",
+      invalidTime: "string",
+      openDrop: "string",
+      sectionHours: "string",
+      sectionMeridiem: "string",
+      sectionMinutes: "string",
+      sectionSeconds: "string"
+    },
     video: {
       audioDescriptions: "string",
       captions: "string",
