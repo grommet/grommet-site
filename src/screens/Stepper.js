@@ -614,7 +614,7 @@ const StepperPage = () => (
 
         <Property name="stepper.disabled.indicator.color">
           <Description>
-            The icon or text color of the step indicator.
+            The icon color of the step indicator.
           </Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
