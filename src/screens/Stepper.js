@@ -613,9 +613,7 @@ const StepperPage = () => (
         </Property>
 
         <Property name="stepper.disabled.indicator.color">
-          <Description>
-            The icon color of the step indicator.
-          </Description>
+          <Description>The icon color of the step indicator.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
             <Example defaultValue>"text-weak"</Example>
@@ -947,7 +945,7 @@ export const StepperItem = ({ name, path }) => {
 
   return (
     <Item name={name} path={path} center>
-      <Box pad="small" align="center" justify="center">
+      <Box width="100%" pad="small" align="center" justify="center">
         <Stepper
           steps={steps}
           currentStep={currentStep}
