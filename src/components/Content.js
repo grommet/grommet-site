@@ -88,6 +88,7 @@ import TextInput from '../screens/TextInput';
 import ThemeContext from '../screens/ThemeContext';
 import ThumbsRatingPage from '../screens/ThumbsRating';
 import Tip from '../screens/Tip';
+import TimeInput from '../screens/TimeInput';
 import Toolbar from '../screens/Toolbar';
 import ToggleGroup from '../screens/ToggleGroup';
 import Use from '../screens/Use';
@@ -237,6 +238,7 @@ const Content = () => (
     <Route exact path="/themecontext" component={ThemeContext} />
     <Route exact path="/thumbsrating" component={ThumbsRatingPage} />
     <Route exact path="/tip" component={Tip} />
+    <Route exact path="/timeinput" component={TimeInput} />
     <Route exact path="/toolbar" component={Toolbar} />
     <Route exact path="/togglegroup" component={ToggleGroup} />
     <Route exact path="/video" component={Video} />

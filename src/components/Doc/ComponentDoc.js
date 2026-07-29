@@ -62,7 +62,7 @@ export const ComponentDoc = ({
                 target: '_blank',
               },
             ]}
-            message={`New! ${name} is in beta, test it out and let us know what you think. This component is available on the`}
+            message={`New! ${name} is in beta, the API is subject to change. Feel free to test it out and let us know what you think! This component is available on the`}
           />
         </Box>
       )}
