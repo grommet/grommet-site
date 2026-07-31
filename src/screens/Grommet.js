@@ -148,7 +148,14 @@ const GrommetPage = () => (
             performed on the target of the Drop to more accurately determine its
             position. This is helpful in situations where the target is within a
             containing block that has a transform, perspective or filter css
-            property applied.`}
+            property applied. <br /><br />
+            **Button** childrenPlain controls whether children automatically
+            force plain styling on Button. When unset or true, existing
+            behavior is preserved and any Button with children is styled as
+            plain. When set to false, children no longer auto-apply plain
+            styling, enabling standard React composition patterns. This
+            applies to both default and kind (e.g. button.default on the
+            theme) buttons.`}
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -156,7 +163,8 @@ const GrommetPage = () => (
 {
   box: { cssGap: true },
   layer: { singleId: boolean },
-  drop: { checkContainingBlock: true } 
+  drop: { checkContainingBlock: true },
+  button: { childrenPlain: true }
 }
             `}
             </Example>
