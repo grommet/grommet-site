@@ -154,8 +154,8 @@ const GrommetPage = () => (
             behavior is preserved and any Button with children is styled as
             plain. When set to false, children no longer auto-apply plain
             styling, enabling standard React composition patterns. This
-            applies to both default and kind (e.g. button.default on the
-            theme) buttons.`}
+            applies to both default and kind buttons (e.g. button.default on the
+            theme).`}
           </Description>
           <PropertyValue type="object">
             <Example>
