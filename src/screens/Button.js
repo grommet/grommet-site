@@ -138,8 +138,12 @@ const ButtonPage = () => (
 
         <Property name="children">
           <Description>
-            Function that can be called to render the visual representation.
-            When Button has children, it is styled as a plain button.
+            {`Function that can be called to render the visual representation.
+            When Button has children, it is styled as a plain button by
+            default. This can be disabled via Grommet's
+            options.button.childrenPlain feature flag, which enables standard
+            React composition patterns by no longer auto-applying plain
+            styling to Buttons with children.`}
           </Description>
           <PropertyValue type="function">
             <Description>
@@ -470,7 +474,8 @@ const ButtonPage = () => (
             Whether this is a plain button with no border or pad. Non plain
             button will show both pad and border. When using the kind button
             (i.e. button.default on the theme), the usage of plain is
-            deprecated.
+            deprecated. See Grommet's options.button.childrenPlain feature flag
+            to control whether children automatically force this plain styling.
           </Description>
           <GenericBoolFalse />
         </Property>
@@ -1389,7 +1394,8 @@ const ButtonPage = () => (
 
         <Property name="button.elevation">
           <Description>
-            The elevation for a given button. Should reference an elevation namespace from `theme.global.elevation`.
+            The elevation for a given button. Should reference an elevation
+            namespace from `theme.global.elevation`.
           </Description>
           <PropertyValue type="string">
             <Example>'medium'</Example>
