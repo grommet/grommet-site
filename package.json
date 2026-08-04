@@ -22,6 +22,7 @@
     "build-static": "yarn build && yarn build-pages",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
+    "check-grommet-doc-drift": "node tools/check-grommet-doc-drift.js",
     "test": "eslint src",
     "prettier": "pretty-quick --staged",
     "server": "http-server dist"
