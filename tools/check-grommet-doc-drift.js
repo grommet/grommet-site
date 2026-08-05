@@ -277,7 +277,7 @@ const ${componentName}Page = () => (
       availableAt={[
         {
           url: 'https://github.com/grommet/grommet/tree/master/src/js/components/${componentName}',
-          label: 'Github',
+          label: 'GitHub',
         },
       ]}
       description="TODO: describe ${componentName}"
