@@ -124,6 +124,13 @@ function getGrommetPropNames(componentName) {
   const file = path.join(GROMMET_COMPONENTS_DIR, componentName, 'propTypes.js');
   const source = fs.readFileSync(file, 'utf8');
 
+  const warnParseFailure = (reason) => {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Warning: could not parse propTypes for \`${componentName}\` (${reason}). Skipping drift check for this component.`,
+    );
+  };
+
   // The local (non-exported) variable populated inside the
   // `if (process.env.NODE_ENV !== 'production')` guard is named either
   // `${componentName}PropType` (e.g. `CarouselPropType`) or, in many
@@ -143,22 +150,42 @@ function getGrommetPropNames(componentName) {
   while ((match = assignRe.exec(source))) lastMatch = match;
   if (!lastMatch) return [];
   let i = lastMatch.index + lastMatch[0].length;
-  while (/\s/.test(source[i])) i += 1;
+  while (i < source.length && /\s/.test(source[i])) i += 1;
+  if (i >= source.length) {
+    warnParseFailure('unexpected end of file after PropType assignment');
+    return null;
+  }
 
   const entries = [];
   if (source[i] === '{') {
     const close = findMatchingBracket(source, i);
+    if (close === -1) {
+      warnParseFailure('unbalanced braces in PropType object literal');
+      return null;
+    }
     entries.push(...splitTopLevelEntries(source.slice(i + 1, close)));
   } else {
     // Merge-style assignment: pull entries out of every object literal
     // passed as an argument (shared prop bags referenced by identifier,
     // e.g. `_generalPropTypes.genericProps`, are not expanded here).
     const parenStart = source.indexOf('(', i);
+    if (parenStart === -1) {
+      warnParseFailure('expected "(" after PropType assignment');
+      return null;
+    }
     const parenEnd = findMatchingBracket(source, parenStart);
+    if (parenEnd === -1) {
+      warnParseFailure('unbalanced parentheses in PropType merge call');
+      return null;
+    }
     let j = parenStart + 1;
     while (j < parenEnd) {
       if (source[j] === '{') {
         const close = findMatchingBracket(source, j);
+        if (close === -1) {
+          warnParseFailure('unbalanced braces inside PropType merge call');
+          return null;
+        }
         entries.push(...splitTopLevelEntries(source.slice(j + 1, close)));
         j = close + 1;
       } else {
@@ -357,9 +384,16 @@ function main() {
 
   const newComponents = [];
   const updatedProps = {};
+  const unparseableComponents = [];
 
   grommetComponents.forEach((name) => {
     const props = getGrommetPropNames(name);
+    if (props === null) {
+      // propTypes.js couldn't be parsed safely (unbalanced brackets/unknown
+      // syntax); skip this component rather than risk acting on bad data.
+      unparseableComponents.push(name);
+      return;
+    }
     if (!isDocumented(name)) {
       newComponents.push({ name, props });
       return;
@@ -393,6 +427,7 @@ function main() {
         props.map((p) => p.name),
       ]),
     ),
+    unparseableComponents,
   };
 
   const reportLines = ['# Grommet documentation drift report', ''];
@@ -419,6 +454,19 @@ function main() {
       WRITE
         ? '_Skeleton files/stubs were generated. Please review descriptions and examples before merging._'
         : '_Run with --write to generate skeleton files/stubs._',
+    );
+  }
+
+  if (unparseableComponents.length) {
+    reportLines.push(
+      '',
+      '## Components skipped due to parse errors',
+      '',
+      "_These components' `propTypes.js` couldn't be parsed safely and were" +
+        ' not checked for drift. Please review manually. See the workflow' +
+        ' logs for details._',
+      '',
+      ...unparseableComponents.map((name) => `- \`${name}\``),
     );
   }
 

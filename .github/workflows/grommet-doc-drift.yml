@@ -37,7 +37,8 @@ jobs:
         id: drift
         run: |
           node tools/check-grommet-doc-drift.js --write
-          echo "has_drift=$(node -p "require('./tools/.grommet-drift-summary.json').hasDrift")" >> "$GITHUB_OUTPUT"
+          HAS_DRIFT=$(node -p "require('./tools/.grommet-drift-summary.json').hasDrift")
+          echo "has_drift=$HAS_DRIFT" >> "$GITHUB_OUTPUT"
 
       - name: Create pull request
         if: steps.drift.outputs.has_drift == 'true'
