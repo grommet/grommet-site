@@ -64,7 +64,7 @@ function isDocumented(name) {
   return fs.existsSync(path.join(SCREENS_DIR, `${name}.js`));
 }
 
-// Returns the index just after the closing bracket matching the bracket at
+// Returns the index of the closing bracket matching the bracket at
 // `openIndex` (which must be '{', '(' or '[').
 function findMatchingBracket(source, openIndex) {
   const openChar = source[openIndex];
