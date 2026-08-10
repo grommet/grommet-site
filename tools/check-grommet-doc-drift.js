@@ -22,6 +22,8 @@ const GROMMET_COMPONENTS_DIR = path.join(
 const SCREENS_DIR = path.join(ROOT, 'src/screens');
 const STRUCTURE_FILE = path.join(ROOT, 'src/structure.js');
 const CONTENT_FILE = path.join(ROOT, 'src/components/Content.js');
+const COMPONENT_ITEMS_FILE = path.join(ROOT, 'src/screens/Components/items.js');
+const COMPONENT_INDEX_FILE = path.join(ROOT, 'src/screens/Components/index.js');
 const REPORT_JSON = path.join(ROOT, 'tools/.grommet-drift-summary.json');
 const REPORT_MD = path.join(ROOT, 'tools/.grommet-drift-report.md');
 
@@ -39,6 +41,7 @@ const SUB_COMPONENTS = new Set([
   'FocusedContainer',
   'NameValuePair',
   'PageContent',
+  'SkeletonItem',
   'SkipLink',
   'SkipLinkTarget',
   'Tab',
@@ -131,17 +134,27 @@ function getGrommetPropNames(componentName) {
     );
   };
 
-  // The local (non-exported) variable populated inside the
-  // `if (process.env.NODE_ENV !== 'production')` guard is named either
-  // `${componentName}PropType` (e.g. `CarouselPropType`) or, in many
-  // components, just the generic `PropType`. It's declared once (usually
-  // as an empty placeholder, e.g. `var PropType = {};`) and then reassigned
-  // with the real value inside the guard, so we want the LAST assignment,
-  // which is either a plain object literal or a merge via
-  // `_extends({}, sharedProps, { ...own })`.
-  const escaped = componentName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // The local variable populated inside the
+  // `if (process.env.NODE_ENV !== 'production')` guard is commonly named
+  // `${componentName}PropType` (e.g. `CarouselPropType`) or `PropType`.
+  // Newer components can also export `${componentName}PropTypes` from a
+  // differently named local variable, e.g. `export const WizardPropTypes = propType;`.
+  // Collect all likely assignment targets and take the LAST assignment.
+  const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const candidateNames = new Set([`${componentName}PropType`, 'PropType']);
+  const propTypesAliasRe = new RegExp(
+    `(?:exports\\.${componentName}PropTypes\\s*=|export\\s+const\\s+${componentName}PropTypes\\s*=)\\s*([A-Za-z_$][A-Za-z0-9_$]*)`,
+    'g',
+  );
+  let aliasMatch = propTypesAliasRe.exec(source);
+  while (aliasMatch) {
+    candidateNames.add(aliasMatch[1]);
+    aliasMatch = propTypesAliasRe.exec(source);
+  }
   const assignRe = new RegExp(
-    `(?:${escaped}PropType|(?<![A-Za-z0-9_])PropType) = `,
+    `(?:^|[^A-Za-z0-9_$])(?:${[...candidateNames]
+      .map(escapeRegExp)
+      .join('|')})\\s*=`,
     'g',
   );
   let match;
@@ -238,7 +251,7 @@ function guessPropertyValue(valueSrc) {
     return { type: 'number', examples: ['0'] };
   }
   if (/\.node\b/.test(valueSrc)) {
-    return { type: 'node | element', examples: ['<Box />'] };
+    return { type: 'node | element', examples: ['TODO: add example'] };
   }
   if (/\.(shape|object)\b/.test(valueSrc)) {
     return { type: 'object', examples: ['{}'] };
@@ -249,10 +262,22 @@ function guessPropertyValue(valueSrc) {
   return { type: 'string', examples: ['"TODO"'] };
 }
 
+function escapeTemplateLiteral(value) {
+  return String(value).replace(/`/g, '\\`').replace(/\$\{/g, '\\${');
+}
+
 function buildPropertyStub(propName, valueSrc) {
   const { type, examples } = guessPropertyValue(valueSrc);
   const exampleLines = examples
-    .map((example) => `            <Example>${example}</Example>`)
+    .map((example) => {
+      const value = String(example);
+      if (/[<>{}]/.test(value)) {
+        return `            <Example>{\`${escapeTemplateLiteral(
+          value,
+        )}\`}</Example>`;
+      }
+      return `            <Example>${value}</Example>`;
+    })
     .join('\n');
   return `        <Property name="${propName}">
           {/* TODO: auto-generated stub, please review */}
@@ -270,7 +295,8 @@ function insertPropsIntoScreen(componentName, missingProps) {
   if (closeIndex === -1) return false;
   const before = content.slice(0, closeIndex).replace(/\s+$/, '');
   const after = content.slice(closeIndex);
-  const stubs = missingProps
+  const stubs = [...missingProps]
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map(({ name, value }) => buildPropertyStub(name, value))
     .join('\n\n');
   fs.writeFileSync(file, `${before}\n\n${stubs}\n\n      ${after}`);
@@ -278,12 +304,14 @@ function insertPropsIntoScreen(componentName, missingProps) {
 }
 
 function buildSkeletonScreen(componentName, props) {
-  const propertyStubs = props
+  const propertyStubs = [...props]
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map(({ name, value }) => buildPropertyStub(name, value))
     .join('\n\n');
   return `import React from 'react';
-import { ${componentName} } from 'grommet';
+import { Box, Text } from 'grommet';
 import Page from '../components/Page';
+import Item from './Components/Item';
 import {
   ComponentDoc,
   Properties,
@@ -308,7 +336,7 @@ const ${componentName}Page = () => (
         },
       ]}
       description="TODO: describe ${componentName}"
-      code={\`<${componentName} />\`}
+      code="TODO: add ${componentName} code"
     >
       <Properties>
 ${propertyStubs}
@@ -318,6 +346,16 @@ ${propertyStubs}
 );
 
 export default ${componentName}Page;
+
+export const ${componentName}Item = ({ name, path }) => (
+  <Item name={name} path={path} center>
+    <Box pad="medium" align="center">
+      <Text size="small">TODO: add ${componentName} item</Text>
+    </Box>
+  </Item>
+);
+
+${componentName}Item.propTypes = Item.propTypes;
 `;
 }
 
@@ -377,6 +415,64 @@ function addComponentToContent(componentName) {
   fs.writeFileSync(CONTENT_FILE, updated);
 }
 
+function addComponentToItems(componentName) {
+  const content = fs.readFileSync(COMPONENT_ITEMS_FILE, 'utf8');
+  const exportLine = `export { ${componentName}Item } from '../${componentName}';\n`;
+  if (content.includes(exportLine)) return;
+  const lines = content.split('\n').filter(Boolean);
+  lines.push(exportLine.trimEnd());
+  lines.sort((a, b) => a.localeCompare(b));
+  fs.writeFileSync(COMPONENT_ITEMS_FILE, `${lines.join('\n')}\n`);
+}
+
+function addComponentToComponentsIndex(componentName) {
+  const content = fs.readFileSync(COMPONENT_INDEX_FILE, 'utf8');
+  const importMarker = "} from './items';";
+  const importLine = `  ${componentName}Item,\n`;
+  let updated = content;
+  if (!content.includes(importLine)) {
+    const importStart = content.indexOf('import {\n');
+    const importEnd = content.indexOf(importMarker, importStart);
+    const importBlock = content.slice(importStart, importEnd);
+    const importEntries = importBlock
+      .split('\n')
+      .slice(1)
+      .filter((line) => line.trim())
+      .map((line) => line.trim().replace(/,$/, ''));
+    importEntries.push(`${componentName}Item`);
+    importEntries.sort((a, b) => a.localeCompare(b));
+    const rebuiltImport = `import {\n${importEntries
+      .map((entry) => `  ${entry},`)
+      .join('\n')}\n${importMarker}`;
+    updated =
+      content.slice(0, importStart) +
+      rebuiltImport +
+      content.slice(importEnd + importMarker.length);
+  }
+
+  const itemsBlockMarker = 'const Items = {';
+  const itemsStart = updated.indexOf(itemsBlockMarker);
+  const itemsEnd = updated.indexOf('\n};', itemsStart);
+  const itemsBlock = updated.slice(itemsStart, itemsEnd);
+  const itemLine = `  ${componentName}: ${componentName}Item,`;
+  if (!itemsBlock.includes(itemLine)) {
+    const existingLines = itemsBlock
+      .split('\n')
+      .slice(1)
+      .filter((line) => line.trim())
+      .map((line) => line.trim().replace(/,$/, ''));
+    existingLines.push(`${componentName}: ${componentName}Item`);
+    existingLines.sort((a, b) => a.localeCompare(b));
+    const rebuiltItems = `const Items = {\n${existingLines
+      .map((entry) => `  ${entry},`)
+      .join('\n')}`;
+    updated =
+      updated.slice(0, itemsStart) + rebuiltItems + updated.slice(itemsEnd);
+  }
+
+  fs.writeFileSync(COMPONENT_INDEX_FILE, updated);
+}
+
 function main() {
   const grommetComponents = getGrommetComponentNames().filter(
     (name) => !SUB_COMPONENTS.has(name),
@@ -409,6 +505,8 @@ function main() {
       fs.writeFileSync(file, buildSkeletonScreen(name, props));
       addComponentToStructure(name);
       addComponentToContent(name);
+      addComponentToItems(name);
+      addComponentToComponentsIndex(name);
     });
     Object.entries(updatedProps).forEach(([name, missing]) => {
       insertPropsIntoScreen(name, missing);
