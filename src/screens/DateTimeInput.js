@@ -22,6 +22,7 @@ const DateTimeInputPage = () => (
           label: 'GitHub',
         },
       ]}
+      stable
       description="a control to input a time and date value"
       code={`<DateTimeInput
   format="12"
