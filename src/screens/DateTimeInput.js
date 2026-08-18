@@ -300,7 +300,7 @@ export default DateTimeInputPage;
 
 export const DateTimeInputItem = ({ name, path }) => (
   <Item name={name} path={path} center pad={{ horizontal: 'xlarge' }}>
-    <DateTimeInput disabled />
+    <DateTimeInput defaultValue="2024-06-15T12:00:00" disabled />
   </Item>
 );
 
