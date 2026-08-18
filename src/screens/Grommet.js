@@ -478,6 +478,19 @@ const GrommetPage = () => (
       sectionMinutes: "string",
       sectionSeconds: "string"
     },
+    wizard: {
+      previous: "Previous",
+      next: "Next",
+      skip: "Skip",
+      cancel: "Cancel",
+      close: "Close",
+      complete: "Complete",
+      stepHeader: {
+        counter: "Step {step} of {total}"
+      },
+      progress: "Wizard progress",
+      validationError: "Please complete required fields."
+    },
     video: {
       audioDescriptions: "string",
       captions: "string",
