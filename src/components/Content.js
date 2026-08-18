@@ -103,6 +103,7 @@ import GlobalTheme from '../screens/Docs/GlobalTheme';
 import Icons from '../screens/Docs/Icons';
 import Resources from '../screens/Docs/Resources';
 import StableBranch from '../screens/Docs/Stable';
+import DateTimeInput from '../screens/DateTimeInput';
 
 // NOTE: This commented out code illustrates how to code-split per-screen
 // class DynamicImport extends Component {
@@ -256,6 +257,7 @@ const Content = () => (
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
+    <Route exact path="/datetimeinput" component={DateTimeInput} />
   </Routes>
 );
 
