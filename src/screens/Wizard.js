@@ -23,7 +23,7 @@ const WizardPage = () => (
         },
       ]}
       description="a multi-step form component"
-      stable
+      beta
       code={`<Wizard
   aria-label="Onboarding"
   title="Set up your account"

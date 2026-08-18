@@ -19,7 +19,7 @@ const StepperPage = () => (
     <ComponentDoc
       name="Stepper"
       description="Guides users through the steps of a multi-step process, showing progress and the status of each step."
-      stable
+      beta
       code={`<Stepper
   steps={[
     { id: 'a', title: 'A', status: 'completed' },
