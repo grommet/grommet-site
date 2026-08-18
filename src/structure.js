@@ -64,6 +64,7 @@ export const structure = {
         'TimeInput',
         'FormField',
         'Form',
+        'Wizard',
       ],
     },
     {

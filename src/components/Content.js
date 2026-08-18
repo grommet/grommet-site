@@ -94,6 +94,7 @@ import Toolbar from '../screens/Toolbar';
 import ToggleGroup from '../screens/ToggleGroup';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
+import Wizard from '../screens/Wizard';
 import WorldMap from '../screens/WorldMap';
 
 import Browsers from '../screens/Docs/Browsers';
@@ -257,6 +258,7 @@ const Content = () => (
 
     <Route exact path="/grommet-icons" redirect="//icons.grommet.io" />
     <Route exact path="/grommet-icons/" redirect="//icons.grommet.io" />
+    <Route exact path="/wizard" component={Wizard} />
     <Route exact path="/datetimeinput" component={DateTimeInput} />
   </Routes>
 );
