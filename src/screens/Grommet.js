@@ -349,6 +349,21 @@ const GrommetPage = () => (
     dataView: {
       label: "string"
     },
+    dateTimeInput: {
+      activeSection: "string",
+      activeSectionValue: "string",
+      chooseDateTime: "string",
+      inputLabel: "string",
+      invalidDateTime: "string",
+      openDrop: "string",
+      sectionDay: "string",
+      sectionHours: "string",
+      sectionMeridiem: "string",
+      sectionMinutes: "string",
+      sectionMonth: "string",
+      sectionSeconds: "string",
+      sectionYear: "string"
+    },
     fileInput: {
       alert: {
         maxFile: "Error, {fileName} exceeds {maxFile} files limit.",
