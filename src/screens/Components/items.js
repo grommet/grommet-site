@@ -82,4 +82,5 @@ export { TimeInputItem } from '../TimeInput';
 export { ToggleGroupItem } from '../ToggleGroup';
 export { ToolbarItem } from '../Toolbar';
 export { VideoItem } from '../Video';
+export { WizardItem } from '../Wizard';
 export { WorldMapItem } from '../WorldMap';

@@ -89,6 +89,7 @@ import {
   TimeInputItem,
   ToolbarItem,
   VideoItem,
+  WizardItem,
   WorldMapItem,
 } from './items';
 import { ToggleGroupItem } from '../ToggleGroup';
@@ -178,6 +179,7 @@ const Items = {
   Toolbar: ToolbarItem,
   ToggleGroup: ToggleGroupItem,
   Video: VideoItem,
+  Wizard: WizardItem,
   WorldMap: WorldMapItem,
 };
 
