@@ -395,7 +395,7 @@ function addComponentToContent(componentName) {
   const content = fs.readFileSync(CONTENT_FILE, 'utf8');
   const importLine = `import ${componentName} from '../screens/${componentName}';\n`;
   const lastImportMatch = [
-    ...content.matchAll(/^import .*from '\.\.\/screens\/.*';\n/gm),
+    ...content.matchAll(/^import .*from '\.\.\/screens\/[^/']+';\n/gm),
   ].pop();
   const importInsertAt = lastImportMatch
     ? lastImportMatch.index + lastImportMatch[0].length
