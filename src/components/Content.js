@@ -94,6 +94,7 @@ import Toolbar from '../screens/Toolbar';
 import ToggleGroup from '../screens/ToggleGroup';
 import Use from '../screens/Use';
 import Video from '../screens/Video';
+import Wizard from '../screens/Wizard';
 import WorldMap from '../screens/WorldMap';
 
 import Browsers from '../screens/Docs/Browsers';
@@ -103,7 +104,6 @@ import GlobalTheme from '../screens/Docs/GlobalTheme';
 import Icons from '../screens/Docs/Icons';
 import Resources from '../screens/Docs/Resources';
 import StableBranch from '../screens/Docs/Stable';
-import Wizard from '../screens/Wizard';
 
 // NOTE: This commented out code illustrates how to code-split per-screen
 // class DynamicImport extends Component {
