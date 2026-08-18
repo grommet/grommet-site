@@ -252,14 +252,20 @@ const DateTimeInputPage = () => (
         </Property>
 
         <Property name="dateTimeInput.drop.border.color">
-          <Description>The border color for the drop container.</Description>
+          <Description>
+            The color of the divider between the Calendar and TimeInput inside
+            the DateTimeInput drop.
+          </Description>
           <PropertyValue type="string">
             <Example defaultValue>"border"</Example>
           </PropertyValue>
         </Property>
 
         <Property name="dateTimeInput.drop.border.size">
-          <Description>The border size for the drop container.</Description>
+          <Description>
+            The border size of the divider between the Calendar and TimeInput
+            inside the DateTimeInput drop.
+          </Description>
           <PropertyValue type="string">
             <Example defaultValue>"xsmall"</Example>
           </PropertyValue>
