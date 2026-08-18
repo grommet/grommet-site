@@ -26,6 +26,7 @@ export { DataTableGroupByItem } from '../DataTableGroupBy';
 export { DataTableColumnsItem } from '../DataTableColumns';
 export { DataViewItem } from '../DataView';
 export { DateInputItem } from '../DateInput';
+export { DateTimeInputItem } from '../DateTimeInput';
 export { DiagramItem } from '../Diagram';
 export { DistributionItem } from '../Distribution';
 export { DropItem } from '../Drop';
