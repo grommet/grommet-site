@@ -23,47 +23,48 @@ const WizardPage = () => (
         },
       ]}
       description="a multi-step form component"
+      stable
       code={`<Wizard
-        aria-label="Onboarding"
-        title="Set up your account"
-        steps={[
-          {
-            id: 'account',
-            title: 'Account',
-            description: 'Tell us about your account.',
-            render: (step, api) => (
-              <Box gap="small">
-                <Paragraph>Enter an email to continue.</Paragraph>
-                <TextInput
-                  placeholder="you@example.com"
-                  value={api.formValue.email || ''}
-                  onChange={(event) =>
-                    api.setFormValue({ ...api.formValue, email: event.target.value })
-                  }
-                />
-              </Box>
-            ),
-          },
-          {
-            id: 'profile',
-            title: 'Profile',
-            description: 'Fill in your profile details.',
-            render: () => (
-              <Paragraph>Placeholder profile form for the second step.</Paragraph>
-            ),
-          },
-          {
-            id: 'review',
-            title: 'Review',
-            description: 'Review and finish.',
-            render: (step, api) => (
-              <Paragraph>
-                Ready to submit for {api.formValue.email || 'unknown user'}.
-              </Paragraph>
-            ),
-          },
-        ]}
-      />`}
+  aria-label="Onboarding"
+  title="Set up your account"
+  steps={[
+    {
+      id: 'account',
+      title: 'Account',
+      description: 'Tell us about your account.',
+      render: (step, api) => (
+        <Box gap="small">
+          <Paragraph>Enter an email to continue.</Paragraph>
+          <TextInput
+            placeholder="you@example.com"
+            value={api.formValue.email || ''}
+            onChange={(event) =>
+              api.setFormValue({ ...api.formValue, email: event.target.value })
+            }
+          />
+        </Box>
+      ),
+    },
+    {
+      id: 'profile',
+      title: 'Profile',
+      description: 'Fill in your profile details.',
+      render: () => (
+        <Paragraph>Placeholder profile form for the second step.</Paragraph>
+      ),
+    },
+    {
+      id: 'review',
+      title: 'Review',
+      description: 'Review and finish.',
+      render: (step, api) => (
+        <Paragraph>
+          Ready to submit for {api.formValue.email || 'unknown user'}.
+        </Paragraph>
+      ),
+    },
+  ]}
+/>`}
     >
       <Properties>
         <Property name="aria-label">
