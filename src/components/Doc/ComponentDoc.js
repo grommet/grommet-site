@@ -20,6 +20,7 @@ export const ComponentDoc = ({
   pageTitle,
   designSystemLink,
   stable,
+  beta,
 }) => {
   const properties = [];
   const themeDoc = [];
@@ -50,19 +51,25 @@ export const ComponentDoc = ({
         <title>{pageTitle || name}</title>
         <meta name="description" content={description} />
       </Helmet>
-      {stable && (
+      {(beta || stable) && (
         <Box pad={{ bottom: 'medium' }}>
           <Notification
             background="light-3"
             status="info"
-            actions={[
-              {
-                label: 'stable branch.',
-                href: '/stablebranch',
-                target: '_blank',
-              },
-            ]}
-            message={`New! ${name} is in beta, the API is subject to change. Feel free to test it out and let us know what you think! This component is available on the`}
+            actions={
+              stable
+                ? [
+                    {
+                      label: 'stable branch.',
+                      href: '/stablebranch',
+                      target: '_blank',
+                    },
+                  ]
+                : []
+            }
+            message={`New! ${name} is in beta, the API is subject to change. Feel free to test it out and let us know what you think! ${
+              stable ? 'This component is available on the' : ''
+            } `}
           />
         </Box>
       )}
@@ -180,6 +187,7 @@ ComponentDoc.propTypes = {
   pageTitle: PropTypes.string,
   designSystemLink: PropTypes.string,
   stable: PropTypes.bool,
+  beta: PropTypes.bool,
 };
 
 ComponentDoc.defaultProps = {
@@ -193,4 +201,5 @@ ComponentDoc.defaultProps = {
   pageTitle: undefined,
   designSystemLink: undefined,
   stable: false,
+  beta: false,
 };

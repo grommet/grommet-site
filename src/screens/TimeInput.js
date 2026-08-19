@@ -29,7 +29,7 @@ const TimeInputPage = () => (
           label: 'Github',
         },
       ]}
-      stable
+      beta
       description="A control to input a time value"
       code={`<TimeInput
   format="12"
