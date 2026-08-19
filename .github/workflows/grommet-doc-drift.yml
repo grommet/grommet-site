@@ -1,0 +1,58 @@
+name: Grommet doc drift check
+
+# Periodically pulls the latest `grommet` (stable branch) and checks whether
+# any components/props exist there that aren't documented on grommet-site
+# yet. If so, it scaffolds stub documentation and opens a draft PR for a
+# maintainer to review, describe, and merge.
+
+on:
+  schedule:
+    # Every Monday at 13:00 UTC.
+    - cron: '0 13 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: yarn install --ignore-engines
+
+      - name: Fetch latest grommet (stable)
+        run: yarn upgrade grommet --ignore-engines
+
+      - name: Run drift check
+        id: drift
+        run: |
+          node tools/check-grommet-doc-drift.js --write
+          HAS_DRIFT=$(node -p "require('./tools/.grommet-drift-summary.json').hasDrift")
+          echo "has_drift=$HAS_DRIFT" >> "$GITHUB_OUTPUT"
+
+      - name: Create pull request
+        if: steps.drift.outputs.has_drift == 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          commit-message: 'chore: scaffold docs for new grommet components/props'
+          branch: grommet-doc-sync
+          delete-branch: true
+          draft: true
+          title: 'Grommet doc sync: new components/props detected'
+          body-path: tools/.grommet-drift-report.md
+          add-paths: |
+            src/screens/**
+            src/structure.js
+            src/components/Content.js
+            package.json
+            yarn.lock
