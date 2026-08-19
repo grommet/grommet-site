@@ -3082,9 +3082,9 @@ ejs@^3.1.10:
     jake "^10.8.5"
 
 electron-to-chromium@^1.5.402:
-  version "1.5.409"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.409.tgz#3d514dd82b2d181d8ade96c53242f4b8c94ab4ed"
-  integrity sha512-ChI4N44d0B4A6C8prnNjMOaGgE59fUyEVYcRYm2XEXIjMbbvF5i9UL1cblDbpGqiU0uS8FE8UcKxqZqTXdmzbQ==
+  version "1.5.410"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.410.tgz#0901bccd2b2865960d8decee1653ad734a1b41de"
+  integrity sha512-Vq9DD7F4PKCKVmOoG6i1CQSYoF7IUtwTPEQjMXuqNs2S22H8HsojO9myaB81QuvvIKZaF6imSn3XAV1Su6rvXA==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -4140,8 +4140,8 @@ grommet-theme-hpe@^5.5.0:
   integrity sha512-YmKmE7WI3fSimoovD5NogIy1Pag0c4lqyDHH076fEl3lhEpNZ4cgJtcLk+TxhHM5cq9AEfA8ebioNTkoEpYEhQ==
 
 "grommet@https://github.com/grommet/grommet/tarball/stable":
-  version "2.56.0"
-  resolved "https://github.com/grommet/grommet/tarball/stable#bbc04a95f189aa1e3b09d519a17d89cd35b07902"
+  version "2.56.1"
+  resolved "https://github.com/grommet/grommet/tarball/stable#6624b2e7ec901aa4f9282f272a05b14a751797ac"
   dependencies:
     "@emotion/is-prop-valid" "^1.4.0"
     grommet-icons "^4.14.0"
