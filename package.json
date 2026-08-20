@@ -25,7 +25,8 @@
     "check-grommet-doc-drift": "node tools/check-grommet-doc-drift.js",
     "test": "eslint src",
     "prettier": "pretty-quick --staged",
-    "server": "http-server dist"
+    "server": "http-server dist",
+    "refresh-grommet-lock": "yarn upgrade grommet --ignore-engines && git add yarn.lock"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
@@ -88,6 +89,7 @@
     "workbox-webpack-plugin": "^7.4.0"
   },
   "pre-commit": [
+    "refresh-grommet-lock",
     "lint-fix",
     "prettier"
   ],
