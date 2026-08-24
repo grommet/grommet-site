@@ -25,7 +25,7 @@
     "check-grommet-doc-drift": "node tools/check-grommet-doc-drift.js",
     "test": "eslint src",
     "prettier": "pretty-quick --staged",
-    "refresh-grommet-lock": "rm yarn.lock && yarn install --ignore-engines && git add yarn.lock",
+    "refresh-grommet-lock": "rm -rf yarn.lock && rm -rf node_modules && yarn cache clean && yarn install --ignore-engines && git add yarn.lock",
     "server": "http-server dist"
   },
   "dependencies": {
