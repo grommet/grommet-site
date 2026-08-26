@@ -25,6 +25,7 @@
     "check-grommet-doc-drift": "node tools/check-grommet-doc-drift.js",
     "test": "eslint src",
     "prettier": "pretty-quick --staged",
+    "refresh-grommet-lock": "node tools/refresh-grommet-lock.js",
     "server": "http-server dist"
   },
   "dependencies": {
@@ -88,6 +89,7 @@
     "workbox-webpack-plugin": "^7.4.0"
   },
   "pre-commit": [
+    "refresh-grommet-lock",
     "lint-fix",
     "prettier"
   ],
