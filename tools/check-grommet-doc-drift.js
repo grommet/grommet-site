@@ -115,13 +115,14 @@ function splitTopLevelEntries(body) {
 
   return entries
     .map((entry) => {
-      const colonIndex = entry.indexOf(':');
+      const cleanEntry = entry.replace(/\/\/.*$/gm, '').trim();
+      const colonIndex = cleanEntry.indexOf(':');
       if (colonIndex === -1) return null;
-      const name = entry
+      const name = cleanEntry
         .slice(0, colonIndex)
         .trim()
         .replace(/^["']|["']$/g, '');
-      const value = entry.slice(colonIndex + 1).trim();
+      const value = cleanEntry.slice(colonIndex + 1).trim();
       return name ? { name, value } : null;
     })
     .filter(Boolean);
@@ -230,6 +231,25 @@ function getDocumentedPropNames(componentName) {
   return names;
 }
 
+function extractCodeFromExampleText(text) {
+  let cleaned = text.trim();
+  while (
+    cleaned.startsWith('{') &&
+    cleaned.endsWith('}') &&
+    cleaned.length >= 2
+  ) {
+    cleaned = cleaned.slice(1, -1).trim();
+    if (
+      (cleaned.startsWith('`') && cleaned.endsWith('`')) ||
+      (cleaned.startsWith('"') && cleaned.endsWith('"')) ||
+      (cleaned.startsWith("'") && cleaned.endsWith("'"))
+    ) {
+      cleaned = cleaned.slice(1, -1).trim();
+    }
+  }
+  return cleaned;
+}
+
 function getShapeKeysFromValue(valueSrc) {
   const names = new Set();
   const shapeMatches = [
@@ -263,13 +283,14 @@ function getDocumentedShapeKeysForProperty(componentName, propertyName) {
   ].map((entry) => entry[1]);
 
   exampleTexts.forEach((text) => {
+    const code = extractCodeFromExampleText(text);
     let i = 0;
-    while (i < text.length) {
-      const openIndex = text.indexOf('{', i);
+    while (i < code.length) {
+      const openIndex = code.indexOf('{', i);
       if (openIndex === -1) break;
-      const closeIndex = findMatchingBracket(text, openIndex);
+      const closeIndex = findMatchingBracket(code, openIndex);
       if (closeIndex === -1) break;
-      const body = text.slice(openIndex + 1, closeIndex);
+      const body = code.slice(openIndex + 1, closeIndex);
       splitTopLevelEntries(body).forEach((entry) => names.add(entry.name));
       i = closeIndex + 1;
     }
@@ -324,43 +345,47 @@ function getGrommetThemePropertyNames() {
       const match = value.slice(index).match(/^([A-Za-z0-9_$]+)\s*(\?\s*:|:)/);
       if (!match) {
         index += 1;
-        continue;
-      }
-
-      const [, propertyName] = match;
-      const fullName = prefix ? `${prefix}.${propertyName}` : propertyName;
-      let nextIndex = index + match[0].length;
-      while (nextIndex < value.length && /\s/.test(value[nextIndex]))
-        nextIndex += 1;
-
-      if (nextIndex < value.length && value[nextIndex] === '{') {
-        const closeIndex = findMatchingBracket(value, nextIndex);
-        if (closeIndex !== -1) {
-          names.add(fullName);
-          walk(value.slice(nextIndex + 1, closeIndex), fullName);
-          index = closeIndex + 1;
-          continue;
+      } else {
+        const [, propertyName] = match;
+        const fullName = prefix ? `${prefix}.${propertyName}` : propertyName;
+        let nextIndex = index + match[0].length;
+        while (nextIndex < value.length && /\s/.test(value[nextIndex])) {
+          nextIndex += 1;
         }
-      }
 
-      names.add(fullName);
-      let endIndex = nextIndex;
-      while (endIndex < value.length) {
-        if (value[endIndex] === ';' || value[endIndex] === ',') break;
-        if (
-          value[endIndex] === '{' ||
-          value[endIndex] === '[' ||
-          value[endIndex] === '('
-        ) {
-          const closing = findMatchingBracket(value, endIndex);
-          if (closing !== -1) {
-            endIndex = closing + 1;
-            continue;
+        if (nextIndex < value.length && value[nextIndex] === '{') {
+          const closeIndex = findMatchingBracket(value, nextIndex);
+          if (closeIndex !== -1) {
+            names.add(fullName);
+            walk(value.slice(nextIndex + 1, closeIndex), fullName);
+            index = closeIndex + 1;
+          } else {
+            names.add(fullName);
+            index = nextIndex + 1;
           }
+        } else {
+          names.add(fullName);
+          let endIndex = nextIndex;
+          while (endIndex < value.length) {
+            if (value[endIndex] === ';' || value[endIndex] === ',') break;
+            if (
+              value[endIndex] === '{' ||
+              value[endIndex] === '[' ||
+              value[endIndex] === '('
+            ) {
+              const closing = findMatchingBracket(value, endIndex);
+              if (closing !== -1) {
+                endIndex = closing + 1;
+              } else {
+                endIndex += 1;
+              }
+            } else {
+              endIndex += 1;
+            }
+          }
+          index = endIndex + (endIndex < value.length ? 1 : 0);
         }
-        endIndex += 1;
       }
-      index = endIndex + (endIndex < value.length ? 1 : 0);
     }
   };
 
