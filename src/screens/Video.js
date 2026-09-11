@@ -168,6 +168,14 @@ const Video = () => (
             </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="skipInterval">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe skipInterval.</Description>
+          <PropertyValue type="number">
+            <Example>0</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>

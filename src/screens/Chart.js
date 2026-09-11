@@ -385,6 +385,15 @@ const ChartPage = () => (
             </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="direction">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe direction.</Description>
+          <PropertyValue type="string">
+            <Example>'horizontal'</Example>
+            <Example>'vertical'</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>

@@ -152,6 +152,14 @@ const AccordionPage = () => (
             </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="level">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe level.</Description>
+          <PropertyValue type="number">
+            <Example>0</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
     </ComponentDoc>
 

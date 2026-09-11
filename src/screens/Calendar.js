@@ -342,6 +342,15 @@ const CalendarPage = () => (
             <Example>"string"</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="responsive">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe responsive.</Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
