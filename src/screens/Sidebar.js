@@ -70,6 +70,14 @@ const SidebarPage = () => (
             <Example>{`<SidebarHeader />`}</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="children">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe children.</Description>
+          <PropertyValue type="node | element">
+            <Example>TODO: add example</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
     </ComponentDoc>
   </Page>

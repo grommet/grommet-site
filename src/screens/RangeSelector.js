@@ -191,6 +191,14 @@ const RangeSelectorPage = () => (
             <Example>[1, 2]</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="defaultValues">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe defaultValues.</Description>
+          <PropertyValue type="number">
+            <Example>0</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>

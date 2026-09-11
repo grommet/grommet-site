@@ -346,6 +346,15 @@ const TextInputPage = () => (
             <Example>{`{ min: "...", max: "..." }`}</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="password">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe password.</Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>

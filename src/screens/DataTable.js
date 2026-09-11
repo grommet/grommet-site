@@ -688,6 +688,14 @@ const DataTablePage = () => (
             </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="messages">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe messages.</Description>
+          <PropertyValue type="object">
+            <Example>{`{}`}</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
