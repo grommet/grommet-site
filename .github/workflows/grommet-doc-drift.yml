@@ -1,9 +1,9 @@
 name: Grommet doc drift check
 
 # Periodically pulls the latest `grommet` (stable branch) and checks whether
-# any components/props exist there that aren't documented on grommet-site
-# yet. If so, it scaffolds stub documentation and opens a draft PR for a
-# maintainer to review, describe, and merge.
+# any components/props/theme keys exist there that aren't documented on
+# grommet-site yet. If so, it scaffolds stub documentation and opens a draft
+# PR for a maintainer to review, describe, and merge.
 
 on:
   schedule:
@@ -48,7 +48,7 @@ jobs:
           branch: grommet-doc-sync
           delete-branch: true
           draft: true
-          title: 'Grommet doc sync: new components/props detected'
+          title: 'Grommet doc sync: new components/props/theme keys detected'
           body-path: tools/.grommet-drift-report.md
           add-paths: |
             src/screens/**

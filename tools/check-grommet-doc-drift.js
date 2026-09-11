@@ -19,6 +19,10 @@ const GROMMET_COMPONENTS_DIR = path.join(
   ROOT,
   'node_modules/grommet/components',
 );
+const GROMMET_THEME_FILE = path.join(
+  ROOT,
+  'node_modules/grommet/themes/base.d.ts',
+);
 const SCREENS_DIR = path.join(ROOT, 'src/screens');
 const STRUCTURE_FILE = path.join(ROOT, 'src/structure.js');
 const CONTENT_FILE = path.join(ROOT, 'src/components/Content.js');
@@ -224,6 +228,144 @@ function getDocumentedPropNames(componentName) {
     match = re.exec(content);
   }
   return names;
+}
+
+function getShapeKeysFromValue(valueSrc) {
+  const names = new Set();
+  const shapeMatches = [
+    ...valueSrc.matchAll(/\.shape\(\s*\{([\s\S]*?)\}\s*\)/g),
+  ];
+  shapeMatches.forEach((match) => {
+    splitTopLevelEntries(match[1]).forEach((entry) => {
+      names.add(entry.name);
+    });
+  });
+  return [...names];
+}
+
+function getDocumentedShapeKeysForProperty(componentName, propertyName) {
+  const file = path.join(SCREENS_DIR, `${componentName}.js`);
+  const content = fs.readFileSync(file, 'utf8');
+  const propertyRe = new RegExp(
+    `<Property\\s+name="${propertyName.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      '\\$&',
+    )}"[^>]*>([\\s\\S]*?)<\\/Property>`,
+    'm',
+  );
+  const match = propertyRe.exec(content);
+  if (!match) return new Set();
+
+  const block = match[1];
+  const names = new Set();
+  const exampleTexts = [
+    ...block.matchAll(/<Example(?:[^>]*)>([\s\S]*?)<\/Example>/g),
+  ].map((entry) => entry[1]);
+
+  exampleTexts.forEach((text) => {
+    let i = 0;
+    while (i < text.length) {
+      const openIndex = text.indexOf('{', i);
+      if (openIndex === -1) break;
+      const closeIndex = findMatchingBracket(text, openIndex);
+      if (closeIndex === -1) break;
+      const body = text.slice(openIndex + 1, closeIndex);
+      splitTopLevelEntries(body).forEach((entry) => names.add(entry.name));
+      i = closeIndex + 1;
+    }
+  });
+
+  return names;
+}
+
+function getDocumentedThemePropertyNames() {
+  const names = new Set();
+  const files = fs.readdirSync(SCREENS_DIR, { withFileTypes: true });
+  files.forEach((entry) => {
+    if (!entry.isFile() || !entry.name.endsWith('.js')) return;
+    const file = path.join(SCREENS_DIR, entry.name);
+    const content = fs.readFileSync(file, 'utf8');
+    const themeDocMatches = [
+      ...content.matchAll(/<ThemeDoc\b[\s\S]*?<\/ThemeDoc>/g),
+    ];
+    themeDocMatches.forEach((match) => {
+      const block = match[0];
+      const re = /<Property\s+name="([^"]+)"/g;
+      let propMatch = re.exec(block);
+      while (propMatch) {
+        names.add(propMatch[1]);
+        propMatch = re.exec(block);
+      }
+    });
+  });
+  return names;
+}
+
+function getGrommetThemePropertyNames() {
+  if (!fs.existsSync(GROMMET_THEME_FILE)) return [];
+
+  const source = fs.readFileSync(GROMMET_THEME_FILE, 'utf8');
+  const themeTypeStart = source.indexOf('interface ThemeType');
+  if (themeTypeStart === -1) return [];
+  const themeTypeOpen = source.indexOf('{', themeTypeStart);
+  if (themeTypeOpen === -1) return [];
+  const themeTypeClose = findMatchingBracket(source, themeTypeOpen);
+  if (themeTypeClose === -1) return [];
+
+  const names = new Set();
+  const body = source.slice(themeTypeOpen + 1, themeTypeClose);
+
+  const walk = (value, prefix = '') => {
+    let index = 0;
+    while (index < value.length) {
+      while (index < value.length && /\s/.test(value[index])) index += 1;
+      if (index >= value.length) break;
+
+      const match = value.slice(index).match(/^([A-Za-z0-9_$]+)\s*(\?\s*:|:)/);
+      if (!match) {
+        index += 1;
+        continue;
+      }
+
+      const [, propertyName] = match;
+      const fullName = prefix ? `${prefix}.${propertyName}` : propertyName;
+      let nextIndex = index + match[0].length;
+      while (nextIndex < value.length && /\s/.test(value[nextIndex]))
+        nextIndex += 1;
+
+      if (nextIndex < value.length && value[nextIndex] === '{') {
+        const closeIndex = findMatchingBracket(value, nextIndex);
+        if (closeIndex !== -1) {
+          names.add(fullName);
+          walk(value.slice(nextIndex + 1, closeIndex), fullName);
+          index = closeIndex + 1;
+          continue;
+        }
+      }
+
+      names.add(fullName);
+      let endIndex = nextIndex;
+      while (endIndex < value.length) {
+        if (value[endIndex] === ';' || value[endIndex] === ',') break;
+        if (
+          value[endIndex] === '{' ||
+          value[endIndex] === '[' ||
+          value[endIndex] === '('
+        ) {
+          const closing = findMatchingBracket(value, endIndex);
+          if (closing !== -1) {
+            endIndex = closing + 1;
+            continue;
+          }
+        }
+        endIndex += 1;
+      }
+      index = endIndex + (endIndex < value.length ? 1 : 0);
+    }
+  };
+
+  walk(body);
+  return [...names].sort((a, b) => a.localeCompare(b));
 }
 
 // Best-effort guess of a PropertyValue "type" + placeholder example from
@@ -480,7 +622,13 @@ function main() {
 
   const newComponents = [];
   const updatedProps = {};
+  const updatedNestedProps = {};
   const unparseableComponents = [];
+  const documentedThemeProps = getDocumentedThemePropertyNames();
+  const grommetThemeProps = getGrommetThemePropertyNames();
+  const missingThemeProps = grommetThemeProps.filter(
+    (name) => !documentedThemeProps.has(name),
+  );
 
   grommetComponents.forEach((name) => {
     const props = getGrommetPropNames(name);
@@ -497,6 +645,17 @@ function main() {
     const documented = getDocumentedPropNames(name);
     const missing = props.filter((p) => !documented.has(p.name));
     if (missing.length) updatedProps[name] = missing;
+
+    const nestedMissing = props.flatMap((p) => {
+      if (!p.value || !p.value.includes('shape(')) return [];
+      const nestedNames = getShapeKeysFromValue(p.value);
+      if (!nestedNames.length) return [];
+      const documentedNested = getDocumentedShapeKeysForProperty(name, p.name);
+      return nestedNames
+        .filter((nestedName) => !documentedNested.has(nestedName))
+        .map((nestedName) => `${p.name}.${nestedName}`);
+    });
+    if (nestedMissing.length) updatedNestedProps[name] = nestedMissing;
   });
 
   if (WRITE) {
@@ -514,7 +673,10 @@ function main() {
   }
 
   const hasDrift =
-    newComponents.length > 0 || Object.keys(updatedProps).length > 0;
+    newComponents.length > 0 ||
+    Object.keys(updatedProps).length > 0 ||
+    Object.keys(updatedNestedProps).length > 0 ||
+    missingThemeProps.length > 0;
 
   const summary = {
     hasDrift,
@@ -525,6 +687,8 @@ function main() {
         props.map((p) => p.name),
       ]),
     ),
+    updatedNestedProps,
+    missingThemeProps,
     unparseableComponents,
   };
 
@@ -546,6 +710,23 @@ function main() {
           `- \`${name}\`: ${props.map((p) => `\`${p.name}\``).join(', ')}`,
         );
       });
+      reportLines.push('');
+    }
+    if (Object.keys(updatedNestedProps).length) {
+      reportLines.push(
+        '## Existing components with undocumented nested object keys',
+        '',
+      );
+      Object.entries(updatedNestedProps).forEach(([name, props]) => {
+        reportLines.push(
+          `- \`${name}\`: ${props.map((p) => `\`${p}\``).join(', ')}`,
+        );
+      });
+      reportLines.push('');
+    }
+    if (missingThemeProps.length) {
+      reportLines.push('## Theme keys missing documentation', '');
+      missingThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
       reportLines.push('');
     }
     reportLines.push(
