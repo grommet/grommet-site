@@ -330,6 +330,7 @@ const GrommetPage = () => (
       rowsChanged: "string",
       rowsSingle: "string",
       searchBy: "string",
+      sortable: "string",
       total: "string",
       totalSingle: "string"
     },
@@ -475,9 +476,11 @@ const GrommetPage = () => (
     },
     textInput: {
       enterSelect: "string",
+      hidePassword: "string",
       suggestionsCount: "string",
       suggestionsExist: "string",
-      suggestionIsOpen: "string"
+      suggestionIsOpen: "string",
+      showPassword: "string",
     },
     timeInput: {
       activePeriodValue: "string",

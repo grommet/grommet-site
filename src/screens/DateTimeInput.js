@@ -234,6 +234,20 @@ const DateTimeInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="dateTimeInput.calendar.day.selected.background">
+          <Description>
+            The background color for the selected day in the calendar.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"selected"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ dark: "white", light: "black" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="dateTimeInput.drop.pad">
           <Description>The padding inside the drop container.</Description>
           <PropertyValue type="string">

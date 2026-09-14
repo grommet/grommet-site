@@ -139,6 +139,22 @@ const StepperPage = () => (
             </PropOptions>
           </PropertyValue>
         </Property>
+
+        <Property name="errorAnnouncement">
+          <Description>
+            Controls how error messages are announced to assistive technologies.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"assertive"</Example>
+            <Example>"polite"</Example>
+          </PropertyValue>
+          <PropertyValue type="boolean">
+            <Description>
+              Set to false to disable error announcements.
+            </Description>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
