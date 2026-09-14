@@ -13,6 +13,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 const GROMMET_COMPONENTS_DIR = path.join(
@@ -31,6 +32,8 @@ const COMPONENT_INDEX_FILE = path.join(ROOT, 'src/screens/Components/index.js');
 const THEME_HELPERS_DIR = path.join(ROOT, 'src/utils');
 const REPORT_JSON = path.join(ROOT, 'tools/.grommet-drift-summary.json');
 const REPORT_MD = path.join(ROOT, 'tools/.grommet-drift-report.md');
+const GROMMET_THEME_BASELINE_COMMIT =
+  '2c872354a2d32cacc8b7d82ec963f83acf03e8ae';
 
 // The existing theme documentation is incomplete, so writing every missing
 // theme path would create a huge noisy PR. Revisit this allowlist and replace
@@ -382,10 +385,7 @@ function getDocumentedThemePropertyNames() {
   return names;
 }
 
-function getGrommetThemePropertyNames() {
-  if (!fs.existsSync(GROMMET_THEME_FILE)) return [];
-
-  const source = fs.readFileSync(GROMMET_THEME_FILE, 'utf8');
+function parseThemePropertyNames(source) {
   const themeTypeStart = source.indexOf('interface ThemeType');
   if (themeTypeStart === -1) return [];
   const themeTypeOpen = source.indexOf('{', themeTypeStart);
@@ -451,6 +451,17 @@ function getGrommetThemePropertyNames() {
 
   walk(body);
   return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function getGrommetThemePropertyNames() {
+  if (!fs.existsSync(GROMMET_THEME_FILE)) return [];
+  return parseThemePropertyNames(fs.readFileSync(GROMMET_THEME_FILE, 'utf8'));
+}
+
+function getBaselineThemePropertyNames() {
+  const url = `https://raw.githubusercontent.com/grommet/grommet/${GROMMET_THEME_BASELINE_COMMIT}/src/js/themes/base.d.ts`;
+  const source = execFileSync('curl', ['-fsSL', url], { encoding: 'utf8' });
+  return parseThemePropertyNames(source);
 }
 
 function buildThemePropertyStub(themePath) {
@@ -740,12 +751,22 @@ function main() {
   const unparseableComponents = [];
   const documentedThemeProps = getDocumentedThemePropertyNames();
   const grommetThemeProps = getGrommetThemePropertyNames();
+  const baselineThemeProps = getBaselineThemePropertyNames();
   const missingThemeProps = grommetThemeProps.filter(
     (name) => !documentedThemeProps.has(name),
   );
   const themeTodoPaths = [...THEME_TODO_PATHS].filter(
     (name) => !documentedThemeProps.has(name),
   );
+  const newThemeProps = [
+    ...new Set([
+      ...grommetThemeProps.filter(
+        (name) =>
+          !baselineThemeProps.includes(name) && !documentedThemeProps.has(name),
+      ),
+      ...themeTodoPaths,
+    ]),
+  ];
 
   grommetComponents.forEach((name) => {
     const props = getGrommetPropNames(name);
@@ -795,7 +816,7 @@ function main() {
       insertMessageKeysIntoScreen(name, missing);
     });
     const themePathsByComponent = {};
-    themeTodoPaths.forEach((themePath) => {
+    newThemeProps.forEach((themePath) => {
       const componentName = themePath.split('.')[0];
       if (!themePathsByComponent[componentName])
         themePathsByComponent[componentName] = [];
@@ -812,7 +833,7 @@ function main() {
     newComponents.length > 0 ||
     Object.keys(updatedProps).length > 0 ||
     Object.keys(updatedNestedProps).length > 0 ||
-    themeTodoPaths.length > 0;
+    newThemeProps.length > 0;
 
   const summary = {
     hasDrift,
@@ -830,6 +851,7 @@ function main() {
       ]),
     ),
     themeTodoPaths,
+    newThemeProps,
     missingThemeProps,
     unparseableComponents,
   };
@@ -866,17 +888,14 @@ function main() {
       });
       reportLines.push('');
     }
-    if (missingThemeProps.length) {
-      reportLines.push('## Theme keys missing documentation', '');
-      missingThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
-      themeTodoPaths
-        .filter((name) => !missingThemeProps.includes(name))
-        .forEach((name) => reportLines.push(`- \`${name}\``));
+    if (newThemeProps.length) {
+      reportLines.push('## New theme keys missing documentation', '');
+      newThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
       reportLines.push('');
     }
-    if (themeTodoPaths.length && WRITE) {
+    if (newThemeProps.length && WRITE) {
       reportLines.push('## Theme TODOs generated', '');
-      themeTodoPaths.forEach((name) => reportLines.push(`- \`${name}\``));
+      newThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
       reportLines.push('');
     }
     reportLines.push(
