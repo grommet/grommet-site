@@ -138,6 +138,17 @@ const TimeInputPage = () => (
             <Example>"14:30:00"</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="showSeconds">
+          <Description>
+            Whether to display and allow editing of the seconds portion of the
+            time value.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
@@ -254,6 +265,61 @@ const TimeInputPage = () => (
           </Description>
           <PropertyValue type="node">
             <Example defaultValue>{`<Clock />`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.drop.gap">
+          <Description>
+            The gap between the hour, minute, and second option lists in the
+            time selection drop.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.drop.option.gap">
+          <Description>
+            The gap between options within an hour, minute, or second list.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.drop.option.pad">
+          <Description>The padding around each time option.</Description>
+          <PropertyValue type="object">
+            <Example defaultValue>
+              {`{ vertical: "xxsmall", horizontal: "xsmall" }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.drop.option.round">
+          <Description>
+            The rounding applied to each time option in the drop.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.drop.option.selected.text.weight">
+          <Description>
+            The font weight of the selected time option.
+          </Description>
+          <PropertyValue type="number">
+            <Example defaultValue>500</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.drop.option.size">
+          <Description>
+            The text size used for each time option, such as 01 or 02.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"medium"</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>

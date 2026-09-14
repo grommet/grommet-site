@@ -167,7 +167,9 @@ const TextInputPage = () => (
   enterSelect: "(Press Enter to Select)", 
   suggestionsCount: "suggestions available", 
   suggestionsExist: "This input has suggestions use arrow keys to navigate", 
-  suggestionIsOpen: "Suggestions drop is open, continue to use arrow keys to navigate"
+  suggestionIsOpen: "Suggestions drop is open, continue to use arrow keys to navigate",
+  hidePassword: "Hide password",
+  showPassword: "Show password",
 }
   `}
             </Example>
@@ -346,6 +348,16 @@ const TextInputPage = () => (
             <Example>{`{ min: "...", max: "..." }`}</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="password">
+          <Description>
+            Whether the TextInput should obscure its value as a password.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example defaultValue>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
@@ -452,6 +464,34 @@ const TextInputPage = () => (
             Any additional style for TextInput container.
           </Description>
           <GenericExtend />
+        </Property>
+
+        <Property name="textInput.icons.copy">
+          <Description>
+            The icon shown when the readOnlyCopy prop is used on TextInput.
+          </Description>
+          <PropertyValue type="element">
+            <Example>{`<Copy />`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="textInput.icons.hidePassword">
+          <Description>
+            The icon shown when the password value is visible and can be hidden.
+          </Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<Hide />`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="textInput.icons.showPassword">
+          <Description>
+            The icon shown when the password value is hidden and can be
+            revealed.
+          </Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<View />`}</Example>
+          </PropertyValue>
         </Property>
 
         <Property name="textInput.placeholder.extend">

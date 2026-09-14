@@ -729,6 +729,51 @@ const FormFieldPage = () => (
             </Example>
           </PropertyValue>
         </Property>
+
+        <Property name="formField.hover.background.color">
+          <Description>
+            The background color applied while the FormField is hovered.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"selected"</Example>
+            <Example>"active-background"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="formField.hover.border.color">
+          <Description>
+            The border color applied while the FormField is hovered.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"border"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="formField.[input].hover.background.color">
+          <Description>
+            Allows the hover background treatment to be customized for a
+            specific child input. Set the value to undefined to opt out.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"active-background"</Example>
+          </PropertyValue>
+          <PropertyValue type="undefined">
+            <Example>undefined</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="formField.[input].hover.border.color">
+          <Description>
+            Allows the hover border treatment to be customized for a specific
+            child input. Set the value to undefined to opt out.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"#112233"</Example>
+          </PropertyValue>
+          <PropertyValue type="undefined">
+            <Example>undefined</Example>
+          </PropertyValue>
+        </Property>
       </ThemeDoc>
     </ComponentDoc>
   </Page>
