@@ -85,19 +85,31 @@ function isDocumented(name) {
 
 // Returns the index of the closing bracket matching the bracket at
 // `openIndex` (which must be '{', '(' or '[').
+/* eslint-disable no-continue */
 function findMatchingBracket(source, openIndex) {
   const openChar = source[openIndex];
   const closeChar = { '{': '}', '(': ')', '[': ']' }[openChar];
   let depth = 0;
+  let quote = null;
   for (let i = openIndex; i < source.length; i += 1) {
-    if (source[i] === openChar) depth += 1;
-    else if (source[i] === closeChar) {
+    const ch = source[i];
+    if (quote) {
+      if (ch === '\\') i += 1;
+      else if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') {
+      quote = ch;
+    } else if (ch === openChar) {
+      depth += 1;
+    } else if (ch === closeChar) {
       depth -= 1;
       if (depth === 0) return i;
     }
   }
   return -1;
 }
+/* eslint-enable no-continue */
 
 // Splits an object literal body into top-level `key: value` entries,
 // respecting nested {}, [], (), and quoted strings.
@@ -259,16 +271,27 @@ function extractCodeFromExampleText(text) {
 }
 
 function getShapeEntriesFromValue(valueSrc) {
-  const entries = new Map();
-  const shapeMatches = [
-    ...valueSrc.matchAll(/\.shape\(\s*\{([\s\S]*?)\}\s*\)/g),
-  ];
-  shapeMatches.forEach((match) => {
-    splitTopLevelEntries(match[1]).forEach((entry) => {
-      entries.set(entry.name, entry);
-    });
-  });
-  return [...entries.values()];
+  const entries = [];
+  const shapeIndex = valueSrc.indexOf('.shape(');
+  if (shapeIndex === -1) return entries;
+  const openIndex = valueSrc.indexOf('{', shapeIndex);
+  if (openIndex === -1) return entries;
+  const closeIndex = findMatchingBracket(valueSrc, openIndex);
+  if (closeIndex === -1) return entries;
+
+  splitTopLevelEntries(valueSrc.slice(openIndex + 1, closeIndex)).forEach(
+    (entry) => {
+      const nestedEntries = getShapeEntriesFromValue(entry.value);
+      if (!nestedEntries.length) entries.push(entry);
+      nestedEntries.forEach((nested) => {
+        entries.push({
+          name: `${entry.name}.${nested.name}`,
+          value: nested.value,
+        });
+      });
+    },
+  );
+  return entries;
 }
 
 function getDocumentedShapeKeysForProperty(componentName, propertyName) {
@@ -300,12 +323,35 @@ function getDocumentedShapeKeysForProperty(componentName, propertyName) {
       const closeIndex = findMatchingBracket(code, openIndex);
       if (closeIndex === -1) break;
       const body = code.slice(openIndex + 1, closeIndex);
-      splitTopLevelEntries(body).forEach((entry) => names.add(entry.name));
+      splitTopLevelEntries(body).forEach((entry) => {
+        names.add(entry.name);
+        // eslint-disable-next-line no-use-before-define
+        getDocumentedObjectKeys(entry.value).forEach((nested) => {
+          names.add(`${entry.name}.${nested}`);
+        });
+      });
       i = closeIndex + 1;
     }
   });
 
   return names;
+}
+
+function getDocumentedObjectKeys(valueSrc) {
+  const openIndex = valueSrc.indexOf('{');
+  if (openIndex === -1) return [];
+  const closeIndex = findMatchingBracket(valueSrc, openIndex);
+  if (closeIndex === -1) return [];
+  const keys = [];
+  splitTopLevelEntries(valueSrc.slice(openIndex + 1, closeIndex)).forEach(
+    (entry) => {
+      keys.push(entry.name);
+      getDocumentedObjectKeys(entry.value).forEach((nested) => {
+        keys.push(`${entry.name}.${nested}`);
+      });
+    },
+  );
+  return keys;
 }
 
 function insertMessageKeysIntoScreen(componentName, missingEntries) {
@@ -320,7 +366,24 @@ function insertMessageKeysIntoScreen(componentName, missingEntries) {
   if (!propertyMatch) return false;
 
   const propertyStart = propertyMatch.index;
-  const propertyBlock = propertyMatch[0];
+  let propertyBlock = propertyMatch[0].replace(
+    /^\x20{2}[A-Za-z_$][A-Za-z0-9_$]*: "TODO: add example",\n/gm,
+    '',
+  );
+  const firstMessagesObject = propertyBlock.indexOf('\n  messages: {');
+  const generatedMessagesObject = propertyBlock.lastIndexOf('\n  messages: {');
+  if (generatedMessagesObject > firstMessagesObject) {
+    const generatedEnd = propertyBlock.indexOf(
+      '\n  },\n  onAnalytics: "TODO: add example",',
+      generatedMessagesObject,
+    );
+    if (generatedEnd !== -1) {
+      const generatedMarker = '\n  },\n  onAnalytics: "TODO: add example",';
+      propertyBlock =
+        propertyBlock.slice(0, generatedMessagesObject) +
+        propertyBlock.slice(generatedEnd + generatedMarker.length);
+    }
+  }
   const exampleStart = propertyBlock.search(/<Example(?:[^>]*)>\s*\{`/);
   if (exampleStart === -1) return false;
 
@@ -328,30 +391,212 @@ function insertMessageKeysIntoScreen(componentName, missingEntries) {
   const templateEnd = propertyBlock.indexOf('`', templateStart + 1);
   if (templateStart === -1 || templateEnd === -1) return false;
 
-  const exampleBody = propertyBlock.slice(templateStart + 1, templateEnd);
-  const closingBrace = exampleBody.lastIndexOf('}');
-  if (closingBrace === -1) return false;
+  let exampleBody = propertyBlock.slice(templateStart + 1, templateEnd);
+  const rootOpen = exampleBody.indexOf('{');
+  if (rootOpen === -1) return false;
 
-  const stubs = missingEntries
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map(({ name }) => {
-      const key = name.replace(/^messages\./, '');
-      return `  ${key}: "TODO: add example",`;
-    })
-    .join('\n');
-  const contentBeforeClosing = exampleBody.slice(0, closingBrace);
-  const trailingWhitespace = contentBeforeClosing.match(/\s*$/)[0];
-  const contentEnd = contentBeforeClosing.length - trailingWhitespace.length;
-  const needsComma = !/,\s*$/.test(contentBeforeClosing.slice(0, contentEnd));
-  const insertion = `${needsComma ? ',' : ''}\n${stubs}`;
-  const absoluteInsertAt = propertyStart + templateStart + 1 + contentEnd;
+  if (componentName === 'Grommet') {
+    const entries = missingEntries.map((entry) => ({
+      path: entry.name.replace(/^messages\.(messages\.)?/, '').split('.'),
+    }));
+    const targetEnd = exampleBody.lastIndexOf('\n  }\n}');
+    if (targetEnd === -1) return false;
+    // eslint-disable-next-line no-use-before-define
+    const stubs = buildNestedMessageStub(entries);
+    const insertion = `,\n${stubs}`;
+    exampleBody =
+      exampleBody.slice(0, targetEnd) +
+      insertion +
+      exampleBody.slice(targetEnd);
+    const updatedPropertyBlock =
+      propertyBlock.slice(0, templateStart + 1) +
+      exampleBody +
+      propertyBlock.slice(templateEnd);
+    content =
+      content.slice(0, propertyStart) +
+      updatedPropertyBlock +
+      content.slice(propertyStart + propertyMatch[0].length);
+    fs.writeFileSync(file, content);
+    return true;
+  }
+
+  const grouped = {};
+  missingEntries.forEach((entry) => {
+    const parts = entry.name.replace(/^messages\./, '').split('.');
+    const parent = parts.slice(0, -1).join('.');
+    if (!grouped[parent]) grouped[parent] = [];
+    grouped[parent].push(parts[parts.length - 1]);
+  });
+
+  Object.entries(grouped).forEach(([parent, keys]) => {
+    const pathParts = parent ? parent.split('.') : [];
+    let existingParts = pathParts;
+    // eslint-disable-next-line no-use-before-define
+    let target = findObjectForPath(exampleBody, existingParts, rootOpen);
+    while (!target && existingParts.length) {
+      existingParts = existingParts.slice(0, -1);
+      // eslint-disable-next-line no-use-before-define
+      target = findObjectForPath(exampleBody, existingParts, rootOpen);
+    }
+    if (!target) return;
+    const body = exampleBody.slice(target.open + 1, target.close);
+    const trailingWhitespace = body.match(/\s*$/)[0];
+    const contentEnd = body.length - trailingWhitespace.length;
+    const existing = body.slice(0, contentEnd);
+    const leafStubs = [...new Set(keys)]
+      .sort()
+      .map((key) => `  ${key}: "TODO: add example",`)
+      .join('\n');
+    const missingParts = pathParts.slice(existingParts.length);
+    const stubs = missingParts.reduceRight(
+      (value, segment) => `${segment}: {\n${value}\n},`,
+      leafStubs,
+    );
+    const insertion = `${
+      existing && !/,\s*$/.test(existing) ? ',' : ''
+    }\n${stubs}`;
+    const absoluteInsertAt = target.open + 1 + contentEnd;
+    exampleBody =
+      exampleBody.slice(0, absoluteInsertAt) +
+      insertion +
+      exampleBody.slice(absoluteInsertAt);
+  });
+
+  const updatedPropertyBlock =
+    propertyBlock.slice(0, templateStart + 1) +
+    exampleBody +
+    propertyBlock.slice(templateEnd);
   content =
-    content.slice(0, absoluteInsertAt) +
-    insertion +
-    content.slice(absoluteInsertAt);
+    content.slice(0, propertyStart) +
+    updatedPropertyBlock +
+    content.slice(propertyStart + propertyMatch[0].length);
   fs.writeFileSync(file, content);
   return true;
 }
+
+function isDocumentedMessagePath(componentName, propertyName, pathName) {
+  const file = path.join(SCREENS_DIR, `${componentName}.js`);
+  const content = fs.readFileSync(file, 'utf8');
+  const propertyRe = new RegExp(
+    `<Property\\s+name="${propertyName}"[^>]*>([\\s\\S]*?)<\\/Property>`,
+  );
+  const propertyMatch = propertyRe.exec(content);
+  if (!propertyMatch) return false;
+  const exampleMatch = propertyMatch[1].match(
+    /<Example(?:[^>]*)>([\s\S]*?)<\/Example>/,
+  );
+  if (!exampleMatch) return false;
+  const code = extractCodeFromExampleText(exampleMatch[1]);
+  const rootOpen = code.indexOf('{');
+  if (rootOpen === -1) return false;
+  const segments = pathName.split('.');
+  let object = { open: rootOpen, close: findMatchingBracket(code, rootOpen) };
+  for (let i = 0; i < segments.length; i += 1) {
+    // eslint-disable-next-line no-use-before-define
+    const child = findDirectObjectKey(
+      code,
+      object.open,
+      object.close,
+      segments[i],
+    );
+    if (!child) {
+      if (componentName === 'Grommet') break;
+      return false;
+    }
+    if (i < segments.length - 1) {
+      if (child.open === -1) return false;
+      object = {
+        open: child.open,
+        close: findMatchingBracket(code, child.open),
+      };
+    }
+  }
+  if (!object || componentName !== 'Grommet') return true;
+  const component = segments[segments.length - 2];
+  const leaf = segments[segments.length - 1];
+  if (component) {
+    const componentRe = new RegExp(
+      `\\n\\s+${component}: \\{[\\s\\S]*?\\b${leaf}:`,
+    );
+    return componentRe.test(code);
+  }
+  return true;
+}
+
+function buildNestedMessageStub(entries) {
+  const tree = {};
+  entries.forEach((entry) => {
+    let node = tree;
+    entry.path.forEach((part, index) => {
+      if (!node[part]) node[part] = index === entry.path.length - 1 ? null : {};
+      node = node[part];
+    });
+  });
+  const render = (node, indent) =>
+    Object.entries(node)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([key, value]) => {
+        if (value === null) return `${indent}${key}: "TODO: add example",`;
+        return `${indent}${key}: {\n${render(
+          value,
+          `${indent}  `,
+        )}\n${indent}},`;
+      })
+      .join('\n');
+  return render(tree, '  ');
+}
+
+function findObjectForPath(source, segments, openIndex) {
+  if (!segments.length) {
+    return { open: openIndex, close: findMatchingBracket(source, openIndex) };
+  }
+  const closeIndex = findMatchingBracket(source, openIndex);
+  if (closeIndex === -1) return null;
+  // eslint-disable-next-line no-use-before-define
+  const child = findDirectObjectKey(source, openIndex, closeIndex, segments[0]);
+  if (!child) return null;
+  return findObjectForPath(source, segments.slice(1), child.open);
+}
+
+/* eslint-disable no-continue */
+function findDirectObjectKey(source, openIndex, closeIndex, key) {
+  let depth = 0;
+  let quote = null;
+  for (let i = openIndex + 1; i < closeIndex; i += 1) {
+    const ch = source[i];
+    if (quote) {
+      if (ch === '\\') i += 1;
+      else if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') {
+      quote = ch;
+      continue;
+    }
+    if (ch === '{' || ch === '[' || ch === '(') {
+      depth += 1;
+      continue;
+    }
+    if (ch === '}' || ch === ']' || ch === ')') {
+      depth -= 1;
+      continue;
+    }
+    if (depth !== 0) continue;
+    const match = source
+      .slice(i)
+      .match(new RegExp(`^${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*:`));
+    if (match) {
+      const valueStart = i + match[0].length;
+      let valueIndex = valueStart;
+      while (/\s/.test(source[valueIndex] || '')) valueIndex += 1;
+      return {
+        open: source[valueIndex] === '{' ? valueIndex : -1,
+      };
+    }
+  }
+  return null;
+}
+/* eslint-enable no-continue */
 
 function getDocumentedThemePropertyNames() {
   const names = new Set();
@@ -791,7 +1036,12 @@ function main() {
       if (!nestedEntries.length) return [];
       const documentedNested = getDocumentedShapeKeysForProperty(name, p.name);
       return nestedEntries
-        .filter((entry) => !documentedNested.has(entry.name))
+        .filter(
+          (entry) =>
+            !documentedNested.has(entry.name) &&
+            !documentedNested.has(`${p.name}.${entry.name}`) &&
+            !isDocumentedMessagePath(name, p.name, entry.name),
+        )
         .map((entry) => ({
           name: `${p.name}.${entry.name}`,
           value: entry.value,
