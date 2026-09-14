@@ -31,6 +31,14 @@ const COMPONENT_INDEX_FILE = path.join(ROOT, 'src/screens/Components/index.js');
 const REPORT_JSON = path.join(ROOT, 'tools/.grommet-drift-summary.json');
 const REPORT_MD = path.join(ROOT, 'tools/.grommet-drift-report.md');
 
+// The existing theme documentation is incomplete, so writing every missing
+// theme path would create a huge noisy PR. Revisit this allowlist and replace
+// it with a complete theme baseline before adding more theme drift paths.
+const THEME_TODO_PATHS = new Set([
+  'formField.hover.background.color',
+  'formField.hover.border.color',
+]);
+
 const WRITE = process.argv.includes('--write');
 
 // grommet folders that are documented as part of a parent component's page
@@ -233,39 +241,36 @@ function getDocumentedPropNames(componentName) {
 
 function extractCodeFromExampleText(text) {
   let cleaned = text.trim();
-  while (
-    cleaned.startsWith('{') &&
-    cleaned.endsWith('}') &&
-    cleaned.length >= 2
+  if (cleaned.startsWith('{') && cleaned.endsWith('}') && cleaned.length >= 2) {
+    cleaned = cleaned.slice(1, -1).trim();
+  }
+  if (
+    (cleaned.startsWith('`') && cleaned.endsWith('`')) ||
+    (cleaned.startsWith('"') && cleaned.endsWith('"')) ||
+    (cleaned.startsWith("'") && cleaned.endsWith("'"))
   ) {
     cleaned = cleaned.slice(1, -1).trim();
-    if (
-      (cleaned.startsWith('`') && cleaned.endsWith('`')) ||
-      (cleaned.startsWith('"') && cleaned.endsWith('"')) ||
-      (cleaned.startsWith("'") && cleaned.endsWith("'"))
-    ) {
-      cleaned = cleaned.slice(1, -1).trim();
-    }
   }
   return cleaned;
 }
 
-function getShapeKeysFromValue(valueSrc) {
-  const names = new Set();
+function getShapeEntriesFromValue(valueSrc) {
+  const entries = new Map();
   const shapeMatches = [
     ...valueSrc.matchAll(/\.shape\(\s*\{([\s\S]*?)\}\s*\)/g),
   ];
   shapeMatches.forEach((match) => {
     splitTopLevelEntries(match[1]).forEach((entry) => {
-      names.add(entry.name);
+      entries.set(entry.name, entry);
     });
   });
-  return [...names];
+  return [...entries.values()];
 }
 
 function getDocumentedShapeKeysForProperty(componentName, propertyName) {
   const file = path.join(SCREENS_DIR, `${componentName}.js`);
   const content = fs.readFileSync(file, 'utf8');
+  // eslint-disable-next-line prefer-regex-literals
   const propertyRe = new RegExp(
     `<Property\\s+name="${propertyName.replace(
       /[.*+?^${}()|[\]\\]/g,
@@ -297,6 +302,51 @@ function getDocumentedShapeKeysForProperty(componentName, propertyName) {
   });
 
   return names;
+}
+
+function insertMessageKeysIntoScreen(componentName, missingEntries) {
+  const file = path.join(SCREENS_DIR, `${componentName}.js`);
+  let content = fs.readFileSync(file, 'utf8');
+  // eslint-disable-next-line prefer-regex-literals
+  const propertyRe = new RegExp(
+    `<Property\\s+name="messages"[^>]*>([\\s\\S]*?)<\\/Property>`,
+    'm',
+  );
+  const propertyMatch = propertyRe.exec(content);
+  if (!propertyMatch) return false;
+
+  const propertyStart = propertyMatch.index;
+  const propertyBlock = propertyMatch[0];
+  const exampleStart = propertyBlock.search(/<Example(?:[^>]*)>\s*\{`/);
+  if (exampleStart === -1) return false;
+
+  const templateStart = propertyBlock.indexOf('`', exampleStart);
+  const templateEnd = propertyBlock.indexOf('`', templateStart + 1);
+  if (templateStart === -1 || templateEnd === -1) return false;
+
+  const exampleBody = propertyBlock.slice(templateStart + 1, templateEnd);
+  const closingBrace = exampleBody.lastIndexOf('}');
+  if (closingBrace === -1) return false;
+
+  const stubs = missingEntries
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(({ name }) => {
+      const key = name.replace(/^messages\./, '');
+      return `  ${key}: "TODO: add example",`;
+    })
+    .join('\n');
+  const contentBeforeClosing = exampleBody.slice(0, closingBrace);
+  const trailingWhitespace = contentBeforeClosing.match(/\s*$/)[0];
+  const contentEnd = contentBeforeClosing.length - trailingWhitespace.length;
+  const needsComma = !/,\s*$/.test(contentBeforeClosing.slice(0, contentEnd));
+  const insertion = `${needsComma ? ',' : ''}\n${stubs}`;
+  const absoluteInsertAt = propertyStart + templateStart + 1 + contentEnd;
+  content =
+    content.slice(0, absoluteInsertAt) +
+    insertion +
+    content.slice(absoluteInsertAt);
+  fs.writeFileSync(file, content);
+  return true;
 }
 
 function getDocumentedThemePropertyNames() {
@@ -391,6 +441,35 @@ function getGrommetThemePropertyNames() {
 
   walk(body);
   return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function buildThemePropertyStub(themePath) {
+  return `        <Property name="${themePath}">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe ${themePath}.</Description>
+          <PropertyValue type="string">
+            <Example>"TODO: add example"</Example>
+          </PropertyValue>
+        </Property>`;
+}
+
+function insertThemePropertiesIntoScreen(componentName, themePaths) {
+  const screenName = fs
+    .readdirSync(SCREENS_DIR)
+    .find((name) => name.toLowerCase() === `${componentName.toLowerCase()}.js`);
+  if (!screenName) return false;
+  const file = path.join(SCREENS_DIR, screenName);
+  const content = fs.readFileSync(file, 'utf8');
+  const themeDocEnd = content.indexOf('</ThemeDoc>');
+  if (themeDocEnd === -1) return false;
+  const stubs = themePaths
+    .sort((a, b) => a.localeCompare(b))
+    .map((themePath) => buildThemePropertyStub(themePath))
+    .join('\n\n');
+  const before = content.slice(0, themeDocEnd).replace(/\s+$/, '');
+  const after = content.slice(themeDocEnd);
+  fs.writeFileSync(file, `${before}\n\n${stubs}\n\n      ${after}`);
+  return true;
 }
 
 // Best-effort guess of a PropertyValue "type" + placeholder example from
@@ -654,6 +733,9 @@ function main() {
   const missingThemeProps = grommetThemeProps.filter(
     (name) => !documentedThemeProps.has(name),
   );
+  const themeTodoPaths = [...THEME_TODO_PATHS].filter(
+    (name) => !documentedThemeProps.has(name),
+  );
 
   grommetComponents.forEach((name) => {
     const props = getGrommetPropNames(name);
@@ -672,13 +754,17 @@ function main() {
     if (missing.length) updatedProps[name] = missing;
 
     const nestedMissing = props.flatMap((p) => {
-      if (!p.value || !p.value.includes('shape(')) return [];
-      const nestedNames = getShapeKeysFromValue(p.value);
-      if (!nestedNames.length) return [];
+      if (p.name !== 'messages' || !p.value || !p.value.includes('shape('))
+        return [];
+      const nestedEntries = getShapeEntriesFromValue(p.value);
+      if (!nestedEntries.length) return [];
       const documentedNested = getDocumentedShapeKeysForProperty(name, p.name);
-      return nestedNames
-        .filter((nestedName) => !documentedNested.has(nestedName))
-        .map((nestedName) => `${p.name}.${nestedName}`);
+      return nestedEntries
+        .filter((entry) => !documentedNested.has(entry.name))
+        .map((entry) => ({
+          name: `${p.name}.${entry.name}`,
+          value: entry.value,
+        }));
     });
     if (nestedMissing.length) updatedNestedProps[name] = nestedMissing;
   });
@@ -695,13 +781,29 @@ function main() {
     Object.entries(updatedProps).forEach(([name, missing]) => {
       insertPropsIntoScreen(name, missing);
     });
+    Object.entries(updatedNestedProps).forEach(([name, missing]) => {
+      insertMessageKeysIntoScreen(name, missing);
+    });
+    const themePathsByComponent = {};
+    themeTodoPaths.forEach((themePath) => {
+      const componentName = themePath.split('.')[0];
+      if (!themePathsByComponent[componentName])
+        themePathsByComponent[componentName] = [];
+      themePathsByComponent[componentName].push(themePath);
+    });
+    Object.entries(themePathsByComponent).forEach(
+      ([componentName, themePaths]) => {
+        insertThemePropertiesIntoScreen(componentName, themePaths);
+      },
+    );
   }
 
   const hasDrift =
     newComponents.length > 0 ||
     Object.keys(updatedProps).length > 0 ||
     Object.keys(updatedNestedProps).length > 0 ||
-    missingThemeProps.length > 0;
+    missingThemeProps.length > 0 ||
+    themeTodoPaths.length > 0;
 
   const summary = {
     hasDrift,
@@ -712,7 +814,13 @@ function main() {
         props.map((p) => p.name),
       ]),
     ),
-    updatedNestedProps,
+    updatedNestedProps: Object.fromEntries(
+      Object.entries(updatedNestedProps).map(([name, props]) => [
+        name,
+        props.map((prop) => prop.name),
+      ]),
+    ),
+    themeTodoPaths,
     missingThemeProps,
     unparseableComponents,
   };
@@ -739,12 +847,12 @@ function main() {
     }
     if (Object.keys(updatedNestedProps).length) {
       reportLines.push(
-        '## Existing components with undocumented nested object keys',
+        '## Existing components with undocumented message keys',
         '',
       );
       Object.entries(updatedNestedProps).forEach(([name, props]) => {
         reportLines.push(
-          `- \`${name}\`: ${props.map((p) => `\`${p}\``).join(', ')}`,
+          `- \`${name}\`: ${props.map((p) => `\`${p.name}\``).join(', ')}`,
         );
       });
       reportLines.push('');
@@ -752,6 +860,14 @@ function main() {
     if (missingThemeProps.length) {
       reportLines.push('## Theme keys missing documentation', '');
       missingThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
+      themeTodoPaths
+        .filter((name) => !missingThemeProps.includes(name))
+        .forEach((name) => reportLines.push(`- \`${name}\``));
+      reportLines.push('');
+    }
+    if (themeTodoPaths.length && WRITE) {
+      reportLines.push('## Theme TODOs generated', '');
+      themeTodoPaths.forEach((name) => reportLines.push(`- \`${name}\``));
       reportLines.push('');
     }
     reportLines.push(
