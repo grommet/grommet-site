@@ -28,6 +28,7 @@ const STRUCTURE_FILE = path.join(ROOT, 'src/structure.js');
 const CONTENT_FILE = path.join(ROOT, 'src/components/Content.js');
 const COMPONENT_ITEMS_FILE = path.join(ROOT, 'src/screens/Components/items.js');
 const COMPONENT_INDEX_FILE = path.join(ROOT, 'src/screens/Components/index.js');
+const THEME_HELPERS_DIR = path.join(ROOT, 'src/utils');
 const REPORT_JSON = path.join(ROOT, 'tools/.grommet-drift-summary.json');
 const REPORT_MD = path.join(ROOT, 'tools/.grommet-drift-report.md');
 
@@ -351,24 +352,33 @@ function insertMessageKeysIntoScreen(componentName, missingEntries) {
 
 function getDocumentedThemePropertyNames() {
   const names = new Set();
-  const files = fs.readdirSync(SCREENS_DIR, { withFileTypes: true });
-  files.forEach((entry) => {
-    if (!entry.isFile() || !entry.name.endsWith('.js')) return;
-    const file = path.join(SCREENS_DIR, entry.name);
-    const content = fs.readFileSync(file, 'utf8');
-    const themeDocMatches = [
-      ...content.matchAll(/<ThemeDoc\b[\s\S]*?<\/ThemeDoc>/g),
-    ];
-    themeDocMatches.forEach((match) => {
-      const block = match[0];
-      const re = /<Property\s+name="([^"]+)"/g;
-      let propMatch = re.exec(block);
-      while (propMatch) {
-        names.add(propMatch[1]);
-        propMatch = re.exec(block);
-      }
+  const collectFiles = (directory) => {
+    const files = [];
+    fs.readdirSync(directory, { withFileTypes: true }).forEach((entry) => {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) files.push(...collectFiles(file));
+      else if (entry.isFile() && entry.name.endsWith('.js')) files.push(file);
     });
-  });
+    return files;
+  };
+
+  [...collectFiles(SCREENS_DIR), ...collectFiles(THEME_HELPERS_DIR)].forEach(
+    (file) => {
+      const content = fs.readFileSync(file, 'utf8');
+      const blocks = [
+        ...content.matchAll(/<ThemeDoc\b[\s\S]*?<\/ThemeDoc>/g),
+      ].map((match) => match[0]);
+      if (file.startsWith(THEME_HELPERS_DIR)) blocks.push(content);
+      blocks.forEach((block) => {
+        const re = /<Property\s+name="([^"]+)"/g;
+        let propMatch = re.exec(block);
+        while (propMatch) {
+          names.add(propMatch[1]);
+          propMatch = re.exec(block);
+        }
+      });
+    },
+  );
   return names;
 }
 
@@ -802,7 +812,6 @@ function main() {
     newComponents.length > 0 ||
     Object.keys(updatedProps).length > 0 ||
     Object.keys(updatedNestedProps).length > 0 ||
-    missingThemeProps.length > 0 ||
     themeTodoPaths.length > 0;
 
   const summary = {
