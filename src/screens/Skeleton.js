@@ -151,6 +151,14 @@ const SkeletonPage = () => (
             <Example>{`{ min: "...", max: "..." }`}</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="as">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe as.</Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
       <ThemeDoc>
         <Property name="skeleton.extend">

@@ -139,6 +139,16 @@ const StepperPage = () => (
             </PropOptions>
           </PropertyValue>
         </Property>
+
+        <Property name="errorAnnouncement">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe errorAnnouncement.</Description>
+          <PropertyValue type="string">
+            <Example>'assertive'</Example>
+            <Example>'polite'</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
       </Properties>
 
       <ThemeDoc>
