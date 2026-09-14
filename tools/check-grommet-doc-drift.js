@@ -13,19 +13,35 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
 const GROMMET_COMPONENTS_DIR = path.join(
   ROOT,
   'node_modules/grommet/components',
 );
+const GROMMET_THEME_FILE = path.join(
+  ROOT,
+  'node_modules/grommet/themes/base.d.ts',
+);
 const SCREENS_DIR = path.join(ROOT, 'src/screens');
 const STRUCTURE_FILE = path.join(ROOT, 'src/structure.js');
 const CONTENT_FILE = path.join(ROOT, 'src/components/Content.js');
 const COMPONENT_ITEMS_FILE = path.join(ROOT, 'src/screens/Components/items.js');
 const COMPONENT_INDEX_FILE = path.join(ROOT, 'src/screens/Components/index.js');
+const THEME_HELPERS_DIR = path.join(ROOT, 'src/utils');
 const REPORT_JSON = path.join(ROOT, 'tools/.grommet-drift-summary.json');
 const REPORT_MD = path.join(ROOT, 'tools/.grommet-drift-report.md');
+const GROMMET_THEME_BASELINE_COMMIT =
+  '2c872354a2d32cacc8b7d82ec963f83acf03e8ae';
+
+// The existing theme documentation is incomplete, so writing every missing
+// theme path would create a huge noisy PR. Revisit this allowlist and replace
+// it with a complete theme baseline before adding more theme drift paths.
+const THEME_TODO_PATHS = new Set([
+  'formField.hover.background.color',
+  'formField.hover.border.color',
+]);
 
 const WRITE = process.argv.includes('--write');
 
@@ -69,19 +85,31 @@ function isDocumented(name) {
 
 // Returns the index of the closing bracket matching the bracket at
 // `openIndex` (which must be '{', '(' or '[').
+/* eslint-disable no-continue */
 function findMatchingBracket(source, openIndex) {
   const openChar = source[openIndex];
   const closeChar = { '{': '}', '(': ')', '[': ']' }[openChar];
   let depth = 0;
+  let quote = null;
   for (let i = openIndex; i < source.length; i += 1) {
-    if (source[i] === openChar) depth += 1;
-    else if (source[i] === closeChar) {
+    const ch = source[i];
+    if (quote) {
+      if (ch === '\\') i += 1;
+      else if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') {
+      quote = ch;
+    } else if (ch === openChar) {
+      depth += 1;
+    } else if (ch === closeChar) {
       depth -= 1;
       if (depth === 0) return i;
     }
   }
   return -1;
 }
+/* eslint-enable no-continue */
 
 // Splits an object literal body into top-level `key: value` entries,
 // respecting nested {}, [], (), and quoted strings.
@@ -111,13 +139,14 @@ function splitTopLevelEntries(body) {
 
   return entries
     .map((entry) => {
-      const colonIndex = entry.indexOf(':');
+      const cleanEntry = entry.replace(/\/\/.*$/gm, '').trim();
+      const colonIndex = cleanEntry.indexOf(':');
       if (colonIndex === -1) return null;
-      const name = entry
+      const name = cleanEntry
         .slice(0, colonIndex)
         .trim()
         .replace(/^["']|["']$/g, '');
-      const value = entry.slice(colonIndex + 1).trim();
+      const value = cleanEntry.slice(colonIndex + 1).trim();
       return name ? { name, value } : null;
     })
     .filter(Boolean);
@@ -224,6 +253,489 @@ function getDocumentedPropNames(componentName) {
     match = re.exec(content);
   }
   return names;
+}
+
+function extractCodeFromExampleText(text) {
+  let cleaned = text.trim();
+  if (cleaned.startsWith('{') && cleaned.endsWith('}') && cleaned.length >= 2) {
+    cleaned = cleaned.slice(1, -1).trim();
+  }
+  if (
+    (cleaned.startsWith('`') && cleaned.endsWith('`')) ||
+    (cleaned.startsWith('"') && cleaned.endsWith('"')) ||
+    (cleaned.startsWith("'") && cleaned.endsWith("'"))
+  ) {
+    cleaned = cleaned.slice(1, -1).trim();
+  }
+  return cleaned;
+}
+
+function getShapeEntriesFromValue(valueSrc) {
+  const entries = [];
+  const shapeIndex = valueSrc.indexOf('.shape(');
+  if (shapeIndex === -1) return entries;
+  const openIndex = valueSrc.indexOf('{', shapeIndex);
+  if (openIndex === -1) return entries;
+  const closeIndex = findMatchingBracket(valueSrc, openIndex);
+  if (closeIndex === -1) return entries;
+
+  splitTopLevelEntries(valueSrc.slice(openIndex + 1, closeIndex)).forEach(
+    (entry) => {
+      const nestedEntries = getShapeEntriesFromValue(entry.value);
+      if (!nestedEntries.length) entries.push(entry);
+      nestedEntries.forEach((nested) => {
+        entries.push({
+          name: `${entry.name}.${nested.name}`,
+          value: nested.value,
+        });
+      });
+    },
+  );
+  return entries;
+}
+
+function getDocumentedShapeKeysForProperty(componentName, propertyName) {
+  const file = path.join(SCREENS_DIR, `${componentName}.js`);
+  const content = fs.readFileSync(file, 'utf8');
+  // eslint-disable-next-line prefer-regex-literals
+  const propertyRe = new RegExp(
+    `<Property\\s+name="${propertyName.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      '\\$&',
+    )}"[^>]*>([\\s\\S]*?)<\\/Property>`,
+    'm',
+  );
+  const match = propertyRe.exec(content);
+  if (!match) return new Set();
+
+  const block = match[1];
+  const names = new Set();
+  const exampleTexts = [
+    ...block.matchAll(/<Example(?:[^>]*)>([\s\S]*?)<\/Example>/g),
+  ].map((entry) => entry[1]);
+
+  exampleTexts.forEach((text) => {
+    const code = extractCodeFromExampleText(text);
+    let i = 0;
+    while (i < code.length) {
+      const openIndex = code.indexOf('{', i);
+      if (openIndex === -1) break;
+      const closeIndex = findMatchingBracket(code, openIndex);
+      if (closeIndex === -1) break;
+      const body = code.slice(openIndex + 1, closeIndex);
+      splitTopLevelEntries(body).forEach((entry) => {
+        names.add(entry.name);
+        // eslint-disable-next-line no-use-before-define
+        getDocumentedObjectKeys(entry.value).forEach((nested) => {
+          names.add(`${entry.name}.${nested}`);
+        });
+      });
+      i = closeIndex + 1;
+    }
+  });
+
+  return names;
+}
+
+function getDocumentedObjectKeys(valueSrc) {
+  const openIndex = valueSrc.indexOf('{');
+  if (openIndex === -1) return [];
+  const closeIndex = findMatchingBracket(valueSrc, openIndex);
+  if (closeIndex === -1) return [];
+  const keys = [];
+  splitTopLevelEntries(valueSrc.slice(openIndex + 1, closeIndex)).forEach(
+    (entry) => {
+      keys.push(entry.name);
+      getDocumentedObjectKeys(entry.value).forEach((nested) => {
+        keys.push(`${entry.name}.${nested}`);
+      });
+    },
+  );
+  return keys;
+}
+
+function insertMessageKeysIntoScreen(componentName, missingEntries) {
+  const file = path.join(SCREENS_DIR, `${componentName}.js`);
+  let content = fs.readFileSync(file, 'utf8');
+  // eslint-disable-next-line prefer-regex-literals
+  const propertyRe = new RegExp(
+    `<Property\\s+name="messages"[^>]*>([\\s\\S]*?)<\\/Property>`,
+    'm',
+  );
+  const propertyMatch = propertyRe.exec(content);
+  if (!propertyMatch) return false;
+
+  const propertyStart = propertyMatch.index;
+  let propertyBlock = propertyMatch[0].replace(
+    /^\x20{2}[A-Za-z_$][A-Za-z0-9_$]*: "TODO: add example",\n/gm,
+    '',
+  );
+  const firstMessagesObject = propertyBlock.indexOf('\n  messages: {');
+  const generatedMessagesObject = propertyBlock.lastIndexOf('\n  messages: {');
+  if (generatedMessagesObject > firstMessagesObject) {
+    const generatedEnd = propertyBlock.indexOf(
+      '\n  },\n  onAnalytics: "TODO: add example",',
+      generatedMessagesObject,
+    );
+    if (generatedEnd !== -1) {
+      const generatedMarker = '\n  },\n  onAnalytics: "TODO: add example",';
+      propertyBlock =
+        propertyBlock.slice(0, generatedMessagesObject) +
+        propertyBlock.slice(generatedEnd + generatedMarker.length);
+    }
+  }
+  const exampleStart = propertyBlock.search(/<Example(?:[^>]*)>\s*\{`/);
+  if (exampleStart === -1) return false;
+
+  const templateStart = propertyBlock.indexOf('`', exampleStart);
+  const templateEnd = propertyBlock.indexOf('`', templateStart + 1);
+  if (templateStart === -1 || templateEnd === -1) return false;
+
+  let exampleBody = propertyBlock.slice(templateStart + 1, templateEnd);
+  const rootOpen = exampleBody.indexOf('{');
+  if (rootOpen === -1) return false;
+
+  if (componentName === 'Grommet') {
+    const entries = missingEntries.map((entry) => ({
+      path: entry.name.replace(/^messages\.(messages\.)?/, '').split('.'),
+    }));
+    const targetEnd = exampleBody.lastIndexOf('\n  }\n}');
+    if (targetEnd === -1) return false;
+    // eslint-disable-next-line no-use-before-define
+    const stubs = buildNestedMessageStub(entries);
+    const insertion = `,\n${stubs}`;
+    exampleBody =
+      exampleBody.slice(0, targetEnd) +
+      insertion +
+      exampleBody.slice(targetEnd);
+    const updatedPropertyBlock =
+      propertyBlock.slice(0, templateStart + 1) +
+      exampleBody +
+      propertyBlock.slice(templateEnd);
+    content =
+      content.slice(0, propertyStart) +
+      updatedPropertyBlock +
+      content.slice(propertyStart + propertyMatch[0].length);
+    fs.writeFileSync(file, content);
+    return true;
+  }
+
+  const grouped = {};
+  missingEntries.forEach((entry) => {
+    const parts = entry.name.replace(/^messages\./, '').split('.');
+    const parent = parts.slice(0, -1).join('.');
+    if (!grouped[parent]) grouped[parent] = [];
+    grouped[parent].push(parts[parts.length - 1]);
+  });
+
+  Object.entries(grouped).forEach(([parent, keys]) => {
+    const pathParts = parent ? parent.split('.') : [];
+    let existingParts = pathParts;
+    // eslint-disable-next-line no-use-before-define
+    let target = findObjectForPath(exampleBody, existingParts, rootOpen);
+    while (!target && existingParts.length) {
+      existingParts = existingParts.slice(0, -1);
+      // eslint-disable-next-line no-use-before-define
+      target = findObjectForPath(exampleBody, existingParts, rootOpen);
+    }
+    if (!target) return;
+    const body = exampleBody.slice(target.open + 1, target.close);
+    const trailingWhitespace = body.match(/\s*$/)[0];
+    const contentEnd = body.length - trailingWhitespace.length;
+    const existing = body.slice(0, contentEnd);
+    const leafStubs = [...new Set(keys)]
+      .sort()
+      .map((key) => `  ${key}: "TODO: add example",`)
+      .join('\n');
+    const missingParts = pathParts.slice(existingParts.length);
+    const stubs = missingParts.reduceRight(
+      (value, segment) => `${segment}: {\n${value}\n},`,
+      leafStubs,
+    );
+    const insertion = `${
+      existing && !/,\s*$/.test(existing) ? ',' : ''
+    }\n${stubs}`;
+    const absoluteInsertAt = target.open + 1 + contentEnd;
+    exampleBody =
+      exampleBody.slice(0, absoluteInsertAt) +
+      insertion +
+      exampleBody.slice(absoluteInsertAt);
+  });
+
+  const updatedPropertyBlock =
+    propertyBlock.slice(0, templateStart + 1) +
+    exampleBody +
+    propertyBlock.slice(templateEnd);
+  content =
+    content.slice(0, propertyStart) +
+    updatedPropertyBlock +
+    content.slice(propertyStart + propertyMatch[0].length);
+  fs.writeFileSync(file, content);
+  return true;
+}
+
+function isDocumentedMessagePath(componentName, propertyName, pathName) {
+  const file = path.join(SCREENS_DIR, `${componentName}.js`);
+  const content = fs.readFileSync(file, 'utf8');
+  const propertyRe = new RegExp(
+    `<Property\\s+name="${propertyName}"[^>]*>([\\s\\S]*?)<\\/Property>`,
+  );
+  const propertyMatch = propertyRe.exec(content);
+  if (!propertyMatch) return false;
+  const exampleMatch = propertyMatch[1].match(
+    /<Example(?:[^>]*)>([\s\S]*?)<\/Example>/,
+  );
+  if (!exampleMatch) return false;
+  const code = extractCodeFromExampleText(exampleMatch[1]);
+  const rootOpen = code.indexOf('{');
+  if (rootOpen === -1) return false;
+  const segments = pathName.split('.');
+  let object = { open: rootOpen, close: findMatchingBracket(code, rootOpen) };
+  for (let i = 0; i < segments.length; i += 1) {
+    // eslint-disable-next-line no-use-before-define
+    const child = findDirectObjectKey(
+      code,
+      object.open,
+      object.close,
+      segments[i],
+    );
+    if (!child) {
+      if (componentName === 'Grommet') break;
+      return false;
+    }
+    if (i < segments.length - 1) {
+      if (child.open === -1) return false;
+      object = {
+        open: child.open,
+        close: findMatchingBracket(code, child.open),
+      };
+    }
+  }
+  if (!object || componentName !== 'Grommet') return true;
+  const component = segments[segments.length - 2];
+  const leaf = segments[segments.length - 1];
+  if (component) {
+    const componentRe = new RegExp(
+      `\\n\\s+${component}: \\{[\\s\\S]*?\\b${leaf}:`,
+    );
+    return componentRe.test(code);
+  }
+  return true;
+}
+
+function buildNestedMessageStub(entries) {
+  const tree = {};
+  entries.forEach((entry) => {
+    let node = tree;
+    entry.path.forEach((part, index) => {
+      if (!node[part]) node[part] = index === entry.path.length - 1 ? null : {};
+      node = node[part];
+    });
+  });
+  const render = (node, indent) =>
+    Object.entries(node)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([key, value]) => {
+        if (value === null) return `${indent}${key}: "TODO: add example",`;
+        return `${indent}${key}: {\n${render(
+          value,
+          `${indent}  `,
+        )}\n${indent}},`;
+      })
+      .join('\n');
+  return render(tree, '  ');
+}
+
+function findObjectForPath(source, segments, openIndex) {
+  if (!segments.length) {
+    return { open: openIndex, close: findMatchingBracket(source, openIndex) };
+  }
+  const closeIndex = findMatchingBracket(source, openIndex);
+  if (closeIndex === -1) return null;
+  // eslint-disable-next-line no-use-before-define
+  const child = findDirectObjectKey(source, openIndex, closeIndex, segments[0]);
+  if (!child) return null;
+  return findObjectForPath(source, segments.slice(1), child.open);
+}
+
+/* eslint-disable no-continue */
+function findDirectObjectKey(source, openIndex, closeIndex, key) {
+  let depth = 0;
+  let quote = null;
+  for (let i = openIndex + 1; i < closeIndex; i += 1) {
+    const ch = source[i];
+    if (quote) {
+      if (ch === '\\') i += 1;
+      else if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') {
+      quote = ch;
+      continue;
+    }
+    if (ch === '{' || ch === '[' || ch === '(') {
+      depth += 1;
+      continue;
+    }
+    if (ch === '}' || ch === ']' || ch === ')') {
+      depth -= 1;
+      continue;
+    }
+    if (depth !== 0) continue;
+    const match = source
+      .slice(i)
+      .match(new RegExp(`^${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*:`));
+    if (match) {
+      const valueStart = i + match[0].length;
+      let valueIndex = valueStart;
+      while (/\s/.test(source[valueIndex] || '')) valueIndex += 1;
+      return {
+        open: source[valueIndex] === '{' ? valueIndex : -1,
+      };
+    }
+  }
+  return null;
+}
+/* eslint-enable no-continue */
+
+function getDocumentedThemePropertyNames() {
+  const names = new Set();
+  const collectFiles = (directory) => {
+    const files = [];
+    fs.readdirSync(directory, { withFileTypes: true }).forEach((entry) => {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) files.push(...collectFiles(file));
+      else if (entry.isFile() && entry.name.endsWith('.js')) files.push(file);
+    });
+    return files;
+  };
+
+  [...collectFiles(SCREENS_DIR), ...collectFiles(THEME_HELPERS_DIR)].forEach(
+    (file) => {
+      const content = fs.readFileSync(file, 'utf8');
+      const blocks = [
+        ...content.matchAll(/<ThemeDoc\b[\s\S]*?<\/ThemeDoc>/g),
+      ].map((match) => match[0]);
+      if (file.startsWith(THEME_HELPERS_DIR)) blocks.push(content);
+      blocks.forEach((block) => {
+        const re = /<Property\s+name="([^"]+)"/g;
+        let propMatch = re.exec(block);
+        while (propMatch) {
+          names.add(propMatch[1]);
+          propMatch = re.exec(block);
+        }
+      });
+    },
+  );
+  return names;
+}
+
+function parseThemePropertyNames(source) {
+  const themeTypeStart = source.indexOf('interface ThemeType');
+  if (themeTypeStart === -1) return [];
+  const themeTypeOpen = source.indexOf('{', themeTypeStart);
+  if (themeTypeOpen === -1) return [];
+  const themeTypeClose = findMatchingBracket(source, themeTypeOpen);
+  if (themeTypeClose === -1) return [];
+
+  const names = new Set();
+  const body = source.slice(themeTypeOpen + 1, themeTypeClose);
+
+  const walk = (value, prefix = '') => {
+    let index = 0;
+    while (index < value.length) {
+      while (index < value.length && /\s/.test(value[index])) index += 1;
+      if (index >= value.length) break;
+
+      const match = value.slice(index).match(/^([A-Za-z0-9_$]+)\s*(\?\s*:|:)/);
+      if (!match) {
+        index += 1;
+      } else {
+        const [, propertyName] = match;
+        const fullName = prefix ? `${prefix}.${propertyName}` : propertyName;
+        let nextIndex = index + match[0].length;
+        while (nextIndex < value.length && /\s/.test(value[nextIndex])) {
+          nextIndex += 1;
+        }
+
+        if (nextIndex < value.length && value[nextIndex] === '{') {
+          const closeIndex = findMatchingBracket(value, nextIndex);
+          if (closeIndex !== -1) {
+            names.add(fullName);
+            walk(value.slice(nextIndex + 1, closeIndex), fullName);
+            index = closeIndex + 1;
+          } else {
+            names.add(fullName);
+            index = nextIndex + 1;
+          }
+        } else {
+          names.add(fullName);
+          let endIndex = nextIndex;
+          while (endIndex < value.length) {
+            if (value[endIndex] === ';' || value[endIndex] === ',') break;
+            if (
+              value[endIndex] === '{' ||
+              value[endIndex] === '[' ||
+              value[endIndex] === '('
+            ) {
+              const closing = findMatchingBracket(value, endIndex);
+              if (closing !== -1) {
+                endIndex = closing + 1;
+              } else {
+                endIndex += 1;
+              }
+            } else {
+              endIndex += 1;
+            }
+          }
+          index = endIndex + (endIndex < value.length ? 1 : 0);
+        }
+      }
+    }
+  };
+
+  walk(body);
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function getGrommetThemePropertyNames() {
+  if (!fs.existsSync(GROMMET_THEME_FILE)) return [];
+  return parseThemePropertyNames(fs.readFileSync(GROMMET_THEME_FILE, 'utf8'));
+}
+
+function getBaselineThemePropertyNames() {
+  const url = `https://raw.githubusercontent.com/grommet/grommet/${GROMMET_THEME_BASELINE_COMMIT}/src/js/themes/base.d.ts`;
+  const source = execFileSync('curl', ['-fsSL', url], { encoding: 'utf8' });
+  return parseThemePropertyNames(source);
+}
+
+function buildThemePropertyStub(themePath) {
+  return `        <Property name="${themePath}">
+          {/* TODO: auto-generated stub, please review */}
+          <Description>TODO: describe ${themePath}.</Description>
+          <PropertyValue type="string">
+            <Example>"TODO: add example"</Example>
+          </PropertyValue>
+        </Property>`;
+}
+
+function insertThemePropertiesIntoScreen(componentName, themePaths) {
+  const screenName = fs
+    .readdirSync(SCREENS_DIR)
+    .find((name) => name.toLowerCase() === `${componentName.toLowerCase()}.js`);
+  if (!screenName) return false;
+  const file = path.join(SCREENS_DIR, screenName);
+  const content = fs.readFileSync(file, 'utf8');
+  const themeDocEnd = content.indexOf('</ThemeDoc>');
+  if (themeDocEnd === -1) return false;
+  const stubs = themePaths
+    .sort((a, b) => a.localeCompare(b))
+    .map((themePath) => buildThemePropertyStub(themePath))
+    .join('\n\n');
+  const before = content.slice(0, themeDocEnd).replace(/\s+$/, '');
+  const after = content.slice(themeDocEnd);
+  fs.writeFileSync(file, `${before}\n\n${stubs}\n\n      ${after}`);
+  return true;
 }
 
 // Best-effort guess of a PropertyValue "type" + placeholder example from
@@ -480,7 +992,26 @@ function main() {
 
   const newComponents = [];
   const updatedProps = {};
+  const updatedNestedProps = {};
   const unparseableComponents = [];
+  const documentedThemeProps = getDocumentedThemePropertyNames();
+  const grommetThemeProps = getGrommetThemePropertyNames();
+  const baselineThemeProps = getBaselineThemePropertyNames();
+  const missingThemeProps = grommetThemeProps.filter(
+    (name) => !documentedThemeProps.has(name),
+  );
+  const themeTodoPaths = [...THEME_TODO_PATHS].filter(
+    (name) => !documentedThemeProps.has(name),
+  );
+  const newThemeProps = [
+    ...new Set([
+      ...grommetThemeProps.filter(
+        (name) =>
+          !baselineThemeProps.includes(name) && !documentedThemeProps.has(name),
+      ),
+      ...themeTodoPaths,
+    ]),
+  ];
 
   grommetComponents.forEach((name) => {
     const props = getGrommetPropNames(name);
@@ -497,6 +1028,26 @@ function main() {
     const documented = getDocumentedPropNames(name);
     const missing = props.filter((p) => !documented.has(p.name));
     if (missing.length) updatedProps[name] = missing;
+
+    const nestedMissing = props.flatMap((p) => {
+      if (p.name !== 'messages' || !p.value || !p.value.includes('shape('))
+        return [];
+      const nestedEntries = getShapeEntriesFromValue(p.value);
+      if (!nestedEntries.length) return [];
+      const documentedNested = getDocumentedShapeKeysForProperty(name, p.name);
+      return nestedEntries
+        .filter(
+          (entry) =>
+            !documentedNested.has(entry.name) &&
+            !documentedNested.has(`${p.name}.${entry.name}`) &&
+            !isDocumentedMessagePath(name, p.name, entry.name),
+        )
+        .map((entry) => ({
+          name: `${p.name}.${entry.name}`,
+          value: entry.value,
+        }));
+    });
+    if (nestedMissing.length) updatedNestedProps[name] = nestedMissing;
   });
 
   if (WRITE) {
@@ -511,10 +1062,28 @@ function main() {
     Object.entries(updatedProps).forEach(([name, missing]) => {
       insertPropsIntoScreen(name, missing);
     });
+    Object.entries(updatedNestedProps).forEach(([name, missing]) => {
+      insertMessageKeysIntoScreen(name, missing);
+    });
+    const themePathsByComponent = {};
+    newThemeProps.forEach((themePath) => {
+      const componentName = themePath.split('.')[0];
+      if (!themePathsByComponent[componentName])
+        themePathsByComponent[componentName] = [];
+      themePathsByComponent[componentName].push(themePath);
+    });
+    Object.entries(themePathsByComponent).forEach(
+      ([componentName, themePaths]) => {
+        insertThemePropertiesIntoScreen(componentName, themePaths);
+      },
+    );
   }
 
   const hasDrift =
-    newComponents.length > 0 || Object.keys(updatedProps).length > 0;
+    newComponents.length > 0 ||
+    Object.keys(updatedProps).length > 0 ||
+    Object.keys(updatedNestedProps).length > 0 ||
+    newThemeProps.length > 0;
 
   const summary = {
     hasDrift,
@@ -525,6 +1094,15 @@ function main() {
         props.map((p) => p.name),
       ]),
     ),
+    updatedNestedProps: Object.fromEntries(
+      Object.entries(updatedNestedProps).map(([name, props]) => [
+        name,
+        props.map((prop) => prop.name),
+      ]),
+    ),
+    themeTodoPaths,
+    newThemeProps,
+    missingThemeProps,
     unparseableComponents,
   };
 
@@ -546,6 +1124,28 @@ function main() {
           `- \`${name}\`: ${props.map((p) => `\`${p.name}\``).join(', ')}`,
         );
       });
+      reportLines.push('');
+    }
+    if (Object.keys(updatedNestedProps).length) {
+      reportLines.push(
+        '## Existing components with undocumented message keys',
+        '',
+      );
+      Object.entries(updatedNestedProps).forEach(([name, props]) => {
+        reportLines.push(
+          `- \`${name}\`: ${props.map((p) => `\`${p.name}\``).join(', ')}`,
+        );
+      });
+      reportLines.push('');
+    }
+    if (newThemeProps.length) {
+      reportLines.push('## New theme keys missing documentation', '');
+      newThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
+      reportLines.push('');
+    }
+    if (newThemeProps.length && WRITE) {
+      reportLines.push('## Theme TODOs generated', '');
+      newThemeProps.forEach((name) => reportLines.push(`- \`${name}\``));
       reportLines.push('');
     }
     reportLines.push(
