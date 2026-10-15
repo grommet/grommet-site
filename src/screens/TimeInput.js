@@ -39,8 +39,11 @@ const TimeInputPage = () => (
     >
       <Properties>
         <Property name="defaultValue">
-          <Description>The default time value, uninitialized.</Description>
+          <Description>
+            The default time value. Accepts HH:mm or HH:mm:ss format.
+          </Description>
           <PropertyValue type="string">
+            <Example>"14:30"</Example>
             <Example>"14:30:00"</Example>
           </PropertyValue>
         </Property>
@@ -84,6 +87,7 @@ const TimeInputPage = () => (
   activeSectionValue: "string",
   chooseTime: "string",
   currentValue: "string",
+  currentValueWithoutSeconds: "string",
   inputLabel: "string",
   invalidTime: "string",
   openDrop: "string",
@@ -133,8 +137,11 @@ const TimeInputPage = () => (
         </Property>
 
         <Property name="value">
-          <Description>The time value, in HH:mm:ss format.</Description>
+          <Description>
+            The time value. Accepts HH:mm or HH:mm:ss format.
+          </Description>
           <PropertyValue type="string">
+            <Example>"14:30"</Example>
             <Example>"14:30:00"</Example>
           </PropertyValue>
         </Property>
@@ -142,11 +149,11 @@ const TimeInputPage = () => (
         <Property name="showSeconds">
           <Description>
             Whether to display and allow editing of the seconds portion of the
-            time value.
+            time value. Defaults to false.
           </Description>
           <PropertyValue type="boolean">
             <Example>true</Example>
-            <Example>false</Example>
+            <Example defaultValue>false</Example>
           </PropertyValue>
         </Property>
       </Properties>
