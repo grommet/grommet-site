@@ -155,7 +155,10 @@ const GrommetPage = () => (
             plain. When set to false, children no longer auto-apply plain
             styling, enabling standard React composition patterns. This
             applies to both default and kind buttons (e.g. button.default on the
-            theme).`}
+            theme). <br /><br />
+            **legacyColorIsDark** indicates whether Grommet's color detection 
+            uses the legacy calculation for determining if a color is dark.
+            `}
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -164,7 +167,8 @@ const GrommetPage = () => (
   box: { cssGap: true },
   layer: { singleId: boolean },
   drop: { checkContainingBlock: true },
-  button: { childrenPlain: true }
+  button: { childrenPlain: true },
+  legacyColorIsDark: boolean,
 }
             `}
             </Example>

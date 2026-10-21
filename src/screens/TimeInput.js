@@ -29,7 +29,6 @@ const TimeInputPage = () => (
           label: 'Github',
         },
       ]}
-      beta
       description="A control to input a time value"
       code={`<TimeInput
   format="12"
@@ -156,6 +155,18 @@ const TimeInputPage = () => (
             <Example defaultValue>false</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="inline">
+          <Description>
+            Whether to render the time picker directly instead of opening it
+            from an input.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
+
       </Properties>
 
       <ThemeDoc>

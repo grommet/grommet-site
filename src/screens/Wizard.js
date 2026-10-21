@@ -249,6 +249,39 @@ const WizardPage = () => (
             <Example>{`{ email: 'user@example.com', name: 'John Doe' }`}</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="clickableSteps">
+          <Description>
+            Whether users can click steps in the progress indicator to navigate
+            between them.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="closable">
+          <Description>
+            Whether to show a close button in the wizard header.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example defaultValue>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="form">
+          <Description>
+            Whether to wrap each step's content in a Form and validate its
+            fields before allowing navigation. Defaults to true.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
+
       </Properties>
 
       <ThemeDoc>

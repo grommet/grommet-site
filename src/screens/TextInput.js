@@ -358,6 +358,29 @@ const TextInputPage = () => (
             <Example defaultValue>false</Example>
           </PropertyValue>
         </Property>
+
+        <Property name="copy">
+          <Description>
+            Whether to show a button that copies the input value to the
+            clipboard.
+          </Description>
+          <PropertyValue type="boolean">
+            <Example>true</Example>
+            <Example>false</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="onClickCopy">
+          <Description>
+            Function called when the copy button is activated. Receives the
+            click event and the input value. If provided, this function is
+            responsible for handling the copy action.
+          </Description>
+          <PropertyValue type="function">
+            <Example>{`() => {}`}</Example>
+          </PropertyValue>
+        </Property>
+
       </Properties>
 
       <ThemeDoc>
