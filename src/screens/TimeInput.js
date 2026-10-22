@@ -272,6 +272,13 @@ const TimeInputPage = () => (
             height is retained.
           </Description>
           <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  height: '100%',
+  gap: 'xxsmall',
+  pad: { horizontal: 'xsmall' },
+}`}
+            </Example>
             <Example>{`{ background: "string", border: {}, gap: "string", height: "string", margin: "string", pad: "string", round: "string", width: "string" }`}</Example>
           </PropertyValue>
         </Property>
@@ -285,6 +292,18 @@ const TimeInputPage = () => (
             Missing selected values inherit the base container style.
           </Description>
           <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+  round: 4px
+  hover: {
+    background: 'active-background',
+  },
+  selected: {
+    background: 'selected',
+  },
+}`}
+            </Example>
             <Example>{`{
   background: "string",
   border: {},
@@ -306,6 +325,14 @@ const TimeInputPage = () => (
             individually.
           </Description>
           <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  selected: {
+    color: 'white',
+    weight: 500,
+  },
+}`}
+            </Example>
             <Example>{`{ color: "string", size: "string", weight: "number", selected: { color: "string", size: "string", weight: "number" } }`}</Example>
           </PropertyValue>
         </Property>
