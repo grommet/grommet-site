@@ -166,178 +166,132 @@ const TimeInputPage = () => (
             <Example>false</Example>
           </PropertyValue>
         </Property>
-
       </Properties>
 
       <ThemeDoc>
-        <Property name="timeInput.active.background">
+        <Property name="timeInput.container">
           <Description>
-            The background of the currently active time section.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"active-background"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.active.indicator.color">
-          <Description>
-            The color of the active section's indicator bar.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Example defaultValue>
-              {`{ dark: "white", light: "black" }`}
-            </Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.active.indicator.size">
-          <Description>
-            The size of the active section's indicator bar.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.active.pad">
-          <Description>
-            The padding around the currently active time section.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"xxsmall"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.button.margin">
-          <Description>
-            The margin around the clock icon used to open the time selection
-            drop.
+            The field frame. Supports Box appearance and sizing properties such
+            as background, border, margin, pad, and round.
           </Description>
           <PropertyValue type="object">
-            <Example defaultValue>{`{ right: "small" }`}</Example>
+            <Example>{`{ background: "string", border: {}, margin: "string", pad: "string", round: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="timeInput.container.round">
-          <Description>How much to round the corners.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"xxsmall"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.option.background">
+        <Property name="timeInput.value">
           <Description>
-            The background of an option in the time selection drop.
+            The visible value frame. Supports Box-part appearance and sizing
+            properties: background, border, elevation, height, margin, pad,
+            round, and width.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ background: "string", border: {}, elevation: "string", height: "string", margin: "string", pad: "string", round: "string", width: "string" }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.segment">
+          <Description>
+            Time sections and separators. Supports Box-part appearance
+            properties (background, border, elevation, height, margin, pad,
+            round, and width) and text properties (color, size, and weight).
+            Placeholder text supports color, size, and weight. Its active state
+            supports background, border, elevation, pad, and round, plus text
+            color, size, and weight. Set active.border to style the active
+            underline (bottom by default).
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{
+  background: "string",
+  border: {},
+  color: "string",
+  height: "string",
+  margin: "string",
+  pad: "string",
+  placeholder: { color: "string", size: "string", weight: "number" },
+  round: "string",
+  size: "string",
+  weight: "number",
+  active: {
+    background: "string",
+    border: { side: "bottom" },
+    color: "string",
+    pad: "string",
+    round: "string",
+    weight: "number"
+  }
+}`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="timeInput.dropButton">
+          <Description>
+            The popup trigger button. Accepts a Button kind string, an object
+            with kind and icon, or a Button theme object with an optional icon.
+            The default icon is the clock and the default kind is toolbar.
           </Description>
           <PropertyValue type="string">
-            <Example>"background-front"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.option.hover.background">
-          <Description>
-            The background of an option in the time selection drop when hovered
-            or active via keyboard navigation.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"active-background"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.option.selected.background">
-          <Description>The background of the selected option.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"selected"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.option.selected.color">
-          <Description>The text color of the selected option.</Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"white"</Example>
+            <Example>"toolbar"</Example>
           </PropertyValue>
           <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
+            <Example>{`{ kind: "toolbar", icon: <Clock /> }`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="timeInput.drop.option.selected.hover.background">
+        <Property name="timeInput.drop">
           <Description>
-            The background of the selected option when hovered or active via
-            keyboard navigation.
+            The popup frame. Supports Box appearance properties, width, height
+            (including height.min), and gap. The base theme defines the default
+            width; if width.max is omitted, it defaults to 100%.
           </Description>
-          <PropertyValue type="string">
-            <Example>"selected"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.icon.clock">
-          <Description>
-            The icon used in the input to open the time selection drop.
-          </Description>
-          <PropertyValue type="node">
-            <Example defaultValue>{`<Clock />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.gap">
-          <Description>
-            The gap between the hour, minute, and second option lists in the
-            time selection drop.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.option.gap">
-          <Description>
-            The gap between options within an hour, minute, or second list.
-          </Description>
-          <PropertyValue type="string">
-            <Example>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="timeInput.drop.option.pad">
-          <Description>The padding around each time option.</Description>
           <PropertyValue type="object">
-            <Example defaultValue>
-              {`{ vertical: "xxsmall", horizontal: "xsmall" }`}
-            </Example>
+            <Example>{`{ background: "string", border: {}, gap: "string", height: "string", width: { min: "string", max: "string" } }`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="timeInput.drop.option.round">
+        <Property name="timeInput.drop.column">
           <Description>
-            The rounding applied to each time option in the drop.
+            Each popup list. Supports Box-part appearance and sizing properties
+            (background, border, elevation, height, margin, pad, round, and
+            width), plus gap. If height is omitted, the responsive default max
+            height is retained.
           </Description>
-          <PropertyValue type="string">
-            <Example>"xsmall"</Example>
+          <PropertyValue type="object">
+            <Example>{`{ background: "string", border: {}, gap: "string", height: "string", margin: "string", pad: "string", round: "string", width: "string" }`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="timeInput.drop.option.selected.text.weight">
+        <Property name="timeInput.drop.option.container">
           <Description>
-            The font weight of the selected time option.
+            The Box-backed option surface. Supports Box-part appearance and
+            sizing properties (background, border, elevation, height, margin,
+            pad, round, and width). Its hover, selected, and selected.hover
+            states support background, border, elevation, pad, and round.
+            Missing selected values inherit the base container style.
           </Description>
-          <PropertyValue type="number">
-            <Example defaultValue>500</Example>
+          <PropertyValue type="object">
+            <Example>{`{
+  background: "string",
+  border: {},
+  pad: "string",
+  round: "string",
+  hover: { background: "string" },
+  selected: {
+    background: "string",
+    hover: { background: "string" }
+  }
+}`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="timeInput.drop.option.size">
+        <Property name="timeInput.drop.option.text">
           <Description>
-            The text size used for each time option, such as 01 or 02.
+            The option label. Supports color, size, and weight; selected
+            supports the same properties and overrides their base values
+            individually.
           </Description>
-          <PropertyValue type="string">
-            <Example>"medium"</Example>
+          <PropertyValue type="object">
+            <Example>{`{ color: "string", size: "string", weight: "number", selected: { color: "string", size: "string", weight: "number" } }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>

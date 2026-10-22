@@ -492,6 +492,7 @@ const GrommetPage = () => (
       activeSectionValue: "string",
       chooseTime: "string",
       currentValue: "string",
+      currentValueWithoutSeconds: "string",
       inputLabel: "string",
       invalidTime: "string",
       openDrop: "string",

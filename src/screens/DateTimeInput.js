@@ -265,6 +265,16 @@ const DateTimeInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="dateTimeInput.drop.height">
+          <Description>The height of the DateTimeInput drop.</Description>
+          <PropertyValue type="string">
+            <Example>"medium"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: "small", max: "large" }`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="dateTimeInput.drop.border.color">
           <Description>
             The color of the divider between the Calendar and TimeInput inside
