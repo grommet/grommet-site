@@ -193,15 +193,15 @@ const TimeInputPage = () => (
 
         <Property name="timeInput.segment">
           <Description>
-            Time sections and separators. Supports Box-part appearance
+            {`Time sections and separators. Supports Box-part appearance
             properties (background, border, elevation, height, margin, pad,
-            round, and width) and text properties (color, size, and weight).{' '}
+            round, and width) and text properties (color, size, and weight).
             <br />
             <br />
             Placeholder text supports color, size, and weight. Its active state
             supports background, border, elevation, pad, and round, plus text
             color, size, and weight. Set active.border to style the active
-            underline.
+            underline.`}
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
