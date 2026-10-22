@@ -171,10 +171,11 @@ const TimeInputPage = () => (
       <ThemeDoc>
         <Property name="timeInput.container">
           <Description>
-            The field frame. Supports Box appearance and sizing properties such
-            as background, border, margin, pad, and round.
+            Styles the outer field container. Supports Box appearance and sizing
+            properties, including background, border, margin, pad, and round.
           </Description>
           <PropertyValue type="object">
+            <Example defaultValue>{`{ round: "xxsmall" }`}</Example>
             <Example>{`{ background: "string", border: {}, margin: "string", pad: "string", round: "string" }`}</Example>
           </PropertyValue>
         </Property>
@@ -194,13 +195,28 @@ const TimeInputPage = () => (
           <Description>
             Time sections and separators. Supports Box-part appearance
             properties (background, border, elevation, height, margin, pad,
-            round, and width) and text properties (color, size, and weight).
+            round, and width) and text properties (color, size, and weight).{' '}
+            <br />
+            <br />
             Placeholder text supports color, size, and weight. Its active state
             supports background, border, elevation, pad, and round, plus text
             color, size, and weight. Set active.border to style the active
-            underline (bottom by default).
+            underline.
           </Description>
           <PropertyValue type="object">
+            <Example defaultValue>
+              {`{
+  pad: { horizontal: 'xxsmall' },
+  active: {
+    background: 'active-background',
+    border: {
+      color: { dark: 'white', light: 'black' },
+      side: 'bottom',
+      size: 'small',
+    },
+  },
+}`}
+            </Example>
             <Example>{`{
   background: "string",
   border: {},
@@ -228,7 +244,6 @@ const TimeInputPage = () => (
           <Description>
             The popup trigger button. Accepts a Button kind string, an object
             with kind and icon, or a Button theme object with an optional icon.
-            The default icon is the clock and the default kind is toolbar.
           </Description>
           <PropertyValue type="string">
             <Example>"toolbar"</Example>
