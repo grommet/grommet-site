@@ -268,8 +268,7 @@ const TimeInputPage = () => (
           <Description>
             Each popup list. Supports Box-part appearance and sizing properties
             (background, border, elevation, height, margin, pad, round, and
-            width), plus gap. If height is omitted, the responsive default max
-            height is retained.
+            width), plus gap.
           </Description>
           <PropertyValue type="object">
             <Example defaultValue>
