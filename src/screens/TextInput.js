@@ -361,8 +361,7 @@ const TextInputPage = () => (
 
         <Property name="copy">
           <Description>
-            Whether to show a button that copies the input value to the
-            clipboard.
+            Show a button that copies the input value to the clipboard.
           </Description>
           <PropertyValue type="boolean">
             <Example>true</Example>
@@ -377,10 +376,9 @@ const TextInputPage = () => (
             responsible for handling the copy action.
           </Description>
           <PropertyValue type="function">
-            <Example>{`() => {}`}</Example>
+            <Example>{`(event, value) => {}`}</Example>
           </PropertyValue>
         </Property>
-
       </Properties>
 
       <ThemeDoc>
