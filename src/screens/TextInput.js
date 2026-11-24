@@ -168,6 +168,7 @@ const TextInputPage = () => (
   suggestionsCount: "suggestions available", 
   suggestionsExist: "This input has suggestions use arrow keys to navigate", 
   suggestionIsOpen: "Suggestions drop is open, continue to use arrow keys to navigate",
+  clear: "Clear",
   hidePassword: "Hide password",
   showPassword: "Show password",
 }
@@ -359,6 +360,16 @@ const TextInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="clear">
+          <Description>
+            Whether to show a button that clears the input value. The button is
+            available when the input has a value; activating it clears the
+            value and calls onChange. It is not shown for read-only inputs and
+            is disabled when the input is disabled.
+          </Description>
+          <GenericBoolFalse />
+        </Property>
+
         <Property name="copy">
           <Description>
             Show a button that copies the input value to the clipboard.
@@ -496,6 +507,13 @@ const TextInputPage = () => (
           </PropertyValue>
         </Property>
 
+        <Property name="textInput.icons.clear">
+          <Description>The icon shown for the clear button.</Description>
+          <PropertyValue type="element">
+            <Example defaultValue>{`<FormClose />`}</Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="textInput.icons.hidePassword">
           <Description>
             The icon shown when the password value is visible and can be hidden.
@@ -552,6 +570,13 @@ const TextInputPage = () => (
         </Heading>
         <Box margin="small">
           <TextInput placeholder="search" type="search" />
+        </Box>
+        <Box margin="small">
+          <TextInput
+            placeholder="clearable"
+            defaultValue="Clear this value"
+            clear
+          />
         </Box>
         <Box margin="small">
           <TextInput placeholder="password" type="password" />

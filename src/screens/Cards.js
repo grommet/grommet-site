@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Cards } from 'grommet';
+import { Box, Cards, Paragraph } from 'grommet';
 
 import Page from '../components/Page';
+import RoutedAnchor from '../components/RoutedAnchor';
 import Item from './Components/Item';
 import {
   ComponentDoc,
@@ -51,6 +52,20 @@ const CardsPage = () => (
       ]}
     />`}
     >
+      <Box
+        alignSelf="start"
+        margin={{ top: 'medium' }}
+        pad="medium"
+        round
+        background="light-3"
+      >
+        <Paragraph margin="none">
+          Cards accepts Grid props, such as columns, rows, areas, and gap.
+          These are applied to its underlying{' '}
+          <RoutedAnchor path="/grid" label="Grid" />; some shared props, such
+          as as, margin, and pad, are handled by Cards.
+        </Paragraph>
+      </Box>
       <Properties>
         <Property name="a11yTitle">
           <Description>
