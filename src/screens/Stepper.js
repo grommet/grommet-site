@@ -19,7 +19,6 @@ const StepperPage = () => (
     <ComponentDoc
       name="Stepper"
       description="Guides users through the steps of a multi-step process, showing progress and the status of each step."
-      beta
       code={`<Stepper
   steps={[
     { id: 'a', title: 'A', status: 'completed' },
@@ -32,10 +31,28 @@ const StepperPage = () => (
       <Properties>
         <Property name="children">
           <Description>
-            Custom content to render for the active step.
+            Optional compositional step structure using the exported
+            StepperStep component. Each StepperStep uses a stepId from the
+            steps array; nest StepperStep elements to represent sub-steps. If
+            omitted, Stepper renders the steps array automatically.
           </Description>
           <PropertyValue type="node">
-            <Example>{`<Box>...</Box>`}</Example>
+            <Example>
+              {`<Stepper
+  steps={[
+    { id: 'account', title: 'Account', children: [
+      { id: 'email', title: 'Email' },
+    ] },
+    { id: 'review', title: 'Review' },
+  ]}
+  currentStep="email"
+>
+  <StepperStep stepId="account">
+    <StepperStep stepId="email" />
+  </StepperStep>
+  <StepperStep stepId="review" />
+</Stepper>`}
+            </Example>
           </PropertyValue>
         </Property>
 
@@ -158,6 +175,187 @@ const StepperPage = () => (
       </Properties>
 
       <ThemeDoc>
+        <Property name="stepper.container">
+          <Description>
+            Box-part styling for the Stepper list. Supports background, border,
+            elevation, height, margin, pad, round, and width, plus a row/column
+            gap for spacing steps.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  background: 'background-back',
+  gap: { row: 'medium', column: 'small' },
+  pad: 'small',
+  round: 'small',
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.button">
+          <Description>
+            Box-part styling for each step's interactive area. Supports the
+            Box-part properties background, border, elevation, height, margin,
+            pad, round, and width, plus gap.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ gap: 'small', pad: 'xsmall' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.indicator">
+          <Description>
+            Box-part styling for the step indicator. Supports background,
+            border, elevation, height, margin, pad, round, and width. Additional
+            indicator settings include icon, iconSize, size, color, align, and
+            justify.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  background: 'background-front',
+  border: { size: 'small' },
+  size: 'medium',
+  iconSize: 'medium',
+  round: 'full',
+  align: 'center',
+  justify: 'center',
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.label">
+          <Description>
+            Text styling for the step title. Supports color, size, and weight;
+            state and sub-step label settings can override these values.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: 'text', size: 'medium', weight: 600 }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.description">
+          <Description>
+            Text styling for a step description. Supports color, size, and
+            weight.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: 'text-weak', size: 'small' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.errorText">
+          <Description>
+            Text styling for a step's error message. Supports color, size, and
+            weight. The error status may also override this with
+            stepper.error.errorText.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ color: 'status-critical', size: 'xsmall', weight: 600 }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.disabledReason">
+          <Description>
+            Text styling for a disabled step's reason. Supports color, size,
+            and weight. A disabled-state override can be provided with
+            stepper.disabled.disabledReason.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: 'text-weak', size: 'xsmall' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.connector">
+          <Description>
+            Styling for the line connecting steps. Supports color, thickness,
+            and gap. The gap is the distance from the connector to the
+            indicator and defaults to 4px.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ color: 'border', thickness: 'small', gap: '4px' }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.children">
+          <Description>
+            Box-part styling for the list of nested sub-steps. Supports
+            background, border, elevation, height, margin, pad, round, and
+            width, plus gap.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ gap: 'small', pad: { left: 'medium' } }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.subStep">
+          <Description>
+            Step-part overrides for sub-steps. Supports the same indicator,
+            button, label, description, errorText, disabledReason, connector,
+            and hover settings as stepper, but does not support children.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ indicator: { size: 'small', iconSize: 'small' }, label: { size: 'small' } }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.vertical">
+          <Description>
+            Step-part overrides used when the Stepper is vertical. Supports the
+            same indicator, button, label, description, errorText,
+            disabledReason, connector, and hover settings.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ button: { gap: 'small' }, connector: { gap: '4px' } }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.[status]">
+          <Description>
+            State-specific step-part styles. Supported statuses are pending,
+            current, currentCompleted, completed, error, currentError, and
+            disabled. Each status supports indicator, button, label,
+            description, errorText, disabledReason, connector, and hover parts.
+            Hover can override any supported step part.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  current: {
+    indicator: { background: 'brand', border: { color: 'brand' } },
+    label: { color: 'brand' },
+    hover: { indicator: { background: 'background-hover' } },
+  },
+  error: {
+    indicator: { background: 'background-front', color: 'status-critical' },
+    errorText: { color: 'status-critical' },
+  },
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.hover">
+          <Description>
+            Default hover overrides for step parts. State-specific hover
+            settings such as stepper.current.hover take precedence for that
+            status.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ indicator: { background: 'background-hover' }, label: { color: 'brand' } }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="stepper.completed.connector.color">
           <Description>
             The color of the line connecting to the next step.
@@ -250,15 +448,6 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.completed.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="stepper.completed.label.color">
           <Description>The color of the step title.</Description>
           <PropertyValue type="string">
@@ -273,12 +462,24 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.connector.stroke.width">
+        <Property name="stepper.connector.thickness">
           <Description>
-            The stroke width of the line connecting steps.
+            The thickness of the line connecting steps.
           </Description>
           <PropertyValue type="string">
-            <Example defaultValue>"2px"</Example>
+            <Example defaultValue>"small"</Example>
+            <Example>"2px"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.connector.gap">
+          <Description>
+            The distance between a connector and the step indicator. A number
+            or CSS size can be used; the default is 4px.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"4px"</Example>
+            <Example>"small"</Example>
           </PropertyValue>
         </Property>
 
@@ -355,15 +556,6 @@ const StepperPage = () => (
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"medium"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
           </PropertyValue>
         </Property>
 
@@ -458,15 +650,6 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentCompleted.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="stepper.currentCompleted.label.color">
           <Description>
             The color of the step title. Can be an object to differentiate
@@ -546,15 +729,6 @@ const StepperPage = () => (
           <Description>The icon shown in the step indicator.</Description>
           <PropertyValue type="element">
             <Example defaultValue>{`<StatusCriticalSmall />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentError.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
           </PropertyValue>
         </Property>
 
@@ -642,15 +816,6 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.disabled.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="stepper.disabled.label.color">
           <Description>The color of the step title.</Description>
           <PropertyValue type="string">
@@ -681,7 +846,7 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.error.helperText.color">
+        <Property name="stepper.error.errorText.color">
           <Description>The color of the step's helper/error text.</Description>
           <PropertyValue type="string">
             <Description>A hex, name, or rgb value.</Description>
@@ -762,15 +927,6 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.error.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="stepper.error.label.color">
           <Description>The color of the step title.</Description>
           <PropertyValue type="string">
@@ -785,25 +941,48 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.helperText.color">
-          <Description>The color of a step's helper text.</Description>
+        <Property name="stepper.errorText.color">
+          <Description>The color of a step's error message.</Description>
           <GenericColor />
         </Property>
 
-        <Property name="stepper.helperText.size">
-          <Description>
-            The text size of a step's helper text, shown for a step in the
-            "error" status.
-          </Description>
+        <Property name="stepper.errorText.size">
+          <Description>The text size of a step's error message.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"xsmall"</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.indicator.border.width">
-          <Description>The border width of the step indicator.</Description>
+        <Property name="stepper.disabledReason.color">
+          <Description>The color of a disabled step's reason text.</Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="stepper.disabledReason.size">
+          <Description>The text size of a disabled step's reason text.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>"2px"</Example>
+            <Example defaultValue>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.subStep.indicator.size">
+          <Description>The size of a sub-step's indicator.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.subStep.indicator.iconSize">
+          <Description>The icon size within a sub-step's indicator.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.indicator.border.size">
+          <Description>The border size of the step indicator.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
           </PropertyValue>
         </Property>
 
@@ -823,7 +1002,7 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.label.substep.size">
+        <Property name="stepper.subStep.label.size">
           <Description>The text size of a sub-step's title.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"small"</Example>
@@ -922,15 +1101,6 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.pending.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
         <Property name="stepper.pending.label.color">
           <Description>The color of the step title.</Description>
           <PropertyValue type="string">
@@ -945,6 +1115,38 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
       </ThemeDoc>
+    </ComponentDoc>
+
+    <ComponentDoc
+      name="StepperStep"
+      description="A composable step item used as a child of Stepper. Step data and status are resolved from the parent Stepper using stepId. The StepperStepProps, StepType, and StepStatus TypeScript types are also exported."
+      code={`<Stepper steps={steps} currentStep="account">
+  <StepperStep stepId="account" />
+  <StepperStep stepId="review" />
+</Stepper>`}
+    >
+      <Properties>
+        <Property name="stepId">
+          <Description>
+            The id of a step in the parent Stepper's steps array. StepperStep
+            reads the step's title, status, description, and other metadata
+            from the Stepper context.
+          </Description>
+          <PropertyValue type="string">
+            <Example>"account"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="children">
+          <Description>
+            Nested StepperStep elements representing the step's sub-steps. The
+            corresponding step data must also include these children.
+          </Description>
+          <PropertyValue type="node">
+            <Example>{`<StepperStep stepId="email" />`}</Example>
+          </PropertyValue>
+        </Property>
+      </Properties>
     </ComponentDoc>
   </Page>
 );
