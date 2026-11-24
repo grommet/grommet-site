@@ -22,6 +22,7 @@ import {
   GenericBool,
   GenericBoolFalse,
   GenericMargin,
+  GenericPad,
 } from '../../utils/genericPropExamples';
 
 const GlobalTheme = () => (
@@ -550,8 +551,74 @@ const GlobalTheme = () => (
           <GenericColor />
         </Property>
         <Property name="global.input.extend">
-          <Description>Any additional styles for input components.</Description>
+          <Description>
+            Any additional styles for input components. The shared input
+            appearance settings apply to TextInput, TextArea, and MaskedInput,
+            and to the visible surfaces of Select, SelectMultiple, DateInput,
+            DateTimeInput, TimeInput, and FileInput. Component-specific theme
+            settings can override them.
+          </Description>
           <GenericExtend />
+        </Property>
+        <Property name="global.input.background">
+          <Description>The background of supported input surfaces.</Description>
+          <GenericBackground />
+        </Property>
+        <Property name="global.input.border">
+          <Description>The border of supported input surfaces.</Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: 'border', size: '1px' }`}</Example>
+          </PropertyValue>
+          <PropertyValue type="string">
+            <Example>"bottom"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.elevation">
+          <Description>The elevation of supported input surfaces.</Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+            <Example>"none"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.height">
+          <Description>The height of supported input surfaces.</Description>
+          <PropertyValue type="string">
+            <Example>"40px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: '40px', max: '56px' }`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.margin">
+          <Description>The margin around supported input surfaces.</Description>
+          <GenericMargin />
+        </Property>
+        <Property name="global.input.pad">
+          <Description>
+            The padding inside supported input surfaces. Uses Box spacing
+            values and takes precedence over the legacy global.input.padding.
+          </Description>
+          <GenericPad />
+        </Property>
+        <Property name="global.input.round">
+          <Description>The border radius of supported input surfaces.</Description>
+          <GenericBool />
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+            <Example>"4px"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ size: 'small', corner: 'top' }`}</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.width">
+          <Description>The width of supported input surfaces.</Description>
+          <PropertyValue type="string">
+            <Example>"100%"</Example>
+          </PropertyValue>
+          <PropertyValue type="object">
+            <Example>{`{ min: '240px', max: '100%' }`}</Example>
+          </PropertyValue>
         </Property>
         <Property name="global.input.padding">
           <Description>The padding for input components.</Description>
@@ -588,6 +655,69 @@ const GlobalTheme = () => (
 }
         `}
             </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.disabled">
+          <Description>
+            Box state styles for supported disabled input surfaces. Accepts
+            background, border, elevation, pad, and round.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ background: 'background-contrast', border: { color: 'border' }, pad: 'small' }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.focus">
+          <Description>
+            Box state styles for supported focused input surfaces. Accepts
+            background, border, elevation, pad, and round.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ border: { color: 'focus' }, pad: 'small' }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.hover">
+          <Description>
+            Box state styles for supported hovered input surfaces. Accepts
+            background, border, elevation, pad, and round.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ background: 'background-hover', border: { color: 'border-strong' } }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.readOnly">
+          <Description>
+            Box state styles for supported read-only input surfaces. Accepts
+            background, border, elevation, pad, and round.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ background: 'background-back', border: { color: 'border' } }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.placeholder.color">
+          <Description>The placeholder text color.</Description>
+          <GenericColor />
+        </Property>
+        <Property name="global.input.placeholder.size">
+          <Description>The placeholder text size.</Description>
+          <PropertyValue type="string">
+            <Example>"small"</Example>
+          </PropertyValue>
+        </Property>
+        <Property name="global.input.placeholder.weight">
+          <Description>The placeholder text weight.</Description>
+          <PropertyValue type="string">
+            <Example>"normal"</Example>
+          </PropertyValue>
+          <PropertyValue type="number">
+            <Example>500</Example>
           </PropertyValue>
         </Property>
         <Property name="global.input.font.height">
