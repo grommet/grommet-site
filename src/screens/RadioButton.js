@@ -128,9 +128,9 @@ with the same name so form submissions work.`}
       <ThemeDoc>
         <Property name="radioButton.control">
           <Description>
-            Box-part styles for the circular radio control. Supports
-            background, border, elevation, height, margin, pad, round, and
-            width. Custom render-function children control their own appearance.
+            Box-part styles for the circular radio control. Supports background,
+            border, elevation, height, margin, pad, round, and width. Custom
+            render-function children control their own appearance.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -151,8 +151,8 @@ with the same name so form submissions work.`}
         <Property name="radioButton.control.hover">
           <Description>
             Box state styles for the unselected control when hovered. Accepts
-            background, border, elevation, pad, and round. Focus without a
-            focus indicator uses these styles; disabled controls do not.
+            background, border, elevation, pad, and round. Focus without a focus
+            indicator uses these styles; disabled controls do not.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -188,8 +188,8 @@ with the same name so form submissions work.`}
         <Property name="radioButton.control.selected.hover">
           <Description>
             Box state styles for the selected control when hovered. Accepts
-            background, border, elevation, pad, and round. Focus without a
-            focus indicator uses these styles; disabled controls do not.
+            background, border, elevation, pad, and round. Focus without a focus
+            indicator uses these styles; disabled controls do not.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -227,10 +227,9 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.container.hover">
           <Description>
-            Box state styles for the outer label container when hovered.
-            Accepts background, border, elevation, pad, and round. Hover styles
-            also apply on focus without a focus indicator, but not when
-            disabled.
+            Box state styles for the outer label container when hovered. Accepts
+            background, border, elevation, pad, and round. Hover styles also
+            apply on focus without a focus indicator, but not when disabled.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -266,7 +265,7 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.border.color">
           <Description>
-            The legacy border color of the RadioButton control. Prefer
+            The color of the border of the Radio Button. Prefer
             radioButton.control.border.color.
           </Description>
           <PropertyValue type="string">
@@ -285,7 +284,7 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.border.width">
           <Description>
-            The legacy border width of the RadioButton control. Prefer
+            The width size of the border of the RadioButton. Prefer
             radioButton.control.border.size.
           </Description>
           <PropertyValue type="string">
@@ -295,7 +294,7 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.background.color">
           <Description>
-            The legacy background color of the unselected control. Prefer
+            The background color of the RadioButton. Prefer
             radioButton.control.background.
           </Description>
           <GenericColor />
@@ -303,7 +302,7 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.check.background.color">
           <Description>
-            The legacy background color of the selected control. Prefer
+            The background color of the RadioButton when checked. Prefer
             radioButton.control.selected.background.
           </Description>
           <GenericColor />
@@ -325,7 +324,7 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.check.radius">
           <Description>
-            The legacy radius setting for the RadioButton control. Prefer
+            The border-radius of the RadioButton. Prefer
             radioButton.control.round.
           </Description>
           <PropertyValue type="string">
@@ -335,8 +334,8 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.color">
           <Description>
-            The legacy color of the selected RadioButton control border. Prefer
-            radioButton.control.selected.border.color.
+            The color of the border surrounding the checked icon in RadioButton
+            checked state. Prefer radioButton.control.selected.border.color.
           </Description>
           <GenericColor />
         </Property>
@@ -377,15 +376,15 @@ with the same name so form submissions work.`}
 
         <Property name="radioButton.hover.background.color">
           <Description>
-            The legacy background color of the label container on hover. Prefer
-            radioButton.container.hover.background.
+            The background color of the Box surrounding the RadioButton when
+            hovered over. Prefer radioButton.container.hover.background.
           </Description>
           <GenericColor />
         </Property>
 
         <Property name="radioButton.hover.border.color">
           <Description>
-            The legacy border color on hover. Prefer
+            The color of the RadioButton border when hovered over. Prefer
             radioButton.control.hover.border.color and
             radioButton.control.selected.hover.border.color.
           </Description>

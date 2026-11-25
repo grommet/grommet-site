@@ -180,8 +180,8 @@ const CheckBoxPage = () => (
           <Description>
             Box-part styles for the built-in checkbox square. Supports
             background, border, elevation, height, margin, pad, round, and
-            width. The background styles do not apply to toggle tracks or
-            knobs, or to custom render-function children.
+            width. The background styles do not apply to toggle tracks or knobs,
+            or to custom render-function children.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -202,8 +202,8 @@ const CheckBoxPage = () => (
         <Property name="checkBox.control.hover">
           <Description>
             Box state styles for the unchecked square when hovered. Accepts
-            background, border, elevation, pad, and round. Focus without a
-            focus indicator uses these styles; disabled controls do not.
+            background, border, elevation, pad, and round. Focus without a focus
+            indicator uses these styles; disabled controls do not.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -238,10 +238,9 @@ const CheckBoxPage = () => (
 
         <Property name="checkBox.control.selected.hover">
           <Description>
-            Box state styles for a checked or indeterminate square when
-            hovered. Accepts background, border, elevation, pad, and round.
-            Focus without a focus indicator uses these styles; disabled
-            controls do not.
+            Box state styles for a checked or indeterminate square when hovered.
+            Accepts background, border, elevation, pad, and round. Focus without
+            a focus indicator uses these styles; disabled controls do not.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -259,8 +258,8 @@ const CheckBoxPage = () => (
         <Property name="checkBox.container">
           <Description>
             Box-part styles for the outer label container, including toggle
-            labels. Supports background, border, elevation, height, margin,
-            pad, round, and width. A CheckBox pad prop takes precedence over
+            labels. Supports background, border, elevation, height, margin, pad,
+            round, and width. A CheckBox pad prop takes precedence over
             container.pad.
           </Description>
           <PropertyValue type="object">
@@ -281,10 +280,9 @@ const CheckBoxPage = () => (
 
         <Property name="checkBox.container.hover">
           <Description>
-            Box state styles for the outer label container when hovered.
-            Accepts background, border, elevation, pad, and round. Hover styles
-            also apply on focus without a focus indicator, but not when
-            disabled.
+            Box state styles for the outer label container when hovered. Accepts
+            background, border, elevation, pad, and round. Hover styles also
+            apply on focus without a focus indicator, but not when disabled.
           </Description>
           <PropertyValue type="object">
             <Example>
@@ -329,8 +327,8 @@ const CheckBoxPage = () => (
 
         <Property name="checkBox.check.radius">
           <Description>
-            The legacy radius setting for the CheckBox control. It is
-            deprecated; use checkBox.control.round instead.
+            The radius of the checked icon. It is deprecated; use
+            checkBox.control.round instead.
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"4px"</Example>
@@ -378,8 +376,8 @@ const CheckBoxPage = () => (
 
         <Property name="checkBox.hover.background.color">
           <Description>
-            The legacy background color of the checkbox label on hover. Prefer
-            checkBox.container.hover.background.
+            The background color of the Box surrounding the RadioButton when
+            hovered over. Prefer checkBox.container.hover.background.
           </Description>
           <GenericColor />
         </Property>
@@ -424,7 +422,7 @@ const CheckBoxPage = () => (
 
         <Property name="checkBox.pad">
           <Description>
-            The legacy padding around the CheckBox and its label. Prefer
+            The pad around the CheckBox and its label. Prefer
             checkBox.container.pad.
           </Description>
           <GenericPad />
