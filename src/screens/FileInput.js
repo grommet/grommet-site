@@ -188,13 +188,48 @@ const FileInputPage = () => (
       <ThemeDoc>
         <InputStyle />
 
+        <Property name="fileInput">
+          <Description>
+            Theme settings for the file drop surface and its content. The root
+            appearance accepts background, border, margin, pad, and round.
+            Hover and dragOver can override background, border, pad, and
+            extend. Component-specific appearance overrides global.input.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  background: 'background-front',
+  border: { side: 'all', size: 'small', style: 'dashed' },
+  margin: 'xsmall',
+  pad: 'large',
+  round: 'small',
+  hover: {
+    background: 'background-hover',
+    border: { color: 'border-strong' },
+  },
+  dragOver: {
+    background: 'background-contrast',
+    border: { color: 'brand' },
+  },
+  label: { color: 'text', size: 'medium', weight: 600 },
+  message: { color: 'text-weak', size: 'small' },
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
         <Property name="global.input.extend">
           <Description>Any additional style for an input.</Description>
           <GenericExtend />
         </Property>
 
         <Property name="fileInput.background">
-          <Description>The background prop for the container.</Description>
+          <Description>
+            The background prop for the container. FileInput-specific
+            appearance settings override the corresponding global.input
+            settings; hover and drag-over styles apply on top of the normal
+            appearance.
+          </Description>
           <GenericBackground />
         </Property>
 
@@ -239,7 +274,11 @@ const FileInputPage = () => (
         </Property>
 
         <Property name="fileInput.dragOver.border">
-          <Description>Border to use when dragging over.</Description>
+          <Description>
+            Border to use when dragging over. Set to "none" to remove the
+            border, including one owned by a surrounding FormField; the normal
+            border returns when the drag ends.
+          </Description>
           <PropertyValue type="string">
             <Example>"horizontal"</Example>
             <Example>"vertical"</Example>
@@ -282,7 +321,7 @@ const FileInputPage = () => (
         </Property>
 
         <Property name="fileInput.hover.border">
-          <Description>Background to use when hovering.</Description>
+          <Description>Border to use when hovering.</Description>
           <PropertyValue type="string">
             <Example>"horizontal"</Example>
             <Example>"vertical"</Example>
@@ -342,7 +381,10 @@ const FileInputPage = () => (
         </Property>
 
         <Property name="fileInput.pad">
-          <Description>The pad prop for the container.</Description>
+          <Description>
+            The pad prop for the container. When set, this takes precedence
+            over global.input.pad.
+          </Description>
           <GenericPad />
         </Property>
 

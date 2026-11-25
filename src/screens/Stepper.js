@@ -19,7 +19,6 @@ const StepperPage = () => (
     <ComponentDoc
       name="Stepper"
       description="Guides users through the steps of a multi-step process, showing progress and the status of each step."
-      beta
       code={`<Stepper
   steps={[
     { id: 'a', title: 'A', status: 'completed' },
@@ -32,10 +31,28 @@ const StepperPage = () => (
       <Properties>
         <Property name="children">
           <Description>
-            Custom content to render for the active step.
+            Optional compositional step structure using the exported StepperStep
+            component. Each StepperStep uses a stepId from the steps array; nest
+            StepperStep elements to represent sub-steps. If omitted, Stepper
+            renders the steps array automatically.
           </Description>
           <PropertyValue type="node">
-            <Example>{`<Box>...</Box>`}</Example>
+            <Example>
+              {`<Stepper
+  steps={[
+    { id: 'account', title: 'Account', children: [
+      { id: 'email', title: 'Email' },
+    ] },
+    { id: 'review', title: 'Review' },
+  ]}
+  currentStep="email"
+>
+  <StepperStep stepId="account">
+    <StepperStep stepId="email" />
+  </StepperStep>
+  <StepperStep stepId="review" />
+</Stepper>`}
+            </Example>
           </PropertyValue>
         </Property>
 
@@ -158,417 +175,203 @@ const StepperPage = () => (
       </Properties>
 
       <ThemeDoc>
-        <Property name="stepper.completed.connector.color">
+        <Property name="stepper.container">
           <Description>
-            The color of the line connecting to the next step.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-front"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.color">
-          <Description>
-            The icon or text color of the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.hover.background">
-          <Description>
-            The background of the step indicator when hovered.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-front"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.icon">
-          <Description>The icon shown in the step indicator.</Description>
-          <PropertyValue type="element">
-            <Example defaultValue>{`<FormCheckmark />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.iconSize">
-          <Description>
-            The size of the icon shown in the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"medium"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.completed.label.color">
-          <Description>The color of the step title.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text-weak"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.connector.stroke.width">
-          <Description>
-            The stroke width of the line connecting steps.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"2px"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.color">
-          <Description>
-            The icon or text color of the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.hover.color">
-          <Description>
-            The icon or text color of the step indicator when hovered.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.icon">
-          <Description>The icon shown in the step indicator.</Description>
-          <PropertyValue type="element">
-            <Example defaultValue>{`<StatusGoodSmall />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.iconSize">
-          <Description>
-            The size of the icon shown in the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"medium"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.current.label.color">
-          <Description>
-            The color of the step title. Can be an object to differentiate
-            colors between dark and light modes.
+            Box-part styling for the Stepper list. Supports background, border,
+            elevation, height, margin, pad, round, and width, plus a row/column
+            gap for spacing steps.
           </Description>
           <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example defaultValue>
-              {`{ dark: "text-strong", light: "brand" }`}
+            <Example>
+              {`{
+  background: 'background-back',
+  gap: { row: 'medium', column: 'small' },
+  pad: 'small',
+  round: 'small',
+}`}
             </Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentCompleted.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"brand"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.indicator.color">
+        <Property name="stepper.button">
           <Description>
-            The icon or text color of the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.indicator.hover.color">
-          <Description>
-            The icon or text color of the step indicator when hovered.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.indicator.icon">
-          <Description>The icon shown in the step indicator.</Description>
-          <PropertyValue type="element">
-            <Example defaultValue>{`<FormCheckmark />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.indicator.iconSize">
-          <Description>
-            The size of the icon shown in the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"medium"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentCompleted.label.color">
-          <Description>
-            The color of the step title. Can be an object to differentiate
-            colors between dark and light modes.
+            Box-part styling for each step's interactive area. Supports the
+            Box-part properties background, border, elevation, height, margin,
+            pad, round, and width, plus gap.
           </Description>
           <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example defaultValue>
-              {`{ dark: "text-strong", light: "brand" }`}
+            <Example>{`{ gap: 'small', pad: 'xsmall' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.indicator">
+          <Description>
+            Box-part styling for the step indicator. Supports background,
+            border, elevation, height, margin, pad, round, and width. Additional
+            indicator settings include icon, iconSize, size, color, align, and
+            justify. The default iconSize is "medium"; sub-step and status
+            settings can override it.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  background: 'background-front',
+  border: { size: 'small' },
+  size: 'medium',
+  iconSize: 'medium',
+  round: 'full',
+  align: 'center',
+  justify: 'center',
+}`}
             </Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentError.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentError.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentError.indicator.color">
+        <Property name="stepper.label">
           <Description>
-            The icon or text color of the step indicator.
+            Text styling for the step title. Supports color, size, and weight;
+            state and sub-step label settings can override these values.
           </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
           <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
+            <Example>{`{ color: 'text', size: 'medium', weight: 600 }`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentError.indicator.hover.color">
+        <Property name="stepper.description">
           <Description>
-            The icon or text color of the step indicator when hovered.
+            Text styling for a step description. Supports color, size, and
+            weight.
           </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"white"</Example>
-          </PropertyValue>
           <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
+            <Example>{`{ color: 'text-weak', size: 'small' }`}</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentError.indicator.icon">
-          <Description>The icon shown in the step indicator.</Description>
-          <PropertyValue type="element">
-            <Example defaultValue>{`<StatusCriticalSmall />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.currentError.indicator.substep.iconSize">
+        <Property name="stepper.errorText">
           <Description>
-            The icon size used within a sub-step's indicator.
+            Text styling for a step's error message. Supports color, size, and
+            weight. The error status may also override this with
+            stepper.error.errorText.
           </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ color: 'status-critical', size: 'xsmall', weight: 600 }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.disabledReason">
+          <Description>
+            Text styling for a disabled step's reason. Supports color, size, and
+            weight. A disabled-state override can be provided with
+            stepper.disabled.disabledReason.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ color: 'text-weak', size: 'xsmall' }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.connector">
+          <Description>
+            Styling for the line connecting steps. Supports color, thickness,
+            and gap. The gap is the distance from the connector to the indicator
+            and defaults to 4px.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ color: 'border', thickness: 'small', gap: '4px' }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.children">
+          <Description>
+            Box-part styling for the list of nested sub-steps. Supports
+            background, border, elevation, height, margin, pad, round, and
+            width, plus gap.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ gap: 'small', pad: { left: 'medium' } }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.subStep">
+          <Description>
+            Step-part overrides for sub-steps. Supports the same indicator,
+            button, label, description, errorText, disabledReason, connector,
+            and hover settings as stepper, but does not support children.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ indicator: { size: 'small', iconSize: 'small' }, label: { size: 'small' } }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.vertical">
+          <Description>
+            Step-part overrides used when the Stepper is vertical. Supports the
+            same indicator, button, label, description, errorText,
+            disabledReason, connector, and hover settings.
+          </Description>
+          <PropertyValue type="object">
+            <Example>{`{ button: { gap: 'small' }, connector: { gap: '4px' } }`}</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.[status]">
+          <Description>
+            State-specific step-part styles. Supported statuses are pending,
+            current, currentCompleted, completed, error, currentError, and
+            disabled. A current step uses currentCompleted when completed,
+            currentError when in error, and current otherwise; disabled takes
+            precedence. A parent of the current sub-step is also treated as
+            current. Theme settings are merged in order: base, vertical,
+            subStep, then the effective status, with later settings taking
+            precedence. Each status supports indicator, button, label,
+            description, errorText, disabledReason, connector, and hover parts.
+            Hover styles apply to the indicator and label of clickable steps.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{
+  indicator: { background: 'brand', border: { color: 'brand' } },
+  label: { color: 'brand' },
+  hover: { indicator: { background: 'background-hover' } },
+}`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.hover">
+          <Description>
+            Default hover overrides for step parts. State-specific hover
+            settings such as stepper.current.hover take precedence for that
+            status.
+          </Description>
+          <PropertyValue type="object">
+            <Example>
+              {`{ indicator: { background: 'background-hover' }, label: { color: 'brand' } }`}
+            </Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.connector.thickness">
+          <Description>The thickness of the line connecting steps.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"small"</Example>
+            <Example>"2px"</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.currentError.label.color">
-          <Description>The color of the step title.</Description>
+        <Property name="stepper.connector.gap">
+          <Description>
+            The distance between a connector and the step indicator. Use a
+            spacing token or CSS size string; the default is 4px.
+          </Description>
           <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
+            <Example defaultValue>"4px"</Example>
+            <Example>"small"</Example>
           </PropertyValue>
         </Property>
 
@@ -584,226 +387,52 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.disabled.connector.color">
-          <Description>
-            The color of the line connecting to the next step.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"border"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.disabled.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-contrast"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.disabled.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"border"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.disabled.indicator.color">
-          <Description>The icon color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text-weak"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.disabled.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.disabled.label.color">
-          <Description>The color of the step title.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text-weak"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.connector.color">
-          <Description>
-            The color of the line connecting to the next step.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.helperText.color">
-          <Description>The color of the step's helper/error text.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-front"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.indicator.color">
-          <Description>
-            The icon or text color of the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"status-critical"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.indicator.hover.background">
-          <Description>
-            The background of the step indicator when hovered.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-front"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.indicator.icon">
-          <Description>The icon shown in the step indicator.</Description>
-          <PropertyValue type="element">
-            <Example defaultValue>{`<StatusCriticalSmall />`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.error.label.color">
-          <Description>The color of the step title.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.helperText.color">
-          <Description>The color of a step's helper text.</Description>
+        <Property name="stepper.errorText.color">
+          <Description>The color of a step's error message.</Description>
           <GenericColor />
         </Property>
 
-        <Property name="stepper.helperText.size">
+        <Property name="stepper.errorText.size">
+          <Description>The text size of a step's error message.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"xsmall"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.disabledReason.color">
+          <Description>The color of a disabled step's reason text.</Description>
+          <GenericColor />
+        </Property>
+
+        <Property name="stepper.disabledReason.size">
           <Description>
-            The text size of a step's helper text, shown for a step in the
-            "error" status.
+            The text size of a disabled step's reason text.
           </Description>
           <PropertyValue type="string">
             <Example defaultValue>"xsmall"</Example>
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.indicator.border.width">
-          <Description>The border width of the step indicator.</Description>
+        <Property name="stepper.subStep.indicator.size">
+          <Description>The size of a sub-step's indicator.</Description>
           <PropertyValue type="string">
-            <Example defaultValue>"2px"</Example>
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.subStep.indicator.iconSize">
+          <Description>
+            The icon size within a sub-step's indicator.
+          </Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
+          </PropertyValue>
+        </Property>
+
+        <Property name="stepper.indicator.border.size">
+          <Description>The border size of the step indicator.</Description>
+          <PropertyValue type="string">
+            <Example defaultValue>"small"</Example>
           </PropertyValue>
         </Property>
 
@@ -823,125 +452,10 @@ const StepperPage = () => (
           </PropertyValue>
         </Property>
 
-        <Property name="stepper.label.substep.size">
+        <Property name="stepper.subStep.label.size">
           <Description>The text size of a sub-step's title.</Description>
           <PropertyValue type="string">
             <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.connector.color">
-          <Description>
-            The color of the line connecting to the next step.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"border"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.indicator.background">
-          <Description>The background of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-front"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.indicator.border">
-          <Description>The border color of the step indicator.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text-xweak"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.indicator.color">
-          <Description>
-            The icon or text color of the step indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text-strong"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.indicator.hover.background">
-          <Description>
-            The background of the step indicator when hovered.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"background-front"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.indicator.hover.border">
-          <Description>
-            The border color of the step indicator when hovered.
-          </Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text-strong"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.indicator.substep.iconSize">
-          <Description>
-            The icon size used within a sub-step's indicator.
-          </Description>
-          <PropertyValue type="string">
-            <Example defaultValue>"small"</Example>
-          </PropertyValue>
-        </Property>
-
-        <Property name="stepper.pending.label.color">
-          <Description>The color of the step title.</Description>
-          <PropertyValue type="string">
-            <Description>A hex, name, or rgb value.</Description>
-            <Example defaultValue>"text"</Example>
-          </PropertyValue>
-          <PropertyValue type="object">
-            <Description>
-              An object with a color for dark and light modes.
-            </Description>
-            <Example>{`{ dark: "string", light: "string" }`}</Example>
           </PropertyValue>
         </Property>
       </ThemeDoc>

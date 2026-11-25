@@ -468,8 +468,11 @@ const GrommetPage = () => (
     }
     skipLinks: { skipTo: "string" },
     stepper: {
+      completed: "{step}, completed",
+      error: "{step}, error",
       progress: "string",
       step: "string",
+      subStep: "Step {step} of {total}. {parent}: {title}",
     },
     tabs: { tabContents: "string" },
     tag: {
